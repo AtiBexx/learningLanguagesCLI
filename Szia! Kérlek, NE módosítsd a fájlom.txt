@@ -1,0 +1,3 @@
+"Szia! Kérlek, NE módosítsd a fájlomat, csak írd le a kódot és magyarázd el, mit csinál. Én szeretném beírni és megérteni."
+Vagy rövidebben:
+"Csak mutass példát, ne írd át a fájlt!"

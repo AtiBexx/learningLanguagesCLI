@@ -1,0 +1,201 @@
+Na ez a legizgalmasabb rész 😄🎧 — mert itt derül ki, hogyan működnek a **pro audio pluginek valójában** (pl. FabFilter szint).
+
+---
+
+# 🎛️ „80% tiszta kód” vs „20% dirty optimization”
+
+## 🧼 80% – tiszta DSP logika
+
+Ez az „emberi” rész:
+
+### 🎚️ Példák:
+
+#### ✔️ Filter (EQ)
+
+```cpp id="c8x7kq"
+y[n] = b0*x[n] + b1*x[n-1] - a1*y[n-1];
+```
+
+#### ✔️ Envelope (ADSR)
+
+* attack
+* decay
+* sustain
+* release
+
+#### ✔️ Delay / reverb alap logika
+
+* buffer írás/olvasás
+* feedback
+
+👉 ez:
+
+* könnyen érthető
+* matematikai
+* „szép” kód
+
+---
+
+# ⚡ 20% – „dirty optimization” (itt jön a trükk 😄)
+
+Ez az a rész, amitől a plugin:
+👉 **villámgyors**
+👉 **CPU-barát**
+👉 **real-time stabil**
+
+---
+
+## 🔥 1. Branchless kód (if nélkül)
+
+### ❌ normál:
+
+```cpp id="7x9v1a"
+if (x < 0) x = 0;
+```
+
+### ⚡ optimalizált:
+
+```cpp id="k2n9d0"
+x = (x + abs(x)) * 0.5f;
+```
+
+👉 nincs ugrás → gyorsabb CPU pipeline
+
+---
+
+## 🔥 2. SIMD (AVX / SSE)
+
+👉 egy utasítás = több minta
+
+```cpp id="m9q2ab"
+for (int i = 0; i < 8; i++)
+    out[i] = in[i] * gain;
+```
+
+👉 SIMD-ben:
+
+* 8 float egyszerre
+
+➡️ 5–10x gyorsabb
+
+---
+
+## 🔥 3. Cache hackelés
+
+👉 adatot úgy rendezik, hogy CPU szeresse:
+
+* lineáris memória
+* nincs random access
+* előre betöltött buffer
+
+💡 CPU cache = kritikus audio DSP-ben
+
+---
+
+## 🔥 4. Lookup table (sin/cos cheat)
+
+👉 trigonometria helyett:
+
+```cpp id="r0x8zq"
+sin(x) = table[x];
+```
+
+👉 gyorsabb mint számolni
+
+---
+
+## 🔥 5. Denormal number fix
+
+👉 CPU lassul, ha „nagyon kicsi float” van
+
+Fix:
+
+```cpp id="d3v7kf"
+if (fabs(x) < 1e-20) x = 0;
+```
+
+➡️ ez **nagyon fontos audio-ban**
+
+---
+
+## 🔥 6. Memory reuse (zero allocation audio thread-ben)
+
+👉 audio callback-ben:
+
+❌ nem szabad:
+
+* new
+* malloc
+* vector resize
+
+✔️ csak:
+
+* pre-allocated buffer
+
+---
+
+## 🔥 7. Unrolling loop
+
+```cpp id="u1m4qz"
+out[i] = in[i] * gain;
+out[i+1] = in[i+1] * gain;
+out[i+2] = in[i+2] * gain;
+```
+
+👉 kevesebb loop overhead
+
+---
+
+# 🎧 Miért kell ez?
+
+Audio plugin =
+
+* 48kHz vagy 96kHz
+* real-time
+* nincs lag megengedve
+
+👉 1 spike = crackle / glitch
+
+---
+
+# 🧠 A lényeg (nagyon fontos)
+
+👉 „dirty optimization” nem csúnya kód =
+
+👉 hanem:
+
+> „CPU barát matematika”
+
+---
+
+# ⚖️ Valós arány (őszintén)
+
+Nem mindig 80/20 fix, inkább:
+
+* 70% DSP logika
+* 20% performance tuning
+* 10% edge-case hack
+
+---
+
+# 😄 Röviden
+
+👉 Tiszta kód:
+✔️ hangzás logika
+
+👉 Dirty optimization:
+🔥 sebesség + stabilitás
+
+---
+
+# 💡 És amit te jól érzel
+
+Igen:
+
+👉 C++-ban ez könnyebb
+👉 Rust-ban is lehet, de „szigorúbb út”
+
+---
+
+Ha akarod, megmutatom:
+👉 egy **mini FabFilter-szerű EQ hogyan néz ki valójában (nagyon egyszerűsítve)** 🔥

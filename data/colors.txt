@@ -1,0 +1,40 @@
+colors , színek
+red , piros
+Yellow , sárga
+blue , kék
+orange , narancssárga
+recognizing , felismerés
+skills , készségek
+vocabulary , szókincs
+Trace , kövessd nyomon
+such as , például
+for example , például
+and have her repeat , kérd meg hogy ismételje meg
+pink , rózsaszín
+Ask question , tegyél fel kérdéseket
+purple , lila
+green , zöld
+brown , barna
+repeat , ismétlés
+What does he have on?  , Mi van rajta?
+Have your child finish , fejezze be a gyerekével
+black , fekete
+white , fehér
+how do you spell it? , Hogyan kell leírni?
+journalist , újságíró
+order , parancs
+listen and order , Hallgasd és tedd sorba
+checking into a hotel , jelentkezz be egy szállódába
+how do you spell it? , hogyan kell leírni
+you're in room three two one , A te szobád a 321-es
+i have a reservation , van egy foglalásom
+phrases , kifejezések
+the alphabet , az ábécé
+we don't care , minket nem érdekel
+conversation , beszélgetés
+complete it with words , egészísd ki a szavakat
+grammar , nyelvtan
+launches , indítások
+perhaps , talán
+
+
