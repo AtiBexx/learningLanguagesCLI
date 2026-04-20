@@ -22,10 +22,10 @@ unsigned long long wordCount = 0;
 void choiceMenu()
 {
     // nyelvi fájlok
-    const VocabMenu &vocabMenu = vocabMenuTranslations[static_cast<int>(currentLanguage)];
+    const VocabMenu &vocabMenu = vocabMenuTranslations[static_cast<int>(programUiLanguage)];
 
-    // létező szavak viszgálata
-    std::vector<WordPair> existingWords = loadwords(fullPath);
+    // létező szavak vizsgálata
+    std::vector<WordPair> existingWords = loadWords(fullPath);
     mode = std::ios::app; // Alapértelmezett
     choice = 0;
 

@@ -8,12 +8,13 @@
 #include <string>
 
 extern bool useColors; // "extern" = valahol létezik egy ilyen változó
-extern std::string currentBG;
-extern int currentBG_Code; //háttérszín kód
+extern std::string currentBG; // for empty string || az üres stringhez
+extern int currentBG_Code; //háttérszín kód || background color code
 
 
 namespace colors {
     //========SZÖVEGSZÍNEK===========
+    //========TEXT COLORS===========
 
     const std::string RESET = "\033[0m"; //eredeti szövegszín
     const std::string RED   = "\033[31m"; //piros
@@ -29,6 +30,7 @@ namespace colors {
 
 
     //===========SZÖVEG TÍPUSOK==============
+    //============TEXT TYPES==============
 
     const std::string BOLD = "\033[1m"; //félkövér szöveg
     const std::string UNDERLINE = "\033[4m"; //aláhúzott szöveg
@@ -37,6 +39,7 @@ namespace colors {
     const std::string HIDDEN = "\033[8m"; // láthatatlan szöveg
 
     //========HÁTTÉRSZÍNEK===============
+    //========BACKGROUNDSCOLORS==========
 
     const std::string BG_RED = "\033[41m"; //piros
     const std::string BG_GREEN = "\033[42m"; //zöld
@@ -50,6 +53,7 @@ namespace colors {
     const std::string BG_GREY = "\033[100m";
 
     //=========világos (bright) verziók========
+    //=========Brigth version==================
 
     const std::string BRIGHT_RED = "\033[91m"; // piros
     const std::string BRIGHT_GREEN = "\033[92m"; // zöld

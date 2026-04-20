@@ -1,6 +1,24 @@
-//
-// Created by AtiBexx2 on 2026. 03. 24.
-//
+/**
+ * @file cliFileReading.cpp
+ * @brief CLI file and folder management implementation / CLI fájl- és mappakezelő megvalósítás
+ *
+ * @details
+ * EN:
+ * Implements command-line file and directory operations such as:
+ * - Safe path validation
+ * - Copying, deleting, moving, renaming
+ * - File editing using external editor
+ * - Directory listing (cross-platform: Windows / Linux)
+ * - Interactive navigation and selection
+ *
+ * HU:
+ * Parancssoros fájl- és mappakezelő műveletek megvalósítása:
+ * - Biztonságos útvonal ellenőrzés
+ * - Másolás, törlés, áthelyezés, átnevezés
+ * - Fájl szerkesztése külső editorral
+ * - Könyvtár listázás (Windows / Linux támogatás)
+ * - Interaktív navigáció és kiválasztás
+ */
 
 #include "cliFileReading.h"
 #include <iostream>
@@ -30,7 +48,31 @@ using std::cout;
 using std::endl;
 
 // --- BIZTONSÁGI ÉS FÁJLKEZELŐ SEGÉDFÜGGVÉNYEK ---
+// --- SECURITY AND FILE HANDLING UTILITIES ---
 
+/**
+ * @brief Path safety validation / Útvonal biztonsági ellenőrzés
+ *
+ * @param path Input file or directory path
+ * @return true if safe, false otherwise
+ *
+ * @details
+ * EN:
+ * Validates the given path to prevent dangerous operations.
+ * Blocks:
+ * - Empty or too long paths
+ * - ".." directory traversal
+ * - Dangerous commands (e.g. rm, format)
+ * - Invalid characters
+ *
+ * HU:
+ * Ellenőrzi az útvonal biztonságosságát.
+ * Tiltja:
+ * - Üres vagy túl hosszú útvonalakat
+ * - ".." könyvtár visszalépést
+ * - Veszélyes parancsokat (pl. rm, format)
+ * - Érvénytelen karaktereket
+ */
 bool isPathSafe(const std::string& path) {
     if (path.empty() || path.length() > 255) return false;
     if (path.find("..") != std::string::npos) return false;
@@ -41,27 +83,70 @@ bool isPathSafe(const std::string& path) {
     });
 }
 
+/**
+ * @brief Copy file or folder / Fájl vagy mappa másolása
+ *
+ * @param srcPath Source path
+ * @param isDirectory True if directory
+ *
+ * @details
+ * EN:
+ * Copies a file or directory using system commands.
+ * Uses platform-specific commands (Windows/Linux).
+ *
+ * HU:
+ * Fájlt vagy mappát másol rendszerparancsok segítségével.
+ * Platformfüggő megoldást használ (Windows/Linux).
+ */
 void copyFileFolders(const std::string& srcPath, bool isDirectory) {
-    if (!isPathSafe(srcPath)) { cout << "Hiba: Veszelyes forras utvonal!" << endl; return; }
-    cout << "Masolando: " << srcPath << endl;
-    cout << "Uj nev/utvonal: ";
+    const struct CopyFileFolders &CFF = copyFileFoldersTranslations [static_cast<int>(programUiLanguage)];
+
+    if (!isPathSafe(srcPath))
+    {
+        logError("copyFileFolders", "Dangerous source path: " + srcPath);
+
+        cout << CFF.errorDangerousPath << endl;
+        return;
+    }
+    cout << CFF.toBeCopied << srcPath << endl;
+    cout << CFF.newNameNewPath;
     string destName; std::getline(std::cin, destName);
     string destPath = trim(destName);
-    if (!isPathSafe(destPath)) { cout << "Hiba: Veszelyes cel utvonal!" << endl; std::cin.get(); return; }
+    if (!isPathSafe(destPath)) { cout << CFF.errorDangerousGoalAndPath << endl; std::cin.get(); return; }
     string command;
 #ifdef _WIN32
     command = isDirectory ? "xcopy /E /I /H /Y \"" + srcPath + "\" \"" + destPath + "\"" : "copy /Y \"" + srcPath + "\" \"" + destPath + "\"";
 #else
     command = "cp -r -p \"" + srcPath + "\" \"" + destPath + "\"";
 #endif
-    if (std::system(command.c_str()) == 0) cout << "Sikeres masolas!" << endl;
-    else cout << "Hiba tortent!" << endl;
+    if (std::system(command.c_str()) == 0) cout << CFF.successCopying << endl;
+    else cout << CFF.anErrorOccurred << endl;
     std::cin.get();
 }
 
+/**
+ * @brief Delete file or folder / Fájl vagy mappa törlése
+ *
+ * @param fullPath Target path
+ * @param isDirectory True if directory
+ *
+ * @details
+ * EN:
+ * Deletes file or directory after user confirmation.
+ *
+ * HU:
+ * Törli a fájlt vagy mappát felhasználói megerősítés után.
+ */
 void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
-    if (!isPathSafe(fullPath)) { cout << "Hiba: Veszelyes utvonal!" << endl; std::cin.get(); return; }
-    cout << "Biztosan torolni szeretned: " << fullPath << "? (y/n): ";
+    const struct DeleteFileFolders &DDFF = deleteFileFoldersTranslations [static_cast<int>(programUiLanguage)];
+
+    if (!isPathSafe(fullPath))
+    {
+        logError("deleteFileFolders", DDFF.errorDfDangerousPath + fullPath);
+        cout << DDFF.errorDfDangerousPath << endl; std::cin.get();
+        return;
+    }
+    cout << DDFF.confirmationDelete << fullPath << "? (y/n): ";
     string confirm; std::getline(std::cin, confirm);
     if (toLowerCase(trim(confirm)) != "y") return;
     string command;
@@ -70,13 +155,28 @@ void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
 #else
     command = isDirectory ? "rm -rf \"" + fullPath + "\"" : "rm -f \"" + fullPath + "\"";
 #endif
-    if (std::system(command.c_str()) == 0) std::cout << "Sikeresen torolve!" << std::endl;
+    if (std::system(command.c_str()) == 0) std::cout << DDFF.successDelete << std::endl;
     std::cin.get();
 }
 
+/**
+ * @brief Move file or folder / Fájl vagy mappa áthelyezése
+ *
+ * @param srcPath Source path
+ * @param isDirectory True if directory
+ *
+ * @details
+ * EN:
+ * Moves file or directory to a new location.
+ *
+ * HU:
+ * Áthelyezi a fájlt vagy mappát egy új helyre.
+ */
 void movingFileFolders(const std::string& srcPath, bool isDirectory) {
+    const struct MovingFileFolders &MFF = movingFileFoldersTranslations [static_cast<int>(programUiLanguage)];
+
     if (!isPathSafe(srcPath)) return;
-    cout << "Athelyezendo: " << srcPath << "\nUj nev/utvonal: ";
+    cout << MFF.toBeMoved << srcPath << MFF.newNameNewPath;
     string destName; std::getline(std::cin, destName);
     string destPath = trim(destName);
     if (!isPathSafe(destPath)) return;
@@ -90,9 +190,25 @@ void movingFileFolders(const std::string& srcPath, bool isDirectory) {
     std::cin.get();
 }
 
+/**
+ * @brief Rename file or folder / Fájl vagy mappa átnevezése
+ *
+ * @param srcPath Original path
+ * @param isDirectory True if directory
+ *
+ * @details
+ * EN:
+ * Renames a file or directory while preserving its location.
+ *
+ * HU:
+ * Átnevezi a fájlt vagy mappát a hely megtartásával.
+ */
 void reNameFileFolders(const std::string& srcPath, bool isDirectory) {
+    const RenameFilesAndFolders &RFAF = renameFilesAndFoldersTranslations [static_cast<int>(programUiLanguage)];
+
     if (!isPathSafe(srcPath)) return;
-    cout << "Atnevezendo: " << srcPath << "\nUj nev: ";
+    cout << RFAF.toBeRenamed << srcPath << RFAF.newName;
+
     string newName; std::getline(std::cin, newName);
     newName = trim(newName);
     size_t lastSlash = srcPath.find_last_of("/\\");
@@ -108,11 +224,46 @@ void reNameFileFolders(const std::string& srcPath, bool isDirectory) {
     std::cin.get();
 }
 
+/**
+ * @brief Open file in editor / Fájl megnyitása szerkesztőben
+ *
+ * @param fullPath File path
+ *
+ * @details
+ * EN:
+ * Opens file using platform-specific CLI editor.
+ *
+ * HU:
+ * Megnyitja a fájlt platformfüggő parancssoros szerkesztővel.
+ */
 void editFile(const std::string& fullPath) {
     if (isPathSafe(fullPath)) openFileInEditor(fullPath);
     std::cin.get();
 }
 
+/**
+ * @brief List directory contents / Könyvtár tartalmának listázása
+ *
+ * @param directory Target directory
+ * @return vector of FileEntry
+ *
+ * @details
+ * EN:
+ * Lists files and folders in a directory.
+ * Filters only:
+ * - directories
+ * - ".data" files
+ *
+ * Supports Windows and Linux.
+ *
+ * HU:
+ * Kilistázza a könyvtár tartalmát.
+ * Csak:
+ * - mappák
+ * - ".data" fájlok
+ *
+ * Windows és Linux támogatással.
+ */
 // Segédfüggvény a fájlok és mappák listázására
 vector<FileEntry> listFiles(const std::string &directory) {
     vector<FileEntry> entriesFolderAndFiles;
@@ -126,6 +277,7 @@ vector<FileEntry> listFiles(const std::string &directory) {
             if (filename != "." && filename != "..") {
                 bool isDir = (findFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) != 0;
                 // SZŰRÉS: Csak mappák vagy .data fájlok
+                // FILTER: Only folders or .data files
                 if (isDir || (filename.size() >= 5 && filename.substr(filename.size() - 5) == ".data")) {
                     FileEntry entry; entry.name = filename; entry.isDirectory = isDir;
                     entriesFolderAndFiles.push_back(entry);
@@ -157,16 +309,38 @@ vector<FileEntry> listFiles(const std::string &directory) {
     return entriesFolderAndFiles;
 }
 
+/**
+ * @brief Interactive file navigator / Interaktív fájlböngésző
+ *
+ * @details
+ * EN:
+ * Provides CLI navigation inside "./data" directory.
+ * Features:
+ * - Navigate folders
+ * - Select files
+ * - Start quiz for ".data" files
+ * - Basic command handling
+ *
+ * HU:
+ * Parancssoros navigációt biztosít a "./data" mappában.
+ * Funkciók:
+ * - Mappák közötti lépkedés
+ * - Fájl kiválasztás
+ * - ".data" fájl esetén quiz indítás
+ * - Alap parancskezelés
+ */
 void listAndSelectFile() {
+    const ListAndSelectedFile &LASFile = listAndSelectedFilesTranslations [static_cast<int>(programUiLanguage)];
+
     const string ROOT_DIR ="./data";
     string path = ROOT_DIR;
     for (;;) {
         screenWipe();
-        cout << "--- Jelenlegi mappa: " << path << " ---\n";
+        cout << LASFile.currentlyFolder << path << " ---\n";
         vector<FileEntry> entries = listFiles(path);
-        if (entries.empty()) cout << "(Ures mappa)\n";
-        else for (const auto& e : entries) cout << (e.isDirectory ? "[MAPPA] " : "        ") << e.name << "\n";
-        cout << "---------------------------------------\nParancsok: nev, .., del, cp, mv, rn, edit, exit\nValasztas: ";
+        if (entries.empty()) cout << LASFile.emptyFolder;
+        else for (const FileEntry& e : entries) cout << (e.isDirectory ? LASFile.isDirectory : "        ") << e.name << "\n";
+        cout << LASFile.commands;
         string input; std::getline(std::cin, input);
         input = trim(input);
         if (toLowerCase(input) == "exit") return;
@@ -175,15 +349,23 @@ void listAndSelectFile() {
             continue;
         }
         // ... (Parancsok kezelése del, cp, mv, rn, edit ugyanúgy marad) ...
-        // Itt egy rövidített verzió a fájl megnyitásához:
+        // a fájl megnyitásához
+        // ... (Command handling del, cp, mv, rn, edit remains the same) ...
+        // to open the file
         bool found = false; bool isDir = false;
         for (const auto& e : entries) if (e.name == input) { found = true; isDir = e.isDirectory; break; }
         if (found) {
             string fullPath = path;
-             path.append("/").append(input);
+             fullPath.append("/").append(input);
             if (isDir) path = fullPath;
             else if (fullPath.size() >= 5 && fullPath.substr(fullPath.size() - 5) == ".data") {
-                startQuiz(loadwords(fullPath));
+                startQuiz(loadWords(fullPath));
+            }else {
+                const LlistAndSelectedFile &LlSF = LlistAndSelectedFileTranslations [static_cast<int>(programUiLanguage)];
+
+                logError("listAndSelectFile", LlSF.errorFile  + fullPath);
+                cout << LlSF.errorFile << endl;
+                waitToEnter();
             }
         }
     }

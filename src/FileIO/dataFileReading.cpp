@@ -1,6 +1,42 @@
-//
-// Created by AtiBexx2 on 2026. 03. 20.
-//
+/**
+ * @file dataFileReading.cpp
+ * @author AtiBexx2
+ * @date 2026-03-20
+ *
+ * @brief Implementation of file reading and word processing utilities.
+ *        Fájlbeolvasó és szófeldolgozó segédfüggvények implementációja.
+ *
+ * @details
+ * EN:
+ * This source file contains the implementation of helper functions used for:
+ * - Converting strings to lowercase
+ * - Trimming whitespace from strings
+ * - Checking user answers against multiple valid answers
+ * - Loading word pairs from .data files
+ *
+ * The module is designed for CLI-based quiz applications where word pairs
+ * (English -> Hungarian) are stored in text files and processed dynamically.
+ *
+ * It also supports:
+ * - Optional pronunciation parsing using [brackets]
+ * - Flexible separators (-> or >)
+ * - Input normalization for reliable comparison
+ *
+ * HU:
+ * Ez a forrásfájl tartalmazza a segédfüggvények implementációját, amelyek:
+ * - Sztringek kisbetűssé alakítására szolgálnak
+ * - Felesleges szóközök eltávolítását végzik (trim)
+ * - Felhasználói válaszok összehasonlítását több lehetséges helyes válasszal
+ * - Szópárok betöltését végzik .data fájlokból
+ *
+ * A modul kifejezetten parancssoros (CLI) kvíz alkalmazásokhoz készült,
+ * ahol az angol-magyar szópárok fájlokban vannak tárolva.
+ *
+ * Támogatja továbbá:
+ * - Kiejtés feldolgozását [zárójelek] között
+ * - Rugalmas elválasztókat (-> vagy >)
+ * - Bevitel normalizálást a pontos összehasonlításhoz
+ */
 
 #include "dataFileReading.h"
 #include <string>
@@ -8,6 +44,9 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+
+#include "generalFunctions.h"
+#include "translations.h"
 
 
 //Régi stílus a röviditésre
@@ -22,7 +61,9 @@ using std::ifstream;
 //using std::getline; vagy auto getline = std::getline;
 using std::getline;
 
+
 //kisbetüsítésre átalakítunk mindent kisbetűre
+//convert everything to lowercase
 string toLowerCase(string s) {
     //Nagybetűsítésre ::toupper a tolower helyett
     transform(s.begin(),s.end(),s.begin(), ::tolower);
@@ -50,6 +91,7 @@ string toLowerCase(string s) {
 
 
 // függvény a szóközök levágására (trim)
+// function to trim spaces (trim)
 string trim(const std::string& str) {
     //megkeressük az első karaktert ami nem szóköz
     size_t first = str.find_first_not_of(" \t\n\r");
@@ -63,13 +105,14 @@ string trim(const std::string& str) {
 }
 
 //függvény a helyes válaszok ellenőrzésére/összehasonlítására
+//function to check/compare correct answers
 bool checkMultipleAnswers(const std::string& userAnswer, const std::string& correctAnswersString) {
-    string trimmedUserAnswer = toLowerCase(trim(userAnswer));
+    string cleanedUserAnswer = cleanString(userAnswer);
     stringstream ss(trim(correctAnswersString));
     string slice;
 
     while (getline(ss, slice, ',')) {
-        if (toLowerCase(trim(slice)) == trimmedUserAnswer) {
+        if (cleanString(slice) == cleanedUserAnswer) {
             return true;
         }
     }
@@ -77,13 +120,17 @@ bool checkMultipleAnswers(const std::string& userAnswer, const std::string& corr
 }
 
 // A szavak betöltése a fájlból
-vector<WordPair> loadwords(const std::string &filename) {
+// Load words from file
+vector<WordPair> loadWords(const std::string &filename) {
     vector<WordPair> words;
     ifstream file(filename);
     string line;
-// ha megnyitjuk a fájlt
+
     if (!file.is_open()) {
-        std:: cerr << "Hiba a fájlt nem sikerült megnyitni:" <<filename << std::endl;
+        const W_wordPair &wWordPair = wordPairErrorTranslations [static_cast<int>(programUiLanguage)];
+        logError("loadWords", wWordPair.ErrorOpenedFile);
+
+        std:: cerr << wWordPair.ErrorOpenedFile <<" "<<filename << std::endl;
         return words;
     }
     while (getline(file, line)) {
@@ -92,6 +139,7 @@ vector<WordPair> loadwords(const std::string &filename) {
         WordPair currentWord;
 
         //Megkeresük a kiejtést ha van [ ] között
+        //Find the pronunciation if it is between [ ]
         size_t openBracket = line.find('[');
         size_t closeBracket = line.find(']' , openBracket);
 
@@ -102,27 +150,34 @@ vector<WordPair> loadwords(const std::string &filename) {
         }
 
         //Megkeresük az elválasztó vonalat
+        //Find the dividing line
         size_t separatorPos = line.find("->");
-        int skipChars = 2;// 2 karaktert ugrunk mert"->" ez 2 karakter és ez után olvasunk
-        // Ha nincs meg megkerük ezt '>' ez "->" helyett
+
+        // 2 karaktert ugrunk mert"->" ez 2 karakter és ez után olvasunk
+        // we skip 2 characters because "->" is 2 characters and we read after that
+        int skipChars = 2;
+
+        // Ha nincs meg megkeressük ezt '>' ez "->" helyett
+        // If it doesn't exist, we'll look for this '>' instead of "->"
         if (separatorPos == string::npos) {
             separatorPos = line.find('>');
-            skipChars = 1; //itt csak egyet ugrunk
+            skipChars = 1; //itt csak egyet ugrunk || just one jumping here
         }
 
         if (separatorPos != string::npos) {
-            currentWord.english = line.substr(0, separatorPos);
+            currentWord.targetLangMeaning = line.substr(0, separatorPos);
 
             size_t hungarianStart = separatorPos + skipChars;
             if (hungarianStart < line.length()) {
-                currentWord.hungarian = line.substr(hungarianStart);
+                currentWord.motherLangMeaning = line.substr(hungarianStart);
     }
             //Trim
-            currentWord.english = trim(currentWord.english);
-            currentWord.hungarian = trim(currentWord.hungarian);
+            currentWord.targetLangMeaning = trim(currentWord.targetLangMeaning);
+            currentWord.motherLangMeaning = trim(currentWord.motherLangMeaning);
 
             // Ha az angol szó és a magyar szó se üres akkor rakjuk be a vektorba
-            if (!currentWord.english.empty() && !currentWord.hungarian.empty()) {
+            // If neither the English word nor the Hungarian word is empty, insert it into the vector
+            if (!currentWord.targetLangMeaning.empty() && !currentWord.motherLangMeaning.empty()) {
                 words.push_back(currentWord);
             }
         }

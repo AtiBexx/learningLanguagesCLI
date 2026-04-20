@@ -17,55 +17,61 @@
 #include "Settings/settings.h"
 
 
-Language currentLanguage = Language::HUNGARIAN;
-
-void menu() {
+void mainMenu() {
     for (;;) {
         screenWipe();
-        const MenuStrings &menuStrs = menuTranslations[static_cast<int>(currentLanguage)];
+        const MenuStrings &menuStrs = mainMenuTranslations[static_cast<int>(programUiLanguage)];
 
-        std::cout << menuStrs.title << std::endl;
+        std::cout << menuStrs.titleAndSigns << std::endl;
         std::cout << menuStrs.programExplanation << std::endl;
         std::cout << menuStrs.startProgram << std::endl;
-        std::cout << menuStrs.mistakeExecise << std::endl;
+        std::cout << menuStrs.mistakeExercise << std::endl;
         std::cout << menuStrs.newFile << std::endl;
         std::cout << menuStrs.settings << std::endl;
         std::cout << menuStrs.exit << std::endl;
         std::cout << menuStrs.signs << std::endl;
 
         choice = 5;
-        const NumberOutput &numStrs = numberOutputTranslations[static_cast<int>(currentLanguage)];
+        const NumberOutput &numStrs = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
         std::cout << numStrs.numberOutput;
 
         if (!(std::cin >> choice)) {
             screenWipe();
-            const InvalidInput &invalidinput = invalidInputTranslations[static_cast<int>(currentLanguage)];
-            const EnteringBack &enteringback = enteringBackTranslations[static_cast<int>(currentLanguage)];
 
+            // Load error messages
+            // Betöltjük az hibaüzeneteket
+            const InvalidInput &invalidinput = invalidInputTranslations[static_cast<int>(programUiLanguage)];
+
+            // Clear input buffer
+            // Megtisztitjuk a bemeneti buffert
             std::cin.clear();
             pufferDelete();
 
-            std::cout << invalidinput.invalidInput << std::endl;
-            std::cout << enteringback.enteringBack << std::endl;
-            std::cin.get();
+            logError("mainMenu", invalidinput.invalidInput);
+            std::cerr << invalidinput.invalidInput <<"\n";
+            waitToEnter();
             continue;
         }
 
         switch (choice) {
             case 0:
+            pufferDelete();
                 explanation();
                 break;
             case 1:
-                screenWipe();
+                pufferDelete();
                 listAndSelectFile();
                 break;
             case 2:
+                pufferDelete();
                 mistakeExercise();
                 break;
             case 3:
+                pufferDelete();
                 createVocab();
                 break;
             case 4:
+                pufferDelete();
                 settings();
                 break;
             case 5:
@@ -73,14 +79,13 @@ void menu() {
                 return;
             default:
                 screenWipe();
-                const InvalidInput2 &invalidinput2 = invalidInputTranslations2[static_cast<int>(currentLanguage)];
-                const EnteringBack &enteringback = enteringBackTranslations[static_cast<int>(currentLanguage)];
-                std::cout << invalidinput2.invalidInput2 << std::endl;
+                const InvalidInput2 &invalidinput2 = invalidInputTranslations2[static_cast<int>(programUiLanguage)];
 
-                pufferDelete();//szükséges
+                logError("mainMenu", invalidinput2.invalidInput2);
+                std::cerr << invalidinput2.invalidInput2 << "\n";
 
-                std::cout << enteringback.enteringBack << std::endl;
-                std::cin.get();
+                pufferDelete();
+                waitToEnter();
         }
     }
 }

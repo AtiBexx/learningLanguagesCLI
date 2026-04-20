@@ -11,7 +11,7 @@
 #include <vector>
 #include <fstream>
 
-extern bool useColors;
+//bool useColors;
 
 void mistakeExercise() {
     std::string path;
@@ -21,57 +21,60 @@ void mistakeExercise() {
     path = "data/mistakes/mistakes.data";
 #endif
 
-    const EnteringBack& back = enteringBackTranslations[static_cast<int>(currentLanguage)];
-    const GoodAnswer1& goodAns = goodAnswer1Translations[static_cast<int>(currentLanguage)];
-    const BadlyAnswer& badAns = badlyAnswerTranslations[static_cast<int>(currentLanguage)];
+    const GoodAnswer2& goodAns2 = goodAnswer2Translations[static_cast<int>(programUiLanguage)];
+    const GoodAnswer1& goodAns = goodAnswer1Translations[static_cast<int>(programUiLanguage)];
+    const BadlyAnswer& badAns = badlyAnswerTranslations[static_cast<int>(programUiLanguage)];
+    const MistakeExercise& mistakeExercise = mistakeExerciseTranslations[static_cast<int>(programUiLanguage)];
 
-    // 1. Beolvassuk a hibákat
-    std::vector<WordPair> mistakeWords = loadwords(path);
+    // Beolvassuk a hibákat
+    // Read the errors
+    std::vector<WordPair> mistakeWords = loadWords(path);
 
     if (mistakeWords.empty()) {
-        const HaveNoWords& msg = haveNoWordsTranslations[static_cast<int>(currentLanguage)];
+        const HaveNoWords& msg = haveNoWordsTranslations[static_cast<int>(programUiLanguage)];
         screenWipe();
         std::cout << msg.haveNoWords << std::endl;
-        std::cout << back.enteringBack << std::endl;
-        std::cin.get();
+        waitToEnter();
         return;
     }
 
-    // 2. Itt fogjuk tárolni azokat, amiket MOST is elrontasz
+    // Itt tároljuk az elrontott hibákat
+    // This is where we store the corrupted errors
     std::vector<WordPair> stillMistakes;
 
-    // 3. Lefuttatjuk a kvízt a hibalistán
-    for (const auto& word : mistakeWords) {
+    //  Lefuttatjuk a kvízt a hibalistán
+    //  Run the quiz on the error list
+    for (const WordPair& word : mistakeWords) {
         screenWipe();
-        std::cout << "--- HIBÁS SZAVAK GYAKORLÁSA ---" << std::endl;
-        std::cout << "Szo: " << word.hungarian << std::endl;
-        std::cout << "Valasz: ";
+        std::cout << mistakeExercise.practiceOfWrongWord << std::endl;
+        std::cout << mistakeExercise.word << word.motherLangMeaning << std::endl;
+        std::cout << mistakeExercise.answer;
 
         std::string answer;
         std::getline(std::cin, answer);
 
-        if (toLowerCase(trim(answer)) == toLowerCase(word.english)) {
+        //if (toLowerCase(removePunctuation(trim(answer))) == toLowerCase(removePunctuation(trim(word.targetLangMeaning)))){
+        if (cleanString(answer) == cleanString(word.targetLangMeaning)) {
             if (useColors) std::cout << colors::GREEN;
             std::cout << goodAns.goodAnswer1;
             if (useColors) std::cout << colors::RESET;
-            std::cout << "\n" << back.enteringBack << std::endl;
-            std::cin.get();
+            waitToEnter();
         } else {
             if (useColors) std::cout << colors::RED;
             std::cout << badAns.badlyAnswer;
             if (useColors) std::cout << colors::RESET;
-            std::cout << "\nA helyes: " << word.english << std::endl;
+            std::cout << "\n"<<goodAns2.goodAnswer2 << word.targetLangMeaning << std::endl;
             stillMistakes.push_back(word); // Benne hagyjuk a listában
-            std::cout << back.enteringBack << std::endl;
-            std::cin.get();
+            waitToEnter();
         }
     }
 
-    // 4. A FÁJL ÚJRAÍRÁSA a megmaradt hibákkal
+    // A FÁJL ÚJRAÍRÁSA a megmaradt hibákkal
+    // OVERWRITE THE FILE with remaining errors
     std::ofstream outFile(path, std::ios::out | std::ios::trunc);
     if (outFile.is_open()) {
-        for (const auto& word : stillMistakes) {
-            outFile << word.english << " -> " << word.hungarian;
+        for (const WordPair& word : stillMistakes) {
+            outFile << word.targetLangMeaning << " -> " << word.motherLangMeaning;
             if (!word.pronunciation.empty()) outFile << " [" << word.pronunciation << "]";
             outFile << "\n";
         }
@@ -79,7 +82,6 @@ void mistakeExercise() {
     }
 
     screenWipe();
-    std::cout << "A gyakorlas veget ert! Megmaradt hibak szama: " << stillMistakes.size() << std::endl;
-    std::cout << back.enteringBack << std::endl;
-    std::cin.get();
+    std::cout << mistakeExercise.exerciseEnd << stillMistakes.size() << std::endl;
+    waitToEnter();
 }

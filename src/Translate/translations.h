@@ -9,37 +9,37 @@
 enum class Language {
     HUNGARIAN , // Represents 0
     ENGLISH  ,   // Represents 1
-    CHINESE,
-    JAPANESE,
-    SPANISH,
-    GERMAN,
-    FRENCH,
-    RUSSIAN,
-    UKRAINIAN,
-    KOREAN,
-    ITALIAN,
-    POLISH,
-    ARABIC,
-    VIETNAMESE,
-    TAGALOG,
-    GREEK,
-    HEBREW,
-    PORTUGUESE,
-    FARSI,
-    SWEDISH,
-    DUTCH,
-    TURKISH,
-    HINDI,
-    LATIN
+    CHINESE, // Represents 2
+    JAPANESE, // Represents 3
+    SPANISH, // Represents 4
+    GERMAN, // Represents 5
+    FRENCH, // Represents 6
+    RUSSIAN, // Represents 7
+    UKRAINIAN, // Represents 8
+    KOREAN, // Represents 9
+    ITALIAN, // Represents 10
+    POLISH, // Represents 11
+    ARABIC, // Represents 12
+    VIETNAMESE, // Represents 13
+    TAGALOG, // Represents 14
+    GREEK, // Represents 15
+    HEBREW, // Represents 16
+    PORTUGUESE, // Represents 17
+    FARSI, // Represents 18
+    SWEDISH, // Represents 19
+    DUTCH, // Represents 20
+    TURKISH, // Represents 21
+    HINDI, // Represents 22
+    LATIN // Represents 23
 };
 
 // =======STRUCTS=========
 
 struct MenuStrings {
-    std::string title;
+    std::string titleAndSigns;
     std::string programExplanation;
     std::string startProgram;
-    std::string mistakeExecise;
+    std::string mistakeExercise;
     std::string newFile;
     std::string settings;
     std::string exit;
@@ -50,7 +50,7 @@ struct ExplanationStrings {
     std::string description;
     std::string instruction1;
     std::string instruction2;
-    std::string goodluck;
+    std::string goodLuck;
 };
 
 struct ExitingStrings {
@@ -61,8 +61,45 @@ struct NumberOutput {
     std::string numberOutput;
 };
 
-struct BackStrings {
-    std::string backStrings;
+struct ListAndSelectedFile
+{
+    std::string currentlyFolder;
+    std::string emptyFolder;
+    std::string isDirectory;
+    std::string commands;
+
+};
+
+struct RenameFilesAndFolders
+{
+    std::string toBeRenamed;
+    std::string newName;
+};
+struct MovingFileFolders
+{
+    std::string toBeMoved;
+    std::string newNameNewPath;
+
+};
+struct DeleteFileFolders
+{
+    std::string errorDfDangerousPath;
+    std::string confirmationDelete;
+    std::string successDelete;
+
+};
+struct CopyFileFolders
+{
+    std::string errorDangerousPath;
+    std::string toBeCopied;
+    std::string newNameNewPath;
+    std::string errorDangerousGoalAndPath;
+    std::string successCopying;
+    std::string anErrorOccurred;
+};
+struct W_wordPair
+{
+    std::string ErrorOpenedFile;
 };
 
 struct InvalidInput {
@@ -70,7 +107,7 @@ struct InvalidInput {
 };
 
 struct EnteringBack {
-    std::string enteringBack;
+    std::string pressToEnter;
 };
 struct InvalidInput2 {
     std::string invalidInput2;
@@ -78,12 +115,7 @@ struct InvalidInput2 {
 struct HaveNoWords {
     std::string haveNoWords;
 };
-struct Question1 {
-    std::string question1;
-};
-struct Question2 {
-    std::string question2;
-};
+
 struct ReTry {
     std::string reTry;
 };
@@ -153,32 +185,25 @@ struct VocabMenu
 };
 struct SettingsMenu
 {
-    std::string settingsMenuError1;
-    std::string settingsMenuError2;
-    std::string settingsMenu1;
-    std::string settingsMenu2;
-    std::string settingsMenu3;
-    std::string settingsMenu4;
-    std::string settingsMenu5;
-    std::string settingsMenu6;
-    std::string settingsMenu7;
-    std::string settingsMenu8;
+    std::string settingsMenuSign;
+    std::string chooseSettingsMenu;
+    std::string languageOptions;
+    std::string targetLanguageOptions;
+    std::string colorsOptions;
+    std::string soundOptions;
+    std::string accentsOptions;
+    std::string backMainMenu;
+    std::string settingsMenuSign2;
 };
 struct LanguageMenu
 {
     std::string languageMenu1Sign;
-    std::string option1;
-    std::string option2;
     std::string exiting;
     std::string choiceStr;
     std::string languageMenu2Sign;
+    std::string choiceSuccessProgramLanguage;
 };
-struct LanguageMenu2
-{
-    std::string Error1;
-    std::string Error2;
-    std::string choiceSucess1;
-};
+
 struct ColorsOnset
 {
     std::string colorsPrinting1;
@@ -188,8 +213,10 @@ struct ColorsOnset
     std::string colorsMenu1;
     std::string colorsMenu2;
     std::string colorsMenu3;
-    std::string colorsONON;
-    std::string colorsOFFOFF;
+    std::string choice;
+    std::string colorsOnOn;
+    std::string colorsOffOff;
+    std::string errorEntryDenied;
 };
 struct SaveSettings
 {
@@ -203,7 +230,16 @@ struct LearningLanguageSet
     std::string option1;
     std::string option2;
     std::string option3;
-    std::string option4;
+    std::string choice1;
+    std::string allChoice;
+    std::string motherSuccess;
+    std::string choice2;
+    std::string targetSuccess;
+    std::string choice;
+    std::string back;
+    std::string error;
+    std::string menuSigns;
+
 };
 struct TargetLanguageNameSet
 {
@@ -233,7 +269,7 @@ struct TargetLanguageNameSet
     std::string Latin;
 };
 
-struct TargetlanguageList
+struct targetLanguageList
 {
     std::string English;
     std::string Magyar;
@@ -261,6 +297,64 @@ struct TargetlanguageList
     std::string Latin;
 };
 
+struct LlistAndSelectedFile
+{
+    std::string errorFile;
+};
+
+struct OosEditor
+{
+    std::string run;
+    std::string errorWin32;
+    std::string errorLinux;
+};
+
+struct BackgroundSets
+{
+    std::string sign;
+    std::string DefaultBlack;
+    std::string green;
+    std::string cian;
+    std::string red;
+    std::string purple;
+    std::string blue;
+    std::string white;
+    std::string gray;
+    std::string stepBack;
+    std::string backgroundColorsChange;
+    std::string backGroundColor;
+};
+
+struct SoundOnOff
+{
+    std::string soundSet;
+    std:: string currentlyState;
+    std::string useSoundOn;
+    std::string useSoundOff;
+    std::string option1;
+    std::string useSoundOn2;
+    std::string useSoundOff2;
+};
+
+struct MistakeExercise
+{
+    std::string practiceOfWrongWord;
+    std::string word;
+    std::string answer;
+    std::string exerciseEnd;
+};
+
+struct SpellingOutAccents
+{
+    std::string accentsMenu;
+    std::string accentsState;
+    std:: string accentsState1Off;
+    std::string accentsState2On;
+    std::string accentsMenu1;
+    std::string accentsMenu2;
+    std::string accentsMenu3;
+};
+
 
 
 //======STRUCTS END========
@@ -268,17 +362,15 @@ struct TargetlanguageList
 // Itt mondjuk meg a main-nek az "extern" kulcsszóval, hogy ezek a vektorok
 // léteznek valahol máshol (a translations.cpp-ben), de itt hivatkozhat rájuk.
 
-extern const std::vector<MenuStrings> menuTranslations;
-extern const std::vector<NumberOutput> numberOutputTranslations;
+extern const std::vector<MenuStrings> mainMenuTranslations;
+extern const std::vector<NumberOutput> chooseNumberMenuTranslations;
 extern const std::vector<ExplanationStrings> explanationTranslations;
 extern const std::vector<ExitingStrings> exitingTranslations;
-extern const std::vector<BackStrings> backbackTranslations;
+extern const std::vector<ListAndSelectedFile> listAndSelectedFilesTranslations;
 extern const std::vector<InvalidInput> invalidInputTranslations;
-extern const std::vector<EnteringBack> enteringBackTranslations;
+extern const std::vector<EnteringBack> continuationToEnterTranslations;
 extern const std::vector<InvalidInput2> invalidInputTranslations2;
 extern const std::vector<HaveNoWords> haveNoWordsTranslations;
-extern const std::vector<Question1> question1Translations;
-extern const std::vector<Question2> question2Translations;
 extern const std::vector<ReTry> reTryTranslations;
 extern const std::vector<BadlyAnswer> badlyAnswerTranslations;
 extern const std::vector<GoodAnswer1> goodAnswer1Translations;
@@ -294,18 +386,38 @@ extern const std::vector<CreateVocab> createVocabTranslations;
 extern const std::vector<VocabMenu> vocabMenuTranslations;
 extern const std::vector<SettingsMenu> settingsMenuTranslations;
 extern const std::vector<LanguageMenu> languageMenuTranslations;
-extern const std::vector<LanguageMenu2> languageMenu2Translations;
 extern const std::vector<ColorsOnset> colorsOSetTranslations;
 extern const std::vector<SaveSettings> saveSettingsTranslations;
 extern const std::vector<LearningLanguageSet> learningLanguageSetTranslations;
 extern const std::vector<TargetLanguageNameSet> targetLanguageSetTranslations;
-extern const std::vector<TargetlanguageList> targetlanguagelistsTranslations;
+extern const std::vector<targetLanguageList> targetLanguageListTranslations;
+extern const std::vector<RenameFilesAndFolders> renameFilesAndFoldersTranslations;
+extern const std::vector<MovingFileFolders> movingFileFoldersTranslations;
+extern const std::vector<DeleteFileFolders> deleteFileFoldersTranslations;
+extern const std::vector<CopyFileFolders> copyFileFoldersTranslations;
+extern const std::vector<W_wordPair> wordPairErrorTranslations;
+extern const std::vector<LlistAndSelectedFile> LlistAndSelectedFileTranslations;
+extern const std::vector<OosEditor> OosEditorTranslations;
+extern const std::vector<BackgroundSets> backgroundSetsTranslations;
+extern const std::vector<SoundOnOff> soundOnOffTranslations;
+extern const std::vector<MistakeExercise> mistakeExerciseTranslations;
+extern const std::vector<SpellingOutAccents> spellingOutAccentsTranslations;
+
 
 
 
 // Nyelvi globális deklaráció érték
-extern Language currentLanguage; // A program nyelve
-extern Language motherLanguage; // Az anyanyelv enum értéke
-extern Language targetLanguage; // A tanult nyelv enum értéke
+extern Language programUiLanguage; // A program nyelve || the Program language
+extern Language motherLanguage; // Az anyanyelv enum értéke || The mother language
+extern Language targetLanguage; // A tanult nyelv enum értéke || The target language
+//===========================================
+/**
+ * @brief Global accent handling flag / Globális ékezetkezelési kapcsoló
+ *
+ * EN: Indicates whether accents are ignored or used.
+ * HU: Meghatározza, hogy az ékezetek figyelmen kívül vannak-e hagyva vagy sem.
+ */
+// globális változó || global state
+extern bool ignoreAccents; //Az ékezetek kezelésére || To handle accents
 
 #endif
