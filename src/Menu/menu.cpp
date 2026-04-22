@@ -22,19 +22,21 @@ void mainMenu() {
         screenWipe();
         const MenuStrings &menuStrs = mainMenuTranslations[static_cast<int>(programUiLanguage)];
 
-        std::cout << menuStrs.titleAndSigns << std::endl;
-        std::cout << menuStrs.programExplanation << std::endl;
-        std::cout << menuStrs.startProgram << std::endl;
-        std::cout << menuStrs.mistakeExercise << std::endl;
-        std::cout << menuStrs.newFile << std::endl;
-        std::cout << menuStrs.settings << std::endl;
-        std::cout << menuStrs.exit << std::endl;
-        std::cout << menuStrs.signs << std::endl;
+        std::cout << menuStrs.titleAndSigns <<"\n";
+        std::cout << menuStrs.programExplanation << "\n";
+        std::cout << menuStrs.startProgram << "\n";
+        std::cout << menuStrs.mistakeExercise << "\n";
+        std::cout << menuStrs.newFile << "\n";
+        std::cout << menuStrs.settings << "\n";
+        std::cout << menuStrs.exit << "\n";
+        std::cout << menuStrs.signs << "\n";
 
         choice = 5;
         const NumberOutput &numStrs = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
-        std::cout << numStrs.numberOutput;
+        std::cout << numStrs.numberOutput << std::flush;
 
+        // ha a cin nem szám
+        // if cin is not a number
         if (!(std::cin >> choice)) {
             screenWipe();
 
@@ -55,28 +57,33 @@ void mainMenu() {
 
         switch (choice) {
             case 0:
-            pufferDelete();
-                explanation();
-                break;
+                 playBeep();
+                 exiting();
+                 return;
             case 1:
                 pufferDelete();
-                listAndSelectFile();
+                explanation();
                 break;
             case 2:
                 pufferDelete();
-                mistakeExercise();
+                listAndSelectFile();
                 break;
             case 3:
                 pufferDelete();
-                createVocab();
+                mistakeExercise();
                 break;
             case 4:
                 pufferDelete();
-                settings();
+                createVocab();
                 break;
             case 5:
-                exiting();
-                return;
+                pufferDelete();
+                settings();
+                break;
+            case 6:
+                pufferDelete();
+                void openFileInEditor(); //TODO
+                break;
             default:
                 screenWipe();
                 const InvalidInput2 &invalidinput2 = invalidInputTranslations2[static_cast<int>(programUiLanguage)];

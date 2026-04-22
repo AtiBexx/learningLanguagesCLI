@@ -50,6 +50,12 @@ struct ExplanationStrings {
     std::string description;
     std::string instruction1;
     std::string instruction2;
+    std::string instruction3;
+    std::string instruction4;
+    std::string instruction5;
+    std::string instruction6;
+    std::string instruction7;
+    std::string instruction8;
     std::string goodLuck;
 };
 
@@ -183,6 +189,13 @@ struct VocabMenu
     std::string vocabError1;
     std::string vocabError2;
 };
+struct VocabFileCommands
+{
+    std::string commands1;
+    std::string commands2;
+    std::string commands3;
+    std::string commands4;
+};
 struct SettingsMenu
 {
     std::string settingsMenuSign;
@@ -192,6 +205,7 @@ struct SettingsMenu
     std::string colorsOptions;
     std::string soundOptions;
     std::string accentsOptions;
+    std::string oneRoundQuizOption;
     std::string backMainMenu;
     std::string settingsMenuSign2;
 };
@@ -354,6 +368,11 @@ struct SpellingOutAccents
     std::string accentsMenu2;
     std::string accentsMenu3;
 };
+struct CreateVocabListsFileAndFolders
+{
+    std::string currentlyFileandFolders;
+    std::string folderName;
+};
 
 
 
@@ -402,6 +421,8 @@ extern const std::vector<BackgroundSets> backgroundSetsTranslations;
 extern const std::vector<SoundOnOff> soundOnOffTranslations;
 extern const std::vector<MistakeExercise> mistakeExerciseTranslations;
 extern const std::vector<SpellingOutAccents> spellingOutAccentsTranslations;
+extern const std::vector<CreateVocabListsFileAndFolders> createVocabListsFileAndFoldersTranslations;
+extern const std::vector<VocabFileCommands> vocabFileCommandTranslate;
 
 
 
@@ -411,13 +432,8 @@ extern Language programUiLanguage; // A program nyelve || the Program language
 extern Language motherLanguage; // Az anyanyelv enum értéke || The mother language
 extern Language targetLanguage; // A tanult nyelv enum értéke || The target language
 //===========================================
-/**
- * @brief Global accent handling flag / Globális ékezetkezelési kapcsoló
- *
- * EN: Indicates whether accents are ignored or used.
- * HU: Meghatározza, hogy az ékezetek figyelmen kívül vannak-e hagyva vagy sem.
- */
+
 // globális változó || global state
 extern bool ignoreAccents; //Az ékezetek kezelésére || To handle accents
-
+extern bool oneRoundQuiz; // Ha true egy kör(for;;) ciklus false estén 2 kör || If true, one loop(for;;) loop, if false, 2 loops
 #endif

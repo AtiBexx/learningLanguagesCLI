@@ -63,4 +63,8 @@ void editFile(const std::string& fullPath);
 //To enable characters
 bool isPathSafe(const std::string& path);
 
+// megvizsgálja, hogy a megadott útvonal egy létező mappa
+// checks if the given path is an existing folder
+bool isDirectory(const std::string& path);
+
 #endif //ENGLISH_CLIFILEREADING_H

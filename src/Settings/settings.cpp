@@ -31,20 +31,11 @@ int currentBG_Code = 1;
 std:: string currentBG;
 bool useSound = false;
 bool ignoreAccents = false;
+bool oneRoundQuiz = false;
 
 
-/**
- * @brief Main settings menu / Fő beállítási menü
- *
- * @details
- * EN:
- * Displays the settings menu and processes user input in a loop.
- * Allows navigation between different configuration options.
- *
- * HU:
- * Megjeleníti a beállítások menüt és ciklusban kezeli a felhasználói inputot.
- * Lehetővé teszi a különböző beállítások közötti navigációt.
- */
+// fő beállítási menü
+// main settings menu
 void settings()
 {
     for (;;)
@@ -63,6 +54,7 @@ void settings()
         std::cout << settingsMenu.colorsOptions << std::endl;
         std::cout << settingsMenu.soundOptions << std::endl;
         std::cout << settingsMenu.accentsOptions << std::endl;
+        std::cout << settingsMenu.oneRoundQuizOption << std::endl;
         std::cout << settingsMenu.backMainMenu << std::endl;
         std::cout << settingsMenu.settingsMenuSign2 << std::endl;
         std::cout << numberoutput.numberOutput;
@@ -78,15 +70,16 @@ void settings()
         }
         catch (...)
         {
-            //Ha nem számot ír be akkor a 0-ra a default ágra ugrunk
-            //If you enter a non-number, we jump to the default branch at 0
-            choice = 0;
+            //Ha nem számot ír be akkor a 99-ra a default ágra ugrunk
+            //If you enter a non-number, we jump to the default branch at 99
+            choice = 99;
         }
-
         // A menü ugrásai
         // jumps of menu
         switch (choice)
         {
+        case 0:
+            return; //visszalépünk a főmenübe
         case 1:
             choiceLanguage();
             break;
@@ -103,10 +96,10 @@ void settings()
             accentsToggle();
             break;
         case 6:
-            return; //visszalépünk a főmenübe
+            oneRoundQuizToggle();
         default:
             screenWipe();
-            if (choice == 0)
+            if (choice == 99)
             {
                 screenWipe();
                 logError("SettingsMenu", invalidIinput2.invalidInput2);
@@ -274,31 +267,17 @@ void colorsOn()
     }
 }
 
-/**
- * @brief Save settings to file / Beállítások mentése
- *
- * @details
- * EN:
- * Writes current configuration into "settings.cfg".
- * The file stores language, colors, background and sound settings.
- *
- * HU:
- * Az aktuális beállításokat a "settings.cfg" fájlba menti.
- * Tartalmazza a nyelvet, színeket, háttérkódot és hang állapotot.
- *
- * @note
- * EN: Overwrites existing file.
- * HU: Felülírja a meglévő fájlt.
- */
+
 // Beállítások mentési logika
 // Elmenti a jelenlegi beállításokat egy fájlba
+// Felülírja a meglévő fájlt
 // Settings save logic
 // Saves the current settings to a file
+// Overwrites the existing file
 void saveSettings()
 {
     // nyelvi fájl
     const SaveSettings& saveSettings = saveSettingsTranslations[static_cast<int>(programUiLanguage)];
-
     // Biztonsági létrehozás
     // Security creation
 #ifdef _WIN32
@@ -320,6 +299,7 @@ std::ofstream outFile("settings.cfg"); //include <fstream>
         outFile << currentBG_Code << "\n";
         outFile << useSound << "\n";
         outFile << ignoreAccents << "\n";
+        outFile << oneRoundQuiz << "\n";
         outFile.close();
     }
     else
@@ -330,37 +310,23 @@ std::ofstream outFile("settings.cfg"); //include <fstream>
     }
 }
 
-/**
- * @brief Load settings from file / Beállítások betöltése
- *
- * @return true if successful
- * @return false if file not found or invalid
- *
- * @details
- * EN:
- * Reads configuration from "settings.cfg" and restores program state.
- *
- * HU:
- * Betölti a beállításokat a "settings.cfg" fájlból
- * és visszaállítja a program állapotát.
- */
 // Betölti a beállításokat a fájlból, ha az létezik
 // Loads settings from file if it exists
 bool loadSettings() {
     std::ifstream inFile("settings.cfg");
     if (inFile.is_open()) {
-        int lang , bgCode, tLang, mLang;;
+        int lang , bgCode, tLang, mLang;
+        bool IACode, color, oneRoundCode;
 
-        bool IACode;
-        bool color;
-        currentBG = "";
-        if (inFile >> lang >> mLang >> tLang >> color >> bgCode >> useSound >> IACode) {
+        currentBG =""; //colors::RESET; // Vagy ""
+        if (inFile >> lang >> mLang >> tLang >> color >> bgCode >> useSound >> IACode >> oneRoundCode) {
             programUiLanguage = static_cast<Language>(lang);
             motherLanguage = static_cast<Language>(mLang);
             targetLanguage = static_cast<Language>(tLang);
             useColors = color;
             currentBG_Code = bgCode;
             ignoreAccents = IACode;
+            oneRoundQuiz = oneRoundCode;
 
             //visszaállítjuk a számot színné
             //reset the number to color
@@ -740,6 +706,38 @@ void accentsToggle() {
             } else if (localChoice == 0) break;
         } catch (...) {
             logError("accentsToggle()" , II2.invalidInput2);
+            std::cerr << II2.invalidInput2 << "\n";
+            waitToEnter();
+        }
+    }
+}
+
+// Egy körös kvíz be és ki kapcsolása
+void oneRoundQuizToggle() {
+    for (;;) {
+        // Nyelvi hivatkozások
+        const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
+        // Itt kell egy új struct a translations.h-ba, pl. OneRoundQuizToggle
+        // const OneRoundQuizToggle &ORQT = oneRoundQuizToggleTranslations [static_cast<int>(programUiLanguage)];
+        // Egyelőre használjunk placeholder szöveget, amíg nem hozod létre a fordítást
+
+        screenWipe();
+        std::cout << "--- Egy koros kviz beallitas ---" << std::endl;
+        std::cout << "Jelenlegi allapot: " << (oneRoundQuiz ? "BEKAPCSOLVA" : "KIKAPCSOLVA") << std::endl;
+        std::cout << "1. Atkapcsolas\n0. Vissza\nValasztas: ";
+
+        std::string input;
+        std::getline(std::cin, input);
+        try {
+            int localChoice = std::stoi(input);
+            if (localChoice == 1) {
+                oneRoundQuiz = !oneRoundQuiz;
+                saveSettings();
+                std::cout << (oneRoundQuiz ? "Egy koros kviz BEKAPCSOLVA!" : "Egy koros kviz KIKAPCSOLVA!") << std::endl;
+                waitToEnter();
+            } else if (localChoice == 0) break;
+        } catch (...) {
+            logError("oneRoundQuizToggle()" , II2.invalidInput2);
             std::cerr << II2.invalidInput2 << "\n";
             waitToEnter();
         }

@@ -3,293 +3,295 @@
 //======Vectors===========
 
 // Menu'sVector
-const std::vector<MenuStrings> mainMenuTranslations = {
-    // HUNGARIAN (Index 0)
+const std::vector<MenuStrings> mainMenuTranslations {
+
+    // Hungarian (0)
     {
-        "============LANGUAGE-LEARNING-APP============",
-        "\n0. - A program magyarázata",
-        "1. - A program indítása",
-        "2. - A Hibák gyakorlása",
-        "3. - Új vocab fájl létrehozása",
-        "4. - Beállítások",
-        "5. - Kilépés",
-        "\n============================================="
+        "============NYELVTANULÓ-APP============",
+        "\n1. - A program magyarázata",
+        "2. - A program indítása",
+        "3. - A hibák gyakorlása",
+        "4. - Új szókincs fájl létrehozása",
+        "5. - Beállítások",
+        "0. - Kilépés",
+        "\n======================================="
     },
-    // ENGLISH (Index 1)
+
+    // English (1)
     {
-        "============LANGUAGE-LEARNING-APP============",
-        "\n0. - the Program of explanation",
-        "1. - Start Program",
-        "2. - The Mistake Exercise",
-        "3. - Create a new vocab file",
-        "4. - Settings",
-        "5. - Exit",
-        "\n==========================================="
+        "============LANGUAGE LEARNING APP============",
+        "\n1. - Program explanation",
+        "2. - Start program",
+        "3. - Practice mistakes",
+        "4. - Create new vocab file",
+        "5. - Settings",
+        "0. - Exit",
+        "\n============================================"
     },
-    // CHINESE (Index 2)
-{
-    "============语言学习应用============",
-    "\n0. - 程序说明",
-    "1. - 启动程序",
-    "2. - 错误练习",
-    "3. - 创建新词汇文件",
-    "4. - 设置",
-    "5. - 退出",
-    "\n===================================="
-},
 
-// JAPANESE (Index 3)
-{
-    "============言語学習アプリ============",
-    "\n0. - プログラムの説明",
-    "1. - プログラム開始",
-    "2. - ミスの練習",
-    "3. - 新しい単語ファイル作成",
-    "4. - 設定",
-    "5. - 終了",
-    "\n===================================="
-},
+    // Chinese (2)
+    {
+        "============语言学习应用============",
+        "\n1. - 程序说明",
+        "2. - 启动程序",
+        "3. - 练习错误",
+        "4. - 创建新词汇文件",
+        "5. - 设置",
+        "0. - 退出",
+        "\n===================================="
+    },
 
-// SPANISH (Index 4)
-{
-    "============APLICACIÓN DE IDIOMAS============",
-    "\n0. - Explicación del programa",
-    "1. - Iniciar programa",
-    "2. - Practicar errores",
-    "3. - Crear archivo de vocabulario",
-    "4. - Configuración",
-    "5. - Salir",
-    "\n============================================="
-},
+    // Japanese (3)
+    {
+        "============言語学習アプリ============",
+        "\n1. - プログラムの説明",
+        "2. - プログラム開始",
+        "3. - ミスの練習",
+        "4. - 新しい単語ファイル作成",
+        "5. - 設定",
+        "0. - 終了",
+        "\n===================================="
+    },
 
-// GERMAN (Index 5)
-{
-    "============SPRACHLERN-APP============",
-    "\n0. - Programmerklärung",
-    "1. - Programm starten",
-    "2. - Fehler üben",
-    "3. - Neue Vokabeldatei erstellen",
-    "4. - Einstellungen",
-    "5. - Beenden",
-    "\n====================================="
-},
+    // Spanish (4)
+    {
+        "============APP DE APRENDIZAJE DE IDIOMAS============",
+        "\n1. - Explicación del programa",
+        "2. - Iniciar programa",
+        "3. - Practicar errores",
+        "4. - Crear nuevo archivo de vocabulario",
+        "5. - Configuración",
+        "0. - Salir",
+        "\n===================================================="
+    },
 
-// FRENCH (Index 6)
-{
-    "============APPLICATION DE LANGUE============",
-    "\n0. - Explication du programme",
-    "1. - Démarrer le programme",
-    "2. - Pratiquer les erreurs",
-    "3. - Créer un fichier vocabulaire",
-    "4. - Paramètres",
-    "5. - Quitter",
-    "\n============================================="
-},
+    // German (5)
+    {
+        "============SPRACHLERN-APP============",
+        "\n1. - Programmbeschreibung",
+        "2. - Programm starten",
+        "3. - Fehler üben",
+        "4. - Neue Vokabeldatei erstellen",
+        "5. - Einstellungen",
+        "0. - Beenden",
+        "\n======================================"
+    },
 
-// RUSSIAN (Index 7)
-{
-    "============ПРИЛОЖЕНИЕ ДЛЯ ЯЗЫКОВ============",
-    "\n0. - Описание программы",
-    "1. - Запустить программу",
-    "2. - Практика ошибок",
-    "3. - Создать файл словаря",
-    "4. - Настройки",
-    "5. - Выход",
-    "\n============================================="
-},
+    // French (6)
+    {
+        "============APPLICATION D’APPRENTISSAGE DES LANGUES============",
+        "\n1. - Explication du programme",
+        "2. - Démarrer le programme",
+        "3. - Pratiquer les erreurs",
+        "4. - Créer un fichier vocabulaire",
+        "5. - Paramètres",
+        "0. - Quitter",
+        "\n==============================================================="
+    },
 
-// UKRAINIAN (Index 8)
-{
-    "============ДОДАТОК ДЛЯ ВИВЧЕННЯ МОВ============",
-    "\n0. - Опис програми",
-    "1. - Запустити програму",
-    "2. - Практика помилок",
-    "3. - Створити файл словника",
-    "4. - Налаштування",
-    "5. - Вихід",
-    "\n============================================="
-},
+    // Russian (7)
+    {
+        "============ПРИЛОЖЕНИЕ ДЛЯ ИЗУЧЕНИЯ ЯЗЫКОВ============",
+        "\n1. - Объяснение программы",
+        "2. - Запустить программу",
+        "3. - Практика ошибок",
+        "4. - Создать файл словаря",
+        "5. - Настройки",
+        "0. - Выход",
+        "\n===================================================="
+    },
 
-// KOREAN (Index 9)
-{
-    "============언어 학습 앱============",
-    "\n0. - 프로그램 설명",
-    "1. - 프로그램 시작",
-    "2. - 오류 연습",
-    "3. - 새 단어 파일 생성",
-    "4. - 설정",
-    "5. - 종료",
-    "\n===================================="
-},
+    // Ukrainian (8)
+    {
+        "============ДОДАТОК ДЛЯ ВИВЧЕННЯ МОВ============",
+        "\n1. - Пояснення програми",
+        "2. - Запустити програму",
+        "3. - Практика помилок",
+        "4. - Створити файл словника",
+        "5. - Налаштування",
+        "0. - Вихід",
+        "\n==============================================="
+    },
 
-// ITALIAN (Index 10)
-{
-    "============APP DI LINGUE============",
-    "\n0. - Spiegazione del programma",
-    "1. - Avvia programma",
-    "2. - Esercizio errori",
-    "3. - Crea file vocaboli",
-    "4. - Impostazioni",
-    "5. - Esci",
-    "\n===================================="
-},
+    // Korean (9)
+    {
+        "============언어 학습 앱============",
+        "\n1. - 프로그램 설명",
+        "2. - 프로그램 시작",
+        "3. - 실수 연습",
+        "4. - 새 단어 파일 생성",
+        "5. - 설정",
+        "0. - 종료",
+        "\n=================================="
+    },
 
-// POLISH (Index 11)
-{
-    "============APLIKACJA JĘZYKOWA============",
-    "\n0. - Wyjaśnienie programu",
-    "1. - Uruchom program",
-    "2. - Ćwiczenie błędów",
-    "3. - Utwórz plik słówek",
-    "4. - Ustawienia",
-    "5. - Wyjście",
-    "\n===================================="
-},
+    // Italian (10)
+    {
+        "============APP DI APPRENDIMENTO LINGUE============",
+        "\n1. - Spiegazione del programma",
+        "2. - Avvia programma",
+        "3. - Esercizio errori",
+        "4. - Crea file vocaboli",
+        "5. - Impostazioni",
+        "0. - Esci",
+        "\n=============================================="
+    },
 
-// ARABIC (Index 12)
-{
-    "============تطبيق تعلم اللغات============",
-    "\n0. - شرح البرنامج",
-    "1. - تشغيل البرنامج",
-    "2. - تدريب الأخطاء",
-    "3. - إنشاء ملف مفردات",
-    "4. - الإعدادات",
-    "5. - خروج",
-    "\n===================================="
-},
+    // Polish (11)
+    {
+        "============APLIKACJA DO NAUKI JĘZYKÓW============",
+        "\n1. - Opis programu",
+        "2. - Uruchom program",
+        "3. - Ćwiczenie błędów",
+        "4. - Utwórz plik słownictwa",
+        "5. - Ustawienia",
+        "0. - Wyjście",
+        "\n=============================================="
+    },
 
-// VIETNAMESE (Index 13)
-{
-    "============ỨNG DỤNG HỌC NGÔN NGỮ============",
-    "\n0. - Giải thích chương trình",
-    "1. - Bắt đầu chương trình",
-    "2. - Luyện lỗi",
-    "3. - Tạo file từ vựng",
-    "4. - Cài đặt",
-    "5. - Thoát",
-    "\n===================================="
-},
+    // Arabic (12)
+    {
+        "============تطبيق تعلم اللغات============",
+        "\n1. - شرح البرنامج",
+        "2. - تشغيل البرنامج",
+        "3. - تدريب الأخطاء",
+        "4. - إنشاء ملف مفردات",
+        "5. - الإعدادات",
+        "0. - خروج",
+        "\n========================================"
+    },
 
-// TAGALOG (Index 14)
-{
-    "============APP SA WIKA============",
-    "\n0. - Paliwanag ng programa",
-    "1. - Simulan ang programa",
-    "2. - Pagsasanay ng mali",
-    "3. - Gumawa ng vocab file",
-    "4. - Settings",
-    "5. - Exit",
-    "\n===================================="
-},
+    // Vietnamese (13)
+    {
+        "============ỨNG DỤNG HỌC NGÔN NGỮ============",
+        "\n1. - Giải thích chương trình",
+        "2. - Bắt đầu chương trình",
+        "3. - Luyện lỗi",
+        "4. - Tạo file từ vựng",
+        "5. - Cài đặt",
+        "0. - Thoát",
+        "\n========================================"
+    },
 
-// GREEK (Index 15)
-{
-    "============ΕΦΑΡΜΟΓΗ ΓΛΩΣΣΑΣ============",
-    "\n0. - Εξήγηση προγράμματος",
-    "1. - Εκκίνηση προγράμματος",
-    "2. - Εξάσκηση λαθών",
-    "3. - Δημιουργία αρχείου λεξιλογίου",
-    "4. - Ρυθμίσεις",
-    "5. - Έξοδος",
-    "\n===================================="
-},
+    // Tagalog (14)
+    {
+        "============LANGUAGE LEARNING APP============",
+        "\n1. - Paliwanag ng programa",
+        "2. - Simulan ang programa",
+        "3. - Sanayin ang mga mali",
+        "4. - Gumawa ng vocab file",
+        "5. - Settings",
+        "0. - Exit",
+        "\n========================================"
+    },
 
-// HEBREW (Index 16)
-{
-    "============אפליקציית שפות============",
-    "\n0. - הסבר התוכנית",
-    "1. - הפעלת התוכנית",
-    "2. - תרגול טעויות",
-    "3. - יצירת קובץ מילים",
-    "4. - הגדרות",
-    "5. - יציאה",
-    "\n===================================="
-},
+    // Greek (15)
+    {
+        "============ΕΦΑΡΜΟΓΗ ΕΚΜΑΘΗΣΗΣ ΓΛΩΣΣΩΝ============",
+        "\n1. - Επεξήγηση προγράμματος",
+        "2. - Εκκίνηση προγράμματος",
+        "3. - Εξάσκηση λαθών",
+        "4. - Δημιουργία αρχείου λεξιλογίου",
+        "5. - Ρυθμίσεις",
+        "0. - Έξοδος",
+        "\n=============================================="
+    },
 
-// PORTUGUESE (Index 17)
-{
-    "============APP DE IDIOMAS============",
-    "\n0. - Explicação do programa",
-    "1. - Iniciar programa",
-    "2. - Praticar erros",
-    "3. - Criar arquivo de vocabulário",
-    "4. - Configurações",
-    "5. - Sair",
-    "\n===================================="
-},
+    // Hebrew (16)
+    {
+        "============אפליקציית לימוד שפות============",
+        "\n1. - הסבר התוכנית",
+        "2. - הפעלת התוכנית",
+        "3. - תרגול טעויות",
+        "4. - יצירת קובץ מילים",
+        "5. - הגדרות",
+        "0. - יציאה",
+        "\n=========================================="
+    },
 
-// FARSI (Index 18)
-{
-    "============برنامه یادگیری زبان============",
-    "\n0. - توضیح برنامه",
-    "1. - شروع برنامه",
-    "2. - تمرین اشتباهات",
-    "3. - ایجاد فایل لغات",
-    "4. - تنظیمات",
-    "5. - خروج",
-    "\n===================================="
-},
+    // Portuguese (17)
+    {
+        "============APP DE APRENDIZADO DE IDIOMAS============",
+        "\n1. - Explicação do programa",
+        "2. - Iniciar programa",
+        "3. - Praticar erros",
+        "4. - Criar arquivo de vocabulário",
+        "5. - Configurações",
+        "0. - Sair",
+        "\n===================================================="
+    },
 
-// SWEDISH (Index 19)
-{
-    "============SPRÅKINLÄRNING============",
-    "\n0. - Programförklaring",
-    "1. - Starta program",
-    "2. - Öva misstag",
-    "3. - Skapa vokabulärfil",
-    "4. - Inställningar",
-    "5. - Avsluta",
-    "\n===================================="
-},
+    // Farsi (18)
+    {
+        "============برنامه یادگیری زبان============",
+        "\n1. - توضیح برنامه",
+        "2. - شروع برنامه",
+        "3. - تمرین خطاها",
+        "4. - ایجاد فایل واژگان",
+        "5. - تنظیمات",
+        "0. - خروج",
+        "\n========================================"
+    },
 
-// DUTCH (Index 20)
-{
-    "============TAALAPP============",
-    "\n0. - Programuitleg",
-    "1. - Start programma",
-    "2. - Fouten oefenen",
-    "3. - Woordenbestand maken",
-    "4. - Instellingen",
-    "5. - Afsluiten",
-    "\n===================================="
-},
+    // Swedish (19)
+    {
+        "============SPRÅKINLÄRNINGSAPP============",
+        "\n1. - Programförklaring",
+        "2. - Starta programmet",
+        "3. - Öva misstag",
+        "4. - Skapa vokabulärfil",
+        "5. - Inställningar",
+        "0. - Avsluta",
+        "\n========================================"
+    },
 
-// TURKISH (Index 21)
-{
-    "============DİL ÖĞRENME============",
-    "\n0. - Program açıklaması",
-    "1. - Programı başlat",
-    "2. - Hata çalışması",
-    "3. - Kelime dosyası oluştur",
-    "4. - Ayarlar",
-    "5. - Çıkış",
-    "\n===================================="
-},
+    // Dutch (20)
+    {
+        "============TAALLEER APP============",
+        "\n1. - Uitleg programma",
+        "2. - Start programma",
+        "3. - Oefen fouten",
+        "4. - Maak vocab bestand",
+        "5. - Instellingen",
+        "0. - Afsluiten",
+        "\n===================================="
+    },
 
-// HINDI (Index 22)
-{
-    "============भाषा सीखने का ऐप============",
-    "\n0. - कार्यक्रम विवरण",
-    "1. - कार्यक्रम शुरू करें",
-    "2. - गलतियों का अभ्यास",
-    "3. - शब्द फ़ाइल बनाएं",
-    "4. - सेटिंग्स",
-    "5. - बाहर निकलें",
-    "\n===================================="
-},
+    // Turkish (21)
+    {
+        "============DİL ÖĞRENME UYGULAMASI============",
+        "\n1. - Program açıklaması",
+        "2. - Programı başlat",
+        "3. - Hataları çalış",
+        "4. - Kelime dosyası oluştur",
+        "5. - Ayarlar",
+        "0. - Çıkış",
+        "\n=========================================="
+    },
 
-// LATIN (Index 23)
-{
-    "============APP LINGUAE============",
-    "\n0. - Explicatio programmatis",
-    "1. - Initium programmatis",
-    "2. - Exercitatio errorum",
-    "3. - Crea fasciculum vocabularii",
-    "4. - Optiones",
-    "5. - Exire",
-    "\n===================================="
-}
+    // Hindi (22)
+    {
+        "============भाषा सीखने का ऐप============",
+        "\n1. - प्रोग्राम विवरण",
+        "2. - प्रोग्राम शुरू करें",
+        "3. - गलतियों का अभ्यास",
+        "4. - शब्द फ़ाइल बनाएं",
+        "5. - सेटिंग्स",
+        "0. - बाहर निकलें",
+        "\n========================================"
+    },
 
+    // Latin (23)
+    {
+        "============APP DISCENDI LINGUAS============",
+        "\n1. - Explicatio programmatis",
+        "2. - Programma incipe",
+        "3. - Errores exerce",
+        "4. - Crea fasciculum vocabulorum",
+        "5. - Configurationes",
+        "0. - Exire",
+        "\n=========================================="
+    }
 
 };
 
@@ -368,151 +370,345 @@ const std::vector<NumberOutput> chooseNumberMenuTranslations = {
     {"Quaeso elige optionem e menu: "}
 };
 
-//Explanation's vector
-const std::vector<ExplanationStrings> explanationTranslations ={
-    // HUNGARIAN (Index 0)
-    {"Ez a program a nyelvi tudást fejleszti.",
-     "A program kérdez szavakat,és kifejezéseket.\nA fájlok .data kiterjesztésel nyithatók meg.",
-     "A képernyő törléshez használd a 'cls' parancsot ha szükséges\nA kilépéshez pedig az 'exit' parancsot.",
-     "A segítség kiíráshoz pedig a 'help' parancsot. \nJó tanulást kívánok :) "},
+//Explanations || magyarázat
+const std::vector<ExplanationStrings> explanationTranslations = {
 
-    // ENGLISH (Index 1)
-    {"This program improves language skills.",
-     "The program asks words and expressions.\nFiles can be opened with the .data extension.",
-     "To clear the screen use the 'cls' command if needed.\nTo exit use the 'exit' command.",
-     "To display help use the 'help' command.\nHappy learning :) "},
+    // Hungarian (0)
+    {
+        "Ez a program a nyelvi tudást fejleszti.",
+        "A program szavakat és kifejezéseket kérdez.",
+        "A fájlok .data kiterjesztéssel nyithatók és szerkeszthetők.",
+        "A képernyő törléshez használd a 'cls' parancsot ha szükséges!",
+        "A kilépéshez az 'exit' parancsot használd.",
+        "A segítséghez a 'help' vagy 'h' parancsot.",
+        "A gyakorlás két körből áll: először anyanyelvről a tanult nyelvre,",
+        "majd a tanult nyelvről az anyanyelvre kérdez.",
+        "Beállítható az egy körös mód a BEÁLLÍTÁSOK menüben.",
+        "Jó tanulást kívánok :)"
+    },
 
-    // CHINESE (Index 2)
-    {"该程序用于提升语言能力",
-     "程序会提问单词和短语。\n文件可使用 .data 扩展名打开。",
-     "如需清屏，请使用 'cls' 命令。\n退出请使用 'exit' 命令。",
-     "查看帮助请使用 'help' 命令。\n祝学习愉快 :) "},
+    // English (1)
+    {
+        "This program improves language skills.",
+        "The program asks words and expressions.",
+        "Files can be opened and edited with .data extension.",
+        "Use 'cls' command to clear the screen if needed.",
+        "Use 'exit' command to quit.",
+        "Use 'help' or 'h' for help.",
+        "Practice has two rounds: native to learning language first,",
+        "then learning language back to native language.",
+        "Single-round mode can be enabled in SETTINGS.",
+        "Happy learning :)"
+    },
 
-    // JAPANESE (Index 3)
-    {"このプログラムは言語能力を向上させます",
-     "このプログラムは単語や表現を出題します。\nファイルは .data 拡張子で開けます。",
-     "画面をクリアするには 'cls' コマンドを使用してください。\n終了するには 'exit' コマンドを使用してください。",
-     "ヘルプを表示するには 'help' コマンドを使用してください。\n楽しく学びましょう :) "},
+    // Chinese (2)
+    {
+        "该程序用于提高语言能力。",
+        "程序会提问单词和短语。",
+        "文件可以用 .data 扩展名打开和编辑。",
+        "如有需要使用 'cls' 清屏。",
+        "使用 'exit' 退出程序。",
+        "使用 'help' 或 'h' 获取帮助。",
+        "练习分两轮：先从母语到学习语言，",
+        "然后从学习语言回到母语。",
+        "可在设置中启用单轮模式。",
+        "祝学习愉快 :)"
+    },
 
-    // SPANISH (Index 4)
-    {"Este programa mejora las habilidades lingüísticas.",
-     "El programa pregunta palabras y expresiones.\nLos archivos se abren con extensión .data.",
-     "Para limpiar la pantalla usa el comando 'cls'.\nPara salir usa 'exit'.",
-     "Para ver la ayuda usa 'help'.\n¡Feliz aprendizaje! :) "},
+    // Japanese (3)
+    {
+        "このプログラムは言語能力を向上させます。",
+        "単語やフレーズを質問します。",
+        ".data ファイルは開いて編集できます。",
+        "必要に応じて 'cls' で画面をクリア。",
+        "'exit' で終了。",
+        "'help' または 'h' でヘルプ。",
+        "練習は2ラウンド：母語→学習言語、",
+        "次に学習言語→母語。",
+        "設定で1ラウンドモード可能。",
+        "楽しく学びましょう :)"
+    },
 
-    // GERMAN (Index 5)
-    {"Dieses Programm verbessert Sprachkenntnisse",
-     "Das Programm fragt Wörter und Ausdrücke ab.\nDateien können mit der Endung .data geöffnet werden.",
-     "Zum Löschen des Bildschirms benutze 'cls'.\nZum Beenden benutze 'exit'.",
-     "Für Hilfe benutze 'help'.\nViel Erfolg beim Lernen :) "},
+    // Spanish (4)
+    {
+        "Este programa mejora el conocimiento de idiomas.",
+        "El programa pregunta palabras y expresiones.",
+        "Los archivos .data se pueden abrir y editar.",
+        "Usa 'cls' para limpiar la pantalla si es necesario.",
+        "Usa 'exit' para salir.",
+        "Usa 'help' o 'h' para ayuda.",
+        "La práctica tiene dos rondas: idioma nativo a aprendido,",
+        "luego del aprendido al nativo.",
+        "Modo de una ronda en CONFIGURACIÓN.",
+        "Feliz aprendizaje :)"
+    },
 
-    // FRENCH (Index 6)
-    {"Ce programme améliore les compétences linguistiques",
-     "Le programme pose des questions sur des mots et expressions.\nLes fichiers s’ouvrent avec l’extension .data.",
-     "Pour effacer l’écran utilisez 'cls'.\nPour quitter utilisez 'exit'.",
-     "Pour l’aide utilisez 'help'.\nBon apprentissage :) "},
+    // German (5)
+    {
+        "Dieses Programm verbessert Sprachkenntnisse.",
+        "Das Programm fragt Wörter und Ausdrücke ab.",
+        ".data Dateien können geöffnet und bearbeitet werden.",
+        "Nutze 'cls' zum Bildschirm löschen.",
+        "Nutze 'exit' zum Beenden.",
+        "'help' oder 'h' für Hilfe.",
+        "Übung hat zwei Runden: Muttersprache -> Lernsprache,",
+        "dann zurück.",
+        "Einrundenmodus in Einstellungen möglich.",
+        "Viel Erfolg beim Lernen :)"
+    },
 
-    // RUSSIAN (Index 7)
-    {"Эта программа развивает языковые навыки",
-     "Программа задаёт слова и выражения.\nФайлы открываются с расширением .data.",
-     "Для очистки экрана используйте 'cls'.\nДля выхода используйте 'exit'.",
-     "Для помощи используйте 'help'.\nУдачи в обучении :) "},
+    // French (6)
+    {
+        "Ce programme améliore les compétences linguistiques.",
+        "Le programme pose des mots et expressions.",
+        "Les fichiers .data peuvent être ouverts et modifiés.",
+        "Utilisez 'cls' pour effacer l'écran.",
+        "Utilisez 'exit' pour quitter.",
+        "'help' ou 'h' pour l'aide.",
+        "Deux tours: langue maternelle vers langue cible,",
+        "puis inverse.",
+        "Mode un tour dans PARAMÈTRES.",
+        "Bon apprentissage :)"
+    },
 
-    // UKRAINIAN (Index 8)
-    {"Ця програма розвиває мовні навички",
-     "Програма запитує слова та вирази.\nФайли відкриваються з розширенням .data.",
-     "Щоб очистити екран, використовуйте 'cls'.\nДля виходу — 'exit'.",
-     "Для довідки використовуйте 'help'.\nПриємного навчання :) "},
+    // Russian (7)
+    {
+        "Эта программа улучшает языковые навыки.",
+        "Программа спрашивает слова и выражения.",
+        ".data файлы можно открыть и редактировать.",
+        "Используйте 'cls' для очистки экрана.",
+        "'exit' для выхода.",
+        "'help' или 'h' для помощи.",
+        "Два раунда: родной язык -> изучаемый,",
+        "затем обратно.",
+        "Один раунд в настройках.",
+        "Удачного обучения :)"
+    },
 
-    // KOREAN (Index 9)
-    {"이 프로그램은 언어 능력을 향상시킵니다",
-     "프로그램은 단어와 표현을 질문합니다.\n파일은 .data 확장자로 열 수 있습니다.",
-     "화면을 지우려면 'cls' 명령을 사용하세요.\n종료하려면 'exit' 명령을 사용하세요.",
-     "도움을 보려면 'help' 명령을 사용하세요.\n즐거운 학습 되세요 :) "},
+    // Ukrainian (8)
+    {
+        "Ця програма покращує мовні навички.",
+        "Програма запитує слова та фрази.",
+        ".data файли можна відкривати і редагувати.",
+        "Використовуйте 'cls' для очищення екрана.",
+        "'exit' для виходу.",
+        "'help' або 'h' для допомоги.",
+        "Два раунди: рідна мова -> вивчаєма,",
+        "потім назад.",
+        "Один раунд в налаштуваннях.",
+        "Приємного навчання :)"
+    },
 
-    // ITALIAN (Index 10)
-    {"Questo programma migliora le competenze linguistiche",
-     "Il programma chiede parole ed espressioni.\nI file si aprono con estensione .data.",
-     "Per pulire lo schermo usa 'cls'.\nPer uscire usa 'exit'.",
-     "Per l’aiuto usa 'help'.\nBuono studio :) "},
+    // Korean (9)
+    {
+        "이 프로그램은 언어 능력을 향상시킵니다.",
+        "단어와 표현을 질문합니다.",
+        ".data 파일을 열고 수정할 수 있습니다.",
+        "'cls'로 화면을 지울 수 있습니다.",
+        "'exit'로 종료합니다.",
+        "'help' 또는 'h'로 도움말.",
+        "두 단계 학습: 모국어 -> 학습 언어,",
+        "그 다음 반대로.",
+        "설정에서 한 라운드 가능.",
+        "즐거운 학습 :)"
+    },
 
-    // POLISH (Index 11)
-    {"Ten program rozwija umiejętności językowe",
-     "Program zadaje pytania o słowa i wyrażenia.\nPliki otwierane są z rozszerzeniem .data.",
-     "Aby wyczyścić ekran użyj 'cls'.\nAby wyjść użyj 'exit'.",
-     "Aby uzyskać pomoc użyj 'help'.\nMiłej nauki :) "},
+    // Italian (10)
+    {
+        "Questo programma migliora le competenze linguistiche.",
+        "Il programma chiede parole ed espressioni.",
+        "I file .data possono essere modificati.",
+        "Usa 'cls' per pulire lo schermo.",
+        "Usa 'exit' per uscire.",
+        "'help' o 'h' per aiuto.",
+        "Due round: lingua madre -> lingua studio,",
+        "poi inverso.",
+        "Modalità singola in impostazioni.",
+        "Buono studio :)"
+    },
 
-    // ARABIC (Index 12)
-    {"هذا البرنامج يطور المهارات اللغوية",
-     "يقوم البرنامج بطرح كلمات وعبارات.\nيمكن فتح الملفات بامتداد .data.",
-     "لمسح الشاشة استخدم 'cls'.\nللخروج استخدم 'exit'.",
-     "للمساعدة استخدم 'help'.\nتعلم ممتع :) "},
+    // Polish (11)
+    {
+        "Program rozwija umiejętności językowe.",
+        "Zadaje słowa i wyrażenia.",
+        "Pliki .data można edytować.",
+        "Użyj 'cls' do czyszczenia.",
+        "'exit' aby wyjść.",
+        "'help' lub 'h' pomoc.",
+        "Dwie rundy: ojczysty -> nauka,",
+        "potem odwrotnie.",
+        "Tryb jednej rundy w ustawieniach.",
+        "Miłej nauki :)"
+    },
 
-    // VIETNAMESE (Index 13)
-    {"Chương trình này cải thiện kỹ năng ngôn ngữ",
-     "Chương trình hỏi từ và cụm từ.\nFile mở bằng đuôi .data.",
-     "Để xóa màn hình dùng 'cls'.\nĐể thoát dùng 'exit'.",
-     "Để xem trợ giúp dùng 'help'.\nChúc học tốt :) "},
+    // Arabic (12)
+    {
+        "هذا البرنامج يحسن مهارات اللغة.",
+        "يسأل كلمات وعبارات.",
+        "يمكن تعديل ملفات .data.",
+        "استخدم 'cls' لمسح الشاشة.",
+        "'exit' للخروج.",
+        "'help' أو 'h' للمساعدة.",
+        "جولتان: من اللغة الأم إلى التعلم،",
+        "ثم العكس.",
+        "وضع جولة واحدة في الإعدادات.",
+        "تعلم سعيد :)"
+    },
 
-    // TAGALOG (Index 14)
-    {"Pinapahusay ng program na ito ang kasanayan sa wika",
-     "Nagtatanong ito ng mga salita at parirala.\nMaaaring buksan ang files gamit ang .data.",
-     "Para linisin ang screen gamitin ang 'cls'.\nPara lumabas gamitin ang 'exit'.",
-     "Para sa tulong gamitin ang 'help'.\nMagandang pag-aaral :) "},
+    // Vietnamese (13)
+    {
+        "Chương trình giúp cải thiện ngôn ngữ.",
+        "Hỏi từ và cụm từ.",
+        "File .data có thể chỉnh sửa.",
+        "Dùng 'cls' để xóa màn hình.",
+        "'exit' để thoát.",
+        "'help' hoặc 'h' để trợ giúp.",
+        "2 vòng: mẹ đẻ -> học,",
+        "sau đó ngược lại.",
+        "Chế độ 1 vòng trong cài đặt.",
+        "Chúc học tốt :)"
+    },
 
-    // GREEK (Index 15)
-    {"Αυτό το πρόγραμμα βελτιώνει τις γλωσσικές δεξιότητες",
-     "Το πρόγραμμα ζητά λέξεις και εκφράσεις.\nΤα αρχεία ανοίγουν με κατάληξη .data.",
-     "Για καθαρισμό οθόνης χρησιμοποιήστε 'cls'.\nΓια έξοδο χρησιμοποιήστε 'exit'.",
-     "Για βοήθεια χρησιμοποιήστε 'help'.\nΚαλή μάθηση :) "},
+    // Tagalog (14)
+    {
+        "Pinapabuti ng programang ito ang wika.",
+        "Nagtatanong ito ng salita at parirala.",
+        ".data file ay maaaring baguhin.",
+        "Gamitin ang 'cls' para linisin screen.",
+        "'exit' para lumabas.",
+        "'help' o 'h' para tulong.",
+        "2 round: native -> learning,",
+        "baliktad pagkatapos.",
+        "1 round sa settings.",
+        "Magandang pag-aaral :)"
+    },
 
-    // HEBREW (Index 16)
-    {"התוכנית הזו משפרת מיומנויות שפה",
-     "התוכנית שואלת מילים וביטויים.\nניתן לפתוח קבצים עם סיומת .data.",
-     "כדי לנקות מסך השתמש ב-'cls'.\nכדי לצאת השתמש ב-'exit'.",
-     "לעזרה השתמש ב-'help'.\nלמידה מהנה :) "},
+    // Greek (15)
+    {
+        "Το πρόγραμμα βελτιώνει γλωσσικές δεξιότητες.",
+        "Ρωτά λέξεις και φράσεις.",
+        ".data αρχεία επεξεργάζονται.",
+        "'cls' για καθαρισμό.",
+        "'exit' για έξοδο.",
+        "'help' ή 'h' για βοήθεια.",
+        "2 γύροι: μητρική -> μάθηση,",
+        "μετά αντίστροφα.",
+        "1 γύρος στις ρυθμίσεις.",
+        "Καλή μάθηση :)"
+    },
 
-    // PORTUGUESE (Index 17)
-    {"Este programa melhora as habilidades linguísticas",
-     "O programa pergunta palavras e expressões.\nArquivos abrem com extensão .data.",
-     "Para limpar a tela use 'cls'.\nPara sair use 'exit'.",
-     "Para ajuda use 'help'.\nBom estudo :) "},
+    // Hebrew (16)
+    {
+        "התוכנית משפרת מיומנויות שפה.",
+        "שואלת מילים וביטויים.",
+        "קבצי .data ניתנים לעריכה.",
+        "'cls' לניקוי מסך.",
+        "'exit' ליציאה.",
+        "'help' או 'h' לעזרה.",
+        "2 סבבים: שפת אם -> לימוד,",
+        "ואז הפוך.",
+        "מצב סבב אחד בהגדרות.",
+        "למידה נעימה :)"
+    },
 
-    // FARSI (Index 18)
-    {"این برنامه مهارت‌های زبانی را بهبود می‌دهد",
-     "برنامه کلمات و عبارات را می‌پرسد.\nفایل‌ها با پسوند .data باز می‌شوند.",
-     "برای پاک کردن صفحه از 'cls' استفاده کنید.\nبرای خروج از 'exit' استفاده کنید.",
-     "برای راهنما از 'help' استفاده کنید.\nیادگیری خوبی داشته باشید :) "},
+    // Portuguese (17)
+    {
+        "Este programa melhora habilidades linguísticas.",
+        "Pergunta palavras e expressões.",
+        "Arquivos .data podem ser editados.",
+        "Use 'cls' para limpar tela.",
+        "'exit' para sair.",
+        "'help' ou 'h' ajuda.",
+        "2 rodadas: nativo -> aprendizado,",
+        "depois inverso.",
+        "Modo 1 rodada nas configurações.",
+        "Bom aprendizado :)"
+    },
 
-    // SWEDISH (Index 19)
-    {"Detta program förbättrar språkkunskaper",
-     "Programmet frågar ord och uttryck.\nFiler öppnas med .data.",
-     "För att rensa skärmen använd 'cls'.\nFör att avsluta använd 'exit'.",
-     "För hjälp använd 'help'.\nLycka till :) "},
+    // Farsi (18)
+    {
+        "این برنامه مهارت زبان را بهبود می‌دهد.",
+        "کلمات و عبارات را می‌پرسد.",
+        "فایل‌های .data قابل ویرایش هستند.",
+        "'cls' برای پاک کردن صفحه.",
+        "'exit' برای خروج.",
+        "'help' یا 'h' برای کمک.",
+        "۲ دور: زبان مادری -> یادگیری،",
+        "سپس برعکس.",
+        "حالت یک دور در تنظیمات.",
+        "یادگیری موفق :)"
+    },
 
-    // DUTCH (Index 20)
-    {"Dit programma verbetert taalvaardigheden",
-     "Het programma vraagt woorden en uitdrukkingen.\nBestanden openen met .data.",
-     "Om het scherm te wissen gebruik 'cls'.\nOm af te sluiten gebruik 'exit'.",
-     "Voor hulp gebruik 'help'.\nSucces met leren :) "},
+    // Swedish (19)
+    {
+        "Programmet förbättrar språkkunskaper.",
+        "Frågar ord och uttryck.",
+        ".data filer kan redigeras.",
+        "Använd 'cls' för att rensa.",
+        "'exit' för att avsluta.",
+        "'help' eller 'h' hjälp.",
+        "2 rundor: modersmål -> lärande,",
+        "sedan tillbaka.",
+        "1 runda i inställningar.",
+        "Lycka till :)"
+    },
 
-    // TURKISH (Index 21)
-    {"Bu program dil becerilerini geliştirir",
-     "Program kelime ve ifadeler sorar.\nDosyalar .data uzantısı ile açılır.",
-     "Ekranı temizlemek için 'cls' kullanın.\nÇıkmak için 'exit' kullanın.",
-     "Yardım için 'help' kullanın.\nİyi çalışmalar :) "},
+    // Dutch (20)
+    {
+        "Dit programma verbetert taalvaardigheid.",
+        "Stelt woorden en zinnen.",
+        ".data bestanden bewerkbaar.",
+        "'cls' om scherm te wissen.",
+        "'exit' om te stoppen.",
+        "'help' of 'h' hulp.",
+        "2 rondes: moedertaal -> leren,",
+        "dan terug.",
+        "1 ronde in instellingen.",
+        "Succes :)"
+    },
 
-    // HINDI (Index 22)
-    {"यह प्रोग्राम भाषा कौशल को सुधारता है",
-     "यह शब्द और वाक्यांश पूछता है।\nफाइलें .data एक्सटेंशन से खुलती हैं।",
-     "स्क्रीन साफ करने के लिए 'cls' उपयोग करें।\nबाहर निकलने के लिए 'exit' उपयोग करें।",
-     "मदद के लिए 'help' उपयोग करें।\nशुभ अध्ययन :) "},
+    // Turkish (21)
+    {
+        "Bu program dil becerilerini geliştirir.",
+        "Kelimeler ve ifadeler sorar.",
+        ".data dosyaları düzenlenebilir.",
+        "'cls' ekran temizleme.",
+        "'exit' çıkış.",
+        "'help' veya 'h' yardım.",
+        "2 tur: ana dil -> öğrenme,",
+        "sonra geri.",
+        "1 tur ayarlarda.",
+        "İyi çalışmalar :)"
+    },
 
-    // LATIN (Index 23)
-    {"Hoc programma linguam meliorem facit",
-     "Programma verba et locutiones interrogat.\nFasciculi cum .data aperiuntur.",
-     "Ad purgandum schermum utere 'cls'.\nAd exire utere 'exit'.",
-     "Ad auxilium utere 'help'.\nFelix discere :) "}
+    // Hindi (22)
+    {
+        "यह प्रोग्राम भाषा कौशल सुधारता है।",
+        "शब्द और वाक्य पूछता है।",
+        ".data फ़ाइल संपादन योग्य है।",
+        "'cls' से स्क्रीन साफ करें।",
+        "'exit' से बाहर जाएं।",
+        "'help' या 'h' मदद।",
+        "2 राउंड: मातृभाषा -> सीखना,",
+        "फिर उल्टा।",
+        "1 राउंड सेटिंग्स में।",
+        "शुभकामनाएं :)"
+    },
+
+    // Latin (23)
+    {
+        "Hoc programma linguam meliorat.",
+        "Verba et locutiones rogat.",
+        "Fasciculi .data mutari possunt.",
+        "'cls' ad purgandum.",
+        "'exit' ad exire.",
+        "'help' vel 'h' auxilium.",
+        "2 circuitus: lingua materna -> discere,",
+        "deinde retro.",
+        "1 circuitus in optionibus.",
+        "Bona fortuna :)"
+    }
+
 };
 
 const std::vector<ExitingStrings> exitingTranslations = {
@@ -2291,269 +2487,270 @@ const std::vector<CreateVocabFile> createVocabFileTranslations = {
 
 const std::vector<CreateVocab> createVocabTranslations = {
 
-    // HUNGARIAN (Index 0)
+    // Hungarian (0)
     {
         "Fájl: ",
         " (",
         " szó eddig) ---",
-        "Parancsok: 'exit' (mentés és kilépés), 'save' (mentés és folytatás)\n",
+        "Parancsok: 'exit'(mentés és kilépés),'save'(mentés és folytatás),'back'(vissza ha elrontottad)",
         "A tanult nyelven a szó/mondat: ",
         "Az anyanyelveden a jelentése (vesszővel elválasztva ha több van): ",
         "Kiejtés (opcionális): "
     },
 
-    // ENGLISH (Index 1)
+    // English (1)
     {
         "File: ",
         " (",
         " words so far) ---",
-        "Commands: 'exit' (save and quit), 'save' (save and continue)\n",
-        "Word/sentence in the target language: ",
+        "Commands: 'exit' (save & quit), 'save' (save & continue), 'back' (undo last)",
+        "Word/sentence in learning language: ",
         "Meaning in your native language (comma separated if multiple): ",
         "Pronunciation (optional): "
     },
 
-    // CHINESE (Index 2)
+    // Chinese (2)
     {
         "文件: ",
         " (",
-        " 个单词) ---",
-        "命令: 'exit'（保存并退出），'save'（保存并继续）\n",
-        "目标语言中的单词/句子: ",
-        "母语中的含义（多个用逗号分隔）: ",
+        " 当前词数) ---",
+        "命令: 'exit'(保存并退出),'save'(保存继续),'back'(撤销)",
+        "学习语言中的单词/句子: ",
+        "母语含义（多个用逗号分隔）: ",
         "发音（可选）: "
     },
 
-    // JAPANESE (Index 3)
+    // Japanese (3)
     {
         "ファイル: ",
         " (",
-        " 単語) ---",
-        "コマンド: 'exit'（保存して終了）、'save'（保存して続行）\n",
+        " 単語数) ---",
+        "コマンド: 'exit'(保存して終了),'save'(保存して続行),'back'(戻る)",
         "学習言語の単語/文: ",
-        "母国語での意味（複数はカンマ区切り）: ",
+        "母語での意味（複数はカンマ区切り）: ",
         "発音（任意）: "
     },
 
-    // SPANISH (Index 4)
+    // Spanish (4)
     {
         "Archivo: ",
         " (",
         " palabras hasta ahora) ---",
-        "Comandos: 'exit' (guardar y salir), 'save' (guardar y continuar)\n",
-        "Palabra/oración en el idioma objetivo: ",
-        "Significado en tu idioma nativo (separado por comas): ",
+        "Comandos: 'exit'(guardar y salir),'save'(guardar y continuar),'back'(deshacer)",
+        "Palabra/frase en idioma aprendido: ",
+        "Significado en tu idioma (separado por comas): ",
         "Pronunciación (opcional): "
     },
 
-    // GERMAN (Index 5)
+    // German (5)
     {
         "Datei: ",
         " (",
         " Wörter bisher) ---",
-        "Befehle: 'exit' (speichern und beenden), 'save' (speichern und fortsetzen)\n",
-        "Wort/Satz in der Zielsprache: ",
-        "Bedeutung in deiner Muttersprache (mit Komma getrennt): ",
+        "Befehle: 'exit'(speichern & beenden),'save'(speichern & weiter),'back'(zurück)",
+        "Wort/Satz in Lernsprache: ",
+        "Bedeutung in Muttersprache (kommagetrennt): ",
         "Aussprache (optional): "
     },
 
-    // FRENCH (Index 6)
+    // French (6)
     {
         "Fichier: ",
         " (",
         " mots jusqu'à présent) ---",
-        "Commandes: 'exit' (sauvegarder et quitter), 'save' (sauvegarder et continuer)\n",
+        "Commandes: 'exit'(sauvegarder et quitter),'save'(sauvegarder et continuer),'back'(annuler)",
         "Mot/phrase dans la langue cible: ",
-        "Signification dans votre langue maternelle (séparée par des virgules): ",
-        "Prononciation (optionnelle): "
+        "Signification dans votre langue (séparée par virgule): ",
+        "Prononciation (optionnel): "
     },
 
-    // RUSSIAN (Index 7)
+    // Russian (7)
     {
         "Файл: ",
         " (",
         " слов) ---",
-        "Команды: 'exit' (сохранить и выйти), 'save' (сохранить и продолжить)\n",
-        "Слово/предложение на изучаемом языке: ",
+        "Команды: 'exit'(сохранить и выйти),'save'(сохранить и продолжить),'back'(назад)",
+        "Слово/фраза на изучаемом языке: ",
         "Значение на родном языке (через запятую): ",
-        "Произношение (необязательно): "
+        "Произношение (опционально): "
     },
 
-    // UKRAINIAN (Index 8)
+    // Ukrainian (8)
     {
         "Файл: ",
         " (",
         " слів) ---",
-        "Команди: 'exit' (зберегти і вийти), 'save' (зберегти і продовжити)\n",
-        "Слово/речення мовою навчання: ",
+        "Команди: 'exit'(зберегти і вийти),'save'(зберегти і продовжити),'back'(назад)",
+        "Слово/фраза мовою навчання: ",
         "Значення рідною мовою (через кому): ",
-        "Вимова (необов’язково): "
+        "Вимова (опційно): "
     },
 
-    // KOREAN (Index 9)
+    // Korean (9)
     {
         "파일: ",
         " (",
-        " 단어) ---",
-        "명령어: 'exit' (저장 후 종료), 'save' (저장 후 계속)\n",
-        "학습 언어의 단어/문장: ",
+        " 단어 수) ---",
+        "명령어: 'exit'(저장 후 종료),'save'(저장 후 계속),'back'(되돌리기)",
+        "학습 언어 단어/문장: ",
         "모국어 의미 (쉼표로 구분): ",
-        "발음 (선택사항): "
+        "발음 (선택): "
     },
 
-    // ITALIAN (Index 10)
+    // Italian (10)
     {
         "File: ",
         " (",
         " parole finora) ---",
-        "Comandi: 'exit' (salva ed esci), 'save' (salva e continua)\n",
-        "Parola/frase nella lingua target: ",
-        "Significato nella tua lingua madre (separato da virgole): ",
+        "Comandi: 'exit'(salva e esci),'save'(salva e continua),'back'(indietro)",
+        "Parola/frase lingua studio: ",
+        "Significato lingua madre (separato da virgole): ",
         "Pronuncia (opzionale): "
     },
 
-    // POLISH (Index 11)
+    // Polish (11)
     {
         "Plik: ",
         " (",
-        " słów do tej pory) ---",
-        "Komendy: 'exit' (zapisz i wyjdź), 'save' (zapisz i kontynuuj)\n",
-        "Słowo/zdanie w języku docelowym: ",
-        "Znaczenie w języku ojczystym (oddzielone przecinkami): ",
-        "Wymowa (opcjonalna): "
+        " słów) ---",
+        "Komendy: 'exit'(zapisz i wyjdź),'save'(zapisz i kontynuuj),'back'(cofnij)",
+        "Słowo/zdanie w języku nauki: ",
+        "Znaczenie w języku ojczystym (oddzielone przecinkiem): ",
+        "Wymowa (opcjonalnie): "
     },
 
-    // ARABIC (Index 12)
+    // Arabic (12)
     {
         "ملف: ",
         " (",
-        " كلمات حتى الآن) ---",
-        "الأوامر: 'exit' (حفظ وخروج)، 'save' (حفظ ومتابعة)\n",
-        "الكلمة/الجملة باللغة المستهدفة: ",
-        "المعنى بلغتك الأم (مفصول بفواصل): ",
+        " كلمات) ---",
+        "أوامر: 'exit'(حفظ وخروج),'save'(حفظ ومتابعة),'back'(رجوع)",
+        "الكلمة/الجملة بلغة التعلم: ",
+        "المعنى باللغة الأم (مفصول بفواصل): ",
         "النطق (اختياري): "
     },
 
-    // VIETNAMESE (Index 13)
+    // Vietnamese (13)
     {
         "Tệp: ",
         " (",
         " từ) ---",
-        "Lệnh: 'exit' (lưu và thoát), 'save' (lưu và tiếp tục)\n",
-        "Từ/câu trong ngôn ngữ học: ",
-        "Nghĩa bằng tiếng mẹ đẻ (cách nhau bằng dấu phẩy): ",
+        "Lệnh: 'exit'(lưu & thoát),'save'(lưu & tiếp),'back'(quay lại)",
+        "Từ/câu ngôn ngữ học: ",
+        "Nghĩa tiếng mẹ đẻ (phân cách dấu phẩy): ",
         "Phát âm (tùy chọn): "
     },
 
-    // TAGALOG (Index 14)
+    // Tagalog (14)
     {
         "File: ",
         " (",
-        " mga salita) ---",
-        "Mga utos: 'exit' (i-save at lumabas), 'save' (i-save at magpatuloy)\n",
-        "Salita/pangungusap sa target na wika: ",
-        "Kahulugan sa iyong katutubong wika (hiwalay ng kuwit): ",
-        "Pagbigkas (opsyonal): "
+        " salita) ---",
+        "Mga utos: 'exit'(save at labas),'save'(save at tuloy),'back'(balik)",
+        "Salita/pangungusap sa learning language: ",
+        "Kahulugan sa native language (comma separated): ",
+        "Bigkas (optional): "
     },
 
-    // GREEK (Index 15)
+    // Greek (15)
     {
         "Αρχείο: ",
         " (",
         " λέξεις) ---",
-        "Εντολές: 'exit' (αποθήκευση και έξοδος), 'save' (αποθήκευση και συνέχεια)\n",
-        "Λέξη/πρόταση στη γλώσσα στόχο: ",
-        "Σημασία στη μητρική γλώσσα (χωρισμένα με κόμμα): ",
+        "Εντολές: 'exit'(αποθήκευση & έξοδος),'save'(αποθήκευση & συνέχεια),'back'(πίσω)",
+        "Λέξη/φράση στη γλώσσα εκμάθησης: ",
+        "Σημασία στη μητρική (με κόμμα): ",
         "Προφορά (προαιρετικό): "
     },
 
-    // HEBREW (Index 16)
+    // Hebrew (16)
     {
         "קובץ: ",
         " (",
         " מילים) ---",
-        "פקודות: 'exit' (שמור וצא), 'save' (שמור והמשך)\n",
-        "מילה/משפט בשפת היעד: ",
-        "משמעות בשפת האם (מופרד בפסיקים): ",
+        "פקודות: 'exit'(שמור ויציאה),'save'(שמור והמשך),'back'(חזור)",
+        "מילה/משפט בשפת הלמידה: ",
+        "משמעות בשפת אם (מופרד בפסיקים): ",
         "הגייה (אופציונלי): "
     },
 
-    // PORTUGUESE (Index 17)
+    // Portuguese (17)
     {
         "Arquivo: ",
         " (",
-        " palavras até agora) ---",
-        "Comandos: 'exit' (salvar e sair), 'save' (salvar e continuar)\n",
-        "Palavra/frase no idioma alvo: ",
-        "Significado no seu idioma nativo (separado por vírgulas): ",
+        " palavras) ---",
+        "Comandos: 'exit'(salvar e sair),'save'(salvar e continuar),'back'(voltar)",
+        "Palavra/frase idioma aprendizado: ",
+        "Significado idioma nativo (separado por vírgula): ",
         "Pronúncia (opcional): "
     },
 
-    // FARSI (Index 18)
+    // Farsi (18)
     {
         "فایل: ",
         " (",
-        " کلمات) ---",
-        "دستورات: 'exit' (ذخیره و خروج)، 'save' (ذخیره و ادامه)\n",
-        "کلمه/جمله در زبان هدف: ",
-        "معنی به زبان مادری (با ویرگول جدا شود): ",
+        " کلمه) ---",
+        "دستورات: 'exit'(ذخیره و خروج),'save'(ذخیره و ادامه),'back'(بازگشت)",
+        "کلمه/جمله زبان یادگیری: ",
+        "معنی زبان مادری (با ویرگول): ",
         "تلفظ (اختیاری): "
     },
 
-    // SWEDISH (Index 19)
+    // Swedish (19)
     {
         "Fil: ",
         " (",
-        " ord hittills) ---",
-        "Kommandon: 'exit' (spara och avsluta), 'save' (spara och fortsätt)\n",
-        "Ord/mening på målspråket: ",
-        "Betydelse på ditt modersmål (separerade med kommatecken): ",
+        " ord) ---",
+        "Kommandon: 'exit'(spara & avsluta),'save'(spara & fortsätt),'back'(tillbaka)",
+        "Ord/mening inlärningsspråk: ",
+        "Betydelse modersmål (kommaseparerat): ",
         "Uttal (valfritt): "
     },
 
-    // DUTCH (Index 20)
+    // Dutch (20)
     {
         "Bestand: ",
         " (",
-        " woorden tot nu toe) ---",
-        "Commando's: 'exit' (opslaan en afsluiten), 'save' (opslaan en doorgaan)\n",
-        "Woord/zin in de doeltaal: ",
-        "Betekenis in je moedertaal (gescheiden door komma's): ",
+        " woorden) ---",
+        "Commando's: 'exit'(opslaan & afsluiten),'save'(opslaan & doorgaan),'back'(terug)",
+        "Woord/zin leertaal: ",
+        "Betekenis moedertaal (komma gescheiden): ",
         "Uitspraak (optioneel): "
     },
 
-    // TURKISH (Index 21)
+    // Turkish (21)
     {
         "Dosya: ",
         " (",
         " kelime) ---",
-        "Komutlar: 'exit' (kaydet ve çık), 'save' (kaydet ve devam et)\n",
-        "Hedef dilde kelime/cümle: ",
-        "Ana dilinizde anlamı (virgülle ayrılmış): ",
-        "Telaffuz (isteğe bağlı): "
+        "Komutlar: 'exit'(kaydet & çık),'save'(kaydet & devam),'back'(geri)",
+        "Öğrenilen dilde kelime/cümle: ",
+        "Ana dil anlamı (virgülle ayır): ",
+        "Telaffuz (opsiyonel): "
     },
 
-    // HINDI (Index 22)
+    // Hindi (22)
     {
         "फ़ाइल: ",
         " (",
         " शब्द) ---",
-        "कमांड: 'exit' (सहेजें और बाहर निकलें), 'save' (सहेजें और जारी रखें)\n",
-        "लक्षित भाषा में शब्द/वाक्य: ",
-        "अपनी मातृभाषा में अर्थ (कॉमा से अलग करें): ",
+        "कमांड: 'exit'(सेव और बाहर),'save'(सेव और जारी),'back'(वापस)",
+        "सीखने वाली भाषा में शब्द/वाक्य: ",
+        "मातृभाषा में अर्थ (कॉमा से अलग): ",
         "उच्चारण (वैकल्पिक): "
     },
 
-    // LATIN (Index 23)
+    // Latin (23)
     {
         "Fasciculus: ",
         " (",
         " verba) ---",
-        "Mandata: 'exit' (serva et exi), 'save' (serva et perge)\n",
-        "Verbum/sententia linguae destinatae: ",
-        "Significatio lingua materna (commatibus separata): ",
+        "Mandata: 'exit'(serva et exi),'save'(serva et continua),'back'(redi)",
+        "Verbum/sententia lingua discenda: ",
+        "Significatio lingua materna (commis separata): ",
         "Pronuntiatio (optionalis): "
     }
+
 };
 const std::vector<VocabMenu> vocabMenuTranslations = {
 
@@ -2775,317 +2972,342 @@ const std::vector<VocabMenu> vocabMenuTranslations = {
 };
 const std::vector<SettingsMenu> settingsMenuTranslations {
 
-    // Hungarian (index 0)
+    // Hungarian (0)
     {
         "================BEÁLLÍTÁSOK-MENU================",
-        "Kérlek válasz az alábbi menüpontok közül:",
+        "Kérlek válassz az alábbi menüpontok közül:",
         "1. Nyelv beállítása",
         "2. A tanulandó nyelv beállítása",
         "3. Színek beállítása",
         "4. Beep hang be/ki",
         "5. Ékezetek figyelmen kívül hagyása be/ki",
-        "6. Visszalépés a főmenübe",
+        "6. Egy körös kvíz be/ki",
+        "0. Visszalépés a főmenübe",
         "\n================================================"
     },
 
-    // ENGLISH (Index 1)
+    // English (1)
     {
         "================SETTINGS MENU================",
-        "Please choose from the following options:",
-        "1. Language settings",
+        "Please choose from the options below:",
+        "1. Set language",
         "2. Set learning language",
-        "3. Color settings",
+        "3. Set colors",
         "4. Beep sound on/off",
         "5. Ignore accents on/off",
-        "6. Return to main menu",
-        "\n================================================"
+        "6. Single round quiz on/off",
+        "0. Back to main menu",
+        "\n=============================================="
     },
 
-    // CHINESE (Index 2)
+    // Chinese (2)
     {
         "================设置菜单================",
         "请选择以下选项：",
-        "1. 语言设置",
+        "1. 设置语言",
         "2. 设置学习语言",
-        "3. 颜色设置",
-        "4. 蜂鸣声开/关",
-        "5. 忽略重音开/关",
-        "6. 返回主菜单",
-        "\n================================================"
+        "3. 设置颜色",
+        "4. 提示音 开/关",
+        "5. 忽略重音 开/关",
+        "6. 单轮测验 开/关",
+        "0. 返回主菜单",
+        "\n========================================"
     },
 
-    // JAPANESE (Index 3)
+    // Japanese (3)
     {
         "================設定メニュー================",
-        "以下の項目から選択してください：",
+        "以下から選択してください：",
         "1. 言語設定",
         "2. 学習言語の設定",
         "3. 色の設定",
-        "4. ビープ音オン/オフ",
-        "5. アクセント無視オン/オフ",
-        "6. メインメニューに戻る",
-        "\n================================================"
+        "4. ビープ音 オン/オフ",
+        "5. アクセント無視 オン/オフ",
+        "6. 1回クイズ オン/オフ",
+        "0. メインメニューへ戻る",
+        "\n=========================================="
     },
 
-    // SPANISH (Index 4)
+    // Spanish (4)
     {
         "================MENÚ DE CONFIGURACIÓN================",
-        "Por favor elige una de las siguientes opciones:",
-        "1. Configuración de idioma",
-        "2. Idioma de aprendizaje",
-        "3. Configuración de color",
-        "4. Sonido beep activar/desactivar",
-        "5. Ignorar acentos activar/desactivar",
-        "6. Volver al menú principal",
-        "\n================================================"
+        "Elige una opción:",
+        "1. Configurar idioma",
+        "2. Configurar idioma de aprendizaje",
+        "3. Configurar colores",
+        "4. Sonido beep on/off",
+        "5. Ignorar acentos on/off",
+        "6. Quiz de una ronda on/off",
+        "0. Volver al menú principal",
+        "\n===================================================="
     },
 
-    // GERMAN (Index 5)
+    // German (5)
     {
         "================EINSTELLUNGSMENÜ================",
-        "Bitte wählen Sie eine der folgenden Optionen:",
-        "1. Spracheinstellungen",
-        "2. Lernsprache festlegen",
-        "3. Farbeinstellungen",
-        "4. Signalton ein/aus",
-        "5. Akzente ignorieren ein/aus",
-        "6. Zurück zum Hauptmenü",
-        "\n================================================"
+        "Bitte wählen:",
+        "1. Sprache einstellen",
+        "2. Lernsprache einstellen",
+        "3. Farben einstellen",
+        "4. Signalton an/aus",
+        "5. Akzente ignorieren an/aus",
+        "6. Einzelrunde Quiz an/aus",
+        "0. Zurück zum Hauptmenü",
+        "\n==============================================="
     },
 
-    // FRENCH (Index 6)
+    // French (6)
     {
         "================MENU PARAMÈTRES================",
-        "Veuillez choisir une option :",
-        "1. Paramètres de langue",
-        "2. Langue d'apprentissage",
-        "3. Paramètres de couleur",
-        "4. Son bip on/off",
+        "Veuillez choisir :",
+        "1. Définir la langue",
+        "2. Définir la langue d’apprentissage",
+        "3. Définir les couleurs",
+        "4. Son beep on/off",
         "5. Ignorer les accents on/off",
-        "6. Retour au menu principal",
-        "\n================================================"
+        "6. Quiz une manche on/off",
+        "0. Retour au menu principal",
+        "\n=============================================="
     },
 
-    // RUSSIAN (Index 7)
+    // Russian (7)
     {
         "================МЕНЮ НАСТРОЕК================",
-        "Пожалуйста, выберите один из пунктов:",
-        "1. Настройки языка",
-        "2. Язык обучения",
-        "3. Настройки цвета",
-        "4. Звук писка вкл/выкл",
+        "Выберите опцию:",
+        "1. Установить язык",
+        "2. Установить язык обучения",
+        "3. Настроить цвета",
+        "4. Звук вкл/выкл",
         "5. Игнорировать акценты вкл/выкл",
-        "6. Вернуться в главное меню",
-        "\n================================================"
+        "6. Один раунд викторины вкл/выкл",
+        "0. Назад в главное меню",
+        "\n=========================================="
     },
 
-    // UKRAINIAN (Index 8)
+    // Ukrainian (8)
     {
         "================МЕНЮ НАЛАШТУВАНЬ================",
-        "Будь ласка, оберіть один з пунктів:",
-        "1. Налаштування мови",
-        "2. Мова навчання",
-        "3. Налаштування кольору",
-        "4. Звук біп увімк/вимк",
+        "Оберіть опцію:",
+        "1. Встановити мову",
+        "2. Встановити мову навчання",
+        "3. Налаштувати кольори",
+        "4. Звук увімк/вимк",
         "5. Ігнорувати акценти увімк/вимк",
-        "6. Повернутися до головного меню",
-        "\n================================================"
+        "6. Один раунд вікторини увімк/вимк",
+        "0. Назад до головного меню",
+        "\n=============================================="
     },
 
-    // KOREAN (Index 9)
+    // Korean (9)
     {
         "================설정 메뉴================",
-        "다음 옵션 중 하나를 선택하세요:",
+        "옵션을 선택하세요:",
         "1. 언어 설정",
         "2. 학습 언어 설정",
         "3. 색상 설정",
         "4. 비프음 켜기/끄기",
         "5. 악센트 무시 켜기/끄기",
-        "6. 메인 메뉴로 돌아가기",
-        "\n================================================"
+        "6. 1라운드 퀴즈 켜기/끄기",
+        "0. 메인 메뉴로 돌아가기",
+        "\n======================================"
     },
 
-    // ITALIAN (Index 10)
+    // Italian (10)
     {
         "================MENU IMPOSTAZIONI================",
-        "Scegli una delle seguenti opzioni:",
-        "1. Impostazioni lingua",
-        "2. Lingua di apprendimento",
-        "3. Impostazioni colore",
+        "Scegli un'opzione:",
+        "1. Imposta lingua",
+        "2. Imposta lingua di apprendimento",
+        "3. Imposta colori",
         "4. Suono beep on/off",
         "5. Ignora accenti on/off",
-        "6. Torna al menu principale",
+        "6. Quiz singolo on/off",
+        "0. Torna al menu principale",
         "\n================================================"
     },
 
-    // POLISH (Index 11)
+    // Polish (11)
     {
         "================MENU USTAWIEŃ================",
-        "Wybierz jedną z opcji:",
-        "1. Ustawienia języka",
-        "2. Język nauki",
-        "3. Ustawienia kolorów",
-        "4. Dźwięk beep włącz/wyłącz",
-        "5. Ignoruj akcenty włącz/wyłącz",
-        "6. Powrót do menu głównego",
-        "\n================================================"
+        "Wybierz opcję:",
+        "1. Ustaw język",
+        "2. Ustaw język nauki",
+        "3. Ustaw kolory",
+        "4. Dźwięk on/off",
+        "5. Ignoruj akcenty on/off",
+        "6. Jedna runda quizu on/off",
+        "0. Powrót do menu głównego",
+        "\n============================================"
     },
 
-    // ARABIC (Index 12)
+    // Arabic (12)
     {
         "================قائمة الإعدادات================",
-        "يرجى اختيار أحد الخيارات التالية:",
-        "1. إعدادات اللغة",
-        "2. لغة التعلم",
-        "3. إعدادات اللون",
-        "4. صوت التنبيه تشغيل/إيقاف",
-        "5. تجاهل العلامات الصوتية تشغيل/إيقاف",
-        "6. العودة إلى القائمة الرئيسية",
-        "\n================================================"
+        "اختر خياراً:",
+        "1. تعيين اللغة",
+        "2. تعيين لغة التعلم",
+        "3. تعيين الألوان",
+        "4. الصوت تشغيل/إيقاف",
+        "5. تجاهل التشكيل تشغيل/إيقاف",
+        "6. اختبار جولة واحدة تشغيل/إيقاف",
+        "0. العودة إلى القائمة الرئيسية",
+        "\n============================================"
     },
 
-    // VIETNAMESE (Index 13)
+    // Vietnamese (13)
     {
         "================MENU CÀI ĐẶT================",
-        "Vui lòng chọn một trong các mục sau:",
+        "Chọn một tùy chọn:",
         "1. Cài đặt ngôn ngữ",
-        "2. Ngôn ngữ học",
+        "2. Cài đặt ngôn ngữ học",
         "3. Cài đặt màu sắc",
-        "4. Âm beep bật/tắt",
+        "4. Âm thanh bật/tắt",
         "5. Bỏ qua dấu bật/tắt",
-        "6. Quay lại menu chính",
-        "\n================================================"
+        "6. Quiz một vòng bật/tắt",
+        "0. Quay lại menu chính",
+        "\n=========================================="
     },
 
-    // TAGALOG (Index 14)
+    // Tagalog (14)
     {
         "================MENU NG MGA SETTING================",
-        "Pumili mula sa mga sumusunod na opsyon:",
-        "1. Setting ng wika",
-        "2. Wikang pag-aaralan",
-        "3. Setting ng kulay",
-        "4. Beep sound on/off",
-        "5. Ignore accents on/off",
-        "6. Bumalik sa main menu",
-        "\n================================================"
+        "Pumili ng opsyon:",
+        "1. Itakda ang wika",
+        "2. Itakda ang wikang aaralin",
+        "3. Itakda ang kulay",
+        "4. Tunog beep on/off",
+        "5. Balewalain ang accent on/off",
+        "6. Isang round quiz on/off",
+        "0. Bumalik sa main menu",
+        "\n=============================================="
     },
 
-    // GREEK (Index 15)
+    // Greek (15)
     {
         "================ΜΕΝΟΥ ΡΥΘΜΙΣΕΩΝ================",
-        "Επιλέξτε μία από τις παρακάτω επιλογές:",
-        "1. Ρυθμίσεις γλώσσας",
-        "2. Γλώσσα εκμάθησης",
-        "3. Ρυθμίσεις χρώματος",
-        "4. Ήχος μπιπ on/off",
+        "Επιλέξτε:",
+        "1. Ρύθμιση γλώσσας",
+        "2. Ρύθμιση γλώσσας εκμάθησης",
+        "3. Ρύθμιση χρωμάτων",
+        "4. Ήχος on/off",
         "5. Αγνόηση τόνων on/off",
-        "6. Επιστροφή στο κύριο μενού",
-        "\n================================================"
+        "6. Quiz ενός γύρου on/off",
+        "0. Επιστροφή στο κύριο μενού",
+        "\n============================================"
     },
 
-    // HEBREW (Index 16)
+    // Hebrew (16)
     {
         "================תפריט הגדרות================",
-        "בחר אחת מהאפשרויות הבאות:",
-        "1. הגדרות שפה",
-        "2. שפת לימוד",
-        "3. הגדרות צבע",
-        "4. צליל ביפ הפעלה/כיבוי",
-        "5. התעלמות ממבטאים הפעלה/כיבוי",
-        "6. חזרה לתפריט הראשי",
-        "\n================================================"
+        "בחר אפשרות:",
+        "1. הגדרת שפה",
+        "2. הגדרת שפת לימוד",
+        "3. הגדרת צבעים",
+        "4. צליל הפעלה/כיבוי",
+        "5. התעלמות מניקוד הפעלה/כיבוי",
+        "6. חידון סיבוב אחד הפעלה/כיבוי",
+        "0. חזרה לתפריט הראשי",
+        "\n=========================================="
     },
 
-    // PORTUGUESE (Index 17)
+    // Portuguese (17)
     {
         "================MENU DE CONFIGURAÇÕES================",
-        "Escolha uma das opções abaixo:",
-        "1. Configurações de idioma",
-        "2. Idioma de aprendizagem",
-        "3. Configurações de cor",
-        "4. Som beep ligar/desligar",
-        "5. Ignorar acentos ligar/desligar",
-        "6. Voltar ao menu principal",
-        "\n================================================"
+        "Escolha uma opção:",
+        "1. Definir idioma",
+        "2. Definir idioma de aprendizado",
+        "3. Definir cores",
+        "4. Som beep on/off",
+        "5. Ignorar acentos on/off",
+        "6. Quiz de uma rodada on/off",
+        "0. Voltar ao menu principal",
+        "\n===================================================="
     },
 
-    // FARSI (Index 18)
+    // Farsi (18)
     {
         "================منوی تنظیمات================",
-        "لطفاً یکی از گزینه‌های زیر را انتخاب کنید:",
-        "1. تنظیمات زبان",
-        "2. زبان یادگیری",
-        "3. تنظیمات رنگ",
-        "4. صدای بوق روشن/خاموش",
-        "5. نادیده گرفتن علائم روشن/خاموش",
-        "6. بازگشت به منوی اصلی",
-        "\n================================================"
+        "یک گزینه انتخاب کنید:",
+        "1. تنظیم زبان",
+        "2. تنظیم زبان یادگیری",
+        "3. تنظیم رنگ‌ها",
+        "4. صدا روشن/خاموش",
+        "5. نادیده گرفتن اعراب روشن/خاموش",
+        "6. آزمون یک دور روشن/خاموش",
+        "0. بازگشت به منوی اصلی",
+        "\n=========================================="
     },
 
-    // SWEDISH (Index 19)
+    // Swedish (19)
     {
         "================INSTÄLLNINGSMENY================",
-        "Välj ett av alternativen:",
-        "1. Språkinställningar",
-        "2. Inlärningsspråk",
-        "3. Färginställningar",
-        "4. Pipljud på/av",
+        "Välj ett alternativ:",
+        "1. Ställ in språk",
+        "2. Ställ in inlärningsspråk",
+        "3. Ställ in färger",
+        "4. Ljud på/av",
         "5. Ignorera accenter på/av",
-        "6. Tillbaka till huvudmenyn",
-        "\n================================================"
+        "6. Enrundig quiz på/av",
+        "0. Tillbaka till huvudmenyn",
+        "\n=============================================="
     },
 
-    // DUTCH (Index 20)
+    // Dutch (20)
     {
         "================INSTELLINGEN MENU================",
-        "Kies een van de volgende opties:",
-        "1. Taalinstellingen",
-        "2. Leer taal instellen",
-        "3. Kleurinstellingen",
-        "4. Piepgeluid aan/uit",
+        "Kies een optie:",
+        "1. Stel taal in",
+        "2. Stel leertaak in",
+        "3. Stel kleuren in",
+        "4. Geluid aan/uit",
         "5. Accenten negeren aan/uit",
-        "6. Terug naar hoofdmenu",
-        "\n================================================"
+        "6. Eén ronde quiz aan/uit",
+        "0. Terug naar hoofdmenu",
+        "\n=============================================="
     },
 
-    // TURKISH (Index 21)
+    // Turkish (21)
     {
         "================AYARLAR MENÜSÜ================",
-        "Lütfen aşağıdaki seçeneklerden birini seçin:",
-        "1. Dil ayarları",
-        "2. Öğrenme dili",
-        "3. Renk ayarları",
-        "4. Bip sesi aç/kapat",
-        "5. Aksanları yoksay aç/kapat",
-        "6. Ana menüye dön",
-        "\n================================================"
+        "Bir seçenek seçin:",
+        "1. Dil ayarla",
+        "2. Öğrenme dili ayarla",
+        "3. Renkleri ayarla",
+        "4. Ses açık/kapalı",
+        "5. Aksanları yok say açık/kapalı",
+        "6. Tek tur quiz açık/kapalı",
+        "0. Ana menüye dön",
+        "\n============================================"
     },
 
-    // HINDI (Index 22)
+    // Hindi (22)
     {
         "================सेटिंग्स मेनू================",
-        "कृपया निम्न विकल्पों में से चुनें:",
-        "1. भाषा सेटिंग",
-        "2. सीखने की भाषा",
-        "3. रंग सेटिंग",
-        "4. बीप ध्वनि चालू/बंद",
+        "एक विकल्प चुनें:",
+        "1. भाषा सेट करें",
+        "2. सीखने की भाषा सेट करें",
+        "3. रंग सेट करें",
+        "4. ध्वनि चालू/बंद",
         "5. उच्चारण अनदेखा करें चालू/बंद",
-        "6. मुख्य मेनू पर वापस जाएँ",
-        "\n================================================"
+        "6. एक राउंड क्विज़ चालू/बंद",
+        "0. मुख्य मेनू पर वापस जाएं",
+        "\n=========================================="
     },
 
-    // LATIN (Index 23)
+    // Latin (23)
     {
         "================MENU CONFIGURATIONIS================",
-        "Elige optionem:",
-        "1. Linguae configurationes",
-        "2. Lingua discenda",
-        "3. Colorum configurationes",
-        "4. Sonus beep activare/deactivare",
-        "5. Accentūs ignorare activare/deactivare",
-        "6. Redire ad menu principale",
-        "\n================================================"
+        "Optionem elige:",
+        "1. Linguam pone",
+        "2. Linguam discendi pone",
+        "3. Colores pone",
+        "4. Sonus on/off",
+        "5. Accentus ignora on/off",
+        "6. Quiz una rota on/off",
+        "0. Redi ad menu principale",
+        "\n=============================================="
     }
+
 };
 
 const std::vector<LanguageMenu> languageMenuTranslations {
@@ -8006,6 +8228,301 @@ const std::vector<SpellingOutAccents> spellingOutAccentsTranslations {
     }
 };
 
+const std::vector<CreateVocabListsFileAndFolders> createVocabListsFileAndFoldersTranslations{
+
+    // Hungarian (0)
+    {
+        "--- A jelenlegi fájlok és mappák a /data-ban: ---",
+        "[MAPPA]"
+    },
+
+    // English (1)
+    {
+        "--- Current files and folders in /data: ---",
+        "[FOLDER]"
+    },
+
+    // Chinese (2)
+    {
+        "--- /data 中的当前文件和文件夹: ---",
+        "[文件夹]"
+    },
+
+    // Japanese (3)
+    {
+        "--- /data 内の現在のファイルとフォルダ: ---",
+        "[フォルダ]"
+    },
+
+    // Spanish (4)
+    {
+        "--- Archivos y carpetas actuales en /data: ---",
+        "[CARPETA]"
+    },
+
+    // German (5)
+    {
+        "--- Aktuelle Dateien und Ordner in /data: ---",
+        "[ORDNER]"
+    },
+
+    // French (6)
+    {
+        "--- Fichiers et dossiers actuels dans /data: ---",
+        "[DOSSIER]"
+    },
+
+    // Russian (7)
+    {
+        "--- Текущие файлы и папки в /data: ---",
+        "[ПАПКА]"
+    },
+
+    // Ukrainian (8)
+    {
+        "--- Поточні файли та папки в /data: ---",
+        "[ПАПКА]"
+    },
+
+    // Korean (9)
+    {
+        "--- /data의 현재 파일 및 폴더: ---",
+        "[폴더]"
+    },
+
+    // Italian (10)
+    {
+        "--- File e cartelle attuali in /data: ---",
+        "[CARTELLA]"
+    },
+
+    // Polish (11)
+    {
+        "--- Aktualne pliki i foldery w /data: ---",
+        "[FOLDER]"
+    },
+
+    // Arabic (12)
+    {
+        "--- الملفات والمجلدات الحالية في /data: ---",
+        "[مجلد]"
+    },
+
+    // Vietnamese (13)
+    {
+        "--- Tệp và thư mục hiện tại trong /data: ---",
+        "[THƯ MỤC]"
+    },
+
+    // Tagalog (14)
+    {
+        "--- Kasalukuyang files at folders sa /data: ---",
+        "[FOLDER]"
+    },
+
+    // Greek (15)
+    {
+        "--- Τρέχοντα αρχεία και φάκελοι στο /data: ---",
+        "[ΦΑΚΕΛΟΣ]"
+    },
+
+    // Hebrew (16)
+    {
+        "--- קבצים ותיקיות נוכחיים ב־/data: ---",
+        "[תיקייה]"
+    },
+
+    // Portuguese (17)
+    {
+        "--- Arquivos e pastas atuais em /data: ---",
+        "[PASTA]"
+    },
+
+    // Farsi (18)
+    {
+        "--- فایل‌ها و پوشه‌های فعلی در /data: ---",
+        "[پوشه]"
+    },
+
+    // Swedish (19)
+    {
+        "--- Aktuella filer och mappar i /data: ---",
+        "[MAPP]"
+    },
+
+    // Dutch (20)
+    {
+        "--- Huidige bestanden en mappen in /data: ---",
+        "[MAP]"
+    },
+
+    // Turkish (21)
+    {
+        "--- /data içindeki mevcut dosyalar ve klasörler: ---",
+        "[KLASÖR]"
+    },
+
+    // Hindi (22)
+    {
+        "--- /data में वर्तमान फ़ाइलें और फ़ोल्डर: ---",
+        "[फ़ोल्डर]"
+    },
+
+    // Latin (23)
+    {
+        "--- Fasciculi et directoria in /data: ---",
+        "[DIRECTORIUM]"
+    }
+
+};
+
+const std::vector<VocabFileCommands> vocabFileCommandTranslate{
+
+    // Hungarian (0)
+    {
+        "Parancsok: 'exit' (kilépés), 'del' (törlés), 'rn' (átnevezés), 'cp' (másolás), 'mv' (mozgatás)",
+        "Új mappa létrehozásához írd be a nevét, majd nyomd meg az ENTER-t."
+    },
+
+    // English (1)
+    {
+        "Commands: 'exit' (exit), 'del' (delete), 'rn' (rename), 'cp' (copy), 'mv' (move)",
+        "To create a new folder, type its name and press ENTER."
+    },
+
+    // Chinese (2)
+    {
+        "命令: 'exit' (退出), 'del' (删除), 'rn' (重命名), 'cp' (复制), 'mv' (移动)",
+        "要创建新文件夹，输入名称并按 ENTER。"
+    },
+
+    // Japanese (3)
+    {
+        "コマンド: 'exit' (終了), 'del' (削除), 'rn' (名前変更), 'cp' (コピー), 'mv' (移動)",
+        "新しいフォルダを作成するには名前を入力してENTERを押してください。"
+    },
+
+    // Spanish (4)
+    {
+        "Comandos: 'exit' (salir), 'del' (eliminar), 'rn' (renombrar), 'cp' (copiar), 'mv' (mover)",
+        "Para crear una carpeta nueva, escribe el nombre y presiona ENTER."
+    },
+
+    // German (5)
+    {
+        "Befehle: 'exit' (beenden), 'del' (löschen), 'rn' (umbenennen), 'cp' (kopieren), 'mv' (verschieben)",
+        "Um einen neuen Ordner zu erstellen, Namen eingeben und ENTER drücken."
+    },
+
+    // French (6)
+    {
+        "Commandes: 'exit' (quitter), 'del' (supprimer), 'rn' (renommer), 'cp' (copier), 'mv' (déplacer)",
+        "Pour créer un dossier, tapez le nom puis appuyez sur ENTER."
+    },
+
+    // Russian (7)
+    {
+        "Команды: 'exit' (выход), 'del' (удалить), 'rn' (переименовать), 'cp' (копировать), 'mv' (переместить)",
+        "Чтобы создать папку, введите имя и нажмите ENTER."
+    },
+
+    // Ukrainian (8)
+    {
+        "Команди: 'exit' (вихід), 'del' (видалити), 'rn' (перейменувати), 'cp' (копіювати), 'mv' (перемістити)",
+        "Щоб створити папку, введіть назву і натисніть ENTER."
+    },
+
+    // Korean (9)
+    {
+        "명령어: 'exit' (종료), 'del' (삭제), 'rn' (이름변경), 'cp' (복사), 'mv' (이동)",
+        "새 폴더를 만들려면 이름 입력 후 ENTER."
+    },
+
+    // Italian (10)
+    {
+        "Comandi: 'exit' (esci), 'del' (elimina), 'rn' (rinomina), 'cp' (copia), 'mv' (sposta)",
+        "Per creare una cartella, scrivi il nome e premi ENTER."
+    },
+
+    // Polish (11)
+    {
+        "Komendy: 'exit' (wyjście), 'del' (usuń), 'rn' (zmień nazwę), 'cp' (kopiuj), 'mv' (przenieś)",
+        "Aby utworzyć folder, wpisz nazwę i naciśnij ENTER."
+    },
+
+    // Arabic (12)
+    {
+        "أوامر: 'exit' (خروج), 'del' (حذف), 'rn' (إعادة تسمية), 'cp' (نسخ), 'mv' (نقل)",
+        "لإنشاء مجلد، اكتب الاسم واضغط ENTER."
+    },
+
+    // Vietnamese (13)
+    {
+        "Lệnh: 'exit' (thoát), 'del' (xóa), 'rn' (đổi tên), 'cp' (sao chép), 'mv' (di chuyển)",
+        "Để tạo thư mục mới, nhập tên và nhấn ENTER."
+    },
+
+    // Tagalog (14)
+    {
+        "Mga utos: 'exit' (labas), 'del' (tanggal), 'rn' (palitan pangalan), 'cp' (kopya), 'mv' (lipat)",
+        "Para gumawa ng folder, ilagay ang pangalan at pindutin ENTER."
+    },
+
+    // Greek (15)
+    {
+        "Εντολές: 'exit' (έξοδος), 'del' (διαγραφή), 'rn' (μετονομασία), 'cp' (αντιγραφή), 'mv' (μετακίνηση)",
+        "Για νέο φάκελο γράψε όνομα και πάτα ENTER."
+    },
+
+    // Hebrew (16)
+    {
+        "פקודות: 'exit' (יציאה), 'del' (מחיקה), 'rn' (שינוי שם), 'cp' (העתקה), 'mv' (העברה)",
+        "כדי ליצור תיקייה, הקלד שם ולחץ ENTER."
+    },
+
+    // Portuguese (17)
+    {
+        "Comandos: 'exit' (sair), 'del' (excluir), 'rn' (renomear), 'cp' (copiar), 'mv' (mover)",
+        "Para criar pasta, digite o nome e pressione ENTER."
+    },
+
+    // Farsi (18)
+    {
+        "دستورات: 'exit' (خروج), 'del' (حذف), 'rn' (تغییر نام), 'cp' (کپی), 'mv' (انتقال)",
+        "برای ساخت پوشه، نام را وارد کرده و ENTER بزنید."
+    },
+
+    // Swedish (19)
+    {
+        "Kommandon: 'exit' (avsluta), 'del' (radera), 'rn' (byt namn), 'cp' (kopiera), 'mv' (flytta)",
+        "För ny mapp, skriv namn och tryck ENTER."
+    },
+
+    // Dutch (20)
+    {
+        "Commando's: 'exit' (afsluiten), 'del' (verwijderen), 'rn' (hernoemen), 'cp' (kopiëren), 'mv' (verplaatsen)",
+        "Voor nieuwe map, typ naam en druk ENTER."
+    },
+
+    // Turkish (21)
+    {
+        "Komutlar: 'exit' (çıkış), 'del' (sil), 'rn' (yeniden adlandır), 'cp' (kopyala), 'mv' (taşı)",
+        "Yeni klasör için isim yaz ve ENTER bas."
+    },
+
+    // Hindi (22)
+    {
+        "कमांड: 'exit' (बाहर), 'del' (हटाएँ), 'rn' (नाम बदलें), 'cp' (कॉपी), 'mv' (मूव)",
+        "नया फ़ोल्डर बनाने के लिए नाम लिखें और ENTER दबाएँ।"
+    },
+
+    // Latin (23)
+    {
+        "Mandata: 'exit' (exire), 'del' (delere), 'rn' (renominare), 'cp' (copiare), 'mv' (movere)",
+        "Ad novum directorium crea, nomen scribe et ENTER preme."
+    }
+
+};
 
 
 //======Vectors end =========

@@ -17,14 +17,17 @@ void explanation() {
     const ExplanationStrings& strings = explanationTranslations[static_cast<int>(programUiLanguage)];
 
     screenWipe();
-    std::cout << strings.description << std::endl;
-    std::cout << strings.instruction1 << std::endl;
-    std::cout << strings.instruction2 << std::endl;
-    std::cout << strings.goodLuck << std::endl;
+    std::cout << strings.description << "\n";
+    std::cout << strings.instruction1 << "\n";
+    std::cout << strings.instruction2 << "\n";
+    std::cout << strings.instruction3 << "\n";
+    std::cout << strings.instruction4 << "\n";
+    std::cout << strings.instruction5 << "\n";
+    std::cout << strings.instruction6 << "\n";
+    std::cout << strings.instruction7 << "\n";
+    std::cout << strings.instruction8 << "\n";
+    std::cout << strings.goodLuck <<"\n";
 
-    // delete Buffer
-    // Buffer törlése
-    pufferDelete();
     waitToEnter();
 }
 void waitToEnter()
@@ -45,25 +48,35 @@ void exiting() {
     pufferDelete();
     std::cin.get();
 }
-void screenWipe () {
-
-    std::cout << "\x1B[2J\x1B[H" << std::flush; // letöröljük a képernyő tartalmát || erase the contents of the screen
-    // ha van beállítva háttérszín akkor festünk
-    // if a background color is set then paint
-    if (!currentBG.empty() && useColors)
-    {
+// képernyő Tőrlése
+// screen wipe
+void screenWipe() {
+    // 1. Szín beállítása (ha kell)
+    if (useColors && !currentBG.empty()) {
         std::cout << currentBG;
-    } else
-    {
-        std::cout << colors::RESET;// Minden más esetben alaphelyzet (fekete)
+    } else {
+        std::cout << colors::RESET;
     }
-    // UTÁNA küldjük a törlés és kurzor-pozicionálás parancsot
-    // (\x1B[2J törli az ablakot az AKTUÁLISAN beállított színnel)
-    // AFTER sending the delete and cursor-positioning command
-    // (\x1B[2J deletes the window with the CURRENTLY set color)
-        std::cout << "\x1B[2J\x1B[H";
-        std::cout << std::flush;
+
+    // 2. Képernyő törlése és kurzor haza (egyszerre!)
+   std::cout << "\x1B[2J\x1B[H\x1B[3J" << std::flush;
 }
+/*#ifdef _WIN32
+    // Ez a Windows saját belső parancsa, ami
+    // kényszeríti a konzolablakot a teljes törlésre.
+    std::system("cls");
+#else
+    // Linux / Android / macOS (Termuxban ez tökéletes)
+    std::cout << "\033[2J\033[H" << std::flush;
+#endif
+
+    // A törlés UTÁN állítjuk be a színt, hogy ne vesszen el
+    if (useColors && !currentBG.empty()) {
+        std::cout << currentBG << std::flush;
+    } else {
+        std::cout << colors::RESET << std::flush;
+    }
+}*/
 void pufferDelete() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
@@ -85,7 +98,8 @@ void logError(const std::string& functionName, const std::string& errorMessage) 
         logFile.close();
     }
 }
-
+// A hibák mentése fájlba
+// Save errors to a file
 void logMistakeWriteFile(const WordPair& word)
 {
     //ha WINDOWS
@@ -146,7 +160,8 @@ std::string removePunctuation(const std::string& s)
     }
     return result;
 }
-
+// Az Ékezetes karatkterek figyelmen kívül hagyása
+// Ignore Accented Characters
 std::string removeAccents(const std::string &s) {
     // UTF-8 ékezetes karakterek és párjaik
     static const std::map<std::string, std::string> accentMap = {
@@ -187,7 +202,8 @@ std::string removeAccents(const std::string &s) {
     }
     return result;
 }
-
+// Trimmelés és kisbetűsítés
+// Trim and lowercase
 std::string cleanString(const std::string& s) {
     // Trim és kisbetű
     // Trim and lowercase

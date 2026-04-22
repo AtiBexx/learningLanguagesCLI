@@ -42,7 +42,8 @@ void scoreSystem(int correct, int badly, unsigned long long total) {
 
 //Quiz kérdezős logika
 //Quiz question logic
-void startQuiz (const std::vector<WordPair>& words) {
+void startQuiz (const std::vector<WordPair>& words)
+{
     const HaveNoWords &haveNoWords = haveNoWordsTranslations[static_cast<int>(programUiLanguage)];
     const ReTry &reTry = reTryTranslations[static_cast<int>(programUiLanguage)];
     const BadlyAnswer &badlyAnswer = badlyAnswerTranslations[static_cast<int>(programUiLanguage)];
@@ -62,13 +63,19 @@ void startQuiz (const std::vector<WordPair>& words) {
 
     int badlyAnswers = 0;
     int firstTryCorrect = 0;
-    unsigned long long totalQuestions = words.size() * 2;
+    unsigned long long totalQuestions;
+    if (oneRoundQuiz) {
+        totalQuestions = words.size();
+    } else {
+        totalQuestions = words.size() * 2;
+    }
 
     // Globális változó a kvízen belül a súgó állapotának
     // Global variable within the quiz to store the help status
     bool showHelp = false;
 
-    for (const WordPair& word : words) {
+    for (const WordPair& word : words)
+    {
         bool mistakeMade = false;
 
         // 1. KÖR: Magyar -> Angol kérdezés vagy ami az anyanyelved
@@ -154,74 +161,76 @@ void startQuiz (const std::vector<WordPair>& words) {
 
         // 2. KÖR: Angol -> Magyar kérdezés vagy ami a célnyel
         // 2ND ROUND: English -> Hungarian questioning or anything related to the target language
-        for (;;) {
-            screenWipe();
-            std::cout << quizExplanation.quizExplanation1 << std::endl;
-            std::cout << quizExplanation.quizExplanation2 << std::endl;
-            std::cout << quizExplanation.quizExplanation3 << std::endl;
-            std::cout << getLanguageNameByIndex(static_cast<int>(targetLanguage)) << ": " << word.targetLangMeaning << std::endl;
+        if (!oneRoundQuiz) {
+            for (;;) {
+                screenWipe();
+                std::cout << quizExplanation.quizExplanation1 << std::endl;
+                std::cout << quizExplanation.quizExplanation2 << std::endl;
+                std::cout << quizExplanation.quizExplanation3 << std::endl;
+                std::cout << getLanguageNameByIndex(static_cast<int>(targetLanguage)) << ": " << word.targetLangMeaning << std::endl;
 
-            // Ha be van kapcsolva a súgó, akkor itt kiírjuk
-            if (showHelp) {
-                std::cout << "CheatSheet: " << colors::GREY << word.motherLangMeaning << colors::RESET << std::endl;
-            }
-
-            std::cout <<  getLanguageNameByIndex(static_cast<int>(motherLanguage)) << ": ";  // "Magyarul? "
-
-            std::string answer;
-            std::getline(std::cin, answer);
-
-            if (answer == "exit") return;
-
-            // TOGGLE SÚGÓ BEKAPCSOLÁS
-            // TOGGLE HELP ENABLE
-            if (answer == "h" || answer == "help") {
-                showHelp = true;
-                continue;
-            }
-            // TOGGLE SÚGÓ KIKAPCSOLÁS
-            // TOGGLE HELP DISABLE
-            if (answer == "h off" || answer == "help off") {
-                showHelp = false;
-                continue;
-            }
-
-            if (checkMultipleAnswers(answer, word.motherLangMeaning)) {
-               // a helyes válasz színe ha az useColor == true
-               // // the color of the correct answer if useColor == true
-
-                if (useColors) std::cout << colors::GREEN;
-                std::cout << "\n" << goodAnswer1.goodAnswer1;
-                if (useColors) std::cout << colors::RESET;
-
-                if (!word.pronunciation.empty()) {
-                    std::cout << " " << pronunciation2str.pronunciation2str <<"["<< word.pronunciation << "]";
-                }
-                std::cout << std::endl;
-
-                if (!mistakeMade) {
-                    firstTryCorrect++;
+                // Ha be van kapcsolva a súgó, akkor itt kiírjuk
+                if (showHelp) {
+                    std::cout << "CheatSheet: " << colors::GREY << word.motherLangMeaning << colors::RESET << std::endl;
                 }
 
-               waitToEnter();
-                break;
-            } else {
-                if (!mistakeMade) {
-                    badlyAnswers++;
+                std::cout <<  getLanguageNameByIndex(static_cast<int>(motherLanguage)) << ": ";  // "Magyarul? "
+
+                std::string answer;
+                std::getline(std::cin, answer);
+
+                if (answer == "exit") return;
+
+                // TOGGLE SÚGÓ BEKAPCSOLÁS
+                // TOGGLE HELP ENABLE
+                if (answer == "h" || answer == "help") {
+                    showHelp = true;
+                    continue;
                 }
-                mistakeMade = true;
+                // TOGGLE SÚGÓ KIKAPCSOLÁS
+                // TOGGLE HELP DISABLE
+                if (answer == "h off" || answer == "help off") {
+                    showHelp = false;
+                    continue;
+                }
 
-                //Helytelen válasz színe
-                //csak a helytelen válasz írjuk ki pirosal ha true az useColors
-                //Incorrect answer color
-                //only print incorrect answers in red if useColors is true
-                if (useColors) std::cout << colors::RED;
-                std::cout << "\n" << badlyAnswer.badlyAnswer << std::endl;
-                if (useColors) std::cout << colors::RESET;
+                if (checkMultipleAnswers(answer, word.motherLangMeaning)) {
+                    // a helyes válasz színe ha az useColor == true
+                    // // the color of the correct answer if useColor == true
 
-                std::cout << goodAnswer2.goodAnswer2 << " " << word.motherLangMeaning << std::endl;
-                std::cout << "\n" << reTry.reTry;
-                std::cin.get();
+                    if (useColors) std::cout << colors::GREEN;
+                    std::cout << "\n" << goodAnswer1.goodAnswer1;
+                    if (useColors) std::cout << colors::RESET;
+
+                    if (!word.pronunciation.empty()) {
+                        std::cout << " " << pronunciation2str.pronunciation2str <<"["<< word.pronunciation << "]";
+                    }
+                    std::cout << std::endl;
+
+                    if (!mistakeMade) {
+                        firstTryCorrect++;
+                    }
+
+                    waitToEnter();
+                    break;
+                } else {
+                    if (!mistakeMade) {
+                        badlyAnswers++;
+                    }
+                    mistakeMade = true;
+
+                    //Helytelen válasz színe
+                    //csak a helytelen válasz írjuk ki pirosal ha true az useColors
+                    //Incorrect answer color
+                    //only print incorrect answers in red if useColors is true
+                    if (useColors) std::cout << colors::RED;
+                    std::cout << "\n" << badlyAnswer.badlyAnswer << std::endl;
+                    if (useColors) std::cout << colors::RESET;
+
+                    std::cout << goodAnswer2.goodAnswer2 << " " << word.motherLangMeaning << std::endl;
+                    std::cout << "\n" << reTry.reTry;
+                    std::cin.get();
+                }
             }
         }
     }
