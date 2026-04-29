@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['vietnamese_0',['VIETNAMESE',['../translations_8h.html#a315ca917ad583797f709ea477dd28705a8cd2c6bb65a681b78a5feb09a7b6d265',1,'translations.h']]],
+  ['vietnamese_1',['Vietnamese',['../struct_target_language_name_set.html#a1638cf657d7415ecb5cad378c801311d',1,'TargetLanguageNameSet::Vietnamese'],['../structtarget_language_list.html#a0d05428408baefa702c19bf4d779fc2a',1,'targetLanguageList::Vietnamese']]],
+  ['vocabcmenu_2ecpp_2',['vocabCmenu.cpp',['../vocab_cmenu_8cpp.html',1,'']]],
+  ['vocaberror1_3',['vocabError1',['../struct_vocab_menu.html#a1d0e4106560e1c9b0ad8a1f5af17d2b4',1,'VocabMenu']]],
+  ['vocaberror2_4',['vocabError2',['../struct_vocab_menu.html#a96f8960101dfe5872b78510b68414903',1,'VocabMenu']]],
+  ['vocabfilecommands_5',['VocabFileCommands',['../struct_vocab_file_commands.html',1,'']]],
+  ['vocabfilecommandtranslate_6',['vocabFileCommandTranslate',['../translations_8cpp.html#a4ff3d64aabbd88b692e8f72ec7298ff1',1,'vocabFileCommandTranslate:&#160;translations.cpp'],['../translations_8h.html#a4ff3d64aabbd88b692e8f72ec7298ff1',1,'vocabFileCommandTranslate:&#160;translations.cpp']]],
+  ['vocabmenu_7',['VocabMenu',['../struct_vocab_menu.html',1,'']]],
+  ['vocabmenu1_8',['vocabMenu1',['../struct_vocab_menu.html#aaeef9e7410b892d3eac07360112dd0c1',1,'VocabMenu']]],
+  ['vocabmenu2_9',['vocabMenu2',['../struct_vocab_menu.html#a444cc36f1b9df5a522b0fb753674a06d',1,'VocabMenu']]],
+  ['vocabmenu3_10',['vocabMenu3',['../struct_vocab_menu.html#ad64442a6be1918119617537f031e0132',1,'VocabMenu']]],
+  ['vocabmenutranslations_11',['vocabMenuTranslations',['../translations_8cpp.html#a9630391659ff2df4d8bcac0497b899f7',1,'vocabMenuTranslations:&#160;translations.cpp'],['../translations_8h.html#a9630391659ff2df4d8bcac0497b899f7',1,'vocabMenuTranslations:&#160;translations.cpp']]],
+  ['vocabwordspairtotal_12',['VocabWordsPairTotal',['../struct_vocab_words_pair_total.html',1,'']]],
+  ['vocabwordspairtotal_13',['vocabWordsPairTotal',['../struct_vocab_words_pair_total.html#abf52664b9e23f000461bf540cf524ff7',1,'VocabWordsPairTotal']]],
+  ['vocabwordspairtotal2_14',['vocabWordsPairTotal2',['../struct_vocab_words_pair_total.html#ac95eb27901285bfebfa7551dd41f2365',1,'VocabWordsPairTotal']]],
+  ['vocabwordspairtotal3_15',['vocabWordsPairTotal3',['../struct_vocab_words_pair_total.html#a007bb91af58d4a56f18f8d63024dd05b',1,'VocabWordsPairTotal']]],
+  ['vocabwordspairtotaltranslations_16',['vocabWordsPairTotalTranslations',['../translations_8cpp.html#a9af2c637dc05c0021f864b78cbed2b47',1,'vocabWordsPairTotalTranslations:&#160;translations.cpp'],['../translations_8h.html#a9af2c637dc05c0021f864b78cbed2b47',1,'vocabWordsPairTotalTranslations:&#160;translations.cpp']]]
+];

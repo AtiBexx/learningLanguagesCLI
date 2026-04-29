@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nyelvtanulo App: Common/generalFunctions.cpp Forrásfájl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Nyelvtanulo App
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Keresés',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('general_functions_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">generalFunctions.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="general_functions_8cpp.html">Ugrás a fájl dokumentációjához.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="general_functions_8h.html">generalFunctions.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="translations_8h.html">../Translate/translations.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;windows.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="data_file_reading_8h.html">dataFileReading.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="settings_8h.html">settings.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="colors_8h.html">Settings/colors.h</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// a program leírása/magyarázata</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// program explanation</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#a6571e3e7c756c88527b1771d1c470f94">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8cpp.html#a6571e3e7c756c88527b1771d1c470f94">explanation</a>() {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_explanation_strings.html">ExplanationStrings</a>&amp; strings = <a class="code hl_variable" href="translations_8cpp.html#a4ea71e9b9872c00ea4d06982c43807e1">explanationTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#a56ef1d34cd54a511471376418e97d772">description</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#aef5fa901204ff0db24dfd6fdba8dca3e">instruction1</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#a7701f9a4df7dae0057001bd00a91d8d8">instruction2</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#a7368580ccd48a6f52df13bf13176493d">instruction3</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#a2b26076ca374472ea5caed9a585ef1e0">instruction4</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#a83c470c45ad72039fe4e5049c6d283b9">instruction5</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#a4f954c53110d65a48ff203a6154be9a4">instruction6</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#a73488e06fb8e3f67079955c8dd0582cc">instruction7</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#a9f25cdfd6d49804a1bfc0ea327be6b46">instruction8</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_explanation_strings.html#ae75a832c0b20e0ccb4e00f0de35c640c">goodLuck</a> &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">// várunk egy billentyűre (az enterre)</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// wait for a keystroke (enter)</span></div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_entering_back.html">EnteringBack</a>&amp; enteringBack = <a class="code hl_variable" href="translations_8cpp.html#ad4633117f672dc537909a694b7c1c1a5">continuationToEnterTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    std::cout &lt;&lt; enteringBack.<a class="code hl_variable" href="struct_entering_back.html#af7a68819443edf4012e522cf9a0c1bb4">pressToEnter</a> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::cin.get();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// Kilépünk az alkalmazásból</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// Exit the application</span></div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#aec7217024e1fd9e8e844a95c9b5c89a5">   66</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8cpp.html#aec7217024e1fd9e8e844a95c9b5c89a5">exiting</a>() {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_exiting_strings.html">ExitingStrings</a>&amp; strings = <a class="code hl_variable" href="translations_8cpp.html#ae62951237d1a81690015afd7b2457600">exitingTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    std::cout &lt;&lt; strings.<a class="code hl_variable" href="struct_exiting_strings.html#a4ff1cdfbd3365c052588876b74341e54">exiting</a> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// Buffer törlése, hogy a cin.get() biztosan várjon</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">// Clearing buffer to ensure cin.get() waits</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="general_functions_8cpp.html#aa30dc624799aff7f95ec6deeb705372d">pufferDelete</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    std::cin.get();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">// képernyő Tőrlése</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">// screen wipe</span></div>
+<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">   78</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>() {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// 1. Szín beállítása (ha kell)</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a> &amp;&amp; !<a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a>.empty()) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        std::cout &lt;&lt; <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        std::cout &lt;&lt; <a class="code hl_variable" href="namespacecolors.html#a92c8fcc8e472aad5f51332426794bf8d">colors::RESET</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">// 2. Képernyő törlése és kurzor haza (egyszerre!)</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>   std::cout &lt;&lt; <span class="stringliteral">&quot;\x1B[2J\x1B[H\x1B[3J&quot;</span> &lt;&lt; std::flush;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">/*#ifdef _WIN32</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">    // Ez a Windows saját belső parancsa, ami</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">    // kényszeríti a konzolablakot a teljes törlésre.</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">    std::system(&quot;cls&quot;);</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">#else</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">    // Linux / Android / macOS (Termuxban ez tökéletes)</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">    std::cout &lt;&lt; &quot;\033[2J\033[H&quot; &lt;&lt; std::flush;</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">#endif</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"></span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">    // A törlés UTÁN állítjuk be a színt, hogy ne vesszen el</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">    if (useColors &amp;&amp; !currentBG.empty()) {</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">        std::cout &lt;&lt; currentBG &lt;&lt; std::flush;</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">    } else {</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">        std::cout &lt;&lt; colors::RESET &lt;&lt; std::flush;</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">    }</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">}*/</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">// Letöröljük a bent maradt puffert ha szükséges</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">// Clear the remaining buffer if necessary it</span></div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#aa30dc624799aff7f95ec6deeb705372d">  108</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8cpp.html#aa30dc624799aff7f95ec6deeb705372d">pufferDelete</a>() {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">// rendszerhibák mentése</span></div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">  112</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="keyword">const</span> std::string&amp; functionName, <span class="keyword">const</span> std::string&amp; errorMessage) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    std::ofstream logFile(<span class="stringliteral">&quot;error.log &quot;</span>, std::ios::app); <span class="comment">//hozzáfűzés mód || append mode</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (logFile.is_open()) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="comment">// az időbélyeg lekérése</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="comment">// get the timestamp</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        std::time_t now = std::time(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordtype">char</span> timestamp[20];</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        std::strftime(timestamp, <span class="keyword">sizeof</span>(timestamp), <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, std::localtime(&amp;now));</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="comment">//Mentés és hibakód/hibaüzenet [IDŐ SZERINT]</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="comment">//Save and error code/error message [BY TIME]</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        logFile &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; timestamp &lt;&lt; <span class="stringliteral">&quot;] [&quot;</span> &lt;&lt; functionName &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; errorMessage &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        logFile.close();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">// A hibák mentése fájlba</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">// Save errors to a file</span></div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#a372bc25a6dbf0fb709d41bd366bf8910">  131</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8cpp.html#a372bc25a6dbf0fb709d41bd366bf8910">logMistakeWriteFile</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_word_pair.html">WordPair</a>&amp; word)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>{</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="comment">//ha WINDOWS</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    std::system(<span class="stringliteral">&quot;if not exist data\\mistakes mkdir data\\mistakes&quot;</span>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    std::string path = <span class="stringliteral">&quot;data\\mistakes\\mistakes.data&quot;</span>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">//HA LINUX VAGY ANDROID VAGY MÁS</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="comment">//IF LINUX OR ANDROID OR ELSE SYSTEM</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">    #else</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    std::system(<span class="stringliteral">&quot;mkdir -p data/mistakes&quot;</span>);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    std::string path = <span class="stringliteral">&quot;data/mistakes/mistakes.data&quot;</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="comment">//Hozzafüzés módban nyitjuk meg hogy gyüljenek a hibák</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">//Open in append mode to collect errors</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    std::ofstream mistakeFile(path, std::ios::app);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">if</span> (mistakeFile.is_open())</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="comment">//elmentjük ugyanabban a formátumban a fájl</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="comment">//save the file in the same format</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        mistakeFile &lt;&lt; word.<a class="code hl_variable" href="struct_word_pair.html#a887ea26e87e3909ccfd367a64d8bb5bf">targetLangMeaning</a> &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span> &lt;&lt; word.<a class="code hl_variable" href="struct_word_pair.html#aa1ce412316d7e1306f02578987315bc1">motherLangMeaning</a>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">if</span> (!word.<a class="code hl_variable" href="struct_word_pair.html#a27f5134303a31554eeeb660531b92b00">pronunciation</a>.empty())</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            mistakeFile &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; word.<a class="code hl_variable" href="struct_word_pair.html#a27f5134303a31554eeeb660531b92b00">pronunciation</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        mistakeFile &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        mistakeFile.close();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">// a Hang</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">// the sound</span></div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#a2067af00a2b4df8c2996193cbd3fec01">  164</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8cpp.html#a2067af00a2b4df8c2996193cbd3fec01">playBeep</a>(<span class="keywordtype">int</span> frequency , <span class="keywordtype">int</span> duration ) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="settings_8cpp.html#ae6cfdf4465263f16973a2f5121306ae5">useSound</a>) <span class="keywordflow">return</span>; <span class="comment">// ha ki van kapcsolva || if it&quot;s turned off</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">// Windowsos beep: frekvencia (Hz) és időtartam (ms)</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="comment">// Windows beep: frequency (Hz) and duration (ms)</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    Beep(frequency, duration);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="comment">// Linux/Termux/macOS: ANSI Bell character</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\a&quot;</span> &lt;&lt; std::flush;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>}</div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">//Az írásjelek eltávolítására ne vegy figyelembe &#39;!&#39; &#39;?&#39; stb</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">//To remove punctuation, ignore &#39;!&#39; &#39;?&#39; etc.</span></div>
+<div class="foldopen" id="foldopen00179" data-start="{" data-end="}">
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#a120cfd0e4ff9c22239d599744a0d3141">  179</a></span>std::string <a class="code hl_function" href="general_functions_8cpp.html#a120cfd0e4ff9c22239d599744a0d3141">removePunctuation</a>(<span class="keyword">const</span> std::string&amp; s)</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>{</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    std::string result;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">for</span> (<span class="keywordtype">char</span> c : s) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="comment">// Ha nem írásjel, akkor megtartjuk</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="comment">// If it&#39;s not a punctuation mark, we keep it</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">if</span> (c != <span class="charliteral">&#39;!&#39;</span> &amp;&amp; c != <span class="charliteral">&#39;?&#39;</span> &amp;&amp; c != <span class="charliteral">&#39;.&#39;</span> &amp;&amp; c != <span class="charliteral">&#39;,&#39;</span> &amp;&amp; c != <span class="charliteral">&#39;;&#39;</span>) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            result += c;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
+</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">// Az Ékezetes karatkterek figyelmen kívül hagyása</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">// Ignore Accented Characters</span></div>
+<div class="foldopen" id="foldopen00193" data-start="{" data-end="}">
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#ab006839cc33a43f6d71f8ece65029ad3">  193</a></span>std::string <a class="code hl_function" href="general_functions_8cpp.html#ab006839cc33a43f6d71f8ece65029ad3">removeAccents</a>(<span class="keyword">const</span> std::string &amp;s) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="comment">// UTF-8 ékezetes karakterek és párjaik</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keyword">static</span> <span class="keyword">const</span> std::map&lt;std::string, std::string&gt; accentMap = {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        {<span class="stringliteral">&quot;á&quot;</span>, <span class="stringliteral">&quot;a&quot;</span>}, {<span class="stringliteral">&quot;é&quot;</span>, <span class="stringliteral">&quot;e&quot;</span>}, {<span class="stringliteral">&quot;í&quot;</span>, <span class="stringliteral">&quot;i&quot;</span>}, {<span class="stringliteral">&quot;ó&quot;</span>, <span class="stringliteral">&quot;o&quot;</span>}, {<span class="stringliteral">&quot;ö&quot;</span>, <span class="stringliteral">&quot;o&quot;</span>}, {<span class="stringliteral">&quot;ő&quot;</span>, <span class="stringliteral">&quot;o&quot;</span>},</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        {<span class="stringliteral">&quot;ú&quot;</span>, <span class="stringliteral">&quot;u&quot;</span>}, {<span class="stringliteral">&quot;ü&quot;</span>, <span class="stringliteral">&quot;u&quot;</span>}, {<span class="stringliteral">&quot;ű&quot;</span>, <span class="stringliteral">&quot;u&quot;</span>},</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        {<span class="stringliteral">&quot;Á&quot;</span>, <span class="stringliteral">&quot;a&quot;</span>}, {<span class="stringliteral">&quot;É&quot;</span>, <span class="stringliteral">&quot;e&quot;</span>}, {<span class="stringliteral">&quot;Í&quot;</span>, <span class="stringliteral">&quot;i&quot;</span>}, {<span class="stringliteral">&quot;Ó&quot;</span>, <span class="stringliteral">&quot;o&quot;</span>}, {<span class="stringliteral">&quot;Ö&quot;</span>, <span class="stringliteral">&quot;o&quot;</span>}, {<span class="stringliteral">&quot;Ő&quot;</span>, <span class="stringliteral">&quot;o&quot;</span>},</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        {<span class="stringliteral">&quot;Ú&quot;</span>, <span class="stringliteral">&quot;u&quot;</span>}, {<span class="stringliteral">&quot;Ü&quot;</span>, <span class="stringliteral">&quot;u&quot;</span>}, {<span class="stringliteral">&quot;Ű&quot;</span>, <span class="stringliteral">&quot;u&quot;</span>}</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    };</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    std::string result;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; s.length(); ) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="comment">// Megnézzük, hogy az aktuális pozíciótól kezdődik-e egy 2-bájtos ékezetes karakter</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="comment">// Check if the current position starts with a 2-byte accented character</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="comment">/*</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment">        * Miért ilyen bonyolult a típus?</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment">        std::pair: A map minden eleme egy pár (kulcs és érték).</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">        const std::string (az első): A map kulcsa sosem változhat meg utó lag.</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">        std::string (a második): Ez a sima betű , amit hozzáadunk.</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">        &amp;: Referencia, hogy ne másoljuk le az elemeket minden körben.</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">         */</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="comment">// for (auto const&amp; pair : accentMap)</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> std::pair&lt;const std::string, std::string&gt;&amp; pair : accentMap) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keyword">const</span> std::string&amp; accent = pair.first;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="keyword">const</span> std::string&amp; plain = pair.second;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            <span class="keywordflow">if</span> (s.compare(i, accent.length(), accent) == 0) {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                result += plain;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                i += accent.length();</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                found = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keywordflow">if</span> (!found) {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            result += s[i]; <span class="comment">//Hozzáadjuk az a betűt az eredményhez</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            i++; <span class="comment">// Továbblépünk a következő karakterre</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
+</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">// Trimmelés és kisbetűsítés</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">// Trim and lowercase</span></div>
+<div class="foldopen" id="foldopen00235" data-start="{" data-end="}">
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="general_functions_8cpp.html#aaa4eecca2f1487e849e80d4729461f21">  235</a></span>std::string <a class="code hl_function" href="general_functions_8cpp.html#aaa4eecca2f1487e849e80d4729461f21">cleanString</a>(<span class="keyword">const</span> std::string&amp; s) {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="comment">// Trim és kisbetű</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="comment">// Trim and lowercase</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="comment">//s = toLowerCase(trim(s));</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="comment">// Írásjelek leszedése</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="comment">// Remove punctuation</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="comment">//s = removePunctuation(s);</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    std::string result = <a class="code hl_function" href="data_file_reading_8cpp.html#ab03b95b2112457acce40cd613fcd8134">toLowerCase</a>(<a class="code hl_function" href="data_file_reading_8cpp.html#afd5fc4d38b256ea035b3691948929dea">trim</a>(s));</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    result = <a class="code hl_function" href="general_functions_8cpp.html#a120cfd0e4ff9c22239d599744a0d3141">removePunctuation</a>(result);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="comment">// ÉKEZETEK figyelmen kívül hagyása  ha a felhasználó kérte !</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="comment">// Ignore ACCENTS if requested by the user!</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="settings_8cpp.html#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a>) {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="comment">//s = removeAccents(s);</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        result = <a class="code hl_function" href="general_functions_8cpp.html#ab006839cc33a43f6d71f8ece65029ad3">removeAccents</a>(result);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="comment">//return s;</span></div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}</div>
+</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="ttc" id="acolors_8h_html"><div class="ttname"><a href="colors_8h.html">colors.h</a></div></div>
+<div class="ttc" id="acolors_8h_html_aaa5a3b018bf9c3d84cbc4b188f507c35"><div class="ttname"><a href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a></div><div class="ttdeci">std::string currentBG</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00030">settings.cpp:30</a></div></div>
+<div class="ttc" id="acolors_8h_html_accda5039c9ee6c20f27094e99994f4aa"><div class="ttname"><a href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a></div><div class="ttdeci">bool useColors</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00027">settings.cpp:27</a></div></div>
+<div class="ttc" id="adata_file_reading_8cpp_html_ab03b95b2112457acce40cd613fcd8134"><div class="ttname"><a href="data_file_reading_8cpp.html#ab03b95b2112457acce40cd613fcd8134">toLowerCase</a></div><div class="ttdeci">string toLowerCase(string s)</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8cpp_source.html#l00067">dataFileReading.cpp:67</a></div></div>
+<div class="ttc" id="adata_file_reading_8cpp_html_afd5fc4d38b256ea035b3691948929dea"><div class="ttname"><a href="data_file_reading_8cpp.html#afd5fc4d38b256ea035b3691948929dea">trim</a></div><div class="ttdeci">string trim(const std::string &amp;str)</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8cpp_source.html#l00095">dataFileReading.cpp:95</a></div></div>
+<div class="ttc" id="adata_file_reading_8h_html"><div class="ttname"><a href="data_file_reading_8h.html">dataFileReading.h</a></div><div class="ttdoc">File reading and word processing utilities. Fájlbeolvasó és szófeldolgozó segédfüggvények.</div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_a120cfd0e4ff9c22239d599744a0d3141"><div class="ttname"><a href="general_functions_8cpp.html#a120cfd0e4ff9c22239d599744a0d3141">removePunctuation</a></div><div class="ttdeci">std::string removePunctuation(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="#l00179">generalFunctions.cpp:179</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_a2067af00a2b4df8c2996193cbd3fec01"><div class="ttname"><a href="general_functions_8cpp.html#a2067af00a2b4df8c2996193cbd3fec01">playBeep</a></div><div class="ttdeci">void playBeep(int frequency, int duration)</div><div class="ttdef"><b>Definition</b> <a href="#l00164">generalFunctions.cpp:164</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_a22081226b6752d2380ca0c167fc18a28"><div class="ttname"><a href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a></div><div class="ttdeci">void logError(const std::string &amp;functionName, const std::string &amp;errorMessage)</div><div class="ttdef"><b>Definition</b> <a href="#l00112">generalFunctions.cpp:112</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_a372bc25a6dbf0fb709d41bd366bf8910"><div class="ttname"><a href="general_functions_8cpp.html#a372bc25a6dbf0fb709d41bd366bf8910">logMistakeWriteFile</a></div><div class="ttdeci">void logMistakeWriteFile(const WordPair &amp;word)</div><div class="ttdef"><b>Definition</b> <a href="#l00131">generalFunctions.cpp:131</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_a6571e3e7c756c88527b1771d1c470f94"><div class="ttname"><a href="general_functions_8cpp.html#a6571e3e7c756c88527b1771d1c470f94">explanation</a></div><div class="ttdeci">void explanation()</div><div class="ttdoc">General utility functions for the language learning application.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">generalFunctions.cpp:37</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_a7925bb988d7353f31427438c08feed33"><div class="ttname"><a href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a></div><div class="ttdeci">void waitToEnter()</div><div class="ttdef"><b>Definition</b> <a href="#l00056">generalFunctions.cpp:56</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_aa30dc624799aff7f95ec6deeb705372d"><div class="ttname"><a href="general_functions_8cpp.html#aa30dc624799aff7f95ec6deeb705372d">pufferDelete</a></div><div class="ttdeci">void pufferDelete()</div><div class="ttdef"><b>Definition</b> <a href="#l00108">generalFunctions.cpp:108</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_aaa4eecca2f1487e849e80d4729461f21"><div class="ttname"><a href="general_functions_8cpp.html#aaa4eecca2f1487e849e80d4729461f21">cleanString</a></div><div class="ttdeci">std::string cleanString(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="#l00235">generalFunctions.cpp:235</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_ab006839cc33a43f6d71f8ece65029ad3"><div class="ttname"><a href="general_functions_8cpp.html#ab006839cc33a43f6d71f8ece65029ad3">removeAccents</a></div><div class="ttdeci">std::string removeAccents(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="#l00193">generalFunctions.cpp:193</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_ab497849fab25f1b523c6109f82aff762"><div class="ttname"><a href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a></div><div class="ttdeci">void screenWipe()</div><div class="ttdef"><b>Definition</b> <a href="#l00078">generalFunctions.cpp:78</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_aec7217024e1fd9e8e844a95c9b5c89a5"><div class="ttname"><a href="general_functions_8cpp.html#aec7217024e1fd9e8e844a95c9b5c89a5">exiting</a></div><div class="ttdeci">void exiting()</div><div class="ttdef"><b>Definition</b> <a href="#l00066">generalFunctions.cpp:66</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html"><div class="ttname"><a href="general_functions_8h.html">generalFunctions.h</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a8ccf5837162e6f87422bb440bf65f193"><div class="ttname"><a href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a></div><div class="ttdeci">Language programUiLanguage</div><div class="ttdoc">ENG: Current UI language (HU: A jelenlegi felhasználói felületnek a nyelve)</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00026">main.cpp:26</a></div></div>
+<div class="ttc" id="anamespacecolors_html_a92c8fcc8e472aad5f51332426794bf8d"><div class="ttname"><a href="namespacecolors.html#a92c8fcc8e472aad5f51332426794bf8d">colors::RESET</a></div><div class="ttdeci">const std::string RESET</div><div class="ttdef"><b>Definition</b> <a href="colors_8h_source.html#l00019">colors.h:19</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_a206de5c28dc8e06b2da696e99fca34f8"><div class="ttname"><a href="settings_8cpp.html#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a></div><div class="ttdeci">bool ignoreAccents</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00032">settings.cpp:32</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_ae6cfdf4465263f16973a2f5121306ae5"><div class="ttname"><a href="settings_8cpp.html#ae6cfdf4465263f16973a2f5121306ae5">useSound</a></div><div class="ttdeci">bool useSound</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00031">settings.cpp:31</a></div></div>
+<div class="ttc" id="asettings_8h_html"><div class="ttname"><a href="settings_8h.html">settings.h</a></div><div class="ttdoc">Application settings management (EN) / Alkalmazás beállításkezelés (HU)</div></div>
+<div class="ttc" id="astruct_entering_back_html"><div class="ttname"><a href="struct_entering_back.html">EnteringBack</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00116">translations.h:116</a></div></div>
+<div class="ttc" id="astruct_entering_back_html_af7a68819443edf4012e522cf9a0c1bb4"><div class="ttname"><a href="struct_entering_back.html#af7a68819443edf4012e522cf9a0c1bb4">EnteringBack::pressToEnter</a></div><div class="ttdeci">std::string pressToEnter</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00117">translations.h:117</a></div></div>
+<div class="ttc" id="astruct_exiting_strings_html"><div class="ttname"><a href="struct_exiting_strings.html">ExitingStrings</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00063">translations.h:63</a></div></div>
+<div class="ttc" id="astruct_exiting_strings_html_a4ff1cdfbd3365c052588876b74341e54"><div class="ttname"><a href="struct_exiting_strings.html#a4ff1cdfbd3365c052588876b74341e54">ExitingStrings::exiting</a></div><div class="ttdeci">std::string exiting</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00064">translations.h:64</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html"><div class="ttname"><a href="struct_explanation_strings.html">ExplanationStrings</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00050">translations.h:50</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_a2b26076ca374472ea5caed9a585ef1e0"><div class="ttname"><a href="struct_explanation_strings.html#a2b26076ca374472ea5caed9a585ef1e0">ExplanationStrings::instruction4</a></div><div class="ttdeci">std::string instruction4</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00055">translations.h:55</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_a4f954c53110d65a48ff203a6154be9a4"><div class="ttname"><a href="struct_explanation_strings.html#a4f954c53110d65a48ff203a6154be9a4">ExplanationStrings::instruction6</a></div><div class="ttdeci">std::string instruction6</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00057">translations.h:57</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_a56ef1d34cd54a511471376418e97d772"><div class="ttname"><a href="struct_explanation_strings.html#a56ef1d34cd54a511471376418e97d772">ExplanationStrings::description</a></div><div class="ttdeci">std::string description</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00051">translations.h:51</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_a73488e06fb8e3f67079955c8dd0582cc"><div class="ttname"><a href="struct_explanation_strings.html#a73488e06fb8e3f67079955c8dd0582cc">ExplanationStrings::instruction7</a></div><div class="ttdeci">std::string instruction7</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00058">translations.h:58</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_a7368580ccd48a6f52df13bf13176493d"><div class="ttname"><a href="struct_explanation_strings.html#a7368580ccd48a6f52df13bf13176493d">ExplanationStrings::instruction3</a></div><div class="ttdeci">std::string instruction3</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00054">translations.h:54</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_a7701f9a4df7dae0057001bd00a91d8d8"><div class="ttname"><a href="struct_explanation_strings.html#a7701f9a4df7dae0057001bd00a91d8d8">ExplanationStrings::instruction2</a></div><div class="ttdeci">std::string instruction2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00053">translations.h:53</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_a83c470c45ad72039fe4e5049c6d283b9"><div class="ttname"><a href="struct_explanation_strings.html#a83c470c45ad72039fe4e5049c6d283b9">ExplanationStrings::instruction5</a></div><div class="ttdeci">std::string instruction5</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00056">translations.h:56</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_a9f25cdfd6d49804a1bfc0ea327be6b46"><div class="ttname"><a href="struct_explanation_strings.html#a9f25cdfd6d49804a1bfc0ea327be6b46">ExplanationStrings::instruction8</a></div><div class="ttdeci">std::string instruction8</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00059">translations.h:59</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_ae75a832c0b20e0ccb4e00f0de35c640c"><div class="ttname"><a href="struct_explanation_strings.html#ae75a832c0b20e0ccb4e00f0de35c640c">ExplanationStrings::goodLuck</a></div><div class="ttdeci">std::string goodLuck</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00060">translations.h:60</a></div></div>
+<div class="ttc" id="astruct_explanation_strings_html_aef5fa901204ff0db24dfd6fdba8dca3e"><div class="ttname"><a href="struct_explanation_strings.html#aef5fa901204ff0db24dfd6fdba8dca3e">ExplanationStrings::instruction1</a></div><div class="ttdeci">std::string instruction1</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00052">translations.h:52</a></div></div>
+<div class="ttc" id="astruct_word_pair_html"><div class="ttname"><a href="struct_word_pair.html">WordPair</a></div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8h_source.html#l00030">dataFileReading.h:30</a></div></div>
+<div class="ttc" id="astruct_word_pair_html_a27f5134303a31554eeeb660531b92b00"><div class="ttname"><a href="struct_word_pair.html#a27f5134303a31554eeeb660531b92b00">WordPair::pronunciation</a></div><div class="ttdeci">std::string pronunciation</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8h_source.html#l00033">dataFileReading.h:33</a></div></div>
+<div class="ttc" id="astruct_word_pair_html_a887ea26e87e3909ccfd367a64d8bb5bf"><div class="ttname"><a href="struct_word_pair.html#a887ea26e87e3909ccfd367a64d8bb5bf">WordPair::targetLangMeaning</a></div><div class="ttdeci">std::string targetLangMeaning</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8h_source.html#l00031">dataFileReading.h:31</a></div></div>
+<div class="ttc" id="astruct_word_pair_html_aa1ce412316d7e1306f02578987315bc1"><div class="ttname"><a href="struct_word_pair.html#aa1ce412316d7e1306f02578987315bc1">WordPair::motherLangMeaning</a></div><div class="ttdeci">std::string motherLangMeaning</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8h_source.html#l00032">dataFileReading.h:32</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a4ea71e9b9872c00ea4d06982c43807e1"><div class="ttname"><a href="translations_8cpp.html#a4ea71e9b9872c00ea4d06982c43807e1">explanationTranslations</a></div><div class="ttdeci">const std::vector&lt; ExplanationStrings &gt; explanationTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l00397">translations.cpp:397</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_ad4633117f672dc537909a694b7c1c1a5"><div class="ttname"><a href="translations_8cpp.html#ad4633117f672dc537909a694b7c1c1a5">continuationToEnterTranslations</a></div><div class="ttdeci">const std::vector&lt; EnteringBack &gt; continuationToEnterTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l00883">translations.cpp:883</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_ae62951237d1a81690015afd7b2457600"><div class="ttname"><a href="translations_8cpp.html#ae62951237d1a81690015afd7b2457600">exitingTranslations</a></div><div class="ttdeci">const std::vector&lt; ExitingStrings &gt; exitingTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l00737">translations.cpp:737</a></div></div>
+<div class="ttc" id="atranslations_8h_html"><div class="ttname"><a href="translations_8h.html">translations.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_4ab6b4cc6a7edbff49100e9123df213f.html">Common</a></li><li class="navelem"><a href="general_functions_8cpp.html">generalFunctions.cpp</a></li>
+    <li class="footer">Készítette <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

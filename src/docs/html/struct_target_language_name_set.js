@@ -1,0 +1,27 @@
+var struct_target_language_name_set =
+[
+    [ "Arabic", "struct_target_language_name_set.html#a77fd043131b3a76d3d36431e57508fcf", null ],
+    [ "Chinese", "struct_target_language_name_set.html#a71841799582345854fcf21ee001e8ec1", null ],
+    [ "Dutch", "struct_target_language_name_set.html#a923561824bcc69b99e56e845bbd76a58", null ],
+    [ "English", "struct_target_language_name_set.html#a7868dbc5976ef6c478baf7d9e061311d", null ],
+    [ "Farsi", "struct_target_language_name_set.html#af3f644208a4877acaed89d611d08d564", null ],
+    [ "French", "struct_target_language_name_set.html#adc68f0163e6fdcb483d988c30734fc63", null ],
+    [ "German", "struct_target_language_name_set.html#aa25b25c8eff3fd4662b50ed063c632e9", null ],
+    [ "Greek", "struct_target_language_name_set.html#ac5339faa0772af8584e46fa6038376a5", null ],
+    [ "Hebrew", "struct_target_language_name_set.html#ac47a87a9f7c73660da6cffa2a3095591", null ],
+    [ "Hindi", "struct_target_language_name_set.html#a7e64c1563a18a042d8ea7433aa9adb68", null ],
+    [ "Italian", "struct_target_language_name_set.html#a1dd9552abf5a6250cb758bbc64d67b6f", null ],
+    [ "Japan", "struct_target_language_name_set.html#a9cbc91ab872d79cabe28791459fcbd21", null ],
+    [ "Korean", "struct_target_language_name_set.html#a7441df7cb5649995c38b8fd7d65bf7ad", null ],
+    [ "Latin", "struct_target_language_name_set.html#a94f90d957d13fed1f7667f33eedbd5be", null ],
+    [ "Magyar", "struct_target_language_name_set.html#a2d528f078209f8d91982f5a1cae53d09", null ],
+    [ "Polish", "struct_target_language_name_set.html#a8c734897ec2aea4bf41bcc493c6622b1", null ],
+    [ "Portuguese", "struct_target_language_name_set.html#a638ba2b759e5f8039f21eef7678a039f", null ],
+    [ "Russian", "struct_target_language_name_set.html#a5a3b517d5de4622a78359588d1522748", null ],
+    [ "Spanish", "struct_target_language_name_set.html#ad2c99cf9017062717a9ccdde0467880b", null ],
+    [ "Swedish", "struct_target_language_name_set.html#a20d370ed74f0e67c1ee8de1bbd996bc2", null ],
+    [ "Tagalog", "struct_target_language_name_set.html#ad2a86f50e1c6bf22128f78e6114a25e9", null ],
+    [ "Turkish", "struct_target_language_name_set.html#a0b54259e1bad416dd3115dcc641b3825", null ],
+    [ "Ukrainian", "struct_target_language_name_set.html#a90392e5e7b7918da7889798d7f3d42ca", null ],
+    [ "Vietnamese", "struct_target_language_name_set.html#a1638cf657d7415ecb5cad378c801311d", null ]
+];

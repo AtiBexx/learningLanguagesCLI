@@ -1,0 +1,27 @@
+var structtarget_language_list =
+[
+    [ "Arabic", "structtarget_language_list.html#a6398d072149247833d297381eb107ca6", null ],
+    [ "Chinese", "structtarget_language_list.html#aedf5ca5f53d776204fd325f58b7d54be", null ],
+    [ "Dutch", "structtarget_language_list.html#a3496750befa99a77544e75856d9313a0", null ],
+    [ "English", "structtarget_language_list.html#a219d97fb4f4bafae5aaef38e4c4e6876", null ],
+    [ "Farsi", "structtarget_language_list.html#adddc80a8eaef6a1bfa58a248bffeaa93", null ],
+    [ "French", "structtarget_language_list.html#acd2a9a36d1b7608343ef5a1b5ce41b6a", null ],
+    [ "German", "structtarget_language_list.html#ac8707abd194a89ed73b4379265cebbd3", null ],
+    [ "Greek", "structtarget_language_list.html#aa99ce7e4d339cd79d7ca2c8b1f518596", null ],
+    [ "Hebrew", "structtarget_language_list.html#ad795604d383c2b57f7f3a8db814fb931", null ],
+    [ "Hindi", "structtarget_language_list.html#a12e992c81902803374bb959bd5442aaf", null ],
+    [ "Italian", "structtarget_language_list.html#aa569f531d28d7726b05bb9f70635f032", null ],
+    [ "Japan", "structtarget_language_list.html#a69a1effff2dd00f80edbd8ee0bc5923d", null ],
+    [ "Korean", "structtarget_language_list.html#ace8698ac8d08365e96cb5705f905b679", null ],
+    [ "Latin", "structtarget_language_list.html#a1b7bc257fd8e08fb4c8a9305cfd6b470", null ],
+    [ "Magyar", "structtarget_language_list.html#a374c4a6ea74c03e2fd1bd14890e0a12e", null ],
+    [ "Polish", "structtarget_language_list.html#aa213e25339172956a6cfcc1f34466e7a", null ],
+    [ "Portuguese", "structtarget_language_list.html#af11fc142bde90d2c9ff1e2ea1da8bdfa", null ],
+    [ "Russian", "structtarget_language_list.html#a81fe6665f52780b5014f26222a05bdc8", null ],
+    [ "Spanish", "structtarget_language_list.html#a7d1f54dbfa46dac702bc180c3abb25d8", null ],
+    [ "Swedish", "structtarget_language_list.html#a718a421de7fbf757dd86153b3499e507", null ],
+    [ "Tagalog", "structtarget_language_list.html#ace02d34a91a970f528deb255c458aac2", null ],
+    [ "Turkish", "structtarget_language_list.html#aa7a64bb3fcf1f99de4df84743b7ed3e2", null ],
+    [ "Ukrainian", "structtarget_language_list.html#a43f14a12b7751fd7b76f102a7995dd6d", null ],
+    [ "Vietnamese", "structtarget_language_list.html#a0d05428408baefa702c19bf4d779fc2a", null ]
+];

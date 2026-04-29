@@ -31,14 +31,15 @@ using std::endl;
 // Segédfüggvény az útvonalak Windows-kompatibilisre alakításához
 // Helper function to make paths Windows-compatible
 std::string normalizePath(const std::string& path) {
-    std::string normalized = path;
+    std::string normalizedPath = path;
 #ifdef _WIN32
-    std::replace(normalized.begin(), normalized.end(), '/', '\\');
+    std::replace(normalizedPath.begin(), normalizedPath.end(), '/', '\\');
 #endif
-    return normalized;
+    return normalizedPath;
 }
 
 // Ellenőrzi az útvonal biztonságosságát.
+// Checks the safety of the path.
 bool isPathSafe(const std::string& path) {
     if (path.empty() || path.length() > 255) return false;
     if (path.find("..") != std::string::npos) return false;
@@ -53,6 +54,7 @@ bool isPathSafe(const std::string& path) {
 }
 
 // Fájlt vagy mappát másol
+// Copy a file or folder
 void copyFileFolders(const std::string& srcPath, bool isDirectory) {
     const struct CopyFileFolders &CFF = copyFileFoldersTranslations [static_cast<int>(programUiLanguage)];
 
@@ -224,21 +226,83 @@ void listAndSelectFile() {
         cout << LASFile.currentlyFolder << path << " ---\n";
         vector<FileEntry> entries = listFiles(path);
         if (entries.empty()) cout << LASFile.emptyFolder;
-        else for (const FileEntry& e : entries) cout << (e.isDirectory ? LASFile.isDirectory : "        ") << e.name << "\n";
+        else
+        {
+            for (const FileEntry& e : entries)
+                cout << (e.isDirectory ? LASFile.isDirectory : "        ") << e.name << "\n";
+        }
+
         cout << LASFile.commands;
-        string input; std::getline(std::cin, input);
+        string input;
+        std::getline(std::cin, input);
         input = trim(input);
-        if (toLowerCase(input) == "exit") return;
-        if (input == "..") {
-            if (path.length() > ROOT_DIR.length()) path = path.substr(0, path.find_last_of("/\\"));
+        string lowerInput = toLowerCase(input);
+
+        if (lowerInput == "exit") return;
+        if (lowerInput == "..") {
+            if (path.length() > ROOT_DIR.length())
+            {
+                size_t lastSlash = path.find_last_of("/\\");
+                if (lastSlash != string::npos) path = path.substr(0, lastSlash);
+            }
             continue;
         }
-        bool found = false; bool isDir = false;
-        for (const auto& e : entries) if (e.name == input) { found = true; isDir = e.isDirectory; break; }
+
+        // --- PARANCSOK KEZELÉSE (del, cp, mv, rn, edit) ---
+        size_t spacePos = input.find(' ');
+        if (spacePos != string::npos) {
+            string cmd = toLowerCase(trim(input.substr(0, spacePos)));
+            string targetName = trim(input.substr(spacePos + 1));
+            string targetPath = path;
+            targetPath.append("/").append(targetName);
+
+            if (cmd == "del") {
+                deleteFileFolders(targetPath, isDirectory(targetPath));
+                continue;
+            }
+            else if (cmd == "cp") {
+                copyFileFolders(targetPath, isDirectory(targetPath));
+                continue;
+            }
+            else if (cmd == "mv") {
+                movingFileFolders(targetPath, isDirectory(targetPath));
+                continue;
+            }
+            else if (cmd == "rn") {
+                reNameFileFolders(targetPath, isDirectory(targetPath));
+                continue;
+            }
+            else if (cmd == "edit") {
+                openFileInEditor(targetPath);
+                continue;
+            }
+        }
+
+        if (lowerInput == "edit") {
+            openFileInEditor("");
+            continue;
+        }
+
+        bool found = false;
+        bool isDir = false;
+        for (const auto& e : entries)
+        {
+            if (e.name == input)
+            {
+                found = true;
+                isDir = e.isDirectory;
+                break;
+            }
+        }
+
         if (found) {
             string fullPath = path;
             fullPath.append("/").append(input);
-            if (isDir) path = fullPath;
+
+            if (isDir)
+            {
+                path = fullPath;
+            }
             else if (fullPath.size() >= 5 && fullPath.substr(fullPath.size() - 5) == ".data") {
                 startQuiz(loadWords(fullPath));
             } else {

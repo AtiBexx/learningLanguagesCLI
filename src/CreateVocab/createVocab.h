@@ -1,6 +1,39 @@
-//
-// Created by AtiBexx2 on 2026. 04. 04.
-//
+/**
+* @file createVocab.h
+ * @brief Header for vocabulary file creation and command handling.
+ * @brief Szótár fájl létrehozásához és parancskezeléshez tartozó fejléc.
+ *
+ * @details
+ * EN:
+ * This header defines the core structures, enums, and function declarations
+ * used for creating and managing vocabulary files in a CLI application.
+ *
+ * It includes:
+ * - File operation enums (delete, rename, move, copy)
+ * - File creation flow control enums
+ * - Function declarations for vocabulary creation and input handling
+ * - External global variables used across the module
+ *
+ * HU:
+ * Ez a fejléc definiálja azokat az alapvető struktúrákat, enumokat és
+ * függvény deklarációkat, amelyek a szótár fájlok létrehozásához és
+ * kezeléséhez szükségesek egy parancssoros alkalmazásban.
+ *
+ * Tartalmazza:
+ * - Fájlműveletek enumjait (törlés, átnevezés, mozgatás, másolás)
+ * - Fájl létrehozási folyamat vezérlését szolgáló enumokat
+ * - Függvény deklarációkat a szótár kezeléshez
+ * - Globális változók deklarációit
+ *
+ * @author AtiBexx2
+ * @date 2026-04-04
+ */
+
+/**
+ * @enum FileAction
+ * @brief File operation types.
+ * @brief Fájlműveletek típusai.
+ */
 
 #ifndef ENGLISH_CREATEVOCAB_H
 #define ENGLISH_CREATEVOCAB_H
@@ -24,7 +57,7 @@ enum class FileCreationAction {
 
 void createVocab();
 void wordsPairTotal(bool isExiting = false);
-void choiceMenu();
+bool choiceMenu();
 int handleInput(const std::string& input, std::ofstream& file, bool allowEmpty);
 FileCreationAction handleFileCreationInput(const std::string& input);
 // Változók deklarálása

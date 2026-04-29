@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['percent_0',['percent',['../struct_score_sys.html#a3040ca7c4a93618c4ab636dce6d6679d',1,'ScoreSys']]],
+  ['percentage_1',['PercentAge',['../struct_percent_age.html',1,'']]],
+  ['percentage100_2',['percentAge100',['../struct_percent_age.html#a312ed6c1381d5728f88678e18b6ab89d',1,'PercentAge']]],
+  ['percentage80_3',['percentAge80',['../struct_percent_age.html#a46f16954413f2bb64f025ebe2a7cfa22',1,'PercentAge']]],
+  ['percentageelse_4',['percentAgeElse',['../struct_percent_age.html#a2755657930b84a5329fc3396f52fa4ce',1,'PercentAge']]],
+  ['percentagetranslations_5',['percentAgeTranslations',['../translations_8cpp.html#ae01178446755684c164a0ad56532592a',1,'percentAgeTranslations:&#160;translations.cpp'],['../translations_8h.html#ae01178446755684c164a0ad56532592a',1,'percentAgeTranslations:&#160;translations.cpp']]],
+  ['playbeep_6',['playBeep',['../general_functions_8cpp.html#a2067af00a2b4df8c2996193cbd3fec01',1,'playBeep(int frequency, int duration):&#160;generalFunctions.cpp'],['../general_functions_8h.html#a5e04cbc54d5011ddb1a639f338b03af4',1,'playBeep(int frequency=750, int duration=300):&#160;generalFunctions.cpp']]],
+  ['polish_7',['POLISH',['../translations_8h.html#a315ca917ad583797f709ea477dd28705ac67e01a15f7c67a5697d7efe7c68058a',1,'translations.h']]],
+  ['polish_8',['Polish',['../struct_target_language_name_set.html#a8c734897ec2aea4bf41bcc493c6622b1',1,'TargetLanguageNameSet::Polish'],['../structtarget_language_list.html#aa213e25339172956a6cfcc1f34466e7a',1,'targetLanguageList::Polish']]],
+  ['portuguese_9',['PORTUGUESE',['../translations_8h.html#a315ca917ad583797f709ea477dd28705a824ba02a0e1b3e9c487d5744d5ca16ac',1,'translations.h']]],
+  ['portuguese_10',['Portuguese',['../struct_target_language_name_set.html#a638ba2b759e5f8039f21eef7678a039f',1,'TargetLanguageNameSet::Portuguese'],['../structtarget_language_list.html#af11fc142bde90d2c9ff1e2ea1da8bdfa',1,'targetLanguageList::Portuguese']]],
+  ['practiceofwrongword_11',['practiceOfWrongWord',['../struct_mistake_exercise.html#abbb4dd3562ad1339b77f38308d1c26d5',1,'MistakeExercise']]],
+  ['presstoenter_12',['pressToEnter',['../struct_entering_back.html#af7a68819443edf4012e522cf9a0c1bb4',1,'EnteringBack']]],
+  ['programexplanation_13',['programExplanation',['../struct_menu_strings.html#aebac086f86b72fd7a0f2029170c11576',1,'MenuStrings']]],
+  ['programquiz_2ecpp_14',['programQuiz.cpp',['../program_quiz_8cpp.html',1,'']]],
+  ['programquiz_2eh_15',['programQuiz.h',['../program_quiz_8h.html',1,'']]],
+  ['programuilanguage_16',['programUiLanguage',['../main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193',1,'programUiLanguage:&#160;main.cpp'],['../translations_8h.html#a8ccf5837162e6f87422bb440bf65f193',1,'programUiLanguage:&#160;main.cpp']]],
+  ['pronunciation_17',['pronunciation',['../struct_word_pair.html#a27f5134303a31554eeeb660531b92b00',1,'WordPair']]],
+  ['pronunciation2str_18',['pronunciation2str',['../struct_pronunciation_string.html#ab4572cb9c331ae393d02cddaadc9891f',1,'PronunciationString']]],
+  ['pronunciationstring_19',['PronunciationString',['../struct_pronunciation_string.html',1,'']]],
+  ['pronunciationstringtranslations_20',['pronunciationStringTranslations',['../translations_8cpp.html#ac275f67eed0cb7be0010cfa4589ff8c2',1,'pronunciationStringTranslations:&#160;translations.cpp'],['../translations_8h.html#ac275f67eed0cb7be0010cfa4589ff8c2',1,'pronunciationStringTranslations:&#160;translations.cpp']]],
+  ['pufferdelete_21',['pufferDelete',['../general_functions_8cpp.html#aa30dc624799aff7f95ec6deeb705372d',1,'pufferDelete():&#160;generalFunctions.cpp'],['../general_functions_8h.html#aa30dc624799aff7f95ec6deeb705372d',1,'pufferDelete():&#160;generalFunctions.cpp']]],
+  ['purple_22',['purple',['../struct_background_sets.html#af153ab4203e1bc7e5dd7ed391d9f9e25',1,'BackgroundSets']]]
+];

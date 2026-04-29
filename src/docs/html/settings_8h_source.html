@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nyelvtanulo App: Settings/settings.h Forrásfájl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Nyelvtanulo App
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Keresés',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('settings_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">settings.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="settings_8h.html">Ugrás a fájl dokumentációjához.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifndef ENGLISH_SETTINGS_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define ENGLISH_SETTINGS_H</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> <a class="code hl_function" href="settings_8h.html#a6071c2f6a6eab58f29a7a5baf3696e6b">settings</a>();<span class="comment">// beállítások || Settings</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> <a class="code hl_function" href="settings_8h.html#ad18f7d2fd4547937309b0c4c6e0ac2f6">choiceLanguage</a>(); <span class="comment">// nyelválasztás || language selection</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> <a class="code hl_function" href="settings_8h.html#a48f1655a857cc551ddcc35ca3c36c8e2">learningLanguage</a>(); <span class="comment">// tanulandó nyelv beállítása || set language to learn</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> <a class="code hl_function" href="settings_8h.html#abd3eb7c7de778f12f45eb5e7e0e0d49f">colorsOn</a>(); <span class="comment">//színek be ki kapcsolása || turn colors on and off</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="settings_8h.html#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>(); <span class="comment">//Beállítások mentésére || Save settings</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">bool</span> <a class="code hl_function" href="settings_8h.html#af73ed9d8b8324e8a1b50b5e23960b1f6">loadSettings</a>(); <span class="comment">//Beállítások betöltése || Load settings</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">void</span> <a class="code hl_function" href="settings_8h.html#a07f1005e6ede7cd51d7b2d544259f00d">backgroundSets</a>(); <span class="comment">//háttér beállítása || set background color</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>std::string <a class="code hl_function" href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a>(<span class="keywordtype">int</span> index); <span class="comment">// nyelvi index || language index</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="settings_8h.html#a802bae69577ff5f3021b5d7824d8352a">soundOn</a>(); <span class="comment">//Hang be/ki || Sound on/off</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_function" href="settings_8h.html#a7346f79456c656bd5554562a450be8c9">accentsToggle</a>(); <span class="comment">// Be- vagy kikapcsolja az ékezetek kezelését || // Turns accent handling on or off</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span> <a class="code hl_function" href="settings_8h.html#a6f04db455ed5fa7f6d9cbf5ede4436c7">oneRoundQuizToggle</a>(); <span class="comment">// Egy körös kvíz be és ki kapcsolása || Toggle one round quiz on and off</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//globális változó || global state</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">extern</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="settings_8cpp.html#ae6cfdf4465263f16973a2f5121306ae5">useSound</a>; <span class="comment">// a hang ki be kapcsolásához || to turn the sound on or off</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif </span><span class="comment">//ENGLISH_SETTINGS_H</span></div>
+<div class="ttc" id="asettings_8cpp_html_ae6cfdf4465263f16973a2f5121306ae5"><div class="ttname"><a href="settings_8cpp.html#ae6cfdf4465263f16973a2f5121306ae5">useSound</a></div><div class="ttdeci">bool useSound</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00031">settings.cpp:31</a></div></div>
+<div class="ttc" id="asettings_8h_html_a07f1005e6ede7cd51d7b2d544259f00d"><div class="ttname"><a href="settings_8h.html#a07f1005e6ede7cd51d7b2d544259f00d">backgroundSets</a></div><div class="ttdeci">void backgroundSets()</div><div class="ttdoc">Background color selection / Háttérszín kiválasztása.</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00361">settings.cpp:361</a></div></div>
+<div class="ttc" id="asettings_8h_html_a3069798db3a5cad869f873de543fd5dd"><div class="ttname"><a href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a></div><div class="ttdeci">std::string getLanguageNameByIndex(int index)</div><div class="ttdef"><b>Definition</b> <a href="language_list_8cpp_source.html#l00008">languageList.cpp:8</a></div></div>
+<div class="ttc" id="asettings_8h_html_a48f1655a857cc551ddcc35ca3c36c8e2"><div class="ttname"><a href="settings_8h.html#a48f1655a857cc551ddcc35ca3c36c8e2">learningLanguage</a></div><div class="ttdeci">void learningLanguage()</div><div class="ttdoc">Learning language configuration / Tanulandó nyelv beállítása.</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00496">settings.cpp:496</a></div></div>
+<div class="ttc" id="asettings_8h_html_a6071c2f6a6eab58f29a7a5baf3696e6b"><div class="ttname"><a href="settings_8h.html#a6071c2f6a6eab58f29a7a5baf3696e6b">settings</a></div><div class="ttdeci">void settings()</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00038">settings.cpp:38</a></div></div>
+<div class="ttc" id="asettings_8h_html_a6f04db455ed5fa7f6d9cbf5ede4436c7"><div class="ttname"><a href="settings_8h.html#a6f04db455ed5fa7f6d9cbf5ede4436c7">oneRoundQuizToggle</a></div><div class="ttdeci">void oneRoundQuizToggle()</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00718">settings.cpp:718</a></div></div>
+<div class="ttc" id="asettings_8h_html_a7346f79456c656bd5554562a450be8c9"><div class="ttname"><a href="settings_8h.html#a7346f79456c656bd5554562a450be8c9">accentsToggle</a></div><div class="ttdeci">void accentsToggle()</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00684">settings.cpp:684</a></div></div>
+<div class="ttc" id="asettings_8h_html_a802bae69577ff5f3021b5d7824d8352a"><div class="ttname"><a href="settings_8h.html#a802bae69577ff5f3021b5d7824d8352a">soundOn</a></div><div class="ttdeci">void soundOn()</div><div class="ttdoc">Sound toggle / Hang be- és kikapcsolása.</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00650">settings.cpp:650</a></div></div>
+<div class="ttc" id="asettings_8h_html_abd3eb7c7de778f12f45eb5e7e0e0d49f"><div class="ttname"><a href="settings_8h.html#abd3eb7c7de778f12f45eb5e7e0e0d49f">colorsOn</a></div><div class="ttdeci">void colorsOn()</div><div class="ttdoc">Color settings menu / Szín beállítás menü</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00199">settings.cpp:199</a></div></div>
+<div class="ttc" id="asettings_8h_html_ac7142ee2baa705d2dd402769467d5a4e"><div class="ttname"><a href="settings_8h.html#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a></div><div class="ttdeci">void saveSettings()</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00277">settings.cpp:277</a></div></div>
+<div class="ttc" id="asettings_8h_html_ad18f7d2fd4547937309b0c4c6e0ac2f6"><div class="ttname"><a href="settings_8h.html#ad18f7d2fd4547937309b0c4c6e0ac2f6">choiceLanguage</a></div><div class="ttdeci">void choiceLanguage()</div><div class="ttdoc">UI language selection / Program nyelv kiválasztása.</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00129">settings.cpp:129</a></div></div>
+<div class="ttc" id="asettings_8h_html_af73ed9d8b8324e8a1b50b5e23960b1f6"><div class="ttname"><a href="settings_8h.html#af73ed9d8b8324e8a1b50b5e23960b1f6">loadSettings</a></div><div class="ttdeci">bool loadSettings()</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00315">settings.cpp:315</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_8ae0dd75af039a94f4269584fb8eef13.html">Settings</a></li><li class="navelem"><a href="settings_8h.html">settings.h</a></li>
+    <li class="footer">Készítette <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

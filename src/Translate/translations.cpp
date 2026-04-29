@@ -3,9 +3,9 @@
 //======Vectors===========
 
 // Menu'sVector
-const std::vector<MenuStrings> mainMenuTranslations {
+const std::vector<MenuStrings> mainMenuTranslations = {
 
-    // Hungarian (0)
+    // HUNGARIAN (Index 0)
     {
         "============NYELVTANULÓ-APP============",
         "\n1. - A program magyarázata",
@@ -13,23 +13,25 @@ const std::vector<MenuStrings> mainMenuTranslations {
         "3. - A hibák gyakorlása",
         "4. - Új szókincs fájl létrehozása",
         "5. - Beállítások",
+        "6. - A szerkesztő (EDITOR) megnyitása",
         "0. - Kilépés",
         "\n======================================="
     },
 
-    // English (1)
+    // ENGLISH (Index 1)
     {
         "============LANGUAGE LEARNING APP============",
         "\n1. - Program explanation",
         "2. - Start program",
         "3. - Practice mistakes",
-        "4. - Create new vocab file",
+        "4. - Create new vocabulary file",
         "5. - Settings",
+        "6. - Open editor",
         "0. - Exit",
-        "\n============================================"
+        "\n============================================="
     },
 
-    // Chinese (2)
+    // CHINESE (Index 2)
     {
         "============语言学习应用============",
         "\n1. - 程序说明",
@@ -37,131 +39,142 @@ const std::vector<MenuStrings> mainMenuTranslations {
         "3. - 练习错误",
         "4. - 创建新词汇文件",
         "5. - 设置",
+        "6. - 打开编辑器",
         "0. - 退出",
-        "\n===================================="
+        "\n=================================="
     },
 
-    // Japanese (3)
+    // JAPANESE (Index 3)
     {
         "============言語学習アプリ============",
         "\n1. - プログラムの説明",
         "2. - プログラム開始",
-        "3. - ミスの練習",
+        "3. - 間違いの練習",
         "4. - 新しい単語ファイル作成",
         "5. - 設定",
+        "6. - エディターを開く",
         "0. - 終了",
-        "\n===================================="
+        "\n=================================="
     },
 
-    // Spanish (4)
+    // SPANISH (Index 4)
     {
-        "============APP DE APRENDIZAJE DE IDIOMAS============",
+        "============APLICACIÓN DE IDIOMAS============",
         "\n1. - Explicación del programa",
         "2. - Iniciar programa",
         "3. - Practicar errores",
-        "4. - Crear nuevo archivo de vocabulario",
+        "4. - Crear archivo de vocabulario",
         "5. - Configuración",
+        "6. - Abrir editor",
         "0. - Salir",
-        "\n===================================================="
+        "\n============================================="
     },
 
-    // German (5)
+    // GERMAN (Index 5)
     {
         "============SPRACHLERN-APP============",
-        "\n1. - Programmbeschreibung",
+        "\n1. - Programmerklärung",
         "2. - Programm starten",
         "3. - Fehler üben",
         "4. - Neue Vokabeldatei erstellen",
         "5. - Einstellungen",
+        "6. - Editor öffnen",
         "0. - Beenden",
-        "\n======================================"
+        "\n====================================="
     },
 
-    // French (6)
+    // FRENCH (Index 6)
     {
-        "============APPLICATION D’APPRENTISSAGE DES LANGUES============",
+        "============APPLICATION DE LANGUE============",
         "\n1. - Explication du programme",
         "2. - Démarrer le programme",
         "3. - Pratiquer les erreurs",
-        "4. - Créer un fichier vocabulaire",
+        "4. - Créer un fichier de vocabulaire",
         "5. - Paramètres",
+        "6. - Ouvrir l'éditeur",
         "0. - Quitter",
-        "\n==============================================================="
+        "\n============================================"
     },
 
-    // Russian (7)
+    // RUSSIAN (Index 7)
     {
-        "============ПРИЛОЖЕНИЕ ДЛЯ ИЗУЧЕНИЯ ЯЗЫКОВ============",
+        "============ПРИЛОЖЕНИЕ ДЛЯ ЯЗЫКОВ============",
         "\n1. - Объяснение программы",
         "2. - Запустить программу",
         "3. - Практика ошибок",
         "4. - Создать файл словаря",
         "5. - Настройки",
+        "6. - Открыть редактор",
         "0. - Выход",
-        "\n===================================================="
+        "\n============================================"
     },
 
-    // Ukrainian (8)
+    // UKRAINIAN (Index 8)
     {
-        "============ДОДАТОК ДЛЯ ВИВЧЕННЯ МОВ============",
+        "============ДОДАТОК ДЛЯ МОВ============",
         "\n1. - Пояснення програми",
         "2. - Запустити програму",
         "3. - Практика помилок",
         "4. - Створити файл словника",
         "5. - Налаштування",
+        "6. - Відкрити редактор",
         "0. - Вихід",
-        "\n==============================================="
+        "\n========================================"
     },
 
-    // Korean (9)
+    // KOREAN (Index 9)
     {
         "============언어 학습 앱============",
         "\n1. - 프로그램 설명",
         "2. - 프로그램 시작",
-        "3. - 실수 연습",
+        "3. - 오류 연습",
         "4. - 새 단어 파일 생성",
         "5. - 설정",
+        "6. - 편집기 열기",
         "0. - 종료",
         "\n=================================="
     },
 
-    // Italian (10)
+    // ITALIAN (Index 10)
     {
-        "============APP DI APPRENDIMENTO LINGUE============",
+        "============APP DI LINGUE============",
         "\n1. - Spiegazione del programma",
         "2. - Avvia programma",
-        "3. - Esercizio errori",
-        "4. - Crea file vocaboli",
+        "3. - Pratica errori",
+        "4. - Crea file vocabolario",
         "5. - Impostazioni",
+        "6. - Apri editor",
         "0. - Esci",
-        "\n=============================================="
+        "\n===================================="
     },
 
-    // Polish (11)
+    // POLISH (Index 11)
     {
-        "============APLIKACJA DO NAUKI JĘZYKÓW============",
-        "\n1. - Opis programu",
+        "============APLIKACJA JĘZYKOWA============",
+        "\n1. - Wyjaśnienie programu",
         "2. - Uruchom program",
         "3. - Ćwiczenie błędów",
         "4. - Utwórz plik słownictwa",
         "5. - Ustawienia",
+        "6. - Otwórz edytor",
         "0. - Wyjście",
-        "\n=============================================="
+        "\n=========================================="
     },
 
-    // Arabic (12)
+    // ARABIC (Index 12)
     {
         "============تطبيق تعلم اللغات============",
         "\n1. - شرح البرنامج",
-        "2. - تشغيل البرنامج",
-        "3. - تدريب الأخطاء",
+        "2. - بدء البرنامج",
+        "3. - ممارسة الأخطاء",
         "4. - إنشاء ملف مفردات",
         "5. - الإعدادات",
+        "6. - فتح المحرر",
         "0. - خروج",
         "\n========================================"
     },
 
-    // Vietnamese (13)
+    // VIETNAMESE (Index 13)
     {
         "============ỨNG DỤNG HỌC NGÔN NGỮ============",
         "\n1. - Giải thích chương trình",
@@ -169,59 +182,64 @@ const std::vector<MenuStrings> mainMenuTranslations {
         "3. - Luyện lỗi",
         "4. - Tạo file từ vựng",
         "5. - Cài đặt",
+        "6. - Mở trình soạn thảo",
         "0. - Thoát",
-        "\n========================================"
+        "\n============================================"
     },
 
-    // Tagalog (14)
+    // TAGALOG (Index 14)
     {
-        "============LANGUAGE LEARNING APP============",
+        "============APP SA WIKA============",
         "\n1. - Paliwanag ng programa",
         "2. - Simulan ang programa",
-        "3. - Sanayin ang mga mali",
-        "4. - Gumawa ng vocab file",
+        "3. - Pagsasanay sa mali",
+        "4. - Gumawa ng vocabulary file",
         "5. - Settings",
+        "6. - Buksan ang editor",
         "0. - Exit",
-        "\n========================================"
+        "\n=================================="
     },
 
-    // Greek (15)
+    // GREEK (Index 15)
     {
-        "============ΕΦΑΡΜΟΓΗ ΕΚΜΑΘΗΣΗΣ ΓΛΩΣΣΩΝ============",
+        "============ΕΦΑΡΜΟΓΗ ΓΛΩΣΣΑΣ============",
         "\n1. - Επεξήγηση προγράμματος",
         "2. - Εκκίνηση προγράμματος",
         "3. - Εξάσκηση λαθών",
         "4. - Δημιουργία αρχείου λεξιλογίου",
         "5. - Ρυθμίσεις",
+        "6. - Άνοιγμα editor",
         "0. - Έξοδος",
-        "\n=============================================="
+        "\n========================================"
     },
 
-    // Hebrew (16)
+    // HEBREW (Index 16)
     {
-        "============אפליקציית לימוד שפות============",
+        "============אפליקציית שפות============",
         "\n1. - הסבר התוכנית",
         "2. - הפעלת התוכנית",
         "3. - תרגול טעויות",
         "4. - יצירת קובץ מילים",
         "5. - הגדרות",
+        "6. - פתיחת עורך",
         "0. - יציאה",
-        "\n=========================================="
+        "\n======================================"
     },
 
-    // Portuguese (17)
+    // PORTUGUESE (Index 17)
     {
-        "============APP DE APRENDIZADO DE IDIOMAS============",
+        "============APP DE IDIOMAS============",
         "\n1. - Explicação do programa",
         "2. - Iniciar programa",
         "3. - Praticar erros",
         "4. - Criar arquivo de vocabulário",
         "5. - Configurações",
+        "6. - Abrir editor",
         "0. - Sair",
-        "\n===================================================="
+        "\n======================================"
     },
 
-    // Farsi (18)
+    // FARSI (Index 18)
     {
         "============برنامه یادگیری زبان============",
         "\n1. - توضیح برنامه",
@@ -229,35 +247,38 @@ const std::vector<MenuStrings> mainMenuTranslations {
         "3. - تمرین خطاها",
         "4. - ایجاد فایل واژگان",
         "5. - تنظیمات",
+        "6. - باز کردن ویرایشگر",
         "0. - خروج",
-        "\n========================================"
+        "\n========================================="
     },
 
-    // Swedish (19)
+    // SWEDISH (Index 19)
     {
         "============SPRÅKINLÄRNINGSAPP============",
         "\n1. - Programförklaring",
-        "2. - Starta programmet",
-        "3. - Öva misstag",
+        "2. - Starta program",
+        "3. - Öva fel",
         "4. - Skapa vokabulärfil",
         "5. - Inställningar",
+        "6. - Öppna editor",
         "0. - Avsluta",
-        "\n========================================"
+        "\n=========================================="
     },
 
-    // Dutch (20)
+    // DUTCH (Index 20)
     {
-        "============TAALLEER APP============",
-        "\n1. - Uitleg programma",
+        "============TAALAPP============",
+        "\n1. - Program uitleg",
         "2. - Start programma",
-        "3. - Oefen fouten",
-        "4. - Maak vocab bestand",
+        "3. - Fouten oefenen",
+        "4. - Woordenbestand maken",
         "5. - Instellingen",
+        "6. - Editor openen",
         "0. - Afsluiten",
-        "\n===================================="
+        "\n================================"
     },
 
-    // Turkish (21)
+    // TURKISH (Index 21)
     {
         "============DİL ÖĞRENME UYGULAMASI============",
         "\n1. - Program açıklaması",
@@ -265,34 +286,36 @@ const std::vector<MenuStrings> mainMenuTranslations {
         "3. - Hataları çalış",
         "4. - Kelime dosyası oluştur",
         "5. - Ayarlar",
+        "6. - Editörü aç",
         "0. - Çıkış",
-        "\n=========================================="
+        "\n=============================================="
     },
 
-    // Hindi (22)
+    // HINDI (Index 22)
     {
         "============भाषा सीखने का ऐप============",
         "\n1. - प्रोग्राम विवरण",
         "2. - प्रोग्राम शुरू करें",
         "3. - गलतियों का अभ्यास",
-        "4. - शब्द फ़ाइल बनाएं",
+        "4. - शब्दावली फ़ाइल बनाएं",
         "5. - सेटिंग्स",
+        "6. - एडिटर खोलें",
         "0. - बाहर निकलें",
         "\n========================================"
     },
 
-    // Latin (23)
+    // LATIN (Index 23)
     {
-        "============APP DISCENDI LINGUAS============",
+        "============APP LINGUAE============",
         "\n1. - Explicatio programmatis",
-        "2. - Programma incipe",
-        "3. - Errores exerce",
-        "4. - Crea fasciculum vocabulorum",
-        "5. - Configurationes",
+        "2. - Incipere programmam",
+        "3. - Exercere errores",
+        "4. - Creare fasciculum verborum",
+        "5. - Optiones",
+        "6. - Aperire editorem",
         "0. - Exire",
-        "\n=========================================="
+        "\n==================================="
     }
-
 };
 
 // number output
@@ -2244,245 +2267,294 @@ const std::vector<VocabWordsPairTotal> vocabWordsPairTotalTranslations = {
 };
 const std::vector<CreateVocabFile> createVocabFileTranslations = {
 
-    // Hungarian (Index 0)
-    {
-        "Kérlek add meg a fájl nevét: ",
-        "Melyik mappába mentsük? (Ha jó a jelenlegi, nyomj Enter-t): ",
-        "Hiba: Érvénytelen vagy nem létező útvonal!",
-        "Hiba: Nem sikerült létrehozni a fájlt! (Lehet, hogy nem létezik a mappa?)",
-        "Fájl elmentve...",
-        "Automatikusan elmentve!"
-    },
+    // HUNGARIAN (Index 0)
+    { "Kérlek add meg a fájl nevét: ",
+      "Melyik mappába mentsük? (Ha jó a jelenlegi, nyomj Enter-t): ",
+      "Hiba: Érvénytelen vagy nem létező útvonal!",
+      "Hiba: Nem sikerült létrehozni a fájlt! (Lehet, hogy nem létezik a mappa?)",
+      "Fájl elmentve...",
+      "Automatikusan elmentve!",
+      "Hiba: A '",
+      "' mappa nem létezik.",
+      "Szeretnéd létrehozni? (y/n): ",
+      "A művelet megszakítva. Kérlek adj meg létező mappát!" },
 
-    // English (Index 1)
-    {
-        "Please enter the file name: ",
-        "Which folder should we save it to? (If the current one is fine, press Enter): ",
-        "Error: Invalid or non-existing path!",
-        "Error: Failed to create file! (Maybe the folder doesn't exist?)",
-        "File saved...",
-        "Automatically saved!"
-    },
+    // ENGLISH (Index 1)
+    { "Please enter the file name: ",
+      "Which folder should we save it to? (Press Enter to use current): ",
+      "Error: Invalid or non-existing path!",
+      "Error: Failed to create file!",
+      "File saved...",
+      "Saved automatically!",
+      "Error: Folder '",
+      "' does not exist.",
+      "Would you like to create it? (y/n): ",
+      "Operation cancelled. Please provide a valid folder!" },
 
-    // Chinese (Index 2)
-    {
-        "请输入文件名：",
-        "保存到哪个文件夹？（如果当前即可，请按 Enter）：",
-        "错误：无效或不存在的路径！",
-        "错误：无法创建文件！（可能文件夹不存在？）",
-        "文件已保存...",
-        "已自动保存！"
-    },
+    // CHINESE (Index 2)
+    { "请输入文件名：",
+      "保存到哪个文件夹？（回车使用当前路径）：",
+      "错误：路径无效或不存在！",
+      "错误：无法创建文件！",
+      "文件已保存...",
+      "已自动保存！",
+      "错误：文件夹 '",
+      "' 不存在。",
+      "是否创建它？(y/n)：",
+      "操作已取消。请输入有效的文件夹！" },
 
-    // Japanese (Index 3)
-    {
-        "ファイル名を入力してください：",
-        "どのフォルダに保存しますか？（現在のままでよければEnter）：",
-        "エラー：無効または存在しないパス！",
-        "エラー：ファイルの作成に失敗しました！（フォルダが存在しない可能性）",
-        "ファイルが保存されました...",
-        "自動的に保存されました！"
-    },
+    // JAPANESE (Index 3)
+    { "ファイル名を入力してください：",
+      "どのフォルダに保存しますか？（Enterで現在）：",
+      "エラー：無効または存在しないパスです！",
+      "エラー：ファイルを作成できません！",
+      "ファイルが保存されました...",
+      "自動保存されました！",
+      "エラー：フォルダ '",
+      "' は存在しません。",
+      "作成しますか？(y/n)：",
+      "操作がキャンセルされました。有効なフォルダを入力してください！" },
 
-    // Spanish (Index 4)
-    {
-        "Por favor ingrese el nombre del archivo: ",
-        "¿En qué carpeta lo guardamos? (Si la actual es correcta, presione Enter): ",
-        "Error: Ruta inválida o inexistente!",
-        "Error: No se pudo crear el archivo! (¿Tal vez la carpeta no existe?)",
-        "Archivo guardado...",
-        "¡Guardado automáticamente!"
-    },
+    // SPANISH (Index 4)
+    { "Introduce el nombre del archivo: ",
+      "¿En qué carpeta guardar? (Enter = actual): ",
+      "Error: Ruta inválida o inexistente!",
+      "Error: No se pudo crear el archivo!",
+      "Archivo guardado...",
+      "Guardado automáticamente!",
+      "Error: La carpeta '",
+      "' no existe.",
+      "¿Deseas crearla? (y/n): ",
+      "Operación cancelada. Proporciona una carpeta válida!" },
 
-    // German (Index 5)
-    {
-        "Bitte geben Sie den Dateinamen ein: ",
-        "In welchen Ordner soll gespeichert werden? (Wenn der aktuelle passt, Enter drücken): ",
-        "Fehler: Ungültiger oder nicht vorhandener Pfad!",
-        "Fehler: Datei konnte nicht erstellt werden! (Ordner existiert vielleicht nicht?)",
-        "Datei gespeichert...",
-        "Automatisch gespeichert!"
-    },
+    // GERMAN (Index 5)
+    { "Bitte Dateinamen eingeben: ",
+      "In welchen Ordner speichern? (Enter = aktuell): ",
+      "Fehler: Ungültiger oder nicht existierender Pfad!",
+      "Fehler: Datei konnte nicht erstellt werden!",
+      "Datei gespeichert...",
+      "Automatisch gespeichert!",
+      "Fehler: Ordner '",
+      "' existiert nicht.",
+      "Möchtest du ihn erstellen? (y/n): ",
+      "Vorgang abgebrochen. Bitte gültigen Ordner angeben!" },
 
-    // French (Index 6)
-    {
-        "Veuillez entrer le nom du fichier : ",
-        "Dans quel dossier enregistrer ? (Si le dossier actuel convient, appuyez sur Entrée) : ",
-        "Erreur : chemin invalide ou inexistant !",
-        "Erreur : impossible de créer le fichier ! (Le dossier n'existe peut-être pas ?)",
-        "Fichier enregistré...",
-        "Enregistré automatiquement !"
-    },
+    // FRENCH (Index 6)
+    { "Entrez le nom du fichier : ",
+      "Dans quel dossier enregistrer ? (Entrée = actuel) : ",
+      "Erreur : chemin invalide ou inexistant !",
+      "Erreur : impossible de créer le fichier !",
+      "Fichier enregistré...",
+      "Enregistré automatiquement !",
+      "Erreur : dossier '",
+      "' inexistant.",
+      "Le créer ? (y/n) : ",
+      "Opération annulée. Fournissez un dossier valide !" },
 
-    // Russian (Index 7)
-    {
-        "Введите имя файла: ",
-        "В какую папку сохранить? (Если текущая подходит, нажмите Enter): ",
-        "Ошибка: неверный или несуществующий путь!",
-        "Ошибка: не удалось создать файл! (Возможно, папка не существует?)",
-        "Файл сохранён...",
-        "Сохранено автоматически!"
-    },
+    // RUSSIAN (Index 7)
+    { "Введите имя файла: ",
+      "В какую папку сохранить? (Enter = текущая): ",
+      "Ошибка: Неверный или несуществующий путь!",
+      "Ошибка: Не удалось создать файл!",
+      "Файл сохранён...",
+      "Автосохранение выполнено!",
+      "Ошибка: Папка '",
+      "' не существует.",
+      "Создать её? (y/n): ",
+      "Операция отменена. Укажите существующую папку!" },
 
-    // Ukrainian (Index 8)
-    {
-        "Введіть ім'я файлу: ",
-        "У яку папку зберегти? (Якщо підходить поточна, натисніть Enter): ",
-        "Помилка: недійсний або неіснуючий шлях!",
-        "Помилка: не вдалося створити файл! (Можливо, папка не існує?)",
-        "Файл збережено...",
-        "Збережено автоматично!"
-    },
+    // UKRAINIAN (Index 8)
+    { "Введіть назву файлу: ",
+      "У яку папку зберегти? (Enter = поточна): ",
+      "Помилка: Невірний або неіснуючий шлях!",
+      "Помилка: Не вдалося створити файл!",
+      "Файл збережено...",
+      "Автозбереження виконано!",
+      "Помилка: Папка '",
+      "' не існує.",
+      "Створити її? (y/n): ",
+      "Операцію скасовано. Вкажіть існуючу папку!" },
 
-    // Korean (Index 9)
-    {
-        "파일 이름을 입력하세요: ",
-        "어느 폴더에 저장하시겠습니까? (현재 폴더면 Enter): ",
-        "오류: 잘못되었거나 존재하지 않는 경로!",
-        "오류: 파일 생성 실패! (폴더가 없을 수 있음)",
-        "파일이 저장되었습니다...",
-        "자동 저장 완료!"
-    },
+    // KOREAN (Index 9)
+    { "파일 이름을 입력하세요: ",
+      "어느 폴더에 저장할까요? (Enter = 현재): ",
+      "오류: 잘못된 경로 또는 존재하지 않음!",
+      "오류: 파일 생성 실패!",
+      "파일 저장됨...",
+      "자동 저장 완료!",
+      "오류: 폴더 '",
+      "' 존재하지 않음.",
+      "생성하시겠습니까? (y/n): ",
+      "작업 취소됨. 올바른 폴더를 입력하세요!" },
 
-    // Italian (Index 10)
-    {
-        "Inserisci il nome del file: ",
-        "In quale cartella salvare? (Se va bene quella attuale, premi Invio): ",
-        "Errore: percorso non valido o inesistente!",
-        "Errore: impossibile creare il file! (La cartella potrebbe non esistere)",
-        "File salvato...",
-        "Salvato automaticamente!"
-    },
+    // ITALIAN (Index 10)
+    { "Inserisci il nome del file: ",
+      "In quale cartella salvare? (Invio = attuale): ",
+      "Errore: Percorso non valido o inesistente!",
+      "Errore: Impossibile creare il file!",
+      "File salvato...",
+      "Salvato automaticamente!",
+      "Errore: Cartella '",
+      "' non esiste.",
+      "Crearla? (y/n): ",
+      "Operazione annullata. Specifica una cartella valida!" },
 
-    // Polish (Index 11)
-    {
-        "Podaj nazwę pliku: ",
-        "Do którego folderu zapisać? (Jeśli obecny jest OK, naciśnij Enter): ",
-        "Błąd: nieprawidłowa lub nieistniejąca ścieżka!",
-        "Błąd: nie udało się utworzyć pliku! (Folder może nie istnieć)",
-        "Plik zapisany...",
-        "Zapisano automatycznie!"
-    },
+    // POLISH (Index 11)
+    { "Podaj nazwę pliku: ",
+      "Do którego folderu zapisać? (Enter = bieżący): ",
+      "Błąd: Nieprawidłowa lub nieistniejąca ścieżka!",
+      "Błąd: Nie udało się utworzyć pliku!",
+      "Plik zapisany...",
+      "Zapisano automatycznie!",
+      "Błąd: Folder '",
+      "' nie istnieje.",
+      "Utworzyć go? (y/n): ",
+      "Operacja anulowana. Podaj poprawny folder!" },
 
-    // Arabic (Index 12)
-    {
-        "أدخل اسم الملف: ",
-        "في أي مجلد تريد الحفظ؟ (إذا كان الحالي مناسبًا اضغط Enter): ",
-        "خطأ: مسار غير صالح أو غير موجود!",
-        "خطأ: فشل إنشاء الملف! (ربما المجلد غير موجود)",
-        "تم حفظ الملف...",
-        "تم الحفظ تلقائيًا!"
-    },
+    // ARABIC (Index 12)
+    { "أدخل اسم الملف: ",
+      "في أي مجلد تريد الحفظ؟ (Enter = الحالي): ",
+      "خطأ: مسار غير صالح أو غير موجود!",
+      "خطأ: فشل إنشاء الملف!",
+      "تم حفظ الملف...",
+      "تم الحفظ تلقائيًا!",
+      "خطأ: المجلد '",
+      "' غير موجود.",
+      "هل تريد إنشاءه؟ (y/n): ",
+      "تم إلغاء العملية. أدخل مجلد صالح!" },
 
-    // Vietnamese (Index 13)
-    {
-        "Nhập tên file: ",
-        "Lưu vào thư mục nào? (Nếu thư mục hiện tại phù hợp, nhấn Enter): ",
-        "Lỗi: đường dẫn không hợp lệ hoặc không tồn tại!",
-        "Lỗi: không thể tạo file! (Có thể thư mục không tồn tại)",
-        "Đã lưu file...",
-        "Đã tự động lưu!"
-    },
+    // VIETNAMESE (Index 13)
+    { "Nhập tên tệp: ",
+      "Lưu vào thư mục nào? (Enter = hiện tại): ",
+      "Lỗi: Đường dẫn không hợp lệ!",
+      "Lỗi: Không thể tạo tệp!",
+      "Đã lưu tệp...",
+      "Đã tự động lưu!",
+      "Lỗi: Thư mục '",
+      "' không tồn tại.",
+      "Bạn có muốn tạo không? (y/n): ",
+      "Đã hủy. Hãy nhập thư mục hợp lệ!" },
 
-    // Tagalog (Index 14)
-    {
-        "Ilagay ang pangalan ng file: ",
-        "Saang folder ito ise-save? (Kung ok ang kasalukuyan, pindutin ang Enter): ",
-        "Error: Hindi valid o hindi umiiral na path!",
-        "Error: Hindi nagawa ang file! (Maaaring wala ang folder)",
-        "Na-save ang file...",
-        "Awtomatikong na-save!"
-    },
+    // TAGALOG (Index 14)
+    { "Ilagay ang pangalan ng file: ",
+      "Saang folder ise-save? (Enter = kasalukuyan): ",
+      "Error: Invalid o walang path!",
+      "Error: Hindi magawa ang file!",
+      "Naka-save ang file...",
+      "Auto-save na!",
+      "Error: Ang folder '",
+      "' ay wala.",
+      "Gusto mo bang gawin ito? (y/n): ",
+      "Kinansela. Magbigay ng tamang folder!" },
 
-    // Greek (Index 15)
-    {
-        "Εισάγετε όνομα αρχείου: ",
-        "Σε ποιον φάκελο να αποθηκευτεί; (Αν είναι εντάξει ο τρέχων, πατήστε Enter): ",
-        "Σφάλμα: μη έγκυρη ή ανύπαρκτη διαδρομή!",
-        "Σφάλμα: αποτυχία δημιουργίας αρχείου! (Ίσως ο φάκελος δεν υπάρχει)",
-        "Το αρχείο αποθηκεύτηκε...",
-        "Αποθηκεύτηκε αυτόματα!"
-    },
+    // GREEK (Index 15)
+    { "Εισάγετε όνομα αρχείου: ",
+      "Σε ποιο φάκελο να αποθηκευτεί; (Enter = τρέχων): ",
+      "Σφάλμα: Μη έγκυρη διαδρομή!",
+      "Σφάλμα: Αποτυχία δημιουργίας αρχείου!",
+      "Το αρχείο αποθηκεύτηκε...",
+      "Αυτόματη αποθήκευση!",
+      "Σφάλμα: Ο φάκελος '",
+      "' δεν υπάρχει.",
+      "Θέλετε να δημιουργηθεί; (y/n): ",
+      "Η λειτουργία ακυρώθηκε. Δώστε έγκυρο φάκελο!" },
 
-    // Hebrew (Index 16)
-    {
-        "הזן שם קובץ: ",
-        "לאיזו תיקייה לשמור? (אם הנוכחית מתאימה, לחץ Enter): ",
-        "שגיאה: נתיב לא חוקי או לא קיים!",
-        "שגיאה: לא ניתן ליצור קובץ! (אולי התיקייה לא קיימת)",
-        "הקובץ נשמר...",
-        "נשמר אוטומטית!"
-    },
+    // HEBREW (Index 16)
+    { "הזן שם קובץ: ",
+      "לאיזה תיקייה לשמור? (Enter = נוכחית): ",
+      "שגיאה: נתיב לא חוקי!",
+      "שגיאה: יצירת הקובץ נכשלה!",
+      "הקובץ נשמר...",
+      "נשמר אוטומטית!",
+      "שגיאה: התיקייה '",
+      "' לא קיימת.",
+      "ליצור אותה? (y/n): ",
+      "הפעולה בוטלה. הזן תיקייה חוקית!" },
 
-    // Portuguese (Index 17)
-    {
-        "Digite o nome do arquivo: ",
-        "Em qual pasta salvar? (Se a atual estiver ok, pressione Enter): ",
-        "Erro: caminho inválido ou inexistente!",
-        "Erro: falha ao criar o arquivo! (Talvez a pasta não exista)",
-        "Arquivo salvo...",
-        "Salvo automaticamente!"
-    },
+    // PORTUGUESE (Index 17)
+    { "Digite o nome do arquivo: ",
+      "Salvar em qual pasta? (Enter = atual): ",
+      "Erro: Caminho inválido!",
+      "Erro: Falha ao criar arquivo!",
+      "Arquivo salvo...",
+      "Salvo automaticamente!",
+      "Erro: Pasta '",
+      "' não existe.",
+      "Deseja criar? (y/n): ",
+      "Operação cancelada. Informe uma pasta válida!" },
 
-    // Persian (Index 18)
-    {
-        "نام فایل را وارد کنید: ",
-        "در کدام پوشه ذخیره شود؟ (اگر فعلی مناسب است Enter بزنید): ",
-        "خطا: مسیر نامعتبر یا وجود ندارد!",
-        "خطا: ایجاد فایل ناموفق بود! (شاید پوشه وجود ندارد)",
-        "فایل ذخیره شد...",
-        "به صورت خودکار ذخیره شد!"
-    },
+    // FARSI (Index 18)
+    { "نام فایل را وارد کنید: ",
+      "در کدام پوشه ذخیره شود؟ (Enter = فعلی): ",
+      "خطا: مسیر نامعتبر!",
+      "خطا: ایجاد فایل ناموفق!",
+      "فایل ذخیره شد...",
+      "ذخیره خودکار!",
+      "خطا: پوشه '",
+      "' وجود ندارد.",
+      "می‌خواهید ایجاد شود؟ (y/n): ",
+      "عملیات لغو شد. مسیر معتبر وارد کنید!" },
 
-    // Swedish (Index 19)
-    {
-        "Ange filnamn: ",
-        "Vilken mapp ska den sparas i? (Om nuvarande duger, tryck Enter): ",
-        "Fel: ogiltig eller icke existerande sökväg!",
-        "Fel: kunde inte skapa filen! (Mappen kanske inte finns)",
-        "Filen sparad...",
-        "Automatiskt sparad!"
-    },
+    // SWEDISH (Index 19)
+    { "Ange filnamn: ",
+      "Vilken mapp spara i? (Enter = nuvarande): ",
+      "Fel: Ogiltig sökväg!",
+      "Fel: Kunde inte skapa fil!",
+      "Filen sparad...",
+      "Autosparad!",
+      "Fel: Mappen '",
+      "' finns inte.",
+      "Skapa den? (y/n): ",
+      "Åtgärd avbruten. Ange giltig mapp!" },
 
-    // Dutch (Index 20)
-    {
-        "Voer de bestandsnaam in: ",
-        "In welke map opslaan? (Als de huidige goed is, druk op Enter): ",
-        "Fout: ongeldig of niet-bestaand pad!",
-        "Fout: bestand kon niet worden gemaakt! (Map bestaat misschien niet)",
-        "Bestand opgeslagen...",
-        "Automatisch opgeslagen!"
-    },
+    // DUTCH (Index 20)
+    { "Voer bestandsnaam in: ",
+      "In welke map opslaan? (Enter = huidige): ",
+      "Fout: Ongeldig pad!",
+      "Fout: Bestand kon niet worden gemaakt!",
+      "Bestand opgeslagen...",
+      "Automatisch opgeslagen!",
+      "Fout: Map '",
+      "' bestaat niet.",
+      "Aanmaken? (y/n): ",
+      "Actie geannuleerd. Geef geldige map!" },
 
-    // Turkish (Index 21)
-    {
-        "Dosya adını girin: ",
-        "Hangi klasöre kaydedilsin? (Mevcut uygunsa Enter'a basın): ",
-        "Hata: geçersiz veya mevcut olmayan yol!",
-        "Hata: dosya oluşturulamadı! (Klasör olmayabilir)",
-        "Dosya kaydedildi...",
-        "Otomatik olarak kaydedildi!"
-    },
+    // TURKISH (Index 21)
+    { "Dosya adını girin: ",
+      "Hangi klasöre kaydedilsin? (Enter = mevcut): ",
+      "Hata: Geçersiz yol!",
+      "Hata: Dosya oluşturulamadı!",
+      "Dosya kaydedildi...",
+      "Otomatik kaydedildi!",
+      "Hata: Klasör '",
+      "' mevcut değil.",
+      "Oluşturulsun mu? (y/n): ",
+      "İşlem iptal edildi. Geçerli klasör girin!" },
 
-    // Hindi (Index 22)
-    {
-        "फ़ाइल का नाम दर्ज करें: ",
-        "किस फ़ोल्डर में सहेजें? (यदि वर्तमान सही है तो Enter दबाएँ): ",
-        "त्रुटि: अमान्य या अस्तित्वहीन पथ!",
-        "त्रुटि: फ़ाइल नहीं बनाई जा सकी! (शायद फ़ोल्डर मौजूद नहीं है)",
-        "फ़ाइल सहेजी गई...",
-        "स्वचालित रूप से सहेजा गया!"
-    },
+    // HINDI (Index 22)
+    { "फ़ाइल का नाम दर्ज करें: ",
+      "किस फ़ोल्डर में सेव करें? (Enter = वर्तमान): ",
+      "त्रुटि: अमान्य पथ!",
+      "त्रुटि: फ़ाइल नहीं बन सकी!",
+      "फ़ाइल सेव हो गई...",
+      "स्वचालित रूप से सेव!",
+      "त्रुटि: फ़ोल्डर '",
+      "' मौजूद नहीं है।",
+      "क्या बनाना चाहते हैं? (y/n): ",
+      "ऑपरेशन रद्द। सही फ़ोल्डर दें!" },
 
-    // Latin (Index 23)
-    {
-        "Nomen fasciculi inserere: ",
-        "In quo directorio servare? (Si praesens idoneum est, Enter preme): ",
-        "Error: via invalida aut non existens!",
-        "Error: fasciculus creari non potuit! (Fortasse directorium non existit)",
-        "Fasciculus servatus...",
-        "Automatice servatus!"
-    }
+    // LATIN (Index 23)
+    { "Nomen fasciculi inseri: ",
+      "In quo directorio servare? (Enter = currente): ",
+      "Error: Via non valida!",
+      "Error: Fasciculus creari non potest!",
+      "Fasciculus servatus...",
+      "Automatice servatus!",
+      "Error: Directorium '",
+      "' non existit.",
+      "Vis creare? (y/n): ",
+      "Operatio cancellata. Directorium validum da!" }
+
 };
 
 const std::vector<CreateVocab> createVocabTranslations = {
@@ -6468,243 +6540,223 @@ const std::vector<DeleteFileFolders> deleteFileFoldersTranslations{
 };
 
 const std::vector<CopyFileFolders> copyFileFoldersTranslations{
+
     { //Hungarian (Index 0)
         "Hiba: Veszélyes forrás útvonal!",
-        "Másolando: ",
-        "Új név/útvonal: ",
+        "Másolandó: ",
+        "Útvonal/Új név\npl: (./data/mappaNeve/fajl.data): ",
         "Hiba: Veszélyes cél útvonal!",
         "Sikeres másolás!",
         "Hiba történt!"
     },
-    // ENGLISH (Index 1)
-    {
+
+    { //English (Index 1)
         "Error: Dangerous source path!",
-        "Copy: ",
-        "New name/path: ",
+        "Copying: ",
+        "Path/New name\ne.g.: (./data/folderName/file.data): ",
         "Error: Dangerous destination path!",
         "Copy successful!",
         "An error occurred!"
     },
 
-    // CHINESE (Index 2)
-    {
+    { //Chinese (Index 2)
         "错误：危险的源路径！",
-        "复制: ",
-        "新名称/路径: ",
+        "正在复制：",
+        "路径/新名称\n例如：(./data/文件夹/文件.data)：",
         "错误：危险的目标路径！",
         "复制成功！",
         "发生错误！"
     },
 
-    // JAPANESE (Index 3)
-    {
+    { //Japanese (Index 3)
         "エラー：危険なソースパス！",
-        "コピー: ",
-        "新しい名前/パス: ",
+        "コピー中：",
+        "パス/新しい名前\n例：(./data/フォルダ/ファイル.data)：",
         "エラー：危険な宛先パス！",
         "コピー成功！",
         "エラーが発生しました！"
     },
 
-    // SPANISH (Index 4)
-    {
+    { //Spanish (Index 4)
         "Error: ¡Ruta de origen peligrosa!",
-        "Copiar: ",
-        "Nuevo nombre/ruta: ",
+        "Copiando: ",
+        "Ruta/Nuevo nombre\nej.: (./data/carpeta/archivo.data): ",
         "Error: ¡Ruta de destino peligrosa!",
         "¡Copia exitosa!",
         "¡Ocurrió un error!"
     },
 
-    // GERMAN (Index 5)
-    {
+    { //German (Index 5)
         "Fehler: Gefährlicher Quellpfad!",
-        "Kopieren: ",
-        "Neuer Name/Pfad: ",
+        "Kopiere: ",
+        "Pfad/Neuer Name\nz.B.: (./data/ordner/datei.data): ",
         "Fehler: Gefährlicher Zielpfad!",
         "Kopieren erfolgreich!",
         "Ein Fehler ist aufgetreten!"
     },
 
-    // FRENCH (Index 6)
-    {
-        "Erreur : chemin source dangereux !",
-        "Copier : ",
-        "Nouveau nom/chemin : ",
-        "Erreur : chemin de destination dangereux !",
+    { //French (Index 6)
+        "Erreur : Chemin source dangereux !",
+        "Copie : ",
+        "Chemin/Nouveau nom\nex : (./data/dossier/fichier.data) : ",
+        "Erreur : Chemin de destination dangereux !",
         "Copie réussie !",
-        "Une erreur s'est produite !"
+        "Une erreur est survenue !"
     },
 
-    // RUSSIAN (Index 7)
-    {
-        "Ошибка: опасный исходный путь!",
-        "Копировать: ",
-        "Новое имя/путь: ",
-        "Ошибка: опасный путь назначения!",
+    { //Russian (Index 7)
+        "Ошибка: Опасный исходный путь!",
+        "Копирование: ",
+        "Путь/Новое имя\nнапр.: (./data/папка/файл.data): ",
+        "Ошибка: Опасный путь назначения!",
         "Копирование успешно!",
         "Произошла ошибка!"
     },
 
-    // UKRAINIAN (Index 8)
-    {
-        "Помилка: небезпечний вихідний шлях!",
-        "Копіювати: ",
-        "Нове ім'я/шлях: ",
-        "Помилка: небезпечний шлях призначення!",
+    { //Ukrainian (Index 8)
+        "Помилка: Небезпечний шлях джерела!",
+        "Копіювання: ",
+        "Шлях/Нове ім'я\nнапр.: (./data/папка/файл.data): ",
+        "Помилка: Небезпечний шлях призначення!",
         "Копіювання успішне!",
         "Сталася помилка!"
     },
 
-    // KOREAN (Index 9)
-    {
+    { //Korean (Index 9)
         "오류: 위험한 원본 경로!",
-        "복사: ",
-        "새 이름/경로: ",
+        "복사 중: ",
+        "경로/새 이름\n예: (./data/폴더/파일.data): ",
         "오류: 위험한 대상 경로!",
         "복사 성공!",
-        "오류가 발생했습니다!"
+        "오류 발생!"
     },
 
-    // ITALIAN (Index 10)
-    {
-        "Errore: percorso sorgente pericoloso!",
-        "Copia: ",
-        "Nuovo nome/percorso: ",
-        "Errore: percorso di destinazione pericoloso!",
+    { //Italian (Index 10)
+        "Errore: Percorso sorgente pericoloso!",
+        "Copia in corso: ",
+        "Percorso/Nuovo nome\nes.: (./data/cartella/file.data): ",
+        "Errore: Percorso destinazione pericoloso!",
         "Copia riuscita!",
         "Si è verificato un errore!"
     },
 
-    // POLISH (Index 11)
-    {
-        "Błąd: niebezpieczna ścieżka źródłowa!",
-        "Kopiuj: ",
-        "Nowa nazwa/ścieżka: ",
-        "Błąd: niebezpieczna ścieżka docelowa!",
-        "Kopiowanie zakończone!",
+    { //Polish (Index 11)
+        "Błąd: Niebezpieczna ścieżka źródłowa!",
+        "Kopiowanie: ",
+        "Ścieżka/Nowa nazwa\nnp.: (./data/folder/plik.data): ",
+        "Błąd: Niebezpieczna ścieżka docelowa!",
+        "Kopiowanie zakończone sukcesem!",
         "Wystąpił błąd!"
     },
 
-    // ARABIC (Index 12)
-    {
-        "خطأ: مسار المصدر خطير!",
-        "نسخ: ",
-        "اسم/مسار جديد: ",
-        "خطأ: مسار الوجهة خطير!",
+    { //Arabic (Index 12)
+        "خطأ: مسار مصدر خطير!",
+        "جاري النسخ: ",
+        "المسار/اسم جديد\nمثال: (./data/مجلد/ملف.data): ",
+        "خطأ: مسار وجهة خطير!",
         "تم النسخ بنجاح!",
         "حدث خطأ!"
     },
 
-    // VIETNAMESE (Index 13)
-    {
-        "Lỗi: đường dẫn nguồn nguy hiểm!",
-        "Sao chép: ",
-        "Tên/đường dẫn mới: ",
-        "Lỗi: đường dẫn đích nguy hiểm!",
+    { //Vietnamese (Index 13)
+        "Lỗi: Đường dẫn nguồn nguy hiểm!",
+        "Đang sao chép: ",
+        "Đường dẫn/Tên mới\nví dụ: (./data/thumuc/tep.data): ",
+        "Lỗi: Đường dẫn đích nguy hiểm!",
         "Sao chép thành công!",
         "Đã xảy ra lỗi!"
     },
 
-    // TAGALOG (Index 14)
-    {
-        "Error: Delikadong source na landas!",
-        "Kopyahin: ",
-        "Bagong pangalan/landas: ",
-        "Error: Delikadong destination na landas!",
-        "Matagumpay ang pagkopya!",
+    { //Tagalog (Index 14)
+        "Error: Mapanganib na source path!",
+        "Kinokopya: ",
+        "Path/Bagong pangalan\nhal: (./data/folder/file.data): ",
+        "Error: Mapanganib na destination path!",
+        "Tagumpay ang pagkopya!",
         "May naganap na error!"
     },
 
-    // GREEK (Index 15)
-    {
-        "Σφάλμα: επικίνδυνη διαδρομή πηγής!",
+    { //Greek (Index 15)
+        "Σφάλμα: Επικίνδυνη διαδρομή πηγής!",
         "Αντιγραφή: ",
-        "Νέο όνομα/διαδρομή: ",
-        "Σφάλμα: επικίνδυνη διαδρομή προορισμού!",
+        "Διαδρομή/Νέο όνομα\nπ.χ.: (./data/φάκελος/αρχείο.data): ",
+        "Σφάλμα: Επικίνδυνη διαδρομή προορισμού!",
         "Επιτυχής αντιγραφή!",
         "Παρουσιάστηκε σφάλμα!"
     },
 
-    // HEBREW (Index 16)
-    {
+    { //Hebrew (Index 16)
         "שגיאה: נתיב מקור מסוכן!",
-        "העתק: ",
-        "שם/נתיב חדש: ",
+        "מעתיק: ",
+        "נתיב/שם חדש\nלדוגמה: (./data/תיקיה/קובץ.data): ",
         "שגיאה: נתיב יעד מסוכן!",
-        "העתקה הצליחה!",
+        "ההעתקה הצליחה!",
         "אירעה שגיאה!"
     },
 
-    // PORTUGUESE (Index 17)
-    {
-        "Erro: caminho de origem perigoso!",
-        "Copiar: ",
-        "Novo nome/caminho: ",
-        "Erro: caminho de destino perigoso!",
+    { //Portuguese (Index 17)
+        "Erro: Caminho de origem perigoso!",
+        "Copiando: ",
+        "Caminho/Novo nome\nex.: (./data/pasta/arquivo.data): ",
+        "Erro: Caminho de destino perigoso!",
         "Cópia bem-sucedida!",
         "Ocorreu um erro!"
     },
 
-    // FARSI (Index 18)
-    {
-        "خطا: مسیر منبع خطرناک!",
-        "کپی: ",
-        "نام/مسیر جدید: ",
+    { //Farsi (Index 18)
+        "خطا: مسیر مبدأ خطرناک!",
+        "در حال کپی: ",
+        "مسیر/نام جدید\nمثال: (./data/پوشه/فایل.data): ",
         "خطا: مسیر مقصد خطرناک!",
-        "کپی با موفقیت انجام شد!",
+        "کپی موفق!",
         "خطایی رخ داد!"
     },
 
-    // SWEDISH (Index 19)
-    {
-        "Fel: farlig källsökväg!",
-        "Kopiera: ",
-        "Nytt namn/sökväg: ",
-        "Fel: farlig destinationssökväg!",
+    { //Swedish (Index 19)
+        "Fel: Farlig källsökväg!",
+        "Kopierar: ",
+        "Sökväg/Nytt namn\nt.ex.: (./data/mapp/fil.data): ",
+        "Fel: Farlig målsökväg!",
         "Kopiering lyckades!",
         "Ett fel uppstod!"
     },
 
-    // DUTCH (Index 20)
-    {
-        "Fout: gevaarlijk bronpad!",
+    { //Dutch (Index 20)
+        "Fout: Gevaarlijk bronpad!",
         "Kopiëren: ",
-        "Nieuwe naam/pad: ",
-        "Fout: gevaarlijk doelpad!",
+        "Pad/Nieuwe naam\nbijv.: (./data/map/bestand.data): ",
+        "Fout: Gevaarlijk doelpad!",
         "Kopiëren gelukt!",
         "Er is een fout opgetreden!"
     },
 
-    // TURKISH (Index 21)
-    {
-        "Hata: tehlikeli kaynak yolu!",
-        "Kopyala: ",
-        "Yeni ad/yol: ",
-        "Hata: tehlikeli hedef yolu!",
+    { //Turkish (Index 21)
+        "Hata: Tehlikeli kaynak yolu!",
+        "Kopyalanıyor: ",
+        "Yol/Yeni ad\nörn.: (./data/klasor/dosya.data): ",
+        "Hata: Tehlikeli hedef yolu!",
         "Kopyalama başarılı!",
         "Bir hata oluştu!"
     },
 
-    // HINDI (Index 22)
-    {
+    { //Hindi (Index 22)
         "त्रुटि: खतरनाक स्रोत पथ!",
-        "कॉपी: ",
-        "नया नाम/पथ: ",
+        "कॉपी हो रहा है: ",
+        "पथ/नया नाम\nउदाहरण: (./data/folder/file.data): ",
         "त्रुटि: खतरनाक गंतव्य पथ!",
         "कॉपी सफल!",
         "एक त्रुटि हुई!"
     },
 
-    // LATIN (Index 23)
-    {
-        "Error: iter originis periculosum!",
+    { //Latin (Index 23)
+        "Error: Via fontis periculosa!",
         "Copia: ",
-        "Novum nomen/iter: ",
-        "Error: iter destinationis periculosum!",
+        "Via/Nomen novum\nex: (./data/folder/file.data): ",
+        "Error: Via destinationis periculosa!",
         "Copia felix!",
-        "Error factus est!"
+        "Error accidit!"
     }
+
 };
 
 const std::vector<W_wordPair> wordPairErrorTranslations {

@@ -24,6 +24,11 @@
 #include <string>
 #include <vector>
 
+/*enum class FileSelectionMode {
+    QUIZ,   // Fájl kiválasztása kvíz indításához
+    EDIT    // Fájl kiválasztása szerkesztéshez
+};*/
+
 
 // Struktúra definíciók
 struct FileEntry {

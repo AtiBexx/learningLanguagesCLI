@@ -1,3 +1,23 @@
+/**
+* @file generalFunctions.cpp
+ * @brief Global utility functions / Globális segédfüggvények gyűjteménye
+ *
+ * @details
+ * EN:
+ * This module provides essential utility functions used across the application:
+ * - Console management (screen wiping, beep sounds, user prompts)
+ * - Logging and error reporting
+ * - String normalization (trimming, lowercase, punctuation, and accent removal)
+ * - File system operations for logging mistakes
+ *
+ * HU:
+ * Ez a modul az alkalmazás egészében használt alapvető segédfüggvényeket biztosítja:
+ * - Konzol kezelés (képernyőtörlés, hangjelzés, várakozás)
+ * - Naplózás és hibajelentés
+ * - Szöveg normalizálás (szóközök, kisbetűk, írásjelek és ékezetek eltávolítása)
+ * - Fájlrendszer műveletek a hibás szavak naplózásához
+ */
+
 #include "generalFunctions.h"
 #include "../Translate/translations.h"
 #include <iostream>
@@ -12,7 +32,8 @@
 #include "settings.h"
 #include "Settings/colors.h"
 
-
+// a program leírása/magyarázata
+// program explanation
 void explanation() {
     const ExplanationStrings& strings = explanationTranslations[static_cast<int>(programUiLanguage)];
 
@@ -30,14 +51,19 @@ void explanation() {
 
     waitToEnter();
 }
+
+// várunk egy billentyűre (az enterre)
+// wait for a keystroke (enter)
 void waitToEnter()
 {
-    const EnteringBack& enteringback = continuationToEnterTranslations[static_cast<int>(programUiLanguage)];
+    const EnteringBack& enteringBack = continuationToEnterTranslations[static_cast<int>(programUiLanguage)];
 
-    std::cout << enteringback.pressToEnter << std::endl;
+    std::cout << enteringBack.pressToEnter << std::endl;
     std::cin.get();
 }
 
+// Kilépünk az alkalmazásból
+// Exit the application
 void exiting() {
     screenWipe();
     const ExitingStrings& strings = exitingTranslations[static_cast<int>(programUiLanguage)];
@@ -48,17 +74,18 @@ void exiting() {
     pufferDelete();
     std::cin.get();
 }
-// képernyő Tőrlése
-// screen wipe
+
+// képernyötőrlés || screen wipe
 void screenWipe() {
-    // 1. Szín beállítása (ha kell)
+    // Szín beállítása (ha kell)
+    // Set color if necessary
     if (useColors && !currentBG.empty()) {
         std::cout << currentBG;
     } else {
         std::cout << colors::RESET;
     }
-
-    // 2. Képernyő törlése és kurzor haza (egyszerre!)
+    // A Képernyő törlése és kurzor haza (egyszerre!)
+    // Clear Screen and Cursor Home (at the same time!)
    std::cout << "\x1B[2J\x1B[H\x1B[3J" << std::flush;
 }
 /*#ifdef _WIN32
@@ -77,10 +104,14 @@ void screenWipe() {
         std::cout << colors::RESET << std::flush;
     }
 }*/
+
+// Letöröljük a bent maradt puffert ha szükséges
+// Clear the remaining buffer if necessary it
 void pufferDelete() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 // rendszerhibák mentése
+// log errors save
 void logError(const std::string& functionName, const std::string& errorMessage) {
 
     std::ofstream logFile("error.log ", std::ios::app); //hozzáfűzés mód || append mode
@@ -160,6 +191,7 @@ std::string removePunctuation(const std::string& s)
     }
     return result;
 }
+
 // Az Ékezetes karatkterek figyelmen kívül hagyása
 // Ignore Accented Characters
 std::string removeAccents(const std::string &s) {

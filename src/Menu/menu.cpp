@@ -1,6 +1,18 @@
-//
-// Created by AtiBexx2 on 2026. 04. 04.
-//
+/**
+* @file menu.cpp
+ * @brief Main menu system implementation / A főmenü rendszer megvalósítása
+ *
+ * @details
+ * EN:
+ * Processes the main menu options, including navigation to settings,
+ * the text editor, the quiz module, and the program description.
+ *
+ * HU:
+ * Ez a modul felel a főmenü megjelenítéséért és a menüpontok kezeléséért.
+ * Lehetővé teszi a belépést a beállításokba, a szerkesztőbe,
+ * a kvízbe és a program leírásába.
+ */
+
 #include "menu.h"
 
 #include "Common/generalFunctions.h"
@@ -14,6 +26,7 @@
 #include "cliFileReading.h"
 #include <fstream>
 #include "createVocab.h"
+#include "osEditor.h"
 #include "Settings/settings.h"
 
 
@@ -28,10 +41,11 @@ void mainMenu() {
         std::cout << menuStrs.mistakeExercise << "\n";
         std::cout << menuStrs.newFile << "\n";
         std::cout << menuStrs.settings << "\n";
+        std::cout << menuStrs.Editor << "\n";
         std::cout << menuStrs.exit << "\n";
         std::cout << menuStrs.signs << "\n";
 
-        choice = 5;
+        int choice = 0;
         const NumberOutput &numStrs = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
         std::cout << numStrs.numberOutput << std::flush;
 
@@ -39,9 +53,6 @@ void mainMenu() {
         // if cin is not a number
         if (!(std::cin >> choice)) {
             screenWipe();
-
-            // Load error messages
-            // Betöltjük az hibaüzeneteket
             const InvalidInput &invalidinput = invalidInputTranslations[static_cast<int>(programUiLanguage)];
 
             // Clear input buffer
@@ -50,7 +61,7 @@ void mainMenu() {
             pufferDelete();
 
             logError("mainMenu", invalidinput.invalidInput);
-            std::cerr << invalidinput.invalidInput <<"\n";
+            std::cerr << invalidinput.invalidInput <<"\n"; // Betöltjük az hibaüzeneteket || Load Error meassages
             waitToEnter();
             continue;
         }
@@ -62,34 +73,41 @@ void mainMenu() {
                  return;
             case 1:
                 pufferDelete();
+                playBeep();
                 explanation();
                 break;
             case 2:
                 pufferDelete();
+                playBeep();
                 listAndSelectFile();
                 break;
             case 3:
                 pufferDelete();
+                playBeep();
                 mistakeExercise();
                 break;
             case 4:
                 pufferDelete();
+                playBeep();
                 createVocab();
                 break;
             case 5:
                 pufferDelete();
+                playBeep();
                 settings();
                 break;
             case 6:
-                pufferDelete();
-                void openFileInEditor(); //TODO
+                    pufferDelete();
+                    playBeep();
+                    screenWipe();
+                    openFileInEditor("");
                 break;
             default:
                 screenWipe();
-                const InvalidInput2 &invalidinput2 = invalidInputTranslations2[static_cast<int>(programUiLanguage)];
+                const InvalidInput2 &invalidInput2 = invalidInputTranslations2[static_cast<int>(programUiLanguage)];
 
-                logError("mainMenu", invalidinput2.invalidInput2);
-                std::cerr << invalidinput2.invalidInput2 << "\n";
+                logError("mainMenu", invalidInput2.invalidInput2);
+                std::cerr << invalidInput2.invalidInput2 << "\n";
 
                 pufferDelete();
                 waitToEnter();

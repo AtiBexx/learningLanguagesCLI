@@ -22,7 +22,6 @@
 
 #include "Settings/colors.h"
 #include "Common/generalFunctions.h"
-#include "Menu/menu.h"
 #include "Translate/translations.h"
 
 bool useColors = true;
@@ -59,7 +58,7 @@ void settings()
         std::cout << settingsMenu.settingsMenuSign2 << std::endl;
         std::cout << numberoutput.numberOutput;
 
-        choice = 0;
+        int choice = 0;
         std::string inputSettings;
         std::getline(std::cin, inputSettings);
         try
@@ -212,13 +211,14 @@ void colorsOn()
         std::cout << clrSET.colorsMenu1 << clrSET.colorsMenu2 << clrSET.colorsMenu3;
         std::cout <<"\n"<< clrSET.choice << std::flush;
 
-        choice = 0;
+
         std::string inputC;
         std::getline(std::cin, inputC);
         try
         {
             //itt számá alakítjuk a bevitt értéket
             //here we convert the entered value to a number
+            int choice = 0;
             choice = std::stoi(inputC);
             if (choice == 1)
             {
@@ -391,12 +391,13 @@ void backgroundSets()
         std::cout << numberoutput.numberOutput << std::flush;
 
 
-        choice = 0;
+
         std::string inputBS;
         std::getline(std::cin, inputBS);
 
         try
         {
+            int choice = 0;
             //itt számá alakítjuk a bevitt értéket
             choice = std::stoi(inputBS);
 
@@ -510,12 +511,13 @@ void learningLanguage()
         std::cout << LLS.option3 ;
         std::cout << "\n4. "<<LLS.choice << std::flush;
 
-        choice = 0;
+
         std::string inputLLS;
         std::getline(std::cin, inputLLS);
 
         try
         {
+            int choice = 0;
             //itt számá alakítjuk a bevitt értéket
             choice = std::stoi(inputLLS);
 
@@ -532,7 +534,7 @@ void learningLanguage()
                     }
                     std::cout << LLS.back <<std::endl;
                     std::cout << LLS.allChoice;
-                    choice = 0;
+
                     std::string  mLangInput;
                     std::getline(std::cin, mLangInput);
 

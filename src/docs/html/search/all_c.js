@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['magenta_0',['MAGENTA',['../namespacecolors.html#a0ac90b8b6eebb8d41ffada29d6850140',1,'colors']]],
+  ['magyar_1',['Magyar',['../struct_target_language_name_set.html#a2d528f078209f8d91982f5a1cae53d09',1,'TargetLanguageNameSet::Magyar'],['../structtarget_language_list.html#a374c4a6ea74c03e2fd1bd14890e0a12e',1,'targetLanguageList::Magyar']]],
+  ['main_2',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_3',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainmenu_4',['mainMenu',['../menu_8cpp.html#ab3002fe8e0074c9e2ecb5b835e5e819f',1,'mainMenu():&#160;menu.cpp'],['../menu_8h.html#ab3002fe8e0074c9e2ecb5b835e5e819f',1,'mainMenu():&#160;menu.cpp']]],
+  ['mainmenutranslations_5',['mainMenuTranslations',['../translations_8cpp.html#a4119e2ded43100ab72a8e8a992802cf7',1,'mainMenuTranslations:&#160;translations.cpp'],['../translations_8h.html#a4119e2ded43100ab72a8e8a992802cf7',1,'mainMenuTranslations:&#160;translations.cpp']]],
+  ['menu_6',['Menu',['../struct_learning_language_set.html#ac5178c53bcf1c703b0a0cdbf65688ccf',1,'LearningLanguageSet']]],
+  ['menu_2ecpp_7',['menu.cpp',['../menu_8cpp.html',1,'']]],
+  ['menu_2eh_8',['menu.h',['../menu_8h.html',1,'']]],
+  ['menusigns_9',['menuSigns',['../struct_learning_language_set.html#a481d15106f68100214c54a6d6b9894dc',1,'LearningLanguageSet']]],
+  ['menustrings_10',['MenuStrings',['../struct_menu_strings.html',1,'']]],
+  ['mistakeexercise_11',['MistakeExercise',['../struct_mistake_exercise.html',1,'']]],
+  ['mistakeexercise_12',['mistakeExercise',['../struct_menu_strings.html#af18f783a695d1ffd6549b08ced3b1c15',1,'MenuStrings::mistakeExercise'],['../mistake_exercise_8cpp.html#a0a04626c8b5f10c5d51770569eb44e9a',1,'mistakeExercise():&#160;mistakeExercise.cpp'],['../program_quiz_8h.html#a0a04626c8b5f10c5d51770569eb44e9a',1,'mistakeExercise():&#160;mistakeExercise.cpp']]],
+  ['mistakeexercise_2ecpp_13',['mistakeExercise.cpp',['../mistake_exercise_8cpp.html',1,'']]],
+  ['mistakeexercisetranslations_14',['mistakeExerciseTranslations',['../translations_8cpp.html#af74bcb347c5b3b28ac797a1dd2da6b1b',1,'mistakeExerciseTranslations:&#160;translations.cpp'],['../translations_8h.html#af74bcb347c5b3b28ac797a1dd2da6b1b',1,'mistakeExerciseTranslations:&#160;translations.cpp']]],
+  ['mode_15',['mode',['../create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844',1,'mode:&#160;vocabCmenu.cpp'],['../vocab_cmenu_8cpp.html#a9108b183d1f0d18f66a248a2db494844',1,'mode:&#160;vocabCmenu.cpp']]],
+  ['motherlangmeaning_16',['motherLangMeaning',['../struct_word_pair.html#aa1ce412316d7e1306f02578987315bc1',1,'WordPair']]],
+  ['motherlanguage_17',['motherLanguage',['../main_8cpp.html#aedc5bc4e6638c847de7c0ff01282747d',1,'motherLanguage:&#160;main.cpp'],['../translations_8h.html#aedc5bc4e6638c847de7c0ff01282747d',1,'motherLanguage:&#160;main.cpp']]],
+  ['mothersuccess_18',['motherSuccess',['../struct_learning_language_set.html#a8e5c7752d2b44e52031064127b882871',1,'LearningLanguageSet']]],
+  ['move_19',['MOVE',['../create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2af7f93635f8e193a924ae4a691bb66b8f',1,'createVocab.h']]],
+  ['movingfilefolders_20',['MovingFileFolders',['../struct_moving_file_folders.html',1,'']]],
+  ['movingfilefolders_21',['movingFileFolders',['../cli_file_reading_8cpp.html#a725e443a932f3ecd52a21bfa600a56f2',1,'movingFileFolders(const std::string &amp;srcPath, bool isDirectory):&#160;cliFileReading.cpp'],['../cli_file_reading_8h.html#a725e443a932f3ecd52a21bfa600a56f2',1,'movingFileFolders(const std::string &amp;srcPath, bool isDirectory):&#160;cliFileReading.cpp']]],
+  ['movingfilefolderstranslations_22',['movingFileFoldersTranslations',['../translations_8cpp.html#ab80b3c5022af2dba26c5a20740a4e993',1,'movingFileFoldersTranslations:&#160;translations.cpp'],['../translations_8h.html#ab80b3c5022af2dba26c5a20740a4e993',1,'movingFileFoldersTranslations:&#160;translations.cpp']]]
+];

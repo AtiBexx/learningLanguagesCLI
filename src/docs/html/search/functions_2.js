@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['checkmultipleanswers_0',['checkMultipleAnswers',['../data_file_reading_8cpp.html#a32899c79969bcb75b3554309c4b47551',1,'checkMultipleAnswers(const std::string &amp;userAnswer, const std::string &amp;correctAnswersString):&#160;dataFileReading.cpp'],['../data_file_reading_8h.html#a32899c79969bcb75b3554309c4b47551',1,'checkMultipleAnswers(const std::string &amp;userAnswer, const std::string &amp;correctAnswersString):&#160;dataFileReading.cpp']]],
+  ['choicelanguage_1',['choiceLanguage',['../settings_8cpp.html#ad18f7d2fd4547937309b0c4c6e0ac2f6',1,'choiceLanguage():&#160;settings.cpp'],['../settings_8h.html#ad18f7d2fd4547937309b0c4c6e0ac2f6',1,'choiceLanguage():&#160;settings.cpp']]],
+  ['choicemenu_2',['choiceMenu',['../create_vocab_8h.html#a9a5562065d61167b749d3069cbeab087',1,'choiceMenu():&#160;vocabCmenu.cpp'],['../vocab_cmenu_8cpp.html#a9a5562065d61167b749d3069cbeab087',1,'choiceMenu():&#160;vocabCmenu.cpp']]],
+  ['cleanstring_3',['cleanString',['../general_functions_8cpp.html#aaa4eecca2f1487e849e80d4729461f21',1,'cleanString(const std::string &amp;s):&#160;generalFunctions.cpp'],['../general_functions_8h.html#aaa4eecca2f1487e849e80d4729461f21',1,'cleanString(const std::string &amp;s):&#160;generalFunctions.cpp']]],
+  ['colorson_4',['colorsOn',['../settings_8cpp.html#abd3eb7c7de778f12f45eb5e7e0e0d49f',1,'colorsOn():&#160;settings.cpp'],['../settings_8h.html#abd3eb7c7de778f12f45eb5e7e0e0d49f',1,'colorsOn():&#160;settings.cpp']]],
+  ['copyfilefolders_5',['copyFileFolders',['../cli_file_reading_8cpp.html#a68b49c036091e8e7fbbe530e8236b10f',1,'copyFileFolders(const std::string &amp;srcPath, bool isDirectory):&#160;cliFileReading.cpp'],['../cli_file_reading_8h.html#a68b49c036091e8e7fbbe530e8236b10f',1,'copyFileFolders(const std::string &amp;srcPath, bool isDirectory):&#160;cliFileReading.cpp']]],
+  ['createvocab_6',['createVocab',['../create_vocab_8cpp.html#a497cc8c590042c314be6dce5c7104bd7',1,'createVocab():&#160;createVocab.cpp'],['../create_vocab_8h.html#a497cc8c590042c314be6dce5c7104bd7',1,'createVocab():&#160;createVocab.cpp']]]
+];

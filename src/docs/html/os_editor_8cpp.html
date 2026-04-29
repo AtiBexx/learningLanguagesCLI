@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nyelvtanulo App: Editor/osEditor.cpp fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Nyelvtanulo App
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Keresés',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('os_editor_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">osEditor.cpp fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="os_editor_8h_source.html">osEditor.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="translations_8h_source.html">translations.h</a>&quot;</code><br />
+</div>
+<p><a href="os_editor_8cpp_source.html">Ugrás a fájl forráskódjához.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:a9fb1d282b30210583398f4a9677530cc" id="r_a9fb1d282b30210583398f4a9677530cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fb1d282b30210583398f4a9677530cc">openFileInEditor</a> (const <a class="el" href="data_file_reading_8cpp.html#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;<a class="el" href="create_vocab_8h.html#a6561b4c601dfd61dc521fe19aad922c6">fullPath</a>)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Függvények dokumentációja</h2>
+<a id="a9fb1d282b30210583398f4a9677530cc" name="a9fb1d282b30210583398f4a9677530cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb1d282b30210583398f4a9677530cc">&#9670;&#160;</a></span>openFileInEditor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void openFileInEditor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="data_file_reading_8cpp.html#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>fullPath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="os_editor_8cpp_source.html">osEditor.cpp</a> fájl <a class="el" href="os_editor_8cpp_source.html#l00008">8</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>                                                 {</div>
+<div class="line"><span class="lineno">    9</span>    std::string command;</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_oos_editor.html">OosEditor</a> &amp;OoE = <a class="code hl_variable" href="translations_8cpp.html#a415daed8caeb9fe04c1579cf66aad6c7">OosEditorTranslations</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">   12</span> </div>
+<div class="line"><span class="lineno">   13</span>    <span class="comment">// Idézőjelek kezelése: ha van elérési út, tegyük köré, ha nincs, maradjon üres</span></div>
+<div class="line"><span class="lineno">   14</span>    std::string fixedPath = <a class="code hl_variable" href="create_vocab_8h.html#a6561b4c601dfd61dc521fe19aad922c6">fullPath</a>;</div>
+<div class="line"><span class="lineno">   15</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;c : fixedPath) <span class="keywordflow">if</span>(c == <span class="charliteral">&#39;/&#39;</span>) c = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line"><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    std::string pathArg = fixedPath.empty() ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot; \&quot;&quot;</span> + fixedPath + <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   20</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="lineno">   21</span>    <span class="comment">// Az edit.com-ot használjuk</span></div>
+<div class="line"><span class="lineno">   22</span>    <span class="comment">// use edit.com</span></div>
+<div class="line"><span class="lineno">   23</span>    command = <span class="stringliteral">&quot;edit&quot;</span> + pathArg;</div>
+<div class="line"><span class="lineno">   24</span>    std::cout &lt;&lt; OoE.<a class="code hl_variable" href="struct_oos_editor.html#a98ebea3e2e436a1eda7f17dfd63c4749">run</a> &lt;&lt; command &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">int</span> result = std::system(command.c_str());</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="comment">// Ha a result nem 0, akkor valószínűleg nem található vagy hiba történt</span></div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">// If result is not 0, it is probably not found or an error occurred.</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (result != 0) {</div>
+<div class="line"><span class="lineno">   31</span>        std::cout &lt;&lt; OoE.<a class="code hl_variable" href="struct_oos_editor.html#a89070d934575ca0001d82f7cf5cb947d">errorWin32</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   32</span>        command = <span class="stringliteral">&quot;notepad.exe&quot;</span> + pathArg;</div>
+<div class="line"><span class="lineno">   33</span>        std::system(command.c_str());</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   36</span>    <span class="comment">// Linux/Android/Termux: nano</span></div>
+<div class="line"><span class="lineno">   37</span>    command = <span class="stringliteral">&quot;nano&quot;</span> + pathArg;</div>
+<div class="line"><span class="lineno">   38</span>    std::cout &lt;&lt; OoE.<a class="code hl_variable" href="struct_oos_editor.html#a98ebea3e2e436a1eda7f17dfd63c4749">run</a> &lt;&lt; command &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">int</span> result = std::system(command.c_str());</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (result != 0) {</div>
+<div class="line"><span class="lineno">   42</span>        std::cerr &lt;&lt; OoE.<a class="code hl_variable" href="struct_oos_editor.html#a2d381619c711a6f7a8e820354c650792">errorLinux</a> &lt;&lt; result &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="line"><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   45</span>}</div>
+<div class="ttc" id="acreate_vocab_8h_html_a6561b4c601dfd61dc521fe19aad922c6"><div class="ttname"><a href="create_vocab_8h.html#a6561b4c601dfd61dc521fe19aad922c6">fullPath</a></div><div class="ttdeci">std::string fullPath</div><div class="ttdef"><b>Definition</b> <a href="vocab_cmenu_8cpp_source.html#l00018">vocabCmenu.cpp:18</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a8ccf5837162e6f87422bb440bf65f193"><div class="ttname"><a href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a></div><div class="ttdeci">Language programUiLanguage</div><div class="ttdoc">ENG: Current UI language (HU: A jelenlegi felhasználói felületnek a nyelve)</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00026">main.cpp:26</a></div></div>
+<div class="ttc" id="astruct_oos_editor_html"><div class="ttname"><a href="struct_oos_editor.html">OosEditor</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00320">translations.h:321</a></div></div>
+<div class="ttc" id="astruct_oos_editor_html_a2d381619c711a6f7a8e820354c650792"><div class="ttname"><a href="struct_oos_editor.html#a2d381619c711a6f7a8e820354c650792">OosEditor::errorLinux</a></div><div class="ttdeci">std::string errorLinux</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00324">translations.h:324</a></div></div>
+<div class="ttc" id="astruct_oos_editor_html_a89070d934575ca0001d82f7cf5cb947d"><div class="ttname"><a href="struct_oos_editor.html#a89070d934575ca0001d82f7cf5cb947d">OosEditor::errorWin32</a></div><div class="ttdeci">std::string errorWin32</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00323">translations.h:323</a></div></div>
+<div class="ttc" id="astruct_oos_editor_html_a98ebea3e2e436a1eda7f17dfd63c4749"><div class="ttname"><a href="struct_oos_editor.html#a98ebea3e2e436a1eda7f17dfd63c4749">OosEditor::run</a></div><div class="ttdeci">std::string run</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00322">translations.h:322</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a415daed8caeb9fe04c1579cf66aad6c7"><div class="ttname"><a href="translations_8cpp.html#a415daed8caeb9fe04c1579cf66aad6c7">OosEditorTranslations</a></div><div class="ttdeci">const std::vector&lt; OosEditor &gt; OosEditorTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l06954">translations.cpp:6954</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_14eca4e58e6d71e3a9859288c1bd2735.html">Editor</a></li><li class="navelem"><a href="os_editor_8cpp.html">osEditor.cpp</a></li>
+    <li class="footer">Készítette <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

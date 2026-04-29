@@ -42,6 +42,7 @@ struct MenuStrings {
     std::string mistakeExercise;
     std::string newFile;
     std::string settings;
+    std::string Editor;
     std::string exit;
     std::string signs;
 };
@@ -170,6 +171,10 @@ struct CreateVocabFile
     std::string fullPathOpenError;
     std::string fileSave;
     std::string fileSave2;
+    std::string folderError;
+    std::string folderDoesNotExist;
+    std::string askingCreate;
+    std::string folderOperationAborted;
 };
 struct CreateVocab
 {

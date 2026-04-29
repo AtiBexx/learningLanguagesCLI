@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nyelvtanulo App: Common/generalFunctions.h Forrásfájl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Nyelvtanulo App
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Keresés',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('general_functions_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">generalFunctions.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="general_functions_8h.html">Ugrás a fájl dokumentációjához.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by AtiBexx2 on 2026. 03. 18.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef ENGLISH_GENERALFUNCTIONS_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define ENGLISH_GENERALFUNCTIONS_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="data_file_reading_8h.html">dataFileReading.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="translations_8h.html">../Translate/translations.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//=============================================================</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//Megjeleníti a program magyarázatát || Displays program explanation</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8h.html#a6571e3e7c756c88527b1771d1c470f94">explanation</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// Kilépési logikát kezel || Handles exiting logic</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8h.html#aec7217024e1fd9e8e844a95c9b5c89a5">exiting</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//Törli a képernyőt || Clears the screen</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8h.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Törli a bemeneti puffert || Clears input buffer</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8h.html#aa30dc624799aff7f95ec6deeb705372d">pufferDelete</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// Program Hibákat írja a fájlba || Writes program&#39;s mistakes to a file</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8h.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="keyword">const</span> std::string&amp; functionName, <span class="keyword">const</span> std::string&amp; errorMessage);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// Az elrontott szópárokat írja egy fájlba || writes the corrupted word pairs to a file</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8h.html#a372bc25a6dbf0fb709d41bd366bf8910">logMistakeWriteFile</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_word_pair.html">WordPair</a>&amp; word);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// Sípoló hangot játszik le || Plays a beeping sound</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8h.html#a5e04cbc54d5011ddb1a639f338b03af4">playBeep</a>(<span class="keywordtype">int</span> frequency = 750, <span class="keywordtype">int</span> duration = 300);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// megáll és vár az enterre || stops and waits for the entrance</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> <a class="code hl_function" href="general_functions_8h.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// Eltávolítja az írásjeleket egy szövegből (pl. ! ? . , ;) || Removes punctuation from a string (e.g., ! ? . , ;)</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>std::string <a class="code hl_function" href="general_functions_8h.html#a120cfd0e4ff9c22239d599744a0d3141">removePunctuation</a>(<span class="keyword">const</span> std::string&amp; s);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">// Lecseréli az ékezetes UTF-8 karaktereket (pl. á, é, ö) alap betűkre (a, e, o).</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">// Replaces accented UTF-8 characters (e.g. á, é, ö) with basic letters (a, e, o).</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// Figyelmen kívül hagyja az ékezeteket</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// Ignore accents</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>std::string <a class="code hl_function" href="general_functions_8h.html#ab006839cc33a43f6d71f8ece65029ad3">removeAccents</a>(<span class="keyword">const</span> std::string &amp;s);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">// Levágja a szóközöket, kisbetűssé alakít, eltávolítja az írásjeleket</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// Trim, lowercase, remove punctuation</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>std::string <a class="code hl_function" href="general_functions_8h.html#aaa4eecca2f1487e849e80d4729461f21">cleanString</a>(<span class="keyword">const</span> std::string&amp; s);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif </span><span class="comment">//ENGLISH_GENERALFUNCTIONS_H</span></div>
+<div class="ttc" id="adata_file_reading_8h_html"><div class="ttname"><a href="data_file_reading_8h.html">dataFileReading.h</a></div><div class="ttdoc">File reading and word processing utilities. Fájlbeolvasó és szófeldolgozó segédfüggvények.</div></div>
+<div class="ttc" id="ageneral_functions_8h_html_a120cfd0e4ff9c22239d599744a0d3141"><div class="ttname"><a href="general_functions_8h.html#a120cfd0e4ff9c22239d599744a0d3141">removePunctuation</a></div><div class="ttdeci">std::string removePunctuation(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00179">generalFunctions.cpp:179</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_a22081226b6752d2380ca0c167fc18a28"><div class="ttname"><a href="general_functions_8h.html#a22081226b6752d2380ca0c167fc18a28">logError</a></div><div class="ttdeci">void logError(const std::string &amp;functionName, const std::string &amp;errorMessage)</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00112">generalFunctions.cpp:112</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_a372bc25a6dbf0fb709d41bd366bf8910"><div class="ttname"><a href="general_functions_8h.html#a372bc25a6dbf0fb709d41bd366bf8910">logMistakeWriteFile</a></div><div class="ttdeci">void logMistakeWriteFile(const WordPair &amp;word)</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00131">generalFunctions.cpp:131</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_a5e04cbc54d5011ddb1a639f338b03af4"><div class="ttname"><a href="general_functions_8h.html#a5e04cbc54d5011ddb1a639f338b03af4">playBeep</a></div><div class="ttdeci">void playBeep(int frequency=750, int duration=300)</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00164">generalFunctions.cpp:164</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_a6571e3e7c756c88527b1771d1c470f94"><div class="ttname"><a href="general_functions_8h.html#a6571e3e7c756c88527b1771d1c470f94">explanation</a></div><div class="ttdeci">void explanation()</div><div class="ttdoc">General utility functions for the language learning application.</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00037">generalFunctions.cpp:37</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_a7925bb988d7353f31427438c08feed33"><div class="ttname"><a href="general_functions_8h.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a></div><div class="ttdeci">void waitToEnter()</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00056">generalFunctions.cpp:56</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_aa30dc624799aff7f95ec6deeb705372d"><div class="ttname"><a href="general_functions_8h.html#aa30dc624799aff7f95ec6deeb705372d">pufferDelete</a></div><div class="ttdeci">void pufferDelete()</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00108">generalFunctions.cpp:108</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_aaa4eecca2f1487e849e80d4729461f21"><div class="ttname"><a href="general_functions_8h.html#aaa4eecca2f1487e849e80d4729461f21">cleanString</a></div><div class="ttdeci">std::string cleanString(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00235">generalFunctions.cpp:235</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_ab006839cc33a43f6d71f8ece65029ad3"><div class="ttname"><a href="general_functions_8h.html#ab006839cc33a43f6d71f8ece65029ad3">removeAccents</a></div><div class="ttdeci">std::string removeAccents(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00193">generalFunctions.cpp:193</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_ab497849fab25f1b523c6109f82aff762"><div class="ttname"><a href="general_functions_8h.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a></div><div class="ttdeci">void screenWipe()</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00078">generalFunctions.cpp:78</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html_aec7217024e1fd9e8e844a95c9b5c89a5"><div class="ttname"><a href="general_functions_8h.html#aec7217024e1fd9e8e844a95c9b5c89a5">exiting</a></div><div class="ttdeci">void exiting()</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00066">generalFunctions.cpp:66</a></div></div>
+<div class="ttc" id="astruct_word_pair_html"><div class="ttname"><a href="struct_word_pair.html">WordPair</a></div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8h_source.html#l00030">dataFileReading.h:30</a></div></div>
+<div class="ttc" id="atranslations_8h_html"><div class="ttname"><a href="translations_8h.html">translations.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_4ab6b4cc6a7edbff49100e9123df213f.html">Common</a></li><li class="navelem"><a href="general_functions_8h.html">generalFunctions.h</a></li>
+    <li class="footer">Készítette <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nyelvtanulo App: CreateVocab/vocabCmenu.cpp Forrásfájl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Nyelvtanulo App
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Keresés',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('vocab_cmenu_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">vocabCmenu.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="vocab_cmenu_8cpp.html">Ugrás a fájl dokumentációjához.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by AtiBexx2 on 2026. 04. 06.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="create_vocab_8h.html">createVocab.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="data_file_reading_8h.html">dataFileReading.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="general_functions_8h.html">generalFunctions.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="menu_8h.html">Menu/menu.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// Itt definiáljuk a globális változókat, amik a .h-ban extern-ként vannak</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844">   16</a></span>std::ios_base::openmode <a class="code hl_variable" href="create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844">mode</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">   17</a></span><span class="keywordtype">int</span> <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = 0;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#a6561b4c601dfd61dc521fe19aad922c6">   18</a></span>std::string <a class="code hl_variable" href="create_vocab_8h.html#a6561b4c601dfd61dc521fe19aad922c6">fullPath</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#aa93ddd9af0d39698d5081471d4c3a7c9">   19</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_variable" href="create_vocab_8h.html#aa93ddd9af0d39698d5081471d4c3a7c9">wordCount</a> = 0;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#a9a5562065d61167b749d3069cbeab087">   22</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="vocab_cmenu_8cpp.html#a9a5562065d61167b749d3069cbeab087">choiceMenu</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// nyelvi fájlok</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_vocab_menu.html">VocabMenu</a> &amp;vocabMenu = <a class="code hl_variable" href="translations_8cpp.html#a9630391659ff2df4d8bcac0497b899f7">vocabMenuTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// létező szavak vizsgálata</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::vector&lt;WordPair&gt; existingWords = <a class="code hl_function" href="data_file_reading_8cpp.html#a3cfb7fe89e2439f359478918a717a755">loadWords</a>(<a class="code hl_variable" href="create_vocab_8h.html#a6561b4c601dfd61dc521fe19aad922c6">fullPath</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_variable" href="create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844">mode</a> = std::ios::app; <span class="comment">// Alapértelmezett</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (!existingWords.empty())</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">while</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice &lt; 1 || choice &gt;</a> 3) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            std::cout &lt;&lt; vocabMenu.<a class="code hl_variable" href="struct_vocab_menu.html#aaeef9e7410b892d3eac07360112dd0c1">vocabMenu1</a> &lt;&lt; existingWords.size() &lt;&lt; vocabMenu.<a class="code hl_variable" href="struct_vocab_menu.html#a444cc36f1b9df5a522b0fb753674a06d">vocabMenu2</a> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            std::cout &lt;&lt; vocabMenu.<a class="code hl_variable" href="struct_vocab_menu.html#ad64442a6be1918119617537f031e0132">vocabMenu3</a> ;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            std::string inputCh;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            std::getline(std::cin, inputCh);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = std::stoi(inputCh);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice &lt; 1 || choice &gt;</a> 3) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                    std::cerr &lt;&lt; vocabMenu.<a class="code hl_variable" href="struct_vocab_menu.html#a1d0e4106560e1c9b0ad8a1f5af17d2b4">vocabError1</a>&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    std::cin.get();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                std::cerr &lt;&lt; vocabMenu.<a class="code hl_variable" href="struct_vocab_menu.html#a96f8960101dfe5872b78510b68414903">vocabError2</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                std::cin.get();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// Itt lesznek az if elágazások ha while ciklus nem talált hibát ide ugrik</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 1) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_variable" href="create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844">mode</a> = std::ios::app;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <a class="code hl_variable" href="create_vocab_8h.html#aa93ddd9af0d39698d5081471d4c3a7c9">wordCount</a> = existingWords.size();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 2) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <a class="code hl_variable" href="create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844">mode</a> = std::ios::out | std::ios::trunc;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_variable" href="create_vocab_8h.html#aa93ddd9af0d39698d5081471d4c3a7c9">wordCount</a> = 0;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="comment">// ha a választás 3-as(choice == 3)</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="comment">// a while ciklus miatt nem írjuk ki a 3-at mert egyértelmű</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">return</span>; <span class="comment">// ha 3-at adunk meg kilépünk</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// ha a fájl nem létezik létrehozuk</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_variable" href="create_vocab_8h.html#aa93ddd9af0d39698d5081471d4c3a7c9">wordCount</a> = 0;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_variable" href="create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844">mode</a> = std::ios::out;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+</div>
+<div class="ttc" id="acreate_vocab_8h_html"><div class="ttname"><a href="create_vocab_8h.html">createVocab.h</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a6561b4c601dfd61dc521fe19aad922c6"><div class="ttname"><a href="create_vocab_8h.html#a6561b4c601dfd61dc521fe19aad922c6">fullPath</a></div><div class="ttdeci">std::string fullPath</div><div class="ttdef"><b>Definition</b> <a href="#l00018">vocabCmenu.cpp:18</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a9108b183d1f0d18f66a248a2db494844"><div class="ttname"><a href="create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844">mode</a></div><div class="ttdeci">std::ios_base::openmode mode</div><div class="ttdef"><b>Definition</b> <a href="#l00016">vocabCmenu.cpp:16</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_aa93ddd9af0d39698d5081471d4c3a7c9"><div class="ttname"><a href="create_vocab_8h.html#aa93ddd9af0d39698d5081471d4c3a7c9">wordCount</a></div><div class="ttdeci">unsigned long long wordCount</div><div class="ttdef"><b>Definition</b> <a href="#l00019">vocabCmenu.cpp:19</a></div></div>
+<div class="ttc" id="adata_file_reading_8cpp_html_a3cfb7fe89e2439f359478918a717a755"><div class="ttname"><a href="data_file_reading_8cpp.html#a3cfb7fe89e2439f359478918a717a755">loadWords</a></div><div class="ttdeci">vector&lt; WordPair &gt; loadWords(const std::string &amp;filename)</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8cpp_source.html#l00124">dataFileReading.cpp:124</a></div></div>
+<div class="ttc" id="adata_file_reading_8h_html"><div class="ttname"><a href="data_file_reading_8h.html">dataFileReading.h</a></div><div class="ttdoc">File reading and word processing utilities. Fájlbeolvasó és szófeldolgozó segédfüggvények.</div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_ab497849fab25f1b523c6109f82aff762"><div class="ttname"><a href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a></div><div class="ttdeci">void screenWipe()</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00078">generalFunctions.cpp:78</a></div></div>
+<div class="ttc" id="ageneral_functions_8h_html"><div class="ttname"><a href="general_functions_8h.html">generalFunctions.h</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a8ccf5837162e6f87422bb440bf65f193"><div class="ttname"><a href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a></div><div class="ttdeci">Language programUiLanguage</div><div class="ttdoc">ENG: Current UI language (HU: A jelenlegi felhasználói felületnek a nyelve)</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00026">main.cpp:26</a></div></div>
+<div class="ttc" id="amenu_8h_html"><div class="ttname"><a href="menu_8h.html">menu.h</a></div><div class="ttdoc">ENG: Entering the main menu HU: Belépés a főmenűbe.</div></div>
+<div class="ttc" id="astruct_vocab_menu_html"><div class="ttname"><a href="struct_vocab_menu.html">VocabMenu</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00185">translations.h:186</a></div></div>
+<div class="ttc" id="astruct_vocab_menu_html_a1d0e4106560e1c9b0ad8a1f5af17d2b4"><div class="ttname"><a href="struct_vocab_menu.html#a1d0e4106560e1c9b0ad8a1f5af17d2b4">VocabMenu::vocabError1</a></div><div class="ttdeci">std::string vocabError1</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00190">translations.h:190</a></div></div>
+<div class="ttc" id="astruct_vocab_menu_html_a444cc36f1b9df5a522b0fb753674a06d"><div class="ttname"><a href="struct_vocab_menu.html#a444cc36f1b9df5a522b0fb753674a06d">VocabMenu::vocabMenu2</a></div><div class="ttdeci">std::string vocabMenu2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00188">translations.h:188</a></div></div>
+<div class="ttc" id="astruct_vocab_menu_html_a96f8960101dfe5872b78510b68414903"><div class="ttname"><a href="struct_vocab_menu.html#a96f8960101dfe5872b78510b68414903">VocabMenu::vocabError2</a></div><div class="ttdeci">std::string vocabError2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00191">translations.h:191</a></div></div>
+<div class="ttc" id="astruct_vocab_menu_html_aaeef9e7410b892d3eac07360112dd0c1"><div class="ttname"><a href="struct_vocab_menu.html#aaeef9e7410b892d3eac07360112dd0c1">VocabMenu::vocabMenu1</a></div><div class="ttdeci">std::string vocabMenu1</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00187">translations.h:187</a></div></div>
+<div class="ttc" id="astruct_vocab_menu_html_ad64442a6be1918119617537f031e0132"><div class="ttname"><a href="struct_vocab_menu.html#ad64442a6be1918119617537f031e0132">VocabMenu::vocabMenu3</a></div><div class="ttdeci">std::string vocabMenu3</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00189">translations.h:189</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a9630391659ff2df4d8bcac0497b899f7"><div class="ttname"><a href="translations_8cpp.html#a9630391659ff2df4d8bcac0497b899f7">vocabMenuTranslations</a></div><div class="ttdeci">const std::vector&lt; VocabMenu &gt; vocabMenuTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l02778">translations.cpp:2778</a></div></div>
+<div class="ttc" id="avocab_cmenu_8cpp_html_a63bd75f20c553f0d65d7bb29b3f35696"><div class="ttname"><a href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a></div><div class="ttdeci">int choice</div><div class="ttdef"><b>Definition</b> <a href="#l00017">vocabCmenu.cpp:17</a></div></div>
+<div class="ttc" id="avocab_cmenu_8cpp_html_a9a5562065d61167b749d3069cbeab087"><div class="ttname"><a href="vocab_cmenu_8cpp.html#a9a5562065d61167b749d3069cbeab087">choiceMenu</a></div><div class="ttdeci">void choiceMenu()</div><div class="ttdef"><b>Definition</b> <a href="#l00022">vocabCmenu.cpp:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_24667f92f30be149456db6199322f389.html">CreateVocab</a></li><li class="navelem"><a href="vocab_cmenu_8cpp.html">vocabCmenu.cpp</a></li>
+    <li class="footer">Készítette <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

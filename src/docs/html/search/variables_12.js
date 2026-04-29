@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['savesettingserror_0',['saveSettingsError',['../struct_save_settings.html#a2018aaf9c603124e4e8833dbb9e99f9d',1,'SaveSettings']]],
+  ['savesettingstranslations_1',['saveSettingsTranslations',['../translations_8cpp.html#a8ec86234170204134c3ae638623c5285',1,'saveSettingsTranslations:&#160;translations.cpp'],['../translations_8h.html#a8ec86234170204134c3ae638623c5285',1,'saveSettingsTranslations:&#160;translations.cpp']]],
+  ['settings_2',['settings',['../struct_menu_strings.html#ae247927bcca0dfb6f85d1f0105bb5ca2',1,'MenuStrings']]],
+  ['settingsmenusign_3',['settingsMenuSign',['../struct_settings_menu.html#a9bfb789e82fa2045aa2328319f693dfe',1,'SettingsMenu']]],
+  ['settingsmenusign2_4',['settingsMenuSign2',['../struct_settings_menu.html#a2e57f7ce0759d5caf99531c549f8d608',1,'SettingsMenu']]],
+  ['settingsmenutranslations_5',['settingsMenuTranslations',['../translations_8cpp.html#a053c79f931aff5e7c1140d845172ec08',1,'settingsMenuTranslations:&#160;translations.cpp'],['../translations_8h.html#a053c79f931aff5e7c1140d845172ec08',1,'settingsMenuTranslations:&#160;translations.cpp']]],
+  ['sign_6',['sign',['../struct_background_sets.html#abeb3aaa8df780309c4a09f20859e77f6',1,'BackgroundSets']]],
+  ['signs_7',['signs',['../struct_menu_strings.html#a1470bf4be09b6e8d3352b9238fbc3496',1,'MenuStrings']]],
+  ['soundonofftranslations_8',['soundOnOffTranslations',['../translations_8cpp.html#ae46846e2e39380eb530cd89c5bfa85d0',1,'soundOnOffTranslations:&#160;translations.cpp'],['../translations_8h.html#ae46846e2e39380eb530cd89c5bfa85d0',1,'soundOnOffTranslations:&#160;translations.cpp']]],
+  ['soundoptions_9',['soundOptions',['../struct_settings_menu.html#ac6a2a4c8db1952184a606db788490911',1,'SettingsMenu']]],
+  ['soundset_10',['soundSet',['../struct_sound_on_off.html#af4ca2ee4dc576969ec5e7b7fd7cf1eca',1,'SoundOnOff']]],
+  ['spanish_11',['Spanish',['../struct_target_language_name_set.html#ad2c99cf9017062717a9ccdde0467880b',1,'TargetLanguageNameSet::Spanish'],['../structtarget_language_list.html#a7d1f54dbfa46dac702bc180c3abb25d8',1,'targetLanguageList::Spanish']]],
+  ['spellingoutaccentstranslations_12',['spellingOutAccentsTranslations',['../translations_8cpp.html#a7b07a533f96515b04a3e826f2400807d',1,'spellingOutAccentsTranslations:&#160;translations.cpp'],['../translations_8h.html#a7b07a533f96515b04a3e826f2400807d',1,'spellingOutAccentsTranslations:&#160;translations.cpp']]],
+  ['startprogram_13',['startProgram',['../struct_menu_strings.html#a6b52d3820a88ec93122b44ee9b50ea1c',1,'MenuStrings']]],
+  ['stepback_14',['stepBack',['../struct_background_sets.html#a67fc8acda4243a3c6179af526ad48e69',1,'BackgroundSets']]],
+  ['successcopying_15',['successCopying',['../struct_copy_file_folders.html#a16d69ecfef706475070d7f74fca925dd',1,'CopyFileFolders']]],
+  ['successdelete_16',['successDelete',['../struct_delete_file_folders.html#a7246a8d69c3da87ef5595c0acbc47f26',1,'DeleteFileFolders']]],
+  ['swedish_17',['Swedish',['../struct_target_language_name_set.html#a20d370ed74f0e67c1ee8de1bbd996bc2',1,'TargetLanguageNameSet::Swedish'],['../structtarget_language_list.html#a718a421de7fbf757dd86153b3499e507',1,'targetLanguageList::Swedish']]]
+];

@@ -1,0 +1,15 @@
+PROJECT_NAME           = "Nyelvtanulo App"
+OUTPUT_LANGUAGE        = Hungarian
+OUTPUT_DIRECTORY       = docs
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+INPUT                  = E:/English/src # Vagy E:/English/src/example, ha oda tetted
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.cpp
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+OPTIMIZE_OUTPUT_FOR_C  = YES
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+IMAGE_PATH             = docs

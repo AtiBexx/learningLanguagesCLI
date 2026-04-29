@@ -1,0 +1,1197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nyelvtanulo App: Settings/settings.cpp fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Nyelvtanulo App
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Keresés',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('settings_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">settings.cpp fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Settings system implementation / Beállításkezelő megvalósítás.  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="settings_8h_source.html">settings.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="colors_8h_source.html">Settings/colors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="general_functions_8h_source.html">Common/generalFunctions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="translations_8h_source.html">Translate/translations.h</a>&quot;</code><br />
+</div>
+<p><a href="settings_8cpp_source.html">Ugrás a fájl forráskódjához.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:a6071c2f6a6eab58f29a7a5baf3696e6b" id="r_a6071c2f6a6eab58f29a7a5baf3696e6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6071c2f6a6eab58f29a7a5baf3696e6b">settings</a> ()</td></tr>
+<tr class="memitem:ad18f7d2fd4547937309b0c4c6e0ac2f6" id="r_ad18f7d2fd4547937309b0c4c6e0ac2f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad18f7d2fd4547937309b0c4c6e0ac2f6">choiceLanguage</a> ()</td></tr>
+<tr class="memdesc:ad18f7d2fd4547937309b0c4c6e0ac2f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">UI language selection / Program nyelv kiválasztása.  <br /></td></tr>
+<tr class="memitem:abd3eb7c7de778f12f45eb5e7e0e0d49f" id="r_abd3eb7c7de778f12f45eb5e7e0e0d49f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd3eb7c7de778f12f45eb5e7e0e0d49f">colorsOn</a> ()</td></tr>
+<tr class="memdesc:abd3eb7c7de778f12f45eb5e7e0e0d49f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color settings menu / Szín beállítás menü  <br /></td></tr>
+<tr class="memitem:ac7142ee2baa705d2dd402769467d5a4e" id="r_ac7142ee2baa705d2dd402769467d5a4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a> ()</td></tr>
+<tr class="memitem:af73ed9d8b8324e8a1b50b5e23960b1f6" id="r_af73ed9d8b8324e8a1b50b5e23960b1f6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af73ed9d8b8324e8a1b50b5e23960b1f6">loadSettings</a> ()</td></tr>
+<tr class="memitem:a07f1005e6ede7cd51d7b2d544259f00d" id="r_a07f1005e6ede7cd51d7b2d544259f00d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07f1005e6ede7cd51d7b2d544259f00d">backgroundSets</a> ()</td></tr>
+<tr class="memdesc:a07f1005e6ede7cd51d7b2d544259f00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Background color selection / Háttérszín kiválasztása.  <br /></td></tr>
+<tr class="memitem:a48f1655a857cc551ddcc35ca3c36c8e2" id="r_a48f1655a857cc551ddcc35ca3c36c8e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48f1655a857cc551ddcc35ca3c36c8e2">learningLanguage</a> ()</td></tr>
+<tr class="memdesc:a48f1655a857cc551ddcc35ca3c36c8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Learning language configuration / Tanulandó nyelv beállítása.  <br /></td></tr>
+<tr class="memitem:a802bae69577ff5f3021b5d7824d8352a" id="r_a802bae69577ff5f3021b5d7824d8352a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a802bae69577ff5f3021b5d7824d8352a">soundOn</a> ()</td></tr>
+<tr class="memdesc:a802bae69577ff5f3021b5d7824d8352a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sound toggle / Hang be- és kikapcsolása.  <br /></td></tr>
+<tr class="memitem:a7346f79456c656bd5554562a450be8c9" id="r_a7346f79456c656bd5554562a450be8c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7346f79456c656bd5554562a450be8c9">accentsToggle</a> ()</td></tr>
+<tr class="memitem:a6f04db455ed5fa7f6d9cbf5ede4436c7" id="r_a6f04db455ed5fa7f6d9cbf5ede4436c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f04db455ed5fa7f6d9cbf5ede4436c7">oneRoundQuizToggle</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Változók</h2></td></tr>
+<tr class="memitem:accda5039c9ee6c20f27094e99994f4aa" id="r_accda5039c9ee6c20f27094e99994f4aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accda5039c9ee6c20f27094e99994f4aa">useColors</a> = true</td></tr>
+<tr class="memitem:aa4da44408d96f80e9fd6de5f0275a531" id="r_aa4da44408d96f80e9fd6de5f0275a531"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 1</td></tr>
+<tr class="memitem:aaa5a3b018bf9c3d84cbc4b188f507c35" id="r_aaa5a3b018bf9c3d84cbc4b188f507c35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="data_file_reading_8cpp.html#aca454f84dd198a937af6499dd758aa3d">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a></td></tr>
+<tr class="memitem:ae6cfdf4465263f16973a2f5121306ae5" id="r_ae6cfdf4465263f16973a2f5121306ae5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6cfdf4465263f16973a2f5121306ae5">useSound</a> = false</td></tr>
+<tr class="memitem:a206de5c28dc8e06b2da696e99fca34f8" id="r_a206de5c28dc8e06b2da696e99fca34f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a> = false</td></tr>
+<tr class="memitem:a790a62a1f209c694bcf276a07a19d62f" id="r_a790a62a1f209c694bcf276a07a19d62f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a790a62a1f209c694bcf276a07a19d62f">oneRoundQuiz</a> = false</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p>Settings system implementation / Beállításkezelő megvalósítás. </p>
+<p>EN: This file contains the implementation of the application settings system. It handles menu navigation, user input, language switching, color configuration, background selection, sound toggling, and persistent storage using a configuration file.</p>
+<p>HU: Ez a fájl tartalmazza az alkalmazás beállításkezelő rendszerének megvalósítását. Kezeli a menü navigációt, felhasználói bemenetet, nyelvváltást, színbeállításokat, háttér kiválasztást, hang kezelést, valamint a beállítások mentését és betöltését fájlból. </p>
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájlban.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Függvények dokumentációja</h2>
+<a id="a7346f79456c656bd5554562a450be8c9" name="a7346f79456c656bd5554562a450be8c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7346f79456c656bd5554562a450be8c9">&#9670;&#160;</a></span>accentsToggle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void accentsToggle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00684">684</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  684</span>                     {</div>
+<div class="line"><span class="lineno">  685</span>    <span class="keywordflow">for</span> (;;) {</div>
+<div class="line"><span class="lineno">  686</span>        <span class="comment">// Nyelvi hivatkozások</span></div>
+<div class="line"><span class="lineno">  687</span>        <span class="comment">// Language references</span></div>
+<div class="line"><span class="lineno">  688</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input2.html">InvalidInput2</a> &amp;II2 = <a class="code hl_variable" href="translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3">invalidInputTranslations2</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  689</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_spelling_out_accents.html">SpellingOutAccents</a> &amp;SOA = <a class="code hl_variable" href="translations_8cpp.html#a7b07a533f96515b04a3e826f2400807d">spellingOutAccentsTranslations</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  690</span> </div>
+<div class="line"><span class="lineno">  691</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  692</span>        std::cout &lt;&lt; SOA.accentsMenu &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  693</span>        std::cout &lt;&lt; SOA.accentsState &lt;&lt; (<a class="code hl_variable" href="#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a> ? SOA.accentsState1Off : SOA.accentsState2On) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  694</span>        std::cout &lt;&lt; SOA.accentsMenu1;</div>
+<div class="line"><span class="lineno">  695</span> </div>
+<div class="line"><span class="lineno">  696</span>        std::string input;</div>
+<div class="line"><span class="lineno">  697</span>        std::getline(std::cin, input);</div>
+<div class="line"><span class="lineno">  698</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  699</span>            <span class="keywordtype">int</span> localChoice = std::stoi(input);</div>
+<div class="line"><span class="lineno">  700</span>            <span class="keywordflow">if</span> (localChoice == 1) {</div>
+<div class="line"><span class="lineno">  701</span>                <a class="code hl_variable" href="#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a> = !<a class="code hl_variable" href="#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a>;</div>
+<div class="line"><span class="lineno">  702</span>                <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>();</div>
+<div class="line"><span class="lineno">  703</span> </div>
+<div class="line"><span class="lineno">  704</span>                <span class="comment">// VISSZAJELZÉS A FELHASZNÁLÓNAK</span></div>
+<div class="line"><span class="lineno">  705</span>                <span class="comment">// FEEDBACK FOR USER</span></div>
+<div class="line"><span class="lineno">  706</span>                std::cout &lt;&lt; (<a class="code hl_variable" href="#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a> ? SOA.accentsState1Off : SOA.accentsState2On) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  707</span>                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  708</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (localChoice == 0) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  709</span>        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><span class="lineno">  710</span>            <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;accentsToggle()&quot;</span> , II2.<a class="code hl_variable" href="struct_invalid_input2.html#aecf71e70405ae9bcfd523f3b45e2a933">invalidInput2</a>);</div>
+<div class="line"><span class="lineno">  711</span>            std::cerr &lt;&lt; II2.<a class="code hl_variable" href="struct_invalid_input2.html#aecf71e70405ae9bcfd523f3b45e2a933">invalidInput2</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  712</span>            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  713</span>        }</div>
+<div class="line"><span class="lineno">  714</span>    }</div>
+<div class="line"><span class="lineno">  715</span>}</div>
+<div class="ttc" id="ageneral_functions_8cpp_html_a22081226b6752d2380ca0c167fc18a28"><div class="ttname"><a href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a></div><div class="ttdeci">void logError(const std::string &amp;functionName, const std::string &amp;errorMessage)</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00112">generalFunctions.cpp:112</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_a7925bb988d7353f31427438c08feed33"><div class="ttname"><a href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a></div><div class="ttdeci">void waitToEnter()</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00056">generalFunctions.cpp:56</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_ab497849fab25f1b523c6109f82aff762"><div class="ttname"><a href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a></div><div class="ttdeci">void screenWipe()</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00078">generalFunctions.cpp:78</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a8ccf5837162e6f87422bb440bf65f193"><div class="ttname"><a href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a></div><div class="ttdeci">Language programUiLanguage</div><div class="ttdoc">ENG: Current UI language (HU: A jelenlegi felhasználói felületnek a nyelve)</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00026">main.cpp:26</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_a206de5c28dc8e06b2da696e99fca34f8"><div class="ttname"><a href="#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a></div><div class="ttdeci">bool ignoreAccents</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00032">settings.cpp:32</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_ac7142ee2baa705d2dd402769467d5a4e"><div class="ttname"><a href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a></div><div class="ttdeci">void saveSettings()</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00277">settings.cpp:277</a></div></div>
+<div class="ttc" id="astruct_invalid_input2_html"><div class="ttname"><a href="struct_invalid_input2.html">InvalidInput2</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00119">translations.h:119</a></div></div>
+<div class="ttc" id="astruct_invalid_input2_html_aecf71e70405ae9bcfd523f3b45e2a933"><div class="ttname"><a href="struct_invalid_input2.html#aecf71e70405ae9bcfd523f3b45e2a933">InvalidInput2::invalidInput2</a></div><div class="ttdeci">std::string invalidInput2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00120">translations.h:120</a></div></div>
+<div class="ttc" id="astruct_spelling_out_accents_html"><div class="ttname"><a href="struct_spelling_out_accents.html">SpellingOutAccents</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00362">translations.h:363</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a4bba14fc2ab54a6e1305a2b386fc93b3"><div class="ttname"><a href="translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3">invalidInputTranslations2</a></div><div class="ttdeci">const std::vector&lt; InvalidInput2 &gt; invalidInputTranslations2</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l00956">translations.cpp:956</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a7b07a533f96515b04a3e826f2400807d"><div class="ttname"><a href="translations_8cpp.html#a7b07a533f96515b04a3e826f2400807d">spellingOutAccentsTranslations</a></div><div class="ttdeci">const std::vector&lt; SpellingOutAccents &gt; spellingOutAccentsTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l07967">translations.cpp:7967</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a07f1005e6ede7cd51d7b2d544259f00d" name="a07f1005e6ede7cd51d7b2d544259f00d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07f1005e6ede7cd51d7b2d544259f00d">&#9670;&#160;</a></span>backgroundSets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void backgroundSets </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Background color selection / Háttérszín kiválasztása. </p>
+<p>EN: Provides options to select different background colors. Updates internal state and saves configuration.</p>
+<p>HU: Különböző háttérszínek kiválasztását teszi lehetővé. Frissíti az állapotot és elmenti a beállításokat. </p>
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00361">361</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  362</span>{</div>
+<div class="line"><span class="lineno">  363</span>    <span class="comment">// Nyelvi hivatkozások</span></div>
+<div class="line"><span class="lineno">  364</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_number_output.html">NumberOutput</a>&amp; numberoutput = <a class="code hl_variable" href="translations_8cpp.html#ab0dee2152ea747d1841e669874e47de3">chooseNumberMenuTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  365</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_background_sets.html">BackgroundSets</a> &amp;backgroundsets = <a class="code hl_variable" href="translations_8cpp.html#a6d4ba1d8472bc8659269d5b0c6937b7e">backgroundSetsTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  366</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input.html">InvalidInput</a> &amp;II1 = <a class="code hl_variable" href="translations_8cpp.html#a5830946e01dea29a71e466dcf8d9ac6c">invalidInputTranslations</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  367</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input2.html">InvalidInput2</a> &amp;II2 = <a class="code hl_variable" href="translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3">invalidInputTranslations2</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  368</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_colors_onset.html">ColorsOnset</a> &amp; clrSET = <a class="code hl_variable" href="translations_8cpp.html#a062ef9f8b7c289464c86100a2edc6821">colorsOSetTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  369</span> </div>
+<div class="line"><span class="lineno">  370</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a>)</div>
+<div class="line"><span class="lineno">  371</span>    {</div>
+<div class="line"><span class="lineno">  372</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  373</span>        std::cerr &lt;&lt; clrSET.errorEntryDenied &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  374</span>        <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  375</span>        <span class="keywordflow">return</span>; <span class="comment">// AZONNAL KILÉPÜNK</span></div>
+<div class="line"><span class="lineno">  376</span>    }</div>
+<div class="line"><span class="lineno">  377</span>    <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><span class="lineno">  378</span>    {</div>
+<div class="line"><span class="lineno">  379</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>(); <span class="comment">// töröljük a képernyőt</span></div>
+<div class="line"><span class="lineno">  380</span> </div>
+<div class="line"><span class="lineno">  381</span>        std::cout &lt;&lt; backgroundsets.sign &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  382</span>        std::cout &lt;&lt; backgroundsets.DefaultBlack;</div>
+<div class="line"><span class="lineno">  383</span>        std::cout &lt;&lt; backgroundsets.green;</div>
+<div class="line"><span class="lineno">  384</span>        std::cout &lt;&lt; backgroundsets.cian;</div>
+<div class="line"><span class="lineno">  385</span>        std::cout &lt;&lt; backgroundsets.red;</div>
+<div class="line"><span class="lineno">  386</span>        std::cout &lt;&lt; backgroundsets.purple;</div>
+<div class="line"><span class="lineno">  387</span>        std::cout &lt;&lt; backgroundsets.blue;</div>
+<div class="line"><span class="lineno">  388</span>        std::cout &lt;&lt; backgroundsets.white;</div>
+<div class="line"><span class="lineno">  389</span>        std::cout &lt;&lt; backgroundsets.gray;</div>
+<div class="line"><span class="lineno">  390</span>        std::cout &lt;&lt;backgroundsets.stepBack;</div>
+<div class="line"><span class="lineno">  391</span>        std::cout &lt;&lt; numberoutput.<a class="code hl_variable" href="struct_number_output.html#ac048f2e15785063a9d1934dc8a9fc395">numberOutput</a> &lt;&lt; std::flush;</div>
+<div class="line"><span class="lineno">  392</span> </div>
+<div class="line"><span class="lineno">  393</span> </div>
+<div class="line"><span class="lineno">  394</span> </div>
+<div class="line"><span class="lineno">  395</span>        std::string inputBS;</div>
+<div class="line"><span class="lineno">  396</span>        std::getline(std::cin, inputBS);</div>
+<div class="line"><span class="lineno">  397</span> </div>
+<div class="line"><span class="lineno">  398</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  399</span>        {</div>
+<div class="line"><span class="lineno">  400</span>            <span class="keywordtype">int</span> <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = 0;</div>
+<div class="line"><span class="lineno">  401</span>            <span class="comment">//itt számá alakítjuk a bevitt értéket</span></div>
+<div class="line"><span class="lineno">  402</span>            <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = std::stoi(inputBS);</div>
+<div class="line"><span class="lineno">  403</span> </div>
+<div class="line"><span class="lineno">  404</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 1)</div>
+<div class="line"><span class="lineno">  405</span>            {</div>
+<div class="line"><span class="lineno">  406</span>                <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a92c8fcc8e472aad5f51332426794bf8d">colors::RESET</a>;</div>
+<div class="line"><span class="lineno">  407</span>                <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 1;</div>
+<div class="line"><span class="lineno">  408</span>            }</div>
+<div class="line"><span class="lineno">  409</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 2)</div>
+<div class="line"><span class="lineno">  410</span>            {</div>
+<div class="line"><span class="lineno">  411</span>                <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a724b21a48111c9e338d91a87a8a7bc30">colors::BG_GREEN</a>;</div>
+<div class="line"><span class="lineno">  412</span>                <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 2;</div>
+<div class="line"><span class="lineno">  413</span>            }</div>
+<div class="line"><span class="lineno">  414</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 3)</div>
+<div class="line"><span class="lineno">  415</span>            {</div>
+<div class="line"><span class="lineno">  416</span>                <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a58a697e39be991b206868352f5600171">colors::BG_CYAN</a>;</div>
+<div class="line"><span class="lineno">  417</span>                <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 3;</div>
+<div class="line"><span class="lineno">  418</span>            }</div>
+<div class="line"><span class="lineno">  419</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 4)</div>
+<div class="line"><span class="lineno">  420</span>            {</div>
+<div class="line"><span class="lineno">  421</span>                <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a8d598fad064d01e0b26f535ef06fc92a">colors::BG_RED</a>;</div>
+<div class="line"><span class="lineno">  422</span>                <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 4;</div>
+<div class="line"><span class="lineno">  423</span>            }</div>
+<div class="line"><span class="lineno">  424</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 5)</div>
+<div class="line"><span class="lineno">  425</span>            {</div>
+<div class="line"><span class="lineno">  426</span>                <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a2ce252af6faabbd678c25f60655be4cc">colors::BG_MAGENTA</a>;</div>
+<div class="line"><span class="lineno">  427</span>                <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 5;</div>
+<div class="line"><span class="lineno">  428</span> </div>
+<div class="line"><span class="lineno">  429</span>            }</div>
+<div class="line"><span class="lineno">  430</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 6)</div>
+<div class="line"><span class="lineno">  431</span>            {</div>
+<div class="line"><span class="lineno">  432</span>                <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a164ee51b3437516763062eb139505ecd">colors::BG_BLUE</a>;</div>
+<div class="line"><span class="lineno">  433</span>                <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 6;</div>
+<div class="line"><span class="lineno">  434</span>            }</div>
+<div class="line"><span class="lineno">  435</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 7)</div>
+<div class="line"><span class="lineno">  436</span>            {</div>
+<div class="line"><span class="lineno">  437</span>                <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#aee176a94f92b7d215c012fa717b249ab">colors::BG_WHITE</a>;</div>
+<div class="line"><span class="lineno">  438</span>                <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 7;</div>
+<div class="line"><span class="lineno">  439</span> </div>
+<div class="line"><span class="lineno">  440</span>            }</div>
+<div class="line"><span class="lineno">  441</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 8)</div>
+<div class="line"><span class="lineno">  442</span>            {</div>
+<div class="line"><span class="lineno">  443</span>                <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#aef83e6201f30450f25bb4adc2013ff4a">colors::BG_GREY</a>;</div>
+<div class="line"><span class="lineno">  444</span>                <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 8;</div>
+<div class="line"><span class="lineno">  445</span>            }</div>
+<div class="line"><span class="lineno">  446</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 9) <span class="keywordflow">break</span>; <span class="comment">//kilépünk</span></div>
+<div class="line"><span class="lineno">  447</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  448</span>            {</div>
+<div class="line"><span class="lineno">  449</span>                <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  450</span>            std::cerr &lt;&lt; II2.invalidInput2;</div>
+<div class="line"><span class="lineno">  451</span>                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  452</span>                <span class="keywordflow">continue</span>; <span class="comment">//ujraindul a ciklus</span></div>
+<div class="line"><span class="lineno">  453</span>            }</div>
+<div class="line"><span class="lineno">  454</span> </div>
+<div class="line"><span class="lineno">  455</span>        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><span class="lineno">  456</span> </div>
+<div class="line"><span class="lineno">  457</span>            <span class="comment">// ha nem számot adtál meg</span></div>
+<div class="line"><span class="lineno">  458</span>            <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  459</span>            std::cerr &lt;&lt; II1.invalidInput;</div>
+<div class="line"><span class="lineno">  460</span>            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  461</span>        }</div>
+<div class="line"><span class="lineno">  462</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  463</span>        <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>(); <span class="comment">//elmentjük a beállításokat || save the settings</span></div>
+<div class="line"><span class="lineno">  464</span> </div>
+<div class="line"><span class="lineno">  465</span>        <span class="comment">// KIVÁLASZTOTT SZÍN NEVÉNEK KIÍRÁSA</span></div>
+<div class="line"><span class="lineno">  466</span>        <span class="comment">// PRINT THE NAME OF THE SELECTED COLOR</span></div>
+<div class="line"><span class="lineno">  467</span>        std::cout &lt;&lt; backgroundsets.backgroundColorsChange &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  468</span> </div>
+<div class="line"><span class="lineno">  469</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 1) std::cout &lt;&lt; backgroundsets.DefaultBlack;</div>
+<div class="line"><span class="lineno">  470</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 2) std::cout &lt;&lt; backgroundsets.backGroundColor &lt;&lt; backgroundsets.green;</div>
+<div class="line"><span class="lineno">  471</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 3) std::cout &lt;&lt; backgroundsets.backGroundColor &lt;&lt; backgroundsets.cian;</div>
+<div class="line"><span class="lineno">  472</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 4) std::cout &lt;&lt; backgroundsets.backGroundColor &lt;&lt; backgroundsets.red;</div>
+<div class="line"><span class="lineno">  473</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 5) std::cout &lt;&lt; backgroundsets.backGroundColor &lt;&lt; backgroundsets.purple;</div>
+<div class="line"><span class="lineno">  474</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 6) std::cout &lt;&lt; backgroundsets.backGroundColor &lt;&lt; backgroundsets.blue;</div>
+<div class="line"><span class="lineno">  475</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 7) std::cout &lt;&lt; backgroundsets.backGroundColor &lt;&lt; backgroundsets.white;</div>
+<div class="line"><span class="lineno">  476</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 8) std::cout &lt;&lt; backgroundsets.backGroundColor &lt;&lt; backgroundsets.gray;</div>
+<div class="line"><span class="lineno">  477</span> </div>
+<div class="line"><span class="lineno">  478</span>        <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  479</span>    }</div>
+<div class="line"><span class="lineno">  480</span>}</div>
+<div class="ttc" id="acolors_8h_html_aa4da44408d96f80e9fd6de5f0275a531"><div class="ttname"><a href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a></div><div class="ttdeci">int currentBG_Code</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00028">settings.cpp:28</a></div></div>
+<div class="ttc" id="acolors_8h_html_aaa5a3b018bf9c3d84cbc4b188f507c35"><div class="ttname"><a href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a></div><div class="ttdeci">std::string currentBG</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00030">settings.cpp:30</a></div></div>
+<div class="ttc" id="acolors_8h_html_accda5039c9ee6c20f27094e99994f4aa"><div class="ttname"><a href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a></div><div class="ttdeci">bool useColors</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00027">settings.cpp:27</a></div></div>
+<div class="ttc" id="anamespacecolors_html_a164ee51b3437516763062eb139505ecd"><div class="ttname"><a href="namespacecolors.html#a164ee51b3437516763062eb139505ecd">colors::BG_BLUE</a></div><div class="ttdeci">const std::string BG_BLUE</div><div class="ttdef"><b>Definition</b> <a href="colors_8h_source.html#l00047">colors.h:47</a></div></div>
+<div class="ttc" id="anamespacecolors_html_a2ce252af6faabbd678c25f60655be4cc"><div class="ttname"><a href="namespacecolors.html#a2ce252af6faabbd678c25f60655be4cc">colors::BG_MAGENTA</a></div><div class="ttdeci">const std::string BG_MAGENTA</div><div class="ttdef"><b>Definition</b> <a href="colors_8h_source.html#l00048">colors.h:48</a></div></div>
+<div class="ttc" id="anamespacecolors_html_a58a697e39be991b206868352f5600171"><div class="ttname"><a href="namespacecolors.html#a58a697e39be991b206868352f5600171">colors::BG_CYAN</a></div><div class="ttdeci">const std::string BG_CYAN</div><div class="ttdef"><b>Definition</b> <a href="colors_8h_source.html#l00049">colors.h:49</a></div></div>
+<div class="ttc" id="anamespacecolors_html_a724b21a48111c9e338d91a87a8a7bc30"><div class="ttname"><a href="namespacecolors.html#a724b21a48111c9e338d91a87a8a7bc30">colors::BG_GREEN</a></div><div class="ttdeci">const std::string BG_GREEN</div><div class="ttdef"><b>Definition</b> <a href="colors_8h_source.html#l00045">colors.h:45</a></div></div>
+<div class="ttc" id="anamespacecolors_html_a8d598fad064d01e0b26f535ef06fc92a"><div class="ttname"><a href="namespacecolors.html#a8d598fad064d01e0b26f535ef06fc92a">colors::BG_RED</a></div><div class="ttdeci">const std::string BG_RED</div><div class="ttdef"><b>Definition</b> <a href="colors_8h_source.html#l00044">colors.h:44</a></div></div>
+<div class="ttc" id="anamespacecolors_html_a92c8fcc8e472aad5f51332426794bf8d"><div class="ttname"><a href="namespacecolors.html#a92c8fcc8e472aad5f51332426794bf8d">colors::RESET</a></div><div class="ttdeci">const std::string RESET</div><div class="ttdef"><b>Definition</b> <a href="colors_8h_source.html#l00019">colors.h:19</a></div></div>
+<div class="ttc" id="anamespacecolors_html_aee176a94f92b7d215c012fa717b249ab"><div class="ttname"><a href="namespacecolors.html#aee176a94f92b7d215c012fa717b249ab">colors::BG_WHITE</a></div><div class="ttdeci">const std::string BG_WHITE</div><div class="ttdef"><b>Definition</b> <a href="colors_8h_source.html#l00050">colors.h:50</a></div></div>
+<div class="ttc" id="anamespacecolors_html_aef83e6201f30450f25bb4adc2013ff4a"><div class="ttname"><a href="namespacecolors.html#aef83e6201f30450f25bb4adc2013ff4a">colors::BG_GREY</a></div><div class="ttdeci">const std::string BG_GREY</div><div class="ttdef"><b>Definition</b> <a href="colors_8h_source.html#l00053">colors.h:53</a></div></div>
+<div class="ttc" id="astruct_background_sets_html"><div class="ttname"><a href="struct_background_sets.html">BackgroundSets</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00327">translations.h:328</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html"><div class="ttname"><a href="struct_colors_onset.html">ColorsOnset</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00222">translations.h:223</a></div></div>
+<div class="ttc" id="astruct_invalid_input_html"><div class="ttname"><a href="struct_invalid_input.html">InvalidInput</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00112">translations.h:112</a></div></div>
+<div class="ttc" id="astruct_number_output_html"><div class="ttname"><a href="struct_number_output.html">NumberOutput</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00067">translations.h:67</a></div></div>
+<div class="ttc" id="astruct_number_output_html_ac048f2e15785063a9d1934dc8a9fc395"><div class="ttname"><a href="struct_number_output.html#ac048f2e15785063a9d1934dc8a9fc395">NumberOutput::numberOutput</a></div><div class="ttdeci">std::string numberOutput</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00068">translations.h:68</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a062ef9f8b7c289464c86100a2edc6821"><div class="ttname"><a href="translations_8cpp.html#a062ef9f8b7c289464c86100a2edc6821">colorsOSetTranslations</a></div><div class="ttdeci">const std::vector&lt; ColorsOnset &gt; colorsOSetTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l03555">translations.cpp:3555</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a5830946e01dea29a71e466dcf8d9ac6c"><div class="ttname"><a href="translations_8cpp.html#a5830946e01dea29a71e466dcf8d9ac6c">invalidInputTranslations</a></div><div class="ttdeci">const std::vector&lt; InvalidInput &gt; invalidInputTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l00811">translations.cpp:811</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a6d4ba1d8472bc8659269d5b0c6937b7e"><div class="ttname"><a href="translations_8cpp.html#a6d4ba1d8472bc8659269d5b0c6937b7e">backgroundSetsTranslations</a></div><div class="ttdeci">const std::vector&lt; BackgroundSets &gt; backgroundSetsTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l07122">translations.cpp:7122</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_ab0dee2152ea747d1841e669874e47de3"><div class="ttname"><a href="translations_8cpp.html#ab0dee2152ea747d1841e669874e47de3">chooseNumberMenuTranslations</a></div><div class="ttdeci">const std::vector&lt; NumberOutput &gt; chooseNumberMenuTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l00322">translations.cpp:322</a></div></div>
+<div class="ttc" id="avocab_cmenu_8cpp_html_a63bd75f20c553f0d65d7bb29b3f35696"><div class="ttname"><a href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a></div><div class="ttdeci">int choice</div><div class="ttdef"><b>Definition</b> <a href="vocab_cmenu_8cpp_source.html#l00017">vocabCmenu.cpp:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad18f7d2fd4547937309b0c4c6e0ac2f6" name="ad18f7d2fd4547937309b0c4c6e0ac2f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad18f7d2fd4547937309b0c4c6e0ac2f6">&#9670;&#160;</a></span>choiceLanguage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void choiceLanguage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UI language selection / Program nyelv kiválasztása. </p>
+<p>EN: Lists all available languages and allows the user to select one. Updates the global UI language and saves the settings.</p>
+<p>HU: Kilistázza az összes elérhető nyelvet és lehetővé teszi a választást. Frissíti a program nyelvét és elmenti a beállításokat. </p>
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00129">129</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>{</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">for</span> (;;){</div>
+<div class="line"><span class="lineno">  132</span>        <span class="comment">// Nyelvi hivatkozások</span></div>
+<div class="line"><span class="lineno">  133</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_language_menu.html">LanguageMenu</a>&amp; LMenu = <a class="code hl_variable" href="translations_8cpp.html#a42955945c69b0f7b0f571f54d5bb1a22">languageMenuTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input.html">InvalidInput</a> &amp;II1 = <a class="code hl_variable" href="translations_8cpp.html#a5830946e01dea29a71e466dcf8d9ac6c">invalidInputTranslations</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  135</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input2.html">InvalidInput2</a> &amp;II2 = <a class="code hl_variable" href="translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3">invalidInputTranslations2</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  136</span>        <span class="comment">//std::string selectedLangName = getLanguageNameByIndex(static_cast&lt;int&gt;(programUiLanguage));</span></div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  139</span>        std::cout &lt;&lt; LMenu.<a class="code hl_variable" href="struct_language_menu.html#ab1cfc90b3a3d50ca3b7458a1c99d8532">languageMenu1Sign</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>        <span class="comment">// KILISTÁZZUK AZ ÖSSZES NYELVET DINAMIKUSAN</span></div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= static_cast&lt;int&gt;(<a class="code hl_enumvalue" href="translations_8h.html#a315ca917ad583797f709ea477dd28705a0e869135050d24ea6e7a30fc6edbac6c">Language::LATIN</a>); i++) {</div>
+<div class="line"><span class="lineno">  143</span>            std::cout &lt;&lt; i + 1 &lt;&lt; <span class="stringliteral">&quot;. &quot;</span> &lt;&lt; <a class="code hl_function" href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a>(i) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  144</span>        }</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; LMenu.<a class="code hl_variable" href="struct_language_menu.html#a0f3e2fd311dd68c62faa2fdcdfa7e985">exiting</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  147</span>        std::cout &lt;&lt; LMenu.<a class="code hl_variable" href="struct_language_menu.html#a93288dd2672bfdaf39b279886dde1965">choiceStr</a>;</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>        std::string input;</div>
+<div class="line"><span class="lineno">  150</span>        std::getline(std::cin, input);</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  152</span>            <span class="keywordtype">int</span> localChoice = std::stoi(input);</div>
+<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">if</span> (localChoice == 0) <span class="keywordflow">break</span>; <span class="comment">// Visszalépünk || stepBack</span></div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">if</span> (localChoice &gt;= 1 &amp;&amp; localChoice &lt;= 24) {</div>
+<div class="line"><span class="lineno">  156</span>                <a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="translations_8h.html#a315ca917ad583797f709ea477dd28705">Language</a><span class="keyword">&gt;</span>(localChoice - 1);</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>                <span class="comment">// ---Frissítjük a hivatkozást az ÚJ nyelvre ---</span></div>
+<div class="line"><span class="lineno">  159</span>                <span class="comment">// ---Update the link to the NEW language ---</span></div>
+<div class="line"><span class="lineno">  160</span>                <span class="comment">// Fontos! || important!</span></div>
+<div class="line"><span class="lineno">  161</span>                <span class="keyword">const</span> <a class="code hl_struct" href="struct_language_menu.html">LanguageMenu</a>&amp; LMenuNew = <a class="code hl_variable" href="translations_8cpp.html#a42955945c69b0f7b0f571f54d5bb1a22">languageMenuTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>                <span class="comment">// Itt kérjük le az ÚJ nevet a már módosított programUiLanguage alapján!</span></div>
+<div class="line"><span class="lineno">  164</span>                <span class="comment">// Here we request the NEW name based on the already modified programUiLanguage!</span></div>
+<div class="line"><span class="lineno">  165</span>                std::string newSelectedLangName = <a class="code hl_function" href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>));</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>                <span class="comment">// LMenuNew fontos!</span></div>
+<div class="line"><span class="lineno">  168</span>                std::cout &lt;&lt; LMenuNew.<a class="code hl_variable" href="struct_language_menu.html#a7cce7ac893abe022d36e36a473bc9c63">choiceSuccessProgramLanguage</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; newSelectedLangName &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  169</span>                <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>();</div>
+<div class="line"><span class="lineno">  170</span>                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  171</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  174</span>                <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  175</span>                <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;choiceLanguage()&quot;</span>, II2.invalidInput2);</div>
+<div class="line"><span class="lineno">  176</span>                std::cerr &lt;&lt; II2.invalidInput2;</div>
+<div class="line"><span class="lineno">  177</span>                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  178</span>            }</div>
+<div class="line"><span class="lineno">  179</span>        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><span class="lineno">  180</span>            <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  181</span>            <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;choiceLanguage()&quot;</span>, II1.invalidInput);</div>
+<div class="line"><span class="lineno">  182</span>            std::cerr &lt;&lt; II1.invalidInput;</div>
+<div class="line"><span class="lineno">  183</span>            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  184</span>        }</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="line"><span class="lineno">  186</span>}</div>
+<div class="ttc" id="asettings_8h_html_a3069798db3a5cad869f873de543fd5dd"><div class="ttname"><a href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a></div><div class="ttdeci">std::string getLanguageNameByIndex(int index)</div><div class="ttdef"><b>Definition</b> <a href="language_list_8cpp_source.html#l00008">languageList.cpp:8</a></div></div>
+<div class="ttc" id="astruct_language_menu_html"><div class="ttname"><a href="struct_language_menu.html">LanguageMenu</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00213">translations.h:214</a></div></div>
+<div class="ttc" id="astruct_language_menu_html_a0f3e2fd311dd68c62faa2fdcdfa7e985"><div class="ttname"><a href="struct_language_menu.html#a0f3e2fd311dd68c62faa2fdcdfa7e985">LanguageMenu::exiting</a></div><div class="ttdeci">std::string exiting</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00216">translations.h:216</a></div></div>
+<div class="ttc" id="astruct_language_menu_html_a7cce7ac893abe022d36e36a473bc9c63"><div class="ttname"><a href="struct_language_menu.html#a7cce7ac893abe022d36e36a473bc9c63">LanguageMenu::choiceSuccessProgramLanguage</a></div><div class="ttdeci">std::string choiceSuccessProgramLanguage</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00219">translations.h:219</a></div></div>
+<div class="ttc" id="astruct_language_menu_html_a93288dd2672bfdaf39b279886dde1965"><div class="ttname"><a href="struct_language_menu.html#a93288dd2672bfdaf39b279886dde1965">LanguageMenu::choiceStr</a></div><div class="ttdeci">std::string choiceStr</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00217">translations.h:217</a></div></div>
+<div class="ttc" id="astruct_language_menu_html_ab1cfc90b3a3d50ca3b7458a1c99d8532"><div class="ttname"><a href="struct_language_menu.html#ab1cfc90b3a3d50ca3b7458a1c99d8532">LanguageMenu::languageMenu1Sign</a></div><div class="ttdeci">std::string languageMenu1Sign</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00215">translations.h:215</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a42955945c69b0f7b0f571f54d5bb1a22"><div class="ttname"><a href="translations_8cpp.html#a42955945c69b0f7b0f571f54d5bb1a22">languageMenuTranslations</a></div><div class="ttdeci">const std::vector&lt; LanguageMenu &gt; languageMenuTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l03336">translations.cpp:3336</a></div></div>
+<div class="ttc" id="atranslations_8h_html_a315ca917ad583797f709ea477dd28705"><div class="ttname"><a href="translations_8h.html#a315ca917ad583797f709ea477dd28705">Language</a></div><div class="ttdeci">Language</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00009">translations.h:9</a></div></div>
+<div class="ttc" id="atranslations_8h_html_a315ca917ad583797f709ea477dd28705a0e869135050d24ea6e7a30fc6edbac6c"><div class="ttname"><a href="translations_8h.html#a315ca917ad583797f709ea477dd28705a0e869135050d24ea6e7a30fc6edbac6c">Language::LATIN</a></div><div class="ttdeci">@ LATIN</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00033">translations.h:33</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abd3eb7c7de778f12f45eb5e7e0e0d49f" name="abd3eb7c7de778f12f45eb5e7e0e0d49f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd3eb7c7de778f12f45eb5e7e0e0d49f">&#9670;&#160;</a></span>colorsOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void colorsOn </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Color settings menu / Szín beállítás menü </p>
+<p>EN: Allows enabling/disabling colors and navigating to background settings.</p>
+<p>HU: Lehetővé teszi a színek be- és kikapcsolását, valamint a háttérszín beállító menü elérését. </p>
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00199">199</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>{</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><span class="lineno">  202</span>    {</div>
+<div class="line"><span class="lineno">  203</span>        <span class="comment">//==== Nyelvi hivatkozások=====</span></div>
+<div class="line"><span class="lineno">  204</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_colors_onset.html">ColorsOnset</a> &amp; clrSET = <a class="code hl_variable" href="translations_8cpp.html#a062ef9f8b7c289464c86100a2edc6821">colorsOSetTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  205</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input.html">InvalidInput</a> &amp;II1 = <a class="code hl_variable" href="translations_8cpp.html#a5830946e01dea29a71e466dcf8d9ac6c">invalidInputTranslations</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  206</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input2.html">InvalidInput2</a> &amp;II2 = <a class="code hl_variable" href="translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3">invalidInputTranslations2</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  207</span>        <span class="comment">//===============================</span></div>
+<div class="line"><span class="lineno">  208</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  209</span>        std::cout &lt;&lt; clrSET.<a class="code hl_variable" href="struct_colors_onset.html#a4654eed163c57bd330e5d79a44660b86">colorsPrinting1</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  210</span>        std::cout &lt;&lt; clrSET.<a class="code hl_variable" href="struct_colors_onset.html#aa63b607416b3a789673d7c8d1f2b3e42">colorsPrinting2</a> &lt;&lt; (<a class="code hl_variable" href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a> ? clrSET.<a class="code hl_variable" href="struct_colors_onset.html#ab1457d4d691186869e88538aac017fe9">useCLR_ON</a> : clrSET.<a class="code hl_variable" href="struct_colors_onset.html#a18cfa42b9a824bbca85f90aeade99315">useCLR_OFF</a>) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  211</span>        std::cout &lt;&lt; clrSET.<a class="code hl_variable" href="struct_colors_onset.html#afd4dbdebd594337badd2a29348cb20b9">colorsMenu1</a> &lt;&lt; clrSET.<a class="code hl_variable" href="struct_colors_onset.html#ab6a1866e87d83ac5ded81835fe49ac14">colorsMenu2</a> &lt;&lt; clrSET.<a class="code hl_variable" href="struct_colors_onset.html#a7d19c475b88f880ac6f57f54ec081b0d">colorsMenu3</a>;</div>
+<div class="line"><span class="lineno">  212</span>        std::cout &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>&lt;&lt; clrSET.<a class="code hl_variable" href="struct_colors_onset.html#a1c63d1d34a2618ca8c7a646eb1acb5f7">choice</a> &lt;&lt; std::flush;</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>        std::string inputC;</div>
+<div class="line"><span class="lineno">  216</span>        std::getline(std::cin, inputC);</div>
+<div class="line"><span class="lineno">  217</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  218</span>        {</div>
+<div class="line"><span class="lineno">  219</span>            <span class="comment">//itt számá alakítjuk a bevitt értéket</span></div>
+<div class="line"><span class="lineno">  220</span>            <span class="comment">//here we convert the entered value to a number</span></div>
+<div class="line"><span class="lineno">  221</span>            <span class="keywordtype">int</span> <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = 0;</div>
+<div class="line"><span class="lineno">  222</span>            <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = std::stoi(inputC);</div>
+<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 1)</div>
+<div class="line"><span class="lineno">  224</span>            {</div>
+<div class="line"><span class="lineno">  225</span>                <span class="comment">//egyszer be és egyszer ki || once in and once out</span></div>
+<div class="line"><span class="lineno">  226</span>                <span class="comment">//useColors = (useColors &amp;&amp; true) || (!useColors &amp;&amp; false);</span></div>
+<div class="line"><span class="lineno">  227</span>                <span class="comment">// vagy így useColors = !useColors;</span></div>
+<div class="line"><span class="lineno">  228</span>                <a class="code hl_variable" href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a> = !<a class="code hl_variable" href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a>;</div>
+<div class="line"><span class="lineno">  229</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a> == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  230</span>                {</div>
+<div class="line"><span class="lineno">  231</span>                    std::cout &lt;&lt; clrSET.<a class="code hl_variable" href="struct_colors_onset.html#afed181848bb563fbfcf43b113634ff91">colorsOnOn</a>  &lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  232</span>                } <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  233</span>                {</div>
+<div class="line"><span class="lineno">  234</span>                    <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <span class="stringliteral">&quot;&quot;</span>;       <span class="comment">// Kiürítjük a háttérszín kódját</span></div>
+<div class="line"><span class="lineno">  235</span>                    <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = 1;   <span class="comment">// Visszaállítjuk az alapértelmezett (fekete) kódra</span></div>
+<div class="line"><span class="lineno">  236</span>                    std::cout &lt;&lt; <a class="code hl_variable" href="namespacecolors.html#a92c8fcc8e472aad5f51332426794bf8d">colors::RESET</a> &lt;&lt; std::flush;<span class="comment">// visszaállítjuk az alapértelmezett színre</span></div>
+<div class="line"><span class="lineno">  237</span>                    std::cout &lt;&lt; clrSET.<a class="code hl_variable" href="struct_colors_onset.html#acd3dba006304572abe829a7744845b22">colorsOffOff</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  238</span>                }</div>
+<div class="line"><span class="lineno">  239</span>                <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>(); <span class="comment">//elmentjük a beállításokat</span></div>
+<div class="line"><span class="lineno">  240</span>                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  241</span>            }</div>
+<div class="line"><span class="lineno">  242</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 2)</div>
+<div class="line"><span class="lineno">  243</span>            {</div>
+<div class="line"><span class="lineno">  244</span>                <a class="code hl_function" href="#a07f1005e6ede7cd51d7b2d544259f00d">backgroundSets</a>();<span class="comment">//Meghívjuk a háttérszín beállíto menüt</span></div>
+<div class="line"><span class="lineno">  245</span>            }</div>
+<div class="line"><span class="lineno">  246</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 3)</div>
+<div class="line"><span class="lineno">  247</span>            {</div>
+<div class="line"><span class="lineno">  248</span>                <span class="keywordflow">break</span>; <span class="comment">//kilépünk a ciklusból</span></div>
+<div class="line"><span class="lineno">  249</span>            }</div>
+<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  251</span>            {</div>
+<div class="line"><span class="lineno">  252</span>                <span class="comment">// Ha számot adotál meg, de az nem 1, 2 vagy 3 (pl. 5)</span></div>
+<div class="line"><span class="lineno">  253</span>                <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  254</span>                <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;colorsOn()&quot;</span>, II2.invalidInput2);</div>
+<div class="line"><span class="lineno">  255</span>                std::cerr &lt;&lt; II2.invalidInput2;</div>
+<div class="line"><span class="lineno">  256</span>                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  257</span>            }</div>
+<div class="line"><span class="lineno">  258</span>        }</div>
+<div class="line"><span class="lineno">  259</span>        <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><span class="lineno">  260</span>        {</div>
+<div class="line"><span class="lineno">  261</span>            <span class="comment">// ha nem számot adtál meg</span></div>
+<div class="line"><span class="lineno">  262</span>            <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  263</span>            <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;colorsOn()&quot;</span>, II1.invalidInput);</div>
+<div class="line"><span class="lineno">  264</span>            std::cerr &lt;&lt; II1.invalidInput;</div>
+<div class="line"><span class="lineno">  265</span>            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  266</span>        }</div>
+<div class="line"><span class="lineno">  267</span>    }</div>
+<div class="line"><span class="lineno">  268</span>}</div>
+<div class="ttc" id="asettings_8cpp_html_a07f1005e6ede7cd51d7b2d544259f00d"><div class="ttname"><a href="#a07f1005e6ede7cd51d7b2d544259f00d">backgroundSets</a></div><div class="ttdeci">void backgroundSets()</div><div class="ttdoc">Background color selection / Háttérszín kiválasztása.</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00361">settings.cpp:361</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_a18cfa42b9a824bbca85f90aeade99315"><div class="ttname"><a href="struct_colors_onset.html#a18cfa42b9a824bbca85f90aeade99315">ColorsOnset::useCLR_OFF</a></div><div class="ttdeci">std::string useCLR_OFF</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00227">translations.h:227</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_a1c63d1d34a2618ca8c7a646eb1acb5f7"><div class="ttname"><a href="struct_colors_onset.html#a1c63d1d34a2618ca8c7a646eb1acb5f7">ColorsOnset::choice</a></div><div class="ttdeci">std::string choice</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00231">translations.h:231</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_a4654eed163c57bd330e5d79a44660b86"><div class="ttname"><a href="struct_colors_onset.html#a4654eed163c57bd330e5d79a44660b86">ColorsOnset::colorsPrinting1</a></div><div class="ttdeci">std::string colorsPrinting1</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00224">translations.h:224</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_a7d19c475b88f880ac6f57f54ec081b0d"><div class="ttname"><a href="struct_colors_onset.html#a7d19c475b88f880ac6f57f54ec081b0d">ColorsOnset::colorsMenu3</a></div><div class="ttdeci">std::string colorsMenu3</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00230">translations.h:230</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_aa63b607416b3a789673d7c8d1f2b3e42"><div class="ttname"><a href="struct_colors_onset.html#aa63b607416b3a789673d7c8d1f2b3e42">ColorsOnset::colorsPrinting2</a></div><div class="ttdeci">std::string colorsPrinting2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00225">translations.h:225</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_ab1457d4d691186869e88538aac017fe9"><div class="ttname"><a href="struct_colors_onset.html#ab1457d4d691186869e88538aac017fe9">ColorsOnset::useCLR_ON</a></div><div class="ttdeci">std::string useCLR_ON</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00226">translations.h:226</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_ab6a1866e87d83ac5ded81835fe49ac14"><div class="ttname"><a href="struct_colors_onset.html#ab6a1866e87d83ac5ded81835fe49ac14">ColorsOnset::colorsMenu2</a></div><div class="ttdeci">std::string colorsMenu2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00229">translations.h:229</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_acd3dba006304572abe829a7744845b22"><div class="ttname"><a href="struct_colors_onset.html#acd3dba006304572abe829a7744845b22">ColorsOnset::colorsOffOff</a></div><div class="ttdeci">std::string colorsOffOff</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00233">translations.h:233</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_afd4dbdebd594337badd2a29348cb20b9"><div class="ttname"><a href="struct_colors_onset.html#afd4dbdebd594337badd2a29348cb20b9">ColorsOnset::colorsMenu1</a></div><div class="ttdeci">std::string colorsMenu1</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00228">translations.h:228</a></div></div>
+<div class="ttc" id="astruct_colors_onset_html_afed181848bb563fbfcf43b113634ff91"><div class="ttname"><a href="struct_colors_onset.html#afed181848bb563fbfcf43b113634ff91">ColorsOnset::colorsOnOn</a></div><div class="ttdeci">std::string colorsOnOn</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00232">translations.h:232</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a48f1655a857cc551ddcc35ca3c36c8e2" name="a48f1655a857cc551ddcc35ca3c36c8e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f1655a857cc551ddcc35ca3c36c8e2">&#9670;&#160;</a></span>learningLanguage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void learningLanguage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Learning language configuration / Tanulandó nyelv beállítása. </p>
+<p>EN: Allows the user to set:</p><ul>
+<li>Mother language</li>
+<li>Target learning language</li>
+</ul>
+<p>HU: Lehetővé teszi az alábbiak beállítását:</p><ul>
+<li>Anyanyelv</li>
+<li>Tanult nyelv </li>
+</ul>
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00496">496</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  497</span>{</div>
+<div class="line"><span class="lineno">  498</span>    <span class="keywordflow">for</span> (;;) {</div>
+<div class="line"><span class="lineno">  499</span>        <span class="comment">// Nyelvi hivatkozások</span></div>
+<div class="line"><span class="lineno">  500</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_learning_language_set.html">LearningLanguageSet</a>&amp; LLS = <a class="code hl_variable" href="translations_8cpp.html#a1f479f345bf911ccde010c53983b70af">learningLanguageSetTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  501</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input.html">InvalidInput</a> &amp;II1 = <a class="code hl_variable" href="translations_8cpp.html#a5830946e01dea29a71e466dcf8d9ac6c">invalidInputTranslations</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  502</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input2.html">InvalidInput2</a> &amp;II2 = <a class="code hl_variable" href="translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3">invalidInputTranslations2</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  503</span> </div>
+<div class="line"><span class="lineno">  504</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>(); <span class="comment">//letöröljük a képernyőt</span></div>
+<div class="line"><span class="lineno">  505</span>        std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#ac5178c53bcf1c703b0a0cdbf65688ccf">Menu</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  506</span>        std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a033b85d800e183c4833ebe50a98f0f28">CurrentlyMotherLanguage</a> &lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt; <a class="code hl_function" href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#aedc5bc4e6638c847de7c0ff01282747d">motherLanguage</a>)) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  507</span>        std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#abc7440b78eb6eb8d630855553a2ddd7b">CurrentlyLearningLanguage</a> &lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt; <a class="code hl_function" href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a603ad798b1d6f9319dda82feeeb4b3ee">targetLanguage</a>)) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  508</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>&lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a481d15106f68100214c54a6d6b9894dc">menuSigns</a> &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  509</span>        std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a0b54b00e9bc9fa0acc001d3ed2372c12">option1</a> ;</div>
+<div class="line"><span class="lineno">  510</span>        std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a60607fa52f06fc339752d4c58a13d978">option2</a> ;</div>
+<div class="line"><span class="lineno">  511</span>        std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a838926e044993c91ee5e3e97d856500e">option3</a> ;</div>
+<div class="line"><span class="lineno">  512</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;\n4. &quot;</span>&lt;&lt;LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a275751ecf7425c1a6d23d16a62455054">choice</a> &lt;&lt; std::flush;</div>
+<div class="line"><span class="lineno">  513</span> </div>
+<div class="line"><span class="lineno">  514</span> </div>
+<div class="line"><span class="lineno">  515</span>        std::string inputLLS;</div>
+<div class="line"><span class="lineno">  516</span>        std::getline(std::cin, inputLLS);</div>
+<div class="line"><span class="lineno">  517</span> </div>
+<div class="line"><span class="lineno">  518</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  519</span>        {</div>
+<div class="line"><span class="lineno">  520</span>            <span class="keywordtype">int</span> <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = 0;</div>
+<div class="line"><span class="lineno">  521</span>            <span class="comment">//itt számá alakítjuk a bevitt értéket</span></div>
+<div class="line"><span class="lineno">  522</span>            <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = std::stoi(inputLLS);</div>
+<div class="line"><span class="lineno">  523</span> </div>
+<div class="line"><span class="lineno">  524</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 1)</div>
+<div class="line"><span class="lineno">  525</span>            {</div>
+<div class="line"><span class="lineno">  526</span>                <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><span class="lineno">  527</span>                {</div>
+<div class="line"><span class="lineno">  528</span>                    <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  529</span>                    std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a7cf0b895f814e7c94d9245bd090c56b7">choice1</a> &lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  530</span>                    <span class="comment">//meghívjuk az enum listát a kiválasztáshoz</span></div>
+<div class="line"><span class="lineno">  531</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= static_cast&lt;int&gt;(<a class="code hl_enumvalue" href="translations_8h.html#a315ca917ad583797f709ea477dd28705a0e869135050d24ea6e7a30fc6edbac6c">Language::LATIN</a>); i++)</div>
+<div class="line"><span class="lineno">  532</span>                    {</div>
+<div class="line"><span class="lineno">  533</span>                        std::cout &lt;&lt; i + 1 &lt;&lt; <span class="stringliteral">&quot;. &quot;</span> &lt;&lt; <a class="code hl_function" href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a>(i) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  534</span>                    }</div>
+<div class="line"><span class="lineno">  535</span>                    std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a09925917523802c036ee91bb07524a41">back</a> &lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  536</span>                    std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a4c554a15b9bd08e4ad655e78f34259a9">allChoice</a>;</div>
+<div class="line"><span class="lineno">  537</span> </div>
+<div class="line"><span class="lineno">  538</span>                    std::string  mLangInput;</div>
+<div class="line"><span class="lineno">  539</span>                    std::getline(std::cin, mLangInput);</div>
+<div class="line"><span class="lineno">  540</span> </div>
+<div class="line"><span class="lineno">  541</span>                    <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  542</span>                        <span class="keywordtype">int</span> langChoice = std::stoi(mLangInput);</div>
+<div class="line"><span class="lineno">  543</span> </div>
+<div class="line"><span class="lineno">  544</span>                        <span class="keywordflow">if</span> (langChoice == 0) <span class="keywordflow">break</span>; <span class="comment">//visszalépünk</span></div>
+<div class="line"><span class="lineno">  545</span>                        <span class="keywordflow">if</span> (langChoice &gt;= 1 &amp;&amp; langChoice &lt;= 24) {</div>
+<div class="line"><span class="lineno">  546</span>                            <span class="keyword">auto</span> tempMotherLanguage = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="translations_8h.html#a315ca917ad583797f709ea477dd28705">Language</a><span class="keyword">&gt;</span>(langChoice - 1);</div>
+<div class="line"><span class="lineno">  547</span>                            <span class="keywordflow">if</span> (tempMotherLanguage == <a class="code hl_variable" href="main_8cpp.html#a603ad798b1d6f9319dda82feeeb4b3ee">targetLanguage</a>) {</div>
+<div class="line"><span class="lineno">  548</span>                                <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  549</span>                                <span class="comment">// Itt használd a fordított hibaüzenetedet!</span></div>
+<div class="line"><span class="lineno">  550</span>                                std::cerr &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a6d84d1a3d7be3fb126a1383154c2d8df">error</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  551</span>                                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  552</span>                                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  553</span>                            }</div>
+<div class="line"><span class="lineno">  554</span>                            <a class="code hl_variable" href="main_8cpp.html#aedc5bc4e6638c847de7c0ff01282747d">motherLanguage</a> = tempMotherLanguage;</div>
+<div class="line"><span class="lineno">  555</span>                            <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  556</span> </div>
+<div class="line"><span class="lineno">  557</span>                            <span class="comment">// DINAMIKUS VISSZAJELZÉS:</span></div>
+<div class="line"><span class="lineno">  558</span>                            std::string selectedName = <a class="code hl_function" href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#aedc5bc4e6638c847de7c0ff01282747d">motherLanguage</a>));</div>
+<div class="line"><span class="lineno">  559</span>                            std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a8e5c7752d2b44e52031064127b882871">motherSuccess</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; selectedName &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  560</span>                            <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>();</div>
+<div class="line"><span class="lineno">  561</span>                            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  562</span>                        } <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  563</span>                        {</div>
+<div class="line"><span class="lineno">  564</span>                            <span class="comment">// Ha számot ír de tartományun kivül esik</span></div>
+<div class="line"><span class="lineno">  565</span>                            <span class="comment">// If you enter a number but it is out of range</span></div>
+<div class="line"><span class="lineno">  566</span>                            <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;learningLanguage()(choice1)&quot;</span>,II2.invalidInput2);</div>
+<div class="line"><span class="lineno">  567</span>                            std::cerr &lt;&lt; II2.invalidInput2;</div>
+<div class="line"><span class="lineno">  568</span>                            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  569</span>                        }</div>
+<div class="line"><span class="lineno">  570</span>                    } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><span class="lineno">  571</span>                        <span class="comment">// HA NEM SZÁMOT ÍRT (pl. &quot;abc&quot;)</span></div>
+<div class="line"><span class="lineno">  572</span>                        <span class="comment">// IF NOT A NUMBER (e.g. &quot;abc&quot;)</span></div>
+<div class="line"><span class="lineno">  573</span>                        <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;learningLanguage()(choice1)&quot;</span>,II1.invalidInput);</div>
+<div class="line"><span class="lineno">  574</span>                        std::cerr &lt;&lt; II1.invalidInput;</div>
+<div class="line"><span class="lineno">  575</span>                        <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  576</span>                    }</div>
+<div class="line"><span class="lineno">  577</span>                    <span class="keywordflow">break</span>; <span class="comment">//kilépünk ha minden jó és nincs hiba</span></div>
+<div class="line"><span class="lineno">  578</span>                }</div>
+<div class="line"><span class="lineno">  579</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 2)</div>
+<div class="line"><span class="lineno">  580</span>            {</div>
+<div class="line"><span class="lineno">  581</span>                <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><span class="lineno">  582</span>                {</div>
+<div class="line"><span class="lineno">  583</span>                    <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  584</span>                    std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a286ef286c1f9554e593209751e0ad734">choice2</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  585</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= static_cast&lt;int&gt;(<a class="code hl_enumvalue" href="translations_8h.html#a315ca917ad583797f709ea477dd28705a0e869135050d24ea6e7a30fc6edbac6c">Language::LATIN</a>); i++) {</div>
+<div class="line"><span class="lineno">  586</span>                        std::cout &lt;&lt; i + 1 &lt;&lt; <span class="stringliteral">&quot;. &quot;</span> &lt;&lt; <a class="code hl_function" href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a>(i) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  587</span>                    }</div>
+<div class="line"><span class="lineno">  588</span>                    std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a09925917523802c036ee91bb07524a41">back</a> &lt;&lt;std::endl;</div>
+<div class="line"><span class="lineno">  589</span>                    std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a4c554a15b9bd08e4ad655e78f34259a9">allChoice</a>;</div>
+<div class="line"><span class="lineno">  590</span> </div>
+<div class="line"><span class="lineno">  591</span>                    std::string tLangInput;</div>
+<div class="line"><span class="lineno">  592</span>                    std::getline(std::cin, tLangInput);</div>
+<div class="line"><span class="lineno">  593</span> </div>
+<div class="line"><span class="lineno">  594</span>                    <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  595</span>                        <span class="keywordtype">int</span> langChoice = std::stoi(tLangInput);</div>
+<div class="line"><span class="lineno">  596</span>                        <span class="keywordflow">if</span> (langChoice == 0) <span class="keywordflow">break</span>; <span class="comment">//kilépünk</span></div>
+<div class="line"><span class="lineno">  597</span>                        <span class="keywordflow">if</span> (langChoice &gt;= 1 &amp;&amp; langChoice &lt;= 24) {</div>
+<div class="line"><span class="lineno">  598</span>                            <span class="keyword">auto</span> tempTargetLanguage = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="translations_8h.html#a315ca917ad583797f709ea477dd28705">Language</a><span class="keyword">&gt;</span>(langChoice - 1);</div>
+<div class="line"><span class="lineno">  599</span> </div>
+<div class="line"><span class="lineno">  600</span>                            <span class="keywordflow">if</span> (tempTargetLanguage == <a class="code hl_variable" href="main_8cpp.html#aedc5bc4e6638c847de7c0ff01282747d">motherLanguage</a>) {</div>
+<div class="line"><span class="lineno">  601</span>                                <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  602</span>                                <span class="comment">// Itt használd a fordított hibaüzenetedet!</span></div>
+<div class="line"><span class="lineno">  603</span>                                std::cerr &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#a6d84d1a3d7be3fb126a1383154c2d8df">error</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  604</span>                                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  605</span>                                <span class="keywordflow">continue</span>; <span class="comment">// Vissza a learningLanguage menübe</span></div>
+<div class="line"><span class="lineno">  606</span>                            }</div>
+<div class="line"><span class="lineno">  607</span> </div>
+<div class="line"><span class="lineno">  608</span>                            <a class="code hl_variable" href="main_8cpp.html#a603ad798b1d6f9319dda82feeeb4b3ee">targetLanguage</a> = tempTargetLanguage;</div>
+<div class="line"><span class="lineno">  609</span>                            <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  610</span> </div>
+<div class="line"><span class="lineno">  611</span>                            std::string selectedName = <a class="code hl_function" href="settings_8h.html#a3069798db3a5cad869f873de543fd5dd">getLanguageNameByIndex</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a603ad798b1d6f9319dda82feeeb4b3ee">targetLanguage</a>));</div>
+<div class="line"><span class="lineno">  612</span>                            std::cout &lt;&lt; LLS.<a class="code hl_variable" href="struct_learning_language_set.html#ab46b72780b50ff1d145b3b0ceb023bc5">targetSuccess</a> &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; selectedName &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  613</span>                            <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>();</div>
+<div class="line"><span class="lineno">  614</span>                            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  615</span>                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  616</span>                            <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;learningLanguage()(choice2)&quot;</span>,II2.invalidInput2);</div>
+<div class="line"><span class="lineno">  617</span>                            std::cerr &lt;&lt; II2.invalidInput2;</div>
+<div class="line"><span class="lineno">  618</span>                            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  619</span>                        }</div>
+<div class="line"><span class="lineno">  620</span>                    } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><span class="lineno">  621</span>                        <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;learningLanguage()(choice1)&quot;</span>,II1.invalidInput);</div>
+<div class="line"><span class="lineno">  622</span>                        std::cerr &lt;&lt; II1.invalidInput;</div>
+<div class="line"><span class="lineno">  623</span>                        <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  624</span>                    }</div>
+<div class="line"><span class="lineno">  625</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  626</span>                }</div>
+<div class="line"><span class="lineno">  627</span>            }</div>
+<div class="line"><span class="lineno">  628</span>            <span class="comment">//visszalépünk a főmenübe</span></div>
+<div class="line"><span class="lineno">  629</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> ==3) <span class="keywordflow">return</span>; <span class="comment">//kilépünk a ciklusból</span></div>
+<div class="line"><span class="lineno">  630</span> </div>
+<div class="line"><span class="lineno">  631</span>        } <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><span class="lineno">  632</span>        {</div>
+<div class="line"><span class="lineno">  633</span>            <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;learningLanguage()(mainMenu)&quot;</span>,II2.invalidInput2);</div>
+<div class="line"><span class="lineno">  634</span>            std::cerr &lt;&lt; II2.invalidInput2;</div>
+<div class="line"><span class="lineno">  635</span>            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  636</span>        }</div>
+<div class="line"><span class="lineno">  637</span>    }</div>
+<div class="line"><span class="lineno">  638</span>}</div>
+<div class="ttc" id="amain_8cpp_html_a603ad798b1d6f9319dda82feeeb4b3ee"><div class="ttname"><a href="main_8cpp.html#a603ad798b1d6f9319dda82feeeb4b3ee">targetLanguage</a></div><div class="ttdeci">Language targetLanguage</div><div class="ttdoc">ENG: Stores the language the user is currently learning.</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00033">main.cpp:33</a></div></div>
+<div class="ttc" id="amain_8cpp_html_aedc5bc4e6638c847de7c0ff01282747d"><div class="ttname"><a href="main_8cpp.html#aedc5bc4e6638c847de7c0ff01282747d">motherLanguage</a></div><div class="ttdeci">Language motherLanguage</div><div class="ttdoc">User&#39;s native language (HU: felhasználó anyanyelve)</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00029">main.cpp:29</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html"><div class="ttname"><a href="struct_learning_language_set.html">LearningLanguageSet</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00240">translations.h:241</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a033b85d800e183c4833ebe50a98f0f28"><div class="ttname"><a href="struct_learning_language_set.html#a033b85d800e183c4833ebe50a98f0f28">LearningLanguageSet::CurrentlyMotherLanguage</a></div><div class="ttdeci">std::string CurrentlyMotherLanguage</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00243">translations.h:243</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a09925917523802c036ee91bb07524a41"><div class="ttname"><a href="struct_learning_language_set.html#a09925917523802c036ee91bb07524a41">LearningLanguageSet::back</a></div><div class="ttdeci">std::string back</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00254">translations.h:254</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a0b54b00e9bc9fa0acc001d3ed2372c12"><div class="ttname"><a href="struct_learning_language_set.html#a0b54b00e9bc9fa0acc001d3ed2372c12">LearningLanguageSet::option1</a></div><div class="ttdeci">std::string option1</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00245">translations.h:245</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a275751ecf7425c1a6d23d16a62455054"><div class="ttname"><a href="struct_learning_language_set.html#a275751ecf7425c1a6d23d16a62455054">LearningLanguageSet::choice</a></div><div class="ttdeci">std::string choice</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00253">translations.h:253</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a286ef286c1f9554e593209751e0ad734"><div class="ttname"><a href="struct_learning_language_set.html#a286ef286c1f9554e593209751e0ad734">LearningLanguageSet::choice2</a></div><div class="ttdeci">std::string choice2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00251">translations.h:251</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a481d15106f68100214c54a6d6b9894dc"><div class="ttname"><a href="struct_learning_language_set.html#a481d15106f68100214c54a6d6b9894dc">LearningLanguageSet::menuSigns</a></div><div class="ttdeci">std::string menuSigns</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00256">translations.h:256</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a4c554a15b9bd08e4ad655e78f34259a9"><div class="ttname"><a href="struct_learning_language_set.html#a4c554a15b9bd08e4ad655e78f34259a9">LearningLanguageSet::allChoice</a></div><div class="ttdeci">std::string allChoice</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00249">translations.h:249</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a60607fa52f06fc339752d4c58a13d978"><div class="ttname"><a href="struct_learning_language_set.html#a60607fa52f06fc339752d4c58a13d978">LearningLanguageSet::option2</a></div><div class="ttdeci">std::string option2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00246">translations.h:246</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a6d84d1a3d7be3fb126a1383154c2d8df"><div class="ttname"><a href="struct_learning_language_set.html#a6d84d1a3d7be3fb126a1383154c2d8df">LearningLanguageSet::error</a></div><div class="ttdeci">std::string error</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00255">translations.h:255</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a7cf0b895f814e7c94d9245bd090c56b7"><div class="ttname"><a href="struct_learning_language_set.html#a7cf0b895f814e7c94d9245bd090c56b7">LearningLanguageSet::choice1</a></div><div class="ttdeci">std::string choice1</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00248">translations.h:248</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a838926e044993c91ee5e3e97d856500e"><div class="ttname"><a href="struct_learning_language_set.html#a838926e044993c91ee5e3e97d856500e">LearningLanguageSet::option3</a></div><div class="ttdeci">std::string option3</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00247">translations.h:247</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_a8e5c7752d2b44e52031064127b882871"><div class="ttname"><a href="struct_learning_language_set.html#a8e5c7752d2b44e52031064127b882871">LearningLanguageSet::motherSuccess</a></div><div class="ttdeci">std::string motherSuccess</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00250">translations.h:250</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_ab46b72780b50ff1d145b3b0ceb023bc5"><div class="ttname"><a href="struct_learning_language_set.html#ab46b72780b50ff1d145b3b0ceb023bc5">LearningLanguageSet::targetSuccess</a></div><div class="ttdeci">std::string targetSuccess</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00252">translations.h:252</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_abc7440b78eb6eb8d630855553a2ddd7b"><div class="ttname"><a href="struct_learning_language_set.html#abc7440b78eb6eb8d630855553a2ddd7b">LearningLanguageSet::CurrentlyLearningLanguage</a></div><div class="ttdeci">std::string CurrentlyLearningLanguage</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00244">translations.h:244</a></div></div>
+<div class="ttc" id="astruct_learning_language_set_html_ac5178c53bcf1c703b0a0cdbf65688ccf"><div class="ttname"><a href="struct_learning_language_set.html#ac5178c53bcf1c703b0a0cdbf65688ccf">LearningLanguageSet::Menu</a></div><div class="ttdeci">std::string Menu</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00242">translations.h:242</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a1f479f345bf911ccde010c53983b70af"><div class="ttname"><a href="translations_8cpp.html#a1f479f345bf911ccde010c53983b70af">learningLanguageSetTranslations</a></div><div class="ttdeci">const std::vector&lt; LearningLanguageSet &gt; learningLanguageSetTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l04037">translations.cpp:4037</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af73ed9d8b8324e8a1b50b5e23960b1f6" name="af73ed9d8b8324e8a1b50b5e23960b1f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73ed9d8b8324e8a1b50b5e23960b1f6">&#9670;&#160;</a></span>loadSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool loadSettings </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00315">315</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  315</span>                    {</div>
+<div class="line"><span class="lineno">  316</span>    std::ifstream inFile(<span class="stringliteral">&quot;settings.cfg&quot;</span>);</div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">if</span> (inFile.is_open()) {</div>
+<div class="line"><span class="lineno">  318</span>        <span class="keywordtype">int</span> lang , bgCode, tLang, mLang;</div>
+<div class="line"><span class="lineno">  319</span>        <span class="keywordtype">bool</span> IACode, color, oneRoundCode;</div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>        <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> =<span class="stringliteral">&quot;&quot;</span>; <span class="comment">//colors::RESET; // Vagy &quot;&quot;</span></div>
+<div class="line"><span class="lineno">  322</span>        <span class="keywordflow">if</span> (inFile &gt;&gt; lang &gt;&gt; mLang &gt;&gt; tLang &gt;&gt; color &gt;&gt; bgCode &gt;&gt; <a class="code hl_variable" href="#ae6cfdf4465263f16973a2f5121306ae5">useSound</a> &gt;&gt; IACode &gt;&gt; oneRoundCode) {</div>
+<div class="line"><span class="lineno">  323</span>            <a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="translations_8h.html#a315ca917ad583797f709ea477dd28705">Language</a><span class="keyword">&gt;</span>(lang);</div>
+<div class="line"><span class="lineno">  324</span>            <a class="code hl_variable" href="main_8cpp.html#aedc5bc4e6638c847de7c0ff01282747d">motherLanguage</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="translations_8h.html#a315ca917ad583797f709ea477dd28705">Language</a><span class="keyword">&gt;</span>(mLang);</div>
+<div class="line"><span class="lineno">  325</span>            <a class="code hl_variable" href="main_8cpp.html#a603ad798b1d6f9319dda82feeeb4b3ee">targetLanguage</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="translations_8h.html#a315ca917ad583797f709ea477dd28705">Language</a><span class="keyword">&gt;</span>(tLang);</div>
+<div class="line"><span class="lineno">  326</span>            <a class="code hl_variable" href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a> = color;</div>
+<div class="line"><span class="lineno">  327</span>            <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> = bgCode;</div>
+<div class="line"><span class="lineno">  328</span>            <a class="code hl_variable" href="#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a> = IACode;</div>
+<div class="line"><span class="lineno">  329</span>            <a class="code hl_variable" href="#a790a62a1f209c694bcf276a07a19d62f">oneRoundQuiz</a> = oneRoundCode;</div>
+<div class="line"><span class="lineno">  330</span> </div>
+<div class="line"><span class="lineno">  331</span>            <span class="comment">//visszaállítjuk a számot színné</span></div>
+<div class="line"><span class="lineno">  332</span>            <span class="comment">//reset the number to color</span></div>
+<div class="line"><span class="lineno">  333</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 1) <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a92c8fcc8e472aad5f51332426794bf8d">colors::RESET</a>;</div>
+<div class="line"><span class="lineno">  334</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 2) <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a724b21a48111c9e338d91a87a8a7bc30">colors::BG_GREEN</a>;</div>
+<div class="line"><span class="lineno">  335</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 3) <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a58a697e39be991b206868352f5600171">colors::BG_CYAN</a>;</div>
+<div class="line"><span class="lineno">  336</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 4) <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a8d598fad064d01e0b26f535ef06fc92a">colors::BG_RED</a>;</div>
+<div class="line"><span class="lineno">  337</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 5) <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a2ce252af6faabbd678c25f60655be4cc">colors::BG_MAGENTA</a>;</div>
+<div class="line"><span class="lineno">  338</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 6) <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#a164ee51b3437516763062eb139505ecd">colors::BG_BLUE</a>;</div>
+<div class="line"><span class="lineno">  339</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 7) <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#aee176a94f92b7d215c012fa717b249ab">colors::BG_WHITE</a>;</div>
+<div class="line"><span class="lineno">  340</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> == 8) <a class="code hl_variable" href="colors_8h.html#aaa5a3b018bf9c3d84cbc4b188f507c35">currentBG</a> = <a class="code hl_variable" href="namespacecolors.html#aef83e6201f30450f25bb4adc2013ff4a">colors::BG_GREY</a>;</div>
+<div class="line"><span class="lineno">  341</span> </div>
+<div class="line"><span class="lineno">  342</span>        }</div>
+<div class="line"><span class="lineno">  343</span>        inFile.close();</div>
+<div class="line"><span class="lineno">  344</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  345</span>    }</div>
+<div class="line"><span class="lineno">  346</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  347</span>}</div>
+<div class="ttc" id="asettings_8cpp_html_a790a62a1f209c694bcf276a07a19d62f"><div class="ttname"><a href="#a790a62a1f209c694bcf276a07a19d62f">oneRoundQuiz</a></div><div class="ttdeci">bool oneRoundQuiz</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00033">settings.cpp:33</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_ae6cfdf4465263f16973a2f5121306ae5"><div class="ttname"><a href="#ae6cfdf4465263f16973a2f5121306ae5">useSound</a></div><div class="ttdeci">bool useSound</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00031">settings.cpp:31</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6f04db455ed5fa7f6d9cbf5ede4436c7" name="a6f04db455ed5fa7f6d9cbf5ede4436c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f04db455ed5fa7f6d9cbf5ede4436c7">&#9670;&#160;</a></span>oneRoundQuizToggle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void oneRoundQuizToggle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00718">718</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  718</span>                          {</div>
+<div class="line"><span class="lineno">  719</span>    <span class="keywordflow">for</span> (;;) {</div>
+<div class="line"><span class="lineno">  720</span>        <span class="comment">// Nyelvi hivatkozások</span></div>
+<div class="line"><span class="lineno">  721</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input2.html">InvalidInput2</a> &amp;II2 = <a class="code hl_variable" href="translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3">invalidInputTranslations2</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  722</span>        <span class="comment">// Itt kell egy új struct a translations.h-ba, pl. OneRoundQuizToggle</span></div>
+<div class="line"><span class="lineno">  723</span>        <span class="comment">// const OneRoundQuizToggle &amp;ORQT = oneRoundQuizToggleTranslations [static_cast&lt;int&gt;(programUiLanguage)];</span></div>
+<div class="line"><span class="lineno">  724</span>        <span class="comment">// Egyelőre használjunk placeholder szöveget, amíg nem hozod létre a fordítást</span></div>
+<div class="line"><span class="lineno">  725</span> </div>
+<div class="line"><span class="lineno">  726</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  727</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;--- Egy koros kviz beallitas ---&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  728</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Jelenlegi allapot: &quot;</span> &lt;&lt; (<a class="code hl_variable" href="#a790a62a1f209c694bcf276a07a19d62f">oneRoundQuiz</a> ? <span class="stringliteral">&quot;BEKAPCSOLVA&quot;</span> : <span class="stringliteral">&quot;KIKAPCSOLVA&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  729</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;1. Atkapcsolas\n0. Vissza\nValasztas: &quot;</span>;</div>
+<div class="line"><span class="lineno">  730</span> </div>
+<div class="line"><span class="lineno">  731</span>        std::string input;</div>
+<div class="line"><span class="lineno">  732</span>        std::getline(std::cin, input);</div>
+<div class="line"><span class="lineno">  733</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  734</span>            <span class="keywordtype">int</span> localChoice = std::stoi(input);</div>
+<div class="line"><span class="lineno">  735</span>            <span class="keywordflow">if</span> (localChoice == 1) {</div>
+<div class="line"><span class="lineno">  736</span>                <a class="code hl_variable" href="#a790a62a1f209c694bcf276a07a19d62f">oneRoundQuiz</a> = !<a class="code hl_variable" href="#a790a62a1f209c694bcf276a07a19d62f">oneRoundQuiz</a>;</div>
+<div class="line"><span class="lineno">  737</span>                <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>();</div>
+<div class="line"><span class="lineno">  738</span>                std::cout &lt;&lt; (<a class="code hl_variable" href="#a790a62a1f209c694bcf276a07a19d62f">oneRoundQuiz</a> ? <span class="stringliteral">&quot;Egy koros kviz BEKAPCSOLVA!&quot;</span> : <span class="stringliteral">&quot;Egy koros kviz KIKAPCSOLVA!&quot;</span>) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  739</span>                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  740</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (localChoice == 0) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  741</span>        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><span class="lineno">  742</span>            <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;oneRoundQuizToggle()&quot;</span> , II2.<a class="code hl_variable" href="struct_invalid_input2.html#aecf71e70405ae9bcfd523f3b45e2a933">invalidInput2</a>);</div>
+<div class="line"><span class="lineno">  743</span>            std::cerr &lt;&lt; II2.<a class="code hl_variable" href="struct_invalid_input2.html#aecf71e70405ae9bcfd523f3b45e2a933">invalidInput2</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  744</span>            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  745</span>        }</div>
+<div class="line"><span class="lineno">  746</span>    }</div>
+<div class="line"><span class="lineno">  747</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac7142ee2baa705d2dd402769467d5a4e" name="ac7142ee2baa705d2dd402769467d5a4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7142ee2baa705d2dd402769467d5a4e">&#9670;&#160;</a></span>saveSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void saveSettings </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00277">277</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  278</span>{</div>
+<div class="line"><span class="lineno">  279</span>    <span class="comment">// nyelvi fájl</span></div>
+<div class="line"><span class="lineno">  280</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_save_settings.html">SaveSettings</a>&amp; <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a> = <a class="code hl_variable" href="translations_8cpp.html#a8ec86234170204134c3ae638623c5285">saveSettingsTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  281</span>    <span class="comment">// Biztonsági létrehozás</span></div>
+<div class="line"><span class="lineno">  282</span>    <span class="comment">// Security creation</span></div>
+<div class="line"><span class="lineno">  283</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="lineno">  284</span>    <span class="comment">// Windows: Üres fájl létrehozása, ha nem létezik</span></div>
+<div class="line"><span class="lineno">  285</span>    std::system(<span class="stringliteral">&quot;if not exist settings.cfg type nul &gt; settings.cfg&quot;</span>);</div>
+<div class="line"><span class="lineno">  286</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  287</span>    <span class="comment">// Linux / Android / Termux: A jól bevált touch parancs</span></div>
+<div class="line"><span class="lineno">  288</span>    std::system (<span class="stringliteral">&quot;touch settings.cfg&quot;</span>);</div>
+<div class="line"><span class="lineno">  289</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  290</span>std::ofstream outFile(<span class="stringliteral">&quot;settings.cfg&quot;</span>); <span class="comment">//include &lt;fstream&gt;</span></div>
+<div class="line"><span class="lineno">  291</span>    <span class="keywordflow">if</span> (outFile.is_open())</div>
+<div class="line"><span class="lineno">  292</span>    {</div>
+<div class="line"><span class="lineno">  293</span>        <span class="comment">// elmentjük a nyelvet és a színek állapotát számként</span></div>
+<div class="line"><span class="lineno">  294</span>        <span class="comment">// save the language and color state as a number</span></div>
+<div class="line"><span class="lineno">  295</span>        outFile &lt;&lt; static_cast&lt;int&gt;(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  296</span>        outFile &lt;&lt; static_cast&lt;int&gt;(<a class="code hl_variable" href="main_8cpp.html#aedc5bc4e6638c847de7c0ff01282747d">motherLanguage</a>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  297</span>        outFile &lt;&lt; static_cast&lt;int&gt;(<a class="code hl_variable" href="main_8cpp.html#a603ad798b1d6f9319dda82feeeb4b3ee">targetLanguage</a>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  298</span>        outFile &lt;&lt; <a class="code hl_variable" href="colors_8h.html#accda5039c9ee6c20f27094e99994f4aa">useColors</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  299</span>        outFile &lt;&lt; <a class="code hl_variable" href="colors_8h.html#aa4da44408d96f80e9fd6de5f0275a531">currentBG_Code</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  300</span>        outFile &lt;&lt; <a class="code hl_variable" href="#ae6cfdf4465263f16973a2f5121306ae5">useSound</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  301</span>        outFile &lt;&lt; <a class="code hl_variable" href="#a206de5c28dc8e06b2da696e99fca34f8">ignoreAccents</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  302</span>        outFile &lt;&lt; <a class="code hl_variable" href="#a790a62a1f209c694bcf276a07a19d62f">oneRoundQuiz</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  303</span>        outFile.close();</div>
+<div class="line"><span class="lineno">  304</span>    }</div>
+<div class="line"><span class="lineno">  305</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  306</span>    {</div>
+<div class="line"><span class="lineno">  307</span>        <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;saveSettings()&quot;</span>, <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>.saveSettingsError);</div>
+<div class="line"><span class="lineno">  308</span>        std::cerr &lt;&lt; <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>.saveSettingsError &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  309</span>        <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  310</span>    }</div>
+<div class="line"><span class="lineno">  311</span>}</div>
+<div class="ttc" id="astruct_save_settings_html"><div class="ttname"><a href="struct_save_settings.html">SaveSettings</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00236">translations.h:237</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a8ec86234170204134c3ae638623c5285"><div class="ttname"><a href="translations_8cpp.html#a8ec86234170204134c3ae638623c5285">saveSettingsTranslations</a></div><div class="ttdeci">const std::vector&lt; SaveSettings &gt; saveSettingsTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l03916">translations.cpp:3916</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6071c2f6a6eab58f29a7a5baf3696e6b" name="a6071c2f6a6eab58f29a7a5baf3696e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6071c2f6a6eab58f29a7a5baf3696e6b">&#9670;&#160;</a></span>settings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void settings </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00038">38</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>        <span class="comment">//nyelvi hivatkozások</span></div>
+<div class="line"><span class="lineno">   43</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_settings_menu.html">SettingsMenu</a>&amp; settingsMenu = <a class="code hl_variable" href="translations_8cpp.html#a053c79f931aff5e7c1140d845172ec08">settingsMenuTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_number_output.html">NumberOutput</a>&amp; numberoutput = <a class="code hl_variable" href="translations_8cpp.html#ab0dee2152ea747d1841e669874e47de3">chooseNumberMenuTranslations</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input.html">InvalidInput</a> &amp;invalidIinput = <a class="code hl_variable" href="translations_8cpp.html#a5830946e01dea29a71e466dcf8d9ac6c">invalidInputTranslations</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input2.html">InvalidInput2</a> &amp;invalidIinput2 = <a class="code hl_variable" href="translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3">invalidInputTranslations2</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>(); <span class="comment">// töröljük a képernyőt</span></div>
+<div class="line"><span class="lineno">   49</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#a9bfb789e82fa2045aa2328319f693dfe">settingsMenuSign</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   50</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#a8aa00b7f6d5ab7893735d9b453f42695">chooseSettingsMenu</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   51</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#a6ab22fdd4c817e6bbfe15229b23a3d25">languageOptions</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   52</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#aa9a2f96bb942937e04afbcdea4edf240">targetLanguageOptions</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   53</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#a42cdefe90132bb0abb4a9eebdd07b807">colorsOptions</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   54</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#ac6a2a4c8db1952184a606db788490911">soundOptions</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   55</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#aa1cff6cebecbbb0c4782e888e1433691">accentsOptions</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   56</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#a6ee5f318224c72dc5a3e55d457bf75cf">oneRoundQuizOption</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   57</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#ad79ce87a165bf08e13fbf23f219986a5">backMainMenu</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   58</span>        std::cout &lt;&lt; settingsMenu.<a class="code hl_variable" href="struct_settings_menu.html#a2e57f7ce0759d5caf99531c549f8d608">settingsMenuSign2</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   59</span>        std::cout &lt;&lt; numberoutput.numberOutput;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = 0;</div>
+<div class="line"><span class="lineno">   62</span>        std::string inputSettings;</div>
+<div class="line"><span class="lineno">   63</span>        std::getline(std::cin, inputSettings);</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   65</span>        {</div>
+<div class="line"><span class="lineno">   66</span>            <span class="comment">//itt számá alakítjuk a bevitt értéket</span></div>
+<div class="line"><span class="lineno">   67</span>            <span class="comment">//here convert the entered value to a number</span></div>
+<div class="line"><span class="lineno">   68</span>            <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = std::stoi(inputSettings);</div>
+<div class="line"><span class="lineno">   69</span>        }</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><span class="lineno">   71</span>        {</div>
+<div class="line"><span class="lineno">   72</span>            <span class="comment">//Ha nem számot ír be akkor a 99-ra a default ágra ugrunk</span></div>
+<div class="line"><span class="lineno">   73</span>            <span class="comment">//If you enter a non-number, we jump to the default branch at 99</span></div>
+<div class="line"><span class="lineno">   74</span>            <a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> = 99;</div>
+<div class="line"><span class="lineno">   75</span>        }</div>
+<div class="line"><span class="lineno">   76</span>        <span class="comment">// A menü ugrásai</span></div>
+<div class="line"><span class="lineno">   77</span>        <span class="comment">// jumps of menu</span></div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a>)</div>
+<div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">return</span>; <span class="comment">//visszalépünk a főmenübe</span></div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">   83</span>            <a class="code hl_function" href="#ad18f7d2fd4547937309b0c4c6e0ac2f6">choiceLanguage</a>();</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">   86</span>            <a class="code hl_function" href="#a48f1655a857cc551ddcc35ca3c36c8e2">learningLanguage</a>();</div>
+<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">   89</span>            <a class="code hl_function" href="#abd3eb7c7de778f12f45eb5e7e0e0d49f">colorsOn</a>();</div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">   92</span>            <a class="code hl_function" href="#a802bae69577ff5f3021b5d7824d8352a">soundOn</a>();</div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">case</span> 5:</div>
+<div class="line"><span class="lineno">   95</span>            <a class="code hl_function" href="#a7346f79456c656bd5554562a450be8c9">accentsToggle</a>();</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">case</span> 6:</div>
+<div class="line"><span class="lineno">   98</span>            <a class="code hl_function" href="#a6f04db455ed5fa7f6d9cbf5ede4436c7">oneRoundQuizToggle</a>();</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  100</span>            <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="vocab_cmenu_8cpp.html#a63bd75f20c553f0d65d7bb29b3f35696">choice</a> == 99)</div>
+<div class="line"><span class="lineno">  102</span>            {</div>
+<div class="line"><span class="lineno">  103</span>                <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  104</span>                <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;SettingsMenu&quot;</span>, invalidIinput2.invalidInput2);</div>
+<div class="line"><span class="lineno">  105</span>                std::cerr &lt;&lt; invalidIinput2.invalidInput2;</div>
+<div class="line"><span class="lineno">  106</span>            }</div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  108</span>            {</div>
+<div class="line"><span class="lineno">  109</span>                <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  110</span>                std::cerr &lt;&lt; invalidIinput.invalidInput;</div>
+<div class="line"><span class="lineno">  111</span>            }</div>
+<div class="line"><span class="lineno">  112</span>            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  113</span>        }</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
+<div class="line"><span class="lineno">  115</span>}</div>
+<div class="ttc" id="asettings_8cpp_html_a48f1655a857cc551ddcc35ca3c36c8e2"><div class="ttname"><a href="#a48f1655a857cc551ddcc35ca3c36c8e2">learningLanguage</a></div><div class="ttdeci">void learningLanguage()</div><div class="ttdoc">Learning language configuration / Tanulandó nyelv beállítása.</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00496">settings.cpp:496</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_a6f04db455ed5fa7f6d9cbf5ede4436c7"><div class="ttname"><a href="#a6f04db455ed5fa7f6d9cbf5ede4436c7">oneRoundQuizToggle</a></div><div class="ttdeci">void oneRoundQuizToggle()</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00718">settings.cpp:718</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_a7346f79456c656bd5554562a450be8c9"><div class="ttname"><a href="#a7346f79456c656bd5554562a450be8c9">accentsToggle</a></div><div class="ttdeci">void accentsToggle()</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00684">settings.cpp:684</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_a802bae69577ff5f3021b5d7824d8352a"><div class="ttname"><a href="#a802bae69577ff5f3021b5d7824d8352a">soundOn</a></div><div class="ttdeci">void soundOn()</div><div class="ttdoc">Sound toggle / Hang be- és kikapcsolása.</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00650">settings.cpp:650</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_abd3eb7c7de778f12f45eb5e7e0e0d49f"><div class="ttname"><a href="#abd3eb7c7de778f12f45eb5e7e0e0d49f">colorsOn</a></div><div class="ttdeci">void colorsOn()</div><div class="ttdoc">Color settings menu / Szín beállítás menü</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00199">settings.cpp:199</a></div></div>
+<div class="ttc" id="asettings_8cpp_html_ad18f7d2fd4547937309b0c4c6e0ac2f6"><div class="ttname"><a href="#ad18f7d2fd4547937309b0c4c6e0ac2f6">choiceLanguage</a></div><div class="ttdeci">void choiceLanguage()</div><div class="ttdoc">UI language selection / Program nyelv kiválasztása.</div><div class="ttdef"><b>Definition</b> <a href="settings_8cpp_source.html#l00129">settings.cpp:129</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html"><div class="ttname"><a href="struct_settings_menu.html">SettingsMenu</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00200">translations.h:201</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_a2e57f7ce0759d5caf99531c549f8d608"><div class="ttname"><a href="struct_settings_menu.html#a2e57f7ce0759d5caf99531c549f8d608">SettingsMenu::settingsMenuSign2</a></div><div class="ttdeci">std::string settingsMenuSign2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00211">translations.h:211</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_a42cdefe90132bb0abb4a9eebdd07b807"><div class="ttname"><a href="struct_settings_menu.html#a42cdefe90132bb0abb4a9eebdd07b807">SettingsMenu::colorsOptions</a></div><div class="ttdeci">std::string colorsOptions</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00206">translations.h:206</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_a6ab22fdd4c817e6bbfe15229b23a3d25"><div class="ttname"><a href="struct_settings_menu.html#a6ab22fdd4c817e6bbfe15229b23a3d25">SettingsMenu::languageOptions</a></div><div class="ttdeci">std::string languageOptions</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00204">translations.h:204</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_a6ee5f318224c72dc5a3e55d457bf75cf"><div class="ttname"><a href="struct_settings_menu.html#a6ee5f318224c72dc5a3e55d457bf75cf">SettingsMenu::oneRoundQuizOption</a></div><div class="ttdeci">std::string oneRoundQuizOption</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00209">translations.h:209</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_a8aa00b7f6d5ab7893735d9b453f42695"><div class="ttname"><a href="struct_settings_menu.html#a8aa00b7f6d5ab7893735d9b453f42695">SettingsMenu::chooseSettingsMenu</a></div><div class="ttdeci">std::string chooseSettingsMenu</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00203">translations.h:203</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_a9bfb789e82fa2045aa2328319f693dfe"><div class="ttname"><a href="struct_settings_menu.html#a9bfb789e82fa2045aa2328319f693dfe">SettingsMenu::settingsMenuSign</a></div><div class="ttdeci">std::string settingsMenuSign</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00202">translations.h:202</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_aa1cff6cebecbbb0c4782e888e1433691"><div class="ttname"><a href="struct_settings_menu.html#aa1cff6cebecbbb0c4782e888e1433691">SettingsMenu::accentsOptions</a></div><div class="ttdeci">std::string accentsOptions</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00208">translations.h:208</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_aa9a2f96bb942937e04afbcdea4edf240"><div class="ttname"><a href="struct_settings_menu.html#aa9a2f96bb942937e04afbcdea4edf240">SettingsMenu::targetLanguageOptions</a></div><div class="ttdeci">std::string targetLanguageOptions</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00205">translations.h:205</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_ac6a2a4c8db1952184a606db788490911"><div class="ttname"><a href="struct_settings_menu.html#ac6a2a4c8db1952184a606db788490911">SettingsMenu::soundOptions</a></div><div class="ttdeci">std::string soundOptions</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00207">translations.h:207</a></div></div>
+<div class="ttc" id="astruct_settings_menu_html_ad79ce87a165bf08e13fbf23f219986a5"><div class="ttname"><a href="struct_settings_menu.html#ad79ce87a165bf08e13fbf23f219986a5">SettingsMenu::backMainMenu</a></div><div class="ttdeci">std::string backMainMenu</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00210">translations.h:210</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a053c79f931aff5e7c1140d845172ec08"><div class="ttname"><a href="translations_8cpp.html#a053c79f931aff5e7c1140d845172ec08">settingsMenuTranslations</a></div><div class="ttdeci">const std::vector&lt; SettingsMenu &gt; settingsMenuTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l02996">translations.cpp:2996</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a802bae69577ff5f3021b5d7824d8352a" name="a802bae69577ff5f3021b5d7824d8352a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a802bae69577ff5f3021b5d7824d8352a">&#9670;&#160;</a></span>soundOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void soundOn </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sound toggle / Hang be- és kikapcsolása. </p>
+<p>EN: Toggles sound state (ON/OFF) and saves configuration.</p>
+<p>HU: A hang állapotát váltja (BE/KI) és elmenti a beállítást. </p>
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00650">650</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  650</span>               {</div>
+<div class="line"><span class="lineno">  651</span>    <span class="comment">// Nyelvi hivatkozások</span></div>
+<div class="line"><span class="lineno">  652</span>    <span class="comment">// Language references</span></div>
+<div class="line"><span class="lineno">  653</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_sound_on_off.html">SoundOnOff</a> &amp;SOO = <a class="code hl_variable" href="translations_8cpp.html#ae46846e2e39380eb530cd89c5bfa85d0">soundOnOffTranslations</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  654</span>    <span class="keyword">const</span> <a class="code hl_struct" href="struct_invalid_input2.html">InvalidInput2</a> &amp;II2 = <a class="code hl_variable" href="translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3">invalidInputTranslations2</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  655</span> </div>
+<div class="line"><span class="lineno">  656</span>    <span class="keywordflow">for</span> (;;) {</div>
+<div class="line"><span class="lineno">  657</span>        <a class="code hl_function" href="general_functions_8cpp.html#ab497849fab25f1b523c6109f82aff762">screenWipe</a>();</div>
+<div class="line"><span class="lineno">  658</span>        std::cout &lt;&lt; SOO.<a class="code hl_variable" href="struct_sound_on_off.html#af4ca2ee4dc576969ec5e7b7fd7cf1eca">soundSet</a> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  659</span>        std::cout &lt;&lt; SOO.<a class="code hl_variable" href="struct_sound_on_off.html#a3286a19c34f331672ee2b18913188b92">currentlyState</a> &lt;&lt; (<a class="code hl_variable" href="#ae6cfdf4465263f16973a2f5121306ae5">useSound</a> ? SOO.<a class="code hl_variable" href="struct_sound_on_off.html#a6e997a0cbc6195665ae3f81b83be674d">useSoundOn</a> : SOO.<a class="code hl_variable" href="struct_sound_on_off.html#a05b390d75bf649c4b7baa1b0bc1b6870">useSoundOff</a>) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  660</span>        std::cout &lt;&lt; SOO.<a class="code hl_variable" href="struct_sound_on_off.html#a01b8f4a4d03cfd5b9c32c67f34d4e4b4">option1</a>;</div>
+<div class="line"><span class="lineno">  661</span> </div>
+<div class="line"><span class="lineno">  662</span>        std::string input;</div>
+<div class="line"><span class="lineno">  663</span>        std::getline(std::cin, input);</div>
+<div class="line"><span class="lineno">  664</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  665</span>            <span class="keywordtype">int</span> localChoice = std::stoi(input);</div>
+<div class="line"><span class="lineno">  666</span>            <span class="keywordflow">if</span> (localChoice == 1) {</div>
+<div class="line"><span class="lineno">  667</span>                <a class="code hl_variable" href="#ae6cfdf4465263f16973a2f5121306ae5">useSound</a> = !<a class="code hl_variable" href="#ae6cfdf4465263f16973a2f5121306ae5">useSound</a>; <span class="comment">// Átkapcsolás</span></div>
+<div class="line"><span class="lineno">  668</span>                <a class="code hl_function" href="#ac7142ee2baa705d2dd402769467d5a4e">saveSettings</a>();</div>
+<div class="line"><span class="lineno">  669</span>                <span class="comment">// feedback for User</span></div>
+<div class="line"><span class="lineno">  670</span>                <span class="comment">// visszajelzés a felhasználónak</span></div>
+<div class="line"><span class="lineno">  671</span>                std::cout &lt;&lt; (<a class="code hl_variable" href="#ae6cfdf4465263f16973a2f5121306ae5">useSound</a> ? SOO.<a class="code hl_variable" href="struct_sound_on_off.html#a0a1f3faa3ae6c4d8e7bdba7aed4395bf">useSoundOn2</a> : SOO.<a class="code hl_variable" href="struct_sound_on_off.html#a468b6321967a48f350c3eb6e453973fc">useSoundOff2</a>) &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  672</span>                <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  673</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (localChoice == 0) <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  674</span>        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><span class="lineno">  675</span>            <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;soundOn()&quot;</span> , II2.invalidInput2);</div>
+<div class="line"><span class="lineno">  676</span>            std::cerr &lt;&lt; II2.invalidInput2 &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  677</span>            <a class="code hl_function" href="general_functions_8cpp.html#a7925bb988d7353f31427438c08feed33">waitToEnter</a>();</div>
+<div class="line"><span class="lineno">  678</span>        }</div>
+<div class="line"><span class="lineno">  679</span>    }</div>
+<div class="line"><span class="lineno">  680</span>}</div>
+<div class="ttc" id="astruct_sound_on_off_html"><div class="ttname"><a href="struct_sound_on_off.html">SoundOnOff</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00343">translations.h:344</a></div></div>
+<div class="ttc" id="astruct_sound_on_off_html_a01b8f4a4d03cfd5b9c32c67f34d4e4b4"><div class="ttname"><a href="struct_sound_on_off.html#a01b8f4a4d03cfd5b9c32c67f34d4e4b4">SoundOnOff::option1</a></div><div class="ttdeci">std::string option1</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00349">translations.h:349</a></div></div>
+<div class="ttc" id="astruct_sound_on_off_html_a05b390d75bf649c4b7baa1b0bc1b6870"><div class="ttname"><a href="struct_sound_on_off.html#a05b390d75bf649c4b7baa1b0bc1b6870">SoundOnOff::useSoundOff</a></div><div class="ttdeci">std::string useSoundOff</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00348">translations.h:348</a></div></div>
+<div class="ttc" id="astruct_sound_on_off_html_a0a1f3faa3ae6c4d8e7bdba7aed4395bf"><div class="ttname"><a href="struct_sound_on_off.html#a0a1f3faa3ae6c4d8e7bdba7aed4395bf">SoundOnOff::useSoundOn2</a></div><div class="ttdeci">std::string useSoundOn2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00350">translations.h:350</a></div></div>
+<div class="ttc" id="astruct_sound_on_off_html_a3286a19c34f331672ee2b18913188b92"><div class="ttname"><a href="struct_sound_on_off.html#a3286a19c34f331672ee2b18913188b92">SoundOnOff::currentlyState</a></div><div class="ttdeci">std::string currentlyState</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00346">translations.h:346</a></div></div>
+<div class="ttc" id="astruct_sound_on_off_html_a468b6321967a48f350c3eb6e453973fc"><div class="ttname"><a href="struct_sound_on_off.html#a468b6321967a48f350c3eb6e453973fc">SoundOnOff::useSoundOff2</a></div><div class="ttdeci">std::string useSoundOff2</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00351">translations.h:351</a></div></div>
+<div class="ttc" id="astruct_sound_on_off_html_a6e997a0cbc6195665ae3f81b83be674d"><div class="ttname"><a href="struct_sound_on_off.html#a6e997a0cbc6195665ae3f81b83be674d">SoundOnOff::useSoundOn</a></div><div class="ttdeci">std::string useSoundOn</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00347">translations.h:347</a></div></div>
+<div class="ttc" id="astruct_sound_on_off_html_af4ca2ee4dc576969ec5e7b7fd7cf1eca"><div class="ttname"><a href="struct_sound_on_off.html#af4ca2ee4dc576969ec5e7b7fd7cf1eca">SoundOnOff::soundSet</a></div><div class="ttdeci">std::string soundSet</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00345">translations.h:345</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_ae46846e2e39380eb530cd89c5bfa85d0"><div class="ttname"><a href="translations_8cpp.html#ae46846e2e39380eb530cd89c5bfa85d0">soundOnOffTranslations</a></div><div class="ttdeci">const std::vector&lt; SoundOnOff &gt; soundOnOffTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l07507">translations.cpp:7507</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Változók dokumentációja</h2>
+<a id="aaa5a3b018bf9c3d84cbc4b188f507c35" name="aaa5a3b018bf9c3d84cbc4b188f507c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa5a3b018bf9c3d84cbc4b188f507c35">&#9670;&#160;</a></span>currentBG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="data_file_reading_8cpp.html#aca454f84dd198a937af6499dd758aa3d">std::string</a> currentBG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00030">30</a>. sorában.</p>
+
+</div>
+</div>
+<a id="aa4da44408d96f80e9fd6de5f0275a531" name="aa4da44408d96f80e9fd6de5f0275a531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4da44408d96f80e9fd6de5f0275a531">&#9670;&#160;</a></span>currentBG_Code</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int currentBG_Code = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00028">28</a>. sorában.</p>
+
+</div>
+</div>
+<a id="a206de5c28dc8e06b2da696e99fca34f8" name="a206de5c28dc8e06b2da696e99fca34f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a206de5c28dc8e06b2da696e99fca34f8">&#9670;&#160;</a></span>ignoreAccents</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ignoreAccents = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00032">32</a>. sorában.</p>
+
+</div>
+</div>
+<a id="a790a62a1f209c694bcf276a07a19d62f" name="a790a62a1f209c694bcf276a07a19d62f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a790a62a1f209c694bcf276a07a19d62f">&#9670;&#160;</a></span>oneRoundQuiz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool oneRoundQuiz = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00033">33</a>. sorában.</p>
+
+</div>
+</div>
+<a id="accda5039c9ee6c20f27094e99994f4aa" name="accda5039c9ee6c20f27094e99994f4aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accda5039c9ee6c20f27094e99994f4aa">&#9670;&#160;</a></span>useColors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool useColors = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00027">27</a>. sorában.</p>
+
+</div>
+</div>
+<a id="ae6cfdf4465263f16973a2f5121306ae5" name="ae6cfdf4465263f16973a2f5121306ae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6cfdf4465263f16973a2f5121306ae5">&#9670;&#160;</a></span>useSound</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool useSound = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="settings_8cpp_source.html">settings.cpp</a> fájl <a class="el" href="settings_8cpp_source.html#l00031">31</a>. sorában.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_8ae0dd75af039a94f4269584fb8eef13.html">Settings</a></li><li class="navelem"><a href="settings_8cpp.html">settings.cpp</a></li>
+    <li class="footer">Készítette <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

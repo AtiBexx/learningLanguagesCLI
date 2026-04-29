@@ -5,7 +5,7 @@
 #ifndef ENGLISH_MENU_H
 #define ENGLISH_MENU_H
 
-/** @file generalFunctions.h /cpp
+/** @file menu.h /cpp
  *  @brief
  *  ENG: Entering the main menu
  *  HU: Belépés a főmenűbe
@@ -16,5 +16,5 @@ void mainMenu();
 // It is a very important and use for every menu
 // Globális változó a menü számára
 // Minden menüben ezt használjuk
-extern int choice;
+//extern int choice;
 #endif //ENGLISH_MENU_H

@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nyelvtanulo App: CreateVocab/createVocab.h Forrásfájl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Nyelvtanulo App
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Keresés',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('create_vocab_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">createVocab.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="create_vocab_8h.html">Ugrás a fájl dokumentációjához.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by AtiBexx2 on 2026. 04. 04.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef ENGLISH_CREATEVOCAB_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define ENGLISH_CREATEVOCAB_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2">   10</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2">FileAction</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2a32f68a60cef40faedbc6af20298c1a1e">   11</a></span>    <a class="code hl_enumvalue" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2a32f68a60cef40faedbc6af20298c1a1e">DELETE</a>,</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2a507f09f72160920edb481656c350e76c">   12</a></span>    <a class="code hl_enumvalue" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2a507f09f72160920edb481656c350e76c">RENAME</a>,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2af7f93635f8e193a924ae4a691bb66b8f">   13</a></span>    <a class="code hl_enumvalue" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2af7f93635f8e193a924ae4a691bb66b8f">MOVE</a>,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2ae8606d021da140a92c7eba8d9b8af84f">   14</a></span>    <a class="code hl_enumvalue" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2ae8606d021da140a92c7eba8d9b8af84f">COPY</a>,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2ab50339a10e1de285ac99d4c3990b8693">   15</a></span>    <a class="code hl_enumvalue" href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2ab50339a10e1de285ac99d4c3990b8693">NONE</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8">   18</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8">FileCreationAction</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8a2f453cfe638e57e27bb0c9512436111e">   19</a></span>    <a class="code hl_enumvalue" href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8a2f453cfe638e57e27bb0c9512436111e">CONTINUE</a>, <span class="comment">// Mehet tovább a fájl/mappa bekérése || You can proceed to request the file/folder.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8aa42b2fb0e720a080e79a92f4ca97d927">   20</a></span>    <a class="code hl_enumvalue" href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8aa42b2fb0e720a080e79a92f4ca97d927">EXIT</a>, <span class="comment">// Kilépés a createVocab() függvényből || Exit from the createVocab() function</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8a0f4ac95a1bdab29369cf984c43245ffa">   21</a></span>    <a class="code hl_enumvalue" href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8a0f4ac95a1bdab29369cf984c43245ffa">COMMAND_EXECUTED</a> <span class="comment">// Jelzi a programnak, hogy kezdje újra a bekérést || Tells the program to start the request again</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span> <a class="code hl_function" href="create_vocab_8h.html#a497cc8c590042c314be6dce5c7104bd7">createVocab</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="create_vocab_8h.html#a00ecccda07447c5ab564c5b9dd4fde27">wordsPairTotal</a>(<span class="keywordtype">bool</span> isExiting = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> <a class="code hl_function" href="create_vocab_8h.html#a9a5562065d61167b749d3069cbeab087">choiceMenu</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">int</span> <a class="code hl_function" href="create_vocab_8h.html#a6045c8d779f92fe1a163c88f3fb822a5">handleInput</a>(<span class="keyword">const</span> std::string&amp; input, std::ofstream&amp; file, <span class="keywordtype">bool</span> allowEmpty);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><a class="code hl_enumeration" href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8">FileCreationAction</a> <a class="code hl_function" href="create_vocab_8h.html#a20ab77a766710f03a7365dab41ec6e95">handleFileCreationInput</a>(<span class="keyword">const</span> std::string&amp; input);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">// Változók deklarálása</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">extern</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_variable" href="create_vocab_8h.html#aa93ddd9af0d39698d5081471d4c3a7c9">wordCount</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">extern</span> std::string <a class="code hl_variable" href="create_vocab_8cpp.html#ac81f9269c8d57eed4d5b56f054fc84de">fileName</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">extern</span> std::string <a class="code hl_variable" href="create_vocab_8h.html#a6561b4c601dfd61dc521fe19aad922c6">fullPath</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//extern std::ios_base::openmode mode = std::ios::app;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">//Az std::ios_base::openmode egy speciális típus a C++-ban,</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//ami azt mondja meg a fájlkezelőnek (std::ofstream),</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">//hogy hogyan nyissa meg a fájlt.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">extern</span> std::ios_base::openmode <a class="code hl_variable" href="create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844">mode</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif </span><span class="comment">//ENGLISH_CREATEVOCAB_H</span></div>
+<div class="ttc" id="acreate_vocab_8cpp_html_ac81f9269c8d57eed4d5b56f054fc84de"><div class="ttname"><a href="create_vocab_8cpp.html#ac81f9269c8d57eed4d5b56f054fc84de">fileName</a></div><div class="ttdeci">std::string fileName</div><div class="ttdef"><b>Definition</b> <a href="create_vocab_8cpp_source.html#l00015">createVocab.cpp:15</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a009b5c375f9c164b4c15dea158dfc7f8"><div class="ttname"><a href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8">FileCreationAction</a></div><div class="ttdeci">FileCreationAction</div><div class="ttdef"><b>Definition</b> <a href="#l00018">createVocab.h:18</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a009b5c375f9c164b4c15dea158dfc7f8a0f4ac95a1bdab29369cf984c43245ffa"><div class="ttname"><a href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8a0f4ac95a1bdab29369cf984c43245ffa">FileCreationAction::COMMAND_EXECUTED</a></div><div class="ttdeci">@ COMMAND_EXECUTED</div><div class="ttdef"><b>Definition</b> <a href="#l00021">createVocab.h:21</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a009b5c375f9c164b4c15dea158dfc7f8a2f453cfe638e57e27bb0c9512436111e"><div class="ttname"><a href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8a2f453cfe638e57e27bb0c9512436111e">FileCreationAction::CONTINUE</a></div><div class="ttdeci">@ CONTINUE</div><div class="ttdef"><b>Definition</b> <a href="#l00019">createVocab.h:19</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a009b5c375f9c164b4c15dea158dfc7f8aa42b2fb0e720a080e79a92f4ca97d927"><div class="ttname"><a href="create_vocab_8h.html#a009b5c375f9c164b4c15dea158dfc7f8aa42b2fb0e720a080e79a92f4ca97d927">FileCreationAction::EXIT</a></div><div class="ttdeci">@ EXIT</div><div class="ttdef"><b>Definition</b> <a href="#l00020">createVocab.h:20</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a00ecccda07447c5ab564c5b9dd4fde27"><div class="ttname"><a href="create_vocab_8h.html#a00ecccda07447c5ab564c5b9dd4fde27">wordsPairTotal</a></div><div class="ttdeci">void wordsPairTotal(bool isExiting=false)</div><div class="ttdef"><b>Definition</b> <a href="create_vocab_8cpp_source.html#l00017">createVocab.cpp:17</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a20ab77a766710f03a7365dab41ec6e95"><div class="ttname"><a href="create_vocab_8h.html#a20ab77a766710f03a7365dab41ec6e95">handleFileCreationInput</a></div><div class="ttdeci">FileCreationAction handleFileCreationInput(const std::string &amp;input)</div><div class="ttdef"><b>Definition</b> <a href="create_vocab_8cpp_source.html#l00205">createVocab.cpp:205</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a497cc8c590042c314be6dce5c7104bd7"><div class="ttname"><a href="create_vocab_8h.html#a497cc8c590042c314be6dce5c7104bd7">createVocab</a></div><div class="ttdeci">void createVocab()</div><div class="ttdef"><b>Definition</b> <a href="create_vocab_8cpp_source.html#l00036">createVocab.cpp:36</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a6045c8d779f92fe1a163c88f3fb822a5"><div class="ttname"><a href="create_vocab_8h.html#a6045c8d779f92fe1a163c88f3fb822a5">handleInput</a></div><div class="ttdeci">int handleInput(const std::string &amp;input, std::ofstream &amp;file, bool allowEmpty)</div><div class="ttdef"><b>Definition</b> <a href="create_vocab_8cpp_source.html#l00260">createVocab.cpp:260</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a6561b4c601dfd61dc521fe19aad922c6"><div class="ttname"><a href="create_vocab_8h.html#a6561b4c601dfd61dc521fe19aad922c6">fullPath</a></div><div class="ttdeci">std::string fullPath</div><div class="ttdef"><b>Definition</b> <a href="vocab_cmenu_8cpp_source.html#l00018">vocabCmenu.cpp:18</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a9108b183d1f0d18f66a248a2db494844"><div class="ttname"><a href="create_vocab_8h.html#a9108b183d1f0d18f66a248a2db494844">mode</a></div><div class="ttdeci">std::ios_base::openmode mode</div><div class="ttdef"><b>Definition</b> <a href="vocab_cmenu_8cpp_source.html#l00016">vocabCmenu.cpp:16</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_a9a5562065d61167b749d3069cbeab087"><div class="ttname"><a href="create_vocab_8h.html#a9a5562065d61167b749d3069cbeab087">choiceMenu</a></div><div class="ttdeci">void choiceMenu()</div><div class="ttdef"><b>Definition</b> <a href="vocab_cmenu_8cpp_source.html#l00022">vocabCmenu.cpp:22</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_aa93ddd9af0d39698d5081471d4c3a7c9"><div class="ttname"><a href="create_vocab_8h.html#aa93ddd9af0d39698d5081471d4c3a7c9">wordCount</a></div><div class="ttdeci">unsigned long long wordCount</div><div class="ttdef"><b>Definition</b> <a href="vocab_cmenu_8cpp_source.html#l00019">vocabCmenu.cpp:19</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_afbfc6907cc6a318c74e9246174c40ff2"><div class="ttname"><a href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2">FileAction</a></div><div class="ttdeci">FileAction</div><div class="ttdef"><b>Definition</b> <a href="#l00010">createVocab.h:10</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_afbfc6907cc6a318c74e9246174c40ff2a32f68a60cef40faedbc6af20298c1a1e"><div class="ttname"><a href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2a32f68a60cef40faedbc6af20298c1a1e">FileAction::DELETE</a></div><div class="ttdeci">@ DELETE</div><div class="ttdef"><b>Definition</b> <a href="#l00011">createVocab.h:11</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_afbfc6907cc6a318c74e9246174c40ff2a507f09f72160920edb481656c350e76c"><div class="ttname"><a href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2a507f09f72160920edb481656c350e76c">FileAction::RENAME</a></div><div class="ttdeci">@ RENAME</div><div class="ttdef"><b>Definition</b> <a href="#l00012">createVocab.h:12</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_afbfc6907cc6a318c74e9246174c40ff2ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2ab50339a10e1de285ac99d4c3990b8693">FileAction::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition</b> <a href="#l00015">createVocab.h:15</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_afbfc6907cc6a318c74e9246174c40ff2ae8606d021da140a92c7eba8d9b8af84f"><div class="ttname"><a href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2ae8606d021da140a92c7eba8d9b8af84f">FileAction::COPY</a></div><div class="ttdeci">@ COPY</div><div class="ttdef"><b>Definition</b> <a href="#l00014">createVocab.h:14</a></div></div>
+<div class="ttc" id="acreate_vocab_8h_html_afbfc6907cc6a318c74e9246174c40ff2af7f93635f8e193a924ae4a691bb66b8f"><div class="ttname"><a href="create_vocab_8h.html#afbfc6907cc6a318c74e9246174c40ff2af7f93635f8e193a924ae4a691bb66b8f">FileAction::MOVE</a></div><div class="ttdeci">@ MOVE</div><div class="ttdef"><b>Definition</b> <a href="#l00013">createVocab.h:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_24667f92f30be149456db6199322f389.html">CreateVocab</a></li><li class="navelem"><a href="create_vocab_8h.html">createVocab.h</a></li>
+    <li class="footer">Készítette <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

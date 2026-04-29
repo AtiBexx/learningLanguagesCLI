@@ -10,10 +10,17 @@ void openFileInEditor(const std::string& fullPath) {
 
     const OosEditor &OoE = OosEditorTranslations [static_cast<int>(programUiLanguage)];
 
+    // Idézőjelek kezelése: ha van elérési út, tegyük köré, ha nincs, maradjon üres
+    std::string fixedPath = fullPath;
+#ifdef _WIN32
+    for(auto &c : fixedPath) if(c == '/') c = '\\';
+#endif
+
+    std::string pathArg = fixedPath.empty() ? "" : " \"" + fixedPath + "\"";
 #ifdef _WIN32
     // Az edit.com-ot használjuk
     // use edit.com
-    command = "edit.com \"" + fullPath + "\"";
+    command = "edit" + pathArg;
     std::cout << OoE.run << command << std::endl;
 
     int result = std::system(command.c_str());
@@ -22,12 +29,12 @@ void openFileInEditor(const std::string& fullPath) {
     // If result is not 0, it is probably not found or an error occurred.
     if (result != 0) {
         std::cout << OoE.errorWin32 << std::endl;
-        command = "notepad.exe \"" + fullPath + "\"";
+        command = "notepad.exe" + pathArg;
         std::system(command.c_str());
     }
 #else
     // Linux/Android/Termux: nano
-    command = "nano \"" + fullPath + "\"";
+    command = "nano" + pathArg;
     std::cout << OoE.run << command << std::endl;
     int result = std::system(command.c_str());
 

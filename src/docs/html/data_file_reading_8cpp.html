@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nyelvtanulo App: FileIO/dataFileReading.cpp fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Nyelvtanulo App
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Keresés',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('data_file_reading_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">dataFileReading.cpp fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementation of file reading and word processing utilities. Fájlbeolvasó és szófeldolgozó segédfüggvények implementációja.  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="data_file_reading_8h_source.html">dataFileReading.h</a>&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="general_functions_8h_source.html">generalFunctions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="translations_8h_source.html">translations.h</a>&quot;</code><br />
+</div>
+<p><a href="data_file_reading_8cpp_source.html">Ugrás a fájl forráskódjához.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Típusdefiníciók</h2></td></tr>
+<tr class="memitem:aca454f84dd198a937af6499dd758aa3d" id="r_aca454f84dd198a937af6499dd758aa3d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca454f84dd198a937af6499dd758aa3d">string</a> = std::string</td></tr>
+<tr class="memitem:aa196ecb6a4e4c1ce42f824945b3648a5" id="r_aa196ecb6a4e4c1ce42f824945b3648a5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa196ecb6a4e4c1ce42f824945b3648a5">stringstream</a> = std::stringstream</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:ab03b95b2112457acce40cd613fcd8134" id="r_ab03b95b2112457acce40cd613fcd8134"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aca454f84dd198a937af6499dd758aa3d">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab03b95b2112457acce40cd613fcd8134">toLowerCase</a> (<a class="el" href="#aca454f84dd198a937af6499dd758aa3d">string</a> s)</td></tr>
+<tr class="memitem:afd5fc4d38b256ea035b3691948929dea" id="r_afd5fc4d38b256ea035b3691948929dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aca454f84dd198a937af6499dd758aa3d">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd5fc4d38b256ea035b3691948929dea">trim</a> (const <a class="el" href="#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;str)</td></tr>
+<tr class="memitem:a32899c79969bcb75b3554309c4b47551" id="r_a32899c79969bcb75b3554309c4b47551"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32899c79969bcb75b3554309c4b47551">checkMultipleAnswers</a> (const <a class="el" href="#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;userAnswer, const <a class="el" href="#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;correctAnswersString)</td></tr>
+<tr class="memitem:a3cfb7fe89e2439f359478918a717a755" id="r_a3cfb7fe89e2439f359478918a717a755"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_word_pair.html">WordPair</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cfb7fe89e2439f359478918a717a755">loadWords</a> (const <a class="el" href="#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;filename)</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p>Implementation of file reading and word processing utilities. Fájlbeolvasó és szófeldolgozó segédfüggvények implementációja. </p>
+<dl class="section author"><dt>Szerző</dt><dd>AtiBexx2 </dd></dl>
+<dl class="section date"><dt>Dátum</dt><dd>2026-03-20</dd></dl>
+<p>EN: This source file contains the implementation of helper functions used for:</p><ul>
+<li>Converting strings to lowercase</li>
+<li>Trimming whitespace from strings</li>
+<li>Checking user answers against multiple valid answers</li>
+<li>Loading word pairs from .data files</li>
+</ul>
+<p>The module is designed for CLI-based quiz applications where word pairs (English -&gt; Hungarian) are stored in text files and processed dynamically.</p>
+<p>It also supports:</p><ul>
+<li>Optional pronunciation parsing using [brackets]</li>
+<li>Flexible separators (-&gt; or &gt;)</li>
+<li>Input normalization for reliable comparison</li>
+</ul>
+<p>HU: Ez a forrásfájl tartalmazza a segédfüggvények implementációját, amelyek:</p><ul>
+<li>Sztringek kisbetűssé alakítására szolgálnak</li>
+<li>Felesleges szóközök eltávolítását végzik (trim)</li>
+<li>Felhasználói válaszok összehasonlítását több lehetséges helyes válasszal</li>
+<li>Szópárok betöltését végzik .data fájlokból</li>
+</ul>
+<p>A modul kifejezetten parancssoros (CLI) kvíz alkalmazásokhoz készült, ahol az angol-magyar szópárok fájlokban vannak tárolva.</p>
+<p>Támogatja továbbá:</p><ul>
+<li>Kiejtés feldolgozását [zárójelek] között</li>
+<li>Rugalmas elválasztókat (-&gt; vagy &gt;)</li>
+<li>Bevitel normalizálást a pontos összehasonlításhoz </li>
+</ul>
+
+<p class="definition">Definíció a(z) <a class="el" href="data_file_reading_8cpp_source.html">dataFileReading.cpp</a> fájlban.</p>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Típusdefiníciók dokumentációja</h2>
+<a id="aca454f84dd198a937af6499dd758aa3d" name="aca454f84dd198a937af6499dd758aa3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca454f84dd198a937af6499dd758aa3d">&#9670;&#160;</a></span>string</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#aca454f84dd198a937af6499dd758aa3d">string</a> = std::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="data_file_reading_8cpp_source.html">dataFileReading.cpp</a> fájl <a class="el" href="data_file_reading_8cpp_source.html#l00055">55</a>. sorában.</p>
+
+</div>
+</div>
+<a id="aa196ecb6a4e4c1ce42f824945b3648a5" name="aa196ecb6a4e4c1ce42f824945b3648a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa196ecb6a4e4c1ce42f824945b3648a5">&#9670;&#160;</a></span>stringstream</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#aa196ecb6a4e4c1ce42f824945b3648a5">stringstream</a> = std::stringstream</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="data_file_reading_8cpp_source.html">dataFileReading.cpp</a> fájl <a class="el" href="data_file_reading_8cpp_source.html#l00056">56</a>. sorában.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Függvények dokumentációja</h2>
+<a id="a32899c79969bcb75b3554309c4b47551" name="a32899c79969bcb75b3554309c4b47551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32899c79969bcb75b3554309c4b47551">&#9670;&#160;</a></span>checkMultipleAnswers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool checkMultipleAnswers </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>userAnswer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>correctAnswersString</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="data_file_reading_8cpp_source.html">dataFileReading.cpp</a> fájl <a class="el" href="data_file_reading_8cpp_source.html#l00109">109</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                                                                              {</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordtype">string</span> cleanedUserAnswer = <a class="code hl_function" href="general_functions_8cpp.html#aaa4eecca2f1487e849e80d4729461f21">cleanString</a>(userAnswer);</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_typedef" href="#aa196ecb6a4e4c1ce42f824945b3648a5">stringstream</a> ss(<a class="code hl_function" href="#afd5fc4d38b256ea035b3691948929dea">trim</a>(correctAnswersString));</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordtype">string</span> slice;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">while</span> (getline(ss, slice, <span class="charliteral">&#39;,&#39;</span>)) {</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="general_functions_8cpp.html#aaa4eecca2f1487e849e80d4729461f21">cleanString</a>(slice) == cleanedUserAnswer) {</div>
+<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+<div class="line"><span class="lineno">  118</span>    }</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  120</span>}</div>
+<div class="ttc" id="adata_file_reading_8cpp_html_aa196ecb6a4e4c1ce42f824945b3648a5"><div class="ttname"><a href="#aa196ecb6a4e4c1ce42f824945b3648a5">stringstream</a></div><div class="ttdeci">std::stringstream stringstream</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8cpp_source.html#l00056">dataFileReading.cpp:56</a></div></div>
+<div class="ttc" id="adata_file_reading_8cpp_html_afd5fc4d38b256ea035b3691948929dea"><div class="ttname"><a href="#afd5fc4d38b256ea035b3691948929dea">trim</a></div><div class="ttdeci">string trim(const std::string &amp;str)</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8cpp_source.html#l00095">dataFileReading.cpp:95</a></div></div>
+<div class="ttc" id="ageneral_functions_8cpp_html_aaa4eecca2f1487e849e80d4729461f21"><div class="ttname"><a href="general_functions_8cpp.html#aaa4eecca2f1487e849e80d4729461f21">cleanString</a></div><div class="ttdeci">std::string cleanString(const std::string &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00235">generalFunctions.cpp:235</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3cfb7fe89e2439f359478918a717a755" name="a3cfb7fe89e2439f359478918a717a755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cfb7fe89e2439f359478918a717a755">&#9670;&#160;</a></span>loadWords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="struct_word_pair.html">WordPair</a> &gt; loadWords </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="data_file_reading_8cpp_source.html">dataFileReading.cpp</a> fájl <a class="el" href="data_file_reading_8cpp_source.html#l00124">124</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>                                                      {</div>
+<div class="line"><span class="lineno">  125</span>    vector&lt;WordPair&gt; words;</div>
+<div class="line"><span class="lineno">  126</span>    ifstream file(filename);</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordtype">string</span> line;</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span> (!file.is_open()) {</div>
+<div class="line"><span class="lineno">  130</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_w__word_pair.html">W_wordPair</a> &amp;wWordPair = <a class="code hl_variable" href="translations_8cpp.html#a20eaa0b8a2d6a1c5607b27cffbc8731b">wordPairErrorTranslations</a> [<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a>)];</div>
+<div class="line"><span class="lineno">  131</span>        <a class="code hl_function" href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a>(<span class="stringliteral">&quot;loadWords&quot;</span>, wWordPair.<a class="code hl_variable" href="struct_w__word_pair.html#a4ccfcea9eb6bff0ebee0867f7062dca3">ErrorOpenedFile</a>);</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>        std:: cerr &lt;&lt; wWordPair.<a class="code hl_variable" href="struct_w__word_pair.html#a4ccfcea9eb6bff0ebee0867f7062dca3">ErrorOpenedFile</a> &lt;&lt;<span class="stringliteral">&quot; &quot;</span>&lt;&lt;filename &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">return</span> words;</div>
+<div class="line"><span class="lineno">  135</span>    }</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">while</span> (getline(file, line)) {</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">if</span> (line.empty()) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>        <a class="code hl_struct" href="struct_word_pair.html">WordPair</a> currentWord;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>        <span class="comment">//Megkeresük a kiejtést ha van [ ] között</span></div>
+<div class="line"><span class="lineno">  142</span>        <span class="comment">//Find the pronunciation if it is between [ ]</span></div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordtype">size_t</span> openBracket = line.find(<span class="charliteral">&#39;[&#39;</span>);</div>
+<div class="line"><span class="lineno">  144</span>        <span class="keywordtype">size_t</span> closeBracket = line.find(<span class="charliteral">&#39;]&#39;</span> , openBracket);</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">if</span> (openBracket != string::npos &amp;&amp; closeBracket != string::npos) {</div>
+<div class="line"><span class="lineno">  147</span>            currentWord.<a class="code hl_variable" href="struct_word_pair.html#a27f5134303a31554eeeb660531b92b00">pronunciation</a> = line.substr(openBracket + 1, closeBracket - openBracket - 1);</div>
+<div class="line"><span class="lineno">  148</span>            currentWord.<a class="code hl_variable" href="struct_word_pair.html#a27f5134303a31554eeeb660531b92b00">pronunciation</a> = <a class="code hl_function" href="#afd5fc4d38b256ea035b3691948929dea">trim</a>(currentWord.<a class="code hl_variable" href="struct_word_pair.html#a27f5134303a31554eeeb660531b92b00">pronunciation</a>);</div>
+<div class="line"><span class="lineno">  149</span>            line = line.substr(0, openBracket);</div>
+<div class="line"><span class="lineno">  150</span>        }</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>        <span class="comment">//Megkeresük az elválasztó vonalat</span></div>
+<div class="line"><span class="lineno">  153</span>        <span class="comment">//Find the dividing line</span></div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordtype">size_t</span> separatorPos = line.find(<span class="stringliteral">&quot;-&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>        <span class="comment">// 2 karaktert ugrunk mert&quot;-&gt;&quot; ez 2 karakter és ez után olvasunk</span></div>
+<div class="line"><span class="lineno">  157</span>        <span class="comment">// we skip 2 characters because &quot;-&gt;&quot; is 2 characters and we read after that</span></div>
+<div class="line"><span class="lineno">  158</span>        <span class="keywordtype">int</span> skipChars = 2;</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>        <span class="comment">// Ha nincs meg megkeressük ezt &#39;&gt;&#39; ez &quot;-&gt;&quot; helyett</span></div>
+<div class="line"><span class="lineno">  161</span>        <span class="comment">// If it doesn&#39;t exist, we&#39;ll look for this &#39;&gt;&#39; instead of &quot;-&gt;&quot;</span></div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">if</span> (separatorPos == string::npos) {</div>
+<div class="line"><span class="lineno">  163</span>            separatorPos = line.find(<span class="charliteral">&#39;&gt;&#39;</span>);</div>
+<div class="line"><span class="lineno">  164</span>            skipChars = 1; <span class="comment">//itt csak egyet ugrunk || just one jumping here</span></div>
+<div class="line"><span class="lineno">  165</span>        }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">if</span> (separatorPos != string::npos) {</div>
+<div class="line"><span class="lineno">  168</span>            currentWord.<a class="code hl_variable" href="struct_word_pair.html#a887ea26e87e3909ccfd367a64d8bb5bf">targetLangMeaning</a> = line.substr(0, separatorPos);</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>            <span class="keywordtype">size_t</span> hungarianStart = separatorPos + skipChars;</div>
+<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">if</span> (hungarianStart &lt; line.length()) {</div>
+<div class="line"><span class="lineno">  172</span>                currentWord.<a class="code hl_variable" href="struct_word_pair.html#aa1ce412316d7e1306f02578987315bc1">motherLangMeaning</a> = line.substr(hungarianStart);</div>
+<div class="line"><span class="lineno">  173</span>    }</div>
+<div class="line"><span class="lineno">  174</span>            <span class="comment">//Trim</span></div>
+<div class="line"><span class="lineno">  175</span>            currentWord.<a class="code hl_variable" href="struct_word_pair.html#a887ea26e87e3909ccfd367a64d8bb5bf">targetLangMeaning</a> = <a class="code hl_function" href="#afd5fc4d38b256ea035b3691948929dea">trim</a>(currentWord.<a class="code hl_variable" href="struct_word_pair.html#a887ea26e87e3909ccfd367a64d8bb5bf">targetLangMeaning</a>);</div>
+<div class="line"><span class="lineno">  176</span>            currentWord.<a class="code hl_variable" href="struct_word_pair.html#aa1ce412316d7e1306f02578987315bc1">motherLangMeaning</a> = <a class="code hl_function" href="#afd5fc4d38b256ea035b3691948929dea">trim</a>(currentWord.<a class="code hl_variable" href="struct_word_pair.html#aa1ce412316d7e1306f02578987315bc1">motherLangMeaning</a>);</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>            <span class="comment">// Ha az angol szó és a magyar szó se üres akkor rakjuk be a vektorba</span></div>
+<div class="line"><span class="lineno">  179</span>            <span class="comment">// If neither the English word nor the Hungarian word is empty, insert it into the vector</span></div>
+<div class="line"><span class="lineno">  180</span>            <span class="keywordflow">if</span> (!currentWord.<a class="code hl_variable" href="struct_word_pair.html#a887ea26e87e3909ccfd367a64d8bb5bf">targetLangMeaning</a>.empty() &amp;&amp; !currentWord.<a class="code hl_variable" href="struct_word_pair.html#aa1ce412316d7e1306f02578987315bc1">motherLangMeaning</a>.empty()) {</div>
+<div class="line"><span class="lineno">  181</span>                words.push_back(currentWord);</div>
+<div class="line"><span class="lineno">  182</span>            }</div>
+<div class="line"><span class="lineno">  183</span>        }</div>
+<div class="line"><span class="lineno">  184</span>    }</div>
+<div class="line"><span class="lineno">  185</span>    file.close();</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">return</span> words;</div>
+<div class="line"><span class="lineno">  187</span>}</div>
+<div class="ttc" id="ageneral_functions_8cpp_html_a22081226b6752d2380ca0c167fc18a28"><div class="ttname"><a href="general_functions_8cpp.html#a22081226b6752d2380ca0c167fc18a28">logError</a></div><div class="ttdeci">void logError(const std::string &amp;functionName, const std::string &amp;errorMessage)</div><div class="ttdef"><b>Definition</b> <a href="general_functions_8cpp_source.html#l00112">generalFunctions.cpp:112</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a8ccf5837162e6f87422bb440bf65f193"><div class="ttname"><a href="main_8cpp.html#a8ccf5837162e6f87422bb440bf65f193">programUiLanguage</a></div><div class="ttdeci">Language programUiLanguage</div><div class="ttdoc">ENG: Current UI language (HU: A jelenlegi felhasználói felületnek a nyelve)</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00026">main.cpp:26</a></div></div>
+<div class="ttc" id="astruct_w__word_pair_html"><div class="ttname"><a href="struct_w__word_pair.html">W_wordPair</a></div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00107">translations.h:108</a></div></div>
+<div class="ttc" id="astruct_w__word_pair_html_a4ccfcea9eb6bff0ebee0867f7062dca3"><div class="ttname"><a href="struct_w__word_pair.html#a4ccfcea9eb6bff0ebee0867f7062dca3">W_wordPair::ErrorOpenedFile</a></div><div class="ttdeci">std::string ErrorOpenedFile</div><div class="ttdef"><b>Definition</b> <a href="translations_8h_source.html#l00109">translations.h:109</a></div></div>
+<div class="ttc" id="astruct_word_pair_html"><div class="ttname"><a href="struct_word_pair.html">WordPair</a></div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8h_source.html#l00030">dataFileReading.h:30</a></div></div>
+<div class="ttc" id="astruct_word_pair_html_a27f5134303a31554eeeb660531b92b00"><div class="ttname"><a href="struct_word_pair.html#a27f5134303a31554eeeb660531b92b00">WordPair::pronunciation</a></div><div class="ttdeci">std::string pronunciation</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8h_source.html#l00033">dataFileReading.h:33</a></div></div>
+<div class="ttc" id="astruct_word_pair_html_a887ea26e87e3909ccfd367a64d8bb5bf"><div class="ttname"><a href="struct_word_pair.html#a887ea26e87e3909ccfd367a64d8bb5bf">WordPair::targetLangMeaning</a></div><div class="ttdeci">std::string targetLangMeaning</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8h_source.html#l00031">dataFileReading.h:31</a></div></div>
+<div class="ttc" id="astruct_word_pair_html_aa1ce412316d7e1306f02578987315bc1"><div class="ttname"><a href="struct_word_pair.html#aa1ce412316d7e1306f02578987315bc1">WordPair::motherLangMeaning</a></div><div class="ttdeci">std::string motherLangMeaning</div><div class="ttdef"><b>Definition</b> <a href="data_file_reading_8h_source.html#l00032">dataFileReading.h:32</a></div></div>
+<div class="ttc" id="atranslations_8cpp_html_a20eaa0b8a2d6a1c5607b27cffbc8731b"><div class="ttname"><a href="translations_8cpp.html#a20eaa0b8a2d6a1c5607b27cffbc8731b">wordPairErrorTranslations</a></div><div class="ttdeci">const std::vector&lt; W_wordPair &gt; wordPairErrorTranslations</div><div class="ttdef"><b>Definition</b> <a href="translations_8cpp_source.html#l06713">translations.cpp:6713</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab03b95b2112457acce40cd613fcd8134" name="ab03b95b2112457acce40cd613fcd8134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03b95b2112457acce40cd613fcd8134">&#9670;&#160;</a></span>toLowerCase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aca454f84dd198a937af6499dd758aa3d">string</a> toLowerCase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aca454f84dd198a937af6499dd758aa3d">string</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="data_file_reading_8cpp_source.html">dataFileReading.cpp</a> fájl <a class="el" href="data_file_reading_8cpp_source.html#l00067">67</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>                             {</div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment">//Nagybetűsítésre ::toupper a tolower helyett</span></div>
+<div class="line"><span class="lineno">   69</span>    transform(s.begin(),s.end(),s.begin(), ::tolower);</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> s;</div>
+<div class="line"><span class="lineno">   71</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd5fc4d38b256ea035b3691948929dea" name="afd5fc4d38b256ea035b3691948929dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd5fc4d38b256ea035b3691948929dea">&#9670;&#160;</a></span>trim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aca454f84dd198a937af6499dd758aa3d">string</a> trim </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#aca454f84dd198a937af6499dd758aa3d">std::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definíció a(z) <a class="el" href="data_file_reading_8cpp_source.html">dataFileReading.cpp</a> fájl <a class="el" href="data_file_reading_8cpp_source.html#l00095">95</a>. sorában.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>                                  {</div>
+<div class="line"><span class="lineno">   96</span>    <span class="comment">//megkeressük az első karaktert ami nem szóköz</span></div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">size_t</span> first = str.find_first_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>);</div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">//std::string::npos az jelenti nincs megtalálva</span></div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (first == std::string::npos) {</div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">return</span>(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">  101</span>    }<span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordtype">size_t</span> last = str.find_last_not_of(<span class="stringliteral">&quot; \t\n\r&quot;</span>);</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span> str.substr(first, (last - first + 1)); </div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="line"><span class="lineno">  105</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_f55099b0de92dfb47c7a836a4dc87b8d.html">FileIO</a></li><li class="navelem"><a href="data_file_reading_8cpp.html">dataFileReading.cpp</a></li>
+    <li class="footer">Készítette <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

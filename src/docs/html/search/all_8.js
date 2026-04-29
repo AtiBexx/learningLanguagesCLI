@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['ignoreaccents_0',['ignoreAccents',['../settings_8cpp.html#a206de5c28dc8e06b2da696e99fca34f8',1,'ignoreAccents:&#160;settings.cpp'],['../translations_8h.html#a206de5c28dc8e06b2da696e99fca34f8',1,'ignoreAccents:&#160;settings.cpp']]],
+  ['inputfilename_1',['inputFileName',['../struct_create_vocab_file.html#a4a6a50916e30a9d5c29c54a8b87a30e8',1,'CreateVocabFile']]],
+  ['instruction1_2',['instruction1',['../struct_explanation_strings.html#aef5fa901204ff0db24dfd6fdba8dca3e',1,'ExplanationStrings']]],
+  ['instruction2_3',['instruction2',['../struct_explanation_strings.html#a7701f9a4df7dae0057001bd00a91d8d8',1,'ExplanationStrings']]],
+  ['instruction3_4',['instruction3',['../struct_explanation_strings.html#a7368580ccd48a6f52df13bf13176493d',1,'ExplanationStrings']]],
+  ['instruction4_5',['instruction4',['../struct_explanation_strings.html#a2b26076ca374472ea5caed9a585ef1e0',1,'ExplanationStrings']]],
+  ['instruction5_6',['instruction5',['../struct_explanation_strings.html#a83c470c45ad72039fe4e5049c6d283b9',1,'ExplanationStrings']]],
+  ['instruction6_7',['instruction6',['../struct_explanation_strings.html#a4f954c53110d65a48ff203a6154be9a4',1,'ExplanationStrings']]],
+  ['instruction7_8',['instruction7',['../struct_explanation_strings.html#a73488e06fb8e3f67079955c8dd0582cc',1,'ExplanationStrings']]],
+  ['instruction8_9',['instruction8',['../struct_explanation_strings.html#a9f25cdfd6d49804a1bfc0ea327be6b46',1,'ExplanationStrings']]],
+  ['invalidinput_10',['InvalidInput',['../struct_invalid_input.html',1,'']]],
+  ['invalidinput_11',['invalidInput',['../struct_invalid_input.html#a09db590e1551fc86d057f8dad8380a68',1,'InvalidInput']]],
+  ['invalidinput2_12',['InvalidInput2',['../struct_invalid_input2.html',1,'']]],
+  ['invalidinput2_13',['invalidInput2',['../struct_invalid_input2.html#aecf71e70405ae9bcfd523f3b45e2a933',1,'InvalidInput2']]],
+  ['invalidinputtranslations_14',['invalidInputTranslations',['../translations_8cpp.html#a5830946e01dea29a71e466dcf8d9ac6c',1,'invalidInputTranslations:&#160;translations.cpp'],['../translations_8h.html#a5830946e01dea29a71e466dcf8d9ac6c',1,'invalidInputTranslations:&#160;translations.cpp']]],
+  ['invalidinputtranslations2_15',['invalidInputTranslations2',['../translations_8cpp.html#a4bba14fc2ab54a6e1305a2b386fc93b3',1,'invalidInputTranslations2:&#160;translations.cpp'],['../translations_8h.html#a4bba14fc2ab54a6e1305a2b386fc93b3',1,'invalidInputTranslations2:&#160;translations.cpp']]],
+  ['isdirectory_16',['isDirectory',['../struct_file_entry.html#ae332c3aa36263f1caff928bcb623ad77',1,'FileEntry::isDirectory'],['../struct_list_and_selected_file.html#a691af6b005fdd772012c481effaf02ab',1,'ListAndSelectedFile::isDirectory'],['../cli_file_reading_8cpp.html#a9dae8bc35e1ef8ddb6c3f721eec1d515',1,'isDirectory(const std::string &amp;path):&#160;cliFileReading.cpp'],['../cli_file_reading_8h.html#a9dae8bc35e1ef8ddb6c3f721eec1d515',1,'isDirectory(const std::string &amp;path):&#160;cliFileReading.cpp']]],
+  ['ispathsafe_17',['isPathSafe',['../cli_file_reading_8cpp.html#adc0b612a0fa4140589975e69beea8018',1,'isPathSafe(const std::string &amp;path):&#160;cliFileReading.cpp'],['../cli_file_reading_8h.html#adc0b612a0fa4140589975e69beea8018',1,'isPathSafe(const std::string &amp;path):&#160;cliFileReading.cpp']]],
+  ['italian_18',['ITALIAN',['../translations_8h.html#a315ca917ad583797f709ea477dd28705ab6a3ee75be7c094822592cdaf15d7451',1,'translations.h']]],
+  ['italian_19',['Italian',['../struct_target_language_name_set.html#a1dd9552abf5a6250cb758bbc64d67b6f',1,'TargetLanguageNameSet::Italian'],['../structtarget_language_list.html#aa569f531d28d7726b05bb9f70635f032',1,'targetLanguageList::Italian']]]
+];
