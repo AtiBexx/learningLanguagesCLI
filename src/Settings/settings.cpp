@@ -31,6 +31,10 @@ std:: string currentBG;
 bool useSound = false;
 bool ignoreAccents = false;
 bool oneRoundQuiz = false;
+bool showHelp = false;
+bool helperUsed = false;
+size_t resumeIndex = 0;
+
 
 
 // fő beállítási menü
@@ -300,6 +304,9 @@ std::ofstream outFile("settings.cfg"); //include <fstream>
         outFile << useSound << "\n";
         outFile << ignoreAccents << "\n";
         outFile << oneRoundQuiz << "\n";
+        outFile << resumeIndex << "\n";
+        outFile << showHelp << "\n";
+        outFile << helperUsed << "\n";
         outFile.close();
     }
     else
@@ -317,9 +324,15 @@ bool loadSettings() {
     if (inFile.is_open()) {
         int lang , bgCode, tLang, mLang;
         bool IACode, color, oneRoundCode;
+        size_t loadedResumeIndex;
+        bool loadedShowHelp;
+        bool loadedHelperUsed;
 
         currentBG =""; //colors::RESET; // Vagy ""
-        if (inFile >> lang >> mLang >> tLang >> color >> bgCode >> useSound >> IACode >> oneRoundCode) {
+        if (inFile >> lang >> mLang >> tLang >> color >> bgCode
+            >> useSound >> IACode >> oneRoundCode >> loadedResumeIndex
+            >> loadedShowHelp >> loadedHelperUsed)
+        {
             programUiLanguage = static_cast<Language>(lang);
             motherLanguage = static_cast<Language>(mLang);
             targetLanguage = static_cast<Language>(tLang);
@@ -327,6 +340,9 @@ bool loadSettings() {
             currentBG_Code = bgCode;
             ignoreAccents = IACode;
             oneRoundQuiz = oneRoundCode;
+            resumeIndex = loadedResumeIndex;
+            showHelp = loadedShowHelp;
+            helperUsed = loadedHelperUsed;
 
             //visszaállítjuk a számot színné
             //reset the number to color
@@ -338,6 +354,10 @@ bool loadSettings() {
             else if (currentBG_Code == 6) currentBG = colors::BG_BLUE;
             else if (currentBG_Code == 7) currentBG = colors::BG_WHITE;
             else if (currentBG_Code == 8) currentBG = colors::BG_GREY;
+        }else {
+            resumeIndex = 0;
+            showHelp = false;
+            helperUsed = false;
 
         }
         inFile.close();
@@ -745,6 +765,8 @@ void oneRoundQuizToggle() {
         }
     }
 }
+
+
 
 
 

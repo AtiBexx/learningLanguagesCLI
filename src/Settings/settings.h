@@ -36,11 +36,11 @@ void soundOn(); //Hang be/ki || Sound on/off
 void accentsToggle(); // Be- vagy kikapcsolja az ékezetek kezelését || // Turns accent handling on or off
 void oneRoundQuizToggle(); // Egy körös kvíz be és ki kapcsolása || Toggle one round quiz on and off
 
-
 //globális változó || global state
 extern bool useSound; // a hang ki be kapcsolásához || to turn the sound on or off
-
-
+extern size_t resumeIndex; // A folytatási index-hez a MistakExercise-ban || For the continuation index in MistakExercise
+extern bool showHelp;    //
+extern bool helperUsed;  //
 
 
 #endif //ENGLISH_SETTINGS_H

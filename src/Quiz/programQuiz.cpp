@@ -10,6 +10,7 @@
 #include <vector>
 
 #include "../Common/generalFunctions.h"
+#include "newInput/platformInput.h"
 #include "Settings/colors.h"
 #include "Settings/settings.h"
 
@@ -53,6 +54,7 @@ void startQuiz (const std::vector<WordPair>& words)
     const HaveFinished &haveFinished = haveFinishedTranslations[static_cast<int>(programUiLanguage)];
     const QuizExplanation &quizExplanation = quizExplanationTranslations[static_cast<int>(programUiLanguage)];
 
+    loadSettings();
     // Ha üres a fájl
     // If file is empty
     if (words.empty()) {
@@ -69,10 +71,6 @@ void startQuiz (const std::vector<WordPair>& words)
     } else {
         totalQuestions = words.size() * 2;
     }
-
-    // Globális változó a kvízen belül a súgó állapotának
-    // Global variable within the quiz to store the help status
-    bool showHelp = false;
 
     for (const WordPair& word : words)
     {
@@ -91,24 +89,40 @@ void startQuiz (const std::vector<WordPair>& words)
             if (showHelp) {
                 std::cout << "CheatSheet: " << colors::GREY << word.targetLangMeaning << colors::RESET << std::endl;
             }
+            // Használjuk a bilentyűzetfigyelő függvényt
+            // Use the keyboard input checker function
+            InputResult inputResult = readLineWithHotkey(getLanguageNameByIndex(static_cast<int>(targetLanguage)) +": ");
 
-            std::cout <<  getLanguageNameByIndex(static_cast<int>(targetLanguage)) << ": ";  // "Angolul? "
+            // ha, a hotkey volt (Ctrl+Y)
+            // if was hotkey (Ctrl + Y)
+            if (inputResult.hotkeyTriggered)
+            {
+                showHelp = !showHelp;
+                if (showHelp) helperUsed = true;
+                saveSettings();
+                continue;
+            }
 
-            std::string answer;
-            std::getline(std::cin, answer);
+            std::string answer = inputResult.text;// A válasz || The Answer
+            std::string lowerAnswer = toLowerCase(trim(answer));
 
-            if (answer == "exit") return;
+
+            if (lowerAnswer == "exit" || lowerAnswer == "e" || inputResult.exitTriggered) return;
 
             // TOGGLE SÚGÓ BEKAPCSOLÁS
             // TOGGLE HELP ENABLE
-            if (answer == "h" || answer == "help") {
+            if (lowerAnswer == "h" || lowerAnswer == "help") {
                 showHelp = true;
+                helperUsed = true;
+                saveSettings();
                 continue; // Újraindul a kör, és mivel showHelp=true, kiírja a súgót
             }
             // TOGGLE SÚGÓ KIKAPCSOLÁS
             // TOGGLE HELP OFF
-            if (answer == "h off" || answer == "help off") {
+            if (lowerAnswer == "h off" || lowerAnswer == "help off") {
                 showHelp = false;
+                helperUsed = false;
+                saveSettings();
                 continue; // Újraindul a kör, és már nem írja ki
             }
 
@@ -174,23 +188,36 @@ void startQuiz (const std::vector<WordPair>& words)
                     std::cout << "CheatSheet: " << colors::GREY << word.motherLangMeaning << colors::RESET << std::endl;
                 }
 
-                std::cout <<  getLanguageNameByIndex(static_cast<int>(motherLanguage)) << ": ";  // "Magyarul? "
+                InputResult inputResult = readLineWithHotkey(getLanguageNameByIndex(static_cast<int>(motherLanguage)) + ": ");
 
-                std::string answer;
-                std::getline(std::cin, answer);
+                // Ha hotkey volt (Ctrl+Y)
+                if (inputResult.hotkeyTriggered) {
+                    showHelp = !showHelp; // Toggle a súgót
+                    if (showHelp) helperUsed = true;
+                    saveSettings();
+                    continue; // Újraindul a kör az új súgó állapottal
+                }
 
-                if (answer == "exit") return;
+                std::string answer = inputResult.text; // A válasz || The Answer
+                std::string lowerAnswer = toLowerCase(trim(answer));
+
+
+                if (lowerAnswer == "exit" || lowerAnswer == "e" || inputResult.exitTriggered) return;
 
                 // TOGGLE SÚGÓ BEKAPCSOLÁS
                 // TOGGLE HELP ENABLE
-                if (answer == "h" || answer == "help") {
+                if (lowerAnswer == "h" || lowerAnswer == "help") {
                     showHelp = true;
+                    helperUsed = true;
+                    saveSettings();
                     continue;
                 }
                 // TOGGLE SÚGÓ KIKAPCSOLÁS
                 // TOGGLE HELP DISABLE
-                if (answer == "h off" || answer == "help off") {
+                if (lowerAnswer == "h off" || lowerAnswer == "help off") {
                     showHelp = false;
+                    helperUsed = false;
+                    saveSettings();
                     continue;
                 }
 
