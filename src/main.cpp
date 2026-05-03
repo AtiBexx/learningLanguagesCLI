@@ -32,6 +32,23 @@ Language motherLanguage = Language::HUNGARIAN;
 //A felhasználó által éppen tanult nyelvet tárolja.
 Language targetLanguage = Language::ENGLISH;
 
+/**
+ * @brief Sets up the console environment for proper display and interaction. || Konzol környezet beállítása a megfelelő megjelenítéshez és interakcióhoz.
+ *
+ * @details
+ * EN:
+ * This function initializes the Windows console to support UTF-8 character encoding
+ * and ANSI escape sequences. This ensures that special characters (like Hungarian accents)
+ * are displayed correctly, and screen clearing commands function as expected.
+ * This setup is only applied on Windows platforms.
+ *
+ * HU:
+ * Ez a függvény inicializálja a Windows konzolt az UTF-8 karakterkódolás
+ * és az ANSI escape szekvenciák támogatására. Ez biztosítja, hogy a speciális karakterek
+ * (például a magyar ékezetek) helyesen jelenjenek meg, és a képernyőtörlési parancsok
+ * megfelelően működjenek. Ez a beállítás csak Windows platformokon alkalmazódik.
+ */
+
 void setupConsole() {
 #ifdef _WIN32
     // A Kódlap beállítása az ékezetekre windowson
@@ -53,6 +70,22 @@ void setupConsole() {
     }
 #endif
 }
+/**
+ * @brief Main entry point of the application. || Az alkalmazás fő belépési pontja.
+ *
+ * @details
+ * EN:
+ * This function initializes the console, loads or creates application settings,
+ * and then starts the main menu loop.
+ *
+ * HU:
+ * Ez a függvény inicializálja a konzolt, betölti vagy létrehozza az alkalmazás beállításait,
+ * majd elindítja a főmenü ciklusát.
+ *
+ * @param argc The number of command-line arguments. || A parancssori argumentumok száma.
+ * @param argv An array of command-line argument strings. || Parancssori argumentumok sztringjeinek tömbje.
+ * @return 0 if the program exits successfully. || 0, ha a program sikeresen kilép.
+ */
 
 int main(int argc, char *argv[]) {
 

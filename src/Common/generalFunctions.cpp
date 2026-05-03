@@ -32,6 +32,20 @@
 #include "settings.h"
 #include "Settings/colors.h"
 
+/**
+ * @brief Displays an explanation of the program's functionality. || Megjeleníti a program működésének magyarázatát.
+ *
+ * @details
+ * EN:
+ * This function clears the screen and prints a series of instructions and descriptions
+ * about how to use the application, its features, and basic commands.
+ * It then waits for user input before returning.
+ *
+ * HU:
+ * Ez a függvény letörli a képernyőt, és kiír egy sor utasítást és leírást
+ * az alkalmazás használatáról, funkcióiról és alapvető parancsairól.
+ * Ezután felhasználói bevitelre vár, mielőtt visszatérne.
+ */
 // a program leírása/magyarázata
 // program explanation
 void explanation() {
@@ -53,6 +67,18 @@ void explanation() {
     waitToEnter();
 }
 
+/**
+ * @brief Pauses program execution until the user presses Enter. || Szünetelteti a program futását, amíg a felhasználó Entert nem nyom.
+ *
+ * @details
+ * EN:
+ * This function displays a prompt asking the user to press Enter to continue.
+ * It first clears any pending input in the buffer to ensure a fresh read.
+ *
+ * HU:
+ * Ez a függvény egy üzenetet jelenít meg, amely arra kéri a felhasználót, hogy nyomja meg az Entert a folytatáshoz.
+ * Először törli a pufferben lévő függőben lévő bemenetet, hogy biztosítsa a friss olvasást.
+ */
 // várunk egy billentyűre (az enterre)
 // wait for a keystroke (enter)
 void waitToEnter()
@@ -63,6 +89,18 @@ void waitToEnter()
     std::cin.get();
 }
 
+/**
+ * @brief Displays an exit message and waits for user confirmation. || Kilépési üzenetet jelenít meg és felhasználói megerősítésre vár.
+ *
+ * @details
+ * EN:
+ * Clears the screen, displays a farewell message, and then waits for the user
+ * to press Enter before the program fully terminates.
+ *
+ * HU:
+ * Letörli a képernyőt, búcsúüzenetet jelenít meg, majd megvárja, hogy a felhasználó
+ * Entert nyomjon, mielőtt a program teljesen leállna.
+ */
 // Kilépünk az alkalmazásból
 // Exit the application
 void exiting() {
@@ -76,6 +114,20 @@ void exiting() {
     std::cin.get();
 }
 
+/**
+ * @brief Clears the console screen and applies background color. || Letörli a konzol képernyőjét és háttérszínt alkalmaz.
+ *
+ * @details
+ * EN:
+ * This function uses ANSI escape codes to clear the entire console display,
+ * move the cursor to the home position, and then applies the currently selected
+ * background color if colors are enabled.
+ *
+ * HU:
+ * Ez a függvény ANSI escape kódokat használ a teljes konzol kijelzőjének törlésére,
+ * a kurzor alaphelyzetbe állítására, majd alkalmazza az aktuálisan kiválasztott
+ * háttérszínt, ha a színek engedélyezve vannak.
+ */
 // képernyötőrlés || screen wipe
 void screenWipe() {
     // Szín beállítása (ha kell)
@@ -106,11 +158,41 @@ void screenWipe() {
     }
 }*/
 
+/**
+ * @brief Clears the input buffer. || Törli a bemeneti puffert.
+ *
+ * @details
+ * EN:
+ * This function discards all characters currently in the standard input buffer
+ * up to and including the next newline character. This is used to prevent
+ * unwanted input from affecting subsequent reads.
+ *
+ * HU:
+ * Ez a függvény eldobja az összes karaktert, amely jelenleg a szabványos bemeneti pufferben van,
+ * egészen a következő újsor karakterig bezárólag. Ezt arra használják, hogy megakadályozzák
+ * a nem kívánt bemenet hatását a későbbi olvasásokra.
+ */
 // Letöröljük a bent maradt puffert ha szükséges
 // Clear the remaining buffer if necessary it
 void pufferDelete() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
+
+/**
+ * @brief Logs an error message to a file. || Hibaüzenetet naplóz egy fájlba.
+ *
+ * @details
+ * EN:
+ * Appends a timestamped error message to "error.log". This helps in debugging
+ * and tracking unexpected issues during program execution.
+ *
+ * HU:
+ * Időbélyeggel ellátott hibaüzenetet fűz az "error.log" fájlhoz. Ez segít a hibakeresésben
+ * és a váratlan problémák nyomon követésében a program futása során.
+ *
+ * @param functionName The name of the function where the error occurred. || Annak a függvénynek a neve, ahol a hiba történt.
+ * @param errorMessage The detailed error message. || A részletes hibaüzenet.
+ */
 // rendszerhibák mentése
 // log errors save
 void logError(const std::string& functionName, const std::string& errorMessage) {
@@ -130,6 +212,23 @@ void logError(const std::string& functionName, const std::string& errorMessage) 
         logFile.close();
     }
 }
+
+/**
+ * @brief Logs a word pair that was answered incorrectly to a mistake file. || Hibásan megválaszolt szópárt naplóz egy hiba fájlba.
+ *
+ * @details
+ * EN:
+ * This function creates a "data/mistakes" directory if it doesn't exist,
+ * and appends the given WordPair (including pronunciation if available)
+ * to "data/mistakes/mistakes.data".
+ *
+ * HU:
+ * Ez a függvény létrehoz egy "data/mistakes" könyvtárat, ha nem létezik,
+ * és hozzáfűzi a megadott WordPair-t (beleértve a kiejtést is, ha elérhető)
+ * a "data/mistakes/mistakes.data" fájlhoz.
+ *
+ * @param word The WordPair to be logged as a mistake. || A hibaként naplózandó WordPair.
+ */
 // A hibák mentése fájlba
 // Save errors to a file
 void logMistakeWriteFile(const WordPair& word)
@@ -163,6 +262,23 @@ void logMistakeWriteFile(const WordPair& word)
         }
     }
 
+/**
+ * @brief Plays a system beep sound. || Rendszer hangjelzést játszik le.
+ *
+ * @details
+ * EN:
+ * Plays a beep sound with a specified frequency and duration on Windows.
+ * On other platforms (Linux/macOS), it outputs the ANSI bell character.
+ * The sound is only played if the global 'useSound' setting is true.
+ *
+ * HU:
+ * Hangjelzést játszik le megadott frekvenciával és időtartammal Windows-on.
+ * Más platformokon (Linux/macOS) az ANSI csengő karaktert adja ki.
+ * A hang csak akkor játszódik le, ha a globális 'useSound' beállítás igaz.
+ *
+ * @param frequency The frequency of the beep in Hz (Windows only). || A hangjelzés frekvenciája Hz-ben (csak Windows).
+ * @param duration The duration of the beep in milliseconds (Windows only). || A hangjelzés időtartama milliszekundumban (csak Windows).
+ */
 // a Hang
 // the sound
 void playBeep(int frequency , int duration ) {
@@ -178,6 +294,21 @@ void playBeep(int frequency , int duration ) {
 #endif
 }
 
+/**
+ * @brief Removes punctuation from a string. || Eltávolítja az írásjeleket egy sztringből.
+ *
+ * @details
+ * EN:
+ * Iterates through the input string and removes common punctuation marks
+ * (exclamation mark, question mark, period, comma, semicolon).
+ *
+ * HU:
+ * Végigmegy a bemeneti sztringen, és eltávolítja a gyakori írásjeleket
+ * (felkiáltójel, kérdőjel, pont, vessző, pontosvessző).
+ *
+ * @param s The input string. || A bemeneti sztring.
+ * @return The string without punctuation. || Az írásjelek nélküli sztring.
+ */
 //Az írásjelek eltávolítására ne vegy figyelembe '!' '?' stb
 //To remove punctuation, ignore '!' '?' etc.
 std::string removePunctuation(const std::string& s)
@@ -193,6 +324,23 @@ std::string removePunctuation(const std::string& s)
     return result;
 }
 
+/**
+ * @brief Removes accented characters from a string, replacing them with their base equivalents. || Eltávolítja az ékezetes karaktereket egy sztringből, alap megfelelőikre cserélve.
+ *
+ * @details
+ * EN:
+ * This function converts common Hungarian accented UTF-8 characters to their
+ * non-accented ASCII equivalents (e.g., 'á' to 'a'). It uses a static map
+ * for efficient lookup.
+ *
+ * HU:
+ * Ez a függvény a gyakori magyar ékezetes UTF-8 karaktereket
+ * ékezet nélküli ASCII megfelelőikre alakítja (pl. 'á' -> 'a').
+ * Statikus térképet használ a hatékony kereséshez.
+ *
+ * @param s The input string. || A bemeneti sztring.
+ * @return The string with accents removed. || Az ékezetek nélküli sztring.
+ */
 // Az Ékezetes karatkterek figyelmen kívül hagyása
 // Ignore Accented Characters
 std::string removeAccents(const std::string &s) {
