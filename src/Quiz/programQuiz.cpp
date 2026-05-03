@@ -13,7 +13,7 @@
 #include "newInput/platformInput.h"
 #include "Settings/colors.h"
 #include "Settings/settings.h"
-
+#include "Settings/languageList.h"
 
 void scoreSystem(int correct, int badly, unsigned long long total) {
     //Fordítások betöltése és a sikerességi százalék kiszámítása
@@ -83,7 +83,7 @@ void startQuiz (const std::vector<WordPair>& words)
             std::cout << quizExplanation.quizExplanation1 << std::endl;
             std::cout << quizExplanation.quizExplanation2 << std::endl;
             std::cout << quizExplanation.quizExplanation3 << std::endl;
-            std::cout << getLanguageNameByIndex(static_cast<int>(motherLanguage)) << ": " << word.motherLangMeaning << std::endl;
+            std::cout << getLanguageNameByIndex(programUiLanguage, motherLanguage) << ": " << word.motherLangMeaning << std::endl;
 
             // Ha be van kapcsolva a súgó, akkor itt kiírjuk
             if (showHelp) {
@@ -91,7 +91,7 @@ void startQuiz (const std::vector<WordPair>& words)
             }
             // Használjuk a bilentyűzetfigyelő függvényt
             // Use the keyboard input checker function
-            InputResult inputResult = readLineWithHotkey(getLanguageNameByIndex(static_cast<int>(targetLanguage)) +": ");
+            InputResult inputResult = readLineWithHotkey(getLanguageNameByIndex(programUiLanguage, targetLanguage) + ": ");
 
             // ha, a hotkey volt (Ctrl+Y)
             // if was hotkey (Ctrl + Y)
@@ -181,14 +181,14 @@ void startQuiz (const std::vector<WordPair>& words)
                 std::cout << quizExplanation.quizExplanation1 << std::endl;
                 std::cout << quizExplanation.quizExplanation2 << std::endl;
                 std::cout << quizExplanation.quizExplanation3 << std::endl;
-                std::cout << getLanguageNameByIndex(static_cast<int>(targetLanguage)) << ": " << word.targetLangMeaning << std::endl;
+                std::cout << getLanguageNameByIndex(programUiLanguage, targetLanguage) << ": " << word.targetLangMeaning << std::endl;
 
                 // Ha be van kapcsolva a súgó, akkor itt kiírjuk
                 if (showHelp) {
                     std::cout << "CheatSheet: " << colors::GREY << word.motherLangMeaning << colors::RESET << std::endl;
                 }
 
-                InputResult inputResult = readLineWithHotkey(getLanguageNameByIndex(static_cast<int>(motherLanguage)) + ": ");
+                InputResult inputResult = readLineWithHotkey(getLanguageNameByIndex(programUiLanguage, motherLanguage) + ": ");
 
                 // Ha hotkey volt (Ctrl+Y)
                 if (inputResult.hotkeyTriggered) {

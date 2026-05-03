@@ -30,7 +30,8 @@ enum class Language {
     DUTCH, // Represents 20
     TURKISH, // Represents 21
     HINDI, // Represents 22
-    LATIN // Represents 23
+    LATIN ,// Represents 23
+    COUNT // for counting || a számoláshoz
 };
 
 // =======STRUCTS=========
@@ -57,6 +58,7 @@ struct ExplanationStrings {
     std::string instruction6;
     std::string instruction7;
     std::string instruction8;
+    std::string instruction9;
     std::string goodLuck;
 };
 

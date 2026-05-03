@@ -402,8 +402,9 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "A program szavakat és kifejezéseket kérdez.",
         "A fájlok .data kiterjesztéssel nyithatók és szerkeszthetők.",
         "A képernyő törléshez használd a 'cls' parancsot ha szükséges!",
-        "A kilépéshez az 'exit' parancsot használd.",
-        "A segítséghez a 'help' vagy 'h' parancsot.",
+        "A kilépéshez használd az 'exit' vagy 'e' parancsot vagy Ctrl + C-t.",
+        "A segítséghez a 'help' vagy 'h' parancsot vagy Ctrl + Y-t.",
+        "A segítség kikapcsolásához a 'help off' vagy 'h off' parancsot vagy Ctrl + N-t.",
         "A gyakorlás két körből áll: először anyanyelvről a tanult nyelvre,",
         "majd a tanult nyelvről az anyanyelvre kérdez.",
         "Beállítható az egy körös mód a BEÁLLÍTÁSOK menüben.",
@@ -415,11 +416,12 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "This program improves language skills.",
         "The program asks words and expressions.",
         "Files can be opened and edited with .data extension.",
-        "Use 'cls' command to clear the screen if needed.",
-        "Use 'exit' command to quit.",
-        "Use 'help' or 'h' for help.",
-        "Practice has two rounds: native to learning language first,",
-        "then learning language back to native language.",
+        "To clear the screen use the 'cls' command if needed.",
+        "To quit use the 'exit' or 'e' command or Ctrl + C.",
+        "For help use the 'help' or 'h' command or Ctrl + Y.",
+        "To disable help use the 'help off' or 'h off' command or Ctrl + N.",
+        "Practice has two rounds: first native to learning language,",
+        "then learning language back to native.",
         "Single-round mode can be enabled in SETTINGS.",
         "Happy learning :)"
     },
@@ -428,12 +430,13 @@ const std::vector<ExplanationStrings> explanationTranslations = {
     {
         "该程序用于提高语言能力。",
         "程序会提问单词和短语。",
-        "文件可以用 .data 扩展名打开和编辑。",
-        "如有需要使用 'cls' 清屏。",
-        "使用 'exit' 退出程序。",
-        "使用 'help' 或 'h' 获取帮助。",
-        "练习分两轮：先从母语到学习语言，",
-        "然后从学习语言回到母语。",
+        ".data 文件可以打开和编辑。",
+        "需要时使用 'cls' 命令清屏。",
+        "退出程序使用 'exit' 或 'e' 命令或 Ctrl + C。",
+        "帮助使用 'help' 或 'h' 命令或 Ctrl + Y。",
+        "关闭帮助使用 'help off' 或 'h off' 命令或 Ctrl + N。",
+        "练习分两轮：母语 → 学习语言，",
+        "然后学习语言 → 母语。",
         "可在设置中启用单轮模式。",
         "祝学习愉快 :)"
     },
@@ -441,28 +444,30 @@ const std::vector<ExplanationStrings> explanationTranslations = {
     // Japanese (3)
     {
         "このプログラムは言語能力を向上させます。",
-        "単語やフレーズを質問します。",
-        ".data ファイルは開いて編集できます。",
-        "必要に応じて 'cls' で画面をクリア。",
-        "'exit' で終了。",
-        "'help' または 'h' でヘルプ。",
-        "練習は2ラウンド：母語→学習言語、",
-        "次に学習言語→母語。",
+        "単語やフレーズを出題します。",
+        ".dataファイルは開いて編集できます。",
+        "必要なら 'cls' コマンドで画面をクリア。",
+        "終了は 'exit' または 'e' コマンドまたは Ctrl + C。",
+        "ヘルプは 'help' または 'h' コマンドまたは Ctrl + Y。",
+        "ヘルプ無効は 'help off' または 'h off' コマンドまたは Ctrl + N。",
+        "練習は2回：母語→学習言語、",
+        "その後学習言語→母語。",
         "設定で1ラウンドモード可能。",
         "楽しく学びましょう :)"
     },
 
     // Spanish (4)
     {
-        "Este programa mejora el conocimiento de idiomas.",
+        "Este programa mejora habilidades lingüísticas.",
         "El programa pregunta palabras y expresiones.",
-        "Los archivos .data se pueden abrir y editar.",
-        "Usa 'cls' para limpiar la pantalla si es necesario.",
-        "Usa 'exit' para salir.",
-        "Usa 'help' o 'h' para ayuda.",
-        "La práctica tiene dos rondas: idioma nativo a aprendido,",
-        "luego del aprendido al nativo.",
-        "Modo de una ronda en CONFIGURACIÓN.",
+        "Los archivos .data pueden abrirse y editarse.",
+        "Para limpiar pantalla usa el comando 'cls' si es necesario.",
+        "Para salir usa el 'exit' o 'e' comando o Ctrl + C.",
+        "Para ayuda usa el 'help' o 'h' comando o Ctrl + Y.",
+        "Para desactivar ayuda usa el 'help off' o 'h off' comando o Ctrl + N.",
+        "La práctica tiene dos rondas: idioma nativo → aprendido,",
+        "luego aprendido → nativo.",
+        "Modo de una ronda en configuración.",
         "Feliz aprendizaje :)"
     },
 
@@ -471,13 +476,14 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Dieses Programm verbessert Sprachkenntnisse.",
         "Das Programm fragt Wörter und Ausdrücke ab.",
         ".data Dateien können geöffnet und bearbeitet werden.",
-        "Nutze 'cls' zum Bildschirm löschen.",
-        "Nutze 'exit' zum Beenden.",
-        "'help' oder 'h' für Hilfe.",
-        "Übung hat zwei Runden: Muttersprache -> Lernsprache,",
+        "Zum Bildschirm löschen nutze den 'cls' Befehl falls nötig.",
+        "Zum Beenden nutze den 'exit' oder 'e' Befehl oder Ctrl + C.",
+        "Für Hilfe nutze den 'help' oder 'h' Befehl oder Ctrl + Y.",
+        "Hilfe deaktivieren: 'help off' oder 'h off' Befehl oder Ctrl + N.",
+        "Übung: Muttersprache → Lernsprache,",
         "dann zurück.",
         "Einrundenmodus in Einstellungen möglich.",
-        "Viel Erfolg beim Lernen :)"
+        "Viel Erfolg :)"
     },
 
     // French (6)
@@ -485,41 +491,44 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Ce programme améliore les compétences linguistiques.",
         "Le programme pose des mots et expressions.",
         "Les fichiers .data peuvent être ouverts et modifiés.",
-        "Utilisez 'cls' pour effacer l'écran.",
-        "Utilisez 'exit' pour quitter.",
-        "'help' ou 'h' pour l'aide.",
-        "Deux tours: langue maternelle vers langue cible,",
+        "Pour nettoyer l'écran utilise la commande 'cls' si nécessaire.",
+        "Quitter: 'exit' ou 'e' commande ou Ctrl + C.",
+        "Aide: 'help' ou 'h' commande ou Ctrl + Y.",
+        "Désactiver aide: 'help off' ou 'h off' commande ou Ctrl + N.",
+        "Deux tours: langue maternelle → langue cible,",
         "puis inverse.",
-        "Mode un tour dans PARAMÈTRES.",
+        "Mode un tour dans paramètres.",
         "Bon apprentissage :)"
     },
 
     // Russian (7)
     {
         "Эта программа улучшает языковые навыки.",
-        "Программа спрашивает слова и выражения.",
-        ".data файлы можно открыть и редактировать.",
-        "Используйте 'cls' для очистки экрана.",
-        "'exit' для выхода.",
-        "'help' или 'h' для помощи.",
-        "Два раунда: родной язык -> изучаемый,",
+        "Программа задаёт слова и выражения.",
+        ".data файлы можно открывать и редактировать.",
+        "Для очистки экрана используйте команду 'cls'.",
+        "Выход: 'exit' или 'e' команда или Ctrl + C.",
+        "Помощь: 'help' или 'h' команда или Ctrl + Y.",
+        "Отключить помощь: 'help off' или 'h off' команда или Ctrl + N.",
+        "Два раунда: родной язык → изучаемый,",
         "затем обратно.",
         "Один раунд в настройках.",
-        "Удачного обучения :)"
+        "Удачи :)"
     },
 
     // Ukrainian (8)
     {
         "Ця програма покращує мовні навички.",
-        "Програма запитує слова та фрази.",
+        "Програма задає слова і фрази.",
         ".data файли можна відкривати і редагувати.",
-        "Використовуйте 'cls' для очищення екрана.",
-        "'exit' для виходу.",
-        "'help' або 'h' для допомоги.",
-        "Два раунди: рідна мова -> вивчаєма,",
+        "Для очищення екрана використовуйте команду 'cls'.",
+        "Вихід: 'exit' або 'e' команда або Ctrl + C.",
+        "Допомога: 'help' або 'h' команда або Ctrl + Y.",
+        "Вимкнути допомогу: 'help off' або 'h off' команда або Ctrl + N.",
+        "Два раунди: рідна → вивчена мова,",
         "потім назад.",
-        "Один раунд в налаштуваннях.",
-        "Приємного навчання :)"
+        "Один раунд у налаштуваннях.",
+        "Успіхів :)"
     },
 
     // Korean (9)
@@ -527,12 +536,13 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "이 프로그램은 언어 능력을 향상시킵니다.",
         "단어와 표현을 질문합니다.",
         ".data 파일을 열고 수정할 수 있습니다.",
-        "'cls'로 화면을 지울 수 있습니다.",
-        "'exit'로 종료합니다.",
-        "'help' 또는 'h'로 도움말.",
-        "두 단계 학습: 모국어 -> 학습 언어,",
+        "화면 지우기: 'cls' 명령어 사용.",
+        "종료: 'exit' 또는 'e' 명령어 또는 Ctrl + C.",
+        "도움말: 'help' 또는 'h' 명령어 또는 Ctrl + Y.",
+        "도움말 끄기: 'help off' 또는 'h off' 명령어 또는 Ctrl + N.",
+        "두 단계: 모국어 → 학습 언어,",
         "그 다음 반대로.",
-        "설정에서 한 라운드 가능.",
+        "설정에서 1라운드 가능.",
         "즐거운 학습 :)"
     },
 
@@ -541,10 +551,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Questo programma migliora le competenze linguistiche.",
         "Il programma chiede parole ed espressioni.",
         "I file .data possono essere modificati.",
-        "Usa 'cls' per pulire lo schermo.",
-        "Usa 'exit' per uscire.",
-        "'help' o 'h' per aiuto.",
-        "Due round: lingua madre -> lingua studio,",
+        "Per pulire lo schermo usa il comando 'cls'.",
+        "Esci: 'exit' o 'e' comando o Ctrl + C.",
+        "Aiuto: 'help' o 'h' comando o Ctrl + Y.",
+        "Disattiva aiuto: 'help off' o 'h off' comando o Ctrl + N.",
+        "Due round: lingua madre → lingua studio,",
         "poi inverso.",
         "Modalità singola in impostazioni.",
         "Buono studio :)"
@@ -555,10 +566,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Program rozwija umiejętności językowe.",
         "Zadaje słowa i wyrażenia.",
         "Pliki .data można edytować.",
-        "Użyj 'cls' do czyszczenia.",
-        "'exit' aby wyjść.",
-        "'help' lub 'h' pomoc.",
-        "Dwie rundy: ojczysty -> nauka,",
+        "Do czyszczenia ekranu użyj komendy 'cls'.",
+        "Wyjście: 'exit' lub 'e' komenda lub Ctrl + C.",
+        "Pomoc: 'help' lub 'h' komenda lub Ctrl + Y.",
+        "Wyłącz pomoc: 'help off' lub 'h off' komenda lub Ctrl + N.",
+        "Dwie rundy: ojczysty → nauka,",
         "potem odwrotnie.",
         "Tryb jednej rundy w ustawieniach.",
         "Miłej nauki :)"
@@ -569,10 +581,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "هذا البرنامج يحسن مهارات اللغة.",
         "يسأل كلمات وعبارات.",
         "يمكن تعديل ملفات .data.",
-        "استخدم 'cls' لمسح الشاشة.",
-        "'exit' للخروج.",
-        "'help' أو 'h' للمساعدة.",
-        "جولتان: من اللغة الأم إلى التعلم،",
+        "استخدم أمر 'cls' لمسح الشاشة.",
+        "الخروج: 'exit' أو 'e' أو Ctrl + C.",
+        "المساعدة: 'help' أو 'h' أو Ctrl + Y.",
+        "إيقاف المساعدة: 'help off' أو 'h off' أو Ctrl + N.",
+        "جولتان: اللغة الأم → التعلم،",
         "ثم العكس.",
         "وضع جولة واحدة في الإعدادات.",
         "تعلم سعيد :)"
@@ -583,11 +596,12 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Chương trình giúp cải thiện ngôn ngữ.",
         "Hỏi từ và cụm từ.",
         "File .data có thể chỉnh sửa.",
-        "Dùng 'cls' để xóa màn hình.",
-        "'exit' để thoát.",
-        "'help' hoặc 'h' để trợ giúp.",
-        "2 vòng: mẹ đẻ -> học,",
-        "sau đó ngược lại.",
+        "Dùng lệnh 'cls' để xóa màn hình.",
+        "Thoát: 'exit' hoặc 'e' hoặc Ctrl + C.",
+        "Trợ giúp: 'help' hoặc 'h' hoặc Ctrl + Y.",
+        "Tắt trợ giúp: 'help off' hoặc 'h off' hoặc Ctrl + N.",
+        "2 vòng: mẹ đẻ → học,",
+        "rồi ngược lại.",
         "Chế độ 1 vòng trong cài đặt.",
         "Chúc học tốt :)"
     },
@@ -595,12 +609,13 @@ const std::vector<ExplanationStrings> explanationTranslations = {
     // Tagalog (14)
     {
         "Pinapabuti ng programang ito ang wika.",
-        "Nagtatanong ito ng salita at parirala.",
+        "Nagtatanong ng salita at parirala.",
         ".data file ay maaaring baguhin.",
-        "Gamitin ang 'cls' para linisin screen.",
-        "'exit' para lumabas.",
-        "'help' o 'h' para tulong.",
-        "2 round: native -> learning,",
+        "Gamitin ang 'cls' command kung kailangan.",
+        "Lumabas: 'exit' o 'e' o Ctrl + C.",
+        "Tulong: 'help' o 'h' o Ctrl + Y.",
+        "I-off ang tulong: 'help off' o 'h off' o Ctrl + N.",
+        "2 round: native → learning,",
         "baliktad pagkatapos.",
         "1 round sa settings.",
         "Magandang pag-aaral :)"
@@ -611,10 +626,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Το πρόγραμμα βελτιώνει γλωσσικές δεξιότητες.",
         "Ρωτά λέξεις και φράσεις.",
         ".data αρχεία επεξεργάζονται.",
-        "'cls' για καθαρισμό.",
-        "'exit' για έξοδο.",
-        "'help' ή 'h' για βοήθεια.",
-        "2 γύροι: μητρική -> μάθηση,",
+        "Χρησιμοποίησε την εντολή 'cls' αν χρειάζεται.",
+        "Έξοδος: 'exit' ή 'e' ή Ctrl + C.",
+        "Βοήθεια: 'help' ή 'h' ή Ctrl + Y.",
+        "Απενεργοποίηση: 'help off' ή 'h off' ή Ctrl + N.",
+        "2 γύροι: μητρική → μάθηση,",
         "μετά αντίστροφα.",
         "1 γύρος στις ρυθμίσεις.",
         "Καλή μάθηση :)"
@@ -625,10 +641,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "התוכנית משפרת מיומנויות שפה.",
         "שואלת מילים וביטויים.",
         "קבצי .data ניתנים לעריכה.",
-        "'cls' לניקוי מסך.",
-        "'exit' ליציאה.",
-        "'help' או 'h' לעזרה.",
-        "2 סבבים: שפת אם -> לימוד,",
+        "השתמש בפקודה 'cls' אם צריך.",
+        "יציאה: 'exit' או 'e' או Ctrl + C.",
+        "עזרה: 'help' או 'h' או Ctrl + Y.",
+        "כיבוי עזרה: 'help off' או 'h off' או Ctrl + N.",
+        "2 סבבים: שפת אם → לימוד,",
         "ואז הפוך.",
         "מצב סבב אחד בהגדרות.",
         "למידה נעימה :)"
@@ -639,10 +656,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Este programa melhora habilidades linguísticas.",
         "Pergunta palavras e expressões.",
         "Arquivos .data podem ser editados.",
-        "Use 'cls' para limpar tela.",
-        "'exit' para sair.",
-        "'help' ou 'h' ajuda.",
-        "2 rodadas: nativo -> aprendizado,",
+        "Use comando 'cls' se necessário.",
+        "Sair: 'exit' ou 'e' ou Ctrl + C.",
+        "Ajuda: 'help' ou 'h' ou Ctrl + Y.",
+        "Desativar ajuda: 'help off' ou 'h off' ou Ctrl + N.",
+        "2 rodadas: nativo → aprendizado,",
         "depois inverso.",
         "Modo 1 rodada nas configurações.",
         "Bom aprendizado :)"
@@ -653,10 +671,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "این برنامه مهارت زبان را بهبود می‌دهد.",
         "کلمات و عبارات را می‌پرسد.",
         "فایل‌های .data قابل ویرایش هستند.",
-        "'cls' برای پاک کردن صفحه.",
-        "'exit' برای خروج.",
-        "'help' یا 'h' برای کمک.",
-        "۲ دور: زبان مادری -> یادگیری،",
+        "از دستور 'cls' در صورت نیاز استفاده کنید.",
+        "خروج: 'exit' یا 'e' یا Ctrl + C.",
+        "راهنما: 'help' یا 'h' یا Ctrl + Y.",
+        "خاموش کردن راهنما: 'help off' یا 'h off' یا Ctrl + N.",
+        "۲ دور: زبان مادری → یادگیری،",
         "سپس برعکس.",
         "حالت یک دور در تنظیمات.",
         "یادگیری موفق :)"
@@ -667,10 +686,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Programmet förbättrar språkkunskaper.",
         "Frågar ord och uttryck.",
         ".data filer kan redigeras.",
-        "Använd 'cls' för att rensa.",
-        "'exit' för att avsluta.",
-        "'help' eller 'h' hjälp.",
-        "2 rundor: modersmål -> lärande,",
+        "Använd kommandot 'cls' vid behov.",
+        "Avsluta: 'exit' eller 'e' eller Ctrl + C.",
+        "Hjälp: 'help' eller 'h' eller Ctrl + Y.",
+        "Stäng hjälp: 'help off' eller 'h off' eller Ctrl + N.",
+        "2 rundor: modersmål → lärande,",
         "sedan tillbaka.",
         "1 runda i inställningar.",
         "Lycka till :)"
@@ -681,10 +701,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Dit programma verbetert taalvaardigheid.",
         "Stelt woorden en zinnen.",
         ".data bestanden bewerkbaar.",
-        "'cls' om scherm te wissen.",
-        "'exit' om te stoppen.",
-        "'help' of 'h' hulp.",
-        "2 rondes: moedertaal -> leren,",
+        "Gebruik het 'cls' commando indien nodig.",
+        "Afsluiten: 'exit' of 'e' of Ctrl + C.",
+        "Help: 'help' of 'h' of Ctrl + Y.",
+        "Help uit: 'help off' of 'h off' of Ctrl + N.",
+        "2 rondes: moedertaal → leren,",
         "dan terug.",
         "1 ronde in instellingen.",
         "Succes :)"
@@ -695,10 +716,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Bu program dil becerilerini geliştirir.",
         "Kelimeler ve ifadeler sorar.",
         ".data dosyaları düzenlenebilir.",
-        "'cls' ekran temizleme.",
-        "'exit' çıkış.",
-        "'help' veya 'h' yardım.",
-        "2 tur: ana dil -> öğrenme,",
+        "Gerekirse 'cls' komutunu kullan.",
+        "Çıkış: 'exit' veya 'e' veya Ctrl + C.",
+        "Yardım: 'help' veya 'h' veya Ctrl + Y.",
+        "Yardımı kapat: 'help off' veya 'h off' veya Ctrl + N.",
+        "2 tur: ana dil → öğrenme,",
         "sonra geri.",
         "1 tur ayarlarda.",
         "İyi çalışmalar :)"
@@ -709,10 +731,11 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "यह प्रोग्राम भाषा कौशल सुधारता है।",
         "शब्द और वाक्य पूछता है।",
         ".data फ़ाइल संपादन योग्य है।",
-        "'cls' से स्क्रीन साफ करें।",
-        "'exit' से बाहर जाएं।",
-        "'help' या 'h' मदद।",
-        "2 राउंड: मातृभाषा -> सीखना,",
+        "आवश्यक हो तो 'cls' कमांड का उपयोग करें।",
+        "बाहर निकलें: 'exit' या 'e' या Ctrl + C।",
+        "मदद: 'help' या 'h' या Ctrl + Y।",
+        "मदद बंद: 'help off' या 'h off' या Ctrl + N।",
+        "2 राउंड: मातृभाषा → सीखना,",
         "फिर उल्टा।",
         "1 राउंड सेटिंग्स में।",
         "शुभकामनाएं :)"
@@ -723,15 +746,15 @@ const std::vector<ExplanationStrings> explanationTranslations = {
         "Hoc programma linguam meliorat.",
         "Verba et locutiones rogat.",
         "Fasciculi .data mutari possunt.",
-        "'cls' ad purgandum.",
-        "'exit' ad exire.",
-        "'help' vel 'h' auxilium.",
-        "2 circuitus: lingua materna -> discere,",
+        "Utere 'cls' mandato si opus est.",
+        "Exitus: 'exit' vel 'e' vel Ctrl + C.",
+        "Auxilium: 'help' vel 'h' vel Ctrl + Y.",
+        "Auxilium off: 'help off' vel 'h off' vel Ctrl + N.",
+        "2 circuitus: lingua materna → discere,",
         "deinde retro.",
         "1 circuitus in optionibus.",
         "Bona fortuna :)"
     }
-
 };
 
 const std::vector<ExitingStrings> exitingTranslations = {
@@ -1929,170 +1952,170 @@ const std::vector<QuizExplanation> quizExplanationTranslations = {
 
     // HUNGARIAN (Index 0)
     {
-        "A kilépéshez használd az 'exit' parancsot.",
-        "A segítséghez (válasz kiírásához) írd be a 'h' vagy 'help' parancsot.",
-        "A segítség kikapcsolásához használd a 'h off' vagy 'help off' parancsot."
+        "A kilépéshez használd az 'exit' vagy 'e' parancsot illetve használd a Ctrl + c -t .",
+        "A segítséghez (a válasz kiírásához) írd be a 'h' vagy 'help' parancsot illetve használd a Ctrl + y (be).",
+        "A segítség kikapcsolásához használd a 'h off' vagy 'help off' parancsot illetve használd a Ctrl + n -t(ki)."
     },
 
     // ENGLISH (Index 1)
     {
-        "To quit the program, use the 'exit' command.",
-        "Type 'h' or 'help' to show the answer (cheat sheet).",
-        "Type 'h off' or 'help off' to disable help."
+        "To exit use the 'exit' or 'e' command or Ctrl + C.",
+        "To get help (show answer) use the 'h' or 'help' command or Ctrl + Y (on).",
+        "To disable help use the 'h off' or 'help off' command or Ctrl + N (off)."
     },
 
     // CHINESE (Index 2)
     {
-        "使用 'exit' 命令退出程序。",
-        "输入 'h' 或 'help' 显示答案（提示）。",
-        "输入 'h off' 或 'help off' 关闭帮助。"
+        "使用 'exit' 或 'e' 命令退出程序，或 Ctrl + C。",
+        "使用 'h' 或 'help' 命令查看答案，或 Ctrl + Y（开启）。",
+        "使用 'h off' 或 'help off' 命令关闭帮助，或 Ctrl + N（关闭）。"
     },
 
     // JAPANESE (Index 3)
     {
-        "'exit' コマンドで終了します。",
-        "'h' または 'help' を入力すると答えが表示されます。",
-        "'h off' または 'help off' でヘルプを無効にします。"
+        "終了には 'exit' または 'e' コマンドを使用、または Ctrl + C。",
+        "ヘルプには 'h' または 'help' コマンドを使用、または Ctrl + Y（オン）。",
+        "ヘルプ無効には 'h off' または 'help off' コマンドを使用、または Ctrl + N（オフ）。"
     },
 
     // SPANISH (Index 4)
     {
-        "Para salir del programa, usa el comando 'exit'.",
-        "Escribe 'h' o 'help' para mostrar la respuesta.",
-        "Escribe 'h off' o 'help off' para desactivar la ayuda."
+        "Para salir usa el comando 'exit' o 'e' o Ctrl + C.",
+        "Para ayuda usa el comando 'h' o 'help' o Ctrl + Y (activar).",
+        "Para desactivar ayuda usa 'h off' o 'help off' o Ctrl + N."
     },
 
     // GERMAN (Index 5)
     {
-        "Zum Beenden des Programms benutze den Befehl 'exit'.",
-        "Gib 'h' oder 'help' ein, um die Antwort anzuzeigen.",
-        "Gib 'h off' oder 'help off' ein, um die Hilfe zu deaktivieren."
+        "Zum Beenden benutze 'exit' oder 'e' oder Ctrl + C.",
+        "Für Hilfe benutze 'h' oder 'help' oder Ctrl + Y (ein).",
+        "Zum Deaktivieren benutze 'h off' oder 'help off' oder Ctrl + N."
     },
 
     // FRENCH (Index 6)
     {
-        "Pour quitter le programme, utilisez la commande 'exit'.",
-        "Tapez 'h' ou 'help' pour afficher la réponse.",
-        "Tapez 'h off' ou 'help off' pour désactiver l'aide."
+        "Pour quitter utilisez 'exit' ou 'e' ou Ctrl + C.",
+        "Pour l'aide utilisez 'h' ou 'help' ou Ctrl + Y (activer).",
+        "Pour désactiver utilisez 'h off' ou 'help off' ou Ctrl + N."
     },
 
     // RUSSIAN (Index 7)
     {
-        "Чтобы выйти из программы, используйте команду 'exit'.",
-        "Введите 'h' или 'help', чтобы показать ответ.",
-        "Введите 'h off' или 'help off', чтобы отключить помощь."
+        "Для выхода используйте 'exit' или 'e' или Ctrl + C.",
+        "Для помощи используйте 'h' или 'help' или Ctrl + Y (вкл).",
+        "Для отключения используйте 'h off' или 'help off' или Ctrl + N."
     },
 
     // UKRAINIAN (Index 8)
     {
-        "Щоб вийти з програми, використовуйте команду 'exit'.",
-        "Введіть 'h' або 'help', щоб показати відповідь.",
-        "Введіть 'h off' або 'help off', щоб вимкнути допомогу."
+        "Для виходу використовуйте 'exit' або 'e' або Ctrl + C.",
+        "Для допомоги використовуйте 'h' або 'help' або Ctrl + Y (увімк.).",
+        "Для вимкнення використовуйте 'h off' або 'help off' або Ctrl + N."
     },
 
     // KOREAN (Index 9)
     {
-        "'exit' 명령어로 프로그램을 종료합니다.",
-        "'h' 또는 'help'를 입력하면 답을 표시합니다.",
-        "'h off' 또는 'help off'로 도움말을 비활성화합니다."
+        "종료: 'exit' 또는 'e' 또는 Ctrl + C.",
+        "도움말: 'h' 또는 'help' 또는 Ctrl + Y.",
+        "비활성화: 'h off' 또는 'help off' 또는 Ctrl + N."
     },
 
     // ITALIAN (Index 10)
     {
-        "Per uscire dal programma, usa il comando 'exit'.",
-        "Digita 'h' o 'help' per mostrare la risposta.",
-        "Digita 'h off' o 'help off' per disattivare l'aiuto."
+        "Per uscire usa 'exit' o 'e' o Ctrl + C.",
+        "Per aiuto usa 'h' o 'help' o Ctrl + Y.",
+        "Per disattivare usa 'h off' o 'help off' o Ctrl + N."
     },
 
     // POLISH (Index 11)
     {
-        "Aby wyjść z programu, użyj polecenia 'exit'.",
-        "Wpisz 'h' lub 'help', aby wyświetlić odpowiedź.",
-        "Wpisz 'h off' lub 'help off', aby wyłączyć pomoc."
+        "Aby wyjść użyj 'exit' lub 'e' lub Ctrl + C.",
+        "Aby pomoc użyj 'h' lub 'help' lub Ctrl + Y.",
+        "Aby wyłączyć użyj 'h off' lub 'help off' lub Ctrl + N."
     },
 
     // ARABIC (Index 12)
     {
-        "للخروج من البرنامج، استخدم الأمر 'exit'.",
-        "اكتب 'h' أو 'help' لعرض الإجابة.",
-        "اكتب 'h off' أو 'help off' لتعطيل المساعدة."
+        "للخروج استخدم 'exit' أو 'e' أو Ctrl + C.",
+        "للمساعدة استخدم 'h' أو 'help' أو Ctrl + Y.",
+        "لإيقاف المساعدة استخدم 'h off' أو 'help off' أو Ctrl + N."
     },
 
     // VIETNAMESE (Index 13)
     {
-        "Để thoát chương trình, dùng lệnh 'exit'.",
-        "Gõ 'h' hoặc 'help' để hiển thị đáp án.",
-        "Gõ 'h off' hoặc 'help off' để tắt trợ giúp."
+        "Thoát: 'exit' hoặc 'e' hoặc Ctrl + C.",
+        "Trợ giúp: 'h' hoặc 'help' hoặc Ctrl + Y.",
+        "Tắt: 'h off' hoặc 'help off' hoặc Ctrl + N."
     },
 
     // TAGALOG (Index 14)
     {
-        "Upang lumabas sa programa, gamitin ang 'exit' command.",
-        "I-type ang 'h' o 'help' para ipakita ang sagot.",
-        "I-type ang 'h off' o 'help off' para i-disable ang tulong."
+        "Lumabas: 'exit' o 'e' o Ctrl + C.",
+        "Tulong: 'h' o 'help' o Ctrl + Y.",
+        "I-off: 'h off' o 'help off' o Ctrl + N."
     },
 
     // GREEK (Index 15)
     {
-        "Για έξοδο από το πρόγραμμα, χρησιμοποιήστε την εντολή 'exit'.",
-        "Πληκτρολογήστε 'h' ή 'help' για να δείτε την απάντηση.",
-        "Πληκτρολογήστε 'h off' ή 'help off' για να απενεργοποιήσετε τη βοήθεια."
+        "Έξοδος: 'exit' ή 'e' ή Ctrl + C.",
+        "Βοήθεια: 'h' ή 'help' ή Ctrl + Y.",
+        "Απενεργοποίηση: 'h off' ή 'help off' ή Ctrl + N."
     },
 
     // HEBREW (Index 16)
     {
-        "כדי לצאת מהתוכנית, השתמש בפקודה 'exit'.",
-        "הקלד 'h' או 'help' כדי להציג את התשובה.",
-        "הקלד 'h off' או 'help off' כדי לכבות את העזרה."
+        "יציאה: 'exit' או 'e' או Ctrl + C.",
+        "עזרה: 'h' או 'help' או Ctrl + Y.",
+        "כיבוי: 'h off' או 'help off' או Ctrl + N."
     },
 
     // PORTUGUESE (Index 17)
     {
-        "Para sair do programa, use o comando 'exit'.",
-        "Digite 'h' ou 'help' para mostrar a resposta.",
-        "Digite 'h off' ou 'help off' para desativar a ajuda."
+        "Sair: 'exit' ou 'e' ou Ctrl + C.",
+        "Ajuda: 'h' ou 'help' ou Ctrl + Y.",
+        "Desativar: 'h off' ou 'help off' ou Ctrl + N."
     },
 
     // FARSI (Index 18)
     {
-        "برای خروج از برنامه از دستور 'exit' استفاده کنید.",
-        "'h' یا 'help' را برای نمایش پاسخ وارد کنید.",
-        "'h off' یا 'help off' را برای غیرفعال کردن کمک وارد کنید."
+        "خروج: 'exit' یا 'e' یا Ctrl + C.",
+        "راهنما: 'h' یا 'help' یا Ctrl + Y.",
+        "خاموش: 'h off' یا 'help off' یا Ctrl + N."
     },
 
     // SWEDISH (Index 19)
     {
-        "För att avsluta programmet, använd kommandot 'exit'.",
-        "Skriv 'h' eller 'help' för att visa svaret.",
-        "Skriv 'h off' eller 'help off' för att stänga av hjälpen."
+        "Avsluta: 'exit' eller 'e' eller Ctrl + C.",
+        "Hjälp: 'h' eller 'help' eller Ctrl + Y.",
+        "Stäng: 'h off' eller 'help off' eller Ctrl + N."
     },
 
     // DUTCH (Index 20)
     {
-        "Gebruik het 'exit' commando om het programma te verlaten.",
-        "Typ 'h' of 'help' om het antwoord te tonen.",
-        "Typ 'h off' of 'help off' om hulp uit te schakelen."
+        "Afsluiten: 'exit' of 'e' of Ctrl + C.",
+        "Hulp: 'h' of 'help' of Ctrl + Y.",
+        "Uit: 'h off' of 'help off' of Ctrl + N."
     },
 
     // TURKISH (Index 21)
     {
-        "Programdan çıkmak için 'exit' komutunu kullanın.",
-        "Cevabı görmek için 'h' veya 'help' yazın.",
-        "Yardımı kapatmak için 'h off' veya 'help off' yazın."
+        "Çıkış: 'exit' veya 'e' veya Ctrl + C.",
+        "Yardım: 'h' veya 'help' veya Ctrl + Y.",
+        "Kapat: 'h off' veya 'help off' veya Ctrl + N."
     },
 
     // HINDI (Index 22)
     {
-        "प्रोग्राम से बाहर निकलने के लिए 'exit' कमांड का उपयोग करें।",
-        "उत्तर देखने के लिए 'h' या 'help' टाइप करें।",
-        "मदद बंद करने के लिए 'h off' या 'help off' टाइप करें।"
+        "बाहर निकलें: 'exit' या 'e' या Ctrl + C.",
+        "मदद: 'h' या 'help' या Ctrl + Y.",
+        "बंद: 'h off' या 'help off' या Ctrl + N."
     },
 
     // LATIN (Index 23)
     {
-        "Ut ex programmate exeas, utere mandato 'exit'.",
-        "Scribe 'h' aut 'help' ut responsum videas.",
-        "Scribe 'h off' aut 'help off' ut auxilium disables."
+        "Exitus: 'exit' vel 'e' vel Ctrl + C.",
+        "Auxilium: 'h' vel 'help' vel Ctrl + Y.",
+        "Desine: 'h off' vel 'help off' vel Ctrl + N."
     }
 };
 const std::vector<VocabWordsPairTotal> vocabWordsPairTotalTranslations = {

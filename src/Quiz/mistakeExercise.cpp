@@ -29,6 +29,7 @@ void mistakeExercise()
     const GoodAnswer1& goodAns = goodAnswer1Translations[static_cast<int>(programUiLanguage)];
     const BadlyAnswer& badAns = badlyAnswerTranslations[static_cast<int>(programUiLanguage)];
     const MistakeExercise& mistakeExercise = mistakeExerciseTranslations[static_cast<int>(programUiLanguage)];
+    const QuizExplanation &quizExplanation = quizExplanationTranslations[static_cast<int>(programUiLanguage)];
 
     loadSettings();
     // Beolvassuk a hibákat
@@ -62,6 +63,10 @@ void mistakeExercise()
         const WordPair& word = mistakeWords[i]; // Az aktuális szó || The current word
         for (;;) {
             screenWipe();
+            std::cout << quizExplanation.quizExplanation1 << std::endl;
+            std::cout << quizExplanation.quizExplanation2 << std::endl;
+            std::cout << quizExplanation.quizExplanation3 << std::endl;
+
             std::cout << mistakeExercise.practiceOfWrongWord << std::endl;
             std::cout << mistakeExercise.word << word.motherLangMeaning << std::endl;
             std::cout << mistakeExercise.answer;

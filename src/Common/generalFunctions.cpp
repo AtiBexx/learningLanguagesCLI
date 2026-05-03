@@ -47,6 +47,7 @@ void explanation() {
     std::cout << strings.instruction6 << "\n";
     std::cout << strings.instruction7 << "\n";
     std::cout << strings.instruction8 << "\n";
+    std::cout << strings.instruction9 << "\n";
     std::cout << strings.goodLuck <<"\n";
 
     waitToEnter();
