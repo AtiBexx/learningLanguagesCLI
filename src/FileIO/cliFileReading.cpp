@@ -15,6 +15,8 @@
 #include "../Quiz/programQuiz.h"
 #include <sys/stat.h>
 
+#include "newInput/platformInput.h"
+
 #ifdef _WIN32
 #include <windows.h>
 #else
@@ -101,7 +103,7 @@ void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
     string confirm; std::getline(std::cin, confirm);
 
     if (toLowerCase(trim(confirm)) != "y") {
-        std::cout << "Megszakitva.\n";
+        std::cout << DDFF.interrupted <<"\n";
         waitToEnter();
         return;
     }
@@ -117,7 +119,7 @@ void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
     if (std::system(command.c_str()) == 0) {
         std::cout << DDFF.successDelete << std::endl;
     } else {
-        std::cout << "Hiba a torlesnel! Ellenorizd az utvonalat.\n";
+        std::cout << DDFF.errorDelete <<"\n";
     }
     waitToEnter();
 }
@@ -232,8 +234,33 @@ void listAndSelectFile() {
                 cout << (e.isDirectory ? LASFile.isDirectory : "        ") << e.name << "\n";
         }
 
-        cout << LASFile.commands;
-        string input;
+        //cout << LASFile.commands;
+        cout << LASFile.commands <<"\n";
+        cout << LASFile.fullCommands <<"\n";
+
+        InputResult inputResult = readLineWithHotkey(LASFile.choice);
+
+        //---CTRL + C KEZELÉSE || CTRL + C HANDLING
+        if (inputResult.exitTriggered)
+        {
+            return;
+        }
+        string input = inputResult.text;
+        input = trim(input);
+        string lowerInput = toLowerCase(input);
+
+        if (lowerInput == "exit" || lowerInput == "e" ) return;
+
+        if (lowerInput == "..") {
+            if (path.length() > ROOT_DIR.length())
+            {
+                size_t lastSlash = path.find_last_of("/\\");
+                if (lastSlash != string::npos) path = path.substr(0, lastSlash);
+            }
+            continue;
+        }
+        // ------RÉGI KÓD || OLD CODE ------
+        /*string input;
         std::getline(std::cin, input);
         input = trim(input);
         string lowerInput = toLowerCase(input);
@@ -246,7 +273,7 @@ void listAndSelectFile() {
                 if (lastSlash != string::npos) path = path.substr(0, lastSlash);
             }
             continue;
-        }
+        }*/
 
         // --- PARANCSOK KEZELÉSE (del, cp, mv, rn, edit) ---
         size_t spacePos = input.find(' ');
@@ -274,6 +301,10 @@ void listAndSelectFile() {
             }
             else if (cmd == "edit") {
                 openFileInEditor(targetPath);
+                continue;
+            }
+            else if (cmd == "mkdir" || cmd == "md") { // ÚJ: Mappa létrehozása
+                createDirectory(targetPath);
                 continue;
             }
         }
@@ -315,9 +346,57 @@ void listAndSelectFile() {
     }
 }
 
-// Megvizsgálja, hogy mappa-e
+// Megvizsgálja, hogy mappa-e || Checks if it's a folder
 bool isDirectory(const std::string& path) {
     struct stat path_stat{};
     if (stat(path.c_str(), &path_stat) != 0) return false;
     return S_ISDIR(path_stat.st_mode);
 }
+
+/**
+ * @brief Creates a new directory at the specified path. || Új könyvtárat hoz létre a megadott útvonalon.
+ *
+ * @details
+ * EN:
+ * This function attempts to create a new directory. It handles platform-specific
+ * commands (mkdir on Linux/macOS, mkdir on Windows) and includes error handling.
+ *
+ * HU:
+ * Ez a függvény megpróbál egy új könyvtárat létrehozni. Kezeli a platformspecifikus
+ * parancsokat (mkdir Linux/macOS-en, mkdir Windows-on) és tartalmazza a hibakezelést.
+ *
+ * @param path The path of the directory to create. || A létrehozandó könyvtár útvonala.
+ * @return True if the directory was created successfully or already exists, false otherwise. || Igaz, ha a könyvtár sikeresen létrejött vagy már létezik, egyébként hamis.
+ */
+// új mappa létrehozás || New folder creation
+bool createDirectory(const std::string& path)
+{
+    const struct CreateFolderStrings &CFS = createFolderTranslations[static_cast<int>(programUiLanguage)];
+    if (!isPathSafe(path)) {
+        logError("createDirectory", CFS.errorDangerousPath + path);
+        std::cerr << CFS.errorDangerousPath << std::endl;
+        waitToEnter();
+        return false;
+    }
+
+    std::string nPath = normalizePath(path);
+    std::string command;
+#ifdef _WIN32
+    command = "mkdir \"" + nPath + "\"";
+#else
+    command = "mkdir -p \"" + nPath + "\"";
+#endif
+
+    if (std::system(command.c_str()) == 0) {
+        std::cout << CFS.successCreate << nPath << std::endl;
+        waitToEnter();
+        return true;
+    } else {
+        std::cerr << CFS.errorCreate << std::endl;
+        waitToEnter();
+        return false;
+    }
+}
+
+
+

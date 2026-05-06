@@ -12,6 +12,7 @@
 #include "dataFileReading.h"
 #include "generalFunctions.h"
 #include "cliFileReading.h"
+#include "newInput/platformInput.h"
 
 std::string fileName;
 
@@ -89,20 +90,42 @@ void createVocab() {
         std::cout << "----------------------------------------------\n\n";
         std::cout << VFC.commands1 << "\n" << VFC.commands2 << "\n";
 
-        // 1. Fájlnév bekérése
-        std::cout << createVocabFile.inputFileName;
+        // 1. Fájlnév bekérése || File name input
+        InputResult fileNameInput = readLineWithHotkey(createVocabFile.inputFileName);
+
+        // --- CTRL + C KEZELÉSE || CTRL + C HANDLING
+        if (fileNameInput.exitTriggered)
+        {
+            return;
+        }
+        fileName = fileNameInput.text;
+        if (toLowerCase(trim(fileName)) == "exit" || toLowerCase(trim(fileName)) == "e") return;
+
+        // ------RÉGI KÓD || OLD CODE ------
+        /*std::cout << createVocabFile.inputFileName;
         std::getline(std::cin, fileName);
-        if (toLowerCase(trim(fileName)) == "exit") return;
+        if (toLowerCase(trim(fileName)) == "exit") return;*/
 
         FileCreationAction fcStatus = handleFileCreationInput(fileName);
         if (fcStatus == FileCreationAction::EXIT) return;
         if (fcStatus == FileCreationAction::COMMAND_EXECUTED) continue;
 
-        // 2. Mappanév bekérése
+        // 2. Mappanév bekérése || Folder name input
         std::string folderName;
-        std::cout << createVocabFile.folderName;
-        std::getline(std::cin, folderName);
-        if (toLowerCase(trim(folderName)) == "exit") return;
+        InputResult folderNameInput = readLineWithHotkey(createVocabFile.folderName);
+
+        // --- CTRL + C KEZELÉSE || CTRL + C HANDLING
+        if (folderNameInput.exitTriggered)
+        {
+            return;
+        }
+        folderName = folderNameInput.text;
+
+        //-----RÉGI KÓD || OLD CODE ------
+        /*std::cout << createVocabFile.folderName;
+        std::getline(std::cin, folderName);*/
+
+        if (toLowerCase(trim(folderName)) == "exit" || toLowerCase(trim(folderName)) == "e") return;
 
         fcStatus = handleFileCreationInput(folderName);
         if (fcStatus == FileCreationAction::EXIT) return;
@@ -144,7 +167,7 @@ void createVocab() {
             continue;
         }
 
-        // Fájl mód választás
+        // Fájl mód választás || Choose FILE MODE
         if (!choiceMenu()) continue;
 
         std::ofstream outFile(fullPath, mode);
@@ -154,7 +177,7 @@ void createVocab() {
             continue;
         }
 
-        // Szavak bekérése
+        // Szavak bekérése || Words input
         for (;;) {
             screenWipe();
             std::cout << createVocabStr.createVocab << fileName << createVocabStr.createVocab2 << wordCount << createVocabStr.createVocab3 << "\n";
@@ -187,7 +210,8 @@ void createVocab() {
             wordCount++;
         }
         outFile.close();
-        // A ciklus vége jön, automatikusan újraindul az elejétől a fájlnév bekéréssel
+        // A ciklus vége jön, automatikusan újraindul az elejétől a fájlnév bekéréssel.
+        // The cycle ends, it automatically restarts from the beginning by asking for the file name.
     }
 }
 
@@ -215,6 +239,11 @@ FileCreationAction handleFileCreationInput(const std::string& input) {
         }
         if (cmd == "mv") {
             movingFileFolders(path, isDirectory(path));
+            return FileCreationAction::COMMAND_EXECUTED;
+        }
+        if (cmd == "mkdir" || cmd == "md")
+        {
+            createDirectory(path);
             return FileCreationAction::COMMAND_EXECUTED;
         }
     }

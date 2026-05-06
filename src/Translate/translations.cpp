@@ -5911,195 +5911,245 @@ const std::vector<targetLanguageList> targetLanguageListTranslations {
 };
 
 const std::vector<ListAndSelectedFile> listAndSelectedFilesTranslations {
+
+    // HUNGARIAN (0)
     {
-        // HUNGARIAN (Index 0)
         "--- Jelenlegi mappa: ",
         "(Üres mappa)\n",
         "[MAPPA] ",
-        "---------------------------------------\nParancsok: név, .., del, cp, mv, rn, edit, exit\nValasztas: "
+        "---------------------------------------\nParancsok: név +",
+        ".. -> kilépés a mappából, del -> törlés, cp -> másolás, mv -> áthelyezés,\nrn -> átnevezés, edit -> szerkesztés, md vagy mkdir -> új mappa, exit -> kilépés",
+        "Választás: "
     },
-     // ENGLISH (Index 1)
+
+    // ENGLISH (1)
     {
         "--- Current folder: ",
         "(Empty folder)\n",
         "[FOLDER] ",
-        "---------------------------------------\nCommands: name, .., del, cp, mv, rn, edit, exit\nSelection: "
+        "---------------------------------------\nCommands: name +",
+        ".. -> up, del -> delete, cp -> copy, mv -> move,\nrn -> rename, edit -> edit, md or mkdir -> new folder, exit -> exit",
+        "Selection: "
     },
 
-    // CHINESE (Index 2)
+    // CHINESE (2)
     {
         "--- 当前目录: ",
         "(空文件夹)\n",
         "[文件夹] ",
-        "---------------------------------------\n命令: 名称, .., del, cp, mv, rn, edit, exit\n选择: "
+        "---------------------------------------\n命令: 名称 +",
+        ".. -> 返回上级, del -> 删除, cp -> 复制, mv -> 移动,\nrn -> 重命名, edit -> 编辑, md 或 mkdir -> 新建文件夹, exit -> 退出",
+        "选择: "
     },
 
-    // JAPANESE (Index 3)
+    // JAPANESE (3)
     {
         "--- 現在のフォルダ: ",
         "(空のフォルダ)\n",
         "[フォルダ] ",
-        "---------------------------------------\nコマンド: 名前, .., del, cp, mv, rn, edit, exit\n選択: "
+        "---------------------------------------\nコマンド: 名前 +",
+        ".. -> 上へ戻る, del -> 削除, cp -> コピー, mv -> 移動,\nrn -> 名前変更, edit -> 編集, md または mkdir -> 新しいフォルダ, exit -> 終了",
+        "選択: "
     },
 
-    // SPANISH (Index 4)
+    // SPANISH (4)
     {
         "--- Carpeta actual: ",
         "(Carpeta vacía)\n",
         "[CARPETA] ",
-        "---------------------------------------\nComandos: nombre, .., del, cp, mv, rn, edit, exit\nSelección: "
+        "---------------------------------------\nComandos: nombre +",
+        ".. -> subir, del -> eliminar, cp -> copiar, mv -> mover,\nrn -> renombrar, edit -> editar, md o mkdir -> nueva carpeta, exit -> salir",
+        "Selección: "
     },
 
-    // GERMAN (Index 5)
+    // GERMAN (5)
     {
         "--- Aktueller Ordner: ",
         "(Leerer Ordner)\n",
         "[ORDNER] ",
-        "---------------------------------------\nBefehle: name, .., del, cp, mv, rn, edit, exit\nAuswahl: "
+        "---------------------------------------\nBefehle: Name +",
+        ".. -> zurück, del -> löschen, cp -> kopieren, mv -> verschieben,\nrn -> umbenennen, edit -> bearbeiten, md oder mkdir -> neuer Ordner, exit -> beenden",
+        "Auswahl: "
     },
 
-    // FRENCH (Index 6)
+    // FRENCH (6)
     {
         "--- Dossier actuel: ",
         "(Dossier vide)\n",
         "[DOSSIER] ",
-        "---------------------------------------\nCommandes: nom, .., del, cp, mv, rn, edit, exit\nChoix: "
+        "---------------------------------------\nCommandes: nom +",
+        ".. -> retour, del -> supprimer, cp -> copier, mv -> déplacer,\nrn -> renommer, edit -> éditer, md ou mkdir -> nouveau dossier, exit -> quitter",
+        "Choix: "
     },
 
-    // RUSSIAN (Index 7)
+    // RUSSIAN (7)
     {
         "--- Текущая папка: ",
         "(Пустая папка)\n",
         "[ПАПКА] ",
-        "---------------------------------------\nКоманды: имя, .., del, cp, mv, rn, edit, exit\nВыбор: "
+        "---------------------------------------\nКоманды: имя +",
+        ".. -> назад, del -> удалить, cp -> копировать, mv -> переместить,\nrn -> переименовать, edit -> редактировать, md или mkdir -> новая папка, exit -> выход",
+        "Выбор: "
     },
 
-    // UKRAINIAN (Index 8)
+    // UKRAINIAN (8)
     {
         "--- Поточна папка: ",
         "(Порожня папка)\n",
         "[ПАПКА] ",
-        "---------------------------------------\nКоманди: ім'я, .., del, cp, mv, rn, edit, exit\nВибір: "
+        "---------------------------------------\nКоманди: ім'я +",
+        ".. -> назад, del -> видалити, cp -> копіювати, mv -> перемістити,\nrn -> перейменувати, edit -> редагувати, md або mkdir -> нова папка, exit -> вихід",
+        "Вибір: "
     },
 
-    // KOREAN (Index 9)
+    // KOREAN (9)
     {
         "--- 현재 폴더: ",
         "(빈 폴더)\n",
         "[폴더] ",
-        "---------------------------------------\n명령어: 이름, .., del, cp, mv, rn, edit, exit\n선택: "
+        "---------------------------------------\n명령어: 이름 +",
+        ".. -> 상위로, del -> 삭제, cp -> 복사, mv -> 이동,\nrn -> 이름변경, edit -> 편집, md 또는 mkdir -> 새 폴더, exit -> 종료",
+        "선택: "
     },
 
-    // ITALIAN (Index 10)
+    // ITALIAN (10)
     {
         "--- Cartella corrente: ",
         "(Cartella vuota)\n",
         "[CARTELLA] ",
-        "---------------------------------------\nComandi: nome, .., del, cp, mv, rn, edit, exit\nScelta: "
+        "---------------------------------------\nComandi: nome +",
+        ".. -> su, del -> elimina, cp -> copia, mv -> sposta,\nrn -> rinomina, edit -> modifica, md o mkdir -> nuova cartella, exit -> esci",
+        "Scelta: "
     },
 
-    // POLISH (Index 11)
+    // POLISH (11)
     {
         "--- Bieżący folder: ",
         "(Pusty folder)\n",
         "[FOLDER] ",
-        "---------------------------------------\nKomendy: nazwa, .., del, cp, mv, rn, edit, exit\nWybór: "
+        "---------------------------------------\nKomendy: nazwa +",
+        ".. -> w górę, del -> usuń, cp -> kopiuj, mv -> przenieś,\nrn -> zmień nazwę, edit -> edytuj, md lub mkdir -> nowy folder, exit -> wyjście",
+        "Wybór: "
     },
 
-    // ARABIC (Index 12)
+    // ARABIC (12)
     {
         "--- المجلد الحالي: ",
         "(مجلد فارغ)\n",
         "[مجلد] ",
-        "---------------------------------------\nالأوامر: اسم, .., del, cp, mv, rn, edit, exit\nاختيار: "
+        "---------------------------------------\nالأوامر: اسم +",
+        ".. -> رجوع, del -> حذف, cp -> نسخ, mv -> نقل,\nrn -> إعادة تسمية, edit -> تحرير, md أو mkdir -> مجلد جديد, exit -> خروج",
+        "اختيار: "
     },
 
-    // VIETNAMESE (Index 13)
+    // VIETNAMESE (13)
     {
         "--- Thư mục hiện tại: ",
         "(Thư mục trống)\n",
         "[THƯ MỤC] ",
-        "---------------------------------------\nLệnh: tên, .., del, cp, mv, rn, edit, exit\nChọn: "
+        "---------------------------------------\nLệnh: tên +",
+        ".. -> lên, del -> xóa, cp -> sao chép, mv -> di chuyển,\nrn -> đổi tên, edit -> chỉnh sửa, md hoặc mkdir -> thư mục mới, exit -> thoát",
+        "Chọn: "
     },
 
-    // TAGALOG (Index 14)
+    // TAGALOG (14)
     {
         "--- Kasalukuyang folder: ",
         "(Walang laman ang folder)\n",
         "[FOLDER] ",
-        "---------------------------------------\nMga utos: pangalan, .., del, cp, mv, rn, edit, exit\nPiliin: "
+        "---------------------------------------\nMga utos: pangalan +",
+        ".. -> pataas, del -> tanggal, cp -> kopya, mv -> lipat,\nrn -> palitan pangalan, edit -> edit, md o mkdir -> bagong folder, exit -> labas",
+        "Piliin: "
     },
 
-    // GREEK (Index 15)
+    // GREEK (15)
     {
         "--- Τρέχων φάκελος: ",
         "(Κενός φάκελος)\n",
         "[ΦΑΚΕΛΟΣ] ",
-        "---------------------------------------\nΕντολές: όνομα, .., del, cp, mv, rn, edit, exit\nΕπιλογή: "
+        "---------------------------------------\nΕντολές: όνομα +",
+        ".. -> πίσω, del -> διαγραφή, cp -> αντιγραφή, mv -> μετακίνηση,\nrn -> μετονομασία, edit -> επεξεργασία, md ή mkdir -> νέος φάκελος, exit -> έξοδος",
+        "Επιλογή: "
     },
 
-    // HEBREW (Index 16)
+    // HEBREW (16)
     {
         "--- תיקייה נוכחית: ",
         "(תיקייה ריקה)\n",
         "[תיקייה] ",
-        "---------------------------------------\nפקודות: שם, .., del, cp, mv, rn, edit, exit\nבחירה: "
+        "---------------------------------------\nפקודות: שם +",
+        ".. -> חזרה, del -> מחיקה, cp -> העתקה, mv -> העברה,\nrn -> שינוי שם, edit -> עריכה, md או mkdir -> תיקייה חדשה, exit -> יציאה",
+        "בחירה: "
     },
 
-    // PORTUGUESE (Index 17)
+    // PORTUGUESE (17)
     {
         "--- Pasta atual: ",
         "(Pasta vazia)\n",
         "[PASTA] ",
-        "---------------------------------------\nComandos: nome, .., del, cp, mv, rn, edit, exit\nSeleção: "
+        "---------------------------------------\nComandos: nome +",
+        ".. -> voltar, del -> excluir, cp -> copiar, mv -> mover,\nrn -> renomear, edit -> editar, md ou mkdir -> nova pasta, exit -> sair",
+        "Seleção: "
     },
 
-    // FARSI (Index 18)
+    // FARSI (18)
     {
         "--- پوشه فعلی: ",
         "(پوشه خالی)\n",
         "[پوشه] ",
-        "---------------------------------------\nدستورات: نام, .., del, cp, mv, rn, edit, exit\nانتخاب: "
+        "---------------------------------------\nدستورات: نام +",
+        ".. -> بازگشت, del -> حذف, cp -> کپی, mv -> انتقال,\nrn -> تغییر نام, edit -> ویرایش, md یا mkdir -> پوشه جدید, exit -> خروج",
+        "انتخاب: "
     },
 
-    // SWEDISH (Index 19)
+    // SWEDISH (19)
     {
         "--- Nuvarande mapp: ",
         "(Tom mapp)\n",
         "[MAPP] ",
-        "---------------------------------------\nKommandon: namn, .., del, cp, mv, rn, edit, exit\nVal: "
+        "---------------------------------------\nKommandon: namn +",
+        ".. -> upp, del -> radera, cp -> kopiera, mv -> flytta,\nrn -> byt namn, edit -> redigera, md eller mkdir -> ny mapp, exit -> avsluta",
+        "Val: "
     },
 
-    // DUTCH (Index 20)
+    // DUTCH (20)
     {
         "--- Huidige map: ",
         "(Lege map)\n",
         "[MAP] ",
-        "---------------------------------------\nCommando's: naam, .., del, cp, mv, rn, edit, exit\nKeuze: "
+        "---------------------------------------\nCommando's: naam +",
+        ".. -> omhoog, del -> verwijderen, cp -> kopiëren, mv -> verplaatsen,\nrn -> hernoemen, edit -> bewerken, md of mkdir -> nieuwe map, exit -> afsluiten",
+        "Keuze: "
     },
 
-    // TURKISH (Index 21)
+    // TURKISH (21)
     {
         "--- Mevcut klasör: ",
         "(Boş klasör)\n",
         "[KLASÖR] ",
-        "---------------------------------------\nKomutlar: isim, .., del, cp, mv, rn, edit, exit\nSeçim: "
+        "---------------------------------------\nKomutlar: isim +",
+        ".. -> yukarı, del -> sil, cp -> kopyala, mv -> taşı,\nrn -> yeniden adlandır, edit -> düzenle, md veya mkdir -> yeni klasör, exit -> çıkış",
+        "Seçim: "
     },
 
-    // HINDI (Index 22)
+    // HINDI (22)
     {
         "--- वर्तमान फ़ोल्डर: ",
         "(खाली फ़ोल्डर)\n",
         "[फ़ोल्डर] ",
-        "---------------------------------------\nकमांड: नाम, .., del, cp, mv, rn, edit, exit\nचयन: "
+        "---------------------------------------\nकमांड: नाम +",
+        ".. -> ऊपर, del -> हटाएँ, cp -> कॉपी, mv -> मूव,\nrn -> नाम बदलें, edit -> संपादित करें, md या mkdir -> नया फ़ोल्डर, exit -> बाहर",
+        "चयन: "
     },
 
-    // LATIN (Index 23)
+    // LATIN (23)
     {
         "--- Directorium currente: ",
         "(Directorium vacuum)\n",
         "[DIRECTORIUM] ",
-        "---------------------------------------\nMandata: nomen, .., del, cp, mv, rn, edit, exit\nElectio: "
+        "---------------------------------------\nMandata: nomen +",
+        ".. -> retro, del -> delere, cp -> copiare, mv -> movere,\nrn -> renominare, edit -> recensere, md vel mkdir -> novum directorium, exit -> exire",
+        "Electio: "
     }
 };
 
@@ -6394,172 +6444,223 @@ const std::vector<MovingFileFolders> movingFileFoldersTranslations {
 };
 
 const std::vector<DeleteFileFolders> deleteFileFoldersTranslations{
-    { // Hungarian (index 0)
+
+    // Hungarian (0)
+    {
         "Hiba: Veszélyes útvonal!",
         "Biztosan törölni szeretnéd: ",
-        "Sikeresen törölve"
+        "Sikeresen törölve",
+        "Megszakítva",
+        "Hiba a törlésnél! Ellenőrizd az útvonalat."
     },
 
-    // ENGLISH (Index 1)
+    // ENGLISH (1)
     {
         "Error: Dangerous path!",
         "Are you sure you want to delete: ",
-        "Successfully deleted"
+        "Successfully deleted",
+        "Cancelled",
+        "Error during deletion! Check the path."
     },
 
-    // CHINESE (Index 2)
+    // CHINESE (2)
     {
         "错误：危险路径！",
         "你确定要删除吗: ",
-        "删除成功"
+        "删除成功",
+        "已取消",
+        "删除时出错！请检查路径。"
     },
 
-    // JAPANESE (Index 3)
+    // JAPANESE (3)
     {
         "エラー：危険なパス！",
         "本当に削除しますか: ",
-        "削除に成功しました"
+        "削除に成功しました",
+        "キャンセルされました",
+        "削除中にエラーが発生しました！パスを確認してください。"
     },
 
-    // SPANISH (Index 4)
+    // SPANISH (4)
     {
         "Error: ¡Ruta peligrosa!",
         "¿Seguro que deseas eliminar: ",
-        "Eliminado correctamente"
+        "Eliminado correctamente",
+        "Cancelado",
+        "Error al eliminar. Verifica la ruta."
     },
 
-    // GERMAN (Index 5)
+    // GERMAN (5)
     {
         "Fehler: Gefährlicher Pfad!",
         "Möchten Sie wirklich löschen: ",
-        "Erfolgreich gelöscht"
+        "Erfolgreich gelöscht",
+        "Abgebrochen",
+        "Fehler beim Löschen! Pfad prüfen."
     },
 
-    // FRENCH (Index 6)
+    // FRENCH (6)
     {
         "Erreur : chemin dangereux !",
         "Êtes-vous sûr de vouloir supprimer : ",
-        "Supprimé avec succès"
+        "Supprimé avec succès",
+        "Annulé",
+        "Erreur lors de la suppression ! Vérifiez le chemin."
     },
 
-    // RUSSIAN (Index 7)
+    // RUSSIAN (7)
     {
         "Ошибка: опасный путь!",
         "Вы уверены, что хотите удалить: ",
-        "Успешно удалено"
+        "Успешно удалено",
+        "Отменено",
+        "Ошибка при удалении! Проверьте путь."
     },
 
-    // UKRAINIAN (Index 8)
+    // UKRAINIAN (8)
     {
         "Помилка: небезпечний шлях!",
         "Ви впевнені, що хочете видалити: ",
-        "Успішно видалено"
+        "Успішно видалено",
+        "Скасовано",
+        "Помилка при видаленні! Перевірте шлях."
     },
 
-    // KOREAN (Index 9)
+    // KOREAN (9)
     {
         "오류: 위험한 경로!",
         "정말 삭제하시겠습니까: ",
-        "성공적으로 삭제됨"
+        "성공적으로 삭제됨",
+        "취소됨",
+        "삭제 중 오류 발생! 경로를 확인하세요."
     },
 
-    // ITALIAN (Index 10)
+    // ITALIAN (10)
     {
         "Errore: percorso pericoloso!",
         "Sei sicuro di voler eliminare: ",
-        "Eliminato con successo"
+        "Eliminato con successo",
+        "Annullato",
+        "Errore durante l'eliminazione! Controlla il percorso."
     },
 
-    // POLISH (Index 11)
+    // POLISH (11)
     {
         "Błąd: niebezpieczna ścieżka!",
         "Czy na pewno chcesz usunąć: ",
-        "Pomyślnie usunięto"
+        "Pomyślnie usunięto",
+        "Anulowano",
+        "Błąd podczas usuwania! Sprawdź ścieżkę."
     },
 
-    // ARABIC (Index 12)
+    // ARABIC (12)
     {
         "خطأ: مسار خطير!",
         "هل أنت متأكد أنك تريد الحذف: ",
-        "تم الحذف بنجاح"
+        "تم الحذف بنجاح",
+        "تم الإلغاء",
+        "خطأ أثناء الحذف! تحقق من المسار."
     },
 
-    // VIETNAMESE (Index 13)
+    // VIETNAMESE (13)
     {
         "Lỗi: đường dẫn nguy hiểm!",
         "Bạn có chắc muốn xóa: ",
-        "Đã xóa thành công"
+        "Đã xóa thành công",
+        "Đã hủy",
+        "Lỗi khi xóa! Kiểm tra đường dẫn."
     },
 
-    // TAGALOG (Index 14)
+    // TAGALOG (14)
     {
         "Error: Delikadong landas!",
         "Sigurado ka bang gusto mong burahin: ",
-        "Matagumpay na natanggal"
+        "Matagumpay na natanggal",
+        "Nakansela",
+        "Error sa pagtanggal! Suriin ang landas."
     },
 
-    // GREEK (Index 15)
+    // GREEK (15)
     {
         "Σφάλμα: επικίνδυνη διαδρομή!",
         "Είστε σίγουροι ότι θέλετε να διαγράψετε: ",
-        "Διαγράφηκε με επιτυχία"
+        "Διαγράφηκε με επιτυχία",
+        "Ακυρώθηκε",
+        "Σφάλμα κατά τη διαγραφή! Ελέγξτε τη διαδρομή."
     },
 
-    // HEBREW (Index 16)
+    // HEBREW (16)
     {
         "שגיאה: נתיב מסוכן!",
         "האם אתה בטוח שברצונך למחוק: ",
-        "נמחק בהצלחה"
+        "נמחק בהצלחה",
+        "בוטל",
+        "שגיאה במחיקה! בדוק את הנתיב."
     },
 
-    // PORTUGUESE (Index 17)
+    // PORTUGUESE (17)
     {
         "Erro: caminho perigoso!",
         "Tem certeza de que deseja excluir: ",
-        "Excluído com sucesso"
+        "Excluído com sucesso",
+        "Cancelado",
+        "Erro ao excluir! Verifique o caminho."
     },
 
-    // FARSI (Index 18)
+    // FARSI (18)
     {
         "خطا: مسیر خطرناک!",
         "آیا مطمئن هستید که می‌خواهید حذف کنید: ",
-        "با موفقیت حذف شد"
+        "با موفقیت حذف شد",
+        "لغو شد",
+        "خطا در حذف! مسیر را بررسی کنید."
     },
 
-    // SWEDISH (Index 19)
+    // SWEDISH (19)
     {
         "Fel: farlig sökväg!",
         "Är du säker på att du vill ta bort: ",
-        "Raderades framgångsrikt"
+        "Raderades framgångsrikt",
+        "Avbruten",
+        "Fel vid borttagning! Kontrollera sökvägen."
     },
 
-    // DUTCH (Index 20)
+    // DUTCH (20)
     {
         "Fout: gevaarlijk pad!",
         "Weet je zeker dat je wilt verwijderen: ",
-        "Succesvol verwijderd"
+        "Succesvol verwijderd",
+        "Geannuleerd",
+        "Fout bij verwijderen! Controleer het pad."
     },
 
-    // TURKISH (Index 21)
+    // TURKISH (21)
     {
         "Hata: tehlikeli yol!",
         "Silmek istediğinizden emin misiniz: ",
-        "Başarıyla silindi"
+        "Başarıyla silindi",
+        "İptal edildi",
+        "Silme hatası! Yolu kontrol et."
     },
 
-    // HINDI (Index 22)
+    // HINDI (22)
     {
         "त्रुटि: खतरनाक पथ!",
         "क्या आप वाकई हटाना चाहते हैं: ",
-        "सफलतापूर्वक हटाया गया"
+        "सफलतापूर्वक हटाया गया",
+        "रद्द किया गया",
+        "हटाने में त्रुटि! पथ जांचें।"
     },
 
-    // LATIN (Index 23)
+    // LATIN (23)
     {
         "Error: iter periculosum!",
         "Certus es te delere velle: ",
-        "Feliciter deletum"
+        "Feliciter deletum",
+        "Abrogatum",
+        "Error in deletione! Iter verifica."
     }
+
 };
 
 const std::vector<CopyFileFolders> copyFileFoldersTranslations{
@@ -8455,149 +8556,637 @@ const std::vector<VocabFileCommands> vocabFileCommandTranslate{
 
     // Hungarian (0)
     {
-        "Parancsok: 'exit' (kilépés), 'del' (törlés), 'rn' (átnevezés), 'cp' (másolás), 'mv' (mozgatás)",
+        "Parancsok: 'exit' (kilépés), 'del' (törlés), 'rn' (átnevezés), 'cp' (másolás), 'mv' (mozgatás), 'md' vagy 'mkdir' (új mappa)",
         "Új mappa létrehozásához írd be a nevét, majd nyomd meg az ENTER-t."
     },
 
     // English (1)
     {
-        "Commands: 'exit' (exit), 'del' (delete), 'rn' (rename), 'cp' (copy), 'mv' (move)",
+        "Commands: 'exit' (exit), 'del' (delete), 'rn' (rename), 'cp' (copy), 'mv' (move), 'md' or 'mkdir' (new folder)",
         "To create a new folder, type its name and press ENTER."
     },
 
     // Chinese (2)
     {
-        "命令: 'exit' (退出), 'del' (删除), 'rn' (重命名), 'cp' (复制), 'mv' (移动)",
+        "命令: 'exit' (退出), 'del' (删除), 'rn' (重命名), 'cp' (复制), 'mv' (移动), 'md' 或 'mkdir'（新建文件夹）",
         "要创建新文件夹，输入名称并按 ENTER。"
     },
 
     // Japanese (3)
     {
-        "コマンド: 'exit' (終了), 'del' (削除), 'rn' (名前変更), 'cp' (コピー), 'mv' (移動)",
+        "コマンド: 'exit' (終了), 'del' (削除), 'rn' (名前変更), 'cp' (コピー), 'mv' (移動), 'md' または 'mkdir'（新しいフォルダ）",
         "新しいフォルダを作成するには名前を入力してENTERを押してください。"
     },
 
     // Spanish (4)
     {
-        "Comandos: 'exit' (salir), 'del' (eliminar), 'rn' (renombrar), 'cp' (copiar), 'mv' (mover)",
+        "Comandos: 'exit' (salir), 'del' (eliminar), 'rn' (renombrar), 'cp' (copiar), 'mv' (mover), 'md' o 'mkdir' (nueva carpeta)",
         "Para crear una carpeta nueva, escribe el nombre y presiona ENTER."
     },
 
     // German (5)
     {
-        "Befehle: 'exit' (beenden), 'del' (löschen), 'rn' (umbenennen), 'cp' (kopieren), 'mv' (verschieben)",
+        "Befehle: 'exit' (beenden), 'del' (löschen), 'rn' (umbenennen), 'cp' (kopieren), 'mv' (verschieben), 'md' oder 'mkdir' (neuer Ordner)",
         "Um einen neuen Ordner zu erstellen, Namen eingeben und ENTER drücken."
     },
 
     // French (6)
     {
-        "Commandes: 'exit' (quitter), 'del' (supprimer), 'rn' (renommer), 'cp' (copier), 'mv' (déplacer)",
+        "Commandes: 'exit' (quitter), 'del' (supprimer), 'rn' (renommer), 'cp' (copier), 'mv' (déplacer), 'md' ou 'mkdir' (nouveau dossier)",
         "Pour créer un dossier, tapez le nom puis appuyez sur ENTER."
     },
 
     // Russian (7)
     {
-        "Команды: 'exit' (выход), 'del' (удалить), 'rn' (переименовать), 'cp' (копировать), 'mv' (переместить)",
+        "Команды: 'exit' (выход), 'del' (удалить), 'rn' (переименовать), 'cp' (копировать), 'mv' (переместить), 'md' или 'mkdir' (новая папка)",
         "Чтобы создать папку, введите имя и нажмите ENTER."
     },
 
     // Ukrainian (8)
     {
-        "Команди: 'exit' (вихід), 'del' (видалити), 'rn' (перейменувати), 'cp' (копіювати), 'mv' (перемістити)",
+        "Команди: 'exit' (вихід), 'del' (видалити), 'rn' (перейменувати), 'cp' (копіювати), 'mv' (перемістити), 'md' або 'mkdir' (нова папка)",
         "Щоб створити папку, введіть назву і натисніть ENTER."
     },
 
     // Korean (9)
     {
-        "명령어: 'exit' (종료), 'del' (삭제), 'rn' (이름변경), 'cp' (복사), 'mv' (이동)",
+        "명령어: 'exit' (종료), 'del' (삭제), 'rn' (이름변경), 'cp' (복사), 'mv' (이동), 'md' 또는 'mkdir' (새 폴더)",
         "새 폴더를 만들려면 이름 입력 후 ENTER."
     },
 
     // Italian (10)
     {
-        "Comandi: 'exit' (esci), 'del' (elimina), 'rn' (rinomina), 'cp' (copia), 'mv' (sposta)",
+        "Comandi: 'exit' (esci), 'del' (elimina), 'rn' (rinomina), 'cp' (copia), 'mv' (sposta), 'md' o 'mkdir' (nuova cartella)",
         "Per creare una cartella, scrivi il nome e premi ENTER."
     },
 
     // Polish (11)
     {
-        "Komendy: 'exit' (wyjście), 'del' (usuń), 'rn' (zmień nazwę), 'cp' (kopiuj), 'mv' (przenieś)",
+        "Komendy: 'exit' (wyjście), 'del' (usuń), 'rn' (zmień nazwę), 'cp' (kopiuj), 'mv' (przenieś), 'md' lub 'mkdir' (nowy folder)",
         "Aby utworzyć folder, wpisz nazwę i naciśnij ENTER."
     },
 
     // Arabic (12)
     {
-        "أوامر: 'exit' (خروج), 'del' (حذف), 'rn' (إعادة تسمية), 'cp' (نسخ), 'mv' (نقل)",
+        "أوامر: 'exit' (خروج), 'del' (حذف), 'rn' (إعادة تسمية), 'cp' (نسخ), 'mv' (نقل), 'md' أو 'mkdir' (مجلد جديد)",
         "لإنشاء مجلد، اكتب الاسم واضغط ENTER."
     },
 
     // Vietnamese (13)
     {
-        "Lệnh: 'exit' (thoát), 'del' (xóa), 'rn' (đổi tên), 'cp' (sao chép), 'mv' (di chuyển)",
+        "Lệnh: 'exit' (thoát), 'del' (xóa), 'rn' (đổi tên), 'cp' (sao chép), 'mv' (di chuyển), 'md' hoặc 'mkdir' (thư mục mới)",
         "Để tạo thư mục mới, nhập tên và nhấn ENTER."
     },
 
     // Tagalog (14)
     {
-        "Mga utos: 'exit' (labas), 'del' (tanggal), 'rn' (palitan pangalan), 'cp' (kopya), 'mv' (lipat)",
+        "Mga utos: 'exit' (labas), 'del' (tanggal), 'rn' (palitan pangalan), 'cp' (kopya), 'mv' (lipat), 'md' o 'mkdir' (bagong folder)",
         "Para gumawa ng folder, ilagay ang pangalan at pindutin ENTER."
     },
 
     // Greek (15)
     {
-        "Εντολές: 'exit' (έξοδος), 'del' (διαγραφή), 'rn' (μετονομασία), 'cp' (αντιγραφή), 'mv' (μετακίνηση)",
+        "Εντολές: 'exit' (έξοδος), 'del' (διαγραφή), 'rn' (μετονομασία), 'cp' (αντιγραφή), 'mv' (μετακίνηση), 'md' ή 'mkdir' (νέος φάκελος)",
         "Για νέο φάκελο γράψε όνομα και πάτα ENTER."
     },
 
     // Hebrew (16)
     {
-        "פקודות: 'exit' (יציאה), 'del' (מחיקה), 'rn' (שינוי שם), 'cp' (העתקה), 'mv' (העברה)",
+        "פקודות: 'exit' (יציאה), 'del' (מחיקה), 'rn' (שינוי שם), 'cp' (העתקה), 'mv' (העברה), 'md' או 'mkdir' (תיקייה חדשה)",
         "כדי ליצור תיקייה, הקלד שם ולחץ ENTER."
     },
 
     // Portuguese (17)
     {
-        "Comandos: 'exit' (sair), 'del' (excluir), 'rn' (renomear), 'cp' (copiar), 'mv' (mover)",
+        "Comandos: 'exit' (sair), 'del' (excluir), 'rn' (renomear), 'cp' (copiar), 'mv' (mover), 'md' ou 'mkdir' (nova pasta)",
         "Para criar pasta, digite o nome e pressione ENTER."
     },
 
     // Farsi (18)
     {
-        "دستورات: 'exit' (خروج), 'del' (حذف), 'rn' (تغییر نام), 'cp' (کپی), 'mv' (انتقال)",
+        "دستورات: 'exit' (خروج), 'del' (حذف), 'rn' (تغییر نام), 'cp' (کپی), 'mv' (انتقال), 'md' یا 'mkdir' (پوشه جدید)",
         "برای ساخت پوشه، نام را وارد کرده و ENTER بزنید."
     },
 
     // Swedish (19)
     {
-        "Kommandon: 'exit' (avsluta), 'del' (radera), 'rn' (byt namn), 'cp' (kopiera), 'mv' (flytta)",
+        "Kommandon: 'exit' (avsluta), 'del' (radera), 'rn' (byt namn), 'cp' (kopiera), 'mv' (flytta), 'md' eller 'mkdir' (ny mapp)",
         "För ny mapp, skriv namn och tryck ENTER."
     },
 
     // Dutch (20)
     {
-        "Commando's: 'exit' (afsluiten), 'del' (verwijderen), 'rn' (hernoemen), 'cp' (kopiëren), 'mv' (verplaatsen)",
+        "Commando's: 'exit' (afsluiten), 'del' (verwijderen), 'rn' (hernoemen), 'cp' (kopiëren), 'mv' (verplaatsen), 'md' of 'mkdir' (nieuwe map)",
         "Voor nieuwe map, typ naam en druk ENTER."
     },
 
     // Turkish (21)
     {
-        "Komutlar: 'exit' (çıkış), 'del' (sil), 'rn' (yeniden adlandır), 'cp' (kopyala), 'mv' (taşı)",
+        "Komutlar: 'exit' (çıkış), 'del' (sil), 'rn' (yeniden adlandır), 'cp' (kopyala), 'mv' (taşı), 'md' veya 'mkdir' (yeni klasör)",
         "Yeni klasör için isim yaz ve ENTER bas."
     },
 
     // Hindi (22)
     {
-        "कमांड: 'exit' (बाहर), 'del' (हटाएँ), 'rn' (नाम बदलें), 'cp' (कॉपी), 'mv' (मूव)",
+        "कमांड: 'exit' (बाहर), 'del' (हटाएँ), 'rn' (नाम बदलें), 'cp' (कॉपी), 'mv' (मूव), 'md' या 'mkdir' (नया फ़ोल्डर)",
         "नया फ़ोल्डर बनाने के लिए नाम लिखें और ENTER दबाएँ।"
     },
 
     // Latin (23)
     {
-        "Mandata: 'exit' (exire), 'del' (delere), 'rn' (renominare), 'cp' (copiare), 'mv' (movere)",
+        "Mandata: 'exit' (exire), 'del' (delere), 'rn' (renominare), 'cp' (copiare), 'mv' (movere), 'md' vel 'mkdir' (novum directorium)",
         "Ad novum directorium crea, nomen scribe et ENTER preme."
     }
 
 };
+
+const std::vector<CreateFolderStrings> createFolderTranslations{
+
+    // Hungarian (0)
+    {
+        "Veszélyes(hibás) útvonal",
+        "Mappa sikeresen létrehozva! Mappa neve: ",
+        "Hiba a mappa létrehozásakor!"
+    },
+
+    // English (1)
+    {
+        "Invalid (dangerous) path",
+        "Folder created successfully! Folder name: ",
+        "Error creating folder!"
+    },
+
+    // Chinese (2)
+    {
+        "无效（危险）路径",
+        "文件夹创建成功！文件夹名称：",
+        "创建文件夹时出错！"
+    },
+
+    // Japanese (3)
+    {
+        "無効（危険な）パス",
+        "フォルダが正常に作成されました！フォルダ名：",
+        "フォルダ作成エラー！"
+    },
+
+    // Spanish (4)
+    {
+        "Ruta inválida (peligrosa)",
+        "¡Carpeta creada con éxito! Nombre de la carpeta: ",
+        "¡Error al crear la carpeta!"
+    },
+
+    // German (5)
+    {
+        "Ungültiger (gefährlicher) Pfad",
+        "Ordner erfolgreich erstellt! Ordnername: ",
+        "Fehler beim Erstellen des Ordners!"
+    },
+
+    // French (6)
+    {
+        "Chemin invalide (dangereux)",
+        "Dossier créé avec succès ! Nom du dossier : ",
+        "Erreur lors de la création du dossier !"
+    },
+
+    // Russian (7)
+    {
+        "Недопустимый (опасный) путь",
+        "Папка успешно создана! Имя папки: ",
+        "Ошибка при создании папки!"
+    },
+
+    // Ukrainian (8)
+    {
+        "Недійсний (небезпечний) шлях",
+        "Папку успішно створено! Назва папки: ",
+        "Помилка при створенні папки!"
+    },
+
+    // Korean (9)
+    {
+        "잘못된(위험한) 경로",
+        "폴더가 성공적으로 생성되었습니다! 폴더 이름: ",
+        "폴더 생성 오류!"
+    },
+
+    // Italian (10)
+    {
+        "Percorso non valido (pericoloso)",
+        "Cartella creata con successo! Nome cartella: ",
+        "Errore durante la creazione della cartella!"
+    },
+
+    // Polish (11)
+    {
+        "Nieprawidłowa (niebezpieczna) ścieżka",
+        "Folder utworzony pomyślnie! Nazwa folderu: ",
+        "Błąd podczas tworzenia folderu!"
+    },
+
+    // Arabic (12)
+    {
+        "مسار غير صالح (خطير)",
+        "تم إنشاء المجلد بنجاح! اسم المجلد: ",
+        "خطأ في إنشاء المجلد!"
+    },
+
+    // Vietnamese (13)
+    {
+        "Đường dẫn không hợp lệ (nguy hiểm)",
+        "Tạo thư mục thành công! Tên thư mục: ",
+        "Lỗi khi tạo thư mục!"
+    },
+
+    // Tagalog (14)
+    {
+        "Di-wastong (mapanganib) landas",
+        "Matagumpay na nagawa ang folder! Pangalan ng folder: ",
+        "Error sa paggawa ng folder!"
+    },
+
+    // Greek (15)
+    {
+        "Μη έγκυρη (επικίνδυνη) διαδρομή",
+        "Ο φάκελος δημιουργήθηκε επιτυχώς! Όνομα φακέλου: ",
+        "Σφάλμα κατά τη δημιουργία φακέλου!"
+    },
+
+    // Hebrew (16)
+    {
+        "נתיב לא חוקי (מסוכן)",
+        "התיקייה נוצרה בהצלחה! שם התיקייה: ",
+        "שגיאה ביצירת התיקייה!"
+    },
+
+    // Portuguese (17)
+    {
+        "Caminho inválido (perigoso)",
+        "Pasta criada com sucesso! Nome da pasta: ",
+        "Erro ao criar a pasta!"
+    },
+
+    // Farsi (18)
+    {
+        "مسیر نامعتبر (خطرناک)",
+        "پوشه با موفقیت ایجاد شد! نام پوشه: ",
+        "خطا در ایجاد پوشه!"
+    },
+
+    // Swedish (19)
+    {
+        "Ogiltig (farlig) sökväg",
+        "Mappen skapades framgångsrikt! Mappnamn: ",
+        "Fel vid skapande av mapp!"
+    },
+
+    // Dutch (20)
+    {
+        "Ongeldig (gevaarlijk) pad",
+        "Map succesvol aangemaakt! Mapnaam: ",
+        "Fout bij maken van map!"
+    },
+
+    // Turkish (21)
+    {
+        "Geçersiz (tehlikeli) yol",
+        "Klasör başarıyla oluşturuldu! Klasör adı: ",
+        "Klasör oluşturma hatası!"
+    },
+
+    // Hindi (22)
+    {
+        "अमान्य (खतरनाक) पथ",
+        "फ़ोल्डर सफलतापूर्वक बनाया गया! फ़ोल्डर नाम: ",
+        "फ़ोल्डर बनाने में त्रुटि!"
+    },
+
+    // Latin (23)
+    {
+        "Via invalida (periculosa)",
+        "Directorium feliciter creatum! Nomen directorii: ",
+        "Error in creando directorio!"
+    }
+
+};
+const std::vector<OneRoundQString> oneRoundQuizStringTranslations {
+
+    // Hungarian (0)
+    {
+        "--- Egy körös kvíz beállítás ---",
+        "Jelenlegi állapot: ",
+        "BE",
+        "KI",
+        "1. Átkapcsolás",
+        "0. Vissza",
+        "Választás: ",
+        "Egy körös kviz BEKAPCSOLVA!",
+        "Egy körös kviz KIKAPCSOLVA!"
+    },
+
+    // English (1)
+    {
+        "--- One round quiz settings ---",
+        "Current state: ",
+        "ON",
+        "OFF",
+        "1. Toggle",
+        "0. Back",
+        "Choice: ",
+        "One round quiz ENABLED!",
+        "One round quiz DISABLED!"
+    },
+
+    // Chinese (2)
+    {
+        "--- 单轮测验设置 ---",
+        "当前状态: ",
+        "开启",
+        "关闭",
+        "1. 切换",
+        "0. 返回",
+        "选择: ",
+        "单轮测验已开启！",
+        "单轮测验已关闭！"
+    },
+
+    // Japanese (3)
+    {
+        "--- 1ラウンドクイズ設定 ---",
+        "現在の状態: ",
+        "オン",
+        "オフ",
+        "1. 切り替え",
+        "0. 戻る",
+        "選択: ",
+        "1ラウンドクイズが有効になりました！",
+        "1ラウンドクイズが無効になりました！"
+    },
+
+    // Spanish (4)
+    {
+        "--- Configuración de quiz de una ronda ---",
+        "Estado actual: ",
+        "ACTIVO",
+        "INACTIVO",
+        "1. Cambiar",
+        "0. Volver",
+        "Elección: ",
+        "¡Quiz de una ronda ACTIVADO!",
+        "¡Quiz de una ronda DESACTIVADO!"
+    },
+
+    // German (5)
+    {
+        "--- Einrunden-Quiz Einstellungen ---",
+        "Aktueller Status: ",
+        "AN",
+        "AUS",
+        "1. Umschalten",
+        "0. Zurück",
+        "Auswahl: ",
+        "Einrunden-Quiz AKTIVIERT!",
+        "Einrunden-Quiz DEAKTIVIERT!"
+    },
+
+    // French (6)
+    {
+        "--- Paramètres du quiz à un tour ---",
+        "État actuel : ",
+        "ACTIVÉ",
+        "DÉSACTIVÉ",
+        "1. Basculer",
+        "0. Retour",
+        "Choix : ",
+        "Quiz à un tour ACTIVÉ !",
+        "Quiz à un tour DÉSACTIVÉ !"
+    },
+
+    // Russian (7)
+    {
+        "--- Настройки одного раунда викторины ---",
+        "Текущее состояние: ",
+        "ВКЛ",
+        "ВЫКЛ",
+        "1. Переключить",
+        "0. Назад",
+        "Выбор: ",
+        "Режим одного раунда ВКЛЮЧЕН!",
+        "Режим одного раунда ВЫКЛЮЧЕН!"
+    },
+
+    // Ukrainian (8)
+    {
+        "--- Налаштування одного раунду ---",
+        "Поточний стан: ",
+        "УВІМК",
+        "ВИМК",
+        "1. Перемкнути",
+        "0. Назад",
+        "Вибір: ",
+        "Режим одного раунду УВІМКНЕНО!",
+        "Режим одного раунду ВИМКНЕНО!"
+    },
+
+    // Korean (9)
+    {
+        "--- 한 라운드 퀴즈 설정 ---",
+        "현재 상태: ",
+        "켜짐",
+        "꺼짐",
+        "1. 전환",
+        "0. 뒤로",
+        "선택: ",
+        "한 라운드 퀴즈 활성화됨!",
+        "한 라운드 퀴즈 비활성화됨!"
+    },
+
+    // Italian (10)
+    {
+        "--- Impostazioni quiz a un turno ---",
+        "Stato attuale: ",
+        "ATTIVO",
+        "DISATTIVO",
+        "1. Cambia",
+        "0. Indietro",
+        "Scelta: ",
+        "Quiz a un turno ATTIVATO!",
+        "Quiz a un turno DISATTIVATO!"
+    },
+
+    // Polish (11)
+    {
+        "--- Ustawienia quizu jednej rundy ---",
+        "Aktualny stan: ",
+        "WŁ",
+        "WYŁ",
+        "1. Przełącz",
+        "0. Wróć",
+        "Wybór: ",
+        "Tryb jednej rundy WŁĄCZONY!",
+        "Tryb jednej rundy WYŁĄCZONY!"
+    },
+
+    // Arabic (12)
+    {
+        "--- إعدادات اختبار جولة واحدة ---",
+        "الحالة الحالية: ",
+        "تشغيل",
+        "إيقاف",
+        "1. تبديل",
+        "0. رجوع",
+        "اختيار: ",
+        "تم تفعيل وضع الجولة الواحدة!",
+        "تم إيقاف وضع الجولة الواحدة!"
+    },
+
+    // Vietnamese (13)
+    {
+        "--- Cài đặt quiz một vòng ---",
+        "Trạng thái hiện tại: ",
+        "BẬT",
+        "TẮT",
+        "1. Chuyển đổi",
+        "0. Quay lại",
+        "Chọn: ",
+        "Đã bật quiz một vòng!",
+        "Đã tắt quiz một vòng!"
+    },
+
+    // Tagalog (14)
+    {
+        "--- Isang round na quiz setting ---",
+        "Kasalukuyang estado: ",
+        "BUKAS",
+        "SARADO",
+        "1. Palitan",
+        "0. Bumalik",
+        "Piliin: ",
+        "Naka-ON ang isang round na quiz!",
+        "Naka-OFF ang isang round na quiz!"
+    },
+
+    // Greek (15)
+    {
+        "--- Ρυθμίσεις κουίζ ενός γύρου ---",
+        "Τρέχουσα κατάσταση: ",
+        "ΕΝΕΡΓΟ",
+        "ΑΝΕΝΕΡΓΟ",
+        "1. Εναλλαγή",
+        "0. Πίσω",
+        "Επιλογή: ",
+        "Το κουίζ ενός γύρου ΕΝΕΡΓΟΠΟΙΗΘΗΚΕ!",
+        "Το κουίζ ενός γύρου ΑΠΕΝΕΡΓΟΠΟΙΗΘΗΚΕ!"
+    },
+
+    // Hebrew (16)
+    {
+        "--- הגדרות חידון סיבוב אחד ---",
+        "מצב נוכחי: ",
+        "פעיל",
+        "כבוי",
+        "1. החלף",
+        "0. חזור",
+        "בחירה: ",
+        "חידון סיבוב אחד הופעל!",
+        "חידון סיבוב אחד כובה!"
+    },
+
+    // Portuguese (17)
+    {
+        "--- Configuração de quiz de uma rodada ---",
+        "Estado atual: ",
+        "LIGADO",
+        "DESLIGADO",
+        "1. Alternar",
+        "0. Voltar",
+        "Escolha: ",
+        "Quiz de uma rodada ATIVADO!",
+        "Quiz de uma rodada DESATIVADO!"
+    },
+
+    // Farsi (18)
+    {
+        "--- تنظیمات آزمون یک دور ---",
+        "وضعیت فعلی: ",
+        "روشن",
+        "خاموش",
+        "1. تغییر",
+        "0. بازگشت",
+        "انتخاب: ",
+        "حالت یک دور فعال شد!",
+        "حالت یک دور غیرفعال شد!"
+    },
+
+    // Swedish (19)
+    {
+        "--- Inställningar för en omgång quiz ---",
+        "Nuvarande status: ",
+        "PÅ",
+        "AV",
+        "1. Växla",
+        "0. Tillbaka",
+        "Val: ",
+        "En-runda quiz AKTIVERAD!",
+        "En-runda quiz AVAKTIVERAD!"
+    },
+
+    // Dutch (20)
+    {
+        "--- Instellingen voor één ronde quiz ---",
+        "Huidige status: ",
+        "AAN",
+        "UIT",
+        "1. Wisselen",
+        "0. Terug",
+        "Keuze: ",
+        "Eén ronde quiz INGESCHAKELD!",
+        "Eén ronde quiz UITGESCHAKELD!"
+    },
+
+    // Turkish (21)
+    {
+        "--- Tek tur quiz ayarları ---",
+        "Mevcut durum: ",
+        "AÇIK",
+        "KAPALI",
+        "1. Değiştir",
+        "0. Geri",
+        "Seçim: ",
+        "Tek tur quiz AKTİF!",
+        "Tek tur quiz PASİF!"
+    },
+
+    // Hindi (22)
+    {
+        "--- एक राउंड क्विज सेटिंग ---",
+        "वर्तमान स्थिति: ",
+        "चालू",
+        "बंद",
+        "1. बदलें",
+        "0. वापस",
+        "चयन: ",
+        "एक राउंड क्विज चालू हुआ!",
+        "एक राउंड क्विज बंद हुआ!"
+    },
+
+    // Latin (23)
+    {
+        "--- Unius circuitus quiz configuratio ---",
+        "Status currentis: ",
+        "ACTIVUM",
+        "INACTIVUM",
+        "1. Mutare",
+        "0. Retro",
+        "Electio: ",
+        "Quiz unius circuitus ACTIVATUM!",
+        "Quiz unius circuitus DEACTIVATUM!"
+    }
+};
+
+
 
 
 //======Vectors end =========

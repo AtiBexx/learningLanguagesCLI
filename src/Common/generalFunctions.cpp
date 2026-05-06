@@ -110,7 +110,7 @@ void exiting() {
 
     // Buffer törlése, hogy a cin.get() biztosan várjon
     // Clearing buffer to ensure cin.get() waits
-    pufferDelete();
+    //pufferDelete();
     std::cin.get();
 }
 

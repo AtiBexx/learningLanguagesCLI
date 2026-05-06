@@ -19,12 +19,12 @@ add_executable(English
         src/Settings/settings.cpp
         src/Settings/settings.h
         src/Settings/colors.h
-        src/Translate/languageList.cpp
+        src/Translate/returnLanguageList.cpp
         src/Quiz/mistakeExercise.cpp
         src/newInput/platformInput.cpp
         src/newInput/platformInput.h
         src/Settings/languageList.h
-        src/Settings/languageList.cpp
+        src/Settings/languageListParse.cpp
 )
 
 # Megadjuk az include útvonalakat a fordítónak

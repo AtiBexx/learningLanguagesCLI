@@ -27,6 +27,7 @@
 #include <fstream>
 #include "createVocab.h"
 #include "osEditor.h"
+#include "newInput/platformInput.h"
 #include "Settings/settings.h"
 
 
@@ -47,8 +48,40 @@ void mainMenu() {
 
         int choice = 0;
         const NumberOutput &numStrs = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
-        std::cout << numStrs.numberOutput << std::flush;
+        //std::cout << numStrs.numberOutput << std::flush;
+        // Az Input beolvasása || Read Input
+        InputResult inputResult = readLineWithHotkey(numStrs.numberOutput);
 
+        // -----CTRL + C Kezelése || CTRL + C Handling
+        if (inputResult.exitTriggered)
+        {
+            playBeep();
+            exiting();
+            return; // Kilépünk az egész programból || We are exiting the entire program.
+        }
+
+        std::string inputStr = inputResult.text;
+        std::string lowerInput = toLowerCase(trim(inputStr));
+
+        // --- "exit" vagy "e" parancs kezelése ---
+        if (lowerInput == "exit" || lowerInput == "e") {
+            playBeep();
+            exiting();
+            return; // Kilép az egész programból
+        }
+        try
+        {
+            choice = std::stoi(inputStr);
+        } catch (...)
+        {
+            screenWipe();
+            const InvalidInput &invalidinput = invalidInputTranslations[static_cast<int>(programUiLanguage)];
+            logError("mainMenu", invalidinput.invalidInput);
+            std::cerr << invalidinput.invalidInput <<"\n";
+            waitToEnter();
+            continue;
+        }
+        /* ====== régi kód || old code ==========
         // ha a cin nem szám
         // if cin is not a number
         if (!(std::cin >> choice)) {
@@ -64,7 +97,7 @@ void mainMenu() {
             std::cerr << invalidinput.invalidInput <<"\n"; // Betöltjük az hibaüzeneteket || Load Error meassages
             waitToEnter();
             continue;
-        }
+        }*/
 
         switch (choice) {
             case 0:
@@ -72,32 +105,32 @@ void mainMenu() {
                  exiting();
                  return;
             case 1:
-                pufferDelete();
+                //pufferDelete();
                 playBeep();
                 explanation();
                 break;
             case 2:
-                pufferDelete();
+                //pufferDelete();
                 playBeep();
                 listAndSelectFile();
                 break;
             case 3:
-                pufferDelete();
+                //pufferDelete();
                 playBeep();
                 mistakeExercise();
                 break;
             case 4:
-                pufferDelete();
+                //pufferDelete();
                 playBeep();
                 createVocab();
                 break;
             case 5:
-                pufferDelete();
+                //pufferDelete();
                 playBeep();
                 settings();
                 break;
             case 6:
-                    pufferDelete();
+                    //pufferDelete();
                     playBeep();
                     screenWipe();
                     openFileInEditor("");
@@ -109,7 +142,7 @@ void mainMenu() {
                 logError("mainMenu", invalidInput2.invalidInput2);
                 std::cerr << invalidInput2.invalidInput2 << "\n";
 
-                pufferDelete();
+                //pufferDelete();
                 waitToEnter();
         }
     }

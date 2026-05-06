@@ -1,6 +1,7 @@
 #ifndef TRANSLATIONS_H
 #define TRANSLATIONS_H
 
+#include <map>
 #include <string>
 #include <vector>
 
@@ -76,6 +77,9 @@ struct ListAndSelectedFile
     std::string emptyFolder;
     std::string isDirectory;
     std::string commands;
+    std::string fullCommands;
+    std::string choice;
+
 
 };
 
@@ -95,6 +99,8 @@ struct DeleteFileFolders
     std::string errorDfDangerousPath;
     std::string confirmationDelete;
     std::string successDelete;
+    std::string interrupted;
+    std::string errorDelete;
 
 };
 struct CopyFileFolders
@@ -105,6 +111,14 @@ struct CopyFileFolders
     std::string errorDangerousGoalAndPath;
     std::string successCopying;
     std::string anErrorOccurred;
+};
+
+struct CreateFolderStrings
+{
+    std::string errorDangerousPath;
+    std::string successCreate;
+    std::string errorCreate;
+
 };
 struct W_wordPair
 {
@@ -381,6 +395,19 @@ struct CreateVocabListsFileAndFolders
     std::string folderName;
 };
 
+struct OneRoundQString
+{
+    std::string mainSigns;
+    std::string currentlyState;
+    std::string stateON;
+    std::string stateOff;
+    std::string switching;
+    std::string back;
+    std::string choose;
+    std::string OneRoundStateOn;
+    std::string OneRoundStateOff;
+};
+
 
 
 //======STRUCTS END========
@@ -430,8 +457,8 @@ extern const std::vector<MistakeExercise> mistakeExerciseTranslations;
 extern const std::vector<SpellingOutAccents> spellingOutAccentsTranslations;
 extern const std::vector<CreateVocabListsFileAndFolders> createVocabListsFileAndFoldersTranslations;
 extern const std::vector<VocabFileCommands> vocabFileCommandTranslate;
-
-
+extern const std::vector<CreateFolderStrings> createFolderTranslations;
+extern const std::vector<OneRoundQString> oneRoundQuizStringTranslations;
 
 
 // Nyelvi globális deklaráció érték
@@ -443,4 +470,21 @@ extern Language targetLanguage; // A tanult nyelv enum értéke || The target la
 // globális változó || global state
 extern bool ignoreAccents; //Az ékezetek kezelésére || To handle accents
 extern bool oneRoundQuiz; // Ha true egy kör(for;;) ciklus false estén 2 kör || If true, one loop(for;;) loop, if false, 2 loops
+
+// -------- LANG.ini ----------
+// Ide töltjük be a lang.ini tartalmát || load the contents of lang.ini here
+extern std::map<std::string, std::string> loadedTranslations;
+// Flag, ami jelzi, hogy a lang.ini-t használjuk-e || Flag indicating whether lang.ini is used
+extern bool useLangIni;
+
+// Megpróbálja betölteni a fordításokat a lang.ini fájlból
+// Try to load the translations from the lang.ini file
+bool loadTranslationsFromFile(Language lang);
+// Létrehozza a lang.ini fájlt az alapértelmezett (hard-coded) fordításokkal
+// Creates the lang.ini file with the default (hard-coded) translations
+void createDefaultLangIni();
+// Központi függvény a fordítások lekéréséhez (akár fájlból, akár hard-coded-ból)
+// Central function for retrieving translations (either from a file or hard-coded)
+std::string getTranslation(const std::string& key); // A lang paramétert kivesszük, mert a programUiLanguag
+
 #endif
