@@ -8,7 +8,7 @@
 std::string getLanguageNameByIndex(int index)
 {
     // nyelvi fordításhoz függvények
-    const targetLanguageList& names = targetLanguageListTranslations[static_cast<int>(programUiLanguage)];
+    const TargetLanguageList& names = targetLanguageListTranslations[static_cast<int>(programUiLanguage)];
     switch (index)
     {
         case 0:

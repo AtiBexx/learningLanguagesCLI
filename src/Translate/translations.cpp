@@ -5235,7 +5235,7 @@ const std::vector<TargetLanguageNameSet> targetLanguageSetTranslations {
     }
 };
 
-const std::vector<targetLanguageList> targetLanguageListTranslations {
+const std::vector<TargetLanguageList> targetLanguageListTranslations {
 
     // Hungarian (Index 0)
     {
