@@ -17,8 +17,8 @@
 
 #include "Common/generalFunctions.h"
 #include "Quiz/programQuiz.h"
-#include <cstdio>
-#include <cstdlib>
+/*#include <cstdio>
+#include <cstdlib>*/
 #include <iostream>
 #include <string>
 #include <vector>
@@ -34,8 +34,19 @@
 void mainMenu() {
     for (;;) {
         screenWipe();
-        const MenuStrings &menuStrs = mainMenuTranslations[static_cast<int>(programUiLanguage)];
+        //const MenuStrings &menuStrs = mainMenuTranslations[static_cast<int>(programUiLanguage)];
 
+        std::cout << getTranslation("MenuStrings.titleAndSigns") << "\n";
+        std::cout << getTranslation("MenuStrings.programExplanation") << "\n";
+        std::cout << getTranslation("MenuStrings.startProgram") << "\n";
+        std::cout << getTranslation("MenuStrings.mistakeExercise") << "\n";
+        std::cout << getTranslation("MenuStrings.newFile") << "\n";
+        std::cout << getTranslation("MenuStrings.settings") << "\n";
+        std::cout << getTranslation("MenuStrings.Editor") << "\n";
+        std::cout << getTranslation("MenuStrings.exit") << "\n";
+        std::cout << getTranslation("MenuStrings.signs") << "\n";
+
+        /*
         std::cout << menuStrs.titleAndSigns <<"\n";
         std::cout << menuStrs.programExplanation << "\n";
         std::cout << menuStrs.startProgram << "\n";
@@ -44,13 +55,14 @@ void mainMenu() {
         std::cout << menuStrs.settings << "\n";
         std::cout << menuStrs.Editor << "\n";
         std::cout << menuStrs.exit << "\n";
-        std::cout << menuStrs.signs << "\n";
+        std::cout << menuStrs.signs << "\n";*/
 
         int choice = 0;
-        const NumberOutput &numStrs = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
+        //const NumberOutput &numStrs = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
         //std::cout << numStrs.numberOutput << std::flush;
         // Az Input beolvasása || Read Input
-        InputResult inputResult = readLineWithHotkey(numStrs.numberOutput);
+        InputResult inputResult = readLineWithHotkey(getTranslation("NumberOutput.numberOutput"));
+        //InputResult inputResult = readLineWithHotkey(numStrs.numberOutput);
 
         // -----CTRL + C Kezelése || CTRL + C Handling
         if (inputResult.exitTriggered)
@@ -75,9 +87,11 @@ void mainMenu() {
         } catch (...)
         {
             screenWipe();
-            const InvalidInput &invalidinput = invalidInputTranslations[static_cast<int>(programUiLanguage)];
-            logError("mainMenu", invalidinput.invalidInput);
-            std::cerr << invalidinput.invalidInput <<"\n";
+            //const InvalidInput &invalidinput = invalidInputTranslations[static_cast<int>(programUiLanguage)];
+            //logError("mainMenu", invalidinput.invalidInput);
+            logError("mainMenu", getTranslation("InvalidInput.invalidInput"));
+            std::cerr << getTranslation("InvalidInput.invalidInput") << "\n";
+            //std::cerr << invalidinput.invalidInput <<"\n";
             waitToEnter();
             continue;
         }
@@ -137,11 +151,11 @@ void mainMenu() {
                 break;
             default:
                 screenWipe();
-                const InvalidInput2 &invalidInput2 = invalidInputTranslations2[static_cast<int>(programUiLanguage)];
+                //const InvalidInput2 &invalidInput2 = invalidInputTranslations2[static_cast<int>(programUiLanguage)];
 
-                logError("mainMenu", invalidInput2.invalidInput2);
-                std::cerr << invalidInput2.invalidInput2 << "\n";
-
+                //logError("mainMenu", invalidInput2.invalidInput2);
+                //std::cerr << invalidInput2.invalidInput2 << "\n";
+                logError("mainMenu" , "InvalidInput2.invalidInput2");
                 //pufferDelete();
                 waitToEnter();
         }

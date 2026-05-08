@@ -33,6 +33,7 @@ bool ignoreAccents = false;
 bool oneRoundQuiz = false;
 bool showHelp = false;
 bool helperUsed = false;
+bool preferIniTranslations = true;
 size_t resumeIndex = 0;
 
 
@@ -44,13 +45,26 @@ void settings()
     for (;;)
     {
         //nyelvi hivatkozások
-        const SettingsMenu& settingsMenu = settingsMenuTranslations[static_cast<int>(programUiLanguage)];
+        /*const SettingsMenu& settingsMenu = settingsMenuTranslations[static_cast<int>(programUiLanguage)];
         const NumberOutput& numberoutput = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
         const InvalidInput &invalidIinput = invalidInputTranslations [static_cast<int>(programUiLanguage)];
-        const InvalidInput2 &invalidIinput2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
+        const InvalidInput2 &invalidIinput2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];*/
 
         screenWipe(); // töröljük a képernyőt
-        std::cout << settingsMenu.settingsMenuSign << std::endl;
+
+        std::cout << getTranslation("SettingsMenu.settingsMenuSign") << "\n";
+        std::cout << getTranslation("SettingsMenu.chooseSettingsMenu") << "\n";
+        std::cout << getTranslation("SettingsMenu.languageOptions") << "\n";
+        std::cout << getTranslation("SettingsMenu.targetLanguageOptions") << "\n";
+        std::cout << getTranslation("SettingsMenu.colorsOptions") << "\n";
+        std::cout << getTranslation("SettingsMenu.soundOptions") << "\n";
+        std::cout << getTranslation("SettingsMenu.accentsOptions") << "\n";
+        std::cout << getTranslation("SettingsMenu.oneRoundQuizOption") << "\n";
+        std::cout << getTranslation("SettingsMenu.preferIniTranslationsOption") << "\n";
+        std::cout << getTranslation("SettingsMenu.backMainMenu") << "\n";
+        std::cout << getTranslation("SettingsMenu.settingsMenuSign2") << "\n";
+
+        /*std::cout << settingsMenu.settingsMenuSign << std::endl;
         std::cout << settingsMenu.chooseSettingsMenu << std::endl;
         std::cout << settingsMenu.languageOptions << std::endl;
         std::cout << settingsMenu.targetLanguageOptions << std::endl;
@@ -59,7 +73,7 @@ void settings()
         std::cout << settingsMenu.accentsOptions << std::endl;
         std::cout << settingsMenu.oneRoundQuizOption << std::endl;
         std::cout << settingsMenu.backMainMenu << std::endl;
-        std::cout << settingsMenu.settingsMenuSign2 << std::endl;
+        std::cout << settingsMenu.settingsMenuSign2 << std::endl;*/
         //std::cout << numberoutput.numberOutput;
 
         int choice = 0;
@@ -68,7 +82,9 @@ void settings()
         std::getline(std::cin, inputSettings);*/
 
         // Input beolvasása readLineWithHotkey-jel || Read Input with readLineWithHotkey
-        InputResult inputResult = readLineWithHotkey(numberoutput.numberOutput);
+        //InputResult inputResult = readLineWithHotkey(numberoutput.numberOutput);
+        InputResult inputResult = readLineWithHotkey(getTranslation("NumberOutput.numberOutput"));
+
 
         // -----CTRL + C Kezelése || CTRL + C Handling
         if (inputResult.exitTriggered)
@@ -102,36 +118,51 @@ void settings()
         switch (choice)
         {
         case 0:
+            playBeep();
             return; //visszalépünk a főmenübe
         case 1:
+            playBeep();
             choiceLanguage();
             break;
         case 2:
+            playBeep();
             learningLanguage();
             break;
         case 3:
+            playBeep();
             colorsOn();
             break;
         case 4:
+            playBeep();
             soundOn();
             break;
         case 5:
+            playBeep();
             accentsToggle();
             break;
         case 6:
+            playBeep();
             oneRoundQuizToggle();
+            break;
+        case 7:
+            playBeep();
+            preferIniTranslationsToggle();
+            break;
         default:
             screenWipe();
             if (choice == 99)
             {
                 screenWipe();
-                logError("SettingsMenu", invalidIinput2.invalidInput2);
-                std::cerr << invalidIinput2.invalidInput2;
-            }
-            else
+                logError("SettingsMenu", getTranslation("InvalidInput2.invalidInput2"));
+                std::cerr << getTranslation("InvalidInput2.invalidInput2");
+                //logError("SettingsMenu", invalidIinput2.invalidInput2);
+                //std::cerr << invalidIinput2.invalidInput2;
+            } else
             {
                 screenWipe();
-                std::cerr << invalidIinput.invalidInput;
+                logError("SettingsMenu", getTranslation("InvalidInput.invalidInput"));
+                std::cerr << getTranslation("InvalidInput.invalidInput");
+                //std::cerr << invalidIinput.invalidInput;
             }
             waitToEnter();
         }
@@ -154,20 +185,22 @@ void choiceLanguage()
 {
     for (;;){
         // Nyelvi hivatkozások
-        const LanguageMenu& LMenu = languageMenuTranslations[static_cast<int>(programUiLanguage)];
+        /*const LanguageMenu& LMenu = languageMenuTranslations[static_cast<int>(programUiLanguage)];
         const InvalidInput &II1 = invalidInputTranslations [static_cast<int>(programUiLanguage)];
-        const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
+        const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];*/
         //std::string selectedLangName = getLanguageNameByIndex(static_cast<int>(programUiLanguage));
 
         screenWipe();
-        std::cout << LMenu.languageMenu1Sign << std::endl;
+        std::cout << getTranslation("LanguageMenu.languageMenu1Sign") << "\n";
+        //std::cout << LMenu.languageMenu1Sign << std::endl;
 
         // KILISTÁZZUK AZ ÖSSZES NYELVET DINAMIKUSAN || LIST ALL LANGUAGES DYNAMICALLY
         for (int i = 0; i <= static_cast<int>(Language::LATIN); i++) {
             std::cout << i + 1 << ". " << getLanguageNameByIndex(i) << std::endl;
         }
 
-        std::cout << "\n" << LMenu.exiting << std::endl;
+        std::cout << getTranslation("LanguageMenu.exiting") << "\n";
+       // std::cout << "\n" << LMenu.exiting << std::endl;
         //std::cout << LMenu.choiceStr;
 
         //-------RÉGI KÓD || OLD CODE
@@ -175,7 +208,8 @@ void choiceLanguage()
         std::getline(std::cin, input);*/
 
         // Input beolvasása readLineWithHotkey-jel || Read Input with readLineWithHotkey
-        InputResult inputResult = readLineWithHotkey(LMenu.choiceStr);
+        InputResult inputResult = readLineWithHotkey(getTranslation("LanguageMenu.choiceStr"));
+        //InputResult inputResult = readLineWithHotkey(LMenu.choiceStr);
 
         // --- CTRL + C Kezelése || CTRL + C Handling
         if (inputResult.exitTriggered)
@@ -200,29 +234,33 @@ void choiceLanguage()
 
                 // ---Frissítjük a hivatkozást az ÚJ nyelvre ---
                 // ---Update the link to the NEW language ---
-                // Fontos! || important!
-                const LanguageMenu& LMenuNew = languageMenuTranslations[static_cast<int>(programUiLanguage)];
+                //const LanguageMenu& LMenuNew = languageMenuTranslations[static_cast<int>(programUiLanguage)];
 
                 // Itt kérjük le az ÚJ nevet a már módosított programUiLanguage alapján!
                 // Here we request the NEW name based on the already modified programUiLanguage!
                 std::string newSelectedLangName = getLanguageNameByIndex(static_cast<int>(programUiLanguage));
 
                 // LMenuNew fontos!
-                std::cout << LMenuNew.choiceSuccessProgramLanguage << ": " << newSelectedLangName << std::endl;
+                std::cout << getTranslation("LanguageMenu.choiceSuccessProgramLanguage") << ": " << newSelectedLangName << std::endl;
+                //std::cout << LMenuNew.choiceSuccessProgramLanguage << ": " << newSelectedLangName << std::endl;
                 saveSettings();
                 waitToEnter();
                 break;
 
             } else {
                 screenWipe();
-                logError("choiceLanguage()", II2.invalidInput2);
-                std::cerr << II2.invalidInput2;
+                logError("choiceLanguage()", getTranslation("InvalidInput2.invalidInput2"));
+                //logError("choiceLanguage()", II2.invalidInput2);
+                std::cerr << getTranslation("InvalidInput2.invalidInput2");
+                //std::cerr << II2.invalidInput2;
                 waitToEnter();
             }
         } catch (...) {
             screenWipe();
-            logError("choiceLanguage()", II1.invalidInput);
-            std::cerr << II1.invalidInput;
+            logError("choiceLanguage()", getTranslation("InvalidInput.invalidInput"));
+            //logError("choiceLanguage()", II1.invalidInput);
+            std::cerr << getTranslation("InvalidInput.invalidInput");
+            //std::cerr << II1.invalidInput;
             waitToEnter();
         }
     }
@@ -244,16 +282,20 @@ void colorsOn()
     for (;;)
     {
         //==== Nyelvi hivatkozások=====
-        const ColorsOnset & clrSET = colorsOSetTranslations[static_cast<int>(programUiLanguage)];
-        const InvalidInput &II1 = invalidInputTranslations [static_cast<int>(programUiLanguage)];
-        const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
+        //const ColorsOnset & clrSET = colorsOSetTranslations[static_cast<int>(programUiLanguage)];
+        //const InvalidInput &II1 = invalidInputTranslations [static_cast<int>(programUiLanguage)];
+        //const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
         //===============================
         screenWipe();
-        std::cout << clrSET.colorsPrinting1 << std::endl;
-        std::cout << clrSET.colorsPrinting2 << (useColors ? clrSET.useCLR_ON : clrSET.useCLR_OFF) << std::endl;
-        std::cout << clrSET.colorsMenu1 << clrSET.colorsMenu2 << clrSET.colorsMenu3;
+        //std::cout << clrSET.colorsPrinting1 << std::endl;
+        std::cout << getTranslation("ColorsOnset.colorsPrinting1") << "\n";
+        std::cout <<getTranslation("ColorsOnset.colorsPrinting2") << (useColors ? getTranslation("ColorsOnset.useCLR_ON") : getTranslation("ColorsOnset.useCLR_OFF")) << "\n" << std::flush;
+        //std::cout << clrSET.colorsPrinting2 << (useColors ? clrSET.useCLR_ON : clrSET.useCLR_OFF) << std::endl;
+        std::cout << getTranslation("ColorsOnset.colorsMenu1") << getTranslation("ColorsOnset.colorsMenu2") << getTranslation("ColorsOnset.colorsMenu3");
+        //std::cout << clrSET.colorsMenu1 << clrSET.colorsMenu2 << clrSET.colorsMenu3;
         //std::cout <<"\n"<< clrSET.choice << std::flush;
-        InputResult inputResult = readLineWithHotkey("\n" + clrSET.choice);
+        InputResult inputResult = readLineWithHotkey("\n" + getTranslation("ColorsOnset.choice"));
+        //InputResult inputResult = readLineWithHotkey("\n" + clrSET.choice);
 
         // --- CTRL + C Kezelése || CTRL + C Handling
         if (inputResult.exitTriggered)
@@ -287,13 +329,15 @@ void colorsOn()
                 useColors = !useColors;
                 if (useColors == true)
                 {
-                    std::cout << clrSET.colorsOnOn  <<std::endl;
+                    std::cout << getTranslation("ColorsOnset.colorsOnOn") << "\n" << std::flush;
+                    //std::cout << clrSET.colorsOnOn  <<std::endl;
                 } else
                 {
                     currentBG = "";       // Kiürítjük a háttérszín kódját
                     currentBG_Code = 1;   // Visszaállítjuk az alapértelmezett (fekete) kódra
                     std::cout << colors::RESET << std::flush;// visszaállítjuk az alapértelmezett színre
-                    std::cout << clrSET.colorsOffOff << std::endl;
+                    std::cout << getTranslation("ColorsOnset.colorsOffOff") << "\n" << std::flush;
+                    //std::cout << clrSET.colorsOffOff << std::endl;
                 }
                 saveSettings(); //elmentjük a beállításokat
                 playBeep();
@@ -313,8 +357,10 @@ void colorsOn()
             {
                 // Ha számot adotál meg, de az nem 1, 2 vagy 3 (pl. 5)
                 screenWipe();
-                logError("colorsOn()", II2.invalidInput2);
-                std::cerr << II2.invalidInput2;
+                //logError("colorsOn()", II2.invalidInput2);
+                logError("colorsOn()" ,getTranslation("InvalidInput2.invalidInput2"));
+                std::cerr << getTranslation("InvalidInput2.invalidInput2");
+                //std::cerr << II2.invalidInput2;
                 waitToEnter();
             }
         }
@@ -322,8 +368,10 @@ void colorsOn()
         {
             // ha nem számot adtál meg
             screenWipe();
-            logError("colorsOn()", II1.invalidInput);
-            std::cerr << II1.invalidInput;
+            logError("colorsOn()", getTranslation("InvalidInput.invalidInput"));
+            //logError("colorsOn()", II1.invalidInput);
+            std::cerr << getTranslation("InvalidInput.invalidInput");
+            //std::cerr << II1.invalidInput;
             waitToEnter();
         }
     }
@@ -339,7 +387,7 @@ void colorsOn()
 void saveSettings()
 {
     // nyelvi fájl
-    const SaveSettings& saveSettings = saveSettingsTranslations[static_cast<int>(programUiLanguage)];
+    //const SaveSettings& saveSettings = saveSettingsTranslations[static_cast<int>(programUiLanguage)];
     // Biztonsági létrehozás
     // Security creation
 #ifdef _WIN32
@@ -365,12 +413,16 @@ std::ofstream outFile("settings.cfg"); //include <fstream>
         outFile << "ResumeIndex=" << resumeIndex << "\n";
         outFile << "ShowHelp=" << showHelp << "\n";
         outFile << "HelperUsed=" << helperUsed << "\n";
+        outFile << "PreferIniTranslations=" << preferIniTranslations << "\n";
         outFile.close();
     }
     else
     {
-        logError("saveSettings()", saveSettings.saveSettingsError);
-        std::cerr << saveSettings.saveSettingsError << std::endl;
+        screenWipe();
+        logError("saveSettings()", getTranslation("SaveSettings.saveSettingsError"));
+        //logError("saveSettings()", saveSettings.saveSettingsError);
+        std::cerr << getTranslation("SaveSettings.saveSettingsError");
+        //std::cerr << saveSettings.saveSettingsError << std::endl;
         waitToEnter();
     }
 }
@@ -395,14 +447,15 @@ bool loadSettings() {
         resumeIndex = 0;
         showHelp = false;
         helperUsed = false;
-        currentBG = ""; // Alapértelmezett háttérszín
+        preferIniTranslations = true;
+        currentBG = ""; // Alapértelmezett háttérszín || Default background color
 
-        currentBG =""; //colors::RESET; // Vagy ""
+        currentBG =""; //colors::RESET; Vagy ||or ""
 
         while (std::getline(inFile, line))
         {
             size_t eqPos = line.find('=');
-            if (eqPos == std::string::npos) continue; // Kihagyjuk a hibás sorokat
+            if (eqPos == std::string::npos) continue; // Kihagyjuk a hibás sorokat || Skip invalid lines
 
             std::string key = line.substr(0, eqPos);
             std::string valueStr = line.substr(eqPos + 1);
@@ -418,8 +471,12 @@ bool loadSettings() {
             else if (key == "ResumeIndex") resumeIndex = std::stoul(valueStr);
             else if (key == "ShowHelp") showHelp = (valueStr == "1" || valueStr == "true");
             else if (key == "HelperUsed") helperUsed = (valueStr == "1" || valueStr == "true");
+            else if (key == "PreferIniTranslations") preferIniTranslations = (valueStr == "1" || valueStr == "true");
         }
         inFile.close();
+
+        // A fordítások betöltése || the Translations loading
+        loadTranslationsFromFile(programUiLanguage);
 
             //visszaállítjuk a számot színné
             //reset the number to color
@@ -452,16 +509,18 @@ bool loadSettings() {
 void backgroundSets()
 {
     // Nyelvi hivatkozások
-    const NumberOutput& numberoutput = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
+    /*const NumberOutput& numberoutput = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
     const BackgroundSets &backgroundsets = backgroundSetsTranslations[static_cast<int>(programUiLanguage)];
     const InvalidInput &II1 = invalidInputTranslations [static_cast<int>(programUiLanguage)];
     const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
-    const ColorsOnset & clrSET = colorsOSetTranslations[static_cast<int>(programUiLanguage)];
+    const ColorsOnset & clrSET = colorsOSetTranslations[static_cast<int>(programUiLanguage)];*/
 
     if (!useColors)
     {
         screenWipe();
-        std::cerr << clrSET.errorEntryDenied << std::endl;
+        logError("backgroundSets()-!useColors" , getTranslation("ColorsOnset.errorEntryDenied"));
+        std::cerr << getTranslation("ColorsOnset.errorEntryDenied")<< "\n" << std::flush;
+        //std::cerr << clrSET.errorEntryDenied << std::endl;
         waitToEnter();
         return; // AZONNAL KILÉPÜNK
     }
@@ -469,7 +528,19 @@ void backgroundSets()
     {
         screenWipe(); // töröljük a képernyőt
 
-        std::cout << backgroundsets.sign << std::endl;
+        std::cout << getTranslation("BackgroundSets.sign") << "\n" << std::flush;
+        std::cout << getTranslation("BackgroundSets.DefaultBlack");
+        std::cout << getTranslation("BackgroundSets.green");
+        std::cout << getTranslation("BackgroundSets.cian");
+        std::cout << getTranslation("BackgroundSets.red");
+        std::cout << getTranslation("BackgroundSets.purple");
+        std::cout << getTranslation("BackgroundSets.blue");
+        std::cout << getTranslation("BackgroundSets.white");
+        std::cout << getTranslation("BackgroundSets.gray");
+        std::cout << getTranslation("BackgroundSets.stepBack");
+
+        InputResult inputResult = readLineWithHotkey(getTranslation("NumberOutput.numberOutput"));
+        /*std::cout << backgroundsets.sign << std::endl;
         std::cout << backgroundsets.DefaultBlack;
         std::cout << backgroundsets.green;
         std::cout << backgroundsets.cian;
@@ -478,9 +549,9 @@ void backgroundSets()
         std::cout << backgroundsets.blue;
         std::cout << backgroundsets.white;
         std::cout << backgroundsets.gray;
-        std::cout <<backgroundsets.stepBack;
+        std::cout <<backgroundsets.stepBack;*/
         //std::cout << numberoutput.numberOutput << std::flush;
-        InputResult inputResult = readLineWithHotkey(numberoutput.numberOutput);
+        //InputResult inputResult = readLineWithHotkey(numberoutput.numberOutput);
 
         //--------RÉGI KÓD || OLD CODE-------
        /* std::string inputBS;
@@ -564,7 +635,10 @@ void backgroundSets()
             else
             {
                 screenWipe();
-            std::cerr << II2.invalidInput2;
+                logError("backgroundSets()--try", getTranslation("InvalidInput2.invalidInput2"));
+            //std::cerr << II2.invalidInput2;
+                playBeep();
+                std::cerr << getTranslation("InvalidInput2.invalidInput2");
                 waitToEnter();
                 continue; //ujraindul a ciklus
             }
@@ -573,9 +647,11 @@ void backgroundSets()
 
             // ha nem számot adtál meg
             screenWipe();
-            logError("backgroundSets()", II1.invalidInput);
+            //logError("backgroundSets()", II1.invalidInput);
+            logError("backgroundSets()--catch", getTranslation("InvalidInput.invalidInput"));
             playBeep();
-            std::cerr << II1.invalidInput;
+            std::cerr << getTranslation("InvalidInput.invalidInput");
+            //std::cerr << II1.invalidInput;
             waitToEnter();
         }
         screenWipe();
@@ -583,16 +659,48 @@ void backgroundSets()
 
         // KIVÁLASZTOTT SZÍN NEVÉNEK KIÍRÁSA
         // PRINT THE NAME OF THE SELECTED COLOR
-        std::cout << backgroundsets.backgroundColorsChange << std::endl;
+        std::cout << getTranslation("BackgroundSets.backgroundColorsChange") << "\n" << std::flush;
+        //std::cout << backgroundsets.backgroundColorsChange << std::endl;
 
-        if (currentBG_Code == 1) std::cout << backgroundsets.DefaultBlack;
+        if (currentBG_Code == 1) std::cout << getTranslation("BackgroundSets.backGroundColor")
+        << getTranslation("BackgroundSets.DefaultBlack");
+
+        else if (currentBG_Code == 2)
+            std::cout << getTranslation("BackgroundSets.backGroundColor")
+                      << getTranslation("BackgroundSets.green");
+
+        else if (currentBG_Code == 3)
+            std::cout << getTranslation("BackgroundSets.backGroundColor")
+                      << getTranslation("BackgroundSets.cian");
+
+        else if (currentBG_Code == 4)
+            std::cout << getTranslation("BackgroundSets.backGroundColor")
+                      << getTranslation("BackgroundSets.red");
+
+        else if (currentBG_Code == 5)
+            std::cout << getTranslation("BackgroundSets.backGroundColor")
+                      << getTranslation("BackgroundSets.purple");
+
+        else if (currentBG_Code == 6)
+            std::cout << getTranslation("BackgroundSets.backGroundColor")
+                      << getTranslation("BackgroundSets.blue");
+
+        else if (currentBG_Code == 7)
+            std::cout << getTranslation("BackgroundSets.backGroundColor")
+                      << getTranslation("BackgroundSets.white");
+
+        else if (currentBG_Code == 8)
+            std::cout << getTranslation("BackgroundSets.backGroundColor")
+                      << getTranslation("BackgroundSets.gray");
+
+        /*if (currentBG_Code == 1) std::cout << backgroundsets.DefaultBlack;
         else if (currentBG_Code == 2) std::cout << backgroundsets.backGroundColor << backgroundsets.green;
         else if (currentBG_Code == 3) std::cout << backgroundsets.backGroundColor << backgroundsets.cian;
         else if (currentBG_Code == 4) std::cout << backgroundsets.backGroundColor << backgroundsets.red;
         else if (currentBG_Code == 5) std::cout << backgroundsets.backGroundColor << backgroundsets.purple;
         else if (currentBG_Code == 6) std::cout << backgroundsets.backGroundColor << backgroundsets.blue;
         else if (currentBG_Code == 7) std::cout << backgroundsets.backGroundColor << backgroundsets.white;
-        else if (currentBG_Code == 8) std::cout << backgroundsets.backGroundColor << backgroundsets.gray;
+        else if (currentBG_Code == 8) std::cout << backgroundsets.backGroundColor << backgroundsets.gray;*/
 
         waitToEnter();
     }
@@ -616,20 +724,32 @@ void learningLanguage()
 {
     for (;;) {
         // Nyelvi hivatkozások
-        const LearningLanguageSet& LLS = learningLanguageSetTranslations[static_cast<int>(programUiLanguage)];
+        /*const LearningLanguageSet& LLS = learningLanguageSetTranslations[static_cast<int>(programUiLanguage)];
         const InvalidInput &II1 = invalidInputTranslations [static_cast<int>(programUiLanguage)];
-        const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
+        const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];*/
 
         screenWipe(); //letöröljük a képernyőt
-        std::cout << LLS.Menu << std::endl;
+
+        std::cout << getTranslation("LearningLanguageSet.Menu") << "\n" << std::flush;
+        std::cout << getTranslation("LearningLanguageSet.CurrentlyMotherLanguage") <<" "<< getLanguageNameByIndex(static_cast<int>(motherLanguage)) << "\n" << std::flush;
+        std::cout << getTranslation("LearningLanguageSet.CurrentlyLearningLanguage") <<" "<< getLanguageNameByIndex(static_cast<int>(targetLanguage)) << "\n" << std::flush;
+        std::cout << "\n"<< getTranslation("LearningLanguageSet.menuSigns") << "\n" << std::flush;
+        std::cout << getTranslation("LearningLanguageSet..option1") << std::flush;
+        std::cout << getTranslation("LearningLanguageSet.option2") << std::flush;
+        std::cout << getTranslation("LearningLanguageSet.option3") << std::flush;
+
+        InputResult inputResult = readLineWithHotkey("\n4." + getTranslation("LearningLanguageSet.choice"));
+
+
+        /*std::cout << LLS.Menu << std::endl;
         std::cout << LLS.CurrentlyMotherLanguage <<" "<< getLanguageNameByIndex(static_cast<int>(motherLanguage)) << std::endl;
         std::cout << LLS.CurrentlyLearningLanguage <<" "<< getLanguageNameByIndex(static_cast<int>(targetLanguage)) << std::endl;
         std::cout << "\n"<< LLS.menuSigns <<"\n" << std::endl;
         std::cout << LLS.option1 ;
         std::cout << LLS.option2 ;
-        std::cout << LLS.option3 ;
+        std::cout << LLS.option3 ;*/
         //std::cout << "\n4. "<<LLS.choice << std::flush;
-        InputResult inputResult = readLineWithHotkey("\n4." + LLS.choice);
+        //InputResult inputResult = readLineWithHotkey("\n4." + LLS.choice);
 
         // --- CTRL + C Kezelése || CTRL + C Handling
         if (inputResult.exitTriggered)
@@ -662,15 +782,19 @@ void learningLanguage()
                     for (;;)
                     {
                         screenWipe();
-                        std::cout << LLS.choice1 <<std::endl;
+                        std::cout << getTranslation("LearningLanguageSet.choice1") << "\n" << std::flush;
+                        //std::cout << LLS.choice1 <<std::endl;
                         //meghívjuk az enum listát a kiválasztáshoz
                         for (int i = 0; i <= static_cast<int>(Language::LATIN); i++)
                         {
                             std::cout << i + 1 << ". " << getLanguageNameByIndex(i) << std::endl;
                         }
-                        std::cout << LLS.back <<std::endl;
+                        std::cout << getTranslation("LearningLanguageSet.back") << "\n" << std::flush;
+                        //std::cout << LLS.back <<std::endl;
                         //std::cout << LLS.allChoice;
-                        InputResult mLangInputResult = readLineWithHotkey(LLS.allChoice);
+                        InputResult mLangInputResult = readLineWithHotkey(getTranslation("LearningLanguageSet.allChoice"));
+
+                        //InputResult mLangInputResult = readLineWithHotkey(LLS.allChoice);
 
                         // --- CTRL + C Kezelése || CTRL + C Handling
                         if (mLangInputResult.exitTriggered)
@@ -705,8 +829,10 @@ void learningLanguage()
 
                                     playBeep();
                                     screenWipe();
-                                    // Itt használd a fordított hibaüzenetedet!
-                                    std::cerr << LLS.error << std::endl;
+                                    logError("learningLanguage()" , getTranslation("LearningLanguageSet.error"));
+
+                                    std:: cerr << getTranslation("LearningLanguageSet.error") <<"\n" <<std::flush;
+                                    //std::cerr << LLS.error << std::endl;
                                     waitToEnter();
                                     continue;
                                 }
@@ -715,7 +841,8 @@ void learningLanguage()
 
                                 // DINAMIKUS VISSZAJELZÉS:
                                 std::string selectedName = getLanguageNameByIndex(static_cast<int>(motherLanguage));
-                                std::cout << LLS.motherSuccess << ": " << selectedName << std::endl;
+                                std::cout << getTranslation("LearningLanguageSet.motherSuccess") << ": " << selectedName << "\n" << std::flush;
+                                //std::cout << LLS.motherSuccess << ": " << selectedName << std::endl;
                                 saveSettings();
                                 waitToEnter();
                             } else
@@ -723,16 +850,21 @@ void learningLanguage()
                                 // Ha számot ír de tartományun kivül esik
                                 // If you enter a number but it is out of range
                                 playBeep();
-                                logError("learningLanguage()(choice1)",II2.invalidInput2);
-                                std::cerr << II2.invalidInput2;
+                                //logError("learningLanguage()(choice1)",II2.invalidInput2);
+                                logError("learningLanguage()(choice1)", getTranslation("InvalidInput2.invalidInput2"));
+                                std::cerr << getTranslation("InvalidInput2.invalidInput2");
+                                //std::cerr << II2.invalidInput2;
                                 waitToEnter();
                             }
                         } catch (...) {
                             // HA NEM SZÁMOT ÍRT (pl. "abc")
                             // IF NOT A NUMBER (e.g. "abc")
                             playBeep();
-                            logError("learningLanguage()(choice1)",II1.invalidInput);
-                            std::cerr << II1.invalidInput;
+                            logError ("learningLanguage()-(choice1)" , getTranslation("InvalidInput.invalidInput"));
+                            //logError("learningLanguage()(choice1)",II1.invalidInput);
+
+                            std::cerr << getTranslation("InvalidInput.invalidInput");
+                            //std::cerr << II1.invalidInput;
                             waitToEnter();
                         }
                         break; //kilépünk ha minden jó és nincs hiba
@@ -742,13 +874,17 @@ void learningLanguage()
                     for (;;)
                     {
                         screenWipe();
-                        std::cout << LLS.choice2 << std::endl;
+                        std::cout << getTranslation("LearningLanguageSet.choice2") << "\n" << std::flush;
+                        //std::cout << LLS.choice2 << std::endl;
                         for (int i = 0; i <= static_cast<int>(Language::LATIN); i++) {
                             std::cout << i + 1 << ". " << getLanguageNameByIndex(i) << std::endl;
                         }
-                        std::cout << LLS.back <<std::endl;
+                        std::cout << getTranslation("LearningLanguageSet.back") << "\n" << std::flush;
+                        //std::cout << LLS.back <<std::endl;
                         //std::cout << LLS.allChoice;
-                        InputResult tLangInputResult = readLineWithHotkey(LLS.allChoice);
+
+                        InputResult tLangInputResult = readLineWithHotkey(getTranslation("LearningLanguageSet.allChoice"));
+                        //InputResult tLangInputResult = readLineWithHotkey(LLS.allChoice);
 
                         // --- CTRL + C Kezelése || CTRL + C Handling
                         if (tLangInputResult.exitTriggered)
@@ -778,8 +914,9 @@ void learningLanguage()
                                 if (tempTargetLanguage == motherLanguage) {
                                     playBeep();
                                     screenWipe();
-                                    // Itt használd a fordított hibaüzenetedet!
-                                    std::cerr << LLS.error << std::endl;
+                                    logError("learningLanguage()" , getTranslation("LearningLanguageSet.error"));
+                                    std::cerr << getTranslation("LearningLanguageSet.error") << "\n" << std::flush;
+                                    //std::cerr << LLS.error << std::endl;
                                     waitToEnter();
                                     continue; // Vissza a learningLanguage menübe
                                 }
@@ -788,19 +925,25 @@ void learningLanguage()
                                 screenWipe();
 
                                 std::string selectedName = getLanguageNameByIndex(static_cast<int>(targetLanguage));
-                                std::cout << LLS.targetSuccess << ": " << selectedName << std::endl;
+
+                                std::cout << getTranslation("LearningLanguageSet.targetSuccess") << ": " << selectedName << "\n" << std::flush;
+                                //std::cout << LLS.targetSuccess << ": " << selectedName << std::endl;
                                 saveSettings();
                                 waitToEnter();
                             } else {
-                                logError("learningLanguage()(choice2)",II2.invalidInput2);
+                                //logError("learningLanguage()(choice2)",II2.invalidInput2);
+                                logError("learningLanguage()(choice2)", getTranslation("InvalidInput2.invalidInput2"));
                                 playBeep();
-                                std::cerr << II2.invalidInput2;
+                                std::cerr << getTranslation("InvalidInput2.invalidInput2");
+                                //std::cerr << II2.invalidInput2;
                                 waitToEnter();
                             }
                         } catch (...) {
-                            logError("learningLanguage()(choice1)",II1.invalidInput);
+                            //logError("learningLanguage()(choice1)",II1.invalidInput);
+                            logError("learningLanguage()(choice1)", getTranslation("InvalidInput.invalidInput"));
                             playBeep();
-                            std::cerr << II1.invalidInput;
+                           std::cerr << getTranslation("InvalidInput.invalidInput");
+                            //std::cerr << II1.invalidInput;
                             waitToEnter();
                         }
                         break;
@@ -815,8 +958,10 @@ void learningLanguage()
 
             } catch (...)
             {
-                logError("learningLanguage()(mainMenu)",II2.invalidInput2);
-                std::cerr << II2.invalidInput2;
+                //logError("learningLanguage()(mainMenu)",II2.invalidInput2);
+                logError("learningLanguage()(mainMenu)", getTranslation("InvalidInput2.invalidInput2"));
+                std::cerr << getTranslation("InvalidInput2.invalidInput2");
+                //std::cerr << II2.invalidInput2;
                 waitToEnter();
             }
         }
@@ -835,16 +980,22 @@ void learningLanguage()
     void soundOn() {
         // Nyelvi hivatkozások
         // Language references
-        const SoundOnOff &SOO = soundOnOffTranslations [static_cast<int>(programUiLanguage)];
-        const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
+        //const SoundOnOff &SOO = soundOnOffTranslations [static_cast<int>(programUiLanguage)];
+        //const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
 
         for (;;) {
             screenWipe();
-            std::cout << SOO.soundSet << std::endl;
-            std::cout << SOO.currentlyState << (useSound ? SOO.useSoundOn : SOO.useSoundOff) << std::endl;
+            std::cout << getTranslation("SoundOnOff.soundSet") << "\n" << std::flush;
+            std::cout << getTranslation ("SoundOnOff..currentlyState")
+            << (useSound ? getTranslation("SoundOnOff.useSoundOn") : getTranslation("SoundOnOff.useSoundOff"))
+            << "\n" << std::flush;
+            /*std::cout << SOO.soundSet << std::endl;
+            std::cout << SOO.currentlyState << (useSound ? SOO.useSoundOn : SOO.useSoundOff) << std::endl;*/
             //std::cout << SOO.option1;
             // Input beolvasása readLineWithHotkey-jel || Read input with readLineWithHotkey
-            InputResult inputResult = readLineWithHotkey(SOO.option1);
+
+            InputResult inputResult = readLineWithHotkey(getTranslation("SoundOnOff.option1"));
+            //InputResult inputResult = readLineWithHotkey(SOO.option1);
 
             //-------RÉGI KÓD || OLD CODE
             /*std::string input;
@@ -873,7 +1024,9 @@ void learningLanguage()
                     saveSettings();
                     // feedback for User
                     // visszajelzés a felhasználónak
-                    std::cout << (useSound ? SOO.useSoundOn2 : SOO.useSoundOff2) << std::endl;
+
+                    std::cout << (useSound ? getTranslation("SoundOnOff.useSoundOn2") : getTranslation("SoundOnOff.useSoundOff2")) << "\n" << std::flush;
+                    //std::cout << (useSound ? SOO.useSoundOn2 : SOO.useSoundOff2) << std::endl;
                     waitToEnter();
                 } else if (localChoice == 0)
                 {
@@ -881,9 +1034,11 @@ void learningLanguage()
                     break;
                 }
             } catch (...) {
-                logError("soundOn()" , II2.invalidInput2);
+                logError("soundOn()" , getTranslation("InvalidInput2.invalidInput2"));
+                //logError("soundOn()" , II2.invalidInput2);
                 playBeep();
-                std::cerr << II2.invalidInput2 << "\n";
+                std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n";
+                //std::cerr << II2.invalidInput2 << "\n";
                 waitToEnter();
             }
         }
@@ -895,16 +1050,22 @@ void learningLanguage()
         for (;;) {
             // Nyelvi hivatkozások
             // Language references
-            const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
-            const SpellingOutAccents &SOA = spellingOutAccentsTranslations [static_cast<int>(programUiLanguage)];
+            //const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
+            //const SpellingOutAccents &SOA = spellingOutAccentsTranslations [static_cast<int>(programUiLanguage)];
 
             screenWipe();
-            std::cout << SOA.accentsMenu << std::endl;
-            std::cout << SOA.accentsState << (ignoreAccents ? SOA.accentsState1Off : SOA.accentsState2On) << std::endl;
+            std::cout << getTranslation("SpellingOutAccents.accentsMenu") << "\n" << std::flush;
+            //std::cout << SOA.accentsMenu << std::endl;
+            std::cout << getTranslation("SpellingOutAccents.accentsState")
+            << (ignoreAccents ? getTranslation("SpellingOutAccents.accentsState1Off") : getTranslation("SpellingOutAccents.accentsState2On"))
+            << "\n" << std::flush;
+            //std::cout << SOA.accentsState << (ignoreAccents ? SOA.accentsState1Off : SOA.accentsState2On) << std::endl;
             //std::cout << SOA.accentsMenu1;
 
             // Input beolvasása readLineWithHotkey-jel || Read input with readLineWithHotkey
-            InputResult inputResult = readLineWithHotkey(SOA.accentsMenu1);
+
+            InputResult inputResult = readLineWithHotkey(getTranslation("SpellingOutAccents.accentsMenu1"));
+            //InputResult inputResult = readLineWithHotkey(SOA.accentsMenu1);
 
             // --- CTRL + C Kezelése || CTRL + C Handling
             if (inputResult.exitTriggered)
@@ -934,13 +1095,16 @@ void learningLanguage()
                     // VISSZAJELZÉS A FELHASZNÁLÓNAK
                     // FEEDBACK FOR USER
                     playBeep();
-                    std::cout << (ignoreAccents ? SOA.accentsState1Off : SOA.accentsState2On) << std::endl;
+                    std::cout << (ignoreAccents ? getTranslation("SpellingOutAccents.accentsState1Off") : getTranslation("SpellingOutAccents.accentsState2On")) << "\n" << std::flush;
+                    //std::cout << (ignoreAccents ? SOA.accentsState1Off : SOA.accentsState2On) << std::endl;
                     waitToEnter();
                 } else if (localChoice == 0) break;
             } catch (...) {
-                logError("accentsToggle()" , II2.invalidInput2);
+                logError("accentsToggle()" , getTranslation("InvalidInput2.invalidInput2"));
+                //logError("accentsToggle()" , II2.invalidInput2);
                 playBeep();
-                std::cerr << II2.invalidInput2 << "\n";
+                std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n";
+                //std::cerr << II2.invalidInput2 << "\n";
                 waitToEnter();
             }
         }
@@ -950,16 +1114,23 @@ void learningLanguage()
     void oneRoundQuizToggle() {
         for (;;) {
             // Nyelvi hivatkozások || Language references
-            const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
-            const OneRoundQString &ORQS = oneRoundQuizStringTranslations [static_cast<int>(programUiLanguage)];
+           // const InvalidInput2 &II2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];
+           // const OneRoundQString &ORQS = oneRoundQuizStringTranslations [static_cast<int>(programUiLanguage)];
 
             screenWipe();
-            std::cout << ORQS.mainSigns << "\n";
+            std::cout << getTranslation("OneRoundQString.mainSigns") <<"\n";
+            std::cout << getTranslation("OneRoundQString.currentlyState") << (oneRoundQuiz ? getTranslation("OneRoundQString.stateON") : getTranslation("OneRoundQString.stateOff")) << "\n";
+            std::cout << getTranslation("OneRoundQString.switching") << "\n";
+            std::cout << getTranslation("OneRoundQString.back") << "\n";
+
+            InputResult inputResult = readLineWithHotkey(getTranslation("OneRoundQString.choose"));
+
+            /*std::cout << ORQS.mainSigns << "\n";
             std::cout << ORQS.currentlyState << (oneRoundQuiz ? ORQS.stateON : ORQS.stateOff) << "\n" << std::flush;
             std::cout << ORQS.switching << "\n";
-            std::cout << ORQS.back << "\n";
+            std::cout << ORQS.back << "\n";*/
             //std::cout << ORQS.choose;
-            InputResult inputResult = readLineWithHotkey(ORQS.choose);
+            //InputResult inputResult = readLineWithHotkey(ORQS.choose);
 
             // --- CTRL + C Kezelése || CTRL + C Handling
             if (inputResult.exitTriggered)
@@ -986,7 +1157,8 @@ void learningLanguage()
                 if (localChoice == 1) {
                     oneRoundQuiz = !oneRoundQuiz;
                     saveSettings();
-                    std::cout << (oneRoundQuiz ? ORQS.OneRoundStateOn : ORQS.OneRoundStateOff) << "\n" << std::flush;
+                    std::cout <<  (oneRoundQuiz ? getTranslation("OneRoundQString.OneRoundStateOn") : getTranslation("OneRoundQString.OneRoundStateOff")) << "\n" << std::flush;
+                    //std::cout << (oneRoundQuiz ? ORQS.OneRoundStateOn : ORQS.OneRoundStateOff) << "\n" << std::flush;
                     playBeep();
                     waitToEnter();
                 } else if (localChoice == 0)
@@ -996,16 +1168,67 @@ void learningLanguage()
                 } else
                 {
                     screenWipe();
-                    logError("oneRoundQuizToggle()" , II2.invalidInput2);
-                    std::cerr << II2.invalidInput2 << "\n" << std::flush;
+                    logError("oneRoundQuizToggle()", getTranslation("InvalidInput2.invalidInput2"));
+                    //logError("oneRoundQuizToggle()" , II2.invalidInput2);
+                    std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n" << std::flush;
+                    //std::cerr << II2.invalidInput2 << "\n" << std::flush;
                     playBeep();
                     waitToEnter();
                 }
             } catch (...) {
-                logError("oneRoundQuizToggle()" , II2.invalidInput2);
-                std::cerr << II2.invalidInput2 << "\n" << std::flush;
+                screenWipe();
+                logError("oneRoundQuizToggle()", getTranslation("InvalidInput2.invalidInput2"));
+                //logError("oneRoundQuizToggle()" , II2.invalidInput2);
+                std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n" << std::flush;
+                //std::cerr << II2.invalidInput2 << "\n" << std::flush;
                 playBeep();
                 waitToEnter();
             }
         }
     }
+
+void preferIniTranslationsToggle()
+{
+    screenWipe();
+    std::cout << getTranslation("IniStructToggle.mainSigns")  << "\n";
+    std::cout << getTranslation("IniStructToggle.currentlyState") << (preferIniTranslations ? getTranslation("IniStructToggle.stateON") : getTranslation ("stateOff")) << "\n" << std::flush;
+
+    InputResult inputResult = readLineWithHotkey(getTranslation("IniStructToggle.switchingMenu"));
+
+    if (inputResult.exitTriggered) {
+        playBeep();
+        return;
+    }
+    std::string input = inputResult.text;
+    std::string lowerInput = toLowerCase(trim(input));
+
+    if (lowerInput == "exit" || lowerInput == "e") {
+        playBeep();
+        return;
+    }
+    try {
+        int localChoice = std::stoi(input);
+        if (localChoice == 1) {
+            preferIniTranslations = !preferIniTranslations;
+            saveSettings();
+            // ÚJ: Fordítások újratöltése a preferIniTranslations alapján
+            loadTranslationsFromFile(programUiLanguage);
+            std::cout << (preferIniTranslations ? getTranslation("IniStructToggle.cStateON") : getTranslation("IniStructToggle.cStateOff")) << std::endl; 
+            playBeep();
+            waitToEnter();
+        } else if (localChoice == 0) {
+            playBeep();
+            return;
+        } else {
+            screenWipe();
+            logError("preferIniTranslationsToggle()" , getTranslation("InvalidInput2.invalidInput2"));
+            std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n";
+            waitToEnter();
+        }
+    } catch (...) {
+        logError("preferIniTranslationsToggle()" , getTranslation("InvalidInput2.invalidInput2"));
+        std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n";
+        waitToEnter();
+    }
+}
+

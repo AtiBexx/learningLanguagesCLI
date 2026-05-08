@@ -49,10 +49,22 @@
 // a program leírása/magyarázata
 // program explanation
 void explanation() {
-    const ExplanationStrings& strings = explanationTranslations[static_cast<int>(programUiLanguage)];
+    //const ExplanationStrings& strings = explanationTranslations[static_cast<int>(programUiLanguage)];
 
     screenWipe();
-    std::cout << strings.description << "\n";
+    std::cout << getTranslation("ExplanationStrings.description") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction1") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction2") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction3") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction4") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction5") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction6") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction7") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction8") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction9") << "\n";
+    std::cout << getTranslation("ExplanationStrings.goodLuck") << "\n";
+
+    /*std::cout << strings.description << "\n";
     std::cout << strings.instruction1 << "\n";
     std::cout << strings.instruction2 << "\n";
     std::cout << strings.instruction3 << "\n";
@@ -62,7 +74,7 @@ void explanation() {
     std::cout << strings.instruction7 << "\n";
     std::cout << strings.instruction8 << "\n";
     std::cout << strings.instruction9 << "\n";
-    std::cout << strings.goodLuck <<"\n";
+    std::cout << strings.goodLuck <<"\n";*/
 
     waitToEnter();
 }
@@ -83,9 +95,10 @@ void explanation() {
 // wait for a keystroke (enter)
 void waitToEnter()
 {
-    const EnteringBack& enteringBack = continuationToEnterTranslations[static_cast<int>(programUiLanguage)];
+    //const EnteringBack& enteringBack = continuationToEnterTranslations[static_cast<int>(programUiLanguage)];
 
-    std::cout << enteringBack.pressToEnter << std::endl;
+    std::cout << getTranslation("EnteringBack.pressToEnter") <<"\n"<< std::flush;
+    //std::cout << enteringBack.pressToEnter << std::endl;
     std::cin.get();
 }
 
@@ -105,8 +118,9 @@ void waitToEnter()
 // Exit the application
 void exiting() {
     screenWipe();
-    const ExitingStrings& strings = exitingTranslations[static_cast<int>(programUiLanguage)];
-    std::cout << strings.exiting << std::endl;
+    //const ExitingStrings& strings = exitingTranslations[static_cast<int>(programUiLanguage)];
+    std::cout << getTranslation("ExitingStrings.exiting") <<"\n" << std::flush;
+    //std::cout << strings.exiting << std::endl;
 
     // Buffer törlése, hogy a cin.get() biztosan várjon
     // Clearing buffer to ensure cin.get() waits

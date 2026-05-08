@@ -127,10 +127,12 @@ vector<WordPair> loadWords(const std::string &filename) {
     string line;
 
     if (!file.is_open()) {
-        const W_wordPair &wWordPair = wordPairErrorTranslations [static_cast<int>(programUiLanguage)];
-        logError("loadWords", wWordPair.ErrorOpenedFile);
+        //const W_wordPair &wWordPair = wordPairErrorTranslations [static_cast<int>(programUiLanguage)];
+        //logError("loadWords", wWordPair.ErrorOpenedFile);
 
-        std:: cerr << wWordPair.ErrorOpenedFile <<" "<<filename << std::endl;
+        logError("loadWords", getTranslation("W_wordPair.ErrorOpenedFile"));
+        std::cerr << getTranslation("W_wordPair.ErrorOpenedFile") << " " << filename << "\n" << std::flush;
+        //std:: cerr << wWordPair.ErrorOpenedFile <<" "<<filename << std::endl;
         return words;
     }
     while (getline(file, line)) {

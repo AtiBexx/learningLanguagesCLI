@@ -46,7 +46,7 @@ unsigned long long wordCount = 0;
 bool choiceMenu()
 {
     // nyelvi fájlok
-    const VocabMenu &vocabMenu = vocabMenuTranslations[static_cast<int>(programUiLanguage)];
+    //const VocabMenu &vocabMenu = vocabMenuTranslations[static_cast<int>(programUiLanguage)];
 
     // létező szavak vizsgálata
     std::vector<WordPair> existingWords = loadWords(fullPath);
@@ -58,8 +58,11 @@ bool choiceMenu()
         int choice = 0;
         while (true) {
             screenWipe();
-            std::cout << vocabMenu.vocabMenu1 << existingWords.size() << vocabMenu.vocabMenu2 << std::endl;
-            std::cout << vocabMenu.vocabMenu3 ;
+            std::cout << getTranslation("VocabMenu.vocabMenu1") << existingWords.size() << getTranslation("VocabMenu.vocabMenu2") << "\n" << std::flush;
+            std::cout << getTranslation("VocabMenu.vocabMenu3");
+
+            //std::cout << vocabMenu.vocabMenu1 << existingWords.size() << vocabMenu.vocabMenu2 << std::endl;
+            //std::cout << vocabMenu.vocabMenu3 ;
 
             std::string inputCh;
             std::getline(std::cin, inputCh);
@@ -72,12 +75,16 @@ bool choiceMenu()
                 }
                 else {
                     screenWipe();
-                    std::cerr << vocabMenu.vocabError1<<"\n";
+                    logError("bool_choiceMenu", getTranslation("VocabMenu.vocabError1"));
+                    std::cerr << getTranslation("VocabMenu.vocabError1") << "\n";
+                    //std::cerr << vocabMenu.vocabError1<<"\n";
                     waitToEnter();
                 }
             } catch (...) {
                 screenWipe();
-                std::cerr << vocabMenu.vocabError2 << "\n";
+                logError("bool_choiceMenu", getTranslation("VocabMenu.vocabError2"));
+                std::cerr << getTranslation("VocabMenu.vocabError2") << "\n" << std::flush;
+                //std::cerr << vocabMenu.vocabError2 << "\n";
                 waitToEnter();
                 continue;
             }

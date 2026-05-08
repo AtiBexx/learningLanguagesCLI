@@ -97,6 +97,9 @@ int main(int argc, char *argv[]) {
     // Ha létezik akkor betöltjük
     if (!loadSettings()) saveSettings();
 
+    // Fordítások betöltése || Loading translations
+    loadTranslationsFromFile(programUiLanguage);
+
     mainMenu();
     return 0;
 }

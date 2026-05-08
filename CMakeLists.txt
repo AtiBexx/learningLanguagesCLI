@@ -12,7 +12,7 @@ add_executable(English
     src/FileIO/cliFileReading.cpp
     src/FileIO/dataFileReading.cpp
     src/Quiz/programQuiz.cpp
-    src/Translate/translations.cpp
+        src/Translate/translations.txt
     src/Menu/menu.cpp
     src/CreateVocab/createVocab.cpp
     src/CreateVocab/vocabCmenu.cpp
@@ -25,6 +25,7 @@ add_executable(English
         src/newInput/platformInput.h
         src/Settings/languageList.h
         src/Settings/languageListParse.cpp
+        src/Translate/translations.cpp
 )
 
 # Megadjuk az include útvonalakat a fordítónak

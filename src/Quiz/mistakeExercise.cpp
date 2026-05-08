@@ -25,11 +25,11 @@ void mistakeExercise()
     path = "data/mistakes/mistakes.data";
 #endif
 
-    const GoodAnswer2& goodAns2 = goodAnswer2Translations[static_cast<int>(programUiLanguage)];
+    /*const GoodAnswer2& goodAns2 = goodAnswer2Translations[static_cast<int>(programUiLanguage)];
     const GoodAnswer1& goodAns = goodAnswer1Translations[static_cast<int>(programUiLanguage)];
     const BadlyAnswer& badAns = badlyAnswerTranslations[static_cast<int>(programUiLanguage)];
     const MistakeExercise& mistakeExercise = mistakeExerciseTranslations[static_cast<int>(programUiLanguage)];
-    const QuizExplanation &quizExplanation = quizExplanationTranslations[static_cast<int>(programUiLanguage)];
+    const QuizExplanation &quizExplanation = quizExplanationTranslations[static_cast<int>(programUiLanguage)];*/
 
     loadSettings();
     // Beolvassuk a hibákat
@@ -37,9 +37,10 @@ void mistakeExercise()
     std::vector<WordPair> mistakeWords = loadWords(path);
 
     if (mistakeWords.empty()) {
-        const HaveNoWords& msg = haveNoWordsTranslations[static_cast<int>(programUiLanguage)];
+        //const HaveNoWords& msg = haveNoWordsTranslations[static_cast<int>(programUiLanguage)];
         screenWipe();
-        std::cout << msg.haveNoWords << std::endl;
+        std::cout << getTranslation("HaveNoWords.haveNoWords") <<"\n" << std::flush;
+        //std::cout << msg.haveNoWords << std::endl;
         waitToEnter();
         return;
     }
@@ -63,20 +64,27 @@ void mistakeExercise()
         const WordPair& word = mistakeWords[i]; // Az aktuális szó || The current word
         for (;;) {
             screenWipe();
-            std::cout << quizExplanation.quizExplanation1 << std::endl;
+            std::cout << getTranslation("QuizExplanation.quizExplanation1") << "\n" << std::flush;
+            std::cout << getTranslation("QuizExplanation.quizExplanation2") << "\n" << std::flush;
+            std::cout << getTranslation("QuizExplanation.quizExplanation3") << "\n" << std::flush;
+            std::cout << getTranslation("MistakeExercise.practiceOfWrongWord") << "\n" << std::flush;
+            std::cout << getTranslation("MistakeExercise.word") << word.motherLangMeaning << "\n" << std::flush;
+            std::cout << getTranslation("MistakeExercise.answer");
+            /*std::cout << quizExplanation.quizExplanation1 << std::endl;
             std::cout << quizExplanation.quizExplanation2 << std::endl;
             std::cout << quizExplanation.quizExplanation3 << std::endl;
 
             std::cout << mistakeExercise.practiceOfWrongWord << std::endl;
             std::cout << mistakeExercise.word << word.motherLangMeaning << std::endl;
-            std::cout << mistakeExercise.answer;
+            std::cout << mistakeExercise.answer;*/
 
             // Ha be van kapcsolva a súgó, akkor itt kiírjuk
             if (showHelp) {
                 std::cout << "CheatSheet: " << colors::GREY << word.targetLangMeaning << colors::RESET << std::endl;
             }
 
-            InputResult inputResult = readLineWithHotkey(mistakeExercise.answer);
+            InputResult inputResult = readLineWithHotkey(getTranslation("MistakeExercise.answer"));
+            //InputResult inputResult = readLineWithHotkey(mistakeExercise.answer);
 
             // Ha hotkey volt (Ctrl+Y)
             if (inputResult.hotkeyTriggered) {
@@ -118,15 +126,19 @@ void mistakeExercise()
             //if (toLowerCase(removePunctuation(trim(answer))) == toLowerCase(removePunctuation(trim(word.targetLangMeaning)))){
             if (cleanString(answer) == cleanString(word.targetLangMeaning)) {
                 if (useColors) std::cout << colors::GREEN;
-                std::cout << goodAns.goodAnswer1;
+                std::cout << getTranslation("GoodAnswer1.goodAnswer1");
+                //std::cout << goodAns.goodAnswer1;
                 if (useColors) std::cout << colors::RESET;
                 waitToEnter();
                 break;
             } else {
                 if (useColors) std::cout << colors::RED;
-                std::cout << badAns.badlyAnswer;
+                std::cout << getTranslation("BadlyAnswer.badlyAnswer");
+                //std::cout << badAns.badlyAnswer;
                 if (useColors) std::cout << colors::RESET;
-                std::cout << "\n"<<goodAns2.goodAnswer2 << word.targetLangMeaning << std::endl;
+                std::cout << "\n"<<getTranslation("GoodAnswer2.goodAnswer2") << word.targetLangMeaning << "\n" << std::flush;
+
+                //std::cout << "\n"<<goodAns2.goodAnswer2 << word.targetLangMeaning << std::endl;
                 stillMistakes.push_back(word); // Benne hagyjuk a listában
                 waitToEnter();
             }
@@ -150,7 +162,8 @@ void mistakeExercise()
     }
 
     screenWipe();
-    std::cout << mistakeExercise.exerciseEnd << stillMistakes.size() << std::endl;
+    std::cout << getTranslation("MistakeExercise.exerciseEnd") << stillMistakes.size() << "\n" << std::flush;
+    //std::cout << mistakeExercise.exerciseEnd << stillMistakes.size() << std::endl;
     saveSettings();
     waitToEnter();
 }

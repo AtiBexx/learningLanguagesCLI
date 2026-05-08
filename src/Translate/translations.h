@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 
+
 //Enum list for supported Language
 //Enum lista a támogatott nyelvekhez
 enum class Language {
@@ -48,7 +49,7 @@ struct MenuStrings {
     std::string exit;
     std::string signs;
 };
-extern const std::vector<MenuStrings> mainMenuTranslations;
+//extern const std::vector<MenuStrings> mainMenuTranslations;
 
 //====================================
 struct ExplanationStrings {
@@ -64,19 +65,19 @@ struct ExplanationStrings {
     std::string instruction9;
     std::string goodLuck;
 };
-extern const std::vector<ExplanationStrings> explanationTranslations;
+//extern const std::vector<ExplanationStrings> explanationTranslations;
 
 //========================================
 struct ExitingStrings {
     std::string exiting;
 };
-extern const std::vector<ExitingStrings> exitingTranslations;
+//extern const std::vector<ExitingStrings> exitingTranslations;
 
 //========================================
 struct NumberOutput {
     std::string numberOutput;
 };
-extern const std::vector<NumberOutput> chooseNumberMenuTranslations;
+//extern const std::vector<NumberOutput> chooseNumberMenuTranslations;
 
 //========================================
 struct ListAndSelectedFile
@@ -88,7 +89,7 @@ struct ListAndSelectedFile
     std::string fullCommands;
     std::string choice;
 };
-extern const std::vector<ListAndSelectedFile> listAndSelectedFilesTranslations;
+//extern const std::vector<ListAndSelectedFile> listAndSelectedFilesTranslations;
 
 //=====================================================
 struct RenameFilesAndFolders
@@ -96,7 +97,7 @@ struct RenameFilesAndFolders
     std::string toBeRenamed;
     std::string newName;
 };
-extern const std::vector<RenameFilesAndFolders> renameFilesAndFoldersTranslations;
+//extern const std::vector<RenameFilesAndFolders> renameFilesAndFoldersTranslations;
 
 //=====================================================
 struct MovingFileFolders
@@ -105,7 +106,7 @@ struct MovingFileFolders
     std::string newNameNewPath;
 
 };
-extern const std::vector<MovingFileFolders> movingFileFoldersTranslations;
+//extern const std::vector<MovingFileFolders> movingFileFoldersTranslations;
 
 //
 //=====================================================
@@ -118,7 +119,7 @@ struct DeleteFileFolders
     std::string errorDelete;
 
 };
-extern const std::vector<DeleteFileFolders> deleteFileFoldersTranslations;
+//extern const std::vector<DeleteFileFolders> deleteFileFoldersTranslations;
 
 //
 //=====================================================
@@ -131,7 +132,7 @@ struct CopyFileFolders
     std::string successCopying;
     std::string anErrorOccurred;
 };
-extern const std::vector<CopyFileFolders> copyFileFoldersTranslations;
+//extern const std::vector<CopyFileFolders> copyFileFoldersTranslations;
 
 //
 //=====================================================
@@ -142,7 +143,7 @@ struct CreateFolderStrings
     std::string errorCreate;
 
 };
-extern const std::vector<CreateFolderStrings> createFolderTranslations;
+//extern const std::vector<CreateFolderStrings> createFolderTranslations;
 
 //
 //=====================================================
@@ -150,77 +151,77 @@ struct W_wordPair
 {
     std::string ErrorOpenedFile;
 };
-extern const std::vector<W_wordPair> wordPairErrorTranslations;
+//extern const std::vector<W_wordPair> wordPairErrorTranslations;
 
 //
 //=====================================================
 struct InvalidInput {
     std::string invalidInput;
 };
-extern const std::vector<InvalidInput> invalidInputTranslations;
+//extern const std::vector<InvalidInput> invalidInputTranslations;
 
 //
 //=====================================================
 struct EnteringBack {
     std::string pressToEnter;
 };
-extern const std::vector<EnteringBack> continuationToEnterTranslations;
+//extern const std::vector<EnteringBack> continuationToEnterTranslations;
 
 //
 //=====================================================
 struct InvalidInput2 {
     std::string invalidInput2;
 };
-extern const std::vector<InvalidInput2> invalidInputTranslations2;
+//extern const std::vector<InvalidInput2> invalidInputTranslations2;
 
 //
 //=====================================================
 struct HaveNoWords {
     std::string haveNoWords;
 };
-extern const std::vector<HaveNoWords> haveNoWordsTranslations;
+//extern const std::vector<HaveNoWords> haveNoWordsTranslations;
 
 //
 //=====================================================
 struct ReTry {
     std::string reTry;
 };
-extern const std::vector<ReTry> reTryTranslations;
+//extern const std::vector<ReTry> reTryTranslations;
 
 //
 //=====================================================
 struct BadlyAnswer {
     std::string badlyAnswer;
 };
-extern const std::vector<BadlyAnswer> badlyAnswerTranslations;
+//extern const std::vector<BadlyAnswer> badlyAnswerTranslations;
 
 //
 //=====================================================
 struct GoodAnswer1 {
     std::string goodAnswer1;
 };
-extern const std::vector<GoodAnswer1> goodAnswer1Translations;
+//extern const std::vector<GoodAnswer1> goodAnswer1Translations;
 
 //
 //=====================================================
 struct GoodAnswer2 {
     std::string goodAnswer2;
 };
-extern const std::vector<GoodAnswer2> goodAnswer2Translations;
+//extern const std::vector<GoodAnswer2> goodAnswer2Translations;
 
 //
 //=====================================================
 struct PronunciationString {
     std::string pronunciation2str;
 };
-extern const std::vector<PronunciationString> pronunciationStringTranslations;
+//extern const std::vector<PronunciationString> pronunciationStringTranslations;
 
 //
 //=====================================================
 struct HaveFinished {
     std::string haveFinished;
 };
-extern const std::vector<HaveFinished> haveFinishedTranslations;
+//extern const std::vector<HaveFinished> haveFinishedTranslations;
 
 //
 //=====================================================
@@ -231,7 +232,7 @@ struct ScoreSys {
     std::string badly;
     std::string percent;
 };
-extern const std::vector<ScoreSys> totalTranslations;
+//extern const std::vector<ScoreSys> totalTranslations;
 
 //
 //=====================================================
@@ -240,7 +241,7 @@ struct PercentAge {
     std::string percentAge80;
     std::string percentAgeElse;
 };
-extern const std::vector<PercentAge> percentAgeTranslations;
+//extern const std::vector<PercentAge> percentAgeTranslations;
 
 //
 //=====================================================
@@ -249,7 +250,7 @@ struct QuizExplanation {
     std::string quizExplanation2;
     std::string quizExplanation3;
 };
-extern const std::vector<QuizExplanation> quizExplanationTranslations;
+//extern const std::vector<QuizExplanation> quizExplanationTranslations;
 
 //
 //=====================================================
@@ -258,7 +259,7 @@ struct VocabWordsPairTotal {
     std::string vocabWordsPairTotal2;
     std::string vocabWordsPairTotal3;
 };
-extern const std::vector<VocabWordsPairTotal> vocabWordsPairTotalTranslations;
+//extern const std::vector<VocabWordsPairTotal> vocabWordsPairTotalTranslations;
 
 //
 //=====================================================
@@ -275,7 +276,7 @@ struct CreateVocabFile
     std::string askingCreate;
     std::string folderOperationAborted;
 };
-extern const std::vector<CreateVocabFile> createVocabFileTranslations;
+//extern const std::vector<CreateVocabFile> createVocabFileTranslations;
 
 //
 //=====================================================
@@ -289,7 +290,7 @@ struct CreateVocab
     std::string createVocab6;
     std::string createVocab7;
 };
-extern const std::vector<CreateVocab> createVocabTranslations;
+//extern const std::vector<CreateVocab> createVocabTranslations;
 
 //
 //=====================================================
@@ -301,7 +302,7 @@ struct VocabMenu
     std::string vocabError1;
     std::string vocabError2;
 };
-extern const std::vector<VocabMenu> vocabMenuTranslations;
+//extern const std::vector<VocabMenu> vocabMenuTranslations;
 
 //
 //=====================================================
@@ -312,7 +313,7 @@ struct VocabFileCommands
     std::string commands3;
     std::string commands4;
 };
-extern const std::vector<VocabFileCommands> vocabFileCommandTranslate;
+//extern const std::vector<VocabFileCommands> vocabFileCommandTranslate;
 
 //
 //=====================================================
@@ -326,10 +327,11 @@ struct SettingsMenu
     std::string soundOptions;
     std::string accentsOptions;
     std::string oneRoundQuizOption;
+    std::string preferIniTranslationsOption;
     std::string backMainMenu;
     std::string settingsMenuSign2;
 };
-extern const std::vector<SettingsMenu> settingsMenuTranslations;
+//extern const std::vector<SettingsMenu> settingsMenuTranslations;
 
 //
 //=====================================================
@@ -341,7 +343,7 @@ struct LanguageMenu
     std::string languageMenu2Sign;
     std::string choiceSuccessProgramLanguage;
 };
-extern const std::vector<LanguageMenu> languageMenuTranslations;
+//extern const std::vector<LanguageMenu> languageMenuTranslations;
 
 //
 //=====================================================
@@ -359,7 +361,7 @@ struct ColorsOnset
     std::string colorsOffOff;
     std::string errorEntryDenied;
 };
-extern const std::vector<ColorsOnset> colorsOSetTranslations;
+//extern const std::vector<ColorsOnset> colorsOSetTranslations;
 
 //
 //=====================================================
@@ -367,7 +369,7 @@ struct SaveSettings
 {
     std::string saveSettingsError;
 };
-extern const std::vector<SaveSettings> saveSettingsTranslations;
+//extern const std::vector<SaveSettings> saveSettingsTranslations;
 
 //
 //=====================================================
@@ -390,7 +392,7 @@ struct LearningLanguageSet
     std::string menuSigns;
 
 };
-extern const std::vector<LearningLanguageSet> learningLanguageSetTranslations;
+//extern const std::vector<LearningLanguageSet> learningLanguageSetTranslations;
 
 //
 //=====================================================
@@ -460,7 +462,7 @@ struct LlistAndSelectedFile
 {
     std::string errorFile;
 };
-extern const std::vector<LlistAndSelectedFile> LlistAndSelectedFileTranslations;
+//extern const std::vector<LlistAndSelectedFile> LlistAndSelectedFileTranslations;
 
 //
 //=====================================================
@@ -470,7 +472,7 @@ struct OosEditor
     std::string errorWin32;
     std::string errorLinux;
 };
-extern const std::vector<OosEditor> OosEditorTranslations;
+//extern const std::vector<OosEditor> OosEditorTranslations;
 
 //
 //=====================================================
@@ -489,7 +491,7 @@ struct BackgroundSets
     std::string backgroundColorsChange;
     std::string backGroundColor;
 };
-extern const std::vector<BackgroundSets> backgroundSetsTranslations;
+//extern const std::vector<BackgroundSets> backgroundSetsTranslations;
 
 //
 //=====================================================
@@ -503,7 +505,7 @@ struct SoundOnOff
     std::string useSoundOn2;
     std::string useSoundOff2;
 };
-extern const std::vector<SoundOnOff> soundOnOffTranslations;
+//extern const std::vector<SoundOnOff> soundOnOffTranslations;
 
 //
 //=====================================================
@@ -514,7 +516,7 @@ struct MistakeExercise
     std::string answer;
     std::string exerciseEnd;
 };
-extern const std::vector<MistakeExercise> mistakeExerciseTranslations;
+//extern const std::vector<MistakeExercise> mistakeExerciseTranslations;
 
 //
 //=====================================================
@@ -528,7 +530,7 @@ struct SpellingOutAccents
     std::string accentsMenu2;
     std::string accentsMenu3;
 };
-extern const std::vector<SpellingOutAccents> spellingOutAccentsTranslations;
+//extern const std::vector<SpellingOutAccents> spellingOutAccentsTranslations;
 
 //
 //=====================================================
@@ -537,7 +539,7 @@ struct CreateVocabListsFileAndFolders
     std::string currentlyFileandFolders;
     std::string folderName;
 };
-extern const std::vector<CreateVocabListsFileAndFolders> createVocabListsFileAndFoldersTranslations;
+//extern const std::vector<CreateVocabListsFileAndFolders> createVocabListsFileAndFoldersTranslations;
 
 //
 //===================================================
@@ -553,20 +555,32 @@ struct OneRoundQString
     std::string OneRoundStateOn;
     std::string OneRoundStateOff;
 };
+
+struct IniStructToggle
+{
+    std::string mainSigns;
+    std::string currentlyState;
+    std::string stateON;
+    std::string stateOff;
+    std::string switchingMenu;
+    std::string cStateON;
+    std::string cStateOff;
+};
+
 // Itt mondjuk meg a main-nek az "extern" kulcsszóval, hogy ezek a vektorok
 // léteznek valahol máshol (a translations.cpp-ben), de itt hivatkozhat rájuk.
 // Here we tell main with the keyword "extern" that these vectors
 // they exist somewhere else (in translations.cpp), but you can reference them here.
-extern const std::vector<OneRoundQString> oneRoundQuizStringTranslations;
+//extern const std::vector<OneRoundQString> oneRoundQuizStringTranslations;
 
 
 
 //======STRUCTS END========
 
 // Nyelvi globális deklaráció érték
-extern Language programUiLanguage; // A program nyelve || the Program language
-extern Language motherLanguage; // Az anyanyelv enum értéke || The mother language
-extern Language targetLanguage; // A tanult nyelv enum értéke || The target language
+extern Language programUiLanguage; // A program nyelve || enum value of the program language
+extern Language motherLanguage; // Az anyanyelv enum értéke || enum value of the mother language
+extern Language targetLanguage; // A tanult nyelv enum értéke || enum value of the target language
 //===========================================
 
 // globális változó || global state
@@ -577,6 +591,7 @@ extern bool oneRoundQuiz; // Ha true egy kör(for;;) ciklus false estén 2 kör 
 // -------- LANG.ini ----------
 // Ide töltjük be a lang.ini tartalmát || load the contents of lang.ini here
 extern std::map<std::string, std::string> loadedTranslations;
+
 // Flag, ami jelzi, hogy a lang.ini-t használjuk-e || Flag indicating whether lang.ini is used
 extern bool useLangIni;
 

@@ -35,12 +35,15 @@ std::string getLanguageNameByIndex(int index); // nyelvi index || language index
 void soundOn(); //Hang be/ki || Sound on/off
 void accentsToggle(); // Be- vagy kikapcsolja az ékezetek kezelését || // Turns accent handling on or off
 void oneRoundQuizToggle(); // Egy körös kvíz be és ki kapcsolása || Toggle one round quiz on and off
+void preferIniTranslationsToggle(); // Az ini és struct nyelvi fájlok kapcsolásához "BE" "KI" || // Toggle ini and struct language files "ON" "OFF"
+
 
 //globális változó || global state
 extern bool useSound; // a hang ki be kapcsolásához || to turn the sound on or off
 extern size_t resumeIndex; // A folytatási index-hez a MistakExercise-ban || For the continuation index in MistakExercise
 extern bool showHelp;    //
 extern bool helperUsed;  //
+extern bool preferIniTranslations;// lang ini vagy Struct flag
 
 
 #endif //ENGLISH_SETTINGS_H
