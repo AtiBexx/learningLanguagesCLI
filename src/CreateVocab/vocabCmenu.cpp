@@ -35,6 +35,9 @@
 #include <vector>
 #include "dataFileReading.h"
 #include "generalFunctions.h"
+#include "translations.h"
+#include "newInput/platformInput.h"
+
 
 
 // Itt definiáljuk a globális változókat, amik a .h-ban extern-ként vannak
@@ -59,13 +62,26 @@ bool choiceMenu()
         while (true) {
             screenWipe();
             std::cout << getTranslation("VocabMenu.vocabMenu1") << existingWords.size() << getTranslation("VocabMenu.vocabMenu2") << "\n" << std::flush;
-            std::cout << getTranslation("VocabMenu.vocabMenu3");
+            std::cout << getTranslation("VocabMenu.vocabMenu3") << "\n";
+            std::cout << getTranslation("VocabMenu.vocabMenu4") << "\n";
+            std::cout << getTranslation("VocabMenu.vocabMenu5") << "\n";
+            InputResult inputResult = readLineWithHotkey(getTranslation("VocabMenu.vocabMenuChoice"));
 
-            //std::cout << vocabMenu.vocabMenu1 << existingWords.size() << vocabMenu.vocabMenu2 << std::endl;
-            //std::cout << vocabMenu.vocabMenu3 ;
+            if (inputResult.exitTriggered)
+            {
+                playBeep();
+                exiting();
+                return false;
+            }
 
-            std::string inputCh;
-            std::getline(std::cin, inputCh);
+            std::string inputCh = inputResult.text;
+            std::string lowerInput = toLowerCase(trim(inputCh));
+
+            if (lowerInput == "exit" || lowerInput == "e") {
+                playBeep();
+                exiting();
+                break; // Kilép az egész programból
+            }
 
             try {
                 choice = std::stoi(inputCh);

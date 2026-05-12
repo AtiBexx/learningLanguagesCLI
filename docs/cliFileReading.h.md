@@ -1,3 +1,4 @@
+```c++
 /**
 * @file cliFileReading.h
  * @author AtiBexx2
@@ -71,3 +72,4 @@ bool isDirectory(const std::string& path);
 bool createDirectory(const std::string& path);
 
 #endif //ENGLISH_CLIFILEREADING_H
+```

@@ -85,8 +85,10 @@ struct ListAndSelectedFile
     std::string currentlyFolder;
     std::string emptyFolder;
     std::string isDirectory;
+    std::string signs;
     std::string commands;
     std::string fullCommands;
+    std::string fullCommands2;
     std::string choice;
 };
 //extern const std::vector<ListAndSelectedFile> listAndSelectedFilesTranslations;
@@ -128,6 +130,7 @@ struct CopyFileFolders
     std::string errorDangerousPath;
     std::string toBeCopied;
     std::string newNameNewPath;
+    std::string example;
     std::string errorDangerousGoalAndPath;
     std::string successCopying;
     std::string anErrorOccurred;
@@ -299,6 +302,9 @@ struct VocabMenu
     std::string vocabMenu1;
     std::string vocabMenu2;
     std::string vocabMenu3;
+    std::string vocabMenu4;
+    std::string vocabMenu5;
+    std::string vocabMenuChoice;
     std::string vocabError1;
     std::string vocabError2;
 };
@@ -502,6 +508,8 @@ struct SoundOnOff
     std::string useSoundOn;
     std::string useSoundOff;
     std::string option1;
+    std::string option2;
+    std::string option3;
     std::string useSoundOn2;
     std::string useSoundOff2;
 };
@@ -563,6 +571,8 @@ struct IniStructToggle
     std::string stateON;
     std::string stateOff;
     std::string switchingMenu;
+    std::string switchingMenu2;
+    std::string switchingMenu3;
     std::string cStateON;
     std::string cStateOff;
 };

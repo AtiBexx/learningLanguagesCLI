@@ -1,0 +1,290 @@
+/**
+ * @file menu.cpp
+ * @brief Main menu system implementation.
+ * @brief A főmenü rendszer megvalósítása.
+ *
+ * @details
+ *
+ * EN:
+ * This module is responsible for displaying and handling
+ * the application's main menu system.
+ *
+ * Features:
+ * - Main menu rendering
+ * - User input processing
+ * - Navigation between program modules
+ * - Invalid input handling
+ * - Exit command handling
+ * - CTRL+C exit detection
+ * - Translation system integration
+ *
+ * The menu allows access to:
+ * - Program description
+ * - Vocabulary learning module
+ * - Mistake exercise module
+ * - Vocabulary file creation
+ * - Settings menu
+ * - Built-in text editor
+ *
+ * HU:
+ * Ez a modul felelős az alkalmazás főmenü rendszerének
+ * megjelenítéséért és kezeléséért.
+ *
+ * Funkciók:
+ * - Főmenü megjelenítés
+ * - Felhasználói bemenet feldolgozás
+ * - Navigáció a program moduljai között
+ * - Hibás bemenet kezelése
+ * - Kilépési parancsok kezelése
+ * - CTRL+C kilépés érzékelése
+ * - Fordítási rendszer integráció
+ *
+ * A menü hozzáférést biztosít:
+ * - Programleíráshoz
+ * - Szótanuló modulhoz
+ * - Hibagyakorló módhoz
+ * - Új szótár létrehozásához
+ * - Beállításokhoz
+ * - Beépített szövegszerkesztőhöz
+ */
+
+#include "menu.h"
+
+/**
+ * @brief Main application menu loop.
+ * @brief A program főmenü ciklusa.
+ *
+ * @details
+ *
+ * EN:
+ * Displays the main menu continuously until the user exits.
+ *
+ * Workflow:
+ * 1. Clears the console screen
+ * 2. Displays translated menu entries
+ * 3. Reads user input
+ * 4. Processes commands and menu selections
+ * 5. Executes the selected module
+ * 6. Handles invalid input safely
+ *
+ * Special commands:
+ * - "exit"
+ * - "e"
+ * - CTRL+C
+ *
+ * Invalid numeric conversion is handled using std::stoi()
+ * inside a try-catch block.
+ *
+ * HU:
+ * Folyamatosan megjeleníti a főmenüt,
+ * amíg a felhasználó ki nem lép.
+ *
+ * Működési folyamat:
+ * 1. Konzol törlése
+ * 2. Lefordított menüpontok megjelenítése
+ * 3. Felhasználói bemenet beolvasása
+ * 4. Parancsok és menüpontok feldolgozása
+ * 5. A kiválasztott modul futtatása
+ * 6. Hibás bemenet biztonságos kezelése
+ *
+ * Speciális parancsok:
+ * - "exit"
+ * - "e"
+ * - CTRL+C
+ *
+ * A hibás numerikus konverziók kezelése
+ * std::stoi() és try-catch blokk segítségével történik.
+ */
+void mainMenu()
+{
+    for (;;)
+    {
+        /**
+         * EN: Clears the terminal screen.
+         * HU: Törli a konzol képernyőt.
+         */
+        screenWipe();
+
+        /**
+         * EN: Displays translated menu items.
+         * HU: Megjeleníti a lefordított menüpontokat.
+         */
+        std::cout << getTranslation("MenuStrings.titleAndSigns") << "\n\n";
+        std::cout << getTranslation("MenuStrings.programExplanation") << "\n";
+        std::cout << getTranslation("MenuStrings.startProgram") << "\n";
+        std::cout << getTranslation("MenuStrings.mistakeExercise") << "\n";
+        std::cout << getTranslation("MenuStrings.newFile") << "\n";
+        std::cout << getTranslation("MenuStrings.settings") << "\n";
+        std::cout << getTranslation("MenuStrings.Editor") << "\n";
+        std::cout << getTranslation("MenuStrings.exit") << "\n\n";
+        std::cout << getTranslation("MenuStrings.signs") << "\n";
+
+        /**
+         * EN: Stores the selected menu option.
+         * HU: Tárolja a kiválasztott menüpontot.
+         */
+        int choice = 0;
+
+        /**
+         * @brief Reads user input with hotkey support.
+         * @brief Felhasználói bemenet olvasása gyorsbillentyű támogatással.
+         */
+        InputResult inputResult =
+            readLineWithHotkey(
+                getTranslation("NumberOutput.numberOutput")
+            );
+
+        /**
+         * EN:
+         * Detects CTRL+C exit request.
+         *
+         * HU:
+         * CTRL+C kilépési kérés érzékelése.
+         */
+        if (inputResult.exitTriggered)
+        {
+            playBeep();
+            exiting();
+            return;
+        }
+
+        /**
+         * EN: Stores raw user input.
+         * HU: Tárolja a nyers felhasználói bemenetet.
+         */
+        std::string inputStr = inputResult.text;
+
+        /**
+         * EN:
+         * Converts the input to lowercase
+         * and removes extra whitespace.
+         *
+         * HU:
+         * Kisbetűssé alakítja a bemenetet
+         * és eltávolítja a felesleges szóközöket.
+         */
+        std::string lowerInput =
+            toLowerCase(trim(inputStr));
+
+        /**
+         * EN:
+         * Handles textual exit commands.
+         *
+         * HU:
+         * Szöveges kilépési parancsok kezelése.
+         */
+        if (lowerInput == "exit" || lowerInput == "e")
+        {
+            playBeep();
+            exiting();
+            return;
+        }
+
+        try
+        {
+            /**
+             * @brief Converts string input to integer.
+             * @brief Szöveges bemenet konvertálása egész számmá.
+             *
+             * EN:
+             * std::stoi() converts a string into int.
+             *
+             * HU:
+             * A std::stoi() szöveget alakít át int típussá.
+             */
+            choice = std::stoi(inputStr);
+        }
+        catch (...)
+        {
+            /**
+             * EN:
+             * Handles invalid numeric conversion safely.
+             *
+             * HU:
+             * Biztonságosan kezeli a hibás numerikus konverziót.
+             */
+            screenWipe();
+
+            logError(
+                "mainMenu",
+                getTranslation("InvalidInput.invalidInput")
+            );
+
+            std::cerr
+                << getTranslation("InvalidInput.invalidInput")
+                << "\n";
+
+            waitToEnter();
+            continue;
+        }
+
+        /**
+         * EN:
+         * Executes the selected menu option.
+         *
+         * HU:
+         * Végrehajtja a kiválasztott menüpontot.
+         */
+        switch (choice)
+        {
+            case 0:
+                playBeep();
+                exiting();
+                return;
+
+            case 1:
+                playBeep();
+                explanation();
+                break;
+
+            case 2:
+                playBeep();
+                listAndSelectFile();
+                break;
+
+            case 3:
+                playBeep();
+                mistakeExercise();
+                break;
+
+            case 4:
+                playBeep();
+                createVocab();
+                break;
+
+            case 5:
+                playBeep();
+                settings();
+                break;
+
+            case 6:
+                playBeep();
+                screenWipe();
+                openFileInEditor("");
+                break;
+
+            default:
+            {
+                /**
+                 * EN:
+                 * Handles invalid menu selections.
+                 *
+                 * HU:
+                 * Kezeli az érvénytelen menüpont választásokat.
+                 */
+                screenWipe();
+
+                logError(
+                    "mainMenu",
+                    "InvalidInput2.invalidInput2"
+                );
+
+                std::cerr
+                    << getTranslation("InvalidInput2.invalidInput2")
+                    << "\n";
+
+                waitToEnter();
+            }
+        }
+    }
+}

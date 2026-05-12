@@ -1,9 +1,12 @@
-PROJECT_NAME           = "Nyelvtanulo App"
-OUTPUT_LANGUAGE        = Hungarian
+INPUT = src docs
+
+
+PROJECT_NAME           = "Learning APP || Nyelvtanulo App"
+OUTPUT_LANGUAGE        = HUNGARIAN || ENGLISH
 OUTPUT_DIRECTORY       = docs
 GENERATE_HTML          = YES
 GENERATE_LATEX         = NO
-INPUT                  = E:/English/src # Vagy E:/English/src/example, ha oda tetted
+INPUT                  = E:/English/src E:/English/docs
 RECURSIVE              = YES
 FILE_PATTERNS          = *.h *.cpp
 EXTRACT_ALL            = YES

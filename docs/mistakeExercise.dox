@@ -1,0 +1,276 @@
+/**
+ * @page programQuiz.doc Mistake Exercise / Hibagyakorlat modul
+ *
+ * @file programQuiz.cpp
+ *
+ * @brief
+ * EN: Quiz system for practicing previously failed words (mistakes list).
+ * HU: Kvíz rendszer a korábban elrontott szavak gyakorlására (hibalista).
+ *
+ * @details
+ * ------------------------------------------------------------
+ * EN (Beginner explanation):
+ *
+ * This module is a "mistake trainer".
+ * It loads words that the user previously answered incorrectly,
+ * and lets the user practice them again until they improve.
+ *
+ * Main idea:
+ * - Load mistake words from file
+ * - Ask user translations
+ * - Check answers
+ * - Keep wrong answers for next round
+ * - Save progress (resume system)
+ *
+ * IMPORTANT CONCEPTS:
+ *
+ * 1. Resume system (folytatás)
+ *    resumeIndex
+ *    - remembers where the user left off
+ *    - prevents restarting from the beginning every time
+ *
+ * 2. Vector usage
+ *    std::vector<WordPair>
+ *    - dynamic list (can grow/shrink)
+ *    - stores words and mistakes
+ *
+ * 3. File overwrite (truncate)
+ *    std::ios::trunc
+ *    - deletes old file content
+ *    - writes updated mistake list
+ *
+ * 4. Input handling
+ *    readLineWithHotkey()
+ *    - reads user input
+ *    - detects special keys (Ctrl, help toggle, exit)
+ *
+ * 5. Answer checking
+ *    cleanString()
+ *    - removes formatting differences (spaces, case, symbols)
+ *    - ensures fair comparison
+ *
+ * ------------------------------------------------------------
+ * HU (kezdő magyarázat):
+ *
+ * Ez a modul egy "hibagyakorló rendszer".
+ * Azokat a szavakat gyakoroltatja újra,
+ * amiket a felhasználó korábban elrontott.
+ *
+ * Fő működés:
+ * - Betölti a hibákat fájlból
+ * - Kikérdezi a felhasználót
+ * - Ellenőrzi a válaszokat
+ * - A hibás válaszokat megtartja
+ * - Mentési pontot kezel (resumeIndex)
+ *
+ * FONTOS FOGALMAK:
+ *
+ * 1. Folytatás (resumeIndex)
+ *    - megjegyzi hol tartott a játékos
+ *    - nem kell elölről kezdeni
+ *
+ * 2. vector
+ *    - dinamikus lista
+ *    - hibák és szavak tárolása
+ *
+ * 3. fájl felülírás (trunc)
+ *    - törli a régi fájl tartalmát
+ *    - új hibákat ír bele
+ *
+ * 4. input kezelés
+ *    readLineWithHotkey()
+ *    - billentyű eseményeket is figyel
+ *
+ * 5. válasz ellenőrzés
+ *    cleanString()
+ *    - eltávolít szóközöket, formázást
+ *    - pontos összehasonlítást biztosít
+ *
+ * ------------------------------------------------------------
+ */
+
+#include "programQuiz.h"
+#include "../FileIO/dataFileReading.h"
+#include "../Translate/translations.h"
+#include "../Common/generalFunctions.h"
+#include "../Settings/colors.h"
+#include <iostream>
+#include <vector>
+#include <fstream>
+
+#include "settings.h"
+#include "newInput/platformInput.h"
+
+/**
+ * Main mistake practice function
+ * Hibagyakorló fő függvény
+ */
+void mistakeExercise()
+{
+    std::string path;
+
+#ifdef _WIN32
+    path = "data\\mistakes\\mistakes.data";
+#else
+    path = "data/mistakes/mistakes.data";
+#endif
+
+    // Load settings (pl. help, colors, resume)
+    loadSettings();
+
+    // Load previously wrong words
+    std::vector<WordPair> mistakeWords = loadWords(path);
+
+    // If no mistakes exist
+    if (mistakeWords.empty()) {
+        screenWipe();
+        std::cout << getTranslation("HaveNoWords.haveNoWords") << "\n" << std::flush;
+        waitToEnter();
+        return;
+    }
+
+    // Words still incorrect after retry
+    std::vector<WordPair> stillMistakes;
+
+    bool realExit = false;
+
+    // Ensure resume index is valid
+    if (resumeIndex >= mistakeWords.size()) {
+        resumeIndex = 0;
+    }
+
+    /**
+     * Quiz loop
+     * Kvíz ciklus
+     */
+    for (size_t i = resumeIndex; i < mistakeWords.size() && !realExit; ++i)
+    {
+        const WordPair& word = mistakeWords[i];
+
+        while (true)
+        {
+            screenWipe();
+
+            std::cout << getTranslation("QuizExplanation.quizExplanation1") << "\n";
+            std::cout << getTranslation("QuizExplanation.quizExplanation2") << "\n";
+            std::cout << getTranslation("QuizExplanation.quizExplanation3") << "\n";
+
+            std::cout << getTranslation("MistakeExercise.practiceOfWrongWord") << "\n";
+            std::cout << getTranslation("MistakeExercise.word") << word.motherLangMeaning << "\n";
+
+            std::cout << getTranslation("MistakeExercise.answer");
+
+            // Show hint if enabled
+            if (showHelp) {
+                std::cout << "CheatSheet: "
+                          << colors::GREY
+                          << word.targetLangMeaning
+                          << colors::RESET
+                          << std::endl;
+            }
+
+            InputResult inputResult =
+                readLineWithHotkey(getTranslation("MistakeExercise.answer"));
+
+            // Hotkey toggle (help)
+            if (inputResult.hotkeyTriggered) {
+                showHelp = !showHelp;
+                if (showHelp) helperUsed = true;
+                saveSettings();
+                continue;
+            }
+
+            std::string answer = inputResult.text;
+            std::string lowerAnswer = toLowerCase(trim(answer));
+
+            // Exit handling
+            if (lowerAnswer == "exit" || lowerAnswer == "e" || inputResult.exitTriggered)
+            {
+                stillMistakes.push_back(word);
+
+                // Save remaining words as mistakes
+                for (size_t j = i + 1; j < mistakeWords.size(); ++j) {
+                    stillMistakes.push_back(mistakeWords[j]);
+                }
+
+                resumeIndex = i;
+                realExit = true;
+                break;
+            }
+
+            // Help commands
+            if (lowerAnswer == "h" || lowerAnswer == "help") {
+                showHelp = true;
+                helperUsed = true;
+                saveSettings();
+                continue;
+            }
+
+            if (lowerAnswer == "h off" || lowerAnswer == "help off") {
+                showHelp = false;
+                helperUsed = false;
+                saveSettings();
+                continue;
+            }
+
+            // Correct answer check
+            if (cleanString(answer) == cleanString(word.targetLangMeaning)) {
+
+                if (useColors) std::cout << colors::GREEN;
+
+                std::cout << getTranslation("GoodAnswer1.goodAnswer1");
+
+                if (useColors) std::cout << colors::RESET;
+
+                waitToEnter();
+                break;
+
+            } else {
+
+                if (useColors) std::cout << colors::RED;
+
+                std::cout << getTranslation("BadlyAnswer.badlyAnswer");
+
+                if (useColors) std::cout << colors::RESET;
+
+                std::cout << "\n"
+                          << getTranslation("GoodAnswer2.goodAnswer2")
+                          << word.targetLangMeaning
+                          << "\n";
+
+                stillMistakes.push_back(word);
+                waitToEnter();
+            }
+        }
+    }
+
+    /**
+     * Rewrite file with remaining mistakes
+     * Fájl újraírás a megmaradt hibákkal
+     */
+    std::ofstream outFile(path, std::ios::out | std::ios::trunc);
+
+    if (outFile.is_open())
+    {
+        for (const WordPair& word : stillMistakes)
+        {
+            outFile << word.targetLangMeaning << " -> " << word.motherLangMeaning;
+
+            if (!word.pronunciation.empty())
+                outFile << " [" << word.pronunciation << "]";
+
+            outFile << "\n";
+        }
+
+        outFile.close();
+    }
+
+    screenWipe();
+
+    std::cout << getTranslation("MistakeExercise.exerciseEnd")
+              << stillMistakes.size()
+              << "\n";
+
+    saveSettings();
+    waitToEnter();
+}

@@ -1,3 +1,4 @@
+```c++
 /**
 * @file cliFileReading.h
  * @author AtiBexx2
@@ -23,6 +24,12 @@
 #define ENGLISH_CLIFILEREADING_H
 #include <string>
 #include <vector>
+
+/*enum class FileSelectionMode {
+    QUIZ,   // Fájl kiválasztása kvíz indításához
+    EDIT    // Fájl kiválasztása szerkesztéshez
+};*/
+
 
 // Struktúra definíciók
 struct FileEntry {
@@ -66,8 +73,24 @@ bool isPathSafe(const std::string& path);
 // checks if the given path is an existing folder
 bool isDirectory(const std::string& path);
 
-//Új mappa létrehozása
-//New folder creation
+/**
+ * @brief Creates a new directory at the specified path. || Új könyvtárat hoz létre a megadott útvonalon.
+ *
+ * @details
+ * EN:
+ * This function attempts to create a new directory. It handles platform-specific
+ * commands (mkdir on Linux/macOS, mkdir on Windows) and includes error handling.
+ *
+ * HU:
+ * Ez a függvény megpróbál egy új könyvtárat létrehozni. Kezeli a platformspecifikus
+ * parancsokat (mkdir Linux/macOS-en, mkdir Windows-on) és tartalmazza a hibakezelést.
+ *
+ * @param path The path of the directory to create. || A létrehozandó könyvtár útvonala.
+ * @return True if the directory was created successfully or already exists, false otherwise. || Igaz, ha a könyvtár sikeresen létrejött vagy már létezik, egyébként hamis.
+ */
 bool createDirectory(const std::string& path);
 
+
+
 #endif //ENGLISH_CLIFILEREADING_H
+```

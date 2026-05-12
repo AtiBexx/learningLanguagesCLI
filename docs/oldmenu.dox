@@ -1,0 +1,372 @@
+```cpp
+/**
+ * @file menu.cpp
+ * @brief Classic std::cin based main menu implementation.
+ * @brief Klasszikus std::cin alapú főmenü megvalósítás.
+ *
+ * @details
+ *
+ * EN:
+ * This implementation uses the standard C++ input system
+ * based on std::cin for reading menu selections.
+ *
+ * Unlike the newer input system:
+ * - it does not use custom hotkey handling,
+ * - it does not support CTRL+C detection,
+ * - it relies on std::cin state checking.
+ *
+ * The module is responsible for:
+ * - displaying translated menu items,
+ * - handling user selections,
+ * - validating numeric input,
+ * - clearing invalid input buffers,
+ * - navigating between program modules.
+ *
+ * The translation system is based on structs and arrays.
+ *
+ * Example:
+ *
+ * @code{.cpp}
+ * const MenuStrings &menuStrs =
+ *     mainMenuTranslations[
+ *         static_cast<int>(programUiLanguage)
+ *     ];
+ * @endcode
+ *
+ * HU:
+ * Ez a megvalósítás a szabványos C++ bemeneti rendszert,
+ * vagyis a std::cin használatát alkalmazza a menüpontok
+ * beolvasására.
+ *
+ * Az új input rendszerrel ellentétben:
+ * - nem használ egyedi hotkey kezelést,
+ * - nem támogatja a CTRL+C érzékelést,
+ * - a std::cin állapotellenőrzésére épül.
+ *
+ * A modul feladata:
+ * - lefordított menüpontok megjelenítése,
+ * - felhasználói választások kezelése,
+ * - numerikus bemenet ellenőrzése,
+ * - hibás input buffer ürítése,
+ * - navigáció a program moduljai között.
+ *
+ * A fordítási rendszer structokra és tömbökre épül.
+ *
+ * Példa:
+ *
+ * @code{.cpp}
+ * const MenuStrings &menuStrs =
+ *     mainMenuTranslations[
+ *         static_cast<int>(programUiLanguage)
+ *     ];
+ * @endcode
+ */
+
+#include "menu.h"
+
+/**
+ * @brief Main menu loop using std::cin.
+ * @brief std::cin alapú főmenü ciklus.
+ *
+ * @details
+ *
+ * EN:
+ * Continuously displays the menu and processes
+ * user selections until the application exits.
+ *
+ * Main workflow:
+ * 1. Clear screen
+ * 2. Load translated menu strings
+ * 3. Display menu
+ * 4. Read numeric input using std::cin
+ * 5. Validate input
+ * 6. Execute selected module
+ *
+ * Invalid input handling:
+ * - std::cin.fail() state detection
+ * - input buffer cleanup
+ * - translated error messages
+ *
+ * HU:
+ * Folyamatosan megjeleníti a menüt és feldolgozza
+ * a felhasználói választásokat a program kilépéséig.
+ *
+ * Fő működési folyamat:
+ * 1. Képernyő törlése
+ * 2. Lefordított menü szövegek betöltése
+ * 3. Menü megjelenítése
+ * 4. Numerikus input olvasása std::cin segítségével
+ * 5. Input ellenőrzése
+ * 6. Kiválasztott modul futtatása
+ *
+ * Hibás bemenet kezelése:
+ * - std::cin.fail() állapot érzékelése
+ * - input buffer tisztítás
+ * - lefordított hibaüzenetek
+ */
+void mainMenu()
+{
+    /**
+     * EN:
+     * Infinite menu loop.
+     *
+     * HU:
+     * Végtelen menü ciklus.
+     */
+    for (;;)
+    {
+        /**
+         * EN:
+         * Clears the terminal screen.
+         *
+         * HU:
+         * Konzol képernyő törlése.
+         */
+        screenWipe();
+
+        /**
+         * @brief Loads translated menu strings.
+         * @brief Lefordított menü szövegek betöltése.
+         *
+         * EN:
+         * Uses struct based translation arrays.
+         *
+         * static_cast<int>(programUiLanguage)
+         * converts the enum language value into
+         * an integer array index.
+         *
+         * HU:
+         * Struct alapú fordítási tömböket használ.
+         *
+         * A static_cast<int>(programUiLanguage)
+         * az enum nyelvi értéket tömb indexszé alakítja.
+         */
+        const MenuStrings &menuStrs =
+            mainMenuTranslations[
+                static_cast<int>(programUiLanguage)
+            ];
+
+        /**
+         * EN:
+         * Displays translated menu entries.
+         *
+         * HU:
+         * Megjeleníti a lefordított menüpontokat.
+         */
+        std::cout << menuStrs.titleAndSigns << "\n";
+        std::cout << menuStrs.programExplanation << "\n";
+        std::cout << menuStrs.startProgram << "\n";
+        std::cout << menuStrs.mistakeExercise << "\n";
+        std::cout << menuStrs.newFile << "\n";
+        std::cout << menuStrs.settings << "\n";
+        std::cout << menuStrs.Editor << "\n";
+        std::cout << menuStrs.exit << "\n";
+        std::cout << menuStrs.signs << "\n";
+
+        /**
+         * EN:
+         * Stores selected menu number.
+         *
+         * HU:
+         * Tárolja a kiválasztott menüpont számát.
+         */
+        int choice = 0;
+
+        /**
+         * @brief Loads translated number input text.
+         * @brief Lefordított szám bekérő szöveg betöltése.
+         */
+        const NumberOutput &numStrs =
+            chooseNumberMenuTranslations[
+                static_cast<int>(programUiLanguage)
+            ];
+
+        /**
+         * EN:
+         * Displays input prompt.
+         *
+         * std::flush forces immediate console output.
+         *
+         * HU:
+         * Megjeleníti a bemeneti promptot.
+         *
+         * A std::flush azonnal kiírja a konzolra a szöveget.
+         */
+        std::cout
+            << numStrs.numberOutput
+            << std::flush;
+
+        /**
+         * @brief Reads numeric input using std::cin.
+         * @brief Numerikus input olvasása std::cin segítségével.
+         *
+         * EN:
+         * If extraction fails, std::cin enters fail state.
+         *
+         * Example invalid inputs:
+         * - abc
+         * - text
+         * - symbols
+         *
+         * HU:
+         * Ha az olvasás sikertelen,
+         * a std::cin fail állapotba kerül.
+         *
+         * Példák hibás inputra:
+         * - abc
+         * - szöveg
+         * - szimbólumok
+         */
+        if (!(std::cin >> choice))
+        {
+            screenWipe();
+
+            /**
+             * @brief Loads translated invalid input messages.
+             * @brief Lefordított hibás input üzenetek betöltése.
+             */
+            const InvalidInput &invalidinput =
+                invalidInputTranslations[
+                    static_cast<int>(programUiLanguage)
+                ];
+
+            /**
+             * @brief Clears std::cin error state.
+             * @brief Törli a std::cin hibaállapotát.
+             *
+             * EN:
+             * Required after failed extraction.
+             *
+             * HU:
+             * Kötelező hibás input után.
+             */
+            std::cin.clear();
+
+            /**
+             * @brief Clears remaining input buffer.
+             * @brief Kiüríti a maradék input buffert.
+             *
+             * EN:
+             * Removes invalid leftover characters.
+             *
+             * HU:
+             * Eltávolítja a hibás bent maradt karaktereket.
+             */
+            pufferDelete();
+
+            /**
+             * EN:
+             * Writes error to log system.
+             *
+             * HU:
+             * Naplózza a hibát.
+             */
+            logError(
+                "mainMenu",
+                invalidinput.invalidInput
+            );
+
+            /**
+             * EN:
+             * Displays translated error message.
+             *
+             * HU:
+             * Megjeleníti a lefordított hibaüzenetet.
+             */
+            std::cerr
+                << invalidinput.invalidInput
+                << "\n";
+
+            waitToEnter();
+
+            /**
+             * EN:
+             * Restarts menu loop.
+             *
+             * HU:
+             * Újraindítja a menü ciklust.
+             */
+            continue;
+        }
+
+        /**
+         * @brief Executes selected menu action.
+         * @brief Végrehajtja a kiválasztott menü műveletet.
+         */
+        switch (choice)
+        {
+            case 0:
+                playBeep();
+                exiting();
+                return;
+
+            case 1:
+                pufferDelete();
+                playBeep();
+                explanation();
+                break;
+
+            case 2:
+                pufferDelete();
+                playBeep();
+                listAndSelectFile();
+                break;
+
+            case 3:
+                pufferDelete();
+                playBeep();
+                mistakeExercise();
+                break;
+
+            case 4:
+                pufferDelete();
+                playBeep();
+                createVocab();
+                break;
+
+            case 5:
+                pufferDelete();
+                playBeep();
+                settings();
+                break;
+
+            case 6:
+                pufferDelete();
+                playBeep();
+                screenWipe();
+                openFileInEditor("");
+                break;
+
+            default:
+            {
+                /**
+                 * EN:
+                 * Handles invalid menu selection numbers.
+                 *
+                 * HU:
+                 * Kezeli az érvénytelen menüpont számokat.
+                 */
+                screenWipe();
+
+                const InvalidInput2 &invalidInput2 =
+                    invalidInputTranslations2[
+                        static_cast<int>(programUiLanguage)
+                    ];
+
+                logError(
+                    "mainMenu",
+                    invalidInput2.invalidInput2
+                );
+
+                std::cerr
+                    << invalidInput2.invalidInput2
+                    << "\n";
+
+                pufferDelete();
+
+                waitToEnter();
+            }
+        }
+    }
+}
+```

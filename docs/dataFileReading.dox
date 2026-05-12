@@ -1,0 +1,242 @@
+/**
+ * @file dataFileReading.cpp
+ * @author AtiBexx2
+ * @date 2026-03-20
+ *
+ * @brief File parsing and string utility module / Fájlfeldolgozó és szövegkezelő modul
+ *
+ * @details
+ * EN:
+ * This file contains helper functions used for:
+ * - string normalization (lowercase, trimming)
+ * - answer checking with multiple valid solutions
+ * - loading word pairs from .data files
+ *
+ * HU:
+ * Ez a fájl segédfüggvényeket tartalmaz:
+ * - szöveg normalizálás (kisbetűsítés, szóköz levágás)
+ * - több helyes válaszos ellenőrzés
+ * - szópárok betöltése .data fájlokból
+ */
+
+#include "dataFileReading.h"
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <fstream>
+#include <iostream>
+
+#include "generalFunctions.h"
+#include "translations.h"
+
+using string = std::string;
+using stringstream = std::stringstream;
+using std::transform;
+using std::vector;
+using std::ifstream;
+using std::getline;
+
+/* -------------------------------------------------------
+   TO LOWER CASE
+   ------------------------------------------------------- */
+
+/**
+ * @brief Converts a string to lowercase
+ *
+ * @param s Input string
+ * @return Lowercase string
+ *
+ * EXPLANATION:
+ * EN:
+ * Every character in the string is converted to lowercase.
+ * This is important for comparison (EXIT = exit = Exit).
+ *
+ * HU:
+ * Minden betűt kisbetűssé alakít.
+ * Ez azért kell, hogy az összehasonlítás ne legyen érzékeny nagybetűre.
+ */
+string toLowerCase(string s) {
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    return s;
+}
+
+/* -------------------------------------------------------
+   TRIM
+   ------------------------------------------------------- */
+
+/**
+ * @brief Removes whitespace from both ends of a string
+ *
+ * @param str Input string
+ * @return Trimmed string
+ *
+ * EXPLANATION:
+ * EN:
+ * Removes spaces, tabs, and newline characters from:
+ * - beginning
+ * - end
+ *
+ * HU:
+ * Levágja a felesleges szóközöket a szöveg elejéről és végéről.
+ */
+string trim(const std::string& str) {
+
+    // Find first non-space character
+    size_t first = str.find_first_not_of(" \t\n\r");
+
+    // If string is empty or only spaces
+    if (first == std::string::npos) {
+        return "";
+    }
+
+    // Find last non-space character
+    size_t last = str.find_last_not_of(" \t\n\r");
+
+    return str.substr(first, last - first + 1);
+}
+
+/* -------------------------------------------------------
+   CHECK MULTIPLE ANSWERS
+   ------------------------------------------------------- */
+
+/**
+ * @brief Checks if user answer matches any valid answer
+ *
+ * @param userAnswer User input
+ * @param correctAnswersString Comma-separated correct answers
+ * @return true if match found
+ *
+ * EXPLANATION:
+ * EN:
+ * The correct answers are stored like:
+ * "hello, hi, hey"
+ *
+ * The function:
+ * 1. splits them by comma
+ * 2. cleans both user and correct answers
+ * 3. compares them
+ *
+ * HU:
+ * Több helyes válasz lehet egy kérdésre.
+ * Pl: "hello, szia, csá"
+ */
+bool checkMultipleAnswers(const std::string& userAnswer, const std::string& correctAnswersString) {
+
+    string cleanedUserAnswer = cleanString(userAnswer);
+
+    stringstream ss(trim(correctAnswersString));
+    string slice;
+
+    while (getline(ss, slice, ',')) {
+
+        if (cleanString(slice) == cleanedUserAnswer) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/* -------------------------------------------------------
+   LOAD WORDS FROM FILE
+   ------------------------------------------------------- */
+
+/**
+ * @brief Loads word pairs from a .data file
+ *
+ * @param filename File path
+ * @return Vector of WordPair objects
+ *
+ * FILE FORMAT EXAMPLE:
+ * English -> Hungarian
+ * English > Hungarian
+ * English [pronunciation] -> Hungarian
+ *
+ * EXPLANATION:
+ * EN:
+ * Reads file line by line and extracts:
+ * - English word
+ * - Hungarian translation
+ * - optional pronunciation
+ *
+ * HU:
+ * Beolvassa a fájlt soronként és feldolgozza a szópárokat.
+ */
+vector<WordPair> loadWords(const std::string &filename) {
+
+    vector<WordPair> words;
+    ifstream file(filename);
+    string line;
+
+    if (!file.is_open()) {
+
+        logError("loadWords", getTranslation("W_wordPair.ErrorOpenedFile"));
+        std::cerr << getTranslation("W_wordPair.ErrorOpenedFile") << " " << filename << "\n";
+        return words;
+    }
+
+    while (getline(file, line)) {
+
+        if (line.empty()) continue;
+
+        WordPair currentWord;
+
+        /* -------------------------
+           PRONUNCIATION PARSING
+           ------------------------- */
+
+        size_t openBracket = line.find('[');
+        size_t closeBracket = line.find(']', openBracket);
+
+        if (openBracket != string::npos && closeBracket != string::npos) {
+
+            currentWord.pronunciation =
+                trim(line.substr(openBracket + 1, closeBracket - openBracket - 1));
+
+            line = line.substr(0, openBracket);
+        }
+
+        /* -------------------------
+           SEPARATOR DETECTION
+           ------------------------- */
+
+        size_t separatorPos = line.find("->");
+        int skipChars = 2;
+
+        if (separatorPos == string::npos) {
+            separatorPos = line.find('>');
+            skipChars = 1;
+        }
+
+        if (separatorPos != string::npos) {
+
+            currentWord.targetLangMeaning = line.substr(0, separatorPos);
+
+            size_t hungarianStart = separatorPos + skipChars;
+
+            if (hungarianStart < line.length()) {
+                currentWord.motherLangMeaning = line.substr(hungarianStart);
+            }
+
+            /* -------------------------
+               CLEAN DATA
+               ------------------------- */
+
+            currentWord.targetLangMeaning = trim(currentWord.targetLangMeaning);
+            currentWord.motherLangMeaning = trim(currentWord.motherLangMeaning);
+
+            /* -------------------------
+               VALIDATION
+               ------------------------- */
+
+            if (!currentWord.targetLangMeaning.empty() &&
+                !currentWord.motherLangMeaning.empty()) {
+
+                words.push_back(currentWord);
+            }
+        }
+    }
+
+    file.close();
+    return words;
+}

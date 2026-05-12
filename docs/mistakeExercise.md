@@ -1,9 +1,8 @@
+```
 //
 // Created by AtiBexx2 on 2026. 04. 12.
 //
-/**
- *@page mistakeExercise.doc
- */
+
 #include "programQuiz.h"
 #include "../FileIO/dataFileReading.h"
 #include "../Translate/translations.h"
@@ -73,7 +72,7 @@ void mistakeExercise()
 
             InputResult inputResult = readLineWithHotkey(getTranslation("MistakeExercise.answer"));
 
-            // Ha a hotkey volt (Ctrl+Y) || If a hotkey was triggered (Ctrl+Y)
+            // Ha hotkey volt (Ctrl+Y) || If a hotkey was triggered (Ctrl+Y)
             if (inputResult.hotkeyTriggered) {
                 showHelp = !showHelp; // Toggle a súgót
                 if (showHelp) helperUsed = true;
@@ -114,14 +113,14 @@ void mistakeExercise()
             if (cleanString(answer) == cleanString(word.targetLangMeaning)) {
                 if (useColors) std::cout << colors::GREEN;
                 std::cout << getTranslation("GoodAnswer1.goodAnswer1");
-
+                
                 if (useColors) std::cout << colors::RESET;
                 waitToEnter();
                 break;
             } else {
                 if (useColors) std::cout << colors::RED;
                 std::cout << getTranslation("BadlyAnswer.badlyAnswer");
-
+                
                 if (useColors) std::cout << colors::RESET;
                 std::cout << "\n"<<getTranslation("GoodAnswer2.goodAnswer2") << word.targetLangMeaning << "\n" << std::flush;
 
@@ -130,7 +129,7 @@ void mistakeExercise()
             }
         }
     }
-
+    
 
     // A FÁJL ÚJRAÍRÁSA a megmaradt hibákkal
     // OVERWRITE THE FILE with remaining errors
@@ -149,3 +148,5 @@ void mistakeExercise()
     saveSettings();
     waitToEnter();
 }
+```
+

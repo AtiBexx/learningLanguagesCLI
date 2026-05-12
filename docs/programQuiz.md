@@ -1,9 +1,7 @@
+```
 //
 // Created by AtiBexx2 on 2026. 03. 24.
 //
-/**
- *@page programQuiz.doc
- */
 
 #include "programQuiz.h"
 #include "../FileIO/dataFileReading.h"
@@ -24,7 +22,7 @@ void scoreSystem(int correct, int badly, unsigned long long total) {
 
     //Részletes pontszámstatisztikák megjelenítése
     //Show detailed score statistics
-    std:: cout << getTranslation("ScoreSys.total") <<"\n\n" << std::flush;
+    std:: cout << getTranslation("ScoreSys.total") <<"\n" << std::flush;
     std:: cout << getTranslation("ScoreSys.allQuestion") << total <<"\n" << std::flush;
     std:: cout << getTranslation("ScoreSys.correct") << correct <<"\n" << std::flush;
     std:: cout << getTranslation("ScoreSys.badly") << badly <<"\n" << std::flush;
@@ -267,5 +265,9 @@ void startQuiz (const std::vector<WordPair>& words)
     scoreSystem(firstTryCorrect, badlyAnswers, totalQuestions);
 
     std::cout << "\n" << getTranslation ("HaveFinished.haveFinished") << "\n" << std::flush;
+    //std::cout << "\n" << haveFinished.haveFinished << std::endl;
     waitToEnter();
 }
+
+```
+

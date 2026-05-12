@@ -1,0 +1,334 @@
+/**
+ * @file programQuiz.cpp
+ * @author AtiBexx2
+ * @date 2026.03.24
+ *
+ * @brief Quiz rendszer implementáció / Quiz system implementation
+ *
+ * @details
+ *
+ * EN:
+ * This file implements the core quiz logic of the application.
+ * It is responsible for:
+ * - Running a two-way vocabulary quiz (mother language ↔ target language)
+ * - Handling user input with real-time hotkey support
+ * - Managing scoring and statistics
+ * - Supporting help/cheat mode during quiz sessions
+ * - Logging mistakes for later repetition
+ *
+ * Main features:
+ * - Multi-round quiz system (configurable with oneRoundQuiz)
+ * - Case-insensitive and normalized answer checking
+ * - Support for multiple correct answers (checkMultipleAnswers)
+ * - Dynamic help system (toggle cheat sheet with hotkeys)
+ * - Automatic mistake logging for review system
+ * - Color-coded feedback (correct / incorrect answers)
+ *
+ * Flow:
+ * 1. Iterate through word list
+ * 2. Ask question in first direction (mother → target language)
+ * 3. Validate answer, optionally retry on failure
+ * 4. Optionally run reverse direction (target → mother language)
+ * 5. Calculate final score and display statistics
+ *
+ * Exit conditions:
+ * - User types "exit" or "e"
+ * - Ctrl+C hotkey is triggered via input system
+ *
+ * HU:
+ * Ez a fájl a program fő kvízlogikáját tartalmazza.
+ * Feladata:
+ * - Kétirányú szókvíz futtatása (anyanyelv ↔ célnyelv)
+ * - Felhasználói input kezelése hotkey támogatással
+ * - Pontszám és statisztika számítása
+ * - Segítség (cheat sheet) rendszer kezelése
+ * - Hibás válaszok mentése gyakorláshoz
+ *
+ * Fő funkciók:
+ * - Többkörös kvíz rendszer (oneRoundQuiz alapján)
+ * - Kis/nagybetű független összehasonlítás
+ * - Több helyes válasz támogatása
+ * - Segítség rendszer ki/bekapcsolása
+ * - Hibák automatikus mentése fájlba
+ * - Színes visszajelzés helyes/hibás válaszokra
+ *
+ * Folyamat:
+ * 1. Szólista bejárása
+ * 2. Kérdés feltevése (anyanyelv → célnyelv)
+ * 3. Válasz ellenőrzése, szükség esetén ismétlés
+ * 4. Opcionálisan fordított irány (célnyelv → anyanyelv)
+ * 5. Végső pontszám és statisztika kiírása
+ *
+ * Kilépés:
+ * - "exit" vagy "e" parancs
+ * - Ctrl+C hotkey input rendszeren keresztül
+ */
+
+#include "programQuiz.h"
+#include "../FileIO/dataFileReading.h"
+#include "../Translate/translations.h"
+#include <iostream>
+#include <string>
+#include <vector>
+
+#include "../Common/generalFunctions.h"
+#include "newInput/platformInput.h"
+#include "Settings/colors.h"
+#include "Settings/settings.h"
+#include "Settings/languageList.h"
+
+/**
+ * @brief Kiértékeli és megjeleníti a kvíz eredményeket
+ * @param correct Helyes válaszok száma
+ * @param badly Hibás válaszok száma
+ * @param total Összes kérdés száma
+ *
+ * EN:
+ * Calculates percentage score and prints detailed statistics.
+ *
+ * HU:
+ * Kiszámolja a százalékos eredményt és kiírja a részletes statisztikákat.
+ */
+void scoreSystem(int correct, int badly, unsigned long long total) {
+
+    double percentAge = (total > 0)
+        ? (static_cast<double>(correct) / static_cast<double>(total)) * 100.0
+        : 0.0;
+
+    std::cout << getTranslation("ScoreSys.total") << "\n" << std::flush;
+    std::cout << getTranslation("ScoreSys.allQuestion") << total << "\n" << std::flush;
+    std::cout << getTranslation("ScoreSys.correct") << correct << "\n" << std::flush;
+    std::cout << getTranslation("ScoreSys.badly") << badly << "\n" << std::flush;
+    std::cout << getTranslation("ScoreSys.percent") << percentAge << "%" << "\n" << std::flush;
+
+    if (percentAge >= 99.9) {
+        std::cout << getTranslation("PercentAge.percentAge100") << "\n" << std::flush;
+    }
+    else if (percentAge >= 80.0) {
+        std::cout << getTranslation("PercentAge.percentAge80") << "\n" << std::flush;
+    }
+    else {
+        std::cout << getTranslation("PercentAge.percentAgeElse") << "\n" << std::flush;
+    }
+}
+
+/**
+ * @brief Kvíz elindítása szókészlettel
+ * @param words Szópárok listája
+ *
+ * EN:
+ * Runs the full quiz session using the provided word list.
+ * Handles input, validation, retry logic, scoring and help system.
+ *
+ * HU:
+ * Elindítja a teljes kvíz folyamatot a megadott szavak alapján.
+ * Kezeli az inputot, ellenőrzést, ismétlést, pontozást és segítséget.
+ */
+void startQuiz (const std::vector<WordPair>& words)
+{
+    loadSettings();
+
+    if (words.empty()) {
+        screenWipe();
+        std::cout << getTranslation("HaveNoWords.haveNoWords") << "\n" << std::flush;
+        waitToEnter();
+        return;
+    }
+
+    int badlyAnswers = 0;
+    int firstTryCorrect = 0;
+
+    unsigned long long totalQuestions =
+        (oneRoundQuiz) ? words.size() : words.size() * 2;
+
+    for (const WordPair& word : words)
+    {
+        bool mistakeMade = false;
+
+        // FIRST ROUND: mother → target
+        for (;;) {
+            screenWipe();
+
+            std::cout << getTranslation("QuizExplanation.quizExplanation1") << "\n";
+            std::cout << getTranslation("QuizExplanation.quizExplanation2") << "\n";
+            std::cout << getTranslation("QuizExplanation.quizExplanation3") << "\n";
+
+            std::cout << getLanguageNameByIndex(programUiLanguage, motherLanguage)
+                      << ": " << word.motherLangMeaning << "\n";
+
+            if (showHelp) {
+                std::cout << "CheatSheet: "
+                          << colors::GREY
+                          << word.targetLangMeaning
+                          << colors::RESET << std::endl;
+            }
+
+            InputResult inputResult =
+                readLineWithHotkey(getLanguageNameByIndex(programUiLanguage, targetLanguage) + ": ");
+
+            if (inputResult.hotkeyTriggered) {
+                showHelp = !showHelp;
+                if (showHelp) helperUsed = true;
+                saveSettings();
+                continue;
+            }
+
+            std::string answer = inputResult.text;
+            std::string lowerAnswer = toLowerCase(trim(answer));
+
+            if (lowerAnswer == "exit" || lowerAnswer == "e" || inputResult.exitTriggered)
+                return;
+
+            if (lowerAnswer == "h" || lowerAnswer == "help") {
+                showHelp = true;
+                helperUsed = true;
+                saveSettings();
+                continue;
+            }
+
+            if (lowerAnswer == "h off" || lowerAnswer == "help off") {
+                showHelp = false;
+                helperUsed = false;
+                saveSettings();
+                continue;
+            }
+
+            if (cleanString(answer) == cleanString(word.targetLangMeaning)) {
+
+                if (useColors) std::cout << colors::GREEN;
+                std::cout << "\n" << getTranslation("GoodAnswer1.goodAnswer1");
+                if (useColors) std::cout << colors::RESET;
+
+                if (!word.pronunciation.empty()) {
+                    std::cout << " "
+                              << getTranslation("PronunciationString.pronunciation2str")
+                              << "[" << word.pronunciation << "]";
+                }
+
+                std::cout << std::endl;
+
+                if (!mistakeMade) firstTryCorrect++;
+
+                waitToEnter();
+                break;
+
+            } else {
+
+                if (!mistakeMade) {
+                    badlyAnswers++;
+                    logMistakeWriteFile(word);
+                }
+
+                mistakeMade = true;
+
+                if (useColors) std::cout << colors::RED;
+                std::cout << "\n" << getTranslation("BadlyAnswer.badlyAnswer") << "\n";
+
+                if (useColors) std::cout << colors::RESET;
+
+                std::cout << "\n"
+                          << getTranslation("GoodAnswer2.goodAnswer2")
+                          << " " << word.targetLangMeaning << "\n";
+
+                std::cout << "\n" << getTranslation("ReTry.reTry");
+                std::cin.get();
+            }
+        }
+
+        mistakeMade = false;
+
+        // SECOND ROUND: target → mother (optional)
+        if (!oneRoundQuiz) {
+            for (;;) {
+                screenWipe();
+
+                std::cout << getTranslation("QuizExplanation.quizExplanation1") << "\n";
+                std::cout << getTranslation("QuizExplanation.quizExplanation2") << "\n";
+                std::cout << getTranslation("QuizExplanation.quizExplanation3") << "\n";
+
+                std::cout << getLanguageNameByIndex(programUiLanguage, targetLanguage)
+                          << ": " << word.targetLangMeaning << std::endl;
+
+                if (showHelp) {
+                    std::cout << "CheatSheet: "
+                              << colors::GREY
+                              << word.motherLangMeaning
+                              << colors::RESET << std::endl;
+                }
+
+                InputResult inputResult =
+                    readLineWithHotkey(getLanguageNameByIndex(programUiLanguage, motherLanguage) + ": ");
+
+                if (inputResult.hotkeyTriggered) {
+                    showHelp = !showHelp;
+                    if (showHelp) helperUsed = true;
+                    saveSettings();
+                    continue;
+                }
+
+                std::string answer = inputResult.text;
+                std::string lowerAnswer = toLowerCase(trim(answer));
+
+                if (lowerAnswer == "exit" || lowerAnswer == "e" || inputResult.exitTriggered)
+                    return;
+
+                if (lowerAnswer == "h" || lowerAnswer == "help") {
+                    showHelp = true;
+                    helperUsed = true;
+                    saveSettings();
+                    continue;
+                }
+
+                if (lowerAnswer == "h off" || lowerAnswer == "help off") {
+                    showHelp = false;
+                    helperUsed = false;
+                    saveSettings();
+                    continue;
+                }
+
+                if (checkMultipleAnswers(answer, word.motherLangMeaning)) {
+
+                    if (useColors) std::cout << colors::GREEN;
+                    std::cout << "\n" << getTranslation("GoodAnswer1.goodAnswer1");
+
+                    if (useColors) std::cout << colors::RESET;
+
+                    if (!word.pronunciation.empty()) {
+                        std::cout << " "
+                                  << getTranslation("PronunciationString.pronunciation2str")
+                                  << "[" << word.pronunciation << "]";
+                    }
+
+                    std::cout << std::endl;
+
+                    if (!mistakeMade) firstTryCorrect++;
+
+                    waitToEnter();
+                    break;
+
+                } else {
+
+                    if (!mistakeMade) badlyAnswers++;
+                    mistakeMade = true;
+
+                    if (useColors) std::cout << colors::RED;
+                    std::cout << "\n" << getTranslation("BadlyAnswer.badlyAnswer") << "\n";
+
+                    if (useColors) std::cout << colors::RESET;
+
+                    std::cout << getTranslation("GoodAnswer2.goodAnswer2")
+                              << " " << word.motherLangMeaning << "\n";
+
+                    std::cout << "\n" << getTranslation("ReTry.reTry");
+                    std::cin.get();
+                }
+            }
+        }
+    }
+
+    screenWipe();
+    scoreSystem(firstTryCorrect, badlyAnswers, totalQuestions);
+
+    std::cout << "\n" << getTranslation("HaveFinished.haveFinished") << "\n" << std::flush;
+    waitToEnter();
+}

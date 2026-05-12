@@ -1,0 +1,150 @@
+```cpp
+/**
+ * @file main.cpp
+ * @brief Application entry point.
+ * @brief Az alkalmazás belépési pontja.
+ *
+ * @details
+ *
+ * EN:
+ * This file contains the entry point of the application.
+ * It is responsible for:
+ * - initializing the console environment (UTF-8, ANSI support on Windows),
+ * - loading or creating user settings,
+ * - loading translations,
+ * - starting the main menu loop.
+ *
+ * HU:
+ * Ez a fájl az alkalmazás belépési pontját tartalmazza.
+ * Feladata:
+ * - konzol környezet inicializálása (UTF-8, ANSI támogatás Windows-on),
+ * - felhasználói beállítások betöltése vagy létrehozása,
+ * - fordítások betöltése,
+ * - főmenü elindítása.
+ */
+
+#include "settings.h"
+#include "Menu/menu.h"
+#include "Translate/translations.h"
+#include <iostream>
+
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
+/**
+ * @brief Current UI language.
+ * @brief Jelenlegi felhasználói felület nyelve.
+ */
+Language programUiLanguage = Language::HUNGARIAN;
+
+/**
+ * @brief User's native language.
+ * @brief Felhasználó anyanyelve.
+ */
+Language motherLanguage = Language::HUNGARIAN;
+
+/**
+ * @brief Language currently being learned by the user.
+ * @brief A felhasználó által éppen tanult nyelv.
+ */
+Language targetLanguage = Language::ENGLISH;
+
+/**
+ * @brief Configures the Windows console for UTF-8 and ANSI support.
+ * @brief Beállítja a Windows konzolt UTF-8 és ANSI támogatásra.
+ *
+ * @details
+ *
+ * EN:
+ * This function ensures proper character encoding and terminal behavior
+ * on Windows systems. It enables:
+ * - UTF-8 encoding for correct special character display,
+ * - ANSI escape sequences for terminal control (e.g. screen clearing).
+ *
+ * HU:
+ * Ez a függvény biztosítja a helyes karakterkódolást és terminál működést
+ * Windows rendszeren. Engedélyezi:
+ * - UTF-8 kódolást a speciális karakterek helyes megjelenítéséhez,
+ * - ANSI escape szekvenciákat a terminál vezérléshez (pl. képernyő törlés).
+ */
+void setupConsole()
+{
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    if (hOut != INVALID_HANDLE_VALUE)
+    {
+        DWORD dwMode = 0;
+
+        if (GetConsoleMode(hOut, &dwMode))
+        {
+            dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+            SetConsoleMode(hOut, dwMode);
+        }
+    }
+#endif
+}
+
+/**
+ * @brief Main application entry point.
+ * @brief A program fő belépési pontja.
+ *
+ * @details
+ *
+ * EN:
+ * Executes the startup sequence of the application:
+ * 1. Console initialization
+ * 2. Settings loading or creation
+ * 3. Translation loading
+ * 4. Launching the main menu
+ *
+ * HU:
+ * Lefuttatja az alkalmazás indulási folyamatát:
+ * 1. Konzol inicializálása
+ * 2. Beállítások betöltése vagy létrehozása
+ * 3. Fordítások betöltése
+ * 4. Főmenü elindítása
+ *
+ * @param argc Number of command-line arguments.
+ * @param argv Command-line arguments array.
+ * @return int Exit status (0 = success).
+ */
+int main(int argc, char *argv[])
+{
+    setupConsole();
+
+    /**
+     * EN:
+     * Loads settings from file if exists, otherwise creates default settings.
+     *
+     * HU:
+     * Betölti a beállításokat ha léteznek, különben létrehozza az alap beállításokat.
+     */
+    if (!loadSettings())
+        saveSettings();
+
+    /**
+     * EN:
+     * Loads translation data based on UI language.
+     *
+     * HU:
+     * Betölti a fordításokat a felhasználói felület nyelve alapján.
+     */
+    loadTranslationsFromFile(programUiLanguage);
+
+    /**
+     * EN:
+     * Starts the main menu loop.
+     *
+     * HU:
+     * Elindítja a főmenü ciklust.
+     */
+    mainMenu();
+
+    return 0;
+}
+```

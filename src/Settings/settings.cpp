@@ -44,11 +44,6 @@ void settings()
 {
     for (;;)
     {
-        //nyelvi hivatkozások
-        /*const SettingsMenu& settingsMenu = settingsMenuTranslations[static_cast<int>(programUiLanguage)];
-        const NumberOutput& numberoutput = chooseNumberMenuTranslations[static_cast<int>(programUiLanguage)];
-        const InvalidInput &invalidIinput = invalidInputTranslations [static_cast<int>(programUiLanguage)];
-        const InvalidInput2 &invalidIinput2 = invalidInputTranslations2 [static_cast<int>(programUiLanguage)];*/
 
         screenWipe(); // töröljük a képernyőt
 
@@ -61,7 +56,7 @@ void settings()
         std::cout << getTranslation("SettingsMenu.accentsOptions") << "\n";
         std::cout << getTranslation("SettingsMenu.oneRoundQuizOption") << "\n";
         std::cout << getTranslation("SettingsMenu.preferIniTranslationsOption") << "\n";
-        std::cout << getTranslation("SettingsMenu.backMainMenu") << "\n";
+        std::cout << getTranslation("SettingsMenu.backMainMenu") << "\n\n";
         std::cout << getTranslation("SettingsMenu.settingsMenuSign2") << "\n";
 
         /*std::cout << settingsMenu.settingsMenuSign << std::endl;
@@ -200,6 +195,7 @@ void choiceLanguage()
         }
 
         std::cout << getTranslation("LanguageMenu.exiting") << "\n";
+        std::cout << getTranslation("LanguageMenu.languageMenu2Sign") << "\n\n";
        // std::cout << "\n" << LMenu.exiting << std::endl;
         //std::cout << LMenu.choiceStr;
 
@@ -291,7 +287,9 @@ void colorsOn()
         std::cout << getTranslation("ColorsOnset.colorsPrinting1") << "\n";
         std::cout <<getTranslation("ColorsOnset.colorsPrinting2") << (useColors ? getTranslation("ColorsOnset.useCLR_ON") : getTranslation("ColorsOnset.useCLR_OFF")) << "\n" << std::flush;
         //std::cout << clrSET.colorsPrinting2 << (useColors ? clrSET.useCLR_ON : clrSET.useCLR_OFF) << std::endl;
-        std::cout << getTranslation("ColorsOnset.colorsMenu1") << getTranslation("ColorsOnset.colorsMenu2") << getTranslation("ColorsOnset.colorsMenu3");
+        std::cout << getTranslation("ColorsOnset.colorsMenu1") << "\n";
+        std::cout << getTranslation("ColorsOnset.colorsMenu2") << "\n";
+        std::cout << getTranslation("ColorsOnset.colorsMenu3") << "\n";
         //std::cout << clrSET.colorsMenu1 << clrSET.colorsMenu2 << clrSET.colorsMenu3;
         //std::cout <<"\n"<< clrSET.choice << std::flush;
         InputResult inputResult = readLineWithHotkey("\n" + getTranslation("ColorsOnset.choice"));
@@ -348,7 +346,7 @@ void colorsOn()
                 playBeep();
                 backgroundSets();//Meghívjuk a háttérszín beállíto menüt
             }
-            else if (choice == 3)
+            else if (choice == 0)
             {
                 playBeep();
                 break; //kilépünk a ciklusból
@@ -528,16 +526,16 @@ void backgroundSets()
     {
         screenWipe(); // töröljük a képernyőt
 
-        std::cout << getTranslation("BackgroundSets.sign") << "\n" << std::flush;
-        std::cout << getTranslation("BackgroundSets.DefaultBlack");
-        std::cout << getTranslation("BackgroundSets.green");
-        std::cout << getTranslation("BackgroundSets.cian");
-        std::cout << getTranslation("BackgroundSets.red");
-        std::cout << getTranslation("BackgroundSets.purple");
-        std::cout << getTranslation("BackgroundSets.blue");
-        std::cout << getTranslation("BackgroundSets.white");
-        std::cout << getTranslation("BackgroundSets.gray");
-        std::cout << getTranslation("BackgroundSets.stepBack");
+        std::cout << getTranslation("BackgroundSets.sign") << "\n";
+        std::cout << getTranslation("BackgroundSets.DefaultBlack") << "\n";
+        std::cout << getTranslation("BackgroundSets.green") << "\n";
+        std::cout << getTranslation("BackgroundSets.cian") << "\n";
+        std::cout << getTranslation("BackgroundSets.red") << "\n";
+        std::cout << getTranslation("BackgroundSets.purple") << "\n";
+        std::cout << getTranslation("BackgroundSets.blue") << "\n";
+        std::cout << getTranslation("BackgroundSets.white") << "\n";
+        std::cout << getTranslation("BackgroundSets.gray") << "\n";
+        std::cout << getTranslation("BackgroundSets.stepBack") << "\n";
 
         InputResult inputResult = readLineWithHotkey(getTranslation("NumberOutput.numberOutput"));
         /*std::cout << backgroundsets.sign << std::endl;
@@ -734,11 +732,11 @@ void learningLanguage()
         std::cout << getTranslation("LearningLanguageSet.CurrentlyMotherLanguage") <<" "<< getLanguageNameByIndex(static_cast<int>(motherLanguage)) << "\n" << std::flush;
         std::cout << getTranslation("LearningLanguageSet.CurrentlyLearningLanguage") <<" "<< getLanguageNameByIndex(static_cast<int>(targetLanguage)) << "\n" << std::flush;
         std::cout << "\n"<< getTranslation("LearningLanguageSet.menuSigns") << "\n" << std::flush;
-        std::cout << getTranslation("LearningLanguageSet..option1") << std::flush;
-        std::cout << getTranslation("LearningLanguageSet.option2") << std::flush;
-        std::cout << getTranslation("LearningLanguageSet.option3") << std::flush;
+        std::cout << getTranslation("LearningLanguageSet.option1") << "\n" << std::flush;
+        std::cout << getTranslation("LearningLanguageSet.option2") << "\n" << std::flush;
+        std::cout << getTranslation("LearningLanguageSet.option3") << "\n\n" << std::flush;
 
-        InputResult inputResult = readLineWithHotkey("\n4." + getTranslation("LearningLanguageSet.choice"));
+        InputResult inputResult = readLineWithHotkey(getTranslation("LearningLanguageSet.choice"));
 
 
         /*std::cout << LLS.Menu << std::endl;
@@ -789,7 +787,7 @@ void learningLanguage()
                         {
                             std::cout << i + 1 << ". " << getLanguageNameByIndex(i) << std::endl;
                         }
-                        std::cout << getTranslation("LearningLanguageSet.back") << "\n" << std::flush;
+                        std::cout << getTranslation("LearningLanguageSet.back") << "\n\n" << std::flush;
                         //std::cout << LLS.back <<std::endl;
                         //std::cout << LLS.allChoice;
                         InputResult mLangInputResult = readLineWithHotkey(getTranslation("LearningLanguageSet.allChoice"));
@@ -879,7 +877,7 @@ void learningLanguage()
                         for (int i = 0; i <= static_cast<int>(Language::LATIN); i++) {
                             std::cout << i + 1 << ". " << getLanguageNameByIndex(i) << std::endl;
                         }
-                        std::cout << getTranslation("LearningLanguageSet.back") << "\n" << std::flush;
+                        std::cout << getTranslation("LearningLanguageSet.back") << "\n\n" << std::flush;
                         //std::cout << LLS.back <<std::endl;
                         //std::cout << LLS.allChoice;
 
@@ -949,11 +947,11 @@ void learningLanguage()
                         break;
                     }
                 }
-                //visszalépünk a főmenübe
-                else if (choice ==3)
+                //visszalépünk a főmenübe || Return to the main menu
+                else if (choice == 0)
                 {
                     playBeep();
-                    return; //kilépünk a ciklusból
+                    return; //kilépünk a ciklusból || Exit the loop
                 }
 
             } catch (...)
@@ -994,7 +992,11 @@ void learningLanguage()
             //std::cout << SOO.option1;
             // Input beolvasása readLineWithHotkey-jel || Read input with readLineWithHotkey
 
-            InputResult inputResult = readLineWithHotkey(getTranslation("SoundOnOff.option1"));
+            std::cout << getTranslation("SoundOnOff.option1") << "\n" << std::flush;
+            std::cout << getTranslation("SoundOnOff.option2") << "\n" << std::flush;
+            std::cout << getTranslation("SoundOnOff.option3") << std::flush;
+
+            InputResult inputResult = readLineWithHotkey("");//Üres így megmarad a fenti kiírás || Empty so the above statement remains
             //InputResult inputResult = readLineWithHotkey(SOO.option1);
 
             //-------RÉGI KÓD || OLD CODE
@@ -1064,7 +1066,11 @@ void learningLanguage()
 
             // Input beolvasása readLineWithHotkey-jel || Read input with readLineWithHotkey
 
-            InputResult inputResult = readLineWithHotkey(getTranslation("SpellingOutAccents.accentsMenu1"));
+            std::cout << getTranslation("SpellingOutAccents.accentsMenu1") << "\n" << std::flush;
+            std::cout << getTranslation("SpellingOutAccents.accentsMenu2") << "\n" << std::flush;
+            std::cout << getTranslation("SpellingOutAccents.accentsMenu3") << std::flush;
+
+            InputResult inputResult = readLineWithHotkey("");//Üres így megmarad a fenti kiírás || Empty so the above statement remains
             //InputResult inputResult = readLineWithHotkey(SOA.accentsMenu1);
 
             // --- CTRL + C Kezelése || CTRL + C Handling
@@ -1170,7 +1176,7 @@ void learningLanguage()
                     screenWipe();
                     logError("oneRoundQuizToggle()", getTranslation("InvalidInput2.invalidInput2"));
                     //logError("oneRoundQuizToggle()" , II2.invalidInput2);
-                    std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n" << std::flush;
+                    std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n\n" << std::flush;
                     //std::cerr << II2.invalidInput2 << "\n" << std::flush;
                     playBeep();
                     waitToEnter();
@@ -1179,7 +1185,7 @@ void learningLanguage()
                 screenWipe();
                 logError("oneRoundQuizToggle()", getTranslation("InvalidInput2.invalidInput2"));
                 //logError("oneRoundQuizToggle()" , II2.invalidInput2);
-                std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n" << std::flush;
+                std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n\n" << std::flush;
                 //std::cerr << II2.invalidInput2 << "\n" << std::flush;
                 playBeep();
                 waitToEnter();
@@ -1192,8 +1198,11 @@ void preferIniTranslationsToggle()
     screenWipe();
     std::cout << getTranslation("IniStructToggle.mainSigns")  << "\n";
     std::cout << getTranslation("IniStructToggle.currentlyState") << (preferIniTranslations ? getTranslation("IniStructToggle.stateON") : getTranslation ("stateOff")) << "\n" << std::flush;
+    std::cout << getTranslation("IniStructToggle.switchingMenu") << "\n";
+    std::cout << getTranslation("IniStructToggle.switchingMenu2") << "\n";
+    std::cout << getTranslation("IniStructToggle.switchingMenu3");
 
-    InputResult inputResult = readLineWithHotkey(getTranslation("IniStructToggle.switchingMenu"));
+    InputResult inputResult = readLineWithHotkey("");
 
     if (inputResult.exitTriggered) {
         playBeep();
@@ -1222,12 +1231,12 @@ void preferIniTranslationsToggle()
         } else {
             screenWipe();
             logError("preferIniTranslationsToggle()" , getTranslation("InvalidInput2.invalidInput2"));
-            std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n";
+            std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n\n";
             waitToEnter();
         }
     } catch (...) {
         logError("preferIniTranslationsToggle()" , getTranslation("InvalidInput2.invalidInput2"));
-        std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n";
+        std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n\n";
         waitToEnter();
     }
 }

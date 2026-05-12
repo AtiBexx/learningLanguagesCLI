@@ -1,9 +1,8 @@
+```
 //
 // Created by AtiBexx2 on 2026. 04. 12.
 //
-/**
- *@page mistakeExercise.doc
- */
+
 #include "programQuiz.h"
 #include "../FileIO/dataFileReading.h"
 #include "../Translate/translations.h"
@@ -16,6 +15,7 @@
 #include "settings.h"
 #include "newInput/platformInput.h"
 
+//bool useColors;
 
 void mistakeExercise()
 {
@@ -26,15 +26,22 @@ void mistakeExercise()
     path = "data/mistakes/mistakes.data";
 #endif
 
+    /*const GoodAnswer2& goodAns2 = goodAnswer2Translations[static_cast<int>(programUiLanguage)];
+    const GoodAnswer1& goodAns = goodAnswer1Translations[static_cast<int>(programUiLanguage)];
+    const BadlyAnswer& badAns = badlyAnswerTranslations[static_cast<int>(programUiLanguage)];
+    const MistakeExercise& mistakeExercise = mistakeExerciseTranslations[static_cast<int>(programUiLanguage)];
+    const QuizExplanation &quizExplanation = quizExplanationTranslations[static_cast<int>(programUiLanguage)];*/
+
     loadSettings();
     // Beolvassuk a hibákat
     // Read the errors
     std::vector<WordPair> mistakeWords = loadWords(path);
 
     if (mistakeWords.empty()) {
+        //const HaveNoWords& msg = haveNoWordsTranslations[static_cast<int>(programUiLanguage)];
         screenWipe();
         std::cout << getTranslation("HaveNoWords.haveNoWords") <<"\n" << std::flush;
-
+        //std::cout << msg.haveNoWords << std::endl;
         waitToEnter();
         return;
     }
@@ -48,7 +55,7 @@ void mistakeExercise()
     // Betöltjük a folytatási indexet
     // Load the continuation index
 
-    if (resumeIndex>= mistakeWords.size()) { // Ha az index túl nagy, nullázzuk || If the index is too big, set it to 0
+    if (resumeIndex>= mistakeWords.size()) { // Ha az index túl nagy, nullázzuk
         resumeIndex = 0;
     }
 
@@ -64,24 +71,31 @@ void mistakeExercise()
             std::cout << getTranslation("MistakeExercise.practiceOfWrongWord") << "\n" << std::flush;
             std::cout << getTranslation("MistakeExercise.word") << word.motherLangMeaning << "\n" << std::flush;
             std::cout << getTranslation("MistakeExercise.answer");
+            /*std::cout << quizExplanation.quizExplanation1 << std::endl;
+            std::cout << quizExplanation.quizExplanation2 << std::endl;
+            std::cout << quizExplanation.quizExplanation3 << std::endl;
 
+            std::cout << mistakeExercise.practiceOfWrongWord << std::endl;
+            std::cout << mistakeExercise.word << word.motherLangMeaning << std::endl;
+            std::cout << mistakeExercise.answer;*/
 
-            // Ha be van kapcsolva a súgó, akkor itt kiírjuk || If help is turned on, it will be displayed here
+            // Ha be van kapcsolva a súgó, akkor itt kiírjuk
             if (showHelp) {
                 std::cout << "CheatSheet: " << colors::GREY << word.targetLangMeaning << colors::RESET << std::endl;
             }
 
             InputResult inputResult = readLineWithHotkey(getTranslation("MistakeExercise.answer"));
+            //InputResult inputResult = readLineWithHotkey(mistakeExercise.answer);
 
-            // Ha a hotkey volt (Ctrl+Y) || If a hotkey was triggered (Ctrl+Y)
+            // Ha hotkey volt (Ctrl+Y)
             if (inputResult.hotkeyTriggered) {
                 showHelp = !showHelp; // Toggle a súgót
                 if (showHelp) helperUsed = true;
                 saveSettings();
-                continue; // Újraindul a kör az új súgó állapottal || The round restarts with the new help status
+                continue; // Újraindul a kör az új súgó állapottal
             }
 
-            std::string answer = inputResult.text; // A tényleges válasz || The actual answer
+            std::string answer = inputResult.text; // A tényleges válasz
             std::string lowerAnswer = toLowerCase(trim(answer));
 
             if (lowerAnswer == "exit" || lowerAnswer == "e" || inputResult.exitTriggered)
@@ -89,11 +103,10 @@ void mistakeExercise()
                 stillMistakes.push_back(word);
 
                 // Az összes hátralévő szót is hozzáadjuk a hibákhoz
-                // Add all remaining words to the mistakes
                 for (size_t j = i + 1; j < mistakeWords.size(); ++j) {
                     stillMistakes.push_back(mistakeWords[j]);
                 }
-                resumeIndex = i; // Mentjük az aktuális indexet || Save the current index
+                resumeIndex = i; // Mentjük az aktuális indexet
                 realExit = true;
                 break;
             }
@@ -111,26 +124,31 @@ void mistakeExercise()
                 continue;
             }
 
+            //if (toLowerCase(removePunctuation(trim(answer))) == toLowerCase(removePunctuation(trim(word.targetLangMeaning)))){
             if (cleanString(answer) == cleanString(word.targetLangMeaning)) {
                 if (useColors) std::cout << colors::GREEN;
                 std::cout << getTranslation("GoodAnswer1.goodAnswer1");
-
+                //std::cout << goodAns.goodAnswer1;
                 if (useColors) std::cout << colors::RESET;
                 waitToEnter();
                 break;
             } else {
                 if (useColors) std::cout << colors::RED;
                 std::cout << getTranslation("BadlyAnswer.badlyAnswer");
-
+                //std::cout << badAns.badlyAnswer;
                 if (useColors) std::cout << colors::RESET;
                 std::cout << "\n"<<getTranslation("GoodAnswer2.goodAnswer2") << word.targetLangMeaning << "\n" << std::flush;
 
-                stillMistakes.push_back(word); // Benne hagyjuk a listában || Let's leave it on the list.
+                //std::cout << "\n"<<goodAns2.goodAnswer2 << word.targetLangMeaning << std::endl;
+                stillMistakes.push_back(word); // Benne hagyjuk a listában
                 waitToEnter();
             }
         }
     }
-
+    /*if (realExit)
+    {
+        return;
+    }*/
 
     // A FÁJL ÚJRAÍRÁSA a megmaradt hibákkal
     // OVERWRITE THE FILE with remaining errors
@@ -146,6 +164,9 @@ void mistakeExercise()
 
     screenWipe();
     std::cout << getTranslation("MistakeExercise.exerciseEnd") << stillMistakes.size() << "\n" << std::flush;
+    //std::cout << mistakeExercise.exerciseEnd << stillMistakes.size() << std::endl;
     saveSettings();
     waitToEnter();
 }
+```
+

@@ -44,313 +44,313 @@ static const std::vector<MenuStrings> mainMenuTranslations_hardcoded = {
     // HUNGARIAN (Index 0)
     {
         "============NYELVTANULÓ-APP============",
-        "\n1. - A program magyarázata",
+        "1. - A program magyarázata",
         "2. - A program indítása",
         "3. - A hibák gyakorlása",
         "4. - Új szókincs fájl létrehozása",
         "5. - Beállítások",
         "6. - A szerkesztő (EDITOR) megnyitása",
         "0. - Kilépés",
-        "\n======================================="
+        "======================================="
     },
 
     // ENGLISH (Index 1)
     {
         "============LANGUAGE LEARNING APP============",
-        "\n1. - Program explanation",
+        "1. - Program explanation",
         "2. - Start program",
         "3. - Practice mistakes",
         "4. - Create new vocabulary file",
         "5. - Settings",
         "6. - Open editor",
         "0. - Exit",
-        "\n============================================="
+        "============================================="
     },
 
     // CHINESE (Index 2)
     {
         "============语言学习应用============",
-        "\n1. - 程序说明",
+        "1. - 程序说明",
         "2. - 启动程序",
         "3. - 练习错误",
         "4. - 创建新词汇文件",
         "5. - 设置",
         "6. - 打开编辑器",
         "0. - 退出",
-        "\n=================================="
+        "=================================="
     },
 
     // JAPANESE (Index 3)
     {
         "============言語学習アプリ============",
-        "\n1. - プログラムの説明",
+        "1. - プログラムの説明",
         "2. - プログラム開始",
         "3. - 間違いの練習",
         "4. - 新しい単語ファイル作成",
         "5. - 設定",
         "6. - エディターを開く",
         "0. - 終了",
-        "\n=================================="
+        "=================================="
     },
 
     // SPANISH (Index 4)
     {
         "============APLICACIÓN DE IDIOMAS============",
-        "\n1. - Explicación del programa",
+        "1. - Explicación del programa",
         "2. - Iniciar programa",
         "3. - Practicar errores",
         "4. - Crear archivo de vocabulario",
         "5. - Configuración",
         "6. - Abrir editor",
         "0. - Salir",
-        "\n============================================="
+        "============================================="
     },
 
     // GERMAN (Index 5)
     {
         "============SPRACHLERN-APP============",
-        "\n1. - Programmerklärung",
+        "1. - Programmerklärung",
         "2. - Programm starten",
         "3. - Fehler üben",
         "4. - Neue Vokabeldatei erstellen",
         "5. - Einstellungen",
         "6. - Editor öffnen",
         "0. - Beenden",
-        "\n====================================="
+        "====================================="
     },
 
     // FRENCH (Index 6)
     {
         "============APPLICATION DE LANGUE============",
-        "\n1. - Explication du programme",
+        "1. - Explication du programme",
         "2. - Démarrer le programme",
         "3. - Pratiquer les erreurs",
         "4. - Créer un fichier de vocabulaire",
         "5. - Paramètres",
         "6. - Ouvrir l'éditeur",
         "0. - Quitter",
-        "\n============================================"
+        "============================================"
     },
 
     // RUSSIAN (Index 7)
     {
         "============ПРИЛОЖЕНИЕ ДЛЯ ЯЗЫКОВ============",
-        "\n1. - Объяснение программы",
+        "1. - Объяснение программы",
         "2. - Запустить программу",
         "3. - Практика ошибок",
         "4. - Создать файл словаря",
         "5. - Настройки",
         "6. - Открыть редактор",
         "0. - Выход",
-        "\n============================================"
+        "============================================"
     },
 
     // UKRAINIAN (Index 8)
     {
         "============ДОДАТОК ДЛЯ МОВ============",
-        "\n1. - Пояснення програми",
+        "1. - Пояснення програми",
         "2. - Запустити програму",
         "3. - Практика помилок",
         "4. - Створити файл словника",
         "5. - Налаштування",
         "6. - Відкрити редактор",
         "0. - Вихід",
-        "\n========================================"
+        "========================================"
     },
 
     // KOREAN (Index 9)
     {
         "============언어 학습 앱============",
-        "\n1. - 프로그램 설명",
+        "1. - 프로그램 설명",
         "2. - 프로그램 시작",
         "3. - 오류 연습",
         "4. - 새 단어 파일 생성",
         "5. - 설정",
         "6. - 편집기 열기",
         "0. - 종료",
-        "\n=================================="
+        "=================================="
     },
 
     // ITALIAN (Index 10)
     {
         "============APP DI LINGUE============",
-        "\n1. - Spiegazione del programma",
+        "1. - Spiegazione del programma",
         "2. - Avvia programma",
         "3. - Pratica errori",
         "4. - Crea file vocabolario",
         "5. - Impostazioni",
         "6. - Apri editor",
         "0. - Esci",
-        "\n===================================="
+        "===================================="
     },
 
     // POLISH (Index 11)
     {
         "============APLIKACJA JĘZYKOWA============",
-        "\n1. - Wyjaśnienie programu",
+        "1. - Wyjaśnienie programu",
         "2. - Uruchom program",
         "3. - Ćwiczenie błędów",
         "4. - Utwórz plik słownictwa",
         "5. - Ustawienia",
         "6. - Otwórz edytor",
         "0. - Wyjście",
-        "\n=========================================="
+        "=========================================="
     },
 
     // ARABIC (Index 12)
     {
         "============تطبيق تعلم اللغات============",
-        "\n1. - شرح البرنامج",
+        "1. - شرح البرنامج",
         "2. - بدء البرنامج",
         "3. - ممارسة الأخطاء",
         "4. - إنشاء ملف مفردات",
         "5. - الإعدادات",
         "6. - فتح المحرر",
         "0. - خروج",
-        "\n========================================"
+        "========================================"
     },
 
     // VIETNAMESE (Index 13)
     {
         "============ỨNG DỤNG HỌC NGÔN NGỮ============",
-        "\n1. - Giải thích chương trình",
+        "1. - Giải thích chương trình",
         "2. - Bắt đầu chương trình",
         "3. - Luyện lỗi",
         "4. - Tạo file từ vựng",
         "5. - Cài đặt",
         "6. - Mở trình soạn thảo",
         "0. - Thoát",
-        "\n============================================"
+        "============================================"
     },
 
     // TAGALOG (Index 14)
     {
         "============APP SA WIKA============",
-        "\n1. - Paliwanag ng programa",
+        "1. - Paliwanag ng programa",
         "2. - Simulan ang programa",
         "3. - Pagsasanay sa mali",
         "4. - Gumawa ng vocabulary file",
         "5. - Settings",
         "6. - Buksan ang editor",
         "0. - Exit",
-        "\n=================================="
+        "=================================="
     },
 
     // GREEK (Index 15)
     {
         "============ΕΦΑΡΜΟΓΗ ΓΛΩΣΣΑΣ============",
-        "\n1. - Επεξήγηση προγράμματος",
+        "1. - Επεξήγηση προγράμματος",
         "2. - Εκκίνηση προγράμματος",
         "3. - Εξάσκηση λαθών",
         "4. - Δημιουργία αρχείου λεξιλογίου",
         "5. - Ρυθμίσεις",
         "6. - Άνοιγμα editor",
         "0. - Έξοδος",
-        "\n========================================"
+        "========================================"
     },
 
     // HEBREW (Index 16)
     {
         "============אפליקציית שפות============",
-        "\n1. - הסבר התוכנית",
+        "1. - הסבר התוכנית",
         "2. - הפעלת התוכנית",
         "3. - תרגול טעויות",
         "4. - יצירת קובץ מילים",
         "5. - הגדרות",
         "6. - פתיחת עורך",
         "0. - יציאה",
-        "\n======================================"
+        "======================================"
     },
 
     // PORTUGUESE (Index 17)
     {
         "============APP DE IDIOMAS============",
-        "\n1. - Explicação do programa",
+        "1. - Explicação do programa",
         "2. - Iniciar programa",
         "3. - Praticar erros",
         "4. - Criar arquivo de vocabulário",
         "5. - Configurações",
         "6. - Abrir editor",
         "0. - Sair",
-        "\n======================================"
+        "======================================"
     },
 
     // FARSI (Index 18)
     {
         "============برنامه یادگیری زبان============",
-        "\n1. - توضیح برنامه",
+        "1. - توضیح برنامه",
         "2. - شروع برنامه",
         "3. - تمرین خطاها",
         "4. - ایجاد فایل واژگان",
         "5. - تنظیمات",
         "6. - باز کردن ویرایشگر",
         "0. - خروج",
-        "\n========================================="
+        "========================================="
     },
 
     // SWEDISH (Index 19)
     {
         "============SPRÅKINLÄRNINGSAPP============",
-        "\n1. - Programförklaring",
+        "1. - Programförklaring",
         "2. - Starta program",
         "3. - Öva fel",
         "4. - Skapa vokabulärfil",
         "5. - Inställningar",
         "6. - Öppna editor",
         "0. - Avsluta",
-        "\n=========================================="
+        "=========================================="
     },
 
     // DUTCH (Index 20)
     {
         "============TAALAPP============",
-        "\n1. - Program uitleg",
+        "1. - Program uitleg",
         "2. - Start programma",
         "3. - Fouten oefenen",
         "4. - Woordenbestand maken",
         "5. - Instellingen",
         "6. - Editor openen",
         "0. - Afsluiten",
-        "\n================================"
+        "================================"
     },
 
     // TURKISH (Index 21)
     {
         "============DİL ÖĞRENME UYGULAMASI============",
-        "\n1. - Program açıklaması",
+        "1. - Program açıklaması",
         "2. - Programı başlat",
         "3. - Hataları çalış",
         "4. - Kelime dosyası oluştur",
         "5. - Ayarlar",
         "6. - Editörü aç",
         "0. - Çıkış",
-        "\n=============================================="
+        "=============================================="
     },
 
     // HINDI (Index 22)
     {
         "============भाषा सीखने का ऐप============",
-        "\n1. - प्रोग्राम विवरण",
+        "1. - प्रोग्राम विवरण",
         "2. - प्रोग्राम शुरू करें",
         "3. - गलतियों का अभ्यास",
         "4. - शब्दावली फ़ाइल बनाएं",
         "5. - सेटिंग्स",
         "6. - एडिटर खोलें",
         "0. - बाहर निकलें",
-        "\n========================================"
+        "========================================"
     },
 
     // LATIN (Index 23)
     {
         "============APP LINGUAE============",
-        "\n1. - Explicatio programmatis",
+        "1. - Explicatio programmatis",
         "2. - Incipere programmam",
         "3. - Exercere errores",
         "4. - Creare fasciculum verborum",
         "5. - Optiones",
         "6. - Aperire editorem",
         "0. - Exire",
-        "\n==================================="
+        "==================================="
     }
 };
 //const std::vector<MenuStrings> mainMenuTranslations = mainMenuTranslations_hardcoded;
@@ -881,75 +881,75 @@ static const std::vector<ExitingStrings> exitingTranslations_hardcoded = {
 static const std::vector<InvalidInput> invalidInputTranslations_hardcoded = {
 
     //hungarian (Index 0)
-    {"Hibás bemenet, kérlek csak számot adj meg!\n" },
+    {"Hibás bemenet, kérlek csak számot adj meg!" },
 
     //English (Index 1)
-        {"Invalid input. Please only enter a number!\n"},
+        {"Invalid input. Please only enter a number!"},
     // CHINESE (Index 2)
-    {"输入无效，请只输入数字！\n"},
+    {"输入无效，请只输入数字！"},
 
     // JAPANESE (Index 3)
-    {"無効な入力です。数字のみ入力してください！\n"},
+    {"無効な入力です。数字のみ入力してください！"},
 
     // SPANISH (Index 4)
-    {"Entrada inválida. ¡Por favor, introduce solo números!\n"},
+    {"Entrada inválida. ¡Por favor, introduce solo números!"},
 
     // GERMAN (Index 5)
-    {"Ungültige Eingabe. Bitte nur Zahlen eingeben!\n"},
+    {"Ungültige Eingabe. Bitte nur Zahlen eingeben!"},
 
     // FRENCH (Index 6)
-    {"Entrée invalide. Veuillez entrer uniquement des nombres !\n"},
+    {"Entrée invalide. Veuillez entrer uniquement des nombres !"},
 
     // RUSSIAN (Index 7)
-    {"Неверный ввод. Пожалуйста, вводите только числа!\n"},
+    {"Неверный ввод. Пожалуйста, вводите только числа!"},
 
     // UKRAINIAN (Index 8)
-    {"Неправильне введення. Будь ласка, вводьте лише числа!\n"},
+    {"Неправильне введення. Будь ласка, вводьте лише числа!"},
 
     // KOREAN (Index 9)
-    {"잘못된 입력입니다. 숫자만 입력하세요!\n"},
+    {"잘못된 입력입니다. 숫자만 입력하세요!"},
 
     // ITALIAN (Index 10)
-    {"Input non valido. Inserisci solo numeri!\n"},
+    {"Input non valido. Inserisci solo numeri!"},
 
     // POLISH (Index 11)
-    {"Nieprawidłowe dane. Wpisz tylko liczby!\n"},
+    {"Nieprawidłowe dane. Wpisz tylko liczby!"},
 
     // ARABIC (Index 12)
-    {"إدخال غير صالح. يرجى إدخال أرقام فقط!\n"},
+    {"إدخال غير صالح. يرجى إدخال أرقام فقط!"},
 
     // VIETNAMESE (Index 13)
-    {"Dữ liệu không hợp lệ. Vui lòng chỉ nhập số!\n"},
+    {"Dữ liệu không hợp lệ. Vui lòng chỉ nhập số!"},
 
     // TAGALOG (Index 14)
-    {"Di-wastong input. Mangyaring numero lamang ang ilagay!\n"},
+    {"Di-wastong input. Mangyaring numero lamang ang ilagay!"},
 
     // GREEK (Index 15)
-    {"Μη έγκυρη είσοδος. Παρακαλώ εισάγετε μόνο αριθμούς!\n"},
+    {"Μη έγκυρη είσοδος. Παρακαλώ εισάγετε μόνο αριθμούς!"},
 
     // HEBREW (Index 16)
-    {"קלט לא חוקי. אנא הזן מספרים בלבד!\n"},
+    {"קלט לא חוקי. אנא הזן מספרים בלבד!"},
 
     // PORTUGUESE (Index 17)
-    {"Entrada inválida. Por favor, insira apenas números!\n"},
+    {"Entrada inválida. Por favor, insira apenas números!"},
 
     // FARSI (Index 18)
-    {"ورودی نامعتبر است. لطفاً فقط عدد وارد کنید!\n"},
+    {"ورودی نامعتبر است. لطفاً فقط عدد وارد کنید!"},
 
     // SWEDISH (Index 19)
-    {"Ogiltig inmatning. Ange endast siffror!\n"},
+    {"Ogiltig inmatning. Ange endast siffror!"},
 
     // DUTCH (Index 20)
-    {"Ongeldige invoer. Voer alleen cijfers in!\n"},
+    {"Ongeldige invoer. Voer alleen cijfers in!"},
 
     // TURKISH (Index 21)
-    {"Geçersiz giriş. Lütfen sadece sayı girin!\n"},
+    {"Geçersiz giriş. Lütfen sadece sayı girin!"},
 
     // HINDI (Index 22)
-    {"अमान्य इनपुट। कृपया केवल संख्या दर्ज करें!\n"},
+    {"अमान्य इनपुट। कृपया केवल संख्या दर्ज करें!"},
 
     // LATIN (Index 23)
-    {"Input non validus. Quaeso numeros tantum inserere!\n"}
+    {"Input non validus. Quaeso numeros tantum inserere!"}
 };
 
 
@@ -1034,76 +1034,76 @@ static const std::vector<EnteringBack> continuationToEnterTranslations_hardcoded
 static const std::vector<InvalidInput2>  invalidInputTranslations2_hardcoded = {
 
     //Hungarian (Index 0)
-{"Érvénytelen választás! Kérlek próbáld újra és megfelelő számot adj meg!\n"},
+{"Érvénytelen választás! Kérlek próbáld újra és megfelelő számot adj meg!"},
 
     // english (Index 1)
-    {"Invalid choice. Please try again and enter a valid number!\n"},
+    {"Invalid choice. Please try again and enter a valid number!"},
 
     // CHINESE (Index 2)
-    {"无效选择！请重试并输入有效的数字！\n"},
+    {"无效选择！请重试并输入有效的数字！"},
 
     // JAPANESE (Index 3)
-    {"無効な選択です！もう一度試して、有効な数字を入力してください！\n"},
+    {"無効な選択です！もう一度試して、有効な数字を入力してください！"},
 
     // SPANISH (Index 4)
-    {"¡Elección inválida! Por favor, inténtalo de nuevo e introduce un número válido.\n"},
+    {"¡Elección inválida! Por favor, inténtalo de nuevo e introduce un número válido."},
 
     // GERMAN (Index 5)
-    {"Ungültige Auswahl! Bitte versuche es erneut und gib eine gültige Zahl ein!\n"},
+    {"Ungültige Auswahl! Bitte versuche es erneut und gib eine gültige Zahl ein!"},
 
     // FRENCH (Index 6)
-    {"Choix invalide ! Veuillez réessayer et entrer un nombre valide !\n"},
+    {"Choix invalide ! Veuillez réessayer et entrer un nombre valide !"},
 
     // RUSSIAN (Index 7)
-    {"Неверный выбор! Пожалуйста, попробуйте снова и введите корректное число!\n"},
+    {"Неверный выбор! Пожалуйста, попробуйте снова и введите корректное число!"},
 
     // UKRAINIAN (Index 8)
-    {"Невірний вибір! Будь ласка, спробуйте ще раз і введіть правильне число!\n"},
+    {"Невірний вибір! Будь ласка, спробуйте ще раз і введіть правильне число!"},
 
     // KOREAN (Index 9)
-    {"잘못된 선택입니다! 다시 시도하고 올바른 숫자를 입력하세요!\n"},
+    {"잘못된 선택입니다! 다시 시도하고 올바른 숫자를 입력하세요!"},
 
     // ITALIAN (Index 10)
-    {"Scelta non valida! Riprova e inserisci un numero valido!\n"},
+    {"Scelta non valida! Riprova e inserisci un numero valido!"},
 
     // POLISH (Index 11)
-    {"Nieprawidłowy wybór! Spróbuj ponownie i wpisz poprawną liczbę!\n"},
+    {"Nieprawidłowy wybór! Spróbuj ponownie i wpisz poprawną liczbę!"},
 
     // ARABIC (Index 12)
-    {" \nاختيار غير صالح! يرجى المحاولة مرة أخرى وإدخال رقم صحيح!"},
+    {"اختيار غير صالح! يرجى المحاولة مرة أخرى وإدخال رقم صحيح!"},
 
     // VIETNAMESE (Index 13)
-    {"Lựa chọn không hợp lệ! Vui lòng thử lại và nhập số hợp lệ!\n"},
+    {"Lựa chọn không hợp lệ! Vui lòng thử lại và nhập số hợp lệ!"},
 
     // TAGALOG (Index 14)
-    {"Di-wastong pagpili! Subukan muli at maglagay ng tamang numero!\n"},
+    {"Di-wastong pagpili! Subukan muli at maglagay ng tamang numero!"},
 
     // GREEK (Index 15)
-    {"Μη έγκυρη επιλογή! Προσπαθήστε ξανά και εισάγετε έγκυρο αριθμό!\n"},
+    {"Μη έγκυρη επιλογή! Προσπαθήστε ξανά και εισάγετε έγκυρο αριθμό!"},
 
     // HEBREW (Index 16)
-    {"\nבחירה לא חוקית! אנא נסה שוב והזן מספר תקין!"},
+    {"בחירה לא חוקית! אנא נסה שוב והזן מספר תקין!"},
 
     // PORTUGUESE (Index 17)
-    {"Escolha inválida! Por favor, tente novamente e insira um número válido!\n"},
+    {"Escolha inválida! Por favor, tente novamente e insira um número válido!"},
 
     // FARSI (Index 18)
-    {"\nانتخاب نامعتبر! لطفاً دوباره تلاش کنید و یک عدد معتبر وارد کنید!"},
+    {"انتخاب نامعتبر! لطفاً دوباره تلاش کنید و یک عدد معتبر وارد کنید!"},
 
     // SWEDISH (Index 19)
-    {"Ogiltigt val! Försök igen och ange ett giltigt nummer!\n"},
+    {"Ogiltigt val! Försök igen och ange ett giltigt nummer!"},
 
     // DUTCH (Index 20)
-    {"Ongeldige keuze! Probeer opnieuw en voer een geldig nummer in!\n"},
+    {"Ongeldige keuze! Probeer opnieuw en voer een geldig nummer in!"},
 
     // TURKISH (Index 21)
-    {"Geçersiz seçim! Lütfen tekrar deneyin ve geçerli bir sayı girin!\n"},
+    {"Geçersiz seçim! Lütfen tekrar deneyin ve geçerli bir sayı girin!"},
 
     // HINDI (Index 22)
-    {"अमान्य चयन! कृपया फिर से प्रयास करें और सही संख्या दर्ज करें!\n"},
+    {"अमान्य चयन! कृपया फिर से प्रयास करें और सही संख्या दर्ज करें!"},
 
     // LATIN (Index 23)
-    {"Electio non valida! Quaeso iterum tenta et numerum validum inserere!\n"}
+    {"Electio non valida! Quaeso iterum tenta et numerum validum inserere!"}
 };
 
 
@@ -1360,7 +1360,7 @@ static const std::vector<GoodAnswer1> goodAnswer1Translations_hardcoded = {
     {"Richtige Antwort!"},
 
     // FRENCH (Index 6)
-    {"Bonne réponse !"},
+    {"Bonne réponse!"},
 
     // RUSSIAN (Index 7)
     {"Правильный ответ!"},
@@ -1651,7 +1651,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // HUNGARIAN (Index 0)
     {
-        "\n---=== Eredmény === ---",
+        "---=== Eredmény === ---",
         "A kérdések száma: ",
         "Helyes válaszok: ",
         "Helytelen válaszok: ",
@@ -1660,7 +1660,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // ENGLISH (Index 1)
     {
-        "\n---=== Results ===---",
+        "---=== Results ===---",
         "Number of questions: ",
         "Correct answers: ",
         "Wrong answers: ",
@@ -1669,7 +1669,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // CHINESE (Index 2)
     {
-        "\n---=== 结果 ===---",
+        "---=== 结果 ===---",
         "问题数量: ",
         "正确答案: ",
         "错误答案: ",
@@ -1678,7 +1678,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // JAPANESE (Index 3)
     {
-        "\n---=== 結果 ===---",
+        "---=== 結果 ===---",
         "質問数: ",
         "正解数: ",
         "不正解数: ",
@@ -1687,7 +1687,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // SPANISH (Index 4)
     {
-        "\n---=== Resultados ===---",
+        "---=== Resultados ===---",
         "Número de preguntas: ",
         "Respuestas correctas: ",
         "Respuestas incorrectas: ",
@@ -1696,7 +1696,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // GERMAN (Index 5)
     {
-        "\n---=== Ergebnisse ===---",
+        "---=== Ergebnisse ===---",
         "Anzahl der Fragen: ",
         "Richtige Antworten: ",
         "Falsche Antworten: ",
@@ -1705,7 +1705,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // FRENCH (Index 6)
     {
-        "\n---=== Résultats ===---",
+        "---=== Résultats ===---",
         "Nombre de questions: ",
         "Réponses correctes: ",
         "Réponses incorrectes: ",
@@ -1714,7 +1714,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // RUSSIAN (Index 7)
     {
-        "\n---=== Результаты ===---",
+        "---=== Результаты ===---",
         "Количество вопросов: ",
         "Правильные ответы: ",
         "Неправильные ответы: ",
@@ -1723,7 +1723,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // UKRAINIAN (Index 8)
     {
-        "\n---=== Результати ===---",
+        "---=== Результати ===---",
         "Кількість запитань: ",
         "Правильні відповіді: ",
         "Неправильні відповіді: ",
@@ -1732,7 +1732,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // KOREAN (Index 9)
     {
-        "\n---=== 결과 ===---",
+        "---=== 결과 ===---",
         "문제 수: ",
         "정답 수: ",
         "오답 수: ",
@@ -1741,7 +1741,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // ITALIAN (Index 10)
     {
-        "\n---=== Risultati ===---",
+        "---=== Risultati ===---",
         "Numero di domande: ",
         "Risposte corrette: ",
         "Risposte sbagliate: ",
@@ -1750,7 +1750,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // POLISH (Index 11)
     {
-        "\n---=== Wyniki ===---",
+        "---=== Wyniki ===---",
         "Liczba pytań: ",
         "Poprawne odpowiedzi: ",
         "Błędne odpowiedzi: ",
@@ -1759,7 +1759,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // ARABIC (Index 12)
     {
-        "\n---=== النتائج ===---",
+        "---=== النتائج ===---",
         "عدد الأسئلة: ",
         "الإجابات الصحيحة: ",
         "الإجابات الخاطئة: ",
@@ -1768,7 +1768,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // VIETNAMESE (Index 13)
     {
-        "\n---=== Kết quả ===---",
+        "---=== Kết quả ===---",
         "Số câu hỏi: ",
         "Câu trả lời đúng: ",
         "Câu trả lời sai: ",
@@ -1777,7 +1777,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // TAGALOG (Index 14)
     {
-        "\n---=== Resulta ===---",
+        "---=== Resulta ===---",
         "Bilang ng mga tanong: ",
         "Tamang sagot: ",
         "Maling sagot: ",
@@ -1786,7 +1786,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // GREEK (Index 15)
     {
-        "\n---=== Αποτελέσματα ===---",
+        "---=== Αποτελέσματα ===---",
         "Αριθμός ερωτήσεων: ",
         "Σωστές απαντήσεις: ",
         "Λάθος απαντήσεις: ",
@@ -1795,7 +1795,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // HEBREW (Index 16)
     {
-        "\n---=== תוצאות ===---",
+        "---=== תוצאות ===---",
         "מספר שאלות: ",
         "תשובות נכונות: ",
         "תשובות שגויות: ",
@@ -1804,7 +1804,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // PORTUGUESE (Index 17)
     {
-        "\n---=== Resultados ===---",
+        "---=== Resultados ===---",
         "Número de perguntas: ",
         "Respostas corretas: ",
         "Respostas erradas: ",
@@ -1813,7 +1813,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // FARSI (Index 18)
     {
-        "\n---=== نتایج ===---",
+        "---=== نتایج ===---",
         "تعداد سوالات: ",
         "پاسخ‌های صحیح: ",
         "پاسخ‌های نادرست: ",
@@ -1822,7 +1822,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // SWEDISH (Index 19)
     {
-        "\n---=== Resultat ===---",
+        "---=== Resultat ===---",
         "Antal frågor: ",
         "Rätta svar: ",
         "Felaktiga svar: ",
@@ -1831,7 +1831,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // DUTCH (Index 20)
     {
-        "\n---=== Resultaten ===---",
+        "---=== Resultaten ===---",
         "Aantal vragen: ",
         "Correcte antwoorden: ",
         "Foute antwoorden: ",
@@ -1840,7 +1840,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // TURKISH (Index 21)
     {
-        "\n---=== Sonuçlar ===---",
+        "---=== Sonuçlar ===---",
         "Soru sayısı: ",
         "Doğru cevaplar: ",
         "Yanlış cevaplar: ",
@@ -1849,7 +1849,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // HINDI (Index 22)
     {
-        "\n---=== परिणाम ===---",
+        "---=== परिणाम ===---",
         "प्रश्नों की संख्या: ",
         "सही उत्तर: ",
         "गलत उत्तर: ",
@@ -1858,7 +1858,7 @@ static const std::vector<ScoreSys> totalTranslations_hardcoded = {
 
     // LATIN (Index 23)
     {
-        "\n---=== Eventus ===---",
+        "---=== Eventus ===---",
         "Numerus quaestionum: ",
         "Responsa recta: ",
         "Responsa falsa: ",
@@ -2955,13 +2955,14 @@ static const std::vector<CreateVocab> createVocabTranslations_hardcoded = {
 
 //==========================================================================
 static const std::vector<VocabMenu> vocabMenuTranslations_hardcoded = {
-
-
     // HUNGARIAN (Index 0)
     {
         "FIGYELEM: Ez a fájl már létezik és ",
         " szópárt tartalmaz.",
-        "1. Hozzáfűzés\n2. Felülírás\n3. Mégsem\nVálasztás: ",
+        "1. Hozzáfűzés",
+        "2. Felülírás",
+        "3. Mégsem",
+        "Választás: ",
         "Hiba: csak 1-3 közötti számot adj meg!",
         "Hiba: Csak számot adj meg!"
     },
@@ -2970,7 +2971,10 @@ static const std::vector<VocabMenu> vocabMenuTranslations_hardcoded = {
     {
         "WARNING: This file already exists and contains ",
         " word pairs.",
-        "1. Append\n2. Overwrite\n3. Cancel\nChoice: ",
+        "1. Append",
+        "2. Overwrite",
+        "3. Cancel",
+        "Choice: ",
         "Error: Enter only numbers between 1-3!",
         "Error: Enter only numbers!"
     },
@@ -2979,7 +2983,10 @@ static const std::vector<VocabMenu> vocabMenuTranslations_hardcoded = {
     {
         "警告：该文件已存在，并包含 ",
         " 个词对。",
-        "1. 追加\n2. 覆盖\n3. 取消\n选择: ",
+        "1. 追加",
+        "2. 覆盖",
+        "3. 取消",
+        "选择: ",
         "错误：请输入1到3之间的数字！",
         "错误：请输入数字！"
     },
@@ -2988,190 +2995,253 @@ static const std::vector<VocabMenu> vocabMenuTranslations_hardcoded = {
     {
         "警告：このファイルは既に存在し、",
         " 個の単語ペアがあります。",
-        "1. 追加\n2. 上書き\n3. キャンセル\n選択: ",
+        "1. 追加",
+        "2. 上書き",
+        "3. キャンセル",
+        "選択: ",
         "エラー：1〜3の数字のみ入力してください！",
         "エラー：数字のみ入力してください！"
     },
 
     // SPANISH (Index 4)
-    {
-        "ADVERTENCIA: Este archivo ya existe y contiene ",
-        " pares de palabras.",
-        "1. Añadir\n2. Sobrescribir\n3. Cancelar\nOpción: ",
-        "Error: ¡Introduce solo números entre 1-3!",
-        "Error: ¡Introduce solo números!"
-    },
+{
+    "ADVERTENCIA: Este archivo ya existe y contiene ",
+    " pares de palabras.",
+    "1. Añadir",
+    "2. Sobrescribir",
+    "3. Cancelar",
+    "Opción: ",
+    "Error: ¡Introduce solo números entre 1-3!",
+    "Error: ¡Introduce solo números!"
+},
 
-    // GERMAN (Index 5)
-    {
-        "WARNUNG: Diese Datei existiert bereits und enthält ",
-        " Wortpaare.",
-        "1. Anhängen\n2. Überschreiben\n3. Abbrechen\nAuswahl: ",
-        "Fehler: Nur Zahlen zwischen 1-3 eingeben!",
-        "Fehler: Nur Zahlen eingeben!"
-    },
+// GERMAN (Index 5)
+{
+    "WARNUNG: Diese Datei existiert bereits und enthält ",
+    " Wortpaare.",
+    "1. Anhängen",
+    "2. Überschreiben",
+    "3. Abbrechen",
+    "Auswahl: ",
+    "Fehler: Nur Zahlen zwischen 1-3 eingeben!",
+    "Fehler: Nur Zahlen eingeben!"
+},
 
-    // FRENCH (Index 6)
-    {
-        "ATTENTION : Ce fichier existe déjà et contient ",
-        " paires de mots.",
-        "1. Ajouter\n2. Écraser\n3. Annuler\nChoix : ",
-        "Erreur : Entrez uniquement des nombres entre 1-3 !",
-        "Erreur : Entrez uniquement des nombres !"
-    },
+// FRENCH (Index 6)
+{
+    "ATTENTION : Ce fichier existe déjà et contient ",
+    " paires de mots.",
+    "1. Ajouter",
+    "2. Écraser",
+    "3. Annuler",
+    "Choix : ",
+    "Erreur : Entrez uniquement des nombres entre 1-3 !",
+    "Erreur : Entrez uniquement des nombres !"
+},
 
-    // RUSSIAN (Index 7)
-    {
-        "ВНИМАНИЕ: Этот файл уже существует и содержит ",
-        " пар слов.",
-        "1. Добавить\n2. Перезаписать\n3. Отмена\nВыбор: ",
-        "Ошибка: Введите число от 1 до 3!",
-        "Ошибка: Введите только числа!"
-    },
+// RUSSIAN (Index 7)
+{
+    "ВНИМАНИЕ: Этот файл уже существует и содержит ",
+    " пар слов.",
+    "1. Добавить",
+    "2. Перезаписать",
+    "3. Отмена",
+    "Выбор: ",
+    "Ошибка: Введите число от 1 до 3!",
+    "Ошибка: Введите только числа!"
+},
 
-    // UKRAINIAN (Index 8)
-    {
-        "УВАГА: Цей файл вже існує і містить ",
-        " пар слів.",
-        "1. Додати\n2. Перезаписати\n3. Скасувати\nВибір: ",
-        "Помилка: Введіть число від 1 до 3!",
-        "Помилка: Вводьте лише числа!"
-    },
+// UKRAINIAN (Index 8)
+{
+    "УВАГА: Цей файл вже існує і містить ",
+    " пар слів.",
+    "1. Додати",
+    "2. Перезаписати",
+    "3. Скасувати",
+    "Вибір: ",
+    "Помилка: Введіть число від 1 до 3!",
+    "Помилка: Вводьте лише числа!"
+},
 
-    // KOREAN (Index 9)
-    {
-        "경고: 이 파일은 이미 존재하며 ",
-        " 개의 단어 쌍이 있습니다.",
-        "1. 추가\n2. 덮어쓰기\n3. 취소\n선택: ",
-        "오류: 1에서 3 사이의 숫자만 입력하세요!",
-        "오류: 숫자만 입력하세요!"
-    },
+// KOREAN (Index 9)
+{
+    "경고: 이 파일은 이미 존재하며 ",
+    " 개의 단어 쌍이 있습니다.",
+    "1. 추가",
+    "2. 덮어쓰기",
+    "3. 취소",
+    "선택: ",
+    "오류: 1에서 3 사이의 숫자만 입력하세요!",
+    "오류: 숫자만 입력하세요!"
+},
 
-    // ITALIAN (Index 10)
-    {
-        "ATTENZIONE: Questo file esiste già e contiene ",
-        " coppie di parole.",
-        "1. Aggiungi\n2. Sovrascrivi\n3. Annulla\nScelta: ",
-        "Errore: Inserisci solo numeri tra 1-3!",
-        "Errore: Inserisci solo numeri!"
-    },
+// ITALIAN (Index 10)
+{
+    "ATTENZIONE: Questo file esiste già e contiene ",
+    " coppie di parole.",
+    "1. Aggiungi",
+    "2. Sovrascrivi",
+    "3. Annulla",
+    "Scelta: ",
+    "Errore: Inserisci solo numeri tra 1-3!",
+    "Errore: Inserisci solo numeri!"
+},
 
-    // POLISH (Index 11)
-    {
-        "UWAGA: Ten plik już istnieje i zawiera ",
-        " par słów.",
-        "1. Dodaj\n2. Nadpisz\n3. Anuluj\nWybór: ",
-        "Błąd: Podaj liczbę od 1 do 3!",
-        "Błąd: Podaj tylko liczby!"
-    },
+// POLISH (Index 11)
+{
+    "UWAGA: Ten plik już istnieje i zawiera ",
+    " par słów.",
+    "1. Dodaj",
+    "2. Nadpisz",
+    "3. Anuluj",
+    "Wybór: ",
+    "Błąd: Podaj liczbę od 1 do 3!",
+    "Błąd: Podaj tylko liczby!"
+},
 
-    // ARABIC (Index 12)
-    {
-        "تحذير: هذا الملف موجود بالفعل ويحتوي على ",
-        " أزواج كلمات.",
-        "1. إضافة\n2. استبدال\n3. إلغاء\nاختيار: ",
-        "خطأ: أدخل رقمًا بين 1 و3 فقط!",
-        "خطأ: أدخل أرقامًا فقط!"
-    },
+// ARABIC (Index 12)
+{
+    "تحذير: هذا الملف موجود بالفعل ويحتوي على ",
+    " أزواج كلمات.",
+    "1. إضافة",
+    "2. استبدال",
+    "3. إلغاء",
+    "اختيار: ",
+    "خطأ: أدخل رقمًا بين 1 و3 فقط!",
+    "خطأ: أدخل أرقامًا فقط!"
+},
 
-    // VIETNAMESE (Index 13)
-    {
-        "CẢNH BÁO: Tệp này đã tồn tại và chứa ",
-        " cặp từ.",
-        "1. Thêm\n2. Ghi đè\n3. Hủy\nLựa chọn: ",
-        "Lỗi: Chỉ nhập số từ 1-3!",
-        "Lỗi: Chỉ nhập số!"
-    },
+// VIETNAMESE (Index 13)
+{
+    "CẢNH BÁO: Tệp này đã tồn tại và chứa ",
+    " cặp từ.",
+    "1. Thêm",
+    "2. Ghi đè",
+    "3. Hủy",
+    "Lựa chọn: ",
+    "Lỗi: Chỉ nhập số từ 1-3!",
+    "Lỗi: Chỉ nhập số!"
+},
 
-    // TAGALOG (Index 14)
-    {
-        "BABALA: Ang file na ito ay umiiral na at may ",
-        " pares ng salita.",
-        "1. Idagdag\n2. I-overwrite\n3. Kanselahin\nPiliin: ",
-        "Error: Maglagay lamang ng numero 1-3!",
-        "Error: Numero lamang ang ilagay!"
-    },
+// TAGALOG (Index 14)
+{
+    "BABALA: Ang file na ito ay umiiral na at may ",
+    " pares ng salita.",
+    "1. Idagdag",
+    "2. I-overwrite",
+    "3. Kanselahin",
+    "Piliin: ",
+    "Error: Maglagay lamang ng numero 1-3!",
+    "Error: Numero lamang ang ilagay!"
+},
 
-    // GREEK (Index 15)
-    {
-        "ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Αυτό το αρχείο υπάρχει ήδη και περιέχει ",
-        " ζεύγη λέξεων.",
-        "1. Προσθήκη\n2. Αντικατάσταση\n3. Ακύρωση\nΕπιλογή: ",
-        "Σφάλμα: Εισάγετε αριθμό από 1 έως 3!",
-        "Σφάλμα: Εισάγετε μόνο αριθμούς!"
-    },
+// GREEK (Index 15)
+{
+    "ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Αυτό το αρχείο υπάρχει ήδη και περιέχει ",
+    " ζεύγη λέξεων.",
+    "1. Προσθήκη",
+    "2. Αντικατάσταση",
+    "3. Ακύρωση",
+    "Επιλογή: ",
+    "Σφάλμα: Εισάγετε αριθμό από 1 έως 3!",
+    "Σφάλμα: Εισάγετε μόνο αριθμούς!"
+},
 
-    // HEBREW (Index 16)
-    {
-        "אזהרה: קובץ זה כבר קיים ומכיל ",
-        " זוגות מילים.",
-        "1. הוסף\n2. דרוס\n3. בטל\nבחירה: ",
-        "שגיאה: הזן מספר בין 1 ל-3 בלבד!",
-        "שגיאה: הזן מספרים בלבד!"
-    },
+// HEBREW (Index 16)
+{
+    "אזהרה: קובץ זה כבר קיים ומכיל ",
+    " זוגות מילים.",
+    "1. הוסף",
+    "2. דרוס",
+    "3. בטל",
+    "בחירה: ",
+    "שגיאה: הזן מספר בין 1 ל-3 בלבד!",
+    "שגיאה: הזן מספרים בלבד!"
+},
 
-    // PORTUGUESE (Index 17)
-    {
-        "AVISO: Este arquivo já existe e contém ",
-        " pares de palavras.",
-        "1. Adicionar\n2. Sobrescrever\n3. Cancelar\nEscolha: ",
-        "Erro: Digite apenas números entre 1-3!",
-        "Erro: Digite apenas números!"
-    },
+// PORTUGUESE (Index 17)
+{
+    "AVISO: Este arquivo já existe e contém ",
+    " pares de palavras.",
+    "1. Adicionar",
+    "2. Sobrescrever",
+    "3. Cancelar",
+    "Escolha: ",
+    "Erro: Digite apenas números entre 1-3!",
+    "Erro: Digite apenas números!"
+},
 
-    // FARSI (Index 18)
-    {
-        "هشدار: این فایل از قبل وجود دارد و شامل ",
-        " جفت کلمه است.",
-        "1. افزودن\n2. بازنویسی\n3. لغو\nانتخاب: ",
-        "خطا: فقط عدد بین 1 تا 3 وارد کنید!",
-        "خطا: فقط عدد وارد کنید!"
-    },
+// FARSI (Index 18)
+{
+    "هشدار: این فایل از قبل وجود دارد و شامل ",
+    " جفت کلمه است.",
+    "1. افزودن",
+    "2. بازنویسی",
+    "3. لغو",
+    "انتخاب: ",
+    "خطا: فقط عدد بین 1 تا 3 وارد کنید!",
+    "خطا: فقط عدد وارد کنید!"
+},
 
-    // SWEDISH (Index 19)
-    {
-        "VARNING: Denna fil finns redan och innehåller ",
-        " ordpar.",
-        "1. Lägg till\n2. Skriv över\n3. Avbryt\nVal: ",
-        "Fel: Ange endast siffror mellan 1-3!",
-        "Fel: Ange endast siffror!"
-    },
+// SWEDISH (Index 19)
+{
+    "VARNING: Denna fil finns redan och innehåller ",
+    " ordpar.",
+    "1. Lägg till",
+    "2. Skriv över",
+    "3. Avbryt",
+    "Val: ",
+    "Fel: Ange endast siffror mellan 1-3!",
+    "Fel: Ange endast siffror!"
+},
 
-    // DUTCH (Index 20)
-    {
-        "WAARSCHUWING: Dit bestand bestaat al en bevat ",
-        " woordparen.",
-        "1. Toevoegen\n2. Overschrijven\n3. Annuleren\nKeuze: ",
-        "Fout: Voer alleen cijfers tussen 1-3 in!",
-        "Fout: Voer alleen cijfers in!"
-    },
+// DUTCH (Index 20)
+{
+    "WAARSCHUWING: Dit bestand bestaat al en bevat ",
+    " woordparen.",
+    "1. Toevoegen",
+    "2. Overschrijven",
+    "3. Annuleren",
+    "Keuze: ",
+    "Fout: Voer alleen cijfers tussen 1-3 in!",
+    "Fout: Voer alleen cijfers in!"
+},
 
-    // TURKISH (Index 21)
-    {
-        "UYARI: Bu dosya zaten mevcut ve ",
-        " kelime çifti içeriyor.",
-        "1. Ekle\n2. Üzerine yaz\n3. İptal\nSeçim: ",
-        "Hata: Sadece 1-3 arası sayı girin!",
-        "Hata: Sadece sayı girin!"
-    },
+// TURKISH (Index 21)
+{
+    "UYARI: Bu dosya zaten mevcut ve ",
+    " kelime çifti içeriyor.",
+    "1. Ekle",
+    "2. Üzerine yaz",
+    "3. İptal",
+    "Seçim: ",
+    "Hata: Sadece 1-3 arası sayı girin!",
+    "Hata: Sadece sayı girin!"
+},
 
-    // HINDI (Index 22)
-    {
-        "चेतावनी: यह फ़ाइल पहले से मौजूद है और इसमें ",
-        " शब्द जोड़े हैं।",
-        "1. जोड़ें\n2. ओवरराइट\n3. रद्द करें\nचयन: ",
-        "त्रुटि: केवल 1-3 के बीच संख्या दर्ज करें!",
-        "त्रुटि: केवल संख्या दर्ज करें!"
-    },
+// HINDI (Index 22)
+{
+    "चेतावनी: यह फ़ाइल पहले से मौजूद है और इसमें ",
+    " शब्द जोड़े हैं।",
+    "1. जोड़ें",
+    "2. ओवरराइट",
+    "3. रद्द करें",
+    "चयन: ",
+    "त्रुटि: केवल 1-3 के बीच संख्या दर्ज करें!",
+    "त्रुटि: केवल संख्या दर्ज करें!"
+},
 
-    // LATIN (Index 23)
-    {
-        "MONITUM: Hic fasciculus iam existit et continet ",
-        " paria verborum.",
-        "1. Adde\n2. Rescribe\n3. Cancella\nElectio: ",
-        "Error: Inseras solum numeros inter 1-3!",
-        "Error: Inseras solum numeros!"
-    }
+// LATIN (Index 23)
+{
+    "MONITUM: Hic fasciculus iam existit et continet ",
+    " paria verborum.",
+    "1. Adde",
+    "2. Rescribe",
+    "3. Cancella",
+    "Electio: ",
+    "Error: Inseras solum numeros inter 1-3!",
+    "Error: Inseras solum numeros!"
+}
 };
 
 
@@ -3191,7 +3261,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Egy körös kvíz be/ki",
         "7. INI fájlok beállítása be/ki",
         "0. Visszalépés a főmenübe",
-        "\n================================================"
+        "================================================"
     },
 
     // English (1)
@@ -3206,7 +3276,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. One round quiz on/off",
         "7. INI files on/off",
         "0. Back to main menu",
-        "\n============================================="
+        "============================================="
     },
 
     // Chinese (2)
@@ -3221,7 +3291,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. 单轮测验 开/关",
         "7. INI 文件 开/关",
         "0. 返回主菜单",
-        "\n========================================"
+        "========================================"
     },
 
     // Japanese (3)
@@ -3236,7 +3306,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. 1ラウンドクイズ オン/オフ",
         "7. INIファイル オン/オフ",
         "0. メインメニューへ戻る",
-        "\n=========================================="
+        "=========================================="
     },
 
     // Spanish (4)
@@ -3251,7 +3321,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Quiz de una ronda encendido/apagado",
         "7. Archivos INI encendido/apagado",
         "0. Volver al menú principal",
-        "\n===================================================="
+        "===================================================="
     },
 
     // German (5)
@@ -3266,7 +3336,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Ein-Runden-Quiz ein/aus",
         "7. INI-Dateien ein/aus",
         "0. Zurück zum Hauptmenü",
-        "\n================================================"
+        "================================================"
     },
 
     // French (6)
@@ -3281,7 +3351,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Quiz un tour activé/désactivé",
         "7. Fichiers INI activé/désactivé",
         "0. Retour au menu principal",
-        "\n==============================================="
+        "==============================================="
     },
 
     // Russian (7)
@@ -3296,7 +3366,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Однораундовый тест вкл/выкл",
         "7. INI файлы вкл/выкл",
         "0. Назад в главное меню",
-        "\n============================================="
+        "============================================="
     },
 
     // Ukrainian (8)
@@ -3311,7 +3381,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Однораундовий тест увімк/вимк",
         "7. INI файли увімк/вимк",
         "0. Назад до головного меню",
-        "\n================================================"
+        "================================================"
     },
 
     // Korean (9)
@@ -3326,7 +3396,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. 한 라운드 퀴즈 켜기/끄기",
         "7. INI 파일 켜기/끄기",
         "0. 메인 메뉴로 돌아가기",
-        "\n========================================"
+        "========================================"
     },
 
     // Italian (10)
@@ -3341,7 +3411,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Quiz a un round on/off",
         "7. File INI on/off",
         "0. Torna al menu principale",
-        "\n================================================="
+        "================================================="
     },
 
     // Polish (11)
@@ -3356,7 +3426,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Quiz jednej rundy włącz/wyłącz",
         "7. Pliki INI włącz/wyłącz",
         "0. Powrót do menu głównego",
-        "\n============================================="
+        "============================================="
     },
 
     // Arabic (12)
@@ -3371,7 +3441,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. اختبار جولة واحدة تشغيل/إيقاف",
         "7. ملفات INI تشغيل/إيقاف",
         "0. العودة إلى القائمة الرئيسية",
-        "\n============================================"
+        "============================================"
     },
 
     // Vietnamese (13)
@@ -3386,7 +3456,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Quiz một vòng bật/tắt",
         "7. File INI bật/tắt",
         "0. Quay lại menu chính",
-        "\n==========================================="
+        "==========================================="
     },
 
     // Tagalog (14)
@@ -3401,7 +3471,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. One round quiz on/off",
         "7. INI files on/off",
         "0. Bumalik sa main menu",
-        "\n=========================================="
+        "=========================================="
     },
 
     // Greek (15)
@@ -3416,7 +3486,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Quiz ενός γύρου on/off",
         "7. Αρχεία INI on/off",
         "0. Επιστροφή στο κύριο μενού",
-        "\n================================================"
+        "================================================"
     },
 
     // Hebrew (16)
@@ -3431,7 +3501,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. מבחן סבב אחד הפעלה/כיבוי",
         "7. קבצי INI הפעלה/כיבוי",
         "0. חזרה לתפריט הראשי",
-        "\n==========================================="
+        "==========================================="
     },
 
     // Portuguese (17)
@@ -3446,7 +3516,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Quiz de uma rodada ligado/desligado",
         "7. Arquivos INI ligado/desligado",
         "0. Voltar ao menu principal",
-        "\n====================================================="
+        "====================================================="
     },
 
     // Farsi (18)
@@ -3461,7 +3531,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. آزمون یک دور روشن/خاموش",
         "7. فایل‌های INI روشن/خاموش",
         "0. بازگشت به منوی اصلی",
-        "\n=========================================="
+        "=========================================="
     },
 
     // Swedish (19)
@@ -3476,7 +3546,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. En-runds quiz på/av",
         "7. INI-filer på/av",
         "0. Tillbaka till huvudmenyn",
-        "\n================================================"
+        "================================================"
     },
 
     // Dutch (20)
@@ -3491,7 +3561,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Eén ronde quiz aan/uit",
         "7. INI-bestanden aan/uit",
         "0. Terug naar hoofdmenu",
-        "\n================================================"
+        "================================================"
     },
 
     // Turkish (21)
@@ -3506,7 +3576,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Tek turlu quiz aç/kapat",
         "7. INI dosyaları aç/kapat",
         "0. Ana menüye dön",
-        "\n=============================================="
+        "=============================================="
     },
 
     // Hindi (22)
@@ -3521,7 +3591,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. एक राउंड क्विज चालू/बंद",
         "7. INI फाइलें चालू/बंद",
         "0. मुख्य मेनू पर वापस जाएँ",
-        "\n==========================================="
+        "==========================================="
     },
 
     // Latin (23)
@@ -3536,7 +3606,7 @@ static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded {
         "6. Quiz unius rotationis activus/inactivus",
         "7. Limae INI activae/inactivae",
         "0. Redire ad menu principale",
-        "\n============================================"
+        "============================================"
     }
 
 };
@@ -3549,8 +3619,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     { // Hungarian (Index 0)
         "============NYELV_VÁLASZTÁSI_MENU============",
         "0. Visszalépés a beállításokba",
-        "\nKérlek válaszd ki a program nyelvét: ",
-        "\n==============================================",
+        "Kérlek válaszd ki a program nyelvét: ",
+        "==============================================",
         "A nyelv sikeresen megváltoztatva"
     },
 
@@ -3558,8 +3628,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============LANGUAGE_SELECTION_MENU============",
         "0. Return to settings",
-        "\nPlease select the program language: ",
-        "\n==============================================",
+        "Please select the program language: ",
+        "==============================================",
         "Language successfully changed"
     },
 
@@ -3567,8 +3637,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============语言选择菜单============",
         "0. 返回设置",
-        "\n请选择程序语言：",
-        "\n==============================================",
+        "请选择程序语言：",
+        "==============================================",
         "语言修改成功"
     },
 
@@ -3576,8 +3646,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============言語選択メニュー============",
         "0. 設定に戻る",
-        "\nプログラムの言語を選択してください：",
-        "\n==============================================",
+        "プログラムの言語を選択してください：",
+        "==============================================",
         "言語が正常に変更されました"
     },
 
@@ -3585,8 +3655,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============MENÚ DE SELECCIÓN DE IDIOMA============",
         "0. Volver a configuración",
-        "\nPor favor selecciona el idioma del programa: ",
-        "\n==============================================",
+        "Por favor selecciona el idioma del programa: ",
+        "==============================================",
         "Idioma cambiado correctamente"
     },
 
@@ -3594,8 +3664,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============SPRACHAUSWAHLMENÜ============",
         "0. Zurück zu den Einstellungen",
-        "\nBitte wählen Sie die Programmsprache: ",
-        "\n==============================================",
+        "Bitte wählen Sie die Programmsprache: ",
+        "==============================================",
         "Sprache erfolgreich geändert"
     },
 
@@ -3603,8 +3673,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============MENU DE SÉLECTION DE LANGUE============",
         "0. Retour aux paramètres",
-        "\nVeuillez sélectionner la langue du programme : ",
-        "\n==============================================",
+        "Veuillez sélectionner la langue du programme : ",
+        "==============================================",
         "Langue modifiée avec succès"
     },
 
@@ -3612,8 +3682,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============МЕНЮ ВЫБОРА ЯЗЫКА============",
         "0. Вернуться в настройки",
-        "\nПожалуйста, выберите язык программы: ",
-        "\n==============================================",
+        "Пожалуйста, выберите язык программы: ",
+        "==============================================",
         "Язык успешно изменён"
     },
 
@@ -3621,8 +3691,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============МЕНЮ ВИБОРУ МОВИ============",
         "0. Повернутися до налаштувань",
-        "\nБудь ласка, оберіть мову програми: ",
-        "\n==============================================",
+        "Будь ласка, оберіть мову програми: ",
+        "==============================================",
         "Мову успішно змінено"
     },
 
@@ -3630,8 +3700,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============언어 선택 메뉴============",
         "0. 설정으로 돌아가기",
-        "\n프로그램 언어를 선택하세요: ",
-        "\n==============================================",
+        "프로그램 언어를 선택하세요: ",
+        "==============================================",
         "언어가 성공적으로 변경되었습니다"
     },
 
@@ -3639,8 +3709,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============MENU SELEZIONE LINGUA============",
         "0. Torna alle impostazioni",
-        "\nSeleziona la lingua del programma: ",
-        "\n==============================================",
+        "Seleziona la lingua del programma: ",
+        "==============================================",
         "Lingua modificata con successo"
     },
 
@@ -3648,8 +3718,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============MENU WYBORU JĘZYKA============",
         "0. Powrót do ustawień",
-        "\nWybierz język programu: ",
-        "\n==============================================",
+        "Wybierz język programu: ",
+        "==============================================",
         "Język został zmieniony"
     },
 
@@ -3657,8 +3727,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============قائمة اختيار اللغة============",
         "0. العودة إلى الإعدادات",
-        "\nيرجى اختيار لغة البرنامج: ",
-        "\n==============================================",
+        "يرجى اختيار لغة البرنامج: ",
+        "==============================================",
         "تم تغيير اللغة بنجاح"
     },
 
@@ -3666,8 +3736,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============MENU CHỌN NGÔN NGỮ============",
         "0. Quay lại cài đặt",
-        "\nVui lòng chọn ngôn ngữ chương trình: ",
-        "\n==============================================",
+        "Vui lòng chọn ngôn ngữ chương trình: ",
+        "==============================================",
         "Đã thay đổi ngôn ngữ thành công"
     },
 
@@ -3675,8 +3745,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============MENU NG PAGPILI NG WIKA============",
         "0. Bumalik sa settings",
-        "\nPumili ng wika ng programa: ",
-        "\n==============================================",
+        "Pumili ng wika ng programa: ",
+        "==============================================",
         "Matagumpay na napalitan ang wika"
     },
 
@@ -3684,8 +3754,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============ΜΕΝΟΥ ΕΠΙΛΟΓΗΣ ΓΛΩΣΣΑΣ============",
         "0. Επιστροφή στις ρυθμίσεις",
-        "\nΠαρακαλώ επιλέξτε τη γλώσσα του προγράμματος: ",
-        "\n==============================================",
+        "Παρακαλώ επιλέξτε τη γλώσσα του προγράμματος: ",
+        "==============================================",
         "Η γλώσσα άλλαξε επιτυχώς"
     },
 
@@ -3693,8 +3763,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============תפריט בחירת שפה============",
         "0. חזרה להגדרות",
-        "\nבחר את שפת התוכנית: ",
-        "\n==============================================",
+        "בחר את שפת התוכנית: ",
+        "==============================================",
         "השפה שונתה בהצלחה"
     },
 
@@ -3702,8 +3772,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============MENU DE SELEÇÃO DE IDIOMA============",
         "0. Voltar para configurações",
-        "\nSelecione o idioma do programa: ",
-        "\n==============================================",
+        "Selecione o idioma do programa: ",
+        "==============================================",
         "Idioma alterado com sucesso"
     },
 
@@ -3711,8 +3781,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============منوی انتخاب زبان============",
         "0. بازگشت به تنظیمات",
-        "\nلطفاً زبان برنامه را انتخاب کنید: ",
-        "\n==============================================",
+        "لطفاً زبان برنامه را انتخاب کنید: ",
+        "==============================================",
         "زبان با موفقیت تغییر یافت"
     },
 
@@ -3720,8 +3790,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============SPRÅKVALSMENY============",
         "0. Tillbaka till inställningar",
-        "\nVälj programspråk: ",
-        "\n==============================================",
+        "Välj programspråk: ",
+        "==============================================",
         "Språket ändrades framgångsrikt"
     },
 
@@ -3729,8 +3799,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============TAALSELECTIEMENU============",
         "0. Terug naar instellingen",
-        "\nSelecteer de programmat taal: ",
-        "\n==============================================",
+        "Selecteer de programmat taal: ",
+        "==============================================",
         "Taal succesvol gewijzigd"
     },
 
@@ -3738,8 +3808,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============DİL SEÇİM MENÜSÜ============",
         "0. Ayarlara geri dön",
-        "\nProgram dilini seçin: ",
-        "\n==============================================",
+        "Program dilini seçin: ",
+        "==============================================",
         "Dil başarıyla değiştirildi"
     },
 
@@ -3747,8 +3817,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============भाषा चयन मेनू============",
         "0. सेटिंग्स पर वापस जाएँ",
-        "\nकृपया प्रोग्राम की भाषा चुनें: ",
-        "\n==============================================",
+        "कृपया प्रोग्राम की भाषा चुनें: ",
+        "==============================================",
         "भाषा सफलतापूर्वक बदली गई"
     },
 
@@ -3756,8 +3826,8 @@ static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded {
     {
         "============MENU LINGUAE SELECTIONIS============",
         "0. Redire ad configurationes",
-        "\nElige linguam programmatis: ",
-        "\n==============================================",
+        "Elige linguam programmatis: ",
+        "==============================================",
         "Lingua feliciter mutata est"
     }
 };
@@ -3773,8 +3843,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "BE",
         "KI",
         "1. Be/ki kapcsolás...",
-        "\n2. Háttérszín beállítása",
-        "\n3. Vissza",
+        "2. Háttérszín beállítása",
+        "0. Vissza",
         "választás: ",
         "Színek bekapcsolva...",
         "Színek kikapcsolva...",
@@ -3788,8 +3858,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "ON",
         "OFF",
         "1. Toggle on/off...",
-        "\n2. Set background color",
-        "\n3. Back",
+        "2. Set background color",
+        "0. Back",
         "Choice: ",
         "Colors enabled...",
         "Colors disabled...",
@@ -3803,8 +3873,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "开",
         "关",
         "1. 开/关 切换...",
-        "\n2. 设置背景颜色",
-        "\n3. 返回",
+        "2. 设置背景颜色",
+        "0. 返回",
         "选择: ",
         "颜色已开启...",
         "颜色已关闭...",
@@ -3818,8 +3888,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "オン",
         "オフ",
         "1. オン/オフ切り替え...",
-        "\n2. 背景色の設定",
-        "\n3. 戻る",
+        "2. 背景色の設定",
+        "0. 戻る",
         "選択：",
         "カラーが有効になりました...",
         "カラーが無効になりました...",
@@ -3833,8 +3903,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "ENCENDIDO",
         "APAGADO",
         "1. Activar/desactivar...",
-        "\n2. Configurar color de fondo",
-        "\n3. Volver",
+        "2. Configurar color de fondo",
+        "0. Volver",
         "Opción: ",
         "Colores activados...",
         "Colores desactivados...",
@@ -3848,8 +3918,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "AN",
         "AUS",
         "1. Ein/Aus umschalten...",
-        "\n2. Hintergrundfarbe einstellen",
-        "\n3. Zurück",
+        "2. Hintergrundfarbe einstellen",
+        "0. Zurück",
         "Auswahl: ",
         "Farben aktiviert...",
         "Farben deaktiviert...",
@@ -3863,8 +3933,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "ACTIVÉ",
         "DÉSACTIVÉ",
         "1. Activer/désactiver...",
-        "\n2. Définir la couleur de fond",
-        "\n3. Retour",
+        "2. Définir la couleur de fond",
+        "0. Retour",
         "Choix : ",
         "Couleurs activées...",
         "Couleurs désactivées...",
@@ -3878,8 +3948,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "ВКЛ",
         "ВЫКЛ",
         "1. Вкл/выкл...",
-        "\n2. Установить цвет фона",
-        "\n3. Назад",
+        "2. Установить цвет фона",
+        "0. Назад",
         "Выбор: ",
         "Цвета включены...",
         "Цвета выключены...",
@@ -3893,8 +3963,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "УВІМК",
         "ВИМК",
         "1. Увімк/вимк...",
-        "\n2. Встановити колір фону",
-        "\n3. Назад",
+        "2. Встановити колір фону",
+        "0. Назад",
         "Вибір: ",
         "Кольори увімкнено...",
         "Кольори вимкнено...",
@@ -3908,8 +3978,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "켜짐",
         "꺼짐",
         "1. 켜기/끄기 전환...",
-        "\n2. 배경 색상 설정",
-        "\n3. 뒤로",
+        "2. 배경 색상 설정",
+        "0. 뒤로",
         "선택: ",
         "색상이 활성화되었습니다...",
         "색상이 비활성화되었습니다...",
@@ -3923,8 +3993,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "ON",
         "OFF",
         "1. Attiva/disattiva...",
-        "\n2. Imposta colore di sfondo",
-        "\n3. Indietro",
+        "2. Imposta colore di sfondo",
+        "0. Indietro",
         "Scelta: ",
         "Colori attivati...",
         "Colori disattivati...",
@@ -3938,8 +4008,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "WŁ",
         "WYŁ",
         "1. Włącz/wyłącz...",
-        "\n2. Ustaw kolor tła",
-        "\n3. Powrót",
+        "2. Ustaw kolor tła",
+        "0. Powrót",
         "Wybór: ",
         "Kolory włączone...",
         "Kolory wyłączone...",
@@ -3953,8 +4023,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "تشغيل",
         "إيقاف",
         "1. تشغيل/إيقاف...",
-        "\n2. تعيين لون الخلفية",
-        "\n3. رجوع",
+        "2. تعيين لون الخلفية",
+        "0. رجوع",
         "اختيار: ",
         "تم تفعيل الألوان...",
         "تم إيقاف الألوان...",
@@ -3968,8 +4038,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "BẬT",
         "TẮT",
         "1. Bật/tắt...",
-        "\n2. Cài đặt màu nền",
-        "\n3. Quay lại",
+        "2. Cài đặt màu nền",
+        "0. Quay lại",
         "Lựa chọn: ",
         "Đã bật màu sắc...",
         "Đã tắt màu sắc...",
@@ -3983,8 +4053,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "BUKAS",
         "SARADO",
         "1. I-on/i-off...",
-        "\n2. Itakda ang kulay ng background",
-        "\n3. Bumalik",
+        "2. Itakda ang kulay ng background",
+        "0. Bumalik",
         "Piliin: ",
         "Naka-on ang mga kulay...",
         "Naka-off ang mga kulay...",
@@ -3998,8 +4068,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "ΕΝΕΡΓΟ",
         "ΑΝΕΝΕΡΓΟ",
         "1. Ενεργοποίηση/Απενεργοποίηση...",
-        "\n2. Ορισμός χρώματος φόντου",
-        "\n3. Πίσω",
+        "2. Ορισμός χρώματος φόντου",
+        "0. Πίσω",
         "Επιλογή: ",
         "Τα χρώματα ενεργοποιήθηκαν...",
         "Τα χρώματα απενεργοποιήθηκαν...",
@@ -4013,8 +4083,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "פועל",
         "כבוי",
         "1. הפעלה/כיבוי...",
-        "\n2. הגדרת צבע רקע",
-        "\n3. חזרה",
+        "2. הגדרת צבע רקע",
+        "0. חזרה",
         "בחירה: ",
         "הצבעים הופעלו...",
         "הצבעים כובו...",
@@ -4028,8 +4098,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "LIGADO",
         "DESLIGADO",
         "1. Ativar/desativar...",
-        "\n2. Definir cor de fundo",
-        "\n3. Voltar",
+        "2. Definir cor de fundo",
+        "0. Voltar",
         "Escolha: ",
         "Cores ativadas...",
         "Cores desativadas...",
@@ -4043,8 +4113,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "روشن",
         "خاموش",
         "1. روشن/خاموش...",
-        "\n2. تنظیم رنگ پس‌زمینه",
-        "\n3. بازگشت",
+        "2. تنظیم رنگ پس‌زمینه",
+        "0. بازگشت",
         "انتخاب: ",
         "رنگ‌ها فعال شدند...",
         "رنگ‌ها غیرفعال شدند...",
@@ -4058,8 +4128,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "PÅ",
         "AV",
         "1. Slå på/av...",
-        "\n2. Ställ in bakgrundsfärg",
-        "\n3. Tillbaka",
+        "2. Ställ in bakgrundsfärg",
+        "0. Tillbaka",
         "Val: ",
         "Färger aktiverade...",
         "Färger inaktiverade...",
@@ -4073,8 +4143,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "AAN",
         "UIT",
         "1. Aan/uit schakelen...",
-        "\n2. Achtergrondkleur instellen",
-        "\n3. Terug",
+        "2. Achtergrondkleur instellen",
+        "0. Terug",
         "Keuze: ",
         "Kleuren ingeschakeld...",
         "Kleuren uitgeschakeld...",
@@ -4088,8 +4158,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "AÇIK",
         "KAPALI",
         "1. Aç/Kapat...",
-        "\n2. Arka plan rengi ayarla",
-        "\n3. Geri",
+        "2. Arka plan rengi ayarla",
+        "0. Geri",
         "Seçim: ",
         "Renkler etkinleştirildi...",
         "Renkler devre dışı bırakıldı...",
@@ -4103,8 +4173,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "चालू",
         "बंद",
         "1. चालू/बंद करें...",
-        "\n2. पृष्ठभूमि रंग सेट करें",
-        "\n3. वापस",
+        "2. पृष्ठभूमि रंग सेट करें",
+        "0. वापस",
         "चयन: ",
         "रंग सक्षम किए गए...",
         "रंग अक्षम किए गए...",
@@ -4118,8 +4188,8 @@ static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded {
         "ACTIVUM",
         "INACTIVUM",
         "1. Activa/deactiva...",
-        "\n2. Colorem fundi define",
-        "\n3. Redire",
+        "2. Colorem fundi define",
+        "0. Redire",
         "Electio: ",
         "Colores activati sunt...",
         "Colores deactivati sunt...",
@@ -4259,10 +4329,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "A jelenlegi anyanyelv: ",
         "A jelenlegi tanult nyelv: ",
         "1. Az anyanyelv módosítása",
-        "\n2. A tanult nyelv módosítása",
-        "\n3. Visszalépés a beállításokba",
+        "2. A tanult nyelv módosítása",
+        "0. Visszalépés a beállításokba",
         "Kérlek válaszd ki az anyanyelved: ",
-        "\nVálasztás (1-24): ",
+        "Választás (1-24): ",
         "Az anyanyelv sikeresen beállítva!",
         "Kérlek válaszd ki a tanult nyelvet: ",
         "Tanult nyelv sikeresen beállítva!",
@@ -4278,10 +4348,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Current native language: ",
         "Current learning language: ",
         "1. Change native language",
-        "\n2. Change learning language",
-        "\n3. Back to settings",
+        "2. Change learning language",
+        "0. Back to settings",
         "Please select your native language: ",
-        "\nChoice (1-24): ",
+        "Choice (1-24): ",
         "Native language successfully set!",
         "Please select the learning language: ",
         "Learning language successfully set!",
@@ -4297,10 +4367,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "当前母语：",
         "当前学习语言：",
         "1. 修改母语",
-        "\n2. 修改学习语言",
-        "\n3. 返回设置",
+        "2. 修改学习语言",
+        "0. 返回设置",
         "请选择你的母语：",
-        "\n选择 (1-24)：",
+        "选择 (1-24)：",
         "母语设置成功！",
         "请选择学习语言：",
         "学习语言设置成功！",
@@ -4316,10 +4386,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "現在の母国語：",
         "現在の学習言語：",
         "1. 母国語を変更",
-        "\n2. 学習言語を変更",
-        "\n3. 設定に戻る",
+        "2. 学習言語を変更",
+        "0. 設定に戻る",
         "母国語を選択してください：",
-        "\n選択 (1-24)：",
+        "選択 (1-24)：",
         "母国語が設定されました！",
         "学習言語を選択してください：",
         "学習言語が設定されました！",
@@ -4335,10 +4405,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Idioma nativo actual: ",
         "Idioma de aprendizaje actual: ",
         "1. Cambiar idioma nativo",
-        "\n2. Cambiar idioma de aprendizaje",
-        "\n3. Volver a configuración",
+        "2. Cambiar idioma de aprendizaje",
+        "0. Volver a configuración",
         "Por favor selecciona tu idioma nativo: ",
-        "\nElección (1-24): ",
+        "Elección (1-24): ",
         "¡Idioma nativo configurado correctamente!",
         "Por favor selecciona el idioma de aprendizaje: ",
         "¡Idioma de aprendizaje configurado correctamente!",
@@ -4354,10 +4424,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Aktuelle Muttersprache: ",
         "Aktuelle Lernsprache: ",
         "1. Muttersprache ändern",
-        "\n2. Lernsprache ändern",
-        "\n3. Zurück zu den Einstellungen",
+        "2. Lernsprache ändern",
+        "0. Zurück zu den Einstellungen",
         "Bitte wählen Sie Ihre Muttersprache: ",
-        "\nAuswahl (1-24): ",
+        "Auswahl (1-24): ",
         "Muttersprache erfolgreich eingestellt!",
         "Bitte wählen Sie die Lernsprache: ",
         "Lernsprache erfolgreich eingestellt!",
@@ -4373,10 +4443,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Langue maternelle actuelle : ",
         "Langue d'apprentissage actuelle : ",
         "1. Modifier la langue maternelle",
-        "\n2. Modifier la langue d'apprentissage",
-        "\n3. Retour aux paramètres",
+        "2. Modifier la langue d'apprentissage",
+        "0. Retour aux paramètres",
         "Veuillez choisir votre langue maternelle : ",
-        "\nChoix (1-24) : ",
+        "Choix (1-24) : ",
         "Langue maternelle définie avec succès !",
         "Veuillez choisir la langue d'apprentissage : ",
         "Langue d'apprentissage définie avec succès !",
@@ -4392,10 +4462,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Текущий родной язык: ",
         "Текущий изучаемый язык: ",
         "1. Изменить родной язык",
-        "\n2. Изменить изучаемый язык",
-        "\n3. Назад к настройкам",
+        "2. Изменить изучаемый язык",
+        "0. Назад к настройкам",
         "Выберите ваш родной язык: ",
-        "\nВыбор (1-24): ",
+        "Выбор (1-24): ",
         "Родной язык успешно установлен!",
         "Выберите изучаемый язык: ",
         "Изучаемый язык успешно установлен!",
@@ -4411,10 +4481,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Поточна рідна мова: ",
         "Поточна мова навчання: ",
         "1. Змінити рідну мову",
-        "\n2. Змінити мову навчання",
-        "\n3. Назад до налаштувань",
+        "2. Змінити мову навчання",
+        "0. Назад до налаштувань",
         "Оберіть вашу рідну мову: ",
-        "\nВибір (1-24): ",
+        "Вибір (1-24): ",
         "Рідну мову успішно встановлено!",
         "Оберіть мову навчання: ",
         "Мову навчання успішно встановлено!",
@@ -4430,10 +4500,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "현재 모국어: ",
         "현재 학습 언어: ",
         "1. 모국어 변경",
-        "\n2. 학습 언어 변경",
-        "\n3. 설정으로 돌아가기",
+        "2. 학습 언어 변경",
+        "0. 설정으로 돌아가기",
         "모국어를 선택하세요: ",
-        "\n선택 (1-24): ",
+        "선택 (1-24): ",
         "모국어가 설정되었습니다!",
         "학습 언어를 선택하세요: ",
         "학습 언어가 설정되었습니다!",
@@ -4449,10 +4519,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Lingua madre attuale: ",
         "Lingua di apprendimento attuale: ",
         "1. Cambia lingua madre",
-        "\n2. Cambia lingua di apprendimento",
-        "\n3. Torna alle impostazioni",
+        "2. Cambia lingua di apprendimento",
+        "0. Torna alle impostazioni",
         "Seleziona la tua lingua madre: ",
-        "\nScelta (1-24): ",
+        "Scelta (1-24): ",
         "Lingua madre impostata con successo!",
         "Seleziona la lingua di apprendimento: ",
         "Lingua di apprendimento impostata con successo!",
@@ -4468,10 +4538,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Aktualny język ojczysty: ",
         "Aktualny język nauki: ",
         "1. Zmień język ojczysty",
-        "\n2. Zmień język nauki",
-        "\n3. Powrót do ustawień",
+        "2. Zmień język nauki",
+        "0. Powrót do ustawień",
         "Wybierz swój język ojczysty: ",
-        "\nWybór (1-24): ",
+        "Wybór (1-24): ",
         "Język ojczysty ustawiony!",
         "Wybierz język nauki: ",
         "Język nauki ustawiony!",
@@ -4487,10 +4557,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "اللغة الأم الحالية: ",
         "لغة التعلم الحالية: ",
         "1. تغيير اللغة الأم",
-        "\n2. تغيير لغة التعلم",
-        "\n3. العودة إلى الإعدادات",
+        "2. تغيير لغة التعلم",
+        "0. العودة إلى الإعدادات",
         "يرجى اختيار لغتك الأم: ",
-        "\nاختيار (1-24): ",
+        "اختيار (1-24): ",
         "تم تعيين اللغة الأم بنجاح!",
         "يرجى اختيار لغة التعلم: ",
         "تم تعيين لغة التعلم بنجاح!",
@@ -4506,10 +4576,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Ngôn ngữ mẹ đẻ hiện tại: ",
         "Ngôn ngữ học hiện tại: ",
         "1. Thay đổi ngôn ngữ mẹ đẻ",
-        "\n2. Thay đổi ngôn ngữ học",
-        "\n3. Quay lại cài đặt",
+        "2. Thay đổi ngôn ngữ học",
+        "0. Quay lại cài đặt",
         "Chọn ngôn ngữ mẹ đẻ của bạn: ",
-        "\nLựa chọn (1-24): ",
+        "Lựa chọn (1-24): ",
         "Đã đặt ngôn ngữ mẹ đẻ!",
         "Chọn ngôn ngữ học: ",
         "Đã đặt ngôn ngữ học!",
@@ -4525,10 +4595,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Kasalukuyang katutubong wika: ",
         "Kasalukuyang pinag-aaralang wika: ",
         "1. Baguhin ang katutubong wika",
-        "\n2. Baguhin ang pinag-aaralang wika",
-        "\n3. Bumalik sa settings",
+        "2. Baguhin ang pinag-aaralang wika",
+        "0. Bumalik sa settings",
         "Piliin ang iyong katutubong wika: ",
-        "\nPili (1-24): ",
+        "Pili (1-24): ",
         "Matagumpay na na-set ang katutubong wika!",
         "Piliin ang pinag-aaralang wika: ",
         "Matagumpay na na-set ang pinag-aaralang wika!",
@@ -4544,10 +4614,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Τρέχουσα μητρική γλώσσα: ",
         "Τρέχουσα γλώσσα εκμάθησης: ",
         "1. Αλλαγή μητρικής γλώσσας",
-        "\n2. Αλλαγή γλώσσας εκμάθησης",
-        "\n3. Επιστροφή στις ρυθμίσεις",
+        "2. Αλλαγή γλώσσας εκμάθησης",
+        "0. Επιστροφή στις ρυθμίσεις",
         "Επιλέξτε τη μητρική σας γλώσσα: ",
-        "\nΕπιλογή (1-24): ",
+        "Επιλογή (1-24): ",
         "Η μητρική γλώσσα ορίστηκε!",
         "Επιλέξτε τη γλώσσα εκμάθησης: ",
         "Η γλώσσα εκμάθησης ορίστηκε!",
@@ -4563,10 +4633,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "שפת אם נוכחית: ",
         "שפת לימוד נוכחית: ",
         "1. שינוי שפת אם",
-        "\n2. שינוי שפת לימוד",
-        "\n3. חזרה להגדרות",
+        "2. שינוי שפת לימוד",
+        "0. חזרה להגדרות",
         "בחר את שפת האם שלך: ",
-        "\nבחירה (1-24): ",
+        "בחירה (1-24): ",
         "שפת האם הוגדרה בהצלחה!",
         "בחר את שפת הלימוד: ",
         "שפת הלימוד הוגדרה בהצלחה!",
@@ -4582,10 +4652,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Idioma nativo atual: ",
         "Idioma de aprendizagem atual: ",
         "1. Alterar idioma nativo",
-        "\n2. Alterar idioma de aprendizagem",
-        "\n3. Voltar às configurações",
+        "2. Alterar idioma de aprendizagem",
+        "0. Voltar às configurações",
         "Selecione seu idioma nativo: ",
-        "\nEscolha (1-24): ",
+        "Escolha (1-24): ",
         "Idioma nativo definido com sucesso!",
         "Selecione o idioma de aprendizagem: ",
         "Idioma de aprendizagem definido com sucesso!",
@@ -4601,10 +4671,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "زبان مادری فعلی: ",
         "زبان در حال یادگیری: ",
         "1. تغییر زبان مادری",
-        "\n2. تغییر زبان یادگیری",
-        "\n3. بازگشت به تنظیمات",
+        "2. تغییر زبان یادگیری",
+        "0. بازگشت به تنظیمات",
         "لطفاً زبان مادری خود را انتخاب کنید: ",
-        "\nانتخاب (1-24): ",
+        "انتخاب (1-24): ",
         "زبان مادری با موفقیت تنظیم شد!",
         "لطفاً زبان یادگیری را انتخاب کنید: ",
         "زبان یادگیری با موفقیت تنظیم شد!",
@@ -4620,10 +4690,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Nuvarande modersmål: ",
         "Nuvarande inlärningsspråk: ",
         "1. Ändra modersmål",
-        "\n2. Ändra inlärningsspråk",
-        "\n3. Tillbaka till inställningar",
+        "2. Ändra inlärningsspråk",
+        "0. Tillbaka till inställningar",
         "Välj ditt modersmål: ",
-        "\nVal (1-24): ",
+        "Val (1-24): ",
         "Modersmål inställt!",
         "Välj inlärningsspråk: ",
         "Inlärningsspråk inställt!",
@@ -4639,10 +4709,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Huidige moedertaal: ",
         "Huidige leertaal: ",
         "1. Moedertaal wijzigen",
-        "\n2. Leertaal wijzigen",
-        "\n3. Terug naar instellingen",
+        "2. Leertaal wijzigen",
+        "0. Terug naar instellingen",
         "Selecteer je moedertaal: ",
-        "\nKeuze (1-24): ",
+        "Keuze (1-24): ",
         "Moedertaal succesvol ingesteld!",
         "Selecteer de leertaal: ",
         "Leertaal succesvol ingesteld!",
@@ -4658,10 +4728,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Mevcut ana dil: ",
         "Mevcut öğrenilen dil: ",
         "1. Ana dili değiştir",
-        "\n2. Öğrenilen dili değiştir",
-        "\n3. Ayarlara geri dön",
+        "2. Öğrenilen dili değiştir",
+        "0. Ayarlara geri dön",
         "Ana dilinizi seçin: ",
-        "\nSeçim (1-24): ",
+        "Seçim (1-24): ",
         "Ana dil başarıyla ayarlandı!",
         "Öğrenilen dili seçin: ",
         "Öğrenilen dil başarıyla ayarlandı!",
@@ -4677,10 +4747,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "वर्तमान मातृभाषा: ",
         "वर्तमान सीखने की भाषा: ",
         "1. मातृभाषा बदलें",
-        "\n2. सीखने की भाषा बदलें",
-        "\n3. सेटिंग्स पर वापस जाएँ",
+        "2. सीखने की भाषा बदलें",
+        "0. सेटिंग्स पर वापस जाएँ",
         "अपनी मातृभाषा चुनें: ",
-        "\nचयन (1-24): ",
+        "चयन (1-24): ",
         "मातृभाषा सफलतापूर्वक सेट की गई!",
         "सीखने की भाषा चुनें: ",
         "सीखने की भाषा सफलतापूर्वक सेट की गई!",
@@ -4696,10 +4766,10 @@ static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_ha
         "Lingua materna praesens: ",
         "Lingua discenda praesens: ",
         "1. Linguam maternnam muta",
-        "\n2. Linguam discendam muta",
-        "\n3. Redire ad configurationes",
+        "2. Linguam discendam muta",
+        "0. Redire ad configurationes",
         "Elige linguam maternam: ",
-        "\nElectio (1-24): ",
+        "Electio (1-24): ",
         "Lingua materna feliciter configurata est!",
         "Elige linguam discendam: ",
         "Lingua discenda feliciter configurata est!",
@@ -6064,250 +6134,296 @@ static const std::vector<TargetLanguageList> targetLanguageListTranslations_hard
 const std::vector<TargetLanguageList> targetLanguageListTranslations = targetLanguageListTranslations_hardcoded;
 
 //==========================================================================
-static const std::vector<ListAndSelectedFile> listAndSelectedFilesTranslations_hardcoded {
-
+static const std::vector<ListAndSelectedFile> listAndSelectedFilesTranslations_hardcoded = {
 
     // HUNGARIAN (0)
     {
         "--- Jelenlegi mappa: ",
-        "(Üres mappa)\n",
+        "(Üres mappa)",
         "[MAPPA] ",
-        "---------------------------------------\nParancsok: név +",
-        ".. -> kilépés a mappából, del -> törlés, cp -> másolás, mv -> áthelyezés,\nrn -> átnevezés, edit -> szerkesztés, md vagy mkdir -> új mappa, exit -> kilépés",
+        "---------------------------------------",
+        "Parancsok: név +",
+        ".. -> kilépés a mappából, del -> törlés, cp -> másolás, mv -> áthelyezés,",
+        "rn -> átnevezés, edit -> szerkesztés, md vagy mkdir -> új mappa, exit -> kilépés",
         "Választás: "
     },
 
     // ENGLISH (1)
     {
         "--- Current folder: ",
-        "(Empty folder)\n",
+        "(Empty folder)",
         "[FOLDER] ",
-        "---------------------------------------\nCommands: name +",
-        ".. -> up, del -> delete, cp -> copy, mv -> move,\nrn -> rename, edit -> edit, md or mkdir -> new folder, exit -> exit",
+        "---------------------------------------",
+        "Commands: name +",
+        ".. -> up, del -> delete, cp -> copy, mv -> move,",
+        "rn -> rename, edit -> edit, md or mkdir -> new folder, exit -> exit",
         "Selection: "
     },
 
     // CHINESE (2)
     {
         "--- 当前目录: ",
-        "(空文件夹)\n",
+        "(空文件夹)",
         "[文件夹] ",
-        "---------------------------------------\n命令: 名称 +",
-        ".. -> 返回上级, del -> 删除, cp -> 复制, mv -> 移动,\nrn -> 重命名, edit -> 编辑, md 或 mkdir -> 新建文件夹, exit -> 退出",
+        "---------------------------------------",
+        "命令: 名称 +",
+        ".. -> 返回上级, del -> 删除, cp -> 复制, mv -> 移动,",
+        "rn -> 重命名, edit -> 编辑, md 或 mkdir -> 新建文件夹, exit -> 退出",
         "选择: "
     },
 
     // JAPANESE (3)
     {
         "--- 現在のフォルダ: ",
-        "(空のフォルダ)\n",
+        "(空のフォルダ)",
         "[フォルダ] ",
-        "---------------------------------------\nコマンド: 名前 +",
-        ".. -> 上へ戻る, del -> 削除, cp -> コピー, mv -> 移動,\nrn -> 名前変更, edit -> 編集, md または mkdir -> 新しいフォルダ, exit -> 終了",
+        "---------------------------------------",
+        "コマンド: 名前 +",
+        ".. -> 上へ戻る, del -> 削除, cp -> コピー, mv -> 移動,",
+        "rn -> 名前変更, edit -> 編集, md または mkdir -> 新しいフォルダ, exit -> 終了",
         "選択: "
     },
 
     // SPANISH (4)
     {
         "--- Carpeta actual: ",
-        "(Carpeta vacía)\n",
+        "(Carpeta vacía)",
         "[CARPETA] ",
-        "---------------------------------------\nComandos: nombre +",
-        ".. -> subir, del -> eliminar, cp -> copiar, mv -> mover,\nrn -> renombrar, edit -> editar, md o mkdir -> nueva carpeta, exit -> salir",
+        "---------------------------------------",
+        "Comandos: nombre +",
+        ".. -> subir, del -> eliminar, cp -> copiar, mv -> mover,",
+        "rn -> renombrar, edit -> editar, md o mkdir -> nueva carpeta, exit -> salir",
         "Selección: "
     },
 
     // GERMAN (5)
     {
         "--- Aktueller Ordner: ",
-        "(Leerer Ordner)\n",
+        "(Leerer Ordner)",
         "[ORDNER] ",
-        "---------------------------------------\nBefehle: Name +",
-        ".. -> zurück, del -> löschen, cp -> kopieren, mv -> verschieben,\nrn -> umbenennen, edit -> bearbeiten, md oder mkdir -> neuer Ordner, exit -> beenden",
+        "---------------------------------------",
+        "Befehle: Name +",
+        ".. -> zurück, del -> löschen, cp -> kopieren, mv -> verschieben,",
+        "rn -> umbenennen, edit -> bearbeiten, md oder mkdir -> neuer Ordner, exit -> beenden",
         "Auswahl: "
     },
 
     // FRENCH (6)
     {
         "--- Dossier actuel: ",
-        "(Dossier vide)\n",
+        "(Dossier vide)",
         "[DOSSIER] ",
-        "---------------------------------------\nCommandes: nom +",
-        ".. -> retour, del -> supprimer, cp -> copier, mv -> déplacer,\nrn -> renommer, edit -> éditer, md ou mkdir -> nouveau dossier, exit -> quitter",
+        "---------------------------------------",
+        "Commandes: nom +",
+        ".. -> retour, del -> supprimer, cp -> copier, mv -> déplacer,",
+        "rn -> renommer, edit -> éditer, md ou mkdir -> nouveau dossier, exit -> quitter",
         "Choix: "
     },
 
     // RUSSIAN (7)
     {
         "--- Текущая папка: ",
-        "(Пустая папка)\n",
+        "(Пустая папка)",
         "[ПАПКА] ",
-        "---------------------------------------\nКоманды: имя +",
-        ".. -> назад, del -> удалить, cp -> копировать, mv -> переместить,\nrn -> переименовать, edit -> редактировать, md или mkdir -> новая папка, exit -> выход",
+        "---------------------------------------",
+        "Команды: имя +",
+        ".. -> назад, del -> удалить, cp -> копировать, mv -> переместить,",
+        "rn -> переименовать, edit -> редактировать, md или mkdir -> новая папка, exit -> выход",
         "Выбор: "
     },
 
     // UKRAINIAN (8)
     {
         "--- Поточна папка: ",
-        "(Порожня папка)\n",
+        "(Порожня папка)",
         "[ПАПКА] ",
-        "---------------------------------------\nКоманди: ім'я +",
-        ".. -> назад, del -> видалити, cp -> копіювати, mv -> перемістити,\nrn -> перейменувати, edit -> редагувати, md або mkdir -> нова папка, exit -> вихід",
+        "---------------------------------------",
+        "Команди: ім'я +",
+        ".. -> назад, del -> видалити, cp -> копіювати, mv -> перемістити,",
+        "rn -> перейменувати, edit -> редагувати, md або mkdir -> нова папка, exit -> вихід",
         "Вибір: "
     },
 
     // KOREAN (9)
     {
         "--- 현재 폴더: ",
-        "(빈 폴더)\n",
+        "(빈 폴더)",
         "[폴더] ",
-        "---------------------------------------\n명령어: 이름 +",
-        ".. -> 상위로, del -> 삭제, cp -> 복사, mv -> 이동,\nrn -> 이름변경, edit -> 편집, md 또는 mkdir -> 새 폴더, exit -> 종료",
+        "---------------------------------------",
+        "명령어: 이름 +",
+        ".. -> 상위로, del -> 삭제, cp -> 복사, mv -> 이동,",
+        "rn -> 이름변경, edit -> 편집, md 또는 mkdir -> 새 폴더, exit -> 종료",
         "선택: "
     },
 
     // ITALIAN (10)
     {
         "--- Cartella corrente: ",
-        "(Cartella vuota)\n",
+        "(Cartella vuota)",
         "[CARTELLA] ",
-        "---------------------------------------\nComandi: nome +",
-        ".. -> su, del -> elimina, cp -> copia, mv -> sposta,\nrn -> rinomina, edit -> modifica, md o mkdir -> nuova cartella, exit -> esci",
+        "---------------------------------------",
+        "Comandi: nome +",
+        ".. -> su, del -> elimina, cp -> copia, mv -> sposta,",
+        "rn -> rinomina, edit -> modifica, md o mkdir -> nuova cartella, exit -> esci",
         "Scelta: "
     },
 
     // POLISH (11)
     {
         "--- Bieżący folder: ",
-        "(Pusty folder)\n",
+        "(Pusty folder)",
         "[FOLDER] ",
-        "---------------------------------------\nKomendy: nazwa +",
-        ".. -> w górę, del -> usuń, cp -> kopiuj, mv -> przenieś,\nrn -> zmień nazwę, edit -> edytuj, md lub mkdir -> nowy folder, exit -> wyjście",
+        "---------------------------------------",
+        "Komendy: nazwa +",
+        ".. -> w górę, del -> usuń, cp -> kopiuj, mv -> przenieś,",
+        "rn -> zmień nazwę, edit -> edytuj, md lub mkdir -> nowy folder, exit -> wyjście",
         "Wybór: "
     },
 
     // ARABIC (12)
     {
         "--- المجلد الحالي: ",
-        "(مجلد فارغ)\n",
+        "(مجلد فارغ)",
         "[مجلد] ",
-        "---------------------------------------\nالأوامر: اسم +",
-        ".. -> رجوع, del -> حذف, cp -> نسخ, mv -> نقل,\nrn -> إعادة تسمية, edit -> تحرير, md أو mkdir -> مجلد جديد, exit -> خروج",
+        "---------------------------------------",
+        "الأوامر: اسم +",
+        ".. -> رجوع, del -> حذف, cp -> نسخ, mv -> نقل,",
+        "rn -> إعادة تسمية, edit -> تحرير, md أو mkdir -> مجلد جديد, exit -> خروج",
         "اختيار: "
     },
 
     // VIETNAMESE (13)
     {
         "--- Thư mục hiện tại: ",
-        "(Thư mục trống)\n",
+        "(Thư mục trống)",
         "[THƯ MỤC] ",
-        "---------------------------------------\nLệnh: tên +",
-        ".. -> lên, del -> xóa, cp -> sao chép, mv -> di chuyển,\nrn -> đổi tên, edit -> chỉnh sửa, md hoặc mkdir -> thư mục mới, exit -> thoát",
+        "---------------------------------------",
+        "Lệnh: tên +",
+        ".. -> lên, del -> xóa, cp -> sao chép, mv -> di chuyển,",
+        "rn -> đổi tên, edit -> chỉnh sửa, md hoặc mkdir -> thư mục mới, exit -> thoát",
         "Chọn: "
     },
 
     // TAGALOG (14)
     {
         "--- Kasalukuyang folder: ",
-        "(Walang laman ang folder)\n",
+        "(Walang laman ang folder)",
         "[FOLDER] ",
-        "---------------------------------------\nMga utos: pangalan +",
-        ".. -> pataas, del -> tanggal, cp -> kopya, mv -> lipat,\nrn -> palitan pangalan, edit -> edit, md o mkdir -> bagong folder, exit -> labas",
+        "---------------------------------------",
+        "Mga utos: pangalan +",
+        ".. -> pataas, del -> tanggal, cp -> kopya, mv -> lipat,",
+        "rn -> palitan pangalan, edit -> edit, md o mkdir -> bagong folder, exit -> labas",
         "Piliin: "
     },
 
     // GREEK (15)
     {
         "--- Τρέχων φάκελος: ",
-        "(Κενός φάκελος)\n",
+        "(Κενός φάκελος)",
         "[ΦΑΚΕΛΟΣ] ",
-        "---------------------------------------\nΕντολές: όνομα +",
-        ".. -> πίσω, del -> διαγραφή, cp -> αντιγραφή, mv -> μετακίνηση,\nrn -> μετονομασία, edit -> επεξεργασία, md ή mkdir -> νέος φάκελος, exit -> έξοδος",
+        "---------------------------------------",
+        "Εντολές: όνομα +",
+        ".. -> πίσω, del -> διαγραφή, cp -> αντιγραφή, mv -> μετακίνηση,",
+        "rn -> μετονομασία, edit -> επεξεργασία, md ή mkdir -> νέος φάκελος, exit -> έξοδος",
         "Επιλογή: "
     },
 
     // HEBREW (16)
     {
         "--- תיקייה נוכחית: ",
-        "(תיקייה ריקה)\n",
+        "(תיקייה ריקה)",
         "[תיקייה] ",
-        "---------------------------------------\nפקודות: שם +",
-        ".. -> חזרה, del -> מחיקה, cp -> העתקה, mv -> העברה,\nrn -> שינוי שם, edit -> עריכה, md או mkdir -> תיקייה חדשה, exit -> יציאה",
+        "---------------------------------------",
+        "פקודות: שם +",
+        ".. -> חזרה, del -> מחיקה, cp -> העתקה, mv -> העברה,",
+        "rn -> שינוי שם, edit -> עריכה, md או mkdir -> תיקייה חדשה, exit -> יציאה",
         "בחירה: "
     },
 
     // PORTUGUESE (17)
     {
         "--- Pasta atual: ",
-        "(Pasta vazia)\n",
+        "(Pasta vazia)",
         "[PASTA] ",
-        "---------------------------------------\nComandos: nome +",
-        ".. -> voltar, del -> excluir, cp -> copiar, mv -> mover,\nrn -> renomear, edit -> editar, md ou mkdir -> nova pasta, exit -> sair",
+        "---------------------------------------",
+        "Comandos: nome +",
+        ".. -> voltar, del -> excluir, cp -> copiar, mv -> mover,",
+        "rn -> renomear, edit -> editar, md ou mkdir -> nova pasta, exit -> sair",
         "Seleção: "
     },
 
     // FARSI (18)
     {
         "--- پوشه فعلی: ",
-        "(پوشه خالی)\n",
+        "(پوشه خالی)",
         "[پوشه] ",
-        "---------------------------------------\nدستورات: نام +",
-        ".. -> بازگشت, del -> حذف, cp -> کپی, mv -> انتقال,\nrn -> تغییر نام, edit -> ویرایش, md یا mkdir -> پوشه جدید, exit -> خروج",
+        "---------------------------------------",
+        "دستورات: نام +",
+        ".. -> بازگشت, del -> حذف, cp -> کپی, mv -> انتقال,",
+        "rn -> تغییر نام, edit -> ویرایش, md یا mkdir -> پوشه جدید, exit -> خروج",
         "انتخاب: "
     },
 
     // SWEDISH (19)
     {
         "--- Nuvarande mapp: ",
-        "(Tom mapp)\n",
+        "(Tom mapp)",
         "[MAPP] ",
-        "---------------------------------------\nKommandon: namn +",
-        ".. -> upp, del -> radera, cp -> kopiera, mv -> flytta,\nrn -> byt namn, edit -> redigera, md eller mkdir -> ny mapp, exit -> avsluta",
+        "---------------------------------------",
+        "Kommandon: namn +",
+        ".. -> upp, del -> radera, cp -> kopiera, mv -> flytta,",
+        "rn -> byt namn, edit -> redigera, md eller mkdir -> ny mapp, exit -> avsluta",
         "Val: "
     },
 
     // DUTCH (20)
     {
         "--- Huidige map: ",
-        "(Lege map)\n",
+        "(Lege map)",
         "[MAP] ",
-        "---------------------------------------\nCommando's: naam +",
-        ".. -> omhoog, del -> verwijderen, cp -> kopiëren, mv -> verplaatsen,\nrn -> hernoemen, edit -> bewerken, md of mkdir -> nieuwe map, exit -> afsluiten",
+        "---------------------------------------",
+        "Commando's: naam +",
+        ".. -> omhoog, del -> verwijderen, cp -> kopiëren, mv -> verplaatsen,",
+        "rn -> hernoemen, edit -> bewerken, md of mkdir -> nieuwe map, exit -> afsluiten",
         "Keuze: "
     },
 
     // TURKISH (21)
     {
         "--- Mevcut klasör: ",
-        "(Boş klasör)\n",
+        "(Boş klasör)",
         "[KLASÖR] ",
-        "---------------------------------------\nKomutlar: isim +",
-        ".. -> yukarı, del -> sil, cp -> kopyala, mv -> taşı,\nrn -> yeniden adlandır, edit -> düzenle, md veya mkdir -> yeni klasör, exit -> çıkış",
+        "---------------------------------------",
+        "Komutlar: isim +",
+        ".. -> yukarı, del -> sil, cp -> kopyala, mv -> taşı,",
+        "rn -> yeniden adlandır, edit -> düzenle, md veya mkdir -> yeni klasör, exit -> çıkış",
         "Seçim: "
     },
 
     // HINDI (22)
     {
         "--- वर्तमान फ़ोल्डर: ",
-        "(खाली फ़ोल्डर)\n",
+        "(खाली फ़ोल्डर)",
         "[फ़ोल्डर] ",
-        "---------------------------------------\nकमांड: नाम +",
-        ".. -> ऊपर, del -> हटाएँ, cp -> कॉपी, mv -> मूव,\nrn -> नाम बदलें, edit -> संपादित करें, md या mkdir -> नया फ़ोल्डर, exit -> बाहर",
+        "---------------------------------------",
+        "कमांड: नाम +",
+        ".. -> ऊपर, del -> हटाएँ, cp -> कॉपी, mv -> मूव,",
+        "rn -> नाम बदलें, edit -> संपादित करें, md या mkdir -> नया फ़ोल्डर, exit -> बाहर",
         "चयन: "
     },
 
     // LATIN (23)
     {
         "--- Directorium currente: ",
-        "(Directorium vacuum)\n",
+        "(Directorium vacuum)",
         "[DIRECTORIUM] ",
-        "---------------------------------------\nMandata: nomen +",
-        ".. -> retro, del -> delere, cp -> copiare, mv -> movere,\nrn -> renominare, edit -> recensere, md vel mkdir -> novum directorium, exit -> exire",
+        "---------------------------------------",
+        "Mandata: nomen +",
+        ".. -> retro, del -> delere, cp -> copiare, mv -> movere,",
+        "rn -> renominare, edit -> recensere, md vel mkdir -> novum directorium, exit -> exire",
         "Electio: "
     }
 };
-
 
 //==========================================================================
 static const std::vector<RenameFilesAndFolders> renameFilesAndFoldersTranslations_hardcoded {
@@ -6315,144 +6431,144 @@ static const std::vector<RenameFilesAndFolders> renameFilesAndFoldersTranslation
 
     { // Hungarian (Index 0)
             "Átnevezendő: " ,
-           "\nUj nev: "
+           "Új név: "
         },
     // ENGLISH (Index 1)
    {
        "Rename: ",
-       "\nNew name: "
+       "New name: "
    },
 
    // CHINESE (Index 2)
    {
        "重命名: ",
-       "\n新名称: "
+       "新名称: "
    },
 
    // JAPANESE (Index 3)
    {
        "名前変更: ",
-       "\n新しい名前: "
+       "新しい名前: "
    },
 
    // SPANISH (Index 4)
    {
        "Renombrar: ",
-       "\nNuevo nombre: "
+       "Nuevo nombre: "
    },
 
    // GERMAN (Index 5)
    {
        "Umbenennen: ",
-       "\nNeuer Name: "
+       "Neuer Name: "
    },
 
    // FRENCH (Index 6)
    {
        "Renommer: ",
-       "\nNouveau nom: "
+       "Nouveau nom: "
    },
 
    // RUSSIAN (Index 7)
    {
        "Переименовать: ",
-       "\nНовое имя: "
+       "Новое имя: "
    },
 
    // UKRAINIAN (Index 8)
    {
        "Перейменувати: ",
-       "\nНове ім'я: "
+       "Нове ім'я: "
    },
 
    // KOREAN (Index 9)
    {
        "이름 변경: ",
-       "\n새 이름: "
+       "새 이름: "
    },
 
    // ITALIAN (Index 10)
    {
        "Rinomina: ",
-       "\nNuovo nome: "
+       "Nuovo nome: "
    },
 
    // POLISH (Index 11)
    {
        "Zmień nazwę: ",
-       "\nNowa nazwa: "
+       "Nowa nazwa: "
    },
 
    // ARABIC (Index 12)
    {
        "إعادة تسمية: ",
-       "\nاسم جديد: "
+       "اسم جديد: "
    },
 
    // VIETNAMESE (Index 13)
    {
        "Đổi tên: ",
-       "\nTên mới: "
+       "Tên mới: "
    },
 
    // TAGALOG (Index 14)
    {
        "Palitan ang pangalan: ",
-       "\nBagong pangalan: "
+       "Bagong pangalan: "
    },
 
    // GREEK (Index 15)
    {
        "Μετονομασία: ",
-       "\nΝέο όνομα: "
+       "Νέο όνομα: "
    },
 
    // HEBREW (Index 16)
    {
        "שנה שם: ",
-       "\nשם חדש: "
+       "שם חדש: "
    },
 
    // PORTUGUESE (Index 17)
    {
        "Renomear: ",
-       "\nNovo nome: "
+       "Novo nome: "
    },
 
    // FARSI (Index 18)
    {
        "تغییر نام: ",
-       "\nنام جدید: "
+       "نام جدید: "
    },
 
    // SWEDISH (Index 19)
    {
        "Byt namn: ",
-       "\nNytt namn: "
+       "Nytt namn: "
    },
 
    // DUTCH (Index 20)
    {
        "Hernoemen: ",
-       "\nNieuwe naam: "
+       "Nieuwe naam: "
    },
 
    // TURKISH (Index 21)
    {
        "Yeniden adlandır: ",
-       "\nYeni ad: "
+       "Yeni ad: "
    },
 
    // HINDI (Index 22)
    {
        "नाम बदलें: ",
-       "\nनया नाम: "
+       "नया नाम: "
    },
 
    // LATIN (Index 23)
    {
        "Renominare: ",
-       "\nNovum nomen: "
+       "Novum nomen: "
    }
 };
 
@@ -6462,145 +6578,145 @@ static const std::vector<MovingFileFolders> movingFileFoldersTranslations_hardco
 
     { //hungarian (index 0)
         "Áthelyezendő: ",
-        "\nUj név/útvonal: "
+        "Új név/útvonal: "
     },
 
     // ENGLISH (index 1)
     {
         "Move: ",
-        "\nNew name/path: "
+        "New name/path: "
     },
 
     // CHINESE (index 2)
     {
         "移动: ",
-        "\n新名称/路径: "
+        "新名称/路径: "
     },
 
     // JAPANESE (index 3)
     {
         "移動: ",
-        "\n新しい名前/パス: "
+        "新しい名前/パス: "
     },
 
     // SPANISH (index 4)
     {
         "Mover: ",
-        "\nNuevo nombre/ruta: "
+        "Nuevo nombre/ruta: "
     },
 
     // GERMAN (index 5)
     {
         "Verschieben: ",
-        "\nNeuer Name/Pfad: "
+        "Neuer Name/Pfad: "
     },
 
     // FRENCH (index 6)
     {
         "Déplacer: ",
-        "\nNouveau nom/chemin: "
+        "Nouveau nom/chemin: "
     },
 
     // RUSSIAN (index 7)
     {
         "Переместить: ",
-        "\nНовое имя/путь: "
+        "Новое имя/путь: "
     },
 
     // UKRAINIAN (index 8)
     {
         "Перемістити: ",
-        "\nНове ім'я/шлях: "
+        "Нове ім'я/шлях: "
     },
 
     // KOREAN (index 9)
     {
         "이동: ",
-        "\n새 이름/경로: "
+        "새 이름/경로: "
     },
 
     // ITALIAN (index 10)
     {
         "Sposta: ",
-        "\nNuovo nome/percorso: "
+        "Nuovo nome/percorso: "
     },
 
     // POLISH (index 11)
     {
         "Przenieś: ",
-        "\nNowa nazwa/ścieżka: "
+        "Nowa nazwa/ścieżka: "
     },
 
     // ARABIC (index 12)
     {
         "نقل: ",
-        "\nاسم/مسار جديد: "
+        "اسم/مسار جديد: "
     },
 
     // VIETNAMESE (index 13)
     {
         "Di chuyển: ",
-        "\nTên/đường dẫn mới: "
+        "Tên/đường dẫn mới: "
     },
 
     // TAGALOG (index 14)
     {
         "Ilipat: ",
-        "\nBagong pangalan/landas: "
+        "Bagong pangalan/landas: "
     },
 
     // GREEK (index 15)
     {
         "Μετακίνηση: ",
-        "\nΝέο όνομα/διαδρομή: "
+        "Νέο όνομα/διαδρομή: "
     },
 
     // HEBREW (index 16)
     {
         "העבר: ",
-        "\nשם/נתיב חדש: "
+        "שם/נתיב חדש: "
     },
 
     // PORTUGUESE (index 17)
     {
         "Mover: ",
-        "\nNovo nome/caminho: "
+        "Novo nome/caminho: "
     },
 
     // FARSI (index 18)
     {
         "انتقال: ",
-        "\nنام/مسیر جدید: "
+        "نام/مسیر جدید: "
     },
 
     // SWEDISH (index 19)
     {
         "Flytta: ",
-        "\nNytt namn/sökväg: "
+        "Nytt namn/sökväg: "
     },
 
     // DUTCH (index 20)
     {
         "Verplaatsen: ",
-        "\nNieuwe naam/pad: "
+        "Nieuwe naam/pad: "
     },
 
     // TURKISH (index 21)
     {
         "Taşı: ",
-        "\nYeni ad/yol: "
+        "Yeni ad/yol: "
     },
 
     // HINDI (index 22)
     {
         "स्थानांतरित करें: ",
-        "\nनया नाम/पथ: "
+        "नया नाम/पथ: "
     },
 
     // LATIN (index 23)
     {
         "Transferre: ",
-        "\nNovum nomen/iter: "
+        "Novum nomen/iter: "
     }
 };
 
@@ -6832,218 +6948,241 @@ static const std::vector<DeleteFileFolders> deleteFileFoldersTranslations_hardco
 //==========================================================================
 static const std::vector<CopyFileFolders> copyFileFoldersTranslations_hardcoded {
 
-
-    { //Hungarian (Index 0)
+    { // Hungarian (Index 0)
         "Hiba: Veszélyes forrás útvonal!",
         "Másolandó: ",
-        "Útvonal/Új név\npl: (./data/mappaNeve/fajl.data): ",
+        "Útvonal/Új név",
+        "pl: (./data/mappaNeve/fajl.data): ",
         "Hiba: Veszélyes cél útvonal!",
         "Sikeres másolás!",
         "Hiba történt!"
     },
 
-    { //English (Index 1)
+    { // English (Index 1)
         "Error: Dangerous source path!",
         "Copying: ",
-        "Path/New name\ne.g.: (./data/folderName/file.data): ",
+        "Path/New name",
+        "e.g.: (./data/folderName/file.data): ",
         "Error: Dangerous destination path!",
         "Copy successful!",
         "An error occurred!"
     },
 
-    { //Chinese (Index 2)
+    { // Chinese (Index 2)
         "错误：危险的源路径！",
         "正在复制：",
-        "路径/新名称\n例如：(./data/文件夹/文件.data)：",
+        "路径/新名称",
+        "例如：(./data/文件夹/文件.data)：",
         "错误：危险的目标路径！",
         "复制成功！",
         "发生错误！"
     },
 
-    { //Japanese (Index 3)
+    { // Japanese (Index 3)
         "エラー：危険なソースパス！",
         "コピー中：",
-        "パス/新しい名前\n例：(./data/フォルダ/ファイル.data)：",
+        "パス/新しい名前",
+        "例：(./data/フォルダ/ファイル.data)：",
         "エラー：危険な宛先パス！",
         "コピー成功！",
         "エラーが発生しました！"
     },
 
-    { //Spanish (Index 4)
+    { // Spanish (Index 4)
         "Error: ¡Ruta de origen peligrosa!",
         "Copiando: ",
-        "Ruta/Nuevo nombre\nej.: (./data/carpeta/archivo.data): ",
+        "Ruta/Nuevo nombre",
+        "ej.: (./data/carpeta/archivo.data): ",
         "Error: ¡Ruta de destino peligrosa!",
         "¡Copia exitosa!",
         "¡Ocurrió un error!"
     },
 
-    { //German (Index 5)
+    { // German (Index 5)
         "Fehler: Gefährlicher Quellpfad!",
         "Kopiere: ",
-        "Pfad/Neuer Name\nz.B.: (./data/ordner/datei.data): ",
+        "Pfad/Neuer Name",
+        "z.B.: (./data/ordner/datei.data): ",
         "Fehler: Gefährlicher Zielpfad!",
         "Kopieren erfolgreich!",
         "Ein Fehler ist aufgetreten!"
     },
 
-    { //French (Index 6)
+    { // French (Index 6)
         "Erreur : Chemin source dangereux !",
         "Copie : ",
-        "Chemin/Nouveau nom\nex : (./data/dossier/fichier.data) : ",
+        "Chemin/Nouveau nom",
+        "ex : (./data/dossier/fichier.data) : ",
         "Erreur : Chemin de destination dangereux !",
         "Copie réussie !",
         "Une erreur est survenue !"
     },
 
-    { //Russian (Index 7)
+    { // Russian (Index 7)
         "Ошибка: Опасный исходный путь!",
         "Копирование: ",
-        "Путь/Новое имя\nнапр.: (./data/папка/файл.data): ",
+        "Путь/Новое имя",
+        "напр.: (./data/папка/файл.data): ",
         "Ошибка: Опасный путь назначения!",
         "Копирование успешно!",
         "Произошла ошибка!"
     },
 
-    { //Ukrainian (Index 8)
+    { // Ukrainian (Index 8)
         "Помилка: Небезпечний шлях джерела!",
         "Копіювання: ",
-        "Шлях/Нове ім'я\nнапр.: (./data/папка/файл.data): ",
+        "Шлях/Нове ім'я",
+        "напр.: (./data/папка/файл.data): ",
         "Помилка: Небезпечний шлях призначення!",
         "Копіювання успішне!",
         "Сталася помилка!"
     },
 
-    { //Korean (Index 9)
+    { // Korean (Index 9)
         "오류: 위험한 원본 경로!",
         "복사 중: ",
-        "경로/새 이름\n예: (./data/폴더/파일.data): ",
+        "경로/새 이름",
+        "예: (./data/폴더/파일.data): ",
         "오류: 위험한 대상 경로!",
         "복사 성공!",
         "오류 발생!"
     },
 
-    { //Italian (Index 10)
+    { // Italian (Index 10)
         "Errore: Percorso sorgente pericoloso!",
         "Copia in corso: ",
-        "Percorso/Nuovo nome\nes.: (./data/cartella/file.data): ",
+        "Percorso/Nuovo nome",
+        "es.: (./data/cartella/file.data): ",
         "Errore: Percorso destinazione pericoloso!",
         "Copia riuscita!",
         "Si è verificato un errore!"
     },
 
-    { //Polish (Index 11)
+    { // Polish (Index 11)
         "Błąd: Niebezpieczna ścieżka źródłowa!",
         "Kopiowanie: ",
-        "Ścieżka/Nowa nazwa\nnp.: (./data/folder/plik.data): ",
+        "Ścieżka/Nowa nazwa",
+        "np.: (./data/folder/plik.data): ",
         "Błąd: Niebezpieczna ścieżka docelowa!",
         "Kopiowanie zakończone sukcesem!",
         "Wystąpił błąd!"
     },
 
-    { //Arabic (Index 12)
+    { // Arabic (Index 12)
         "خطأ: مسار مصدر خطير!",
         "جاري النسخ: ",
-        "المسار/اسم جديد\nمثال: (./data/مجلد/ملف.data): ",
+        "المسار/اسم جديد",
+        "مثال: (./data/مجلد/ملف.data): ",
         "خطأ: مسار وجهة خطير!",
         "تم النسخ بنجاح!",
         "حدث خطأ!"
     },
 
-    { //Vietnamese (Index 13)
+    { // Vietnamese (Index 13)
         "Lỗi: Đường dẫn nguồn nguy hiểm!",
         "Đang sao chép: ",
-        "Đường dẫn/Tên mới\nví dụ: (./data/thumuc/tep.data): ",
+        "Đường dẫn/Tên mới",
+        "ví dụ: (./data/thumuc/tep.data): ",
         "Lỗi: Đường dẫn đích nguy hiểm!",
         "Sao chép thành công!",
         "Đã xảy ra lỗi!"
     },
 
-    { //Tagalog (Index 14)
+    { // Tagalog (Index 14)
         "Error: Mapanganib na source path!",
         "Kinokopya: ",
-        "Path/Bagong pangalan\nhal: (./data/folder/file.data): ",
+        "Path/Bagong pangalan",
+        "hal: (./data/folder/file.data): ",
         "Error: Mapanganib na destination path!",
         "Tagumpay ang pagkopya!",
         "May naganap na error!"
     },
 
-    { //Greek (Index 15)
+    { // Greek (Index 15)
         "Σφάλμα: Επικίνδυνη διαδρομή πηγής!",
         "Αντιγραφή: ",
-        "Διαδρομή/Νέο όνομα\nπ.χ.: (./data/φάκελος/αρχείο.data): ",
+        "Διαδρομή/Νέο όνομα",
+        "π.χ.: (./data/φάκελος/αρχείο.data): ",
         "Σφάλμα: Επικίνδυνη διαδρομή προορισμού!",
         "Επιτυχής αντιγραφή!",
         "Παρουσιάστηκε σφάλμα!"
     },
 
-    { //Hebrew (Index 16)
+    { // Hebrew (Index 16)
         "שגיאה: נתיב מקור מסוכן!",
         "מעתיק: ",
-        "נתיב/שם חדש\nלדוגמה: (./data/תיקיה/קובץ.data): ",
+        "נתיב/שם חדש",
+        "לדוגמה: (./data/תיקיה/קובץ.data): ",
         "שגיאה: נתיב יעד מסוכן!",
         "ההעתקה הצליחה!",
         "אירעה שגיאה!"
     },
 
-    { //Portuguese (Index 17)
+    { // Portuguese (Index 17)
         "Erro: Caminho de origem perigoso!",
         "Copiando: ",
-        "Caminho/Novo nome\nex.: (./data/pasta/arquivo.data): ",
+        "Caminho/Novo nome",
+        "ex.: (./data/pasta/arquivo.data): ",
         "Erro: Caminho de destino perigoso!",
         "Cópia bem-sucedida!",
         "Ocorreu um erro!"
     },
 
-    { //Farsi (Index 18)
+    { // Farsi (Index 18)
         "خطا: مسیر مبدأ خطرناک!",
         "در حال کپی: ",
-        "مسیر/نام جدید\nمثال: (./data/پوشه/فایل.data): ",
+        "مسیر/نام جدید",
+        "مثال: (./data/پوشه/فایل.data): ",
         "خطا: مسیر مقصد خطرناک!",
         "کپی موفق!",
         "خطایی رخ داد!"
     },
 
-    { //Swedish (Index 19)
+    { // Swedish (Index 19)
         "Fel: Farlig källsökväg!",
         "Kopierar: ",
-        "Sökväg/Nytt namn\nt.ex.: (./data/mapp/fil.data): ",
+        "Sökväg/Nytt namn",
+        "t.ex.: (./data/mapp/fil.data): ",
         "Fel: Farlig målsökväg!",
         "Kopiering lyckades!",
         "Ett fel uppstod!"
     },
 
-    { //Dutch (Index 20)
+    { // Dutch (Index 20)
         "Fout: Gevaarlijk bronpad!",
         "Kopiëren: ",
-        "Pad/Nieuwe naam\nbijv.: (./data/map/bestand.data): ",
+        "Pad/Nieuwe naam",
+        "bijv.: (./data/map/bestand.data): ",
         "Fout: Gevaarlijk doelpad!",
         "Kopiëren gelukt!",
         "Er is een fout opgetreden!"
     },
 
-    { //Turkish (Index 21)
+    { // Turkish (Index 21)
         "Hata: Tehlikeli kaynak yolu!",
         "Kopyalanıyor: ",
-        "Yol/Yeni ad\nörn.: (./data/klasor/dosya.data): ",
+        "Yol/Yeni ad",
+        "örn.: (./data/klasor/dosya.data): ",
         "Hata: Tehlikeli hedef yolu!",
         "Kopyalama başarılı!",
         "Bir hata oluştu!"
     },
 
-    { //Hindi (Index 22)
+    { // Hindi (Index 22)
         "त्रुटि: खतरनाक स्रोत पथ!",
         "कॉपी हो रहा है: ",
-        "पथ/नया नाम\nउदाहरण: (./data/folder/file.data): ",
+        "पथ/नया नाम",
+        "उदाहरण: (./data/folder/file.data): ",
         "त्रुटि: खतरनाक गंतव्य पथ!",
         "कॉपी सफल!",
         "एक त्रुटि हुई!"
     },
 
-    { //Latin (Index 23)
+    { // Latin (Index 23)
         "Error: Via fontis periculosa!",
         "Copia: ",
-        "Via/Nomen novum\nex: (./data/folder/file.data): ",
+        "Via/Nomen novum",
+        "ex: (./data/folder/file.data): ",
         "Error: Via destinationis periculosa!",
         "Copia felix!",
         "Error accidit!"
@@ -7474,15 +7613,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
 
     { // Hungarian (Index 0)
         "--- A Háttérszín beállítása ---",
-        "1. Alapértelmezett (fekete)\n",
-        "2. Zöld\n",
-        "3. Cián\n",
-        "4. Piros\n",
-        "5. Lila\n",
-        "6. Kék\n",
-        "7. Fehér\n",
-        "8. Szürke\n",
-        "9. Visszalépés\n",
+        "1. Alapértelmezett (fekete)",
+        "2. Zöld",
+        "3. Cián",
+        "4. Piros",
+        "5. Lila",
+        "6. Kék",
+        "7. Fehér",
+        "8. Szürke",
+        "9. Visszalépés",
         "A háttérszín sikeresen megváltoztatva!",
         "A háttér színe: "
     },
@@ -7490,15 +7629,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // ENGLISH (Index 1)
     {
         "--- Background Color Settings ---",
-        "1. Default (black)\n",
-        "2. Green\n",
-        "3. Cyan\n",
-        "4. Red\n",
-        "5. Purple\n",
-        "6. Blue\n",
-        "7. White\n",
-        "8. Gray\n",
-        "9. Back\n",
+        "1. Default (black)",
+        "2. Green",
+        "3. Cyan",
+        "4. Red",
+        "5. Purple",
+        "6. Blue",
+        "7. White",
+        "8. Gray",
+        "9. Back",
         "Background color successfully changed!",
         "Background color: "
     },
@@ -7506,15 +7645,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // CHINESE (Index 2)
     {
         "--- 背景颜色设置 ---",
-        "1. 默认（黑色）\n",
-        "2. 绿色\n",
-        "3. 青色\n",
-        "4. 红色\n",
-        "5. 紫色\n",
-        "6. 蓝色\n",
-        "7. 白色\n",
-        "8. 灰色\n",
-        "9. 返回\n",
+        "1. 默认（黑色）",
+        "2. 绿色",
+        "3. 青色",
+        "4. 红色",
+        "5. 紫色",
+        "6. 蓝色",
+        "7. 白色",
+        "8. 灰色",
+        "9. 返回",
         "背景颜色修改成功！",
         "背景颜色："
     },
@@ -7522,15 +7661,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // JAPANESE (Index 3)
     {
         "--- 背景色設定 ---",
-        "1. デフォルト（黒）\n",
-        "2. 緑\n",
-        "3. シアン\n",
-        "4. 赤\n",
-        "5. 紫\n",
-        "6. 青\n",
-        "7. 白\n",
-        "8. 灰色\n",
-        "9. 戻る\n",
+        "1. デフォルト（黒）",
+        "2. 緑",
+        "3. シアン",
+        "4. 赤",
+        "5. 紫",
+        "6. 青",
+        "7. 白",
+        "8. 灰色",
+        "9. 戻る",
         "背景色が正常に変更されました！",
         "背景色："
     },
@@ -7538,15 +7677,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // SPANISH (Index 4)
     {
         "--- Configuración de color de fondo ---",
-        "1. Predeterminado (negro)\n",
-        "2. Verde\n",
-        "3. Cian\n",
-        "4. Rojo\n",
-        "5. Morado\n",
-        "6. Azul\n",
-        "7. Blanco\n",
-        "8. Gris\n",
-        "9. Volver\n",
+        "1. Predeterminado (negro)",
+        "2. Verde",
+        "3. Cian",
+        "4. Rojo",
+        "5. Morado",
+        "6. Azul",
+        "7. Blanco",
+        "8. Gris",
+        "9. Volver",
         "¡Color de fondo cambiado correctamente!",
         "Color de fondo: "
     },
@@ -7554,15 +7693,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // GERMAN (Index 5)
     {
         "--- Hintergrundfarbe einstellen ---",
-        "1. Standard (schwarz)\n",
-        "2. Grün\n",
-        "3. Cyan\n",
-        "4. Rot\n",
-        "5. Lila\n",
-        "6. Blau\n",
-        "7. Weiß\n",
-        "8. Grau\n",
-        "9. Zurück\n",
+        "1. Standard (schwarz)",
+        "2. Grün",
+        "3. Cyan",
+        "4. Rot",
+        "5. Lila",
+        "6. Blau",
+        "7. Weiß",
+        "8. Grau",
+        "9. Zurück",
         "Hintergrundfarbe erfolgreich geändert!",
         "Hintergrundfarbe: "
     },
@@ -7570,15 +7709,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // FRENCH (Index 6)
     {
         "--- Paramètres de couleur d'arrière-plan ---",
-        "1. Par défaut (noir)\n",
-        "2. Vert\n",
-        "3. Cyan\n",
-        "4. Rouge\n",
-        "5. Violet\n",
-        "6. Bleu\n",
-        "7. Blanc\n",
-        "8. Gris\n",
-        "9. Retour\n",
+        "1. Par défaut (noir)",
+        "2. Vert",
+        "3. Cyan",
+        "4. Rouge",
+        "5. Violet",
+        "6. Bleu",
+        "7. Blanc",
+        "8. Gris",
+        "9. Retour",
         "Couleur d'arrière-plan modifiée avec succès !",
         "Couleur d'arrière-plan : "
     },
@@ -7586,15 +7725,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // RUSSIAN (Index 7)
     {
         "--- Настройка цвета фона ---",
-        "1. По умолчанию (чёрный)\n",
-        "2. Зелёный\n",
-        "3. Голубой\n",
-        "4. Красный\n",
-        "5. Фиолетовый\n",
-        "6. Синий\n",
-        "7. Белый\n",
-        "8. Серый\n",
-        "9. Назад\n",
+        "1. По умолчанию (чёрный)",
+        "2. Зелёный",
+        "3. Голубой",
+        "4. Красный",
+        "5. Фиолетовый",
+        "6. Синий",
+        "7. Белый",
+        "8. Серый",
+        "9. Назад",
         "Цвет фона успешно изменён!",
         "Цвет фона: "
     },
@@ -7602,15 +7741,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // UKRAINIAN (Index 8)
     {
         "--- Налаштування кольору фону ---",
-        "1. За замовчуванням (чорний)\n",
-        "2. Зелений\n",
-        "3. Блакитний\n",
-        "4. Червоний\n",
-        "5. Фіолетовий\n",
-        "6. Синій\n",
-        "7. Білий\n",
-        "8. Сірий\n",
-        "9. Назад\n",
+        "1. За замовчуванням (чорний)",
+        "2. Зелений",
+        "3. Блакитний",
+        "4. Червоний",
+        "5. Фіолетовий",
+        "6. Синій",
+        "7. Білий",
+        "8. Сірий",
+        "9. Назад",
         "Колір фону успішно змінено!",
         "Колір фону: "
     },
@@ -7618,15 +7757,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // KOREAN (Index 9)
     {
         "--- 배경 색상 설정 ---",
-        "1. 기본값 (검정)\n",
-        "2. 초록\n",
-        "3. 시안\n",
-        "4. 빨강\n",
-        "5. 보라\n",
-        "6. 파랑\n",
-        "7. 흰색\n",
-        "8. 회색\n",
-        "9. 뒤로\n",
+        "1. 기본값 (검정)",
+        "2. 초록",
+        "3. 시안",
+        "4. 빨강",
+        "5. 보라",
+        "6. 파랑",
+        "7. 흰색",
+        "8. 회색",
+        "9. 뒤로",
         "배경 색상이 성공적으로 변경되었습니다!",
         "배경 색상: "
     },
@@ -7634,15 +7773,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // ITALIAN (Index 10)
     {
         "--- Impostazioni colore sfondo ---",
-        "1. Predefinito (nero)\n",
-        "2. Verde\n",
-        "3. Ciano\n",
-        "4. Rosso\n",
-        "5. Viola\n",
-        "6. Blu\n",
-        "7. Bianco\n",
-        "8. Grigio\n",
-        "9. Indietro\n",
+        "1. Predefinito (nero)",
+        "2. Verde",
+        "3. Ciano",
+        "4. Rosso",
+        "5. Viola",
+        "6. Blu",
+        "7. Bianco",
+        "8. Grigio",
+        "9. Indietro",
         "Colore di sfondo modificato con successo!",
         "Colore di sfondo: "
     },
@@ -7650,15 +7789,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // POLISH (Index 11)
     {
         "--- Ustawienia koloru tła ---",
-        "1. Domyślny (czarny)\n",
-        "2. Zielony\n",
-        "3. Cyjan\n",
-        "4. Czerwony\n",
-        "5. Fioletowy\n",
-        "6. Niebieski\n",
-        "7. Biały\n",
-        "8. Szary\n",
-        "9. Powrót\n",
+        "1. Domyślny (czarny)",
+        "2. Zielony",
+        "3. Cyjan",
+        "4. Czerwony",
+        "5. Fioletowy",
+        "6. Niebieski",
+        "7. Biały",
+        "8. Szary",
+        "9. Powrót",
         "Kolor tła został zmieniony!",
         "Kolor tła: "
     },
@@ -7666,15 +7805,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // ARABIC (Index 12)
     {
         "--- إعدادات لون الخلفية ---",
-        "1. افتراضي (أسود)\n",
-        "2. أخضر\n",
-        "3. سماوي\n",
-        "4. أحمر\n",
-        "5. بنفسجي\n",
-        "6. أزرق\n",
-        "7. أبيض\n",
-        "8. رمادي\n",
-        "9. رجوع\n",
+        "1. افتراضي (أسود)",
+        "2. أخضر",
+        "3. سماوي",
+        "4. أحمر",
+        "5. بنفسجي",
+        "6. أزرق",
+        "7. أبيض",
+        "8. رمادي",
+        "9. رجوع",
         "تم تغيير لون الخلفية بنجاح!",
         "لون الخلفية: "
     },
@@ -7682,15 +7821,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // VIETNAMESE (Index 13)
     {
         "--- Cài đặt màu nền ---",
-        "1. Mặc định (đen)\n",
-        "2. Xanh lá\n",
-        "3. Cyan\n",
-        "4. Đỏ\n",
-        "5. Tím\n",
-        "6. Xanh dương\n",
-        "7. Trắng\n",
-        "8. Xám\n",
-        "9. Quay lại\n",
+        "1. Mặc định (đen)",
+        "2. Xanh lá",
+        "3. Cyan",
+        "4. Đỏ",
+        "5. Tím",
+        "6. Xanh dương",
+        "7. Trắng",
+        "8. Xám",
+        "9. Quay lại",
         "Đã thay đổi màu nền thành công!",
         "Màu nền: "
     },
@@ -7698,15 +7837,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // TAGALOG (Index 14)
     {
         "--- Setting ng kulay ng background ---",
-        "1. Default (itim)\n",
-        "2. Berde\n",
-        "3. Cyan\n",
-        "4. Pula\n",
-        "5. Lila\n",
-        "6. Asul\n",
-        "7. Puti\n",
-        "8. Abo\n",
-        "9. Bumalik\n",
+        "1. Default (itim)",
+        "2. Berde",
+        "3. Cyan",
+        "4. Pula",
+        "5. Lila",
+        "6. Asul",
+        "7. Puti",
+        "8. Abo",
+        "9. Bumalik",
         "Matagumpay na nabago ang kulay ng background!",
         "Kulay ng background: "
     },
@@ -7714,15 +7853,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // GREEK (Index 15)
     {
         "--- Ρυθμίσεις χρώματος φόντου ---",
-        "1. Προεπιλογή (μαύρο)\n",
-        "2. Πράσινο\n",
-        "3. Κυανό\n",
-        "4. Κόκκινο\n",
-        "5. Μωβ\n",
-        "6. Μπλε\n",
-        "7. Λευκό\n",
-        "8. Γκρι\n",
-        "9. Πίσω\n",
+        "1. Προεπιλογή (μαύρο)",
+        "2. Πράσινο",
+        "3. Κυανό",
+        "4. Κόκκινο",
+        "5. Μωβ",
+        "6. Μπλε",
+        "7. Λευκό",
+        "8. Γκρι",
+        "9. Πίσω",
         "Το χρώμα φόντου άλλαξε επιτυχώς!",
         "Χρώμα φόντου: "
     },
@@ -7730,15 +7869,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // HEBREW (Index 16)
     {
         "--- הגדרות צבע רקע ---",
-        "1. ברירת מחדל (שחור)\n",
-        "2. ירוק\n",
-        "3. ציאן\n",
-        "4. אדום\n",
-        "5. סגול\n",
-        "6. כחול\n",
-        "7. לבן\n",
-        "8. אפור\n",
-        "9. חזרה\n",
+        "1. ברירת מחדל (שחור)",
+        "2. ירוק",
+        "3. ציאן",
+        "4. אדום",
+        "5. סגול",
+        "6. כחול",
+        "7. לבן",
+        "8. אפור",
+        "9. חזרה",
         "צבע הרקע שונה בהצלחה!",
         "צבע רקע: "
     },
@@ -7746,15 +7885,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // PORTUGUESE (Index 17)
     {
         "--- Configurações de cor de fundo ---",
-        "1. Padrão (preto)\n",
-        "2. Verde\n",
-        "3. Ciano\n",
-        "4. Vermelho\n",
-        "5. Roxo\n",
-        "6. Azul\n",
-        "7. Branco\n",
-        "8. Cinza\n",
-        "9. Voltar\n",
+        "1. Padrão (preto)",
+        "2. Verde",
+        "3. Ciano",
+        "4. Vermelho",
+        "5. Roxo",
+        "6. Azul",
+        "7. Branco",
+        "8. Cinza",
+        "9. Voltar",
         "Cor de fundo alterada com sucesso!",
         "Cor de fundo: "
     },
@@ -7762,15 +7901,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // FARSI (Index 18)
     {
         "--- تنظیم رنگ پس‌زمینه ---",
-        "1. پیش‌فرض (مشکی)\n",
-        "2. سبز\n",
-        "3. فیروزه‌ای\n",
-        "4. قرمز\n",
-        "5. بنفش\n",
-        "6. آبی\n",
-        "7. سفید\n",
-        "8. خاکستری\n",
-        "9. بازگشت\n",
+        "1. پیش‌فرض (مشکی)",
+        "2. سبز",
+        "3. فیروزه‌ای",
+        "4. قرمز",
+        "5. بنفش",
+        "6. آبی",
+        "7. سفید",
+        "8. خاکستری",
+        "9. بازگشت",
         "رنگ پس‌زمینه با موفقیت تغییر یافت!",
         "رنگ پس‌زمینه: "
     },
@@ -7778,15 +7917,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // SWEDISH (Index 19)
     {
         "--- Inställningar för bakgrundsfärg ---",
-        "1. Standard (svart)\n",
-        "2. Grön\n",
-        "3. Cyan\n",
-        "4. Röd\n",
-        "5. Lila\n",
-        "6. Blå\n",
-        "7. Vit\n",
-        "8. Grå\n",
-        "9. Tillbaka\n",
+        "1. Standard (svart)",
+        "2. Grön",
+        "3. Cyan",
+        "4. Röd",
+        "5. Lila",
+        "6. Blå",
+        "7. Vit",
+        "8. Grå",
+        "9. Tillbaka",
         "Bakgrundsfärgen ändrades!",
         "Bakgrundsfärg: "
     },
@@ -7794,15 +7933,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // DUTCH (Index 20)
     {
         "--- Instellingen achtergrondkleur ---",
-        "1. Standaard (zwart)\n",
-        "2. Groen\n",
-        "3. Cyaan\n",
-        "4. Rood\n",
-        "5. Paars\n",
-        "6. Blauw\n",
-        "7. Wit\n",
-        "8. Grijs\n",
-        "9. Terug\n",
+        "1. Standaard (zwart)",
+        "2. Groen",
+        "3. Cyaan",
+        "4. Rood",
+        "5. Paars",
+        "6. Blauw",
+        "7. Wit",
+        "8. Grijs",
+        "9. Terug",
         "Achtergrondkleur succesvol gewijzigd!",
         "Achtergrondkleur: "
     },
@@ -7810,15 +7949,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // TURKISH (Index 21)
     {
         "--- Arka plan rengi ayarları ---",
-        "1. Varsayılan (siyah)\n",
-        "2. Yeşil\n",
-        "3. Camgöbeği\n",
-        "4. Kırmızı\n",
-        "5. Mor\n",
-        "6. Mavi\n",
-        "7. Beyaz\n",
-        "8. Gri\n",
-        "9. Geri\n",
+        "1. Varsayılan (siyah)",
+        "2. Yeşil",
+        "3. Camgöbeği",
+        "4. Kırmızı",
+        "5. Mor",
+        "6. Mavi",
+        "7. Beyaz",
+        "8. Gri",
+        "9. Geri",
         "Arka plan rengi başarıyla değiştirildi!",
         "Arka plan rengi: "
     },
@@ -7826,15 +7965,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // HINDI (Index 22)
     {
         "--- पृष्ठभूमि रंग सेटिंग्स ---",
-        "1. डिफ़ॉल्ट (काला)\n",
-        "2. हरा\n",
-        "3. सियान\n",
-        "4. लाल\n",
-        "5. बैंगनी\n",
-        "6. नीला\n",
-        "7. सफेद\n",
-        "8. ग्रे\n",
-        "9. वापस\n",
+        "1. डिफ़ॉल्ट (काला)",
+        "2. हरा",
+        "3. सियान",
+        "4. लाल",
+        "5. बैंगनी",
+        "6. नीला",
+        "7. सफेद",
+        "8. ग्रे",
+        "9. वापस",
         "पृष्ठभूमि रंग सफलतापूर्वक बदला गया!",
         "पृष्ठभूमि रंग: "
     },
@@ -7842,15 +7981,15 @@ static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded {
     // LATIN (Index 23)
     {
         "--- Configurationes coloris fundi ---",
-        "1. Default (niger)\n",
-        "2. Viridis\n",
-        "3. Cyanus\n",
-        "4. Ruber\n",
-        "5. Purpureus\n",
-        "6. Caeruleus\n",
-        "7. Albus\n",
-        "8. Griseus\n",
-        "9. Redire\n",
+        "1. Default (niger)",
+        "2. Viridis",
+        "3. Cyanus",
+        "4. Ruber",
+        "5. Purpureus",
+        "6. Caeruleus",
+        "7. Albus",
+        "8. Griseus",
+        "9. Redire",
         "Color fundi feliciter mutatus est!",
         "Color fundi: "
     }
@@ -7864,7 +8003,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Jelenlegi állapot: ",
         "BE",
         "KI",
-        "1. Be/Ki kapcsolás\n0. Vissza\nVálasztás: ",
+        "1. Be/Ki kapcsolás",
+        "0. Vissza",
+        "Választás: ",
         "Hang bekapcsolva!",
         "Hang kikapcsolva!"
     },
@@ -7875,7 +8016,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Current state: ",
         "ON",
         "OFF",
-        "1. Toggle On/Off\n0. Back\nChoice: ",
+        "1. Toggle On/Off",
+        "0. Back",
+        "Choice: ",
         "Sound enabled!",
         "Sound disabled!"
     },
@@ -7886,7 +8029,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "当前状态：",
         "开",
         "关",
-        "1. 开/关切换\n0. 返回\n选择：",
+        "1. 开/关切换",
+        "0. 返回",
+        "选择：",
         "声音已开启！",
         "声音已关闭！"
     },
@@ -7897,7 +8042,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "現在の状態：",
         "オン",
         "オフ",
-        "1. オン/オフ切替\n0. 戻る\n選択：",
+        "1. オン/オフ切替",
+        "0. 戻る",
+        "選択：",
         "サウンドが有効になりました！",
         "サウンドが無効になりました！"
     },
@@ -7908,7 +8055,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Estado actual: ",
         "ENCENDIDO",
         "APAGADO",
-        "1. Activar/Desactivar\n0. Volver\nElección: ",
+        "1. Activar/Desactivar",
+        "0. Volver",
+        "Elección: ",
         "¡Sonido activado!",
         "¡Sonido desactivado!"
     },
@@ -7919,7 +8068,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Aktueller Status: ",
         "AN",
         "AUS",
-        "1. Ein/Aus umschalten\n0. Zurück\nAuswahl: ",
+        "1. Ein/Aus umschalten",
+        "0. Zurück",
+        "Auswahl: ",
         "Sound eingeschaltet!",
         "Sound ausgeschaltet!"
     },
@@ -7930,7 +8081,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "État actuel : ",
         "ACTIVÉ",
         "DÉSACTIVÉ",
-        "1. Activer/Désactiver\n0. Retour\nChoix : ",
+        "1. Activer/Désactiver",
+        "0. Retour",
+        "Choix : ",
         "Son activé !",
         "Son désactivé !"
     },
@@ -7941,7 +8094,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Текущее состояние: ",
         "ВКЛ",
         "ВЫКЛ",
-        "1. Вкл/Выкл\n0. Назад\nВыбор: ",
+        "1. Вкл/Выкл",
+        "0. Назад",
+        "Выбор: ",
         "Звук включён!",
         "Звук выключен!"
     },
@@ -7952,7 +8107,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Поточний стан: ",
         "УВІМК",
         "ВИМК",
-        "1. Увімк/Вимк\n0. Назад\nВибір: ",
+        "1. Увімк/Вимк",
+        "0. Назад",
+        "Вибір: ",
         "Звук увімкнено!",
         "Звук вимкнено!"
     },
@@ -7963,7 +8120,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "현재 상태: ",
         "켜짐",
         "꺼짐",
-        "1. 켜기/끄기\n0. 뒤로\n선택: ",
+        "1. 켜기/끄기",
+        "0. 뒤로",
+        "선택: ",
         "소리가 켜졌습니다!",
         "소리가 꺼졌습니다!"
     },
@@ -7974,7 +8133,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Stato attuale: ",
         "ON",
         "OFF",
-        "1. Attiva/Disattiva\n0. Indietro\nScelta: ",
+        "1. Attiva/Disattiva",
+        "0. Indietro",
+        "Scelta: ",
         "Audio attivato!",
         "Audio disattivato!"
     },
@@ -7985,21 +8146,25 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Aktualny stan: ",
         "WŁ",
         "WYŁ",
-        "1. Włącz/Wyłącz\n0. Powrót\nWybór: ",
+        "1. Włącz/Wyłącz",
+        "0. Powrót",
+        "Wybór: ",
         "Dźwięk włączony!",
         "Dźwięk wyłączony!"
     },
 
     // ARABIC (Index 12)
-    {
-        "--- إعدادات الصوت ---",
-        "الحالة الحالية: ",
-        "تشغيل",
-        "إيقاف",
-        "1. تشغيل/إيقاف\n0. رجوع\nاختيار: ",
-        "تم تشغيل الصوت!",
-        "تم إيقاف الصوت!"
-    },
+{
+    "--- إعدادات الصوت ---",
+    "الحالة الحالية: ",
+    "تشغيل",
+    "إيقاف",
+    "1. تشغيل/إيقاف",
+    "0. رجوع",
+    "اختيار: ",
+    "تم تشغيل الصوت!",
+    "تم إيقاف الصوت!"
+},
 
     // VIETNAMESE (Index 13)
     {
@@ -8007,7 +8172,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Trạng thái hiện tại: ",
         "BẬT",
         "TẮT",
-        "1. Bật/Tắt\n0. Quay lại\nLựa chọn: ",
+        "1. Bật/Tắt",
+        "0. Quay lại",
+        "Lựa chọn: ",
         "Âm thanh đã bật!",
         "Âm thanh đã tắt!"
     },
@@ -8018,7 +8185,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Kasalukuyang estado: ",
         "BUKAS",
         "SARADO",
-        "1. On/Off\n0. Bumalik\nPili: ",
+        "1. On/Off",
+        "0. Bumalik",
+        "Pili: ",
         "Naka-on ang tunog!",
         "Naka-off ang tunog!"
     },
@@ -8029,21 +8198,25 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Τρέχουσα κατάσταση: ",
         "ΕΝΕΡΓΟ",
         "ΑΝΕΝΕΡΓΟ",
-        "1. Ενεργοποίηση/Απενεργοποίηση\n0. Πίσω\nΕπιλογή: ",
+        "1. Ενεργοποίηση/Απενεργοποίηση",
+        "0. Πίσω",
+        "Επιλογή: ",
         "Ο ήχος ενεργοποιήθηκε!",
         "Ο ήχος απενεργοποιήθηκε!"
     },
 
     // HEBREW (Index 16)
-    {
-        "--- הגדרות קול ---",
-        "מצב נוכחי: ",
-        "פועל",
-        "כבוי",
-        "1. הפעלה/כיבוי\n0. חזרה\nבחירה: ",
-        "הקול הופעל!",
-        "הקול כובה!"
-    },
+{
+    "--- הגדרות קול ---",
+    "מצב נוכחי: ",
+    "פועל",
+    "כבוי",
+    "1. הפעלה/כיבוי",
+    "0. חזרה",
+    "בחירה: ",
+    "הקול הופעל!",
+    "הקול כובה!"
+},
 
     // PORTUGUESE (Index 17)
     {
@@ -8051,21 +8224,25 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Estado atual: ",
         "LIGADO",
         "DESLIGADO",
-        "1. Ligar/Desligar\n0. Voltar\nEscolha: ",
+        "1. Ligar/Desligar",
+        "0. Voltar",
+        "Escolha: ",
         "Som ativado!",
         "Som desativado!"
     },
 
     // FARSI (Index 18)
-    {
-        "--- تنظیمات صدا ---",
-        "وضعیت فعلی: ",
-        "روشن",
-        "خاموش",
-        "1. روشن/خاموش\n0. بازگشت\nانتخاب: ",
-        "صدا روشن شد!",
-        "صدا خاموش شد!"
-    },
+{
+    "--- تنظیمات صدا ---",
+    "وضعیت فعلی: ",
+    "روشن",
+    "خاموش",
+    "1. روشن/خاموش",
+    "0. بازگشت",
+    "انتخاب: ",
+    "صدا روشن شد!",
+    "صدا خاموش شد!"
+},
 
     // SWEDISH (Index 19)
     {
@@ -8073,7 +8250,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Nuvarande status: ",
         "PÅ",
         "AV",
-        "1. Slå på/av\n0. Tillbaka\nVal: ",
+        "1. Slå på/av",
+        "0. Tillbaka",
+        "Val: ",
         "Ljudet är på!",
         "Ljudet är av!"
     },
@@ -8084,7 +8263,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Huidige status: ",
         "AAN",
         "UIT",
-        "1. Aan/Uit schakelen\n0. Terug\nKeuze: ",
+        "1. Aan/Uit schakelen",
+        "0. Terug",
+        "Keuze: ",
         "Geluid ingeschakeld!",
         "Geluid uitgeschakeld!"
     },
@@ -8095,7 +8276,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Mevcut durum: ",
         "AÇIK",
         "KAPALI",
-        "1. Aç/Kapat\n0. Geri\nSeçim: ",
+        "1. Aç/Kapat",
+        "0. Geri",
+        "Seçim: ",
         "Ses açıldı!",
         "Ses kapatıldı!"
     },
@@ -8106,7 +8289,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "वर्तमान स्थिति: ",
         "चालू",
         "बंद",
-        "1. चालू/बंद करें\n0. वापस\nचयन: ",
+        "1. चालू/बंद करें",
+        "0. वापस",
+        "चयन: ",
         "ध्वनि चालू की गई!",
         "ध्वनि बंद की गई!"
     },
@@ -8117,7 +8302,9 @@ static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded {
         "Status praesens: ",
         "ON",
         "OFF",
-        "1. Accende/Extingue\n0. Redire\nElectio: ",
+        "1. Accende/Extingue",
+        "0. Redire",
+        "Electio: ",
         "Sonus activatus est!",
         "Sonus deactivatus est!"
     }
@@ -8330,9 +8517,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Jelenlegi állapot: ",
         "Ki",
         "Be",
-        "1. Átkapcsolás\n0. Vissza\nVálasztás: ",
-        "",
-        ""
+        "1. Átkapcsolás",
+        "0. Vissza",
+        "Választás: "
     },
 
     // English (Index 1)
@@ -8341,9 +8528,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Current state: ",
         "Off",
         "On",
-        "1. Toggle\n0. Back\nChoice: ",
-        "",
-        ""
+        "1. Toggle",
+        "0. Back",
+        "Choice: "
     },
 
     // Chinese (Index 2)
@@ -8352,9 +8539,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "当前状态：",
         "关",
         "开",
-        "1. 切换\n0. 返回\n选择：",
-        "",
-        ""
+        "1. 切换",
+        "0. 返回",
+        "选择: "
     },
 
     // Japanese (Index 3)
@@ -8363,9 +8550,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "現在の状態：",
         "オフ",
         "オン",
-        "1. 切り替え\n0. 戻る\n選択：",
-        "",
-        ""
+        "1. 切り替え",
+        "0. 戻る",
+        "選択: "
     },
 
     // Spanish (Index 4)
@@ -8374,9 +8561,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Estado actual: ",
         "Desactivado",
         "Activado",
-        "1. Cambiar\n0. Volver\nOpción: ",
-        "",
-        ""
+        "1. Cambiar",
+        "0. Volver",
+        "Opción: "
     },
 
     // German (Index 5)
@@ -8385,9 +8572,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Aktueller Status: ",
         "Aus",
         "Ein",
-        "1. Umschalten\n0. Zurück\nAuswahl: ",
-        "",
-        ""
+        "1. Umschalten",
+        "0. Zurück",
+        "Auswahl: "
     },
 
     // French (Index 6)
@@ -8396,9 +8583,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "État actuel : ",
         "Désactivé",
         "Activé",
-        "1. Basculer\n0. Retour\nChoix : ",
-        "",
-        ""
+        "1. Basculer",
+        "0. Retour",
+        "Choix: "
     },
 
     // Russian (Index 7)
@@ -8407,9 +8594,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Текущее состояние: ",
         "Выкл",
         "Вкл",
-        "1. Переключить\n0. Назад\nВыбор: ",
-        "",
-        ""
+        "1. Переключить",
+        "0. Назад",
+        "Выбор: "
     },
 
     // Ukrainian (Index 8)
@@ -8418,9 +8605,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Поточний стан: ",
         "Вимкнено",
         "Увімкнено",
-        "1. Перемкнути\n0. Назад\nВибір: ",
-        "",
-        ""
+        "1. Перемкнути",
+        "0. Назад",
+        "Вибір: "
     },
 
     // Korean (Index 9)
@@ -8429,9 +8616,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "현재 상태: ",
         "꺼짐",
         "켜짐",
-        "1. 전환\n0. 뒤로\n선택: ",
-        "",
-        ""
+        "1. 전환",
+        "0. 뒤로",
+        "선택: "
     },
 
     // Italian (Index 10)
@@ -8440,9 +8627,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Stato attuale: ",
         "Disattivato",
         "Attivato",
-        "1. Cambia\n0. Indietro\nScelta: ",
-        "",
-        ""
+        "1. Cambia",
+        "0. Indietro",
+        "Scelta: "
     },
 
     // Polish (Index 11)
@@ -8451,21 +8638,21 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Aktualny stan: ",
         "Wyłączone",
         "Włączone",
-        "1. Przełącz\n0. Powrót\nWybór: ",
-        "",
-        ""
+        "1. Przełącz",
+        "0. Powrót",
+        "Wybór: "
     },
 
     // Arabic (Index 12)
-    {
-        "--- معالجة اللكنة ---",
-        "الحالة الحالية: ",
-        "إيقاف",
-        "تشغيل",
-        "1. تبديل\n0. رجوع\nاختيار: ",
-        "",
-        ""
-    },
+{
+    "--- معالجة اللكنة ---",
+    "الحالة الحالية: ",
+    "إيقاف",
+    "تشغيل",
+    "1. تبديل",
+    "0. رجوع",
+    "اختيار: "
+},
 
     // Vietnamese (Index 13)
     {
@@ -8473,9 +8660,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Trạng thái hiện tại: ",
         "Tắt",
         "Bật",
-        "1. Chuyển đổi\n0. Quay lại\nLựa chọn: ",
-        "",
-        ""
+        "1. Chuyển đổi",
+        "0. Quay lại",
+        "Lựa chọn: "
     },
 
     // Tagalog (Index 14)
@@ -8484,9 +8671,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Kasalukuyang estado: ",
         "Patay",
         "Bukas",
-        "1. Palitan\n0. Bumalik\nPiliin: ",
-        "",
-        ""
+        "1. Palitan",
+        "0. Bumalik",
+        "Piliin: "
     },
 
     // Greek (Index 15)
@@ -8495,21 +8682,21 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Τρέχουσα κατάσταση: ",
         "Ανενεργό",
         "Ενεργό",
-        "1. Εναλλαγή\n0. Πίσω\nΕπιλογή: ",
-        "",
-        ""
+        "1. Εναλλαγή",
+        "0. Πίσω",
+        "Επιλογή: "
     },
 
     // Hebrew (Index 16)
-    {
-        "--- ניהול מבטאים ---",
-        "מצב נוכחי: ",
-        "כבוי",
-        "פועל",
-        "1. החלף\n0. חזור\nבחירה: ",
-        "",
-        ""
-    },
+{
+    "--- ניהול מבטאים ---",
+    "מצב נוכחי: ",
+    "כבוי",
+    "פועל",
+    "1. החלף",
+    "0. חזור",
+    "בחירה: "
+},
 
     // Portuguese (Index 17)
     {
@@ -8517,21 +8704,21 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Estado atual: ",
         "Desligado",
         "Ligado",
-        "1. Alternar\n0. Voltar\nEscolha: ",
-        "",
-        ""
+        "1. Alternar",
+        "0. Voltar",
+        "Escolha: "
     },
 
     // Persian (Index 18)
-    {
-        "--- مدیریت علائم ---",
-        "وضعیت فعلی: ",
-        "خاموش",
-        "روشن",
-        "1. تغییر\n0. بازگشت\nانتخاب: ",
-        "",
-        ""
-    },
+{
+    "--- مدیریت علائم ---",
+    "وضعیت فعلی: ",
+    "خاموش",
+    "روشن",
+    "1. تغییر",
+    "0. بازگشت",
+    "انتخاب: "
+},
 
     // Swedish (Index 19)
     {
@@ -8539,9 +8726,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Nuvarande status: ",
         "Av",
         "På",
-        "1. Växla\n0. Tillbaka\nVal: ",
-        "",
-        ""
+        "1. Växla",
+        "0. Tillbaka",
+        "Val: "
     },
 
     // Dutch (Index 20)
@@ -8550,9 +8737,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Huidige status: ",
         "Uit",
         "Aan",
-        "1. Wisselen\n0. Terug\nKeuze: ",
-        "",
-        ""
+        "1. Wisselen",
+        "0. Terug",
+        "Keuze: "
     },
 
     // Turkish (Index 21)
@@ -8561,9 +8748,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Mevcut durum: ",
         "Kapalı",
         "Açık",
-        "1. Değiştir\n0. Geri\nSeçim: ",
-        "",
-        ""
+        "1. Değiştir",
+        "0. Geri",
+        "Seçim: "
     },
 
     // Hindi (Index 22)
@@ -8572,9 +8759,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "वर्तमान स्थिति: ",
         "बंद",
         "चालू",
-        "1. बदलें\n0. वापस\nचयन: ",
-        "",
-        ""
+        "1. बदलें",
+        "0. वापस",
+        "चयन: "
     },
 
     // Latin (Index 23)
@@ -8583,9 +8770,9 @@ static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hard
         "Status praesens: ",
         "Off",
         "On",
-        "1. Commuta\n0. Redi\nElectio: ",
-        "",
-        ""
+        "1. Commuta",
+        "0. Redi",
+        "Electio: "
     }
 };
 
@@ -9380,20 +9567,331 @@ static const std::vector<OneRoundQString> oneRoundQuizStringTranslations_hardcod
 
 static const std::vector<IniStructToggle> iniStructTogglesTranslations_hardcoded {
 
-    { // Hungarian 0
-        "--- INI vagy STRUCT beállitás ---",
+    // Hungarian (0)
+    {
+        "--- INI vagy STRUCT beállítás ---",
         "Jelenlegi állapot: ",
         "BEKAPCSOLVA",
         "KIKAPCSOLVA",
-        "1. Átkapcsolás\n0. Vissza\nVálasztás: ",
+        "1. Átkapcsolás",
+        "0. Vissza",
+        "Választás: ",
         "INI fájlok olvasása BEKAPCSOLVA!",
         "INI fájlok olvasása KIKAPCSOLVA!"
+    },
+
+    // English (1)
+    {
+        "--- INI or STRUCT settings ---",
+        "Current state: ",
+        "ON",
+        "OFF",
+        "1. Toggle",
+        "0. Back",
+        "Choice: ",
+        "INI file reading ENABLED!",
+        "INI file reading DISABLED!"
+    },
+
+    // Chinese (2)
+    {
+        "--- INI 或 STRUCT 设置 ---",
+        "当前状态: ",
+        "开启",
+        "关闭",
+        "1. 切换",
+        "0. 返回",
+        "选择: ",
+        "INI 文件读取已开启！",
+        "INI 文件读取已关闭！"
+    },
+
+    // Japanese (3)
+    {
+        "--- INI または STRUCT 設定 ---",
+        "現在の状態: ",
+        "オン",
+        "オフ",
+        "1. 切り替え",
+        "0. 戻る",
+        "選択: ",
+        "INIファイル読み込みが有効になりました！",
+        "INIファイル読み込みが無効になりました！"
+    },
+
+    // Spanish (4)
+    {
+        "--- Configuración INI o STRUCT ---",
+        "Estado actual: ",
+        "ACTIVADO",
+        "DESACTIVADO",
+        "1. Cambiar",
+        "0. Volver",
+        "Selección: ",
+        "¡Lectura de archivos INI ACTIVADA!",
+        "¡Lectura de archivos INI DESACTIVADA!"
+    },
+
+    // German (5)
+    {
+        "--- INI- oder STRUCT-Einstellungen ---",
+        "Aktueller Status: ",
+        "EINGESCHALTET",
+        "AUSGESCHALTET",
+        "1. Umschalten",
+        "0. Zurück",
+        "Auswahl: ",
+        "INI-Dateien lesen AKTIVIERT!",
+        "INI-Dateien lesen DEAKTIVIERT!"
+    },
+
+    // French (6)
+    {
+        "--- Paramètres INI ou STRUCT ---",
+        "État actuel : ",
+        "ACTIVÉ",
+        "DÉSACTIVÉ",
+        "1. Basculer",
+        "0. Retour",
+        "Choix: ",
+        "Lecture des fichiers INI ACTIVÉE !",
+        "Lecture des fichiers INI DÉSACTIVÉE !"
+    },
+
+    // Russian (7)
+    {
+        "--- Настройки INI или STRUCT ---",
+        "Текущее состояние: ",
+        "ВКЛЮЧЕНО",
+        "ВЫКЛЮЧЕНО",
+        "1. Переключить",
+        "0. Назад",
+        "Выбор: ",
+        "Чтение INI файлов ВКЛЮЧЕНО!",
+        "Чтение INI файлов ВЫКЛЮЧЕНО!"
+    },
+
+    // Ukrainian (8)
+    {
+        "--- Налаштування INI або STRUCT ---",
+        "Поточний стан: ",
+        "УВІМКНЕНО",
+        "ВИМКНЕНО",
+        "1. Перемкнути",
+        "0. Назад",
+        "Вибір: ",
+        "Читання INI файлів УВІМКНЕНО!",
+        "Читання INI файлів ВИМКНЕНО!"
+    },
+
+    // Korean (9)
+    {
+        "--- INI 또는 STRUCT 설정 ---",
+        "현재 상태: ",
+        "켜짐",
+        "꺼짐",
+        "1. 전환",
+        "0. 뒤로",
+        "선택: ",
+        "INI 파일 읽기 활성화됨!",
+        "INI 파일 읽기 비활성화됨!"
+    },
+
+    // Italian (10)
+    {
+        "--- Impostazioni INI o STRUCT ---",
+        "Stato corrente: ",
+        "ATTIVATO",
+        "DISATTIVATO",
+        "1. Cambia",
+        "0. Indietro",
+        "Scelta: ",
+        "Lettura file INI ATTIVATA!",
+        "Lettura file INI DISATTIVATA!"
+    },
+
+    // Polish (11)
+    {
+        "--- Ustawienia INI lub STRUCT ---",
+        "Aktualny stan: ",
+        "WŁĄCZONE",
+        "WYŁĄCZONE",
+        "1. Przełącz",
+        "0. Powrót",
+        "Wybór: ",
+        "Odczyt plików INI WŁĄCZONY!",
+        "Odczyt plików INI WYŁĄCZONY!"
+    },
+
+    // Arabic (12)
+{
+    "--- إعدادات INI أو STRUCT ---",
+    "الحالة الحالية: ",
+    "مفعل",
+    "معطل",
+    "1. تبديل",
+    "0. رجوع",
+    "اختيار: ",
+    "تم تفعيل قراءة ملفات INI!",
+    "تم تعطيل قراءة ملفات INI!"
+},
+
+    // Vietnamese (13)
+    {
+        "--- Cài đặt INI hoặc STRUCT ---",
+        "Trạng thái hiện tại: ",
+        "BẬT",
+        "TẮT",
+        "1. Chuyển đổi",
+        "0. Quay lại",
+        "Chọn: ",
+        "Đã BẬT đọc file INI!",
+        "Đã TẮT đọc file INI!"
+    },
+
+    // Tagalog (14)
+    {
+        "--- INI o STRUCT settings ---",
+        "Kasalukuyang estado: ",
+        "NAKA-ON",
+        "NAKA-OFF",
+        "1. Palitan",
+        "0. Bumalik",
+        "Piliin: ",
+        "NAKA-ON ang pagbasa ng INI files!",
+        "NAKA-OFF ang pagbasa ng INI files!"
+    },
+
+    // Greek (15)
+    {
+        "--- Ρυθμίσεις INI ή STRUCT ---",
+        "Τρέχουσα κατάσταση: ",
+        "ΕΝΕΡΓΟ",
+        "ΑΝΕΝΕΡΓΟ",
+        "1. Εναλλαγή",
+        "0. Πίσω",
+        "Επιλογή: ",
+        "Η ανάγνωση αρχείων INI ΕΝΕΡΓΟΠΟΙΗΘΗΚΕ!",
+        "Η ανάγνωση αρχείων INI ΑΠΕΝΕΡΓΟΠΟΙΗΘΗΚΕ!"
+    },
+
+    // Hebrew (16)
+{
+    "--- הגדרות INI או STRUCT ---",
+    "מצב נוכחי: ",
+    "מופעל",
+    "כבוי",
+    "1. החלף",
+    "0. חזור",
+    "בחירה: ",
+    "קריאת קבצי INI הופעלה!",
+    "קריאת קבצי INI בוטלה!"
+},
+
+    // Portuguese (17)
+    {
+        "--- Configurações INI ou STRUCT ---",
+        "Estado atual: ",
+        "ATIVADO",
+        "DESATIVADO",
+        "1. Alternar\n\n",
+        "0. Voltar",
+        "Seleção: ",
+        "Leitura de arquivos INI ATIVADA!",
+        "Leitura de arquivos INI DESATIVADA!"
+    },
+
+    // Farsi (18)
+{
+    "--- تنظیمات INI یا STRUCT ---",
+    "وضعیت فعلی: ",
+    "روشن",
+    "خاموش",
+    "1. تغییر",
+    "0. بازگشت",
+    "انتخاب: ",
+    "خواندن فایل‌های INI فعال شد!",
+    "خواندن فایل‌های INI غیرفعال شد!"
+},
+
+    // Swedish (19)
+    {
+        "--- INI- eller STRUCT-inställningar ---",
+        "Nuvarande status: ",
+        "PÅ",
+        "AV",
+        "1. Växla",
+        "0. Tillbaka",
+        "Val: ",
+        "INI-filläsning AKTIVERAD!",
+        "INI-filläsning INAKTIVERAD!"
+    },
+
+    // Dutch (20)
+    {
+        "--- INI- of STRUCT-instellingen ---",
+        "Huidige status: ",
+        "AAN",
+        "UIT",
+        "1. Wisselen",
+        "0. Terug",
+        "Keuze: ",
+        "INI-bestanden lezen INGESCHAKELD!",
+        "INI-bestanden lezen UITGESCHAKELD!"
+    },
+
+    // Turkish (21)
+    {
+        "--- INI veya STRUCT ayarları ---",
+        "Geçerli durum: ",
+        "AÇIK",
+        "KAPALI",
+        "1. Değiştir",
+        "0. Geri",
+        "Seçim: ",
+        "INI dosyası okuma AÇILDI!",
+        "INI dosyası okuma KAPATILDI!"
+    },
+
+    // Hindi (22)
+    {
+        "--- INI या STRUCT सेटिंग्स ---",
+        "वर्तमान स्थिति: ",
+        "चालू",
+        "बंद",
+        "1. बदलें",
+        "0. वापस",
+        "चयन: ",
+        "INI फ़ाइल पढ़ना चालू किया गया!",
+        "INI फ़ाइल पढ़ना बंद किया गया!"
+    },
+
+    // Latin (23)
+    {
+        "--- Optiones INI vel STRUCT ---",
+        "Status currentis: ",
+        "ACTIVUM",
+        "INACTIVUM",
+        "1. Commutare",
+        "0. Redire",
+        "Electio: ",
+        "Lectio fasciculorum INI ACTIVATA!",
+        "Lectio fasciculorum INI DEACTIVATA!"
     }
 };
 //======Vectors end =========
 
 // Létrehozza a lang.ini fájlt az alapértelmezett (hard-coded) fordításokkal
 void createDefaultLangIni() {
+    // Létrehozzuk a "lang" mappát, ha nem létezik
+    // Create the "lang" folder if it doesn't exist
+
+#ifdef _WIN32
+    std::system("if not exist lang mkdir lang"); // Windows
+#else
+    std::system("mkdir -p lang"); // Linux/macOS
+#endif
+
     // Ez a függvény fogja létrehozni a lang_XX.ini fájlokat
     // Minden nyelvre külön fájlt generálunk
     for (int langIndex = 0; langIndex < static_cast<int>(Language::COUNT); ++langIndex) {
@@ -9431,7 +9929,7 @@ void createDefaultLangIni() {
         else if (currentLang == Language::LATIN) langCode = "la";
         else continue; // Ismeretlen nyelv kihagyása
 
-        std::string fileName = "lang_" + langCode + ".ini";
+        std::string fileName = std::string("lang/") + "lang_" + langCode + ".ini";
         std::ofstream outFile(fileName);
         if (!outFile.is_open()) {
             std::cerr << "Error: Could not create " << fileName << std::endl;
@@ -9476,8 +9974,10 @@ void createDefaultLangIni() {
         outFile << "currentlyFolder=" << listAndSelectedFilesTranslations_hardcoded[langIndex].currentlyFolder << "\n";
         outFile << "emptyFolder=" << listAndSelectedFilesTranslations_hardcoded[langIndex].emptyFolder << "\n";
         outFile << "isDirectory=" << listAndSelectedFilesTranslations_hardcoded[langIndex].isDirectory << "\n";
+        outFile << "signs=" << listAndSelectedFilesTranslations_hardcoded[langIndex].signs << "\n";
         outFile << "commands=" << listAndSelectedFilesTranslations_hardcoded[langIndex].commands << "\n";
         outFile << "fullCommands=" << listAndSelectedFilesTranslations_hardcoded[langIndex].fullCommands << "\n";
+        outFile << "fullCommands2=" << listAndSelectedFilesTranslations_hardcoded[langIndex].fullCommands2 << "\n";
         outFile << "choice=" << listAndSelectedFilesTranslations_hardcoded[langIndex].choice << "\n";
 
         // --- RenameFilesAndFolders ---
@@ -9503,6 +10003,7 @@ void createDefaultLangIni() {
         outFile << "errorDangerousPath=" << copyFileFoldersTranslations_hardcoded[langIndex].errorDangerousPath << "\n";
         outFile << "toBeCopied=" << copyFileFoldersTranslations_hardcoded[langIndex].toBeCopied << "\n";
         outFile << "newNameNewPath=" << copyFileFoldersTranslations_hardcoded[langIndex].newNameNewPath << "\n";
+        outFile << "example=" << copyFileFoldersTranslations_hardcoded[langIndex].example << "\n";
         outFile << "errorDangerousGoalAndPath=" << copyFileFoldersTranslations_hardcoded[langIndex].errorDangerousGoalAndPath << "\n";
         outFile << "successCopying=" << copyFileFoldersTranslations_hardcoded[langIndex].successCopying << "\n";
         outFile << "anErrorOccurred=" << copyFileFoldersTranslations_hardcoded[langIndex].anErrorOccurred << "\n";
@@ -9611,6 +10112,9 @@ void createDefaultLangIni() {
         outFile << "vocabMenu1=" << vocabMenuTranslations_hardcoded[langIndex].vocabMenu1 << "\n";
         outFile << "vocabMenu2=" << vocabMenuTranslations_hardcoded[langIndex].vocabMenu2 << "\n";
         outFile << "vocabMenu3=" << vocabMenuTranslations_hardcoded[langIndex].vocabMenu3 << "\n";
+        outFile << "vocabMenu4=" << vocabMenuTranslations_hardcoded[langIndex].vocabMenu4 << "\n";
+        outFile << "vocabMenu5=" << vocabMenuTranslations_hardcoded[langIndex].vocabMenu5 << "\n";
+        outFile << "vocabMenuChoice=" << vocabMenuTranslations_hardcoded[langIndex].vocabMenuChoice << "\n";
         outFile << "vocabError1=" << vocabMenuTranslations_hardcoded[langIndex].vocabError1 << "\n";
         outFile << "vocabError2=" << vocabMenuTranslations_hardcoded[langIndex].vocabError2 << "\n";
 
@@ -9710,6 +10214,8 @@ void createDefaultLangIni() {
         outFile << "useSoundOn=" << soundOnOffTranslations_hardcoded[langIndex].useSoundOn << "\n";
         outFile << "useSoundOff=" << soundOnOffTranslations_hardcoded[langIndex].useSoundOff << "\n";
         outFile << "option1=" << soundOnOffTranslations_hardcoded[langIndex].option1 << "\n";
+        outFile << "option2=" << soundOnOffTranslations_hardcoded[langIndex].option2 << "\n";
+        outFile << "option3=" << soundOnOffTranslations_hardcoded[langIndex].option3 << "\n";
         outFile << "useSoundOn2=" << soundOnOffTranslations_hardcoded[langIndex].useSoundOn2 << "\n";
         outFile << "useSoundOff2=" << soundOnOffTranslations_hardcoded[langIndex].useSoundOff2 << "\n";
 
@@ -9754,6 +10260,8 @@ void createDefaultLangIni() {
         outFile << "stateON=" << iniStructTogglesTranslations_hardcoded[langIndex].stateON << "\n";
         outFile << "stateOff=" << iniStructTogglesTranslations_hardcoded[langIndex].stateOff << "\n";
         outFile << "switchingMenu=" << iniStructTogglesTranslations_hardcoded[langIndex].switchingMenu << "\n";
+        outFile << "switchingMenu2=" << iniStructTogglesTranslations_hardcoded[langIndex].switchingMenu2 << "\n";
+        outFile << "switchingMenu3=" << iniStructTogglesTranslations_hardcoded[langIndex].switchingMenu3 << "\n";
         outFile << "cStateON=" << iniStructTogglesTranslations_hardcoded[langIndex].cStateON << "\n";
         outFile << "cStateOff=" << iniStructTogglesTranslations_hardcoded[langIndex].cStateOff << "\n";
 
@@ -9895,8 +10403,10 @@ std::string getTranslation(const std::string& key) {
     else if (key == "ListAndSelectedFile.currentlyFolder") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].currentlyFolder;
     else if (key == "ListAndSelectedFile.emptyFolder") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].emptyFolder;
     else if (key == "ListAndSelectedFile.isDirectory") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].isDirectory;
+    else if (key == "ListAndSelectedFile.signs") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].signs;
     else if (key == "ListAndSelectedFile.commands") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].commands;
     else if (key == "ListAndSelectedFile.fullCommands") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].fullCommands;
+    else if (key == "ListAndSelectedFile.fullCommands2") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].fullCommands2;
     else if (key == "ListAndSelectedFile.choice") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].choice;
 
     // RenameFilesAndFolders
@@ -9918,6 +10428,7 @@ std::string getTranslation(const std::string& key) {
     else if (key == "CopyFileFolders.errorDangerousPath") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorDangerousPath;
     else if (key == "CopyFileFolders.toBeCopied") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].toBeCopied;
     else if (key == "CopyFileFolders.newNameNewPath") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].newNameNewPath;
+    else if (key == "CopyFileFolders.example") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].example;
     else if (key == "CopyFileFolders.errorDangerousGoalAndPath") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorDangerousGoalAndPath;
     else if (key == "CopyFileFolders.successCopying") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].successCopying;
     else if (key == "CopyFileFolders.anErrorOccurred") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].anErrorOccurred;
@@ -10007,6 +10518,9 @@ std::string getTranslation(const std::string& key) {
     else if (key == "VocabMenu.vocabMenu1") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabMenu1;
     else if (key == "VocabMenu.vocabMenu2") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabMenu2;
     else if (key == "VocabMenu.vocabMenu3") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabMenu3;
+    else if (key == "VocabMenu.vocabMenu4") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabMenu4;
+    else if (key == "VocabMenu.vocabMenu5") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabMenu5;
+    else if (key == "VocabMenu.vocabMenuChoice") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabMenuChoice;
     else if (key == "VocabMenu.vocabError1") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabError1;
     else if (key == "VocabMenu.vocabError2") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabError2;
 
@@ -10097,6 +10611,8 @@ std::string getTranslation(const std::string& key) {
     else if (key == "SoundOnOff.useSoundOn") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].useSoundOn;
     else if (key == "SoundOnOff.useSoundOff") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].useSoundOff;
     else if (key == "SoundOnOff.option1") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].option1;
+    else if (key == "SoundOnOff.option2") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].option2;
+    else if (key == "SoundOnOff.option3") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].option3;
     else if (key == "SoundOnOff.useSoundOn2") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].useSoundOn2;
     else if (key == "SoundOnOff.useSoundOff2") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].useSoundOff2;
 
@@ -10136,6 +10652,8 @@ std::string getTranslation(const std::string& key) {
     else if (key == "IniStructToggle.stateON") return iniStructTogglesTranslations_hardcoded[static_cast<int>(programUiLanguage)].stateON;
     else if (key == "IniStructToggle.stateOff") return iniStructTogglesTranslations_hardcoded[static_cast<int>(programUiLanguage)].stateOff;
     else if (key == "IniStructToggle.switchingMenu") return iniStructTogglesTranslations_hardcoded[static_cast<int>(programUiLanguage)].switchingMenu;
+    else if (key == "IniStructToggle.switchingMenu2") return iniStructTogglesTranslations_hardcoded[static_cast<int>(programUiLanguage)].switchingMenu2;
+    else if (key == "IniStructToggle.switchingMenu3") return iniStructTogglesTranslations_hardcoded[static_cast<int>(programUiLanguage)].switchingMenu3;
     else if (key == "IniStructToggle.cStateON") return iniStructTogglesTranslations_hardcoded[static_cast<int>(programUiLanguage)].cStateON;
     else if (key == "IniStructToggle.cStateOff") return iniStructTogglesTranslations_hardcoded[static_cast<int>(programUiLanguage)].cStateOff;
 

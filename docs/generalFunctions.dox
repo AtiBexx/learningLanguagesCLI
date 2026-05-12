@@ -1,0 +1,303 @@
+```cpp id="genfunc_dox_1"
+/**
+ * @file generalFunctions.cpp
+ * @brief Global utility functions module.
+ * @brief Globális segédfüggvények modul.
+ *
+ * @details
+ *
+ * EN:
+ * This module contains core utility functions used across the application.
+ * It provides functionality for:
+ *
+ * - Console control (screen clearing, beep sound, input pause)
+ * - Error logging system
+ * - File-based mistake tracking system
+ * - String processing utilities (trim, lowercase, punctuation removal)
+ * - Accent removal for Hungarian text normalization
+ *
+ * These functions are used by multiple modules such as:
+ * menu system, quiz system, editor, and input handling.
+ *
+ * HU:
+ * Ez a modul az alkalmazásban használt alap segédfüggvényeket tartalmazza.
+ * Funkciói:
+ *
+ * - Konzol vezérlés (képernyőtörlés, hangjelzés, várakozás)
+ * - Hibakezelő naplózási rendszer
+ * - Hibás szavak fájlba mentése
+ * - Szöveg feldolgozó függvények (trim, kisbetűsítés, írásjelek eltávolítása)
+ * - Ékezetek eltávolítása magyar szöveg normalizáláshoz
+ *
+ * Ezeket több modul is használja:
+ * menürendszer, kvíz, szerkesztő, input kezelés.
+ */
+
+#include "generalFunctions.h"
+#include "../Translate/translations.h"
+#include <iostream>
+#include <limits>
+#include <string>
+#include <fstream>
+#include <ctime>
+#include <windows.h>
+#include <map>
+#include "dataFileReading.h"
+#include "settings.h"
+#include "Settings/colors.h"
+
+/* =========================================================
+   EXPLANATION FUNCTION
+   ========================================================= */
+
+/**
+ * @brief Shows program explanation screen.
+ * @brief Megjeleníti a program leírását.
+ *
+ * EN:
+ * Displays instructions and usage information.
+ * Waits for user input before returning.
+ *
+ * HU:
+ * Kiírja a használati útmutatót és leírást.
+ * Vár a felhasználói bemenetre.
+ */
+void explanation()
+{
+    screenWipe();
+
+    std::cout << getTranslation("ExplanationStrings.description") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction1") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction2") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction3") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction4") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction5") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction6") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction7") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction8") << "\n";
+    std::cout << getTranslation("ExplanationStrings.instruction9") << "\n";
+    std::cout << getTranslation("ExplanationStrings.goodLuck") << "\n";
+
+    waitToEnter();
+}
+
+/* =========================================================
+   INPUT PAUSE
+   ========================================================= */
+
+/**
+ * @brief Waits for Enter key press.
+ * @brief Várakozik Enter lenyomására.
+ */
+void waitToEnter()
+{
+    std::cout << getTranslation("EnteringBack.pressToEnter") << "\n" << std::flush;
+    std::cin.get();
+}
+
+/* =========================================================
+   EXIT HANDLING
+   ========================================================= */
+
+/**
+ * @brief Displays exit message and waits for user.
+ * @brief Kilépési üzenetet jelenít meg és vár.
+ */
+void exiting()
+{
+    screenWipe();
+
+    std::cout << getTranslation("ExitingStrings.exiting") << "\n" << std::flush;
+
+    std::cin.get();
+}
+
+/* =========================================================
+   SCREEN MANAGEMENT
+   ========================================================= */
+
+/**
+ * @brief Clears terminal screen and applies color settings.
+ * @brief Letörli a képernyőt és alkalmazza a színeket.
+ */
+void screenWipe()
+{
+    if (useColors && !currentBG.empty())
+        std::cout << currentBG;
+    else
+        std::cout << colors::RESET;
+
+    std::cout << "\x1B[2J\x1B[H\x1B[3J" << std::flush;
+}
+
+/* =========================================================
+   INPUT BUFFER CLEAR
+   ========================================================= */
+
+/**
+ * @brief Clears input buffer.
+ * @brief Törli a bemeneti puffert.
+ */
+void pufferDelete()
+{
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+/* =========================================================
+   ERROR LOGGING
+   ========================================================= */
+
+/**
+ * @brief Logs error into file with timestamp.
+ * @brief Hibát naplóz fájlba időbélyeggel.
+ */
+void logError(const std::string& functionName,
+              const std::string& errorMessage)
+{
+    std::ofstream logFile("error.log", std::ios::app);
+
+    if (logFile.is_open())
+    {
+        std::time_t now = std::time(nullptr);
+        char timestamp[20];
+
+        std::strftime(timestamp, sizeof(timestamp),
+                      "%Y-%m-%d %H:%M:%S",
+                      std::localtime(&now));
+
+        logFile << "[" << timestamp << "] ["
+                << functionName << "] "
+                << errorMessage << "\n";
+
+        logFile.close();
+    }
+}
+
+/* =========================================================
+   MISTAKE LOGGING
+   ========================================================= */
+
+/**
+ * @brief Saves wrong answers to file.
+ * @brief Hibás válaszokat fájlba menti.
+ */
+void logMistakeWriteFile(const WordPair& word)
+{
+#ifdef _WIN32
+    std::system("if not exist data\\mistakes mkdir data\\mistakes");
+    std::string path = "data\\mistakes\\mistakes.data";
+#else
+    std::system("mkdir -p data/mistakes");
+    std::string path = "data/mistakes/mistakes.data";
+#endif
+
+    std::ofstream file(path, std::ios::app);
+
+    if (file.is_open())
+    {
+        file << word.targetLangMeaning << " -> "
+             << word.motherLangMeaning;
+
+        if (!word.pronunciation.empty())
+            file << " (" << word.pronunciation << ")";
+
+        file << "\n";
+        file.close();
+    }
+}
+
+/* =========================================================
+   SOUND
+   ========================================================= */
+
+/**
+ * @brief Plays system beep.
+ * @brief Rendszerhangot játszik le.
+ */
+void playBeep(int frequency, int duration)
+{
+    if (!useSound) return;
+
+#ifdef _WIN32
+    Beep(frequency, duration);
+#else
+    std::cout << "\a" << std::flush;
+#endif
+}
+
+/* =========================================================
+   STRING UTILITIES
+   ========================================================= */
+
+/**
+ * @brief Removes punctuation.
+ * @brief Eltávolítja az írásjeleket.
+ */
+std::string removePunctuation(const std::string& s)
+{
+    std::string result;
+
+    for (char c : s)
+        if (c != '!' && c != '?' && c != '.' &&
+            c != ',' && c != ';')
+            result += c;
+
+    return result;
+}
+
+/**
+ * @brief Removes accents from Hungarian text.
+ * @brief Ékezeteket eltávolítja a szövegből.
+ */
+std::string removeAccents(const std::string &s)
+{
+    static const std::map<std::string, std::string> accentMap =
+    {
+        {"á","a"},{"é","e"},{"í","i"},{"ó","o"},{"ö","o"},{"ő","o"},
+        {"ú","u"},{"ü","u"},{"ű","u"},
+        {"Á","a"},{"É","e"},{"Í","i"},{"Ó","o"},{"Ö","o"},{"Ő","o"},
+        {"Ú","u"},{"Ü","u"},{"Ű","u"}
+    };
+
+    std::string result;
+
+    for (size_t i = 0; i < s.length(); )
+    {
+        bool found = false;
+
+        for (const auto& p : accentMap)
+        {
+            if (s.compare(i, p.first.length(), p.first) == 0)
+            {
+                result += p.second;
+                i += p.first.length();
+                found = true;
+                break;
+            }
+        }
+
+        if (!found)
+        {
+            result += s[i];
+            i++;
+        }
+    }
+
+    return result;
+}
+
+/**
+ * @brief Cleans string (lowercase, trim, punctuation, accents).
+ * @brief Szöveg tisztítása (kisbetű, trim, írásjel, ékezet).
+ */
+std::string cleanString(const std::string& s)
+{
+    std::string result = toLowerCase(trim(s));
+    result = removePunctuation(result);
+
+    if (ignoreAccents)
+        result = removeAccents(result);
+
+    return result;
+}
+```

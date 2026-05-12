@@ -1,3 +1,4 @@
+```
 /**
  * @file dataFileReading.cpp
  * @author AtiBexx2
@@ -49,7 +50,9 @@
 #include "translations.h"
 
 
-//
+//Régi stílus a röviditésre
+//typedef std::string string;
+//ez az uj stílus
 using string = std::string;
 using stringstream = std::stringstream;
 using std::transform;
@@ -67,6 +70,26 @@ string toLowerCase(string s) {
     transform(s.begin(),s.end(),s.begin(), ::tolower);
     return s;
 }
+/*
+string toLowerCase(string s) {
+    // Végigmegyünk a karaktereken egyenként
+    for (size_t i = 0; i < s.length(); ++i) {
+        // Minden karaktert átalakítunk kisbetűssé
+        s[i] = std::tolower(s[i]);
+    }
+    return s;
+}
+ */ //vagy
+/*
+string toLowerCase(string s) {
+    // Referenciával (&) megyünk végig, hogy módosíthassuk az eredeti karaktert
+    for (char &c : s) {
+        c = std::tolower(c);
+    }
+    return s;
+}
+ */
+
 
 // függvény a szóközök levágására (trim)
 // function to trim spaces (trim)
@@ -165,4 +188,5 @@ vector<WordPair> loadWords(const std::string &filename) {
     file.close();
     return words;
 }
+```
 

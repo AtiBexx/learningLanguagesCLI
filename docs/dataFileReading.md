@@ -1,3 +1,4 @@
+```
 /**
  * @file dataFileReading.cpp
  * @author AtiBexx2
@@ -49,7 +50,9 @@
 #include "translations.h"
 
 
-//
+//Régi stílus a röviditésre
+//typedef std::string string;
+//ez az uj stílus
 using string = std::string;
 using stringstream = std::stringstream;
 using std::transform;
@@ -165,4 +168,5 @@ vector<WordPair> loadWords(const std::string &filename) {
     file.close();
     return words;
 }
+```
 

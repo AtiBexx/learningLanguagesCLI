@@ -1,9 +1,7 @@
+```
 //
 // Created by AtiBexx2 on 2026. 03. 24.
 //
-/**
- *@page programQuiz.doc
- */
 
 #include "programQuiz.h"
 #include "../FileIO/dataFileReading.h"
@@ -19,28 +17,37 @@
 #include "Settings/languageList.h"
 
 void scoreSystem(int correct, int badly, unsigned long long total) {
+    //Fordítások betöltése és a sikerességi százalék kiszámítása
+    //const ScoreSys &scoresys = totalTranslations[static_cast<int>(programUiLanguage)];
+    //const PercentAge &percentAgeStr = percentAgeTranslations[static_cast<int>(programUiLanguage)];
 
     double percentAge = (total > 0) ? (static_cast<double>(correct) / static_cast<double>(total)) * 100.0 : 0.0;
 
     //Részletes pontszámstatisztikák megjelenítése
     //Show detailed score statistics
-    std:: cout << getTranslation("ScoreSys.total") <<"\n\n" << std::flush;
+    std:: cout << getTranslation("ScoreSys.total") <<"\n" << std::flush;
     std:: cout << getTranslation("ScoreSys.allQuestion") << total <<"\n" << std::flush;
     std:: cout << getTranslation("ScoreSys.correct") << correct <<"\n" << std::flush;
     std:: cout << getTranslation("ScoreSys.badly") << badly <<"\n" << std::flush;
     std:: cout << getTranslation("ScoreSys.percent") << percentAge << "%" <<"\n" << std::flush;
 
+    /*std::cout << scoresys.total << std::endl;
+    std::cout << scoresys.allQuestion << total << std::endl;
+    std::cout << scoresys.correct << correct << std::endl;
+    std::cout << scoresys.badly << badly << std::endl;
+    std::cout << scoresys.percent << percentAge << "%" << std::endl;*/
+
     //Végső értékelő üzenet megjelenítése a százalékos arány alapján
     //Display final evaluation message based on percentage
     if (percentAge >= 99.9) {
         std::cout << getTranslation("PercentAge.percentAge100") <<"\n" << std::flush;
-
+        //std::cout << percentAgeStr.percentAge100 << std::endl;
     } else if (percentAge >= 80.0 ) {
         std::cout << getTranslation("PercentAge.percentAge80") <<"\n" << std::flush;
-
+        //std:: cout << percentAgeStr.percentAge80 << std::endl;
     } else {
         std::cout << getTranslation("PercentAge.percentAgeElse") <<"\n" << std::flush;
-
+        //std::cout << percentAgeStr.percentAgeElse << std::endl;
     }
 }
 
@@ -48,6 +55,14 @@ void scoreSystem(int correct, int badly, unsigned long long total) {
 //Quiz question logic
 void startQuiz (const std::vector<WordPair>& words)
 {
+    /*const HaveNoWords &haveNoWords = haveNoWordsTranslations[static_cast<int>(programUiLanguage)];
+    const ReTry &reTry = reTryTranslations[static_cast<int>(programUiLanguage)];
+    const BadlyAnswer &badlyAnswer = badlyAnswerTranslations[static_cast<int>(programUiLanguage)];
+    const GoodAnswer1 &goodAnswer1 = goodAnswer1Translations[static_cast<int>(programUiLanguage)];
+    const GoodAnswer2 &goodAnswer2 = goodAnswer2Translations[static_cast<int>(programUiLanguage)];
+    const PronunciationString &pronunciation2str = pronunciationStringTranslations[static_cast<int>(programUiLanguage)];
+    const HaveFinished &haveFinished = haveFinishedTranslations[static_cast<int>(programUiLanguage)];
+    const QuizExplanation &quizExplanation = quizExplanationTranslations[static_cast<int>(programUiLanguage)];*/
 
     loadSettings();
     // Ha üres a fájl
@@ -55,6 +70,7 @@ void startQuiz (const std::vector<WordPair>& words)
     if (words.empty()) {
         screenWipe();
         std::cout << getTranslation("HaveNoWords.haveNoWords") <<"\n" << std::flush;
+        //std::cout << haveNoWords.haveNoWords << std::endl;
         waitToEnter();
         return;
     }
@@ -80,6 +96,10 @@ void startQuiz (const std::vector<WordPair>& words)
             std::cout <<getTranslation("QuizExplanation.quizExplanation2") << "\n" << std::flush;
             std::cout <<getTranslation("QuizExplanation.quizExplanation3") << "\n" << std::flush;
             std::cout << getLanguageNameByIndex(programUiLanguage, motherLanguage) << ": " << word.motherLangMeaning << "\n" << std::flush;
+            /*std::cout << quizExplanation.quizExplanation1 << std::endl;
+            std::cout << quizExplanation.quizExplanation2 << std::endl;
+            std::cout << quizExplanation.quizExplanation3 << std::endl;
+            std::cout << getLanguageNameByIndex(programUiLanguage, motherLanguage) << ": " << word.motherLangMeaning << std::endl;*/
 
             // A súgó be van kapcsolva , akkor itt kiírjuk
             if (showHelp) {
@@ -122,6 +142,7 @@ void startQuiz (const std::vector<WordPair>& words)
                 continue; // Újraindul a kör, és már nem írja ki
             }
 
+            //if (toLowerCase(removePunctuation(trim(answer))) == toLowerCase(removePunctuation(word.targetLangMeaning))) {
             if (cleanString(answer) == cleanString(word.targetLangMeaning)) {
                 //kiíratás színe(Helyesválasz)
                 //printout color(Correct answer)
@@ -130,13 +151,16 @@ void startQuiz (const std::vector<WordPair>& words)
                     std::cout << colors::GREEN;
                     std::cout << "\n" << getTranslation("GoodAnswer1.goodAnswer1");
 
+                    //std::cout << "\n" << goodAnswer1.goodAnswer1;
                     std::cout << colors::RESET; //visszaállítjuk a színét || restore the color
                 } else
                 {
                     std::cout << "\n" << getTranslation("GoodAnswer1.goodAnswer1");
+                    //std::cout << "\n" << goodAnswer1.goodAnswer1;
                 }
                 if (!word.pronunciation.empty()) {
                     std::cout << " " << getTranslation("PronunciationString.pronunciation2str") <<"[" << word.pronunciation << "]";
+                    //std::cout << " " << pronunciation2str.pronunciation2str <<"[" << word.pronunciation << "]";
                 }
                 std::cout << std::endl;
 
@@ -159,11 +183,13 @@ void startQuiz (const std::vector<WordPair>& words)
                 //only print incorrect answers in red if useColors is true
                 if (useColors) std::cout << colors::RED;
                 std::cout << "\n" << getTranslation("BadlyAnswer.badlyAnswer") << "\n" << std::flush;
-
+                //std::cout << "\n" << badlyAnswer.badlyAnswer << std::endl;
                 if (useColors) std::cout << colors::RESET;
-                std::cout << "\n" << getTranslation("GoodAnswer2.goodAnswer2") << " " << word.targetLangMeaning << "\n" << std::flush;
 
+                std::cout << "\n" << getTranslation("GoodAnswer2.goodAnswer2") << " " << word.targetLangMeaning << "\n" << std::flush;
+                //std::cout << goodAnswer2.goodAnswer2 << " " << word.targetLangMeaning << std::endl;
                 std::cout << "\n" << getTranslation("ReTry.reTry");
+                //std::cout << "\n" << reTry.reTry;
                 std::cin.get();
             }
         }
@@ -175,14 +201,16 @@ void startQuiz (const std::vector<WordPair>& words)
         if (!oneRoundQuiz) {
             for (;;) {
                 screenWipe();
-
+                /*std::cout << quizExplanation.quizExplanation1 << std::endl;
+                std::cout << quizExplanation.quizExplanation2 << std::endl;
+                std::cout << quizExplanation.quizExplanation3 << std::endl;*/
                 std::cout << getTranslation("QuizExplanation.quizExplanation1") << "\n" << std::flush;
                 std::cout << getTranslation("QuizExplanation.quizExplanation2") << "\n" << std::flush;
                 std::cout << getTranslation("QuizExplanation.quizExplanation3") << "\n" << std::flush;
 
                 std::cout << getLanguageNameByIndex(programUiLanguage, targetLanguage) << ": " << word.targetLangMeaning << std::endl;
 
-                // A súgó be van kapcsolva , akkor itt kiírjuk || If help is turned on, it will be displayed here
+                // A súgó be van kapcsolva , akkor itt kiírjuk
                 if (showHelp) {
                     std::cout << "CheatSheet: " << colors::GREY << word.motherLangMeaning << colors::RESET << std::endl;
                 }
@@ -194,7 +222,7 @@ void startQuiz (const std::vector<WordPair>& words)
                     showHelp = !showHelp; // Toggle a súgót
                     if (showHelp) helperUsed = true;
                     saveSettings();
-                    continue; // Újraindul a kör az új súgó állapottal || The round restarts with the new help status
+                    continue; // Újraindul a kör az új súgó állapottal
                 }
 
                 std::string answer = inputResult.text; // A válasz || The Answer
@@ -222,15 +250,17 @@ void startQuiz (const std::vector<WordPair>& words)
 
                 if (checkMultipleAnswers(answer, word.motherLangMeaning)) {
                     // a helyes válasz színe ha az useColor == true
-                    // the color of the correct answer if useColor == true
+                    // // the color of the correct answer if useColor == true
 
                     if (useColors) std::cout << colors::GREEN;
                     std::cout << "\n" << getTranslation ("GoodAnswer1.goodAnswer1");
+                    //std::cout << "\n" << goodAnswer1.goodAnswer1;
                     if (useColors) std::cout << colors::RESET;
 
                     if (!word.pronunciation.empty()) {
                         std::cout << " " << getTranslation("PronunciationString.pronunciation2str") <<"["<< word.pronunciation << "]";
 
+                        //std::cout << " " << pronunciation2str.pronunciation2str <<"["<< word.pronunciation << "]";
                     }
                     std::cout << std::endl;
 
@@ -252,11 +282,13 @@ void startQuiz (const std::vector<WordPair>& words)
                     //only print incorrect answers in red if useColors is true
                     if (useColors) std::cout << colors::RED;
                     std::cout << "\n" << getTranslation("BadlyAnswer.badlyAnswer") << "\n" << std::flush;
-
+                    //std::cout << "\n" << badlyAnswer.badlyAnswer << std::endl;
                     if (useColors) std::cout << colors::RESET;
-                    std::cout << getTranslation("GoodAnswer2.goodAnswer2") << " " << word.motherLangMeaning << "\n" << std::flush;
 
+                    std::cout << getTranslation("GoodAnswer2.goodAnswer2") << " " << word.motherLangMeaning << "\n" << std::flush;
+                    //std::cout << goodAnswer2.goodAnswer2 << " " << word.motherLangMeaning << std::endl;
                     std::cout << "\n" << getTranslation("ReTry.reTry");
+                    //std::cout << "\n" << reTry.reTry;
                     std::cin.get();
                 }
             }
@@ -267,5 +299,8 @@ void startQuiz (const std::vector<WordPair>& words)
     scoreSystem(firstTryCorrect, badlyAnswers, totalQuestions);
 
     std::cout << "\n" << getTranslation ("HaveFinished.haveFinished") << "\n" << std::flush;
+    //std::cout << "\n" << haveFinished.haveFinished << std::endl;
     waitToEnter();
 }
+```
+

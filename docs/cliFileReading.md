@@ -1,3 +1,4 @@
+```
 /**
  *@page cliFileReading.doc
  * @file cliFileReading.cpp
@@ -68,20 +69,11 @@ void copyFileFolders(const std::string& srcPath, bool isDirectory) {
     }
 
     cout << getTranslation("CopyFileFolders.toBeCopied") << srcPath << "\n" << std::flush;
+
     cout << getTranslation("CopyFileFolders.newNameNewPath") << "\n" << std::flush;
 
-    InputResult inputResult = readLineWithHotkey(getTranslation("CopyFileFolders.example"));
-
-    // -----CTRL + C Kezelése || CTRL + C Handling
-        if (inputResult.exitTriggered)
-        {
-            playBeep();
-            return;
-        }
-
-        string destName = inputResult.text;
-        string destPath = trim(destName);
-
+    string destName; std::getline(std::cin, destName);
+    string destPath = trim(destName);
     if (!isPathSafe(destPath)) {
         logError("copyFileFolders", "Dangerous destination path: " + destPath);
         cout << getTranslation("CopyFileFolders.errorDangerousGoalAndPath") <<"\n" << std::flush;
@@ -116,17 +108,7 @@ void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
         return;
     }
     cout << getTranslation("DeleteFileFolders.toBeDeleted") << fullPath << "? (y/n): ";
-
-    InputResult inputResult = readLineWithHotkey("");
-
-    // -----CTRL + C Kezelése || CTRL + C Handling
-    if (inputResult.exitTriggered)
-    {
-        playBeep();
-        return;
-    }
-
-    string confirm = inputResult.text;
+    string confirm; std::getline(std::cin, confirm);
 
     if (toLowerCase(trim(confirm)) != "y") {
         cout << getTranslation("DeleteFileFolders.interrupted") <<"\n" << std::flush;
@@ -160,21 +142,10 @@ void movingFileFolders(const std::string& srcPath, bool isDirectory) {
 
     if (!isPathSafe(srcPath)) { waitToEnter(); return; }
 
-    cout << getTranslation("MovingFileFolders.toBeMoved") << srcPath << "\n" << getTranslation("MovingFileFolders.newNameNewPath");
+    cout << getTranslation("MovingFileFolders.toBeMoved") << getTranslation("MovingFileFolders.newNameNewPath");
 
-    InputResult inputResult = readLineWithHotkey("");
-
-    // -----CTRL + C Kezelése || CTRL + C Handling
-    if (inputResult.exitTriggered)
-    {
-        playBeep();
-        return;
-    }
-
-    string destName = inputResult.text;
+    string destName; std::getline(std::cin, destName);
     string destPath = trim(destName);
-
-
     if (!isPathSafe(destPath)) { waitToEnter(); return; }
 
     std::string nSrc = normalizePath(srcPath);
@@ -195,7 +166,7 @@ void reNameFileFolders(const std::string& srcPath, bool isDirectory) {
 
     if (!isPathSafe(srcPath)) { waitToEnter(); return; }
 
-    cout << getTranslation("RenameFilesAndFolders.toBeRenamed") << srcPath << "\n" << getTranslation("RenameFilesAndFolders.newName");
+    cout << getTranslation("RenameFilesAndFolders.toBeRenamed") << srcPath << getTranslation("RenameFilesAndFolders.newName");
 
     // --- INPUT BEOLVASÁSA readLineWithHotkey-el ---
     // --- Input reading with readLineWithHotkey ---
@@ -209,6 +180,12 @@ void reNameFileFolders(const std::string& srcPath, bool isDirectory) {
     string newName = newNameInput.text;
     newName = trim(newName);
 
+    // --- "exit" vagy "e" parancs kezelése ---
+    // --- "exit" vagy "e" command handling ---
+    if (toLowerCase(newName) == "exit" || toLowerCase(newName) == "e") {
+        playBeep();
+        return; // Kilép a függvényből || Exit the function
+    }
 
     size_t lastSlash = srcPath.find_last_of("/\\");
     string destPath = ((lastSlash == string::npos) ? "" : srcPath.substr(0, lastSlash + 1)) + newName;
@@ -287,7 +264,7 @@ void listAndSelectFile() {
         cout << getTranslation("ListAndSelectedFile.currentlyFolder") << path << " ---\n";
         vector<FileEntry> entries = listFiles(path);
 
-        if (entries.empty()) cout << getTranslation("ListAndSelectedFile.emptyFolder") << "\n";
+        if (entries.empty()) cout << getTranslation("ListAndSelectedFile.emptyFolder");
 
         else
         {
@@ -296,12 +273,11 @@ void listAndSelectFile() {
         }
 
 
-        cout << getTranslation("ListAndSelectedFile.signs") <<"\n";
-        cout << getTranslation("ListAndSelectedFile.commands") <<"\n";
-        cout << getTranslation("ListAndSelectedFile.fullCommands") <<"\n";
-        cout << getTranslation("ListAndSelectedFile.fullCommands2") <<"\n";
 
-        InputResult inputResult = readLineWithHotkey("\n" + getTranslation("ListAndSelectedFile.choice"));
+        cout << getTranslation("ListAndSelectedFile.commands") <<"\n";
+        cout << getTranslation("ListAndSelectedFile.commands2") <<"\n";
+
+        InputResult inputResult = readLineWithHotkey(getTranslation("ListAndSelectedFile.choice"));
 
         //---CTRL + C KEZELÉSE || CTRL + C HANDLING
         if (inputResult.exitTriggered)
@@ -434,6 +410,5 @@ bool createDirectory(const std::string& path)
         return false;
     }
 }
-
-
+```
 

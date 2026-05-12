@@ -1,3 +1,4 @@
+```c++
 /**
  *@page cliFileReading.doc
  * @file cliFileReading.cpp
@@ -59,32 +60,27 @@ bool isPathSafe(const std::string& path) {
 // Fájlt vagy mappát másol
 // Copy a file or folder
 void copyFileFolders(const std::string& srcPath, bool isDirectory) {
+    //const struct CopyFileFolders &CFF = copyFileFoldersTranslations [static_cast<int>(programUiLanguage)];
 
     if (!isPathSafe(srcPath)) {
         logError("copyFileFolders", "Dangerous source path: " + srcPath);
         cout << getTranslation("CopyFileFolders.errorDangerousPath") <<"\n" << std::flush;
+        //cout << CFF.errorDangerousPath << endl;
         waitToEnter();
         return;
     }
 
     cout << getTranslation("CopyFileFolders.toBeCopied") << srcPath << "\n" << std::flush;
+    //cout << CFF.toBeCopied << srcPath << endl;
+
     cout << getTranslation("CopyFileFolders.newNameNewPath") << "\n" << std::flush;
+    //cout << CFF.newNameNewPath;
 
-    InputResult inputResult = readLineWithHotkey(getTranslation("CopyFileFolders.example"));
-
-    // -----CTRL + C Kezelése || CTRL + C Handling
-        if (inputResult.exitTriggered)
-        {
-            playBeep();
-            return;
-        }
-
-        string destName = inputResult.text;
-        string destPath = trim(destName);
-
+    string destName; std::getline(std::cin, destName);
+    string destPath = trim(destName);
     if (!isPathSafe(destPath)) {
-        logError("copyFileFolders", "Dangerous destination path: " + destPath);
         cout << getTranslation("CopyFileFolders.errorDangerousGoalAndPath") <<"\n" << std::flush;
+        //cout << CFF.errorDangerousGoalAndPath << endl;
         waitToEnter();
         return;
     }
@@ -98,39 +94,33 @@ void copyFileFolders(const std::string& srcPath, bool isDirectory) {
     command = "cp -r -p \"" + nSrc + "\" \"" + nDest + "\"";
 #endif
     if (std::system(command.c_str()) == 0) cout << getTranslation("CopyFileFolders.successCopying") <<"\n" << std::flush;
+       // cout << CFF.successCopying << endl;
 
     else cout << getTranslation("CopyFileFolders.anErrorOccurred") <<"\n" << std::flush;
-
+        //cout << CFF.anErrorOccurred << endl;
     waitToEnter();
 }
 
 // Törli a fájlt vagy mappát
 // Delete a file or folder
 void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
+    //const struct DeleteFileFolders &DDFF = deleteFileFoldersTranslations [static_cast<int>(programUiLanguage)];
 
     if (!isPathSafe(fullPath)) {
+        //logError("deleteFileFolders", DDFF.errorDfDangerousPath + fullPath);
         logError ("deleteFileFolders", getTranslation("DeleteFileFolders.errorDangerousPath") + fullPath);
         cout << getTranslation("DeleteFileFolders.errorDangerousPath") <<"\n" << std::flush;
-
+        //cout << DDFF.errorDfDangerousPath << endl;
         waitToEnter();
         return;
     }
     cout << getTranslation("DeleteFileFolders.toBeDeleted") << fullPath << "? (y/n): ";
-
-    InputResult inputResult = readLineWithHotkey("");
-
-    // -----CTRL + C Kezelése || CTRL + C Handling
-    if (inputResult.exitTriggered)
-    {
-        playBeep();
-        return;
-    }
-
-    string confirm = inputResult.text;
+    //cout << DDFF.confirmationDelete << fullPath << "? (y/n): ";
+    string confirm; std::getline(std::cin, confirm);
 
     if (toLowerCase(trim(confirm)) != "y") {
         cout << getTranslation("DeleteFileFolders.interrupted") <<"\n" << std::flush;
-
+        //std::cout << DDFF.interrupted <<"\n";
         waitToEnter();
         return;
     }
@@ -145,11 +135,11 @@ void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
 
     if (std::system(command.c_str()) == 0) {
         cout << getTranslation("DeleteFileFolders.successDelete") <<"\n" << std::flush;
-
+        //std::cout << DDFF.successDelete << std::endl;
     } else {
         logError("deleteFileFolders", getTranslation("DeleteFileFolders.errorDelete") + fullPath);
         cout << getTranslation("DeleteFileFolders.errorDelete") <<"\n" << std::flush;
-
+        //std::cout << DDFF.errorDelete <<"\n";
     }
     waitToEnter();
 }
@@ -157,24 +147,13 @@ void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
 // Áthelyezi a fájlt vagy mappát
 // Move a file or folder
 void movingFileFolders(const std::string& srcPath, bool isDirectory) {
-
+    //const struct MovingFileFolders &MFF = movingFileFoldersTranslations [static_cast<int>(programUiLanguage)];
     if (!isPathSafe(srcPath)) { waitToEnter(); return; }
 
-    cout << getTranslation("MovingFileFolders.toBeMoved") << srcPath << "\n" << getTranslation("MovingFileFolders.newNameNewPath");
-
-    InputResult inputResult = readLineWithHotkey("");
-
-    // -----CTRL + C Kezelése || CTRL + C Handling
-    if (inputResult.exitTriggered)
-    {
-        playBeep();
-        return;
-    }
-
-    string destName = inputResult.text;
+    cout << getTranslation("MovingFileFolders.toBeMoved") << getTranslation("MovingFileFolders.newNameNewPath");
+    //cout << MFF.toBeMoved << srcPath << MFF.newNameNewPath;
+    string destName; std::getline(std::cin, destName);
     string destPath = trim(destName);
-
-
     if (!isPathSafe(destPath)) { waitToEnter(); return; }
 
     std::string nSrc = normalizePath(srcPath);
@@ -192,23 +171,13 @@ void movingFileFolders(const std::string& srcPath, bool isDirectory) {
 // Fájl vagy mappa átnevezése
 // Rename a file or folder
 void reNameFileFolders(const std::string& srcPath, bool isDirectory) {
-
+    //const RenameFilesAndFolders &RFAF = renameFilesAndFoldersTranslations [static_cast<int>(programUiLanguage)];
     if (!isPathSafe(srcPath)) { waitToEnter(); return; }
 
-    cout << getTranslation("RenameFilesAndFolders.toBeRenamed") << srcPath << "\n" << getTranslation("RenameFilesAndFolders.newName");
-
-    // --- INPUT BEOLVASÁSA readLineWithHotkey-el ---
-    // --- Input reading with readLineWithHotkey ---
-    InputResult newNameInput = readLineWithHotkey(""); // A promptot már kiírtuk marad a promptnál || The prompt has already been written, it remains at the prompt.
-    // --- Ctrl+C KEZELÉSE ---
-    if (newNameInput.exitTriggered) {
-        playBeep();
-        return; // Kilép a függvényből || Exit the function
-    }
-
-    string newName = newNameInput.text;
+    cout << getTranslation("RenameFilesAndFolders.toBeRenamed") << srcPath << getTranslation("RenameFilesAndFolders.newName");
+    //cout << RFAF.toBeRenamed << srcPath << RFAF.newName;
+    string newName; std::getline(std::cin, newName);
     newName = trim(newName);
-
 
     size_t lastSlash = srcPath.find_last_of("/\\");
     string destPath = ((lastSlash == string::npos) ? "" : srcPath.substr(0, lastSlash + 1)) + newName;
@@ -278,30 +247,33 @@ vector<FileEntry> listFiles(const std::string &directory) {
 // Parancssoros navigáció a "./data" mappában
 // Command-line navigation in the "./data" folder
 void listAndSelectFile() {
-
+    //const ListAndSelectedFile &LASFile = listAndSelectedFilesTranslations [static_cast<int>(programUiLanguage)];
     const string ROOT_DIR ="./data";
     string path = ROOT_DIR;
     for (;;) {
         screenWipe();
 
         cout << getTranslation("ListAndSelectedFile.currentlyFolder") << path << " ---\n";
+        //cout << LASFile.currentlyFolder << path << " ---\n";
         vector<FileEntry> entries = listFiles(path);
 
-        if (entries.empty()) cout << getTranslation("ListAndSelectedFile.emptyFolder") << "\n";
-
+        if (entries.empty()) cout << getTranslation("ListAndSelectedFile.emptyFolder");
+            //cout << LASFile.emptyFolder;
         else
         {
             for (const FileEntry& e : entries)
                 cout << (e.isDirectory ? getTranslation("ListAndSelectedFile.isDirectory") : "        ") << e.name << "\n" << std::flush;
+                //cout << (e.isDirectory ? LASFile.isDirectory : "        ") << e.name << "\n";
         }
 
+        //cout << LASFile.commands;
 
-        cout << getTranslation("ListAndSelectedFile.signs") <<"\n";
         cout << getTranslation("ListAndSelectedFile.commands") <<"\n";
-        cout << getTranslation("ListAndSelectedFile.fullCommands") <<"\n";
-        cout << getTranslation("ListAndSelectedFile.fullCommands2") <<"\n";
-
-        InputResult inputResult = readLineWithHotkey("\n" + getTranslation("ListAndSelectedFile.choice"));
+        //cout << LASFile.commands <<"\n";
+        cout << getTranslation("ListAndSelectedFile.commands2") <<"\n";
+        //cout << LASFile.fullCommands <<"\n";
+        InputResult inputResult = readLineWithHotkey(getTranslation("ListAndSelectedFile.choice"));
+        //InputResult inputResult = readLineWithHotkey(LASFile.choice);
 
         //---CTRL + C KEZELÉSE || CTRL + C HANDLING
         if (inputResult.exitTriggered)
@@ -322,6 +294,21 @@ void listAndSelectFile() {
             }
             continue;
         }
+        // ------RÉGI KÓD || OLD CODE ------
+        /*string input;
+        std::getline(std::cin, input);
+        input = trim(input);
+        string lowerInput = toLowerCase(input);
+
+        if (lowerInput == "exit") return;
+        if (lowerInput == "..") {
+            if (path.length() > ROOT_DIR.length())
+            {
+                size_t lastSlash = path.find_last_of("/\\");
+                if (lastSlash != string::npos) path = path.substr(0, lastSlash);
+            }
+            continue;
+        }*/
 
         // --- PARANCSOK KEZELÉSE (del, cp, mv, rn, edit) ---
         // --- HANDLING OF COMMANDS (del, cp, mv, rn, edit) ---
@@ -386,9 +373,11 @@ void listAndSelectFile() {
             else if (fullPath.size() >= 5 && fullPath.substr(fullPath.size() - 5) == ".data") {
                 startQuiz(loadWords(fullPath));
             } else {
+                //const LlistAndSelectedFile &LlSF = LlistAndSelectedFileTranslations [static_cast<int>(programUiLanguage)];
+                //logError("listAndSelectFile", LlSF.errorFile  + fullPath);
                 logError("listAndSelectFile" , getTranslation("LlistAndSelectedFile.errorFile") + fullPath);
                 cout << getTranslation("LlistAndSelectedFile.errorFile") <<"\n" << std::flush;
-
+                //cout << LlSF.errorFile << endl;
                 waitToEnter();
             }
         }
@@ -408,7 +397,9 @@ bool createDirectory(const std::string& path)
     //const struct CreateFolderStrings &CFS = createFolderTranslations[static_cast<int>(programUiLanguage)];
     if (!isPathSafe(path)) {
         logError("createDirectory", getTranslation("CreateFolderStrings.errorDangerousPath") + path);
+        //logError("createDirectory", CFS.errorDangerousPath + path);
         std::cerr <<  getTranslation("CreateFolderStrings.errorDangerousPath") <<"\n" << std::flush;
+        //std::cerr << CFS.errorDangerousPath << std::endl;
         waitToEnter();
         return false;
     }
@@ -424,16 +415,17 @@ bool createDirectory(const std::string& path)
     if (std::system(command.c_str()) == 0) {
 
         cout << getTranslation("CreateFolderStrings.successCreate") << nPath <<"\n" << std::flush;
+        //std::cout << CFS.successCreate << nPath << std::endl;
         waitToEnter();
         return true;
     } else {
 
         logError("createDirectory", getTranslation("CreateFolderStrings.errorCreate") + path);
         std::cerr << getTranslation("CreateFolderStrings.errorCreate") <<"\n" << std::flush;
+        //std::cerr << CFS.errorCreate << std::endl;
         waitToEnter();
         return false;
     }
 }
-
-
+```
 

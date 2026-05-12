@@ -1,0 +1,1087 @@
+Szia! Nagyon jó, hogy ezt a problémát is észrevetted! Ez egy klasszikus helyzet, amikor a fordítási rendszer inicializálása és a fordítások használata ütközik.
+A probléma oka:
+1.
+"MISSING_TRANSLATION_FOR_stateOff": Ez azért jelenik meg, mert a preferIniTranslationsToggle() függvény már próbálja használni a getTranslation() függvényt (pl. getTranslation("IniStructToggle.stateOff")) a menüpontok kiírásához, mielőtt a loadTranslationsFromFile() sikeresen betöltötte volna az aktuális nyelvi fájlt.
+2.
+createDefaultLangIni() minden alkalommal: A loadTranslationsFromFile() függvényed jelenleg minden alkalommal meghívja a createDefaultLangIni()-t, ha nem találja a lang_xx.ini fájlt. Ez azt jelenti, hogy ha a lang_hu.ini létezik, de a lang_en.ini nem, akkor a createDefaultLangIni() újra legenerálja az összes fájlt, amikor angolra váltasz.
+A megoldás:
+A loadTranslationsFromFile() függvénynek nem szabadna createDefaultLangIni()-t hívnia. A createDefaultLangIni()-t csak egyszer kell meghívni a program indulásakor, ha egyáltalán nincs lang_xx.ini fájl, vagy ha a felhasználó expliciten kéri a beállításokban.
+A loadTranslationsFromFile() feladata csak a betöltés. Ha nem találja a fájlt, vagy üres, akkor false-t ad vissza, és a getTranslation() függvény fallback logikája lép életbe.
+Lépések a javításhoz:
+1. translationsFuncts.cpp módosítása
+a) loadTranslationsFromFile():
+•
+Ne hívja a createDefaultLangIni()-t.
+•
+Ha a fájl nem található, vagy üres, egyszerűen térjen vissza false-szal.
+b) createDefaultLangIni():
+•
+Ez a függvény feleljen az összes lang_xx.ini fájl létrehozásáért, ha azok még nem léteznek.
+
+#include "translations.h"
+#include <fstream>
+#include <sstream>
+#include <algorithm> // For std::transform
+#include <cctype>    // For ::tolower
+#include <iostream>  // For debugging
+#include "../Common/generalFunctions.h" // trim_local miatt, ha nem akarunk duplikálni
+
+// --- GLOBÁLIS VÁLTOZÓK DEFINÍCIÓJA ---
+// Ezek a translations.h-ban extern-ként vannak deklarálva
+std::map<std::string, std::string> loadedTranslations;
+bool useLangIni = false;
+
+// --- SEGÉDFÜGGVÉNY A STRING TRIMMELÉSÉHEZ ---
+// Ezt a generalFunctions.h-ból is használhatnánk, de itt is definiálhatjuk, ha nem akarunk függőséget
+std::string trim_local(const std::string& str) {
+    size_t first = str.find_first_not_of(" \t\n\r");
+    if (std::string::npos == first) {
+        return str;
+    }
+    size_t last = str.find_last_not_of(" \t\n\r");
+    return str.substr(first, (last - first + 1));
+}
+
+// --- ALAPÉRTELMEZETT (HARD-CODED) FORDÍTÁSOK (EZEK MARADNAK, MINT FALLBACK) ---
+// Ezeket static const-ként definiáljuk, hogy csak ebben a fájlban legyenek láthatók
+// és onnan töltsük fel a lang.ini-t, vagy használjuk fallback-ként.
+
+// Menu'sVector
+static const std::vector<MenuStrings> mainMenuTranslations_hardcoded = {
+    // ... (MenuStrings fordítások) ...
+};
+
+// number output
+static const std::vector<NumberOutput> chooseNumberMenuTranslations_hardcoded = {
+    // ... (NumberOutput fordítások) ...
+};
+
+//Explanations || magyarázat
+static const std::vector<ExplanationStrings> explanationTranslations_hardcoded = {
+    // ... (ExplanationStrings fordítások) ...
+};
+
+static const std::vector<ExitingStrings> exitingTranslations_hardcoded = {
+    // ... (ExitingStrings fordítások) ...
+};
+
+static const std::vector<InvalidInput> invalidInputTranslations_hardcoded = {
+    // ... (InvalidInput fordítások) ...
+};
+
+static const std::vector<EnteringBack> continuationToEnterTranslations_hardcoded = {
+    // ... (EnteringBack fordítások) ...
+};
+
+static const std::vector<InvalidInput2>  invalidInputTranslations2_hardcoded = {
+    // ... (InvalidInput2 fordítások) ...
+};
+
+static const std::vector<HaveNoWords> haveNoWordsTranslations_hardcoded = {
+    // ... (HaveNoWords fordítások) ...
+};
+
+static const std::vector<ReTry> reTryTranslations_hardcoded = {
+    // ... (ReTry fordítások) ...
+};
+
+static const std::vector<BadlyAnswer> badlyAnswerTranslations_hardcoded ={
+    // ... (BadlyAnswer fordítások) ...
+};
+
+static const std::vector<GoodAnswer1> goodAnswer1Translations_hardcoded = {
+    // ... (GoodAnswer1 fordítások) ...
+};
+
+static const std::vector<GoodAnswer2> goodAnswer2Translations_hardcoded = {
+    // ... (GoodAnswer2 fordítások) ...
+};
+
+static const std::vector<PronunciationString> pronunciationStringTranslations_hardcoded = {
+    // ... (PronunciationString fordítások) ...
+};
+
+static const std::vector<HaveFinished> haveFinishedTranslations_hardcoded = {
+    // ... (HaveFinished fordítások) ...
+};
+
+static const std::vector<ScoreSys> totalTranslations_hardcoded = {
+    // ... (ScoreSys fordítások) ...
+};
+
+static const std::vector<PercentAge> percentAgeTranslations_hardcoded = {
+    // ... (PercentAge fordítások) ...
+};
+
+static const std::vector<QuizExplanation> quizExplanationTranslations_hardcoded = {
+    // ... (QuizExplanation fordítások) ...
+};
+
+static const std::vector<VocabWordsPairTotal> vocabWordsPairTotalTranslations_hardcoded = {
+    // ... (VocabWordsPairTotal fordítások) ...
+};
+
+static const std::vector<CreateVocabFile> createVocabFileTranslations_hardcoded = {
+    // ... (CreateVocabFile fordítások) ...
+};
+
+static const std::vector<CreateVocab> createVocabTranslations_hardcoded = {
+    // ... (CreateVocab fordítások) ...
+};
+
+static const std::vector<VocabMenu> vocabMenuTranslations_hardcoded = {
+    // ... (VocabMenu fordítások) ...
+};
+
+static const std::vector<VocabFileCommands> vocabFileCommandTranslate_hardcoded = {
+    // ... (VocabFileCommands fordítások) ...
+};
+
+static const std::vector<SettingsMenu> settingsMenuTranslations_hardcoded = {
+    // ... (SettingsMenu fordítások) ...
+};
+
+static const std::vector<LanguageMenu> languageMenuTranslations_hardcoded = {
+    // ... (LanguageMenu fordítások) ...
+};
+
+static const std::vector<ColorsOnset> colorsOSetTranslations_hardcoded = {
+    // ... (ColorsOnset fordítások) ...
+};
+
+static const std::vector<SaveSettings> saveSettingsTranslations_hardcoded = {
+    // ... (SaveSettings fordítások) ...
+};
+
+static const std::vector<LearningLanguageSet> learningLanguageSetTranslations_hardcoded = {
+    // ... (LearningLanguageSet fordítások) ...
+};
+
+// TargetLanguageNameSet (EZ MARAD KÜLÖN, MERT A getLanguageNameByIndex HASZNÁLJA)
+static const std::vector<TargetLanguageNameSet> targetLanguageSetTranslations_hardcoded = {
+    // ... (TargetLanguageNameSet fordítások) ...
+};
+
+// TargetLanguageList (EZ MARAD KÜLÖN, MERT A getLanguageNameByIndex HASZNÁLJA)
+static const std::vector<TargetLanguageList> targetLanguageListTranslations_hardcoded = {
+    // ... (TargetLanguageList fordítások) ...
+};
+
+static const std::vector<LlistAndSelectedFile> LlistAndSelectedFileTranslations_hardcoded = {
+    // ... (LlistAndSelectedFile fordítások) ...
+};
+
+static const std::vector<OosEditor> OosEditorTranslations_hardcoded = {
+    // ... (OosEditor fordítások) ...
+};
+
+static const std::vector<BackgroundSets> backgroundSetsTranslations_hardcoded = {
+    // ... (BackgroundSets fordítások) ...
+};
+
+static const std::vector<SoundOnOff> soundOnOffTranslations_hardcoded = {
+    // ... (SoundOnOff fordítások) ...
+};
+
+static const std::vector<MistakeExercise> mistakeExerciseTranslations_hardcoded = {
+    // ... (MistakeExercise fordítások) ...
+};
+
+static const std::vector<SpellingOutAccents> spellingOutAccentsTranslations_hardcoded = {
+    // ... (SpellingOutAccents fordítások) ...
+};
+
+static const std::vector<CreateVocabListsFileAndFolders> createVocabListsFileAndFoldersTranslations_hardcoded = {
+    // ... (CreateVocabListsFileAndFolders fordítások) ...
+};
+
+static const std::vector<OneRoundQString> oneRoundQuizStringTranslations_hardcoded = {
+    // ... (OneRoundQString fordítások) ...
+};
+
+static const std::vector<IniStructToggle> iniStructToggleTranslations_hardcoded = {
+    // HUNGARIAN
+    {
+        "--- INI vagy STRUCT beállítás ---",
+        "Jelenlegi állapot: ",
+        "INI fájlok",
+        "Hard-coded structok",
+        "1. Átkapcsolás\n0. Vissza\nVálasztás: ",
+        "INI fájlok preferálása BEKAPCSOLVA!",
+        "INI fájlok preferálása KIKAPCSOLVA!"
+    },
+    // ENGLISH
+    {
+        "--- INI or STRUCT settings ---",
+        "Current state: ",
+        "INI files",
+        "Hard-coded structs",
+        "1. Toggle\n0. Back\nChoice: ",
+        "INI files preference ENABLED!",
+        "INI files preference DISABLED!"
+    }
+    // ... (többi nyelv) ...
+};
+
+
+// --- ÚJ FÜGGVÉNYEK IMPLEMENTÁCIÓJA ---
+
+// Létrehozza a lang_XX.ini fájlokat az alapértelmezett (hard-coded) fordításokkal
+void createDefaultLangIni() {
+    // Létrehozzuk a "lang" mappát, ha nem létezik
+    #ifdef _WIN32
+        std::system("if not exist lang mkdir lang"); // Windows
+    #else
+        std::system("mkdir -p lang"); // Linux/macOS
+    #endif
+
+    for (int langIndex = 0; langIndex < static_cast<int>(Language::COUNT); ++langIndex) {
+        // Nem dolgozzuk fel a 'COUNT'-ot
+        if (static_cast<Language>(langIndex) == Language::COUNT) continue;
+
+        auto currentLang = static_cast<Language>(langIndex);
+        std::string langCode; // Pl. "hu", "en"
+
+        // Itt kellene meghatározni a nyelvkódot az enum alapján
+        if (currentLang == Language::HUNGARIAN) langCode = "hu";
+        else if (currentLang == Language::ENGLISH) langCode = "en";
+        else if (currentLang == Language::CHINESE) langCode = "zh";
+        else if (currentLang == Language::JAPANESE) langCode = "ja";
+        else if (currentLang == Language::SPANISH) langCode = "es";
+        else if (currentLang == Language::GERMAN) langCode = "de";
+        else if (currentLang == Language::FRENCH) langCode = "fr";
+        else if (currentLang == Language::RUSSIAN) langCode = "ru";
+        else if (currentLang == Language::UKRAINIAN) langCode = "uk";
+        else if (currentLang == Language::KOREAN) langCode = "ko";
+        else if (currentLang == Language::ITALIAN) langCode = "it";
+        else if (currentLang == Language::POLISH) langCode = "pl";
+        else if (currentLang == Language::ARABIC) langCode = "ar";
+        else if (currentLang == Language::VIETNAMESE) langCode = "vi";
+        else if (currentLang == Language::TAGALOG) langCode = "tl";
+        else if (currentLang == Language::GREEK) langCode = "el";
+        else if (currentLang == Language::HEBREW) langCode = "he";
+        else if (currentLang == Language::PORTUGUESE) langCode = "pt";
+        else if (currentLang == Language::FARSI) langCode = "fa";
+        else if (currentLang == Language::SWEDISH) langCode = "sv";
+        else if (currentLang == Language::DUTCH) langCode = "nl";
+        else if (currentLang == Language::TURKISH) langCode = "tr";
+        else if (currentLang == Language::HINDI) langCode = "hi";
+        else if (currentLang == Language::LATIN) langCode = "la";
+        else {
+            std::cerr << "Error: Unknown language code for enum value " << langIndex << ". Skipping INI creation." << std::endl;
+            continue; // Ismeretlen nyelv kihagyása
+        }
+
+        std::string fileName = std::string("lang/") + "lang_" + langCode + ".ini";
+        std::ofstream outFile(fileName);
+        if (!outFile.is_open()) {
+            std::cerr << "Error: Could not create " << fileName << std::endl;
+            continue;
+        }
+
+        // --- MenuStrings ---
+        outFile << "[MenuStrings]\n";
+        outFile << "titleAndSigns=" << mainMenuTranslations_hardcoded[langIndex].titleAndSigns << "\n";
+        outFile << "programExplanation=" << mainMenuTranslations_hardcoded[langIndex].programExplanation << "\n";
+        outFile << "startProgram=" << mainMenuTranslations_hardcoded[langIndex].startProgram << "\n";
+        outFile << "mistakeExercise=" << mainMenuTranslations_hardcoded[langIndex].mistakeExercise << "\n";
+        outFile << "newFile=" << mainMenuTranslations_hardcoded[langIndex].newFile << "\n";
+        outFile << "settings=" << mainMenuTranslations_hardcoded[langIndex].settings << "\n";
+        outFile << "Editor=" << mainMenuTranslations_hardcoded[langIndex].Editor << "\n";
+        outFile << "exit=" << mainMenuTranslations_hardcoded[langIndex].exit << "\n";
+        outFile << "signs=" << mainMenuTranslations_hardcoded[langIndex].signs << "\n";
+
+        // --- ExplanationStrings ---
+        outFile << "\n[ExplanationStrings]\n";
+        outFile << "description=" << explanationTranslations_hardcoded[langIndex].description << "\n";
+        outFile << "instruction1=" << explanationTranslations_hardcoded[langIndex].instruction1 << "\n";
+        outFile << "instruction2=" << explanationTranslations_hardcoded[langIndex].instruction2 << "\n";
+        outFile << "instruction3=" << explanationTranslations_hardcoded[langIndex].instruction3 << "\n";
+        outFile << "instruction4=" << explanationTranslations_hardcoded[langIndex].instruction4 << "\n";
+        outFile << "instruction5=" << explanationTranslations_hardcoded[langIndex].instruction5 << "\n";
+        outFile << "instruction6=" << explanationTranslations_hardcoded[langIndex].instruction6 << "\n";
+        outFile << "instruction7=" << explanationTranslations_hardcoded[langIndex].instruction7 << "\n";
+        outFile << "instruction8=" << explanationTranslations_hardcoded[langIndex].instruction8 << "\n";
+        outFile << "instruction9=" << explanationTranslations_hardcoded[langIndex].instruction9 << "\n";
+        outFile << "goodLuck=" << explanationTranslations_hardcoded[langIndex].goodLuck << "\n";
+
+        // --- ExitingStrings ---
+        outFile << "\n[ExitingStrings]\n";
+        outFile << "exiting=" << exitingTranslations_hardcoded[langIndex].exiting << "\n";
+
+        // --- NumberOutput ---
+        outFile << "\n[NumberOutput]\n";
+        outFile << "numberOutput=" << chooseNumberMenuTranslations_hardcoded[langIndex].numberOutput << "\n";
+
+        // --- ListAndSelectedFile ---
+        outFile << "\n[ListAndSelectedFile]\n";
+        outFile << "currentlyFolder=" << listAndSelectedFilesTranslations_hardcoded[langIndex].currentlyFolder << "\n";
+        outFile << "emptyFolder=" << listAndSelectedFilesTranslations_hardcoded[langIndex].emptyFolder << "\n";
+        outFile << "isDirectory=" << listAndSelectedFilesTranslations_hardcoded[langIndex].isDirectory << "\n";
+        outFile << "commands=" << listAndSelectedFilesTranslations_hardcoded[langIndex].commands << "\n";
+        outFile << "fullCommands=" << listAndSelectedFilesTranslations_hardcoded[langIndex].fullCommands << "\n";
+        outFile << "choice=" << listAndSelectedFilesTranslations_hardcoded[langIndex].choice << "\n";
+
+        // --- RenameFilesAndFolders ---
+        outFile << "\n[RenameFilesAndFolders]\n";
+        outFile << "toBeRenamed=" << renameFilesAndFoldersTranslations_hardcoded[langIndex].toBeRenamed << "\n";
+        outFile << "newName=" << renameFilesAndFoldersTranslations_hardcoded[langIndex].newName << "\n";
+
+        // --- MovingFileFolders ---
+        outFile << "\n[MovingFileFolders]\n";
+        outFile << "toBeMoved=" << movingFileFoldersTranslations_hardcoded[langIndex].toBeMoved << "\n";
+        outFile << "newNameNewPath=" << movingFileFoldersTranslations_hardcoded[langIndex].newNameNewPath << "\n";
+
+        // --- DeleteFileFolders ---
+        outFile << "\n[DeleteFileFolders]\n";
+        outFile << "errorDfDangerousPath=" << deleteFileFoldersTranslations_hardcoded[langIndex].errorDfDangerousPath << "\n";
+        outFile << "confirmationDelete=" << deleteFileFoldersTranslations_hardcoded[langIndex].confirmationDelete << "\n";
+        outFile << "successDelete=" << deleteFileFoldersTranslations_hardcoded[langIndex].successDelete << "\n";
+        outFile << "interrupted=" << deleteFileFoldersTranslations_hardcoded[langIndex].interrupted << "\n";
+        outFile << "errorDelete=" << deleteFileFoldersTranslations_hardcoded[langIndex].errorDelete << "\n";
+
+        // --- CopyFileFolders ---
+        outFile << "\n[CopyFileFolders]\n";
+        outFile << "errorDangerousPath=" << copyFileFoldersTranslations_hardcoded[langIndex].errorDangerousPath << "\n";
+        outFile << "toBeCopied=" << copyFileFoldersTranslations_hardcoded[langIndex].toBeCopied << "\n";
+        outFile << "newNameNewPath=" << copyFileFoldersTranslations_hardcoded[langIndex].newNameNewPath << "\n";
+        outFile << "errorDangerousGoalAndPath=" << copyFileFoldersTranslations_hardcoded[langIndex].errorDangerousGoalAndPath << "\n";
+        outFile << "successCopying=" << copyFileFoldersTranslations_hardcoded[langIndex].successCopying << "\n";
+        outFile << "anErrorOccurred=" << copyFileFoldersTranslations_hardcoded[langIndex].anErrorOccurred << "\n";
+
+        // --- CreateFolderStrings ---
+        outFile << "\n[CreateFolderStrings]\n";
+        outFile << "errorDangerousPath=" << createFolderTranslations_hardcoded[langIndex].errorDangerousPath << "\n";
+        outFile << "successCreate=" << createFolderTranslations_hardcoded[langIndex].successCreate << "\n";
+        outFile << "errorCreate=" << createFolderTranslations_hardcoded[langIndex].errorCreate << "\n";
+
+        // --- W_wordPair ---
+        outFile << "\n[W_wordPair]\n";
+        outFile << "ErrorOpenedFile=" << wordPairErrorTranslations_hardcoded[langIndex].ErrorOpenedFile << "\n";
+
+        // --- InvalidInput ---
+        outFile << "\n[InvalidInput]\n";
+        outFile << "invalidInput=" << invalidInputTranslations_hardcoded[langIndex].invalidInput << "\n";
+
+        // --- EnteringBack ---
+        outFile << "\n[EnteringBack]\n";
+        outFile << "pressToEnter=" << continuationToEnterTranslations_hardcoded[langIndex].pressToEnter << "\n";
+
+        // --- InvalidInput2 ---
+        outFile << "\n[InvalidInput2]\n";
+        outFile << "invalidInput2=" << invalidInputTranslations2_hardcoded[langIndex].invalidInput2 << "\n";
+
+        // --- HaveNoWords ---
+        outFile << "\n[HaveNoWords]\n";
+        outFile << "haveNoWords=" << haveNoWordsTranslations_hardcoded[langIndex].haveNoWords << "\n";
+
+        // --- ReTry ---
+        outFile << "\n[ReTry]\n";
+        outFile << "reTry=" << reTryTranslations_hardcoded[langIndex].reTry << "\n";
+
+        // --- BadlyAnswer ---
+        outFile << "\n[BadlyAnswer]\n";
+        outFile << "badlyAnswer=" << badlyAnswerTranslations_hardcoded[langIndex].badlyAnswer << "\n";
+
+        // --- GoodAnswer1 ---
+        outFile << "\n[GoodAnswer1]\n";
+        outFile << "goodAnswer1=" << goodAnswer1Translations_hardcoded[langIndex].goodAnswer1 << "\n";
+
+        // --- GoodAnswer2 ---
+        outFile << "\n[GoodAnswer2]\n";
+        outFile << "goodAnswer2=" << goodAnswer2Translations_hardcoded[langIndex].goodAnswer2 << "\n";
+
+        // --- PronunciationString ---
+        outFile << "\n[PronunciationString]\n";
+        outFile << "pronunciation2str=" << pronunciationStringTranslations_hardcoded[langIndex].pronunciation2str << "\n";
+
+        // --- HaveFinished ---
+        outFile << "\n[HaveFinished]\n";
+        outFile << "haveFinished=" << haveFinishedTranslations_hardcoded[langIndex].haveFinished << "\n";
+
+        // --- ScoreSys ---
+        outFile << "\n[ScoreSys]\n";
+        outFile << "total=" << totalTranslations_hardcoded[langIndex].total << "\n";
+        outFile << "allQuestion=" << totalTranslations_hardcoded[langIndex].allQuestion << "\n";
+        outFile << "correct=" << totalTranslations_hardcoded[langIndex].correct << "\n";
+        outFile << "badly=" << totalTranslations_hardcoded[langIndex].badly << "\n";
+        outFile << "percent=" << totalTranslations_hardcoded[langIndex].percent << "\n";
+
+        // --- PercentAge ---
+        outFile << "\n[PercentAge]\n";
+        outFile << "percentAge100=" << percentAgeTranslations_hardcoded[langIndex].percentAge100 << "\n";
+        outFile << "percentAge80=" << percentAgeTranslations_hardcoded[langIndex].percentAge80 << "\n";
+        outFile << "percentAgeElse=" << percentAgeTranslations_hardcoded[langIndex].percentAgeElse << "\n";
+
+        // --- QuizExplanation ---
+        outFile << "\n[QuizExplanation]\n";
+        outFile << "quizExplanation1=" << quizExplanationTranslations_hardcoded[langIndex].quizExplanation1 << "\n";
+        outFile << "quizExplanation2=" << quizExplanationTranslations_hardcoded[langIndex].quizExplanation2 << "\n";
+        outFile << "quizExplanation3=" << quizExplanationTranslations_hardcoded[langIndex].quizExplanation3 << "\n";
+
+        // --- VocabWordsPairTotal ---
+        outFile << "\n[VocabWordsPairTotal]\n";
+        outFile << "vocabWordsPairTotal=" << vocabWordsPairTotalTranslations_hardcoded[langIndex].vocabWordsPairTotal << "\n";
+        outFile << "vocabWordsPairTotal2=" << vocabWordsPairTotalTranslations_hardcoded[langIndex].vocabWordsPairTotal2 << "\n";
+        outFile << "vocabWordsPairTotal3=" << vocabWordsPairTotalTranslations_hardcoded[langIndex].vocabWordsPairTotal3 << "\n";
+
+        // --- CreateVocabFile ---
+        outFile << "\n[CreateVocabFile]\n";
+        outFile << "inputFileName=" << createVocabFileTranslations_hardcoded[langIndex].inputFileName << "\n";
+        outFile << "folderName=" << createVocabFileTranslations_hardcoded[langIndex].folderName << "\n";
+        outFile << "fullPathError=" << createVocabFileTranslations_hardcoded[langIndex].fullPathError << "\n";
+        outFile << "fullPathOpenError=" << createVocabFileTranslations_hardcoded[langIndex].fullPathOpenError << "\n";
+        outFile << "fileSave=" << createVocabFileTranslations_hardcoded[langIndex].fileSave << "\n";
+        outFile << "fileSave2=" << createVocabFileTranslations_hardcoded[langIndex].fileSave2 << "\n";
+        outFile << "folderError=" << createVocabFileTranslations_hardcoded[langIndex].folderError << "\n";
+        outFile << "folderDoesNotExist=" << createVocabFileTranslations_hardcoded[langIndex].folderDoesNotExist << "\n";
+        outFile << "askingCreate=" << createVocabFileTranslations_hardcoded[langIndex].askingCreate << "\n";
+        outFile << "folderOperationAborted=" << createVocabFileTranslations_hardcoded[langIndex].folderOperationAborted << "\n";
+
+        // --- CreateVocab ---
+        outFile << "\n[CreateVocab]\n";
+        outFile << "createVocab=" << createVocabTranslations_hardcoded[langIndex].createVocab << "\n";
+        outFile << "createVocab2=" << createVocabTranslations_hardcoded[langIndex].createVocab2 << "\n";
+        outFile << "createVocab3=" << createVocabTranslations_hardcoded[langIndex].createVocab3 << "\n";
+        outFile << "createVocab4=" << createVocabTranslations_hardcoded[langIndex].createVocab4 << "\n";
+        outFile << "createVocab5=" << createVocabTranslations_hardcoded[langIndex].createVocab5 << "\n";
+        outFile << "createVocab6=" << createVocabTranslations_hardcoded[langIndex].createVocab6 << "\n";
+        outFile << "createVocab7=" << createVocabTranslations_hardcoded[langIndex].createVocab7 << "\n";
+
+        // --- VocabMenu ---
+        outFile << "\n[VocabMenu]\n";
+        outFile << "vocabMenu1=" << vocabMenuTranslations_hardcoded[langIndex].vocabMenu1 << "\n";
+        outFile << "vocabMenu2=" << vocabMenuTranslations_hardcoded[langIndex].vocabMenu2 << "\n";
+        outFile << "vocabMenu3=" << vocabMenuTranslations_hardcoded[langIndex].vocabMenu3 << "\n";
+        outFile << "vocabError1=" << vocabMenuTranslations_hardcoded[langIndex].vocabError1 << "\n";
+        outFile << "vocabError2=" << vocabMenuTranslations_hardcoded[langIndex].vocabError2 << "\n";
+
+        // --- VocabFileCommands ---
+        outFile << "\n[VocabFileCommands]\n";
+        outFile << "commands1=" << vocabFileCommandTranslate_hardcoded[langIndex].commands1 << "\n";
+        outFile << "commands2=" << vocabFileCommandTranslate_hardcoded[langIndex].commands2 << "\n";
+        outFile << "commands3=" << vocabFileCommandTranslate_hardcoded[langIndex].commands3 << "\n";
+        outFile << "commands4=" << vocabFileCommandTranslate_hardcoded[langIndex].commands4 << "\n";
+
+        // --- SettingsMenu ---
+        outFile << "\n[SettingsMenu]\n";
+        outFile << "settingsMenuSign=" << settingsMenuTranslations_hardcoded[langIndex].settingsMenuSign << "\n";
+        outFile << "chooseSettingsMenu=" << settingsMenuTranslations_hardcoded[langIndex].chooseSettingsMenu << "\n";
+        outFile << "languageOptions=" << settingsMenuTranslations_hardcoded[langIndex].languageOptions << "\n";
+        outFile << "targetLanguageOptions=" << settingsMenuTranslations_hardcoded[langIndex].targetLanguageOptions << "\n";
+        outFile << "colorsOptions=" << settingsMenuTranslations_hardcoded[langIndex].colorsOptions << "\n";
+        outFile << "soundOptions=" << settingsMenuTranslations_hardcoded[langIndex].soundOptions << "\n";
+        outFile << "accentsOptions=" << settingsMenuTranslations_hardcoded[langIndex].accentsOptions << "\n";
+        outFile << "oneRoundQuizOption=" << settingsMenuTranslations_hardcoded[langIndex].oneRoundQuizOption << "\n";
+        outFile << "preferIniTranslationsOption=" << settingsMenuTranslations_hardcoded[langIndex].preferIniTranslationsOption << "\n";
+        outFile << "backMainMenu=" << settingsMenuTranslations_hardcoded[langIndex].backMainMenu << "\n";
+        outFile << "settingsMenuSign2=" << settingsMenuTranslations_hardcoded[langIndex].settingsMenuSign2 << "\n";
+
+        // --- LanguageMenu ---
+        outFile << "\n[LanguageMenu]\n";
+        outFile << "languageMenu1Sign=" << languageMenuTranslations_hardcoded[langIndex].languageMenu1Sign << "\n";
+        outFile << "exiting=" << languageMenuTranslations_hardcoded[langIndex].exiting << "\n";
+        outFile << "choiceStr=" << languageMenuTranslations_hardcoded[langIndex].choiceStr << "\n";
+        outFile << "languageMenu2Sign=" << languageMenuTranslations_hardcoded[langIndex].languageMenu2Sign << "\n";
+        outFile << "choiceSuccessProgramLanguage=" << languageMenuTranslations_hardcoded[langIndex].choiceSuccessProgramLanguage << "\n";
+
+        // --- ColorsOnset ---
+        outFile << "\n[ColorsOnset]\n";
+        outFile << "colorsPrinting1=" << colorsOSetTranslations_hardcoded[langIndex].colorsPrinting1 << "\n";
+        outFile << "colorsPrinting2=" << colorsOSetTranslations_hardcoded[langIndex].colorsPrinting2 << "\n";
+        outFile << "useCLR_ON=" << colorsOSetTranslations_hardcoded[langIndex].useCLR_ON << "\n";
+        outFile << "useCLR_OFF=" << colorsOSetTranslations_hardcoded[langIndex].useCLR_OFF << "\n";
+        outFile << "colorsMenu1=" << colorsOSetTranslations_hardcoded[langIndex].colorsMenu1 << "\n";
+        outFile << "colorsMenu2=" << colorsOSetTranslations_hardcoded[langIndex].colorsMenu2 << "\n";
+        outFile << "colorsMenu3=" << colorsOSetTranslations_hardcoded[langIndex].colorsMenu3 << "\n";
+        outFile << "choice=" << colorsOSetTranslations_hardcoded[langIndex].choice << "\n";
+        outFile << "colorsOnOn=" << colorsOSetTranslations_hardcoded[langIndex].colorsOnOn << "\n";
+        outFile << "colorsOffOff=" << colorsOSetTranslations_hardcoded[langIndex].colorsOffOff << "\n";
+        outFile << "errorEntryDenied=" << colorsOSetTranslations_hardcoded[langIndex].errorEntryDenied << "\n";
+
+        // --- SaveSettings ---
+        outFile << "\n[SaveSettings]\n";
+        outFile << "saveSettingsError=" << saveSettingsTranslations_hardcoded[langIndex].saveSettingsError << "\n";
+
+        // --- LearningLanguageSet ---
+        outFile << "\n[LearningLanguageSet]\n";
+        outFile << "Menu=" << learningLanguageSetTranslations_hardcoded[langIndex].Menu << "\n";
+        outFile << "CurrentlyMotherLanguage=" << learningLanguageSetTranslations_hardcoded[langIndex].CurrentlyMotherLanguage << "\n";
+        outFile << "CurrentlyLearningLanguage=" << learningLanguageSetTranslations_hardcoded[langIndex].CurrentlyLearningLanguage << "\n";
+        outFile << "option1=" << learningLanguageSetTranslations_hardcoded[langIndex].option1 << "\n";
+        outFile << "option2=" << learningLanguageSetTranslations_hardcoded[langIndex].option2 << "\n";
+        outFile << "option3=" << learningLanguageSetTranslations_hardcoded[langIndex].option3 << "\n";
+        outFile << "choice1=" << learningLanguageSetTranslations_hardcoded[langIndex].choice1 << "\n";
+        outFile << "allChoice=" << learningLanguageSetTranslations_hardcoded[langIndex].allChoice << "\n";
+        outFile << "motherSuccess=" << learningLanguageSetTranslations_hardcoded[langIndex].motherSuccess << "\n";
+        outFile << "choice2=" << learningLanguageSetTranslations_hardcoded[langIndex].choice2 << "\n";
+        outFile << "targetSuccess=" << learningLanguageSetTranslations_hardcoded[langIndex].targetSuccess << "\n";
+        outFile << "choice=" << learningLanguageSetTranslations_hardcoded[langIndex].choice << "\n";
+        outFile << "back=" << learningLanguageSetTranslations_hardcoded[langIndex].back << "\n";
+        outFile << "error=" << learningLanguageSetTranslations_hardcoded[langIndex].error << "\n";
+        outFile << "menuSigns=" << learningLanguageSetTranslations_hardcoded[langIndex].menuSigns << "\n";
+
+        // --- LlistAndSelectedFile ---
+        outFile << "\n[LlistAndSelectedFile]\n";
+        outFile << "errorFile=" << LlistAndSelectedFileTranslations_hardcoded[langIndex].errorFile << "\n";
+
+        // --- OosEditor ---
+        outFile << "\n[OosEditor]\n";
+        outFile << "run=" << OosEditorTranslations_hardcoded[langIndex].run << "\n";
+        outFile << "errorWin32=" << OosEditorTranslations_hardcoded[langIndex].errorWin32 << "\n";
+        outFile << "errorLinux=" << OosEditorTranslations_hardcoded[langIndex].errorLinux << "\n";
+
+        // --- BackgroundSets ---
+        outFile << "\n[BackgroundSets]\n";
+        outFile << "sign=" << backgroundSetsTranslations_hardcoded[langIndex].sign << "\n";
+        outFile << "DefaultBlack=" << backgroundSetsTranslations_hardcoded[langIndex].DefaultBlack << "\n";
+        outFile << "green=" << backgroundSetsTranslations_hardcoded[langIndex].green << "\n";
+        outFile << "cian=" << backgroundSetsTranslations_hardcoded[langIndex].cian << "\n";
+        outFile << "red=" << backgroundSetsTranslations_hardcoded[langIndex].red << "\n";
+        outFile << "purple=" << backgroundSetsTranslations_hardcoded[langIndex].purple << "\n";
+        outFile << "blue=" << backgroundSetsTranslations_hardcoded[langIndex].blue << "\n";
+        outFile << "white=" << backgroundSetsTranslations_hardcoded[langIndex].white << "\n";
+        outFile << "gray=" << backgroundSetsTranslations_hardcoded[langIndex].gray << "\n";
+        outFile << "stepBack=" << backgroundSetsTranslations_hardcoded[langIndex].stepBack << "\n";
+        outFile << "backgroundColorsChange=" << backgroundSetsTranslations_hardcoded[langIndex].backgroundColorsChange << "\n";
+        outFile << "backGroundColor=" << backgroundSetsTranslations_hardcoded[langIndex].backGroundColor << "\n";
+
+        // --- SoundOnOff ---
+        outFile << "\n[SoundOnOff]\n";
+        outFile << "soundSet=" << soundOnOffTranslations_hardcoded[langIndex].soundSet << "\n";
+        outFile << "currentlyState=" << soundOnOffTranslations_hardcoded[langIndex].currentlyState << "\n";
+        outFile << "useSoundOn=" << soundOnOffTranslations_hardcoded[langIndex].useSoundOn << "\n";
+        outFile << "useSoundOff=" << soundOnOffTranslations_hardcoded[langIndex].useSoundOff << "\n";
+        outFile << "option1=" << soundOnOffTranslations_hardcoded[langIndex].option1 << "\n";
+        outFile << "useSoundOn2=" << soundOnOffTranslations_hardcoded[langIndex].useSoundOn2 << "\n";
+        outFile << "useSoundOff2=" << soundOnOffTranslations_hardcoded[langIndex].useSoundOff2 << "\n";
+
+        // --- MistakeExercise ---
+        outFile << "\n[MistakeExercise]\n";
+        outFile << "practiceOfWrongWord=" << mistakeExerciseTranslations_hardcoded[langIndex].practiceOfWrongWord << "\n";
+        outFile << "word=" << mistakeExerciseTranslations_hardcoded[langIndex].word << "\n";
+        outFile << "answer=" << mistakeExerciseTranslations_hardcoded[langIndex].answer << "\n";
+        outFile << "exerciseEnd=" << mistakeExerciseTranslations_hardcoded[langIndex].exerciseEnd << "\n";
+
+        // --- SpellingOutAccents ---
+        outFile << "\n[SpellingOutAccents]\n";
+        outFile << "accentsMenu=" << spellingOutAccentsTranslations_hardcoded[langIndex].accentsMenu << "\n";
+        outFile << "accentsState=" << spellingOutAccentsTranslations_hardcoded[langIndex].accentsState << "\n";
+        outFile << "accentsState1Off=" << spellingOutAccentsTranslations_hardcoded[langIndex].accentsState1Off << "\n";
+        outFile << "accentsState2On=" << spellingOutAccentsTranslations_hardcoded[langIndex].accentsState2On << "\n";
+        outFile << "accentsMenu1=" << spellingOutAccentsTranslations_hardcoded[langIndex].accentsMenu1 << "\n";
+        outFile << "accentsMenu2=" << spellingOutAccentsTranslations_hardcoded[langIndex].accentsMenu2 << "\n";
+        outFile << "accentsMenu3=" << spellingOutAccentsTranslations_hardcoded[langIndex].accentsMenu3 << "\n";
+
+        // --- CreateVocabListsFileAndFolders ---
+        outFile << "\n[CreateVocabListsFileAndFolders]\n";
+        outFile << "currentlyFileandFolders=" << createVocabListsFileAndFoldersTranslations_hardcoded[langIndex].currentlyFileandFolders << "\n";
+        outFile << "folderName=" << createVocabListsFileAndFoldersTranslations_hardcoded[langIndex].folderName << "\n";
+
+        // --- OneRoundQString ---
+        outFile << "\n[OneRoundQString]\n";
+        outFile << "mainSigns=" << oneRoundQuizStringTranslations_hardcoded[langIndex].mainSigns << "\n";
+        outFile << "currentlyState=" << oneRoundQuizStringTranslations_hardcoded[langIndex].currentlyState << "\n";
+        outFile << "stateON=" << oneRoundQuizStringTranslations_hardcoded[langIndex].stateON << "\n";
+        outFile << "stateOff=" << oneRoundQuizStringTranslations_hardcoded[langIndex].stateOff << "\n";
+        outFile << "switching=" << oneRoundQuizStringTranslations_hardcoded[langIndex].switching << "\n";
+        outFile << "back=" << oneRoundQuizStringTranslations_hardcoded[langIndex].back << "\n";
+        outFile << "choose=" << oneRoundQuizStringTranslations_hardcoded[langIndex].choose << "\n";
+        outFile << "OneRoundStateOn=" << oneRoundQuizStringTranslations_hardcoded[langIndex].OneRoundStateOn << "\n";
+        outFile << "OneRoundStateOff=" << oneRoundQuizStringTranslations_hardcoded[langIndex].OneRoundStateOff << "\n";
+
+        // --- IniStructToggle ---
+        outFile << "\n[IniStructToggle]\n";
+        outFile << "mainSigns=" << iniStructToggleTranslations_hardcoded[langIndex].mainSigns << "\n";
+        outFile << "currentlyState=" << iniStructToggleTranslations_hardcoded[langIndex].currentlyState << "\n";
+        outFile << "stateON=" << iniStructToggleTranslations_hardcoded[langIndex].stateON << "\n";
+        outFile << "stateOff=" << iniStructToggleTranslations_hardcoded[langIndex].stateOff << "\n";
+        outFile << "switchingMenu=" << iniStructToggleTranslations_hardcoded[langIndex].switchingMenu << "\n";
+        outFile << "cStateON=" << iniStructToggleTranslations_hardcoded[langIndex].cStateON << "\n";
+        outFile << "cStateOff=" << iniStructToggleTranslations_hardcoded[langIndex].cStateOff << "\n";
+
+        outFile.close();
+        std::cout << "Created default language file: " << fileName << std::endl;
+    }
+}
+
+// Megpróbálja betölteni a fordításokat a lang_XX.ini fájlból
+bool loadTranslationsFromFile(Language lang) {
+    loadedTranslations.clear();
+    useLangIni = false;
+
+    // ÚJ: Ha a felhasználó nem preferálja az INI fájlokat, akkor azonnal visszatérünk
+    if (!preferIniTranslations) {
+        std::cerr << "Info: INI translations are disabled in settings. Using hardcoded translations." << std::endl;
+        return false;
+    }
+
+    std::string langCode;
+    // Itt kellene meghatározni a nyelvkódot az enum alapján
+    if (lang == Language::HUNGARIAN) langCode = "hu";
+    else if (lang == Language::ENGLISH) langCode = "en";
+    else if (lang == Language::CHINESE) langCode = "zh";
+    else if (lang == Language::JAPANESE) langCode = "ja";
+    else if (lang == Language::SPANISH) langCode = "es";
+    else if (lang == Language::GERMAN) langCode = "de";
+    else if (lang == Language::FRENCH) langCode = "fr";
+    else if (lang == Language::RUSSIAN) langCode = "ru";
+    else if (lang == Language::UKRAINIAN) langCode = "uk";
+    else if (lang == Language::KOREAN) langCode = "ko";
+    else if (lang == Language::ITALIAN) langCode = "it";
+    else if (lang == Language::POLISH) langCode = "pl";
+    else if (lang == Language::ARABIC) langCode = "ar";
+    else if (lang == Language::VIETNAMESE) langCode = "vi";
+    else if (lang == Language::TAGALOG) langCode = "tl";
+    else if (lang == Language::GREEK) langCode = "el";
+    else if (lang == Language::HEBREW) langCode = "he";
+    else if (lang == Language::PORTUGUESE) langCode = "pt";
+    else if (lang == Language::FARSI) langCode = "fa";
+    else if (lang == Language::SWEDISH) langCode = "sv";
+    else if (lang == Language::DUTCH) langCode = "nl";
+    else if (lang == Language::TURKISH) langCode = "tr";
+    else if (lang == Language::HINDI) langCode = "hi";
+    else if (lang == Language::LATIN) langCode = "la";
+    else {
+        std::cerr << "Error: Unknown language code for enum value " << static_cast<int>(lang) << ". Using hardcoded translations." << std::endl;
+        return false;
+    }
+
+    std::string langFileName = std::string("lang/") + "lang_" + langCode + ".ini";
+    std::ifstream inFile(langFileName);
+
+    if (!inFile.is_open()) {
+        std::cerr << "Warning: " << langFileName << " not found. Using hardcoded translations." << std::endl;
+        // createDefaultLangIni(); // Itt már nem generálunk, mert a loadTranslationsFromFile csak betölteni próbál
+        return false; // Nem sikerült betölteni, marad a hard-coded
+    }
+
+    std::string line;
+    std::string currentSection; // Pl. "[MenuStrings]"
+
+    while (std::getline(inFile, line)) {
+        line = trim_local(line);
+        if (line.empty() || line[0] == '#') continue;
+
+        if (line[0] == '[' && line.back() == ']') {
+            currentSection = line.substr(1, line.length() - 2); // Levágjuk a []-t
+            continue;
+        }
+
+        size_t eqPos = line.find('=');
+        if (eqPos != std::string::npos) {
+            std::string key = currentSection + "." + trim_local(line.substr(0, eqPos)); // Pl. "MenuStrings.titleAndSigns"
+            std::string value = trim_local(line.substr(eqPos + 1));
+            
+            // String csere a \n és \t karakterekre
+            size_t pos = 0;
+            while ((pos = value.find("\\n", pos)) != std::string::npos) {
+                value.replace(pos, 2, "\n");
+                pos += 1;
+            }
+            pos = 0;
+            while ((pos = value.find("\\t", pos)) != std::string::npos) {
+                value.replace(pos, 2, "\t");
+                pos += 1;
+            }
+
+            loadedTranslations[key] = value;
+        }
+    }
+    inFile.close();
+
+    if (loadedTranslations.empty()) {
+        std::cerr << "Warning: " << langFileName << " found but no translations loaded. Using hardcoded." << std::endl;
+        return false;
+    }
+
+    useLangIni = true;
+    return true;
+}
+
+// Központi függvény a fordítások lekéréséhez
+std::string getTranslation(const std::string& key) {
+    if (useLangIni && loadedTranslations.count(key)) {
+        return loadedTranslations[key];
+    }
+
+    // --- FALLBACK: Ha nincs lang.ini, vagy a kulcs hiányzik a fájlból ---
+    // MenuStrings
+    if (key == "MenuStrings.titleAndSigns") return mainMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].titleAndSigns;
+    else if (key == "MenuStrings.programExplanation") return mainMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].programExplanation;
+    else if (key == "MenuStrings.startProgram") return mainMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].startProgram;
+    else if (key == "MenuStrings.mistakeExercise") return mainMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].mistakeExercise;
+    else if (key == "MenuStrings.newFile") return mainMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].newFile;
+    else if (key == "MenuStrings.settings") return mainMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].settings;
+    else if (key == "MenuStrings.Editor") return mainMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].Editor;
+    else if (key == "MenuStrings.exit") return mainMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].exit;
+    else if (key == "MenuStrings.signs") return mainMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].signs;
+
+    // ExplanationStrings
+    else if (key == "ExplanationStrings.description") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].description;
+    else if (key == "ExplanationStrings.instruction1") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].instruction1;
+    else if (key == "ExplanationStrings.instruction2") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].instruction2;
+    else if (key == "ExplanationStrings.instruction3") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].instruction3;
+    else if (key == "ExplanationStrings.instruction4") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].instruction4;
+    else if (key == "ExplanationStrings.instruction5") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].instruction5;
+    else if (key == "ExplanationStrings.instruction6") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].instruction6;
+    else if (key == "ExplanationStrings.instruction7") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].instruction7;
+    else if (key == "ExplanationStrings.instruction8") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].instruction8;
+    else if (key == "ExplanationStrings.instruction9") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].instruction9;
+    else if (key == "ExplanationStrings.goodLuck") return explanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].goodLuck;
+
+    // ExitingStrings
+    else if (key == "ExitingStrings.exiting") return exitingTranslations_hardcoded[static_cast<int>(programUiLanguage)].exiting;
+
+    // NumberOutput
+    else if (key == "NumberOutput.numberOutput") return chooseNumberMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].numberOutput;
+
+    // ListAndSelectedFile
+    else if (key == "ListAndSelectedFile.currentlyFolder") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].currentlyFolder;
+    else if (key == "ListAndSelectedFile.emptyFolder") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].emptyFolder;
+    else if (key == "ListAndSelectedFile.isDirectory") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].isDirectory;
+    else if (key == "ListAndSelectedFile.commands") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].commands;
+    else if (key == "ListAndSelectedFile.fullCommands") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].fullCommands;
+    else if (key == "ListAndSelectedFile.choice") return listAndSelectedFilesTranslations_hardcoded[static_cast<int>(programUiLanguage)].choice;
+
+    // RenameFilesAndFolders
+    else if (key == "RenameFilesAndFolders.toBeRenamed") return renameFilesAndFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].toBeRenamed;
+    else if (key == "RenameFilesAndFolders.newName") return renameFilesAndFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].newName;
+
+    // MovingFileFolders
+    else if (key == "MovingFileFolders.toBeMoved") return movingFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].toBeMoved;
+    else if (key == "MovingFileFolders.newNameNewPath") return movingFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].newNameNewPath;
+
+    // DeleteFileFolders
+    else if (key == "DeleteFileFolders.errorDfDangerousPath") return deleteFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorDfDangerousPath;
+    else if (key == "DeleteFileFolders.confirmationDelete") return deleteFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].confirmationDelete;
+    else if (key == "DeleteFileFolders.successDelete") return deleteFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].successDelete;
+    else if (key == "DeleteFileFolders.interrupted") return deleteFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].interrupted;
+    else if (key == "DeleteFileFolders.errorDelete") return deleteFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorDelete;
+
+    // CopyFileFolders
+    else if (key == "CopyFileFolders.errorDangerousPath") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorDangerousPath;
+    else if (key == "CopyFileFolders.toBeCopied") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].toBeCopied;
+    else if (key == "CopyFileFolders.newNameNewPath") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].newNameNewPath;
+    else if (key == "CopyFileFolders.errorDangerousGoalAndPath") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorDangerousGoalAndPath;
+    else if (key == "CopyFileFolders.successCopying") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].successCopying;
+    else if (key == "CopyFileFolders.anErrorOccurred") return copyFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].anErrorOccurred;
+
+    // CreateFolderStrings
+    else if (key == "CreateFolderStrings.errorDangerousPath") return createFolderTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorDangerousPath;
+    else if (key == "CreateFolderStrings.successCreate") return createFolderTranslations_hardcoded[static_cast<int>(programUiLanguage)].successCreate;
+    else if (key == "CreateFolderStrings.errorCreate") return createFolderTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorCreate;
+
+    // W_wordPair
+    else if (key == "W_wordPair.ErrorOpenedFile") return wordPairErrorTranslations_hardcoded[static_cast<int>(programUiLanguage)].ErrorOpenedFile;
+
+    // InvalidInput
+    else if (key == "InvalidInput.invalidInput") return invalidInputTranslations_hardcoded[static_cast<int>(programUiLanguage)].invalidInput;
+
+    // EnteringBack
+    else if (key == "EnteringBack.pressToEnter") return continuationToEnterTranslations_hardcoded[static_cast<int>(programUiLanguage)].pressToEnter;
+
+    // InvalidInput2
+    else if (key == "InvalidInput2.invalidInput2") return invalidInputTranslations2_hardcoded[static_cast<int>(programUiLanguage)].invalidInput2;
+
+    // HaveNoWords
+    else if (key == "HaveNoWords.haveNoWords") return haveNoWordsTranslations_hardcoded[static_cast<int>(programUiLanguage)].haveNoWords;
+
+    // ReTry
+    else if (key == "ReTry.reTry") return reTryTranslations_hardcoded[static_cast<int>(programUiLanguage)].reTry;
+
+    // BadlyAnswer
+    else if (key == "BadlyAnswer.badlyAnswer") return badlyAnswerTranslations_hardcoded[static_cast<int>(programUiLanguage)].badlyAnswer;
+
+    // GoodAnswer1
+    else if (key == "GoodAnswer1.goodAnswer1") return goodAnswer1Translations_hardcoded[static_cast<int>(programUiLanguage)].goodAnswer1;
+
+    // GoodAnswer2
+    else if (key == "GoodAnswer2.goodAnswer2") return goodAnswer2Translations_hardcoded[static_cast<int>(programUiLanguage)].goodAnswer2;
+
+    // PronunciationString
+    else if (key == "PronunciationString.pronunciation2str") return pronunciationStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].pronunciation2str;
+
+    // HaveFinished
+    else if (key == "HaveFinished.haveFinished") return haveFinishedTranslations_hardcoded[static_cast<int>(programUiLanguage)].haveFinished;
+
+    // ScoreSys
+    else if (key == "ScoreSys.total") return totalTranslations_hardcoded[static_cast<int>(programUiLanguage)].total;
+    else if (key == "ScoreSys.allQuestion") return totalTranslations_hardcoded[static_cast<int>(programUiLanguage)].allQuestion;
+    else if (key == "ScoreSys.correct") return totalTranslations_hardcoded[static_cast<int>(programUiLanguage)].correct;
+    else if (key == "ScoreSys.badly") return totalTranslations_hardcoded[static_cast<int>(programUiLanguage)].badly;
+    else if (key == "ScoreSys.percent") return totalTranslations_hardcoded[static_cast<int>(programUiLanguage)].percent;
+
+    // PercentAge
+    else if (key == "PercentAge.percentAge100") return percentAgeTranslations_hardcoded[static_cast<int>(programUiLanguage)].percentAge100;
+    else if (key == "PercentAge.percentAge80") return percentAgeTranslations_hardcoded[static_cast<int>(programUiLanguage)].percentAge80;
+    else if (key == "PercentAge.percentAgeElse") return percentAgeTranslations_hardcoded[static_cast<int>(programUiLanguage)].percentAgeElse;
+
+    // QuizExplanation
+    else if (key == "QuizExplanation.quizExplanation1") return quizExplanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].quizExplanation1;
+    else if (key == "QuizExplanation.quizExplanation2") return quizExplanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].quizExplanation2;
+    else if (key == "QuizExplanation.quizExplanation3") return quizExplanationTranslations_hardcoded[static_cast<int>(programUiLanguage)].quizExplanation3;
+
+    // VocabWordsPairTotal
+    else if (key == "VocabWordsPairTotal.vocabWordsPairTotal") return vocabWordsPairTotalTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabWordsPairTotal;
+    else if (key == "VocabWordsPairTotal.vocabWordsPairTotal2") return vocabWordsPairTotalTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabWordsPairTotal2;
+    else if (key == "VocabWordsPairTotal.vocabWordsPairTotal3") return vocabWordsPairTotalTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabWordsPairTotal3;
+
+    // CreateVocabFile
+    else if (key == "CreateVocabFile.inputFileName") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].inputFileName;
+    else if (key == "CreateVocabFile.folderName") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].folderName;
+    else if (key == "CreateVocabFile.fullPathError") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].fullPathError;
+    else if (key == "CreateVocabFile.fullPathOpenError") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].fullPathOpenError;
+    else if (key == "CreateVocabFile.fileSave") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].fileSave;
+    else if (key == "CreateVocabFile.fileSave2") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].fileSave2;
+    else if (key == "CreateVocabFile.folderError") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].folderError;
+    else if (key == "CreateVocabFile.folderDoesNotExist") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].folderDoesNotExist;
+    else if (key == "CreateVocabFile.askingCreate") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].askingCreate;
+    else if (key == "CreateVocabFile.folderOperationAborted") return createVocabFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].folderOperationAborted;
+
+    // CreateVocab
+    else if (key == "CreateVocab.createVocab") return createVocabTranslations_hardcoded[static_cast<int>(programUiLanguage)].createVocab;
+    else if (key == "CreateVocab.createVocab2") return createVocabTranslations_hardcoded[static_cast<int>(programUiLanguage)].createVocab2;
+    else if (key == "CreateVocab.createVocab3") return createVocabTranslations_hardcoded[static_cast<int>(programUiLanguage)].createVocab3;
+    else if (key == "CreateVocab.createVocab4") return createVocabTranslations_hardcoded[static_cast<int>(programUiLanguage)].createVocab4;
+    else if (key == "CreateVocab.createVocab5") return createVocabTranslations_hardcoded[static_cast<int>(programUiLanguage)].createVocab5;
+    else if (key == "CreateVocab.createVocab6") return createVocabTranslations_hardcoded[static_cast<int>(programUiLanguage)].createVocab6;
+    else if (key == "CreateVocab.createVocab7") return createVocabTranslations_hardcoded[static_cast<int>(programUiLanguage)].createVocab7;
+
+    // VocabMenu
+    else if (key == "VocabMenu.vocabMenu1") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabMenu1;
+    else if (key == "VocabMenu.vocabMenu2") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabMenu2;
+    else if (key == "VocabMenu.vocabMenu3") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabMenu3;
+    else if (key == "VocabMenu.vocabError1") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabError1;
+    else if (key == "VocabMenu.vocabError2") return vocabMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].vocabError2;
+
+    // VocabFileCommands
+    else if (key == "VocabFileCommands.commands1") return vocabFileCommandTranslate_hardcoded[static_cast<int>(programUiLanguage)].commands1;
+    else if (key == "VocabFileCommands.commands2") return vocabFileCommandTranslate_hardcoded[static_cast<int>(programUiLanguage)].commands2;
+    else if (key == "VocabFileCommands.commands3") return vocabFileCommandTranslate_hardcoded[static_cast<int>(programUiLanguage)].commands3;
+    else if (key == "VocabFileCommands.commands4") return vocabFileCommandTranslate_hardcoded[static_cast<int>(programUiLanguage)].commands4;
+
+    // SettingsMenu
+    else if (key == "SettingsMenu.settingsMenuSign") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].settingsMenuSign;
+    else if (key == "SettingsMenu.chooseSettingsMenu") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].chooseSettingsMenu;
+    else if (key == "SettingsMenu.languageOptions") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].languageOptions;
+    else if (key == "SettingsMenu.targetLanguageOptions") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].targetLanguageOptions;
+    else if (key == "SettingsMenu.colorsOptions") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].colorsOptions;
+    else if (key == "SettingsMenu.soundOptions") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].soundOptions;
+    else if (key == "SettingsMenu.accentsOptions") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].accentsOptions;
+    else if (key == "SettingsMenu.oneRoundQuizOption") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].oneRoundQuizOption;
+    else if (key == "SettingsMenu.preferIniTranslationsOption") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].preferIniTranslationsOption;
+    else if (key == "SettingsMenu.backMainMenu") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].backMainMenu;
+    else if (key == "SettingsMenu.settingsMenuSign2") return settingsMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].settingsMenuSign2;
+
+    // LanguageMenu
+    else if (key == "LanguageMenu.languageMenu1Sign") return languageMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].languageMenu1Sign;
+    else if (key == "LanguageMenu.exiting") return languageMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].exiting;
+    else if (key == "LanguageMenu.choiceStr") return languageMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].choiceStr;
+    else if (key == "LanguageMenu.languageMenu2Sign") return languageMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].languageMenu2Sign;
+    else if (key == "LanguageMenu.choiceSuccessProgramLanguage") return languageMenuTranslations_hardcoded[static_cast<int>(programUiLanguage)].choiceSuccessProgramLanguage;
+
+    // ColorsOnset
+    else if (key == "ColorsOnset.colorsPrinting1") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].colorsPrinting1;
+    else if (key == "ColorsOnset.colorsPrinting2") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].colorsPrinting2;
+    else if (key == "ColorsOnset.useCLR_ON") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].useCLR_ON;
+    else if (key == "ColorsOnset.useCLR_OFF") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].useCLR_OFF;
+    else if (key == "ColorsOnset.colorsMenu1") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].colorsMenu1;
+    else if (key == "ColorsOnset.colorsMenu2") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].colorsMenu2;
+    else if (key == "ColorsOnset.colorsMenu3") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].colorsMenu3;
+    else if (key == "ColorsOnset.choice") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].choice;
+    else if (key == "ColorsOnset.colorsOnOn") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].colorsOnOn;
+    else if (key == "ColorsOnset.colorsOffOff") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].colorsOffOff;
+    else if (key == "ColorsOnset.errorEntryDenied") return colorsOSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorEntryDenied;
+
+    // SaveSettings
+    else if (key == "SaveSettings.saveSettingsError") return saveSettingsTranslations_hardcoded[static_cast<int>(programUiLanguage)].saveSettingsError;
+
+    // LearningLanguageSet
+    else if (key == "LearningLanguageSet.Menu") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].Menu;
+    else if (key == "LearningLanguageSet.CurrentlyMotherLanguage") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].CurrentlyMotherLanguage;
+    else if (key == "LearningLanguageSet.CurrentlyLearningLanguage") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].CurrentlyLearningLanguage;
+    else if (key == "LearningLanguageSet.option1") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].option1;
+    else if (key == "LearningLanguageSet.option2") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].option2;
+    else if (key == "LearningLanguageSet.option3") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].option3;
+    else if (key == "LearningLanguageSet.choice1") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].choice1;
+    else if (key == "LearningLanguageSet.allChoice") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].allChoice;
+    else if (key == "LearningLanguageSet.motherSuccess") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].motherSuccess;
+    else if (key == "LearningLanguageSet.choice2") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].choice2;
+    else if (key == "LearningLanguageSet.targetSuccess") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].targetSuccess;
+    else if (key == "LearningLanguageSet.choice") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].choice;
+    else if (key == "LearningLanguageSet.back") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].back;
+    else if (key == "LearningLanguageSet.error") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].error;
+    else if (key == "LearningLanguageSet.menuSigns") return learningLanguageSetTranslations_hardcoded[static_cast<int>(programUiLanguage)].menuSigns;
+
+    // LlistAndSelectedFile
+    else if (key == "LlistAndSelectedFile.errorFile") return LlistAndSelectedFileTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorFile;
+
+    // OosEditor
+    else if (key == "OosEditor.run") return OosEditorTranslations_hardcoded[static_cast<int>(programUiLanguage)].run;
+    else if (key == "OosEditor.errorWin32") return OosEditorTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorWin32;
+    else if (key == "OosEditor.errorLinux") return OosEditorTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorLinux;
+
+    // BackgroundSets
+    else if (key == "BackgroundSets.sign") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].sign;
+    else if (key == "BackgroundSets.DefaultBlack") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].DefaultBlack;
+    else if (key == "BackgroundSets.green") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].green;
+    else if (key == "BackgroundSets.cian") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].cian;
+    else if (key == "BackgroundSets.red") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].red;
+    else if (key == "BackgroundSets.purple") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].purple;
+    else if (key == "BackgroundSets.blue") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].blue;
+    else if (key == "BackgroundSets.white") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].white;
+    else if (key == "BackgroundSets.gray") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].gray;
+    else if (key == "BackgroundSets.stepBack") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].stepBack;
+    else if (key == "BackgroundSets.backgroundColorsChange") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].backgroundColorsChange;
+    else if (key == "BackgroundSets.backGroundColor") return backgroundSetsTranslations_hardcoded[static_cast<int>(programUiLanguage)].backGroundColor;
+
+    // SoundOnOff
+    else if (key == "SoundOnOff.soundSet") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].soundSet;
+    else if (key == "SoundOnOff.currentlyState") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].currentlyState;
+    else if (key == "SoundOnOff.useSoundOn") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].useSoundOn;
+    else if (key == "SoundOnOff.useSoundOff") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].useSoundOff;
+    else if (key == "SoundOnOff.option1") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].option1;
+    else if (key == "SoundOnOff.useSoundOn2") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].useSoundOn2;
+    else if (key == "SoundOnOff.useSoundOff2") return soundOnOffTranslations_hardcoded[static_cast<int>(programUiLanguage)].useSoundOff2;
+
+    // MistakeExercise
+    else if (key == "MistakeExercise.practiceOfWrongWord") return mistakeExerciseTranslations_hardcoded[static_cast<int>(programUiLanguage)].practiceOfWrongWord;
+    else if (key == "MistakeExercise.word") return mistakeExerciseTranslations_hardcoded[static_cast<int>(programUiLanguage)].word;
+    else if (key == "MistakeExercise.answer") return mistakeExerciseTranslations_hardcoded[static_cast<int>(programUiLanguage)].answer;
+    else if (key == "MistakeExercise.exerciseEnd") return mistakeExerciseTranslations_hardcoded[static_cast<int>(programUiLanguage)].exerciseEnd;
+
+    // SpellingOutAccents
+    else if (key == "SpellingOutAccents.accentsMenu") return spellingOutAccentsTranslations_hardcoded[static_cast<int>(programUiLanguage)].accentsMenu;
+    else if (key == "SpellingOutAccents.accentsState") return spellingOutAccentsTranslations_hardcoded[static_cast<int>(programUiLanguage)].accentsState;
+    else if (key == "SpellingOutAccents.accentsState1Off") return spellingOutAccentsTranslations_hardcoded[static_cast<int>(programUiLanguage)].accentsState1Off;
+    else if (key == "SpellingOutAccents.accentsState2On") return spellingOutAccentsTranslations_hardcoded[static_cast<int>(programUiLanguage)].accentsState2On;
+    else if (key == "SpellingOutAccents.accentsMenu1") return spellingOutAccentsTranslations_hardcoded[static_cast<int>(programUiLanguage)].accentsMenu1;
+    else if (key == "SpellingOutAccents.accentsMenu2") return spellingOutAccentsTranslations_hardcoded[static_cast<int>(programUiLanguage)].accentsMenu2;
+    else if (key == "SpellingOutAccents.accentsMenu3") return spellingOutAccentsTranslations_hardcoded[static_cast<int>(programUiLanguage)].accentsMenu3;
+
+    // CreateVocabListsFileAndFolders
+    else if (key == "CreateVocabListsFileAndFolders.currentlyFileandFolders") return createVocabListsFileAndFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].currentlyFileandFolders;
+    else if (key == "CreateVocabListsFileAndFolders.folderName") return createVocabListsFileAndFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].folderName;
+
+    // OneRoundQString
+    else if (key == "OneRoundQString.mainSigns") return oneRoundQuizStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].mainSigns;
+    else if (key == "OneRoundQString.currentlyState") return oneRoundQuizStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].currentlyState;
+    else if (key == "OneRoundQString.stateON") return oneRoundQuizStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].stateON;
+    else if (key == "OneRoundQString.stateOff") return oneRoundQuizStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].stateOff;
+    else if (key == "OneRoundQString.switching") return oneRoundQuizStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].switching;
+    else if (key == "OneRoundQString.back") return oneRoundQuizStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].back;
+    else if (key == "OneRoundQString.choose") return oneRoundQuizStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].choose;
+    else if (key == "OneRoundQString.OneRoundStateOn") return oneRoundQuizStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].OneRoundStateOn;
+    else if (key == "OneRoundQString.OneRoundStateOff") return oneRoundQuizStringTranslations_hardcoded[static_cast<int>(programUiLanguage)].OneRoundStateOff;
+
+    // IniStructToggle
+    else if (key == "IniStructToggle.mainSigns") return iniStructToggleTranslations_hardcoded[static_cast<int>(programUiLanguage)].mainSigns;
+    else if (key == "IniStructToggle.currentlyState") return iniStructToggleTranslations_hardcoded[static_cast<int>(programUiLanguage)].currentlyState;
+    else if (key == "IniStructToggle.stateON") return iniStructToggleTranslations_hardcoded[static_cast<int>(programUiLanguage)].stateON;
+    else if (key == "IniStructToggle.stateOff") return iniStructToggleTranslations_hardcoded[static_cast<int>(programUiLanguage)].stateOff;
+    else if (key == "IniStructToggle.switchingMenu") return iniStructToggleTranslations_hardcoded[static_cast<int>(programUiLanguage)].switchingMenu;
+    else if (key == "IniStructToggle.cStateON") return iniStructToggleTranslations_hardcoded[static_cast<int>(programUiLanguage)].cStateON;
+    else if (key == "IniStructToggle.cStateOff") return iniStructToggleTranslations_hardcoded[static_cast<int>(programUiLanguage)].cStateOff;
+
+    return "MISSING_TRANSLATION_FOR_" + key;
+}
+
+// --- GLOBÁLIS VÁLTOZÓK DEFINÍCIÓJA (ezek maradnak) ---
+Language programUiLanguage = Language::HUNGARIAN;
+Language motherLanguage = Language::HUNGARIAN;
+Language targetLanguage = Language::ENGLISH;
+
+// --- GLOBÁLIS VÁLTOZÓK DEFINÍCIÓJA (ezek maradnak) ---
+extern bool ignoreAccents; //Az ékezetek kezelésére || To handle accents
+extern bool oneRoundQuiz; // Ha true egy kör(for;;) ciklus false estén 2 kör || If true, one loop(for;;) loop, if false, 2 loops
+extern bool preferIniTranslations; // ÚJ: Flag a lang.ini preferenciához || NEW: Flag for lang.ini preference
+
+
+-----
+
+main.cpp
+
+// ... (include-ok) ...
+#include "Translate/translations.h" // Már benne van
+
+int main(int argc, char *argv[]) {
+    setupConsole();
+
+    if (!loadSettings()) saveSettings();
+    // ÚJ: Fordítások betöltése (vagy fallback)
+    // loadTranslationsFromFile() hívása a loadSettings() után, hogy a programUiLanguage már be legyen állítva
+    loadTranslationsFromFile(programUiLanguage); 
+
+    mainMenu();
+    return 0;
+}
+
+
+settings.cpp
+
+// ... (a függvény eleje) ...
+
+bool loadSettings() {
+    std::ifstream inFile("settings.cfg");
+    if (inFile.is_open()) {
+        std::string line;
+
+        // Visszaállítjuk az alapértelmezett értékeket, ha valami hiányzik a fájlból
+        programUiLanguage = Language::HUNGARIAN;
+        motherLanguage = Language::HUNGARIAN;
+        targetLanguage = Language::ENGLISH;
+        useColors = true;
+        currentBG_Code = 1;
+        useSound = false;
+        ignoreAccents = false;
+        oneRoundQuiz = false;
+        resumeIndex = 0;
+        showHelp = false;
+        helperUsed = false;
+        preferIniTranslations = true; // ÚJ: Alapértelmezett érték
+        currentBG = ""; // Alapértelmezett háttérszín || Default background color
+
+        while (std::getline(inFile, line))
+        {
+            size_t eqPos = line.find('=');
+            if (eqPos == std::string::npos) continue; // Kihagyjuk a hibás sorokat || Skip invalid lines
+
+            std::string key = line.substr(0, eqPos);
+            std::string valueStr = line.substr(eqPos + 1);
+
+            if (key == "ProgramLanguage") programUiLanguage = static_cast<Language>(std::stoi(valueStr));
+            else if (key == "MotherLanguage") motherLanguage = static_cast<Language>(std::stoi(valueStr));
+            else if (key == "TargetLanguage") targetLanguage = static_cast<Language>(std::stoi(valueStr));
+            else if (key == "UseColors") useColors = (valueStr == "1" || valueStr == "true");
+            else if (key == "CurrentBGCode") currentBG_Code = std::stoi(valueStr);
+            else if (key == "UseSound") useSound = (valueStr == "1" || valueStr == "true");
+            else if (key == "IgnoreAccents") ignoreAccents = (valueStr == "1" || valueStr == "true");
+            else if (key == "OneRoundQuiz") oneRoundQuiz = (valueStr == "1" || valueStr == "true");
+            else if (key == "ResumeIndex") resumeIndex = std::stoul(valueStr);
+            else if (key == "ShowHelp") showHelp = (valueStr == "1" || valueStr == "true");
+            else if (key == "HelperUsed") helperUsed = (valueStr == "1" || valueStr == "true");
+            else if (key == "PreferIniTranslations") preferIniTranslations = (valueStr == "1" || valueStr == "true"); // ÚJ: preferIniTranslations betöltése
+        }
+        inFile.close();
+
+        // A fordítások betöltése || the Translations loading
+        loadTranslationsFromFile(programUiLanguage); // <-- EZ A FONTOS HÍVÁS!
+
+        //visszaállítjuk a számot színné
+        //reset the number to color
+        if (currentBG_Code == 1) currentBG = colors::RESET;
+        else if (currentBG_Code == 2) currentBG = colors::BG_GREEN;
+        else if (currentBG_Code == 3) currentBG = colors::BG_CYAN;
+        else if (currentBG_Code == 4) currentBG = colors::BG_RED;
+        else if (currentBG_Code == 5) currentBG = colors::BG_MAGENTA;
+        else if (currentBG_Code == 6) currentBG = colors::BG_BLUE;
+        else if (currentBG_Code == 7) currentBG = colors::BG_WHITE;
+        else if (currentBG_Code == 8) currentBG = colors::BG_GREY;
+
+        return true;
+    }
+    return false;
+}
+
+// ... (a többi függvény) ...

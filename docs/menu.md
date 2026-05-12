@@ -1,30 +1,17 @@
+```
 /**
-* @page menu_doc Main Menu System
- *
- * EN:
- * This page describes the main menu system of the application.
- * It handles user navigation, input processing, and module selection.
- *
- * HU:
- * Ez az oldal az alkalmazás főmenü rendszerét írja le.
- * Kezeli a navigációt, a bemenet feldolgozását és a modulválasztást.
+* @file menu.cpp
+ * @brief Main menu system implementation / A főmenü rendszer megvalósítása
  *
  * @details
  * EN:
- * The menu system is responsible for:
- * - displaying menu options
- * - reading user input
- * - switching between modules (settings, quiz, editor, etc.)
+ * Processes the main menu options, including navigation to settings,
+ * the text editor, the quiz module, and the program description.
  *
  * HU:
- * A menürendszer feladata:
- * - menüpontok megjelenítése
- * - felhasználói input kezelése
- * - modulok közötti váltás (beállítások, kvíz, szerkesztő stb.)
- *
- * @code{.cpp}
- * mainMenu();
- * @endcode
+ * Ez a modul felel a főmenü megjelenítéséért és a menüpontok kezeléséért.
+ * Lehetővé teszi a belépést a beállításokba, a szerkesztőbe,
+ * a kvízbe és a program leírásába.
  */
 
 #include "menu.h"
@@ -88,7 +75,8 @@ void mainMenu() {
             screenWipe();
 
             logError("mainMenu", getTranslation("InvalidInput.invalidInput"));
-            std::cerr << getTranslation("InvalidInput.invalidInput") << "\n\n";
+            std::cerr << getTranslation("InvalidInput.invalidInput") << "\n";
+            //std::cerr << invalidinput.invalidInput <<"\n";
             waitToEnter();
             continue;
         }
@@ -127,8 +115,12 @@ void mainMenu() {
                 screenWipe();
 
                 logError("mainMenu" , "InvalidInput2.invalidInput2");
-                std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n\n";
+                std::cerr << getTranslation("InvalidInput2.invalidInput2") << "\n";
                 waitToEnter();
         }
     }
 }
+```
+
+ITT  A pufferDelete(); függvény nem kell....
+

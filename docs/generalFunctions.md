@@ -1,3 +1,4 @@
+```c++
 /**
 * @page general_functions_doc General Functions Module
  * @tableofcontents
@@ -238,11 +239,9 @@ std::string cleanString(const std::string& s) {
         //s = removeAccents(s);
         result = removeAccents(result);
     }
-
+    
     return result;
 }
 
-
-
-
+```
 

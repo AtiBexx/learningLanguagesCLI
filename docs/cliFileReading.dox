@@ -1,0 +1,282 @@
+/**
+ * @page cliFileReading.doc CLI fájl- és mappakezelő (CLI File & Folder Manager)
+ *
+ * @file cliFileReading.cpp
+ *
+ * @brief
+ * EN: Command Line Interface (CLI) file and folder management system.
+ * HU: Parancssoros fájl- és mappakezelő rendszer.
+ *
+ * @details
+ * ------------------------------------------------------------
+ * EN (Beginner explanation):
+ *
+ * This module is a simple file manager that works in the terminal.
+ * It allows you to:
+ *  - copy files/folders
+ *  - delete files/folders
+ *  - move files/folders
+ *  - rename files/folders
+ *  - open files in an editor
+ *  - navigate folders
+ *  - create folders
+ *
+ * IMPORTANT CONCEPTS (BEGINNER LEVEL):
+ *
+ * 1. Path (útvonal)
+ *    Example: ./data/test.txt
+ *    - This tells the program where a file is located.
+ *    - "./" means current folder.
+ *
+ * 2. Why path length limit (255)?
+ *    if (path.empty() || path.length() > 255) return false;
+ *
+ *    - empty() means: the string is empty ("")
+ *    - length() gives number of characters
+ *
+ *    Why 255?
+ *    - Many operating systems have limits on file paths.
+ *    - Old systems (and some Windows APIs) use ~255 characters max.
+ *    - This prevents crashes and unsafe inputs.
+ *
+ * 3. Why security checks exist:
+ *    - ".." means "go back folder" (dangerous navigation attack)
+ *    - special characters like ; & | can execute commands
+ *    - "rm " or "format" could be dangerous system commands
+ *
+ * 4. system() function:
+ *    system("command")
+ *    - runs a terminal command (like copy, move, mkdir)
+ *    - VERY powerful but dangerous if input is not checked
+ *
+ * ------------------------------------------------------------
+ * HU (kezdő magyarázat):
+ *
+ * Ez a modul egy egyszerű fájlkezelő, ami a terminálban működik.
+ * Lehetővé teszi:
+ *  - fájlok/mappák másolását
+ *  - törlését
+ *  - áthelyezését
+ *  - átnevezését
+ *  - fájl megnyitását szerkesztőben
+ *  - mappák közötti navigálást
+ *  - mappák létrehozását
+ *
+ * FONTOS ALAPFOGALMAK:
+ *
+ * 1. Útvonal (path)
+ *    pl: ./data/test.txt
+ *    - megmondja hol van a fájl
+ *
+ * 2. Miért 255 karakter?
+ *    if (path.empty() || path.length() > 255) return false;
+ *
+ *    - empty() = üres string ("")
+ *    - length() = karakterek száma
+ *
+ *    Miért 255?
+ *    - régi rendszerek és Windows API korlát
+ *    - túl hosszú útvonal hibát okozhat
+ *
+ * 3. Biztonsági ellenőrzések:
+ *    - ".." = visszalépés mappákban (veszélyes lehet)
+ *    - ; & | = parancs injekció lehet
+ *    - rm / format = rendszer parancs
+ *
+ * 4. system() függvény:
+ *    - parancsot futtat a terminálban
+ *    - erős, de veszélyes ha nincs ellenőrzés
+ *
+ * ------------------------------------------------------------
+ */
+
+#include "cliFileReading.h"
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstdlib>
+#include "../Editor/osEditor.h"
+#include "dataFileReading.h"
+#include "../Common/generalFunctions.h"
+#include "../Quiz/programQuiz.h"
+#include <sys/stat.h>
+#include "newInput/platformInput.h"
+
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <dirent.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#endif
+
+using std::vector;
+using std::string;
+using std::cout;
+using std::endl;
+
+/**
+ * Normalize path (útvonal javítás)
+ * Windows-on / -> \ csere
+ */
+std::string normalizePath(const std::string& path) {
+    std::string normalizedPath = path;
+#ifdef _WIN32
+    std::replace(normalizedPath.begin(), normalizedPath.end(), '/', '\\');
+#endif
+    return normalizedPath;
+}
+
+/**
+ * Path safety check (biztonsági ellenőrzés)
+ *
+ * EN:
+ * Prevents dangerous paths and injection attempts.
+ *
+ * HU:
+ * Megakadályozza a veszélyes útvonalakat és parancsinjekciót.
+ */
+bool isPathSafe(const std::string& path) {
+
+    // empty = nincs adat, túl hosszú = potenciális hiba
+    if (path.empty() || path.length() > 255)
+        return false;
+
+    // ".." = mappákból visszalépés
+    if (path.find("..") != std::string::npos)
+        return false;
+
+    string lowerPath = toLowerCase(path);
+
+    // veszélyes parancs kulcsszavak szűrése
+    if (lowerPath.find("format") != std::string::npos ||
+        lowerPath.find("rm ") != std::string::npos)
+        return false;
+
+    // tiltott karakterek
+    return std::all_of(path.begin(), path.end(), [](unsigned char c) {
+        return c != ';' && c != '&' && c != '|' &&
+               c != '>' && c != '<' &&
+               c != '*' && c != '?' && c != '"';
+    });
+}
+
+/**
+ * Copy files or folders
+ * Másolás
+ */
+void copyFileFolders(const std::string& srcPath, bool isDirectory) {
+    if (!isPathSafe(srcPath)) return;
+
+    string destName;
+    std::getline(std::cin, destName);
+
+    string destPath = trim(destName);
+    if (!isPathSafe(destPath)) return;
+
+    std::string nSrc = normalizePath(srcPath);
+    std::string nDest = normalizePath(destPath);
+
+#ifdef _WIN32
+    string command = isDirectory ?
+        "xcopy /E /I /H /Y \"" + nSrc + "\" \"" + nDest + "\"" :
+        "copy /Y \"" + nSrc + "\" \"" + nDest + "\"";
+#else
+    string command = "cp -r -p \"" + nSrc + "\" \"" + nDest + "\"";
+#endif
+
+    std::system(command.c_str());
+}
+
+/**
+ * Delete files or folders
+ * Törlés
+ */
+void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
+    if (!isPathSafe(fullPath)) return;
+
+#ifdef _WIN32
+    string command = isDirectory ?
+        "rd /s /q \"" + fullPath + "\"" :
+        "del /f /q \"" + fullPath + "\"";
+#else
+    string command = isDirectory ?
+        "rm -rf \"" + fullPath + "\"" :
+        "rm -f \"" + fullPath + "\"";
+#endif
+
+    std::system(command.c_str());
+}
+
+/**
+ * Move files or folders
+ * Áthelyezés
+ */
+void movingFileFolders(const std::string& srcPath, bool isDirectory) {
+    if (!isPathSafe(srcPath)) return;
+
+    string destName;
+    std::getline(std::cin, destName);
+
+    string destPath = trim(destName);
+    if (!isPathSafe(destPath)) return;
+
+#ifdef _WIN32
+    string command = "move /Y \"" + srcPath + "\" \"" + destPath + "\"";
+#else
+    string command = "mv -f \"" + srcPath + "\" \"" + destPath + "\"";
+#endif
+
+    std::system(command.c_str());
+}
+
+/**
+ * Rename files or folders
+ * Átnevezés
+ */
+void reNameFileFolders(const std::string& srcPath, bool isDirectory) {
+    if (!isPathSafe(srcPath)) return;
+
+    InputResult input = readLineWithHotkey("");
+    string newName = trim(input.text);
+
+    if (newName == "exit" || newName == "e") return;
+
+    size_t lastSlash = srcPath.find_last_of("/\\");
+    string destPath = srcPath.substr(0, lastSlash + 1) + newName;
+
+#ifdef _WIN32
+    string command = "move /Y \"" + srcPath + "\" \"" + destPath + "\"";
+#else
+    string command = "mv -f \"" + srcPath + "\" \"" + destPath + "\"";
+#endif
+
+    std::system(command.c_str());
+}
+
+/**
+ * Create directory
+ * Mappa létrehozása
+ */
+bool createDirectory(const std::string& path) {
+    if (!isPathSafe(path)) return false;
+
+#ifdef _WIN32
+    string command = "mkdir \"" + path + "\"";
+#else
+    string command = "mkdir -p \"" + path + "\"";
+#endif
+
+    return std::system(command.c_str()) == 0;
+}
+
+/**
+ * Check if directory
+ * Ellenőrzés: mappa-e
+ */
+bool isDirectory(const std::string& path) {
+    struct stat st{};
+    if (stat(path.c_str(), &st) != 0) return false;
+    return S_ISDIR(st.st_mode);
+}

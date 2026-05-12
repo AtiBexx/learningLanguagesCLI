@@ -85,8 +85,6 @@ InputResult readLineWithHotkey(const std::string& prompt)
 
     while (true)
     {
-        // ----- NYOMTATHATÓ KARAKTEREK KEZELÉSE -----
-        // ----- PRINTABLE CHARACTERS HANDLING -----
 #ifdef _WIN32
         wchar_t ch = _getwch(); // Unicode karakter olvasás Windows-on || Read Unicode character on Windows
 
@@ -128,10 +126,50 @@ InputResult readLineWithHotkey(const std::string& prompt)
         // UTF-8 konverzió
         if (ch >= 32)
         {
-            std::string utf8 = wcharToUtf8(static_cast<wchar_t>(ch));
+            std::string utf8 = wcharToUtf8(ch);
             currentInput += utf8;
             std::cout << utf8 << std::flush;
         }
+
+        // ----- NYOMTATHATÓ KARAKTEREK KEZELÉSE -----
+        // ----- PRINTABLE CHARACTERS HANDLING -----
+
+
+        /*
+        // WINDOWS UTF-8 CHARACTER HANDLING
+        // Windows UTF-8 karakter kezelés
+        if (ch >= 32)
+        {
+            auto wch = static_cast<wchar_t>(ch);
+
+            char utf8[5] = {0};
+
+            // ASCII
+            if (wch < 0x80)
+            {
+                utf8[0] = static_cast<char>(wch);
+            }
+
+            // 2-byte UTF-8
+            else if (wch < 0x800)
+            {
+                utf8[0] = static_cast<char> (0xC0 | (wch >> 6));
+                utf8[1] = static_cast<char> (0x80 | (wch & 0x3F));
+            }
+
+            // 3-byte UTF-8
+            else
+            {
+                utf8[0] = static_cast<char> (0xE0 | (wch >> 12));
+                utf8[1] = static_cast<char> (0x80 | ((wch >> 6) & 0x3F));
+                utf8[2] = static_cast<char> (0x80 | (wch & 0x3F));
+            }
+
+            currentInput += utf8;
+
+            std::cout << utf8 << std::flush;
+        }
+*/
 
 #else
 
@@ -142,7 +180,7 @@ InputResult readLineWithHotkey(const std::string& prompt)
         if (utf8.empty())
             continue;
 
-        unsigned char ch = utf8[0];
+        char ch = utf8[0];
 
         // CTRL + Y
         if (ch == 25)

@@ -1,3 +1,4 @@
+```
 /**
 * @file dataFileReading.h
  * @author AtiBexx2
@@ -51,3 +52,4 @@ bool checkMultipleAnswers(const std::string& userAnswer, const std::string& corr
 std::string toLowerCase(std::string s);
 
 #endif //ENGLISH_FILEREADING_H
+```

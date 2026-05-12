@@ -1,3 +1,4 @@
+```c++
 //
 // Created by AtiBexx2 on 2026. 04. 04.
 //
@@ -12,4 +13,10 @@
  */
 void mainMenu();
 
+// Global state for choice menu
+// It is a very important and use for every menu
+// Globális változó a menü számára
+// Minden menüben ezt használjuk
+//extern int choice;
 #endif //ENGLISH_MENU_H
+```
