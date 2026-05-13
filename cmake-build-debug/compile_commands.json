@@ -1,0 +1,92 @@
+[
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\main.cpp.obj -c E:\\English\\src\\main.cpp",
+  "file": "E:/English/src/main.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/main.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Common\\generalFunctions.cpp.obj -c E:\\English\\src\\Common\\generalFunctions.cpp",
+  "file": "E:/English/src/Common/generalFunctions.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Common/generalFunctions.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Editor\\osEditor.cpp.obj -c E:\\English\\src\\Editor\\osEditor.cpp",
+  "file": "E:/English/src/Editor/osEditor.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Editor/osEditor.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\FileIO\\cliFileReading.cpp.obj -c E:\\English\\src\\FileIO\\cliFileReading.cpp",
+  "file": "E:/English/src/FileIO/cliFileReading.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/FileIO/cliFileReading.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\FileIO\\dataFileReading.cpp.obj -c E:\\English\\src\\FileIO\\dataFileReading.cpp",
+  "file": "E:/English/src/FileIO/dataFileReading.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/FileIO/dataFileReading.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Quiz\\programQuiz.cpp.obj -c E:\\English\\src\\Quiz\\programQuiz.cpp",
+  "file": "E:/English/src/Quiz/programQuiz.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Quiz/programQuiz.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Menu\\menu.cpp.obj -c E:\\English\\src\\Menu\\menu.cpp",
+  "file": "E:/English/src/Menu/menu.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Menu/menu.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\CreateVocab\\createVocab.cpp.obj -c E:\\English\\src\\CreateVocab\\createVocab.cpp",
+  "file": "E:/English/src/CreateVocab/createVocab.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/CreateVocab/createVocab.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\CreateVocab\\vocabCmenu.cpp.obj -c E:\\English\\src\\CreateVocab\\vocabCmenu.cpp",
+  "file": "E:/English/src/CreateVocab/vocabCmenu.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/CreateVocab/vocabCmenu.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Settings\\settings.cpp.obj -c E:\\English\\src\\Settings\\settings.cpp",
+  "file": "E:/English/src/Settings/settings.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Settings/settings.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Translate\\returnLanguageList.cpp.obj -c E:\\English\\src\\Translate\\returnLanguageList.cpp",
+  "file": "E:/English/src/Translate/returnLanguageList.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Translate/returnLanguageList.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Quiz\\mistakeExercise.cpp.obj -c E:\\English\\src\\Quiz\\mistakeExercise.cpp",
+  "file": "E:/English/src/Quiz/mistakeExercise.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Quiz/mistakeExercise.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\newInput\\platformInput.cpp.obj -c E:\\English\\src\\newInput\\platformInput.cpp",
+  "file": "E:/English/src/newInput/platformInput.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/newInput/platformInput.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Settings\\languageListParse.cpp.obj -c E:\\English\\src\\Settings\\languageListParse.cpp",
+  "file": "E:/English/src/Settings/languageListParse.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Settings/languageListParse.cpp.obj"
+},
+{
+  "directory": "E:/English/cmake-build-debug",
+  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Translate\\translations.cpp.obj -c E:\\English\\src\\Translate\\translations.cpp",
+  "file": "E:/English/src/Translate/translations.cpp",
+  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Translate/translations.cpp.obj"
+}
+]

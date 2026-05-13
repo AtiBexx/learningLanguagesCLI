@@ -1,0 +1,5 @@
+ToolSet: 13.0 w64 (local)@C:\coding\mingw64
+Ninja: 1.13.2@F:\intelij\Clion\CLion 2026.1\bin\ninja\win\x64\ninja.exe
+Options: 
+
+Options:-DCMAKE_MAKE_PROGRAM=F:/intelij/Clion/CLion 2026.1/bin/ninja/win/x64/ninja.exe

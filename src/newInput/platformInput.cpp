@@ -83,6 +83,13 @@ InputResult readLineWithHotkey(const std::string& prompt)
     std::cout << prompt << std::flush;
     //std::cout << prompt << currentInput;
 
+#ifndef _WIN32
+    struct termios oldt{}, newt{};
+    tcgetattr(STDIN_FILENO, &oldt);
+    newt = oldt;
+    newt.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+#endif
     while (true)
     {
         // ----- NYOMTATHATÓ KARAKTEREK KEZELÉSE -----
@@ -108,12 +115,20 @@ InputResult readLineWithHotkey(const std::string& prompt)
         }
         // --- BACKSPACE KEZELÉSE -----
         // --- HANDLING BACKSPACE -----
-        if (ch == 8 )
+        if (ch == 8)
         {
             if (!currentInput.empty())
             {
-                currentInput.pop_back();
-                std::cout << "\b \b"; // Erase the last character || Töröljük az utolsó karaktert
+                do
+                {
+                    currentInput.pop_back();
+                }
+                while (!currentInput.empty() &&
+                       (static_cast<unsigned char>(currentInput.back()) & 0xC0) == 0x80);
+
+                //std::cout << "\b \b" << std::flush;
+                // better version || jobb verzió
+                std::cout << "\r\33[2K" << prompt << currentInput << std::flush;;
             }
             continue;
         }
@@ -149,6 +164,9 @@ InputResult readLineWithHotkey(const std::string& prompt)
         {
             result.hotkeyTriggered = true;
             result.text = currentInput;
+#ifndef _WIN32
+            tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+#endif
             return result;
         }
 
@@ -157,6 +175,9 @@ InputResult readLineWithHotkey(const std::string& prompt)
         {
             result.text = currentInput;
             std::cout << std::endl;
+#ifndef _WIN32
+            tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+#endif
             return result;
         }
 
@@ -165,8 +186,16 @@ InputResult readLineWithHotkey(const std::string& prompt)
         {
             if (!currentInput.empty())
             {
-                currentInput.pop_back();
-                std::cout << "\b \b";
+                do
+                {
+                    currentInput.pop_back();
+                }
+                while (!currentInput.empty() &&
+                       (static_cast<unsigned char>(currentInput.back()) & 0xC0) == 0x80);
+
+                //std::cout << "\b \b" << std::flush;
+                // jobb verzió
+                std::cout << "\r\33[2K" << prompt << currentInput << std::flush;
             }
             continue;
         }
@@ -176,6 +205,9 @@ InputResult readLineWithHotkey(const std::string& prompt)
         {
             result.exitTriggered = true;
             result.text = currentInput;
+#ifndef _WIN32
+            tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+#endif
             return result;
         }
 

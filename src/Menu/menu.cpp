@@ -82,7 +82,15 @@ void mainMenu() {
         }
         try
         {
-            choice = std::stoi(inputStr);
+            size_t pos = 0;
+            choice = std::stoi(inputStr, &pos);
+            if (pos != inputStr.size())
+            {
+                screenWipe();
+                logError("mainMenu", getTranslation("InvalidInput2.invalidInput"));
+                throw std::invalid_argument(getTranslation("InvalidInput.invalidInput") + "\n\n");
+
+            }
         } catch (...)
         {
             screenWipe();

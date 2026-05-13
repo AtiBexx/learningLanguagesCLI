@@ -9927,8 +9927,11 @@ void createDefaultLangIni() {
         else if (currentLang == Language::TURKISH) langCode = "tr";
         else if (currentLang == Language::HINDI) langCode = "hi";
         else if (currentLang == Language::LATIN) langCode = "la";
-        else continue; // Ismeretlen nyelv kihagyása
-
+        else
+        {
+            std::cerr << "Error: Unknown language code for enum value " << langIndex << ". Skipping INI creation." << std::endl;
+            continue; // Ismeretlen nyelv kihagyása
+        }
         std::string fileName = std::string("lang/") + "lang_" + langCode + ".ini";
         std::ofstream outFile(fileName);
         if (!outFile.is_open()) {
@@ -10311,12 +10314,12 @@ bool loadTranslationsFromFile(Language lang) {
         return false;
     }
 
-    std::string langFileName = "lang_" + langCode + ".ini";
+    std::string langFileName = std::string("lang/") + "lang_" + langCode + ".ini";
     std::ifstream inFile(langFileName);
 
     if (!inFile.is_open()) {
         std::cerr << "Warning: " << langFileName << " not found. Creating default and using hardcoded translations." << std::endl;
-        createDefaultLangIni(); // Létrehozzuk az összes alapértelmezettet
+       // createDefaultLangIni(); // Létrehozzuk az összes alapértelmezettet
         return false; // Nem sikerült betölteni, marad a hard-coded
     }
 

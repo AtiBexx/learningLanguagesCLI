@@ -448,7 +448,6 @@ bool loadSettings() {
         preferIniTranslations = true;
         currentBG = ""; // Alapértelmezett háttérszín || Default background color
 
-        currentBG =""; //colors::RESET; Vagy ||or ""
 
         while (std::getline(inFile, line))
         {
@@ -474,7 +473,8 @@ bool loadSettings() {
         inFile.close();
 
         // A fordítások betöltése || the Translations loading
-        loadTranslationsFromFile(programUiLanguage);
+        //TODO TEST
+        //loadTranslationsFromFile(programUiLanguage);
 
             //visszaállítjuk a számot színné
             //reset the number to color
@@ -984,7 +984,7 @@ void learningLanguage()
         for (;;) {
             screenWipe();
             std::cout << getTranslation("SoundOnOff.soundSet") << "\n" << std::flush;
-            std::cout << getTranslation ("SoundOnOff..currentlyState")
+            std::cout << getTranslation ("SoundOnOff.currentlyState")
             << (useSound ? getTranslation("SoundOnOff.useSoundOn") : getTranslation("SoundOnOff.useSoundOff"))
             << "\n" << std::flush;
             /*std::cout << SOO.soundSet << std::endl;
@@ -1197,7 +1197,7 @@ void preferIniTranslationsToggle()
 {
     screenWipe();
     std::cout << getTranslation("IniStructToggle.mainSigns")  << "\n";
-    std::cout << getTranslation("IniStructToggle.currentlyState") << (preferIniTranslations ? getTranslation("IniStructToggle.stateON") : getTranslation ("stateOff")) << "\n" << std::flush;
+    std::cout << getTranslation("IniStructToggle.currentlyState") << (preferIniTranslations ? getTranslation("IniStructToggle.stateON") : getTranslation ("IniStructToggle.stateOff")) << "\n" << std::flush;
     std::cout << getTranslation("IniStructToggle.switchingMenu") << "\n";
     std::cout << getTranslation("IniStructToggle.switchingMenu2") << "\n";
     std::cout << getTranslation("IniStructToggle.switchingMenu3");

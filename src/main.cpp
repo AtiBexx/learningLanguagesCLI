@@ -12,9 +12,15 @@
 #include "Menu/menu.h"
 #include "Translate/translations.h"
 #include <iostream>
+#include <fstream>
+#include <locale>
+#include <string>
+
 
 #ifdef _WIN32
 #include <windows.h>
+#include <fcntl.h>
+#include <io.h>
 #endif
 
 
@@ -66,6 +72,17 @@ int main(int argc, char *argv[]) {
     // Létrehozzuk a settings.cf fájlt és elmentjük a beállításokat ha nem létezik
     // Ha létezik akkor betöltjük
     if (!loadSettings()) saveSettings();
+    //if (preferIniTranslations && !inFile.is_open() )
+    if (preferIniTranslations)
+    {
+        std::string fileFolder = "lang/lang_hu.ini";
+
+        std::ifstream check(fileFolder);
+        if (!check.is_open())
+        {
+            createDefaultLangIni();
+        }
+    }
 
     // Fordítások betöltése || Loading translations
     loadTranslationsFromFile(programUiLanguage);
