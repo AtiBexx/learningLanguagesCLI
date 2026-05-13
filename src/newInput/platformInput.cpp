@@ -69,8 +69,21 @@ static std::string wcharToUtf8(wchar_t wch)
 
     return {utf8, static_cast<std::string::size_type>(size)};
 }
-
 #endif
+
+bool isRealTerminal()
+{
+#ifdef _WIN32
+    DWORD mode;
+    HANDLE hInput = GetStdHandle(STD_INPUT_HANDLE);
+
+    // Ha nincs valódi konzol mód → IDE terminal
+    return GetConsoleMode(hInput, &mode);
+#else
+    //return true;
+    return isatty(STDOUT_FILENO);
+#endif
+}
 
 InputResult readLineWithHotkey(const std::string& prompt)
 {
@@ -78,10 +91,15 @@ InputResult readLineWithHotkey(const std::string& prompt)
     result.hotkeyTriggered = false;
     result.exitTriggered = false;
 
+    if (!isRealTerminal())
+    {
+        return ideConsoleMod(prompt);
+    }
+
     std::string currentInput;
 
     std::cout << prompt << std::flush;
-    //std::cout << prompt << currentInput;
+
 
 #ifndef _WIN32
     struct termios oldt{}, newt{};
@@ -132,6 +150,26 @@ InputResult readLineWithHotkey(const std::string& prompt)
             }
             continue;
         }
+
+        // --- NYÍLBILLENTYŰK KEZELÉSE (Windows) ---
+        // --- HOTKEY HANDLING (Windows) ---
+        if (ch == 0 || ch == 224)
+        {
+            wchar_t arrow = _getwch(); // második kód
+
+            switch (arrow)
+            {
+            case 72: // fel || up
+            case 80: // le || down
+            case 75: // bal || left
+            case 77: // jobb || right
+                continue;
+
+            default:
+                break;
+            }
+        }
+
         // --- KILÉPÉS HOTKEY KEZELÉS: Ctrl+C (ASCII 3) ---
         // --- EXIT HOTKEY HANDLING: Ctrl+C (ASCII 3) ---
         if (ch == 3) { // Ctrl+C
@@ -211,6 +249,21 @@ InputResult readLineWithHotkey(const std::string& prompt)
             return result;
         }
 
+        // --- NYÍLBILLENTYŰK KEZELÉSE (Linux ANSI escape) ---
+        // --- HOTKEY HANDLING (Linux ANSI escape) ---
+        if (ch == 27) // ESC
+        {
+            std::string seq1 = readUtf8Char_linux();
+            std::string seq2 = readUtf8Char_linux();
+
+            if (!seq1.empty() && !seq2.empty() &&
+                seq1[0] == '[' &&
+                (seq2[0] == 'A' || seq2[0] == 'B' || seq2[0] == 'C' || seq2[0] == 'D'))
+            {
+                continue; // fel/le/bal/jobb nyíl ignorálva || up/down/left/right arrow ignored
+            }
+        }
+
         // PRINT UTF-8
         if (ch >= 32)
         {
@@ -221,4 +274,38 @@ InputResult readLineWithHotkey(const std::string& prompt)
 #endif
 
     }
+}
+
+InputResult ideConsoleMod(const std::string& prompt)
+
+{
+    InputResult result;
+    result.hotkeyTriggered = false;
+    result.exitTriggered = false;
+
+    std::cout << prompt << std::flush;
+
+    std::string input;
+    std::getline(std::cin, input);
+
+    // ===== IDE TERMINÁL MODE (IntelliJ / Eclipse / VS Code) =====
+
+    // Ctrl+Y emuláció (IDE-ben nem jön raw keyként)
+    if (input == "^Y" || input == "\x19")
+    {
+        result.hotkeyTriggered = true;
+        result.text = "";
+        return result;
+    }
+
+    // Ctrl+C eset (szöveges fallback)
+    if (input == "^C")
+    {
+        result.exitTriggered = true;
+        result.text = "";
+        return result;
+    }
+
+    result.text = input;
+    return result;
 }

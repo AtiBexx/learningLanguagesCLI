@@ -41,6 +41,8 @@
 #include "dataFileReading.h"
 #include "settings.h"
 #include "Settings/colors.h"
+#include "newInput/platformInput.h"
+
 
 // a program leírása/magyarázata
 // program explanation
@@ -84,9 +86,8 @@ void exiting() {
 }
 
 // képernyötőrlés || screen wipe
-void screenWipe() {
-    // Szín beállítása (ha kell)
-    // Set color if necessary
+void screenWipe()
+/*{
     if (useColors && !currentBG.empty()) {
         std::cout << currentBG;
     } else {
@@ -94,7 +95,24 @@ void screenWipe() {
     }
     // A Képernyő törlése és kurzor haza (egyszerre!)
     // Clear Screen and Cursor Home (at the same time!)
-   std::cout << "\x1B[2J\x1B[H\x1B[3J" << std::flush;
+    std::cout << "\x1B[2J\x1B[H\x1B[3J" << std::flush;
+}*/
+    // Szín beállítása (ha kell)
+    // Set color if necessary
+    {if (useColors && !currentBG.empty()) {
+        std::cout << currentBG;
+    } else {
+        std::cout << colors::RESET;
+    }
+    if (!isRealTerminal())
+    {
+        std::cout << std::string(80, '\n') << std::flush;
+    }
+    else {
+        // A Képernyő törlése és kurzor haza (egyszerre!)
+        // Clear Screen and Cursor Home (at the same time!)
+        std::cout << "\x1B[2J\x1B[H\x1B[3J" << std::flush;
+    }
 }
 
 // Letöröljük a bent maradt puffert ha szükséges

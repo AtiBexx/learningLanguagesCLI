@@ -20,6 +20,9 @@ struct InputResult
 
 InputResult readLineWithHotkey(const std::string& prompt);
 
+InputResult ideConsoleMod(const std::string& prompt);
+bool isRealTerminal();
+
 
 
 #endif //ENGLISH_PLATFORMINPUT_H
