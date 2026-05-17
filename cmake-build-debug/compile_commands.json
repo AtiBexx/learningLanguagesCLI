@@ -1,92 +1,92 @@
 [
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\main.cpp.obj -c E:\\English\\src\\main.cpp",
-  "file": "E:/English/src/main.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/main.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/main.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/main.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/main.cpp",
+  "output": "CMakeFiles/English.dir/src/main.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Common\\generalFunctions.cpp.obj -c E:\\English\\src\\Common\\generalFunctions.cpp",
-  "file": "E:/English/src/Common/generalFunctions.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Common/generalFunctions.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/Common/generalFunctions.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/Common/generalFunctions.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/Common/generalFunctions.cpp",
+  "output": "CMakeFiles/English.dir/src/Common/generalFunctions.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Editor\\osEditor.cpp.obj -c E:\\English\\src\\Editor\\osEditor.cpp",
-  "file": "E:/English/src/Editor/osEditor.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Editor/osEditor.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/Editor/osEditor.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/Editor/osEditor.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/Editor/osEditor.cpp",
+  "output": "CMakeFiles/English.dir/src/Editor/osEditor.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\FileIO\\cliFileReading.cpp.obj -c E:\\English\\src\\FileIO\\cliFileReading.cpp",
-  "file": "E:/English/src/FileIO/cliFileReading.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/FileIO/cliFileReading.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/FileIO/cliFileReading.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/FileIO/cliFileReading.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/FileIO/cliFileReading.cpp",
+  "output": "CMakeFiles/English.dir/src/FileIO/cliFileReading.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\FileIO\\dataFileReading.cpp.obj -c E:\\English\\src\\FileIO\\dataFileReading.cpp",
-  "file": "E:/English/src/FileIO/dataFileReading.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/FileIO/dataFileReading.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/FileIO/dataFileReading.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/FileIO/dataFileReading.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/FileIO/dataFileReading.cpp",
+  "output": "CMakeFiles/English.dir/src/FileIO/dataFileReading.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Quiz\\programQuiz.cpp.obj -c E:\\English\\src\\Quiz\\programQuiz.cpp",
-  "file": "E:/English/src/Quiz/programQuiz.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Quiz/programQuiz.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/Quiz/programQuiz.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/Quiz/programQuiz.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/Quiz/programQuiz.cpp",
+  "output": "CMakeFiles/English.dir/src/Quiz/programQuiz.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Menu\\menu.cpp.obj -c E:\\English\\src\\Menu\\menu.cpp",
-  "file": "E:/English/src/Menu/menu.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Menu/menu.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/Menu/menu.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/Menu/menu.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/Menu/menu.cpp",
+  "output": "CMakeFiles/English.dir/src/Menu/menu.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\CreateVocab\\createVocab.cpp.obj -c E:\\English\\src\\CreateVocab\\createVocab.cpp",
-  "file": "E:/English/src/CreateVocab/createVocab.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/CreateVocab/createVocab.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/CreateVocab/createVocab.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/CreateVocab/createVocab.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/CreateVocab/createVocab.cpp",
+  "output": "CMakeFiles/English.dir/src/CreateVocab/createVocab.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\CreateVocab\\vocabCmenu.cpp.obj -c E:\\English\\src\\CreateVocab\\vocabCmenu.cpp",
-  "file": "E:/English/src/CreateVocab/vocabCmenu.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/CreateVocab/vocabCmenu.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/CreateVocab/vocabCmenu.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/CreateVocab/vocabCmenu.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/CreateVocab/vocabCmenu.cpp",
+  "output": "CMakeFiles/English.dir/src/CreateVocab/vocabCmenu.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Settings\\settings.cpp.obj -c E:\\English\\src\\Settings\\settings.cpp",
-  "file": "E:/English/src/Settings/settings.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Settings/settings.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/Settings/settings.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/Settings/settings.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/Settings/settings.cpp",
+  "output": "CMakeFiles/English.dir/src/Settings/settings.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Translate\\returnLanguageList.cpp.obj -c E:\\English\\src\\Translate\\returnLanguageList.cpp",
-  "file": "E:/English/src/Translate/returnLanguageList.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Translate/returnLanguageList.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/Translate/returnLanguageList.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/Translate/returnLanguageList.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/Translate/returnLanguageList.cpp",
+  "output": "CMakeFiles/English.dir/src/Translate/returnLanguageList.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Quiz\\mistakeExercise.cpp.obj -c E:\\English\\src\\Quiz\\mistakeExercise.cpp",
-  "file": "E:/English/src/Quiz/mistakeExercise.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Quiz/mistakeExercise.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/Quiz/mistakeExercise.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/Quiz/mistakeExercise.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/Quiz/mistakeExercise.cpp",
+  "output": "CMakeFiles/English.dir/src/Quiz/mistakeExercise.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\newInput\\platformInput.cpp.obj -c E:\\English\\src\\newInput\\platformInput.cpp",
-  "file": "E:/English/src/newInput/platformInput.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/newInput/platformInput.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/newInput/platformInput.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/newInput/platformInput.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/newInput/platformInput.cpp",
+  "output": "CMakeFiles/English.dir/src/newInput/platformInput.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Settings\\languageListParse.cpp.obj -c E:\\English\\src\\Settings\\languageListParse.cpp",
-  "file": "E:/English/src/Settings/languageListParse.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Settings/languageListParse.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/Settings/languageListParse.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/Settings/languageListParse.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/Settings/languageListParse.cpp",
+  "output": "CMakeFiles/English.dir/src/Settings/languageListParse.cpp.o"
 },
 {
-  "directory": "E:/English/cmake-build-debug",
-  "command": "C:\\coding\\mingw64\\bin\\c++.exe -IE:/English/src -IE:/English/src/Settings -IE:/English/src/Common -IE:/English/src/Editor -IE:/English/src/FileIO -IE:/English/src/Quiz -IE:/English/src/Translate -IE:/English/src/Menu -IE:/English/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles\\English.dir\\src\\Translate\\translations.cpp.obj -c E:\\English\\src\\Translate\\translations.cpp",
-  "file": "E:/English/src/Translate/translations.cpp",
-  "output": "E:/English/cmake-build-debug/CMakeFiles/English.dir/src/Translate/translations.cpp.obj"
+  "directory": "/data/githubProjects/learningLanguagesCLI/cmake-build-debug",
+  "command": "/usr/bin/c++  -I/data/githubProjects/learningLanguagesCLI/src -I/data/githubProjects/learningLanguagesCLI/src/Settings -I/data/githubProjects/learningLanguagesCLI/src/Common -I/data/githubProjects/learningLanguagesCLI/src/Editor -I/data/githubProjects/learningLanguagesCLI/src/FileIO -I/data/githubProjects/learningLanguagesCLI/src/Quiz -I/data/githubProjects/learningLanguagesCLI/src/Translate -I/data/githubProjects/learningLanguagesCLI/src/Menu -I/data/githubProjects/learningLanguagesCLI/src/CreateVocab -g -std=gnu++11 -fdiagnostics-color=always -o CMakeFiles/English.dir/src/Translate/translations.cpp.o -c /data/githubProjects/learningLanguagesCLI/src/Translate/translations.cpp",
+  "file": "/data/githubProjects/learningLanguagesCLI/src/Translate/translations.cpp",
+  "output": "CMakeFiles/English.dir/src/Translate/translations.cpp.o"
 }
 ]

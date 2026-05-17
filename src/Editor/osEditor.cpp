@@ -1,6 +1,6 @@
 #include "osEditor.h"
 #include <iostream>
-#include <cstdlib> // system()
+//#include <cstdlib> // system()
 #include <string>
 
 #include "generalFunctions.h"
@@ -8,16 +8,19 @@
 
 void openFileInEditor(const std::string& fullPath) {
     std::string command;
+    std::string pathArg;
 
     //const OosEditor &OoE = OosEditorTranslations [static_cast<int>(programUiLanguage)];
 
     // Idézőjelek kezelése: ha van elérési út, tegyük köré, ha nincs, maradjon üres
-    std::string fixedPath = fullPath;
+
 #ifdef _WIN32
+    std::string fixedPath = fullPath;
     for(auto &c : fixedPath) if(c == '/') c = '\\';
 #endif
 
-    std::string pathArg = fixedPath.empty() ? "" : " \"" + fixedPath + "\"";
+
+    pathArg = fullPath.empty() ? "" : " \"" + fullPath + "\"";
 #ifdef _WIN32
     // Az edit.com-ot használjuk
     // use edit.com
@@ -39,11 +42,11 @@ void openFileInEditor(const std::string& fullPath) {
 #else
     // Linux/Android/Termux: nano
     command = "nano" + pathArg;
-    std::cout << OoE.run << command << std::endl;
+    std::cout << "Nano is loading"<< command << std::endl;
     int result = std::system(command.c_str());
 
     if (result != 0) {
-        std::cerr << OoE.errorLinux << result << ")" << std::endl;
+        std::cerr << "Nano run error "<< result << ")" << std::endl;
     }
 #endif
 }

@@ -1,0 +1,298 @@
+Igen 😄
+A `ch == 3` azért `Ctrl+C`, mert az ASCII vezérlőkarakterek így működnek terminálban.
+
+A `Ctrl + billentyű` kombinációknál az ASCII kód általában:
+
+```text
+Ctrl + [betű]
+=
+betű ASCII kódja & 0x1F
+```
+
+Például:
+
+| Kombó  | ASCII | Decimális |
+| ------ | ----- | --------- |
+| Ctrl+A | SOH   | 1         |
+| Ctrl+B | STX   | 2         |
+| Ctrl+C | ETX   | 3         |
+| Ctrl+D | EOT   | 4         |
+| Ctrl+Y | EM    | 25        |
+| Enter  | LF/CR | 10 / 13   |
+| ESC    | ESC   | 27        |
+
+Szóval:
+
+```cpp
+if (ch == 3)
+```
+
+gyakorlatilag:
+
+```text
+ha Ctrl+C érkezett
+```
+
+---
+
+# Miért pont 3?
+
+A `C` ASCII kódja:
+
+```text
+'C' = 67
+```
+
+A terminal control karaktereknél:
+
+```text
+67 & 31 = 3
+```
+
+Régi teletype / UNIX örökség 😄
+
+---
+
+# Egy érdekes extra
+
+Linux terminalban:
+
+| Kombó  | Jelentés |
+| ------ | -------- |
+| Ctrl+C | SIGINT   |
+| Ctrl+Z | SIGTSTP  |
+| Ctrl+\ | SIGQUIT  |
+| Ctrl+D | EOF      |
+
+És ezek csak akkor válnak “normál karakterré”, ha kikapcsolod az `ISIG`-et, mint most.
+
+---
+
+# Gyakorlatban sokan így írják:
+
+```cpp
+constexpr char CTRL_C = 3;
+constexpr char CTRL_Y = 25;
+```
+
+vagy:
+
+```cpp
+#define CTRL_C 3
+```
+
+így olvashatóbb:
+
+```cpp
+if (ch == CTRL_C)
+```
+
+---
+
+# Még profibb UNIX-os megoldás
+
+Van ilyen macro is:
+
+```cpp
+#define CTRL(x) ((x) & 0x1F)
+```
+
+és akkor:
+
+```cpp
+if (ch == CTRL('C'))
+```
+
+vagy:
+
+```cpp
+if (ch == CTRL('Y'))
+```
+
+Ez nagyon elegáns terminal appokban 
+Igen, az `Alt+C` is karakterként érkezhet — de az már teljesen másképp működik, mint a `Ctrl+C`.
+
+# Ctrl hogyan számolódik?
+
+A klasszikus terminal control karaktereknél:
+
+```cpp id="5ay4if"
+CTRL(x) = x & 0x1F
+```
+
+Példa:
+
+```text id="5uhqjc"
+'C' ASCII = 67
+67 & 31 = 3
+```
+
+Ezért:
+
+```cpp id="ngowk2"
+Ctrl+C == 3
+```
+
+---
+
+# Mi az a `0x1F`?
+
+Hexadecimálisan:
+
+```text id="ryr3mq"
+0x1F = 31
+```
+
+Binárisan:
+
+```text id="bz74qy"
+00011111
+```
+
+Ez levágja a felső biteket.
+
+---
+
+# Példa:
+
+```text id="jlwmc0"
+'A' = 65 = 01000001
+&
+31   = 00011111
+----------------
+       00000001 = 1
+```
+
+Tehát:
+
+```text id="4j97ur"
+Ctrl+A = 1
+```
+
+---
+
+# C++ macro verzió
+
+```cpp id="utw5w5"
+#define CTRL(x) ((x) & 0x1F)
+```
+
+Használat:
+
+```cpp id="ewg4l4"
+if (ch == CTRL('C'))
+```
+
+---
+
+# És mi van ALT-tal?
+
+Az `Alt` teljesen más világ 😄
+
+Terminalban az `Alt+C` általában:
+
+```text id="8b6ljf"
+ESC + c
+```
+
+tehát két karakter:
+
+| Karakter | ASCII |
+| -------- | ----- |
+| ESC      | 27    |
+| c        | 99    |
+
+Ezért Linux terminalban gyakran így kell kezelni:
+
+```cpp id="5z14zn"
+if (ch == 27) // ESC
+{
+    std::string next = readUtf8Char_linux();
+
+    if (!next.empty() && next[0] == 'c')
+    {
+        // ALT + C
+    }
+}
+```
+
+---
+
+# Miért ilyen az ALT?
+
+Mert a régi termináloknak nem volt külön Alt scancode rendszerük.
+
+Ezért az ALT egyszerűen:
+
+```text id="w3f9q0"
+ESC prefix
+```
+
+küldést csinált.
+
+Mai napig így működik sok Linux terminalban.
+
+---
+
+# Windows-on más
+
+Windows console alatt az ALT gyakran:
+
+* extended key
+* virtual key code
+* scan code
+
+formában jön.
+
+Tehát ott az `_getwch()` más értékeket adhat.
+
+Sokszor:
+
+```cpp id="mp8jdo"
+224
+```
+
+vagy:
+
+```cpp id="b4n5tj"
+0
+```
+
+prefix után jön a keycode.
+
+---
+
+# FONTOS
+
+Linux terminalban az ALT nem mindig megbízható.
+
+A terminal emulator dönti el:
+
+* GNOME Terminal
+* Konsole
+* xterm
+* tmux
+* SSH
+* VSCode terminal
+
+mind máshogy viselkedhet 😄
+
+Ezért terminal appokban:
+
+* Ctrl → stabil
+* Alt → néha kaotikus
+* Function keys → escape sequence pokol 😂
+
+---
+
+# Profi terminal library-k ezért léteznek
+
+Pl:
+
+* `ncurses`
+* `notcurses`
+* `termbox`
+* `FTXUI`
+
+mert a raw terminal input brutál platformfüggő.
+

@@ -35,8 +35,11 @@
 #include <string>
 #include <fstream>
 #include <ctime>
-#include <windows.h>
 #include <map>
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 
 #include "dataFileReading.h"
 #include "settings.h"

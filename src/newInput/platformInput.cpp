@@ -105,7 +105,7 @@ InputResult readLineWithHotkey(const std::string& prompt)
     struct termios oldt{}, newt{};
     tcgetattr(STDIN_FILENO, &oldt);
     newt = oldt;
-    newt.c_lflag &= ~(ICANON | ECHO);
+    newt.c_lflag &= ~(ICANON | ECHO | ISIG);
     tcsetattr(STDIN_FILENO, TCSANOW, &newt);
 #endif
     while (true)
