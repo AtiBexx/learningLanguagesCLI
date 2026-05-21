@@ -1,0 +1,188 @@
+Ok, csinálunk egy **Termux-safe UI layer-t**, ami nem szedi szét a mostani rendszeredet, csak rárak egy “védőréteget”.
+
+A cél:
+
+* Desktopon marad a szép live input (ANSI, redraw)
+* Termux / Android / IDE esetén fallback `getline`
+* ne csússzon szét a UI
+* ne kelljen mindent átírnod
+
+---
+
+# 1. Platform detektálás (core réteg)
+
+```cpp
+#pragma once
+#include <string>
+
+enum class RuntimeEnv {
+    WINDOWS_DESKTOP,
+    LINUX_DESKTOP,
+    ANDROID_TERMUX,
+    IDE_CONSOLE
+};
+
+RuntimeEnv detectRuntime();
+bool isSafeAnsiTerminal();
+```
+
+---
+
+# 2. implementáció
+
+```cpp
+#include "uiLayer.h"
+
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
+#include <cstdlib>
+
+RuntimeEnv detectRuntime()
+{
+#ifdef __ANDROID__
+    return RuntimeEnv::ANDROID_TERMUX;
+#elif _WIN32
+    return RuntimeEnv::WINDOWS_DESKTOP;
+#else
+    const char* term = std::getenv("TERM");
+    if (!term) return RuntimeEnv::IDE_CONSOLE;
+
+    std::string t = term;
+
+    if (t == "dumb") return RuntimeEnv::IDE_CONSOLE;
+
+    return RuntimeEnv::LINUX_DESKTOP;
+#endif
+}
+
+bool isSafeAnsiTerminal()
+{
+    RuntimeEnv env = detectRuntime();
+
+    switch (env)
+    {
+        case RuntimeEnv::LINUX_DESKTOP:
+        case RuntimeEnv::WINDOWS_DESKTOP:
+            return true;
+
+        case RuntimeEnv::ANDROID_TERMUX:
+        case RuntimeEnv::IDE_CONSOLE:
+        default:
+            return false;
+    }
+}
+```
+
+---
+
+# 3. UI wrapper a readLineWithHotkey köré
+
+Ezt NE írd újra mindenhol, csak használd.
+
+```cpp
+#include "uiLayer.h"
+#include "platformInput.h"
+
+InputResult safeReadLine(const std::string& prompt)
+{
+    if (!isSafeAnsiTerminal())
+    {
+        // TERMUX / IDE SAFE MODE
+        InputResult r;
+        r.hotkeyTriggered = false;
+        r.exitTriggered = false;
+
+        std::cout << prompt;
+        std::getline(std::cin, r.text);
+        return r;
+    }
+
+    // DESKTOP FULL FEATURE MODE
+    return readLineWithHotkey(prompt);
+}
+```
+
+---
+
+# 4. hogyan használod a kódban
+
+Mindenhol ezt cseréled:
+
+### EZT:
+
+```cpp
+InputResult inputResult = readLineWithHotkey(">");
+```
+
+### ERRE:
+
+```cpp
+InputResult inputResult = safeReadLine(">");
+```
+
+---
+
+# 5. extra: redraw védelem (nagyon fontos nálad)
+
+Ha van ilyen:
+
+```cpp
+std::cout << "\r\33[2K" << prompt << currentInput;
+```
+
+akkor csinálj safe verziót:
+
+```cpp
+inline void safeRedraw(const std::string& prompt, const std::string& text)
+{
+    if (!isSafeAnsiTerminal())
+    {
+        return; // Termux: ne próbáljuk újrarajzolni
+    }
+
+    std::cout << "\r\33[2K" << prompt << text << std::flush;
+}
+```
+
+---
+
+# 6. mit kapsz ezzel
+
+### Desktop:
+
+* marad az “IDE feeling”
+* hotkey-ek
+* live input
+* ANSI redraw
+
+### Termux:
+
+* stabil input
+* nincs szétesés
+* nincs cursor bug
+* nincs UTF-8 redraw glitch
+
+### IDE:
+
+* fallback safe input
+
+---
+
+# 7. miért ez a jó megoldás
+
+Nem próbálod “megjavítani az Android terminalt” (nem lehet).
+
+Hanem:
+
+* külön UI réteg
+* platform aware rendering
+* feature downgrade
+
+---
+
+Ha akarod, a következő lépésben meg tudom csinálni neked:
+👉 “full terminal engine layer” (cursor, history, autocomplete, arrow keys stabilan minden platformon)
+
+Ez már olyan szint, mint egy mini readline + zsh light CLI engine.

@@ -121,7 +121,9 @@ void screenWipe()
 // Letöröljük a bent maradt puffert ha szükséges
 // Clear the remaining buffer if necessary it
 void pufferDelete() {
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    //std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.ignore((std::numeric_limits<std::streamsize>::max)(), '\n');
+    // a plusz zárojel megakadályoza hogy a Windows #define max(a,b) makró beleszóljon windowson a müködésbe.	
 }
 
 // rendszerhibák mentése

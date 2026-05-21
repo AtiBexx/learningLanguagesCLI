@@ -399,7 +399,11 @@ void listAndSelectFile() {
 bool isDirectory(const std::string& path) {
     struct stat path_stat{};
     if (stat(path.c_str(), &path_stat) != 0) return false;
+    #ifdef _WIN32
+    return (path_stat.st_mode & _S_IFDIR) != 0;
+#else
     return S_ISDIR(path_stat.st_mode);
+#endif
 }
 
 // új mappa létrehozás || New folder creation

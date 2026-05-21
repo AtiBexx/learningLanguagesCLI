@@ -1,0 +1,17 @@
+# ninja log v6
+104	3727	8010602561890279	CMakeFiles/English.dir/src/Settings/languageListParse.cpp.obj	fb932b9f8f241a28
+81	3822	8010602561654265	CMakeFiles/English.dir/src/Translate/returnLanguageList.cpp.obj	c315230500859848
+20	4186	8010602561061702	CMakeFiles/English.dir/src/Editor/osEditor.cpp.obj	ced4358fedb137cb
+51	4216	8010602561357984	CMakeFiles/English.dir/src/Menu/menu.cpp.obj	4673d17b90686e64
+65	4237	8010602561496143	CMakeFiles/English.dir/src/CreateVocab/vocabCmenu.cpp.obj	d5fed449420e3dd9
+35	4496	8010602561199791	CMakeFiles/English.dir/src/FileIO/dataFileReading.cpp.obj	d2d5506e5ba1bdeb
+43	4507	8010602561277611	CMakeFiles/English.dir/src/Quiz/programQuiz.cpp.obj	e3e0657df156ec55
+89	4554	8010602561752176	CMakeFiles/English.dir/src/Quiz/mistakeExercise.cpp.obj	a7bc7fc2bf719da4
+58	4792	8010602561435827	CMakeFiles/English.dir/src/CreateVocab/createVocab.cpp.obj	2195ff8240fde65f
+73	5471	8010602561573914	CMakeFiles/English.dir/src/Settings/settings.cpp.obj	65f3c1e864e70f0f
+97	9754	8010602561812517	CMakeFiles/English.dir/src/newInput/platformInput.cpp.obj	59e0e10b8323c2d
+7	9836	8010602560923684	CMakeFiles/English.dir/src/main.cpp.obj	95d5007aa8abc5a2
+3732	13565	8010602598170364	CMakeFiles/English.dir/src/Translate/translations.cpp.obj	4d156071783d7089
+56	2331	8010604696865761	CMakeFiles/English.dir/src/FileIO/cliFileReading.cpp.obj	72c8967ae51a1a2b
+13	1910	8010607523057814	CMakeFiles/English.dir/src/Common/generalFunctions.cpp.obj	382d44c19e960e9f
+1911	2200	8010607542041487	English.exe	a5a34d0cb87da3b1

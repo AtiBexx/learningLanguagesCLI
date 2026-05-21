@@ -1,0 +1,71 @@
+C++ projekt! Nézzük meg a forráskódot.Nem találtam a raw fájlokat kereséssel. Próbáljuk közvetlenül:Most már látom a teljes képet. A probléma pontosan érthető. Nézzük meg a `translations.cpp`-ben a `NumberOutput` (prompt szöveg) részt is, ahol a csúszás történik:Most már teljesen értem a problémát. Íme a részletes diagnózis:
+
+---
+
+## A probléma gyökere
+
+A **második kép** azért néz ki csúszva/tördelve, mert a Termux terminál ablak **keskenyebb**, mint amire a program számít.
+
+Konkrétan ez a sor okozza:
+
+```cpp
+// menu.cpp
+std::cout << getTranslation("MenuStrings.titleAndSigns") << "\n\n";
+// → "============NYELVTANULÓ-APP============"
+```
+
+Ez a string **38 karakter** széles. Ha a terminálablak ennél keskenyebb (pl. a telefon kicsi felbontásán), a szöveg sortörés nélkül átcsúszik a következő sorba — és az összes utána következő sor eltolódik, mert a terminál "elfelejtette" hol volt az eredeti sor eleje.
+
+---
+
+## Megoldások
+
+**1. legjobb megoldás — Dinamikus szélességhez igazítás:**
+
+A `generalFunctions.cpp`-be vagy `menu.cpp`-be add hozzá:
+
+```cpp
+#include <sys/ioctl.h>
+#include <unistd.h>
+
+int getTerminalWidth() {
+    struct winsize w;
+    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &w) == 0 && w.ws_col > 0)
+        return w.ws_col;
+    return 40; // fallback
+}
+```
+
+Majd a menü fejlécet dinamikusan állítsd be:
+
+```cpp
+void mainMenu() {
+    int width = getTerminalWidth();
+    std::string line(width - 2, '=');  // terminál szélességéhez igazított sor
+
+    std::cout << line << "\n";
+    std::cout << " NYELVTANULÓ-APP \n";
+    std::cout << line << "\n\n";
+    // ...többi menüpont
+}
+```
+
+**2. egyszerűbb megoldás — Rövidebb / biztonságos szélesség:**
+
+A translation stringeket rövidítsd le, hogy **30 karakternél ne legyenek hosszabbak** — ez még a kis mobilképernyőn is elfér:
+
+```cpp
+// RÉGI:
+"============NYELVTANULÓ-APP============"  // 38 kar
+
+// ÚJ:
+"== NYELVTANULÓ-APP =="  // 22 kar — mindenhol elfér
+```
+
+**3. gyors fix — `\r` visszaállítás:**
+
+Ha nem akarsz semmit újraírni, a `screenWipe()`-ban lévő `\x1B[2J\x1B[H` már helyes — de a Termux alkalmazásban a betűméret növelése / ablakszélesítése is megoldja.
+
+---
+
+Melyik megoldás tetszik — megcsinálom a kódot konkrétan is ha akarod!
