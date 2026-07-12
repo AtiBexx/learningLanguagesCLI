@@ -53,5 +53,13 @@ std::string removeAccents(const std::string &s);
 // Trim, lowercase, remove punctuation
 std::string cleanString(const std::string& s);
 
+// Dinamikusan a szélességhez igazítja a sorokat nem csúsznak el
+// Dynamically adjusts the width of the rows so they don't slide
+int getTerminalWidth();
+
+// Tördeli a szöveget a terminál szélességéhez igazítva
+// Wraps text to fit the width of the terminal
+void printWrapped(const std::string& text, int width = 0);
+
 
 #endif //ENGLISH_GENERALFUNCTIONS_H

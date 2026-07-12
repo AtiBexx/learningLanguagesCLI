@@ -46,17 +46,17 @@
 void mainMenu() {
     for (;;) {
         screenWipe();
-        //const MenuStrings &menuStrs = mainMenuTranslations[static_cast<int>(programUiLanguage)];
+        int width = getTerminalWidth();
 
-        std::cout << getTranslation("MenuStrings.titleAndSigns") << "\n\n";
-        std::cout << getTranslation("MenuStrings.programExplanation") << "\n";
-        std::cout << getTranslation("MenuStrings.startProgram") << "\n";
-        std::cout << getTranslation("MenuStrings.mistakeExercise") << "\n";
-        std::cout << getTranslation("MenuStrings.newFile") << "\n";
-        std::cout << getTranslation("MenuStrings.settings") << "\n";
-        std::cout << getTranslation("MenuStrings.Editor") << "\n";
-        std::cout << getTranslation("MenuStrings.exit") << "\n\n";
-        std::cout << getTranslation("MenuStrings.signs") << "\n";
+        printWrapped(getTranslation("MenuStrings.titleAndSigns") + "\n\n" , width);
+        printWrapped(getTranslation("MenuStrings.programExplanation") + "\n", width);
+        printWrapped(getTranslation("MenuStrings.startProgram") + "\n", width);
+        printWrapped(getTranslation("MenuStrings.mistakeExercise") +"\n", width);
+        printWrapped(getTranslation("MenuStrings.newFile") + "\n", width);
+        printWrapped(getTranslation("MenuStrings.settings") + "\n", width);
+        printWrapped(getTranslation("MenuStrings.Editor") + "\n", width);
+        printWrapped(getTranslation("MenuStrings.exit") + "\n\n", width);
+        printWrapped(getTranslation("MenuStrings.signs") + "\n", width);
 
         int choice = 0;
 

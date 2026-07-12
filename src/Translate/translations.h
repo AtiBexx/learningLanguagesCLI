@@ -98,6 +98,7 @@ struct RenameFilesAndFolders
 {
     std::string toBeRenamed;
     std::string newName;
+    std::string errorDangerousPath;
 };
 //extern const std::vector<RenameFilesAndFolders> renameFilesAndFoldersTranslations;
 
@@ -106,6 +107,7 @@ struct MovingFileFolders
 {
     std::string toBeMoved;
     std::string newNameNewPath;
+    std::string MFerrorDangerousPath;
 
 };
 //extern const std::vector<MovingFileFolders> movingFileFoldersTranslations;

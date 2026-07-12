@@ -36,8 +36,13 @@
 #include <fstream>
 #include <ctime>
 #include <map>
+#include <algorithm>
+
 #ifdef _WIN32
 #include <windows.h>
+#else
+#include <sys/ioctl.h>
+#include <unistd.h>
 #endif
 
 
@@ -52,17 +57,19 @@
 void explanation() {
 
     screenWipe();
-    std::cout << getTranslation("ExplanationStrings.description") << "\n";
-    std::cout << getTranslation("ExplanationStrings.instruction1") << "\n";
-    std::cout << getTranslation("ExplanationStrings.instruction2") << "\n";
-    std::cout << getTranslation("ExplanationStrings.instruction3") << "\n";
-    std::cout << getTranslation("ExplanationStrings.instruction4") << "\n";
-    std::cout << getTranslation("ExplanationStrings.instruction5") << "\n";
-    std::cout << getTranslation("ExplanationStrings.instruction6") << "\n";
-    std::cout << getTranslation("ExplanationStrings.instruction7") << "\n";
-    std::cout << getTranslation("ExplanationStrings.instruction8") << "\n";
-    std::cout << getTranslation("ExplanationStrings.instruction9") << "\n";
-    std::cout << getTranslation("ExplanationStrings.goodLuck") << "\n";
+    int width = getTerminalWidth();
+
+    printWrapped(getTranslation("ExplanationStrings.description") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.instruction1") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.instruction2") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.instruction3") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.instruction4") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.instruction5") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.instruction6") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.instruction7") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.instruction8") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.instruction9") + "\n", width);
+    printWrapped(getTranslation("ExplanationStrings.goodLuck") + "\n", width);
 
     waitToEnter();
 }
@@ -71,8 +78,8 @@ void explanation() {
 // wait for a keystroke (enter)
 void waitToEnter()
 {
-
-    std::cout << getTranslation("EnteringBack.pressToEnter") <<"\n"<< std::flush;
+    int width = getTerminalWidth();
+    printWrapped(getTranslation("EnteringBack.pressToEnter") +"\n", width),std::cout<<std::flush;
     //std::cout << enteringBack.pressToEnter << std::endl;
     std::cin.get();
 }
@@ -81,7 +88,8 @@ void waitToEnter()
 // Exit the application
 void exiting() {
     screenWipe();
-    std::cout << getTranslation("ExitingStrings.exiting") <<"\n" << std::flush;
+    int width = getTerminalWidth();
+    printWrapped(getTranslation("ExitingStrings.exiting") +"\n", width ),std::cout << std::flush;
 
     // Buffer törlése, hogy a cin.get() biztosan várjon
     // Clearing buffer to ensure cin.get() waits
@@ -265,6 +273,66 @@ std::string cleanString(const std::string& s) {
     return result;
 }
 
+// Dinamikusan a szélességhez igazítja a sorokat nem csúsznak el
+// Dynamically adjusts the width of the rows so they don't slide
+int getTerminalWidth()
+{
+#ifdef _WIN32
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi))
+        return csbi.srWindow.Right - csbi.srWindow.Left + 1;
+    return 40;
+#else
+    //LINUX, ANDROID(Termux), etc
+    struct winsize w;
+    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &w) == 0 && w.ws_col > 0)
+        return w.ws_col;
+    return 40;
+#endif
+}
+
+// Tördeli a szöveget a terminál szélességéhez igazítva
+// Wraps text to fit the width of the terminal
+void printWrapped(const std::string& text, int width)
+{
+    if (width <= 0) width = getTerminalWidth();
+    // Ha befér egy sorba, simán kiírjuk
+    // If it fits on one line, print it directly
+    if (text.length() <= width)
+    {
+        std::cout << text ;
+        return;
+    }
+    // Szóhatáron is tördelünk
+    // We also break at word boundaries
+    size_t start = 0;
+    while (start < text.length())
+    {
+        if ((text.length() - start) <= width)
+        {
+            std::cout << text.substr(start) << "\n";
+            break;
+        }
+        //Megkeressük az utolsó szóközt a szélességen(width-en) belül
+        //Find the last space in the width range
+        size_t breakPosition = text.rfind(' ', start + width);
+        if (breakPosition == std::string::npos || breakPosition <= start)
+        {
+            // ha nincs szóköz kemény törés
+            // if there is no space hard tolerance
+            breakPosition = std::min( start + width, text.length());
+        }
+        std::cout << text.substr(start, breakPosition - start) << "\n";
+        if (breakPosition < text.length() && text[breakPosition] == ' ')
+        {
+            start = breakPosition + 1;
+        }
+        else
+        {
+            start = breakPosition;
+        }
+    }
+}
 
 
 

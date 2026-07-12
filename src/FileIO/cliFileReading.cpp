@@ -62,29 +62,36 @@ void copyFileFolders(const std::string& srcPath, bool isDirectory) {
 
     if (!isPathSafe(srcPath)) {
         logError("copyFileFolders", "Dangerous source path: " + srcPath);
-        cout << getTranslation("CopyFileFolders.errorDangerousPath") <<"\n" << std::flush;
+        int width = getTerminalWidth();
+
+        printWrapped(getTranslation("CopyFileFolders.errorDangerousPath") , width);
+        cout<<"\n" << std::flush;
         waitToEnter();
         return;
     }
+    int width = getTerminalWidth();
 
-    cout << getTranslation("CopyFileFolders.toBeCopied") << srcPath << "\n" << std::flush;
-    cout << getTranslation("CopyFileFolders.newNameNewPath") << "\n" << std::flush;
+    printWrapped(getTranslation("CopyFileFolders.toBeCopied") + srcPath ,width);
+    cout<< "\n" << std::flush;
+    printWrapped(getTranslation("CopyFileFolders.newNameNewPath") ,width);
+    cout <<"\n" << std::flush;
 
     InputResult inputResult = readLineWithHotkey(getTranslation("CopyFileFolders.example"));
 
     // -----CTRL + C Kezelése || CTRL + C Handling
-        if (inputResult.exitTriggered)
-        {
-            playBeep();
-            return;
-        }
+    if (inputResult.exitTriggered)
+    {
+        playBeep();
+        return;
+    }
 
         string destName = inputResult.text;
         string destPath = trim(destName);
 
     if (!isPathSafe(destPath)) {
         logError("copyFileFolders", "Dangerous destination path: " + destPath);
-        cout << getTranslation("CopyFileFolders.errorDangerousGoalAndPath") <<"\n" << std::flush;
+        printWrapped(getTranslation("CopyFileFolders.errorDangerousGoalAndPath") , width);
+        cout<<"\n" << std::flush;
         waitToEnter();
         return;
     }
@@ -97,9 +104,16 @@ void copyFileFolders(const std::string& srcPath, bool isDirectory) {
 #else
     command = "cp -r -p \"" + nSrc + "\" \"" + nDest + "\"";
 #endif
-    if (std::system(command.c_str()) == 0) cout << getTranslation("CopyFileFolders.successCopying") <<"\n" << std::flush;
-
-    else cout << getTranslation("CopyFileFolders.anErrorOccurred") <<"\n" << std::flush;
+    if (std::system(command.c_str()) == 0)
+    {
+        printWrapped(getTranslation("CopyFileFolders.successCopying"), width);
+        cout <<"\n" << std::flush;
+    }
+    else
+    {
+        printWrapped(getTranslation("CopyFileFolders.anErrorOccurred") , width);
+        cout <<"\n" << std::flush;
+    }
 
     waitToEnter();
 }
@@ -109,13 +123,18 @@ void copyFileFolders(const std::string& srcPath, bool isDirectory) {
 void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
 
     if (!isPathSafe(fullPath)) {
+        int width = getTerminalWidth();
+
         logError ("deleteFileFolders", getTranslation("DeleteFileFolders.errorDangerousPath") + fullPath);
-        cout << getTranslation("DeleteFileFolders.errorDangerousPath") <<"\n" << std::flush;
+        printWrapped( getTranslation("DeleteFileFolders.errorDangerousPath"), width);
+        cout <<"\n" << std::flush;
 
         waitToEnter();
         return;
     }
-    cout << getTranslation("DeleteFileFolders.toBeDeleted") << fullPath << "? (y/n): ";
+    int width = getTerminalWidth();
+    printWrapped(getTranslation("DeleteFileFolders.toBeDeleted") + fullPath + "? (y/n): ", width);
+    cout << std::flush;
 
     InputResult inputResult = readLineWithHotkey("");
 
@@ -129,7 +148,8 @@ void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
     string confirm = inputResult.text;
 
     if (toLowerCase(trim(confirm)) != "y") {
-        cout << getTranslation("DeleteFileFolders.interrupted") <<"\n" << std::flush;
+        printWrapped(getTranslation("DeleteFileFolders.interrupted"), width );
+        cout<<"\n"<< std::flush;
 
         waitToEnter();
         return;
@@ -144,11 +164,13 @@ void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
 #endif
 
     if (std::system(command.c_str()) == 0) {
-        cout << getTranslation("DeleteFileFolders.successDelete") <<"\n" << std::flush;
+        printWrapped(getTranslation("DeleteFileFolders.successDelete"),width);
+        cout <<"\n" << std::flush;
 
     } else {
         logError("deleteFileFolders", getTranslation("DeleteFileFolders.errorDelete") + fullPath);
-        cout << getTranslation("DeleteFileFolders.errorDelete") <<"\n" << std::flush;
+        printWrapped(getTranslation("DeleteFileFolders.errorDelete") + fullPath, width);
+        cout << "\n" << std::flush;
 
     }
     waitToEnter();
@@ -158,9 +180,22 @@ void deleteFileFolders(const std::string& fullPath, bool isDirectory) {
 // Move a file or folder
 void movingFileFolders(const std::string& srcPath, bool isDirectory) {
 
-    if (!isPathSafe(srcPath)) { waitToEnter(); return; }
+    if (!isPathSafe(srcPath))
+    {
+        logError("movingFileFolders", getTranslation("MovingFileFolders.MFerrorDangerousPath") + srcPath);
+        int width = getTerminalWidth();
 
-    cout << getTranslation("MovingFileFolders.toBeMoved") << srcPath << "\n" << getTranslation("MovingFileFolders.newNameNewPath");
+        printWrapped(getTranslation("MovingFileFolders.MFerrorDangerousPath") + srcPath, width);
+        cout << "\n" << std::flush;
+        waitToEnter();
+        return;
+    }
+    int width = getTerminalWidth();
+
+    printWrapped(getTranslation("MovingFileFolders.toBeMoved") + srcPath, width);
+    cout << "\n";
+    printWrapped(getTranslation("MovingFileFolders.newNameNewPath"), width);
+    cout << std::flush;
 
     InputResult inputResult = readLineWithHotkey("");
 
@@ -175,7 +210,16 @@ void movingFileFolders(const std::string& srcPath, bool isDirectory) {
     string destPath = trim(destName);
 
 
-    if (!isPathSafe(destPath)) { waitToEnter(); return; }
+    if (!isPathSafe(destPath))
+    {
+        logError("movingFileFolders", getTranslation("MovingFileFolders.MFerrorDangerousPath") + srcPath);
+
+        printWrapped(getTranslation("MovingFileFolders.MFerrorDangerousPath") + srcPath, width);
+        cout << "\n" << std::flush;
+
+        waitToEnter();
+        return;
+    }
 
     std::string nSrc = normalizePath(srcPath);
     std::string nDest = normalizePath(destPath);
@@ -193,10 +237,20 @@ void movingFileFolders(const std::string& srcPath, bool isDirectory) {
 // Rename a file or folder
 void reNameFileFolders(const std::string& srcPath, bool isDirectory) {
 
-    if (!isPathSafe(srcPath)) { waitToEnter(); return; }
+    if (!isPathSafe(srcPath))
+    {
+        logError("reNameFileFolders", getTranslation("RenameFilesAndFolders.errorDangerousPath") + srcPath);
+        int width = getTerminalWidth();
+        printWrapped(getTranslation("RenameFilesAndFolders.errorDangerousPath") + srcPath, width),cout<<"\n" << std::flush;
+        waitToEnter();
+        return;
+    }
+    int width = getTerminalWidth();
 
-    cout << getTranslation("RenameFilesAndFolders.toBeRenamed") << srcPath << "\n" << getTranslation("RenameFilesAndFolders.newName");
-
+    printWrapped(getTranslation("RenameFilesAndFolders.toBeRenamed") + srcPath, width);
+    cout << "\n";
+    printWrapped(getTranslation("RenameFilesAndFolders.newName"), width);
+    cout << std::flush;
     // --- INPUT BEOLVASÁSA readLineWithHotkey-el ---
     // --- Input reading with readLineWithHotkey ---
     InputResult newNameInput = readLineWithHotkey(""); // A promptot már kiírtuk marad a promptnál || The prompt has already been written, it remains at the prompt.
@@ -212,7 +266,14 @@ void reNameFileFolders(const std::string& srcPath, bool isDirectory) {
 
     size_t lastSlash = srcPath.find_last_of("/\\");
     string destPath = ((lastSlash == string::npos) ? "" : srcPath.substr(0, lastSlash + 1)) + newName;
-    if (!isPathSafe(destPath)) { waitToEnter(); return; }
+
+    if (!isPathSafe(destPath))
+    {
+        logError("reNameFileFolders", getTranslation("RenameFilesAndFolders.errorDangerousPath") + srcPath);
+        printWrapped(getTranslation("RenameFilesAndFolders.errorDangerousPath") + srcPath, width),cout<<"\n" << std::flush;
+        waitToEnter();
+        return;
+    }
 
     std::string nSrc = normalizePath(srcPath);
     std::string nDest = normalizePath(destPath);
@@ -283,23 +344,27 @@ void listAndSelectFile() {
     string path = ROOT_DIR;
     for (;;) {
         screenWipe();
+        int width = getTerminalWidth();
 
-        cout << getTranslation("ListAndSelectedFile.currentlyFolder") << path << " ---\n";
+        printWrapped(getTranslation("ListAndSelectedFile.currentlyFolder") + path + " ---", width);
+        cout<< "\n" << std::flush;
         vector<FileEntry> entries = listFiles(path);
 
-        if (entries.empty()) cout << getTranslation("ListAndSelectedFile.emptyFolder") << "\n";
-
+        if (entries.empty())
+        {
+            printWrapped(getTranslation("ListAndSelectedFile.emptyFolder"),width), cout<< "\n" << std::flush;
+        }
         else
         {
             for (const FileEntry& e : entries)
-                cout << (e.isDirectory ? getTranslation("ListAndSelectedFile.isDirectory") : "        ") << e.name << "\n" << std::flush;
+            {
+                printWrapped((e.isDirectory ? getTranslation("ListAndSelectedFile.isDirectory") : "        ") + e.name, width), cout << "\n" << std::flush;
+            }
         }
-
-
-        cout << getTranslation("ListAndSelectedFile.signs") <<"\n";
-        cout << getTranslation("ListAndSelectedFile.commands") <<"\n";
-        cout << getTranslation("ListAndSelectedFile.fullCommands") <<"\n";
-        cout << getTranslation("ListAndSelectedFile.fullCommands2") <<"\n";
+        printWrapped(getTranslation("ListAndSelectedFile.signs"),width),cout <<"\n";
+        printWrapped(getTranslation("ListAndSelectedFile.commands"),width),cout <<"\n";
+        printWrapped(getTranslation("ListAndSelectedFile.fullCommands"),width),cout <<"\n";
+        printWrapped(getTranslation("ListAndSelectedFile.fullCommands2"),width),cout <<"\n";
 
         InputResult inputResult = readLineWithHotkey("\n" + getTranslation("ListAndSelectedFile.choice"));
 
@@ -387,7 +452,7 @@ void listAndSelectFile() {
                 startQuiz(loadWords(fullPath));
             } else {
                 logError("listAndSelectFile" , getTranslation("LlistAndSelectedFile.errorFile") + fullPath);
-                cout << getTranslation("LlistAndSelectedFile.errorFile") <<"\n" << std::flush;
+                printWrapped(getTranslation("LlistAndSelectedFile.errorFile"),width),cout <<"\n" << std::flush;
 
                 waitToEnter();
             }
@@ -409,10 +474,11 @@ bool isDirectory(const std::string& path) {
 // új mappa létrehozás || New folder creation
 bool createDirectory(const std::string& path)
 {
-    //const struct CreateFolderStrings &CFS = createFolderTranslations[static_cast<int>(programUiLanguage)];
     if (!isPathSafe(path)) {
         logError("createDirectory", getTranslation("CreateFolderStrings.errorDangerousPath") + path);
-        std::cerr <<  getTranslation("CreateFolderStrings.errorDangerousPath") <<"\n" << std::flush;
+        int width = getTerminalWidth();
+
+        printWrapped(getTranslation("CreateFolderStrings.errorDangerousPath") + path,width),cout <<"\n" << std::flush;
         waitToEnter();
         return false;
     }
@@ -426,14 +492,17 @@ bool createDirectory(const std::string& path)
 #endif
 
     if (std::system(command.c_str()) == 0) {
+        int width = getTerminalWidth();
 
-        cout << getTranslation("CreateFolderStrings.successCreate") << nPath <<"\n" << std::flush;
+        printWrapped(getTranslation("CreateFolderStrings.successCreate") + nPath , width), cout<<"\n" << std::flush;
         waitToEnter();
         return true;
     } else {
 
         logError("createDirectory", getTranslation("CreateFolderStrings.errorCreate") + path);
-        std::cerr << getTranslation("CreateFolderStrings.errorCreate") <<"\n" << std::flush;
+        int width = getTerminalWidth();
+
+        printWrapped(getTranslation("CreateFolderStrings.errorCreate"), width),cout <<"\n" << std::flush;
         waitToEnter();
         return false;
     }

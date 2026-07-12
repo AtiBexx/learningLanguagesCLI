@@ -6428,148 +6428,172 @@ static const std::vector<ListAndSelectedFile> listAndSelectedFilesTranslations_h
 //==========================================================================
 static const std::vector<RenameFilesAndFolders> renameFilesAndFoldersTranslations_hardcoded {
 
-
     { // Hungarian (Index 0)
-            "Átnevezendő: " ,
-           "Új név: "
-        },
+        "Átnevezendő: ",
+        "Új név: ",
+        "Veszélyes útvonal!: "
+    },
+
     // ENGLISH (Index 1)
-   {
-       "Rename: ",
-       "New name: "
-   },
+    {
+        "Rename: ",
+        "New name: ",
+        "Dangerous path!: "
+    },
 
-   // CHINESE (Index 2)
-   {
-       "重命名: ",
-       "新名称: "
-   },
+    // CHINESE (Index 2)
+    {
+        "重命名: ",
+        "新名称: ",
+        "危险路径!: "
+    },
 
-   // JAPANESE (Index 3)
-   {
-       "名前変更: ",
-       "新しい名前: "
-   },
+    // JAPANESE (Index 3)
+    {
+        "名前変更: ",
+        "新しい名前: ",
+        "危険なパス!: "
+    },
 
-   // SPANISH (Index 4)
-   {
-       "Renombrar: ",
-       "Nuevo nombre: "
-   },
+    // SPANISH (Index 4)
+    {
+        "Renombrar: ",
+        "Nuevo nombre: ",
+        "Ruta peligrosa!: "
+    },
 
-   // GERMAN (Index 5)
-   {
-       "Umbenennen: ",
-       "Neuer Name: "
-   },
+    // GERMAN (Index 5)
+    {
+        "Umbenennen: ",
+        "Neuer Name: ",
+        "Gefährlicher Pfad!: "
+    },
 
-   // FRENCH (Index 6)
-   {
-       "Renommer: ",
-       "Nouveau nom: "
-   },
+    // FRENCH (Index 6)
+    {
+        "Renommer: ",
+        "Nouveau nom: ",
+        "Chemin dangereux!: "
+    },
 
-   // RUSSIAN (Index 7)
-   {
-       "Переименовать: ",
-       "Новое имя: "
-   },
+    // RUSSIAN (Index 7)
+    {
+        "Переименовать: ",
+        "Новое имя: ",
+        "Опасный путь!: "
+    },
 
-   // UKRAINIAN (Index 8)
-   {
-       "Перейменувати: ",
-       "Нове ім'я: "
-   },
+    // UKRAINIAN (Index 8)
+    {
+        "Перейменувати: ",
+        "Нове ім'я: ",
+        "Небезпечний шлях!: "
+    },
 
-   // KOREAN (Index 9)
-   {
-       "이름 변경: ",
-       "새 이름: "
-   },
+    // KOREAN (Index 9)
+    {
+        "이름 변경: ",
+        "새 이름: ",
+        "위험한 경로!: "
+    },
 
-   // ITALIAN (Index 10)
-   {
-       "Rinomina: ",
-       "Nuovo nome: "
-   },
+    // ITALIAN (Index 10)
+    {
+        "Rinomina: ",
+        "Nuovo nome: ",
+        "Percorso pericoloso!: "
+    },
 
-   // POLISH (Index 11)
-   {
-       "Zmień nazwę: ",
-       "Nowa nazwa: "
-   },
+    // POLISH (Index 11)
+    {
+        "Zmień nazwę: ",
+        "Nowa nazwa: ",
+        "Niebezpieczna ścieżka!: "
+    },
 
-   // ARABIC (Index 12)
-   {
-       "إعادة تسمية: ",
-       "اسم جديد: "
-   },
+    // ARABIC (Index 12)
+    {
+        "إعادة تسمية: ",
+        "اسم جديد: ",
+        "مسار خطير!: "
+    },
 
-   // VIETNAMESE (Index 13)
-   {
-       "Đổi tên: ",
-       "Tên mới: "
-   },
+    // VIETNAMESE (Index 13)
+    {
+        "Đổi tên: ",
+        "Tên mới: ",
+        "Đường dẫn nguy hiểm!: "
+    },
 
-   // TAGALOG (Index 14)
-   {
-       "Palitan ang pangalan: ",
-       "Bagong pangalan: "
-   },
+    // TAGALOG (Index 14)
+    {
+        "Palitan ang pangalan: ",
+        "Bagong pangalan: ",
+        "Mapanganib na landas!: "
+    },
 
-   // GREEK (Index 15)
-   {
-       "Μετονομασία: ",
-       "Νέο όνομα: "
-   },
+    // GREEK (Index 15)
+    {
+        "Μετονομασία: ",
+        "Νέο όνομα: ",
+        "Επικίνδυνη διαδρομή!: "
+    },
 
-   // HEBREW (Index 16)
-   {
-       "שנה שם: ",
-       "שם חדש: "
-   },
+    // HEBREW (Index 16)
+    {
+        "שנה שם: ",
+        "שם חדש: ",
+        "נתיב מסוכן!: "
+    },
 
-   // PORTUGUESE (Index 17)
-   {
-       "Renomear: ",
-       "Novo nome: "
-   },
+    // PORTUGUESE (Index 17)
+    {
+        "Renomear: ",
+        "Novo nome: ",
+        "Caminho perigoso!: "
+    },
 
-   // FARSI (Index 18)
-   {
-       "تغییر نام: ",
-       "نام جدید: "
-   },
+    // FARSI (Index 18)
+    {
+        "تغییر نام: ",
+        "نام جدید: ",
+        "مسیر خطرناک!: "
+    },
 
-   // SWEDISH (Index 19)
-   {
-       "Byt namn: ",
-       "Nytt namn: "
-   },
+    // SWEDISH (Index 19)
+    {
+        "Byt namn: ",
+        "Nytt namn: ",
+        "Farlig sökväg!: "
+    },
 
-   // DUTCH (Index 20)
-   {
-       "Hernoemen: ",
-       "Nieuwe naam: "
-   },
+    // DUTCH (Index 20)
+    {
+        "Hernoemen: ",
+        "Nieuwe naam: ",
+        "Gevaarlijk pad!: "
+    },
 
-   // TURKISH (Index 21)
-   {
-       "Yeniden adlandır: ",
-       "Yeni ad: "
-   },
+    // TURKISH (Index 21)
+    {
+        "Yeniden adlandır: ",
+        "Yeni ad: ",
+        "Tehlikeli yol!: "
+    },
 
-   // HINDI (Index 22)
-   {
-       "नाम बदलें: ",
-       "नया नाम: "
-   },
+    // HINDI (Index 22)
+    {
+        "नाम बदलें: ",
+        "नया नाम: ",
+        "खतरनाक पथ!: "
+    },
 
-   // LATIN (Index 23)
-   {
-       "Renominare: ",
-       "Novum nomen: "
-   }
+    // LATIN (Index 23)
+    {
+        "Renominare: ",
+        "Novum nomen: ",
+        "Iter periculosum!: "
+    }
 };
 
 
@@ -6578,145 +6602,169 @@ static const std::vector<MovingFileFolders> movingFileFoldersTranslations_hardco
 
     { //hungarian (index 0)
         "Áthelyezendő: ",
-        "Új név/útvonal: "
+        "Új név/útvonal: ",
+        "Veszélyes útvonal!: "
     },
 
     // ENGLISH (index 1)
     {
         "Move: ",
-        "New name/path: "
+        "New name/path: ",
+        "Dangerous path!: "
     },
 
     // CHINESE (index 2)
     {
         "移动: ",
-        "新名称/路径: "
+        "新名称/路径: ",
+        "危险路径!: "
     },
 
     // JAPANESE (index 3)
     {
         "移動: ",
-        "新しい名前/パス: "
+        "新しい名前/パス: ",
+        "危険なパス!: "
     },
 
     // SPANISH (index 4)
     {
         "Mover: ",
-        "Nuevo nombre/ruta: "
+        "Nuevo nombre/ruta: ",
+        "Ruta peligrosa!: "
     },
 
     // GERMAN (index 5)
     {
         "Verschieben: ",
-        "Neuer Name/Pfad: "
+        "Neuer Name/Pfad: ",
+        "Gefährlicher Pfad!: "
     },
 
     // FRENCH (index 6)
     {
         "Déplacer: ",
-        "Nouveau nom/chemin: "
+        "Nouveau nom/chemin: ",
+        "Chemin dangereux!: "
     },
 
     // RUSSIAN (index 7)
     {
         "Переместить: ",
-        "Новое имя/путь: "
+        "Новое имя/путь: ",
+        "Опасный путь!: "
     },
 
     // UKRAINIAN (index 8)
     {
         "Перемістити: ",
-        "Нове ім'я/шлях: "
+        "Нове ім'я/шлях: ",
+        "Небезпечний шлях!: "
     },
 
     // KOREAN (index 9)
     {
         "이동: ",
-        "새 이름/경로: "
+        "새 이름/경로: ",
+        "위험한 경로!: "
     },
 
     // ITALIAN (index 10)
     {
         "Sposta: ",
-        "Nuovo nome/percorso: "
+        "Nuovo nome/percorso: ",
+        "Percorso pericoloso!: "
     },
 
     // POLISH (index 11)
     {
         "Przenieś: ",
-        "Nowa nazwa/ścieżka: "
+        "Nowa nazwa/ścieżka: ",
+        "Niebezpieczna ścieżka!: "
     },
 
     // ARABIC (index 12)
     {
         "نقل: ",
-        "اسم/مسار جديد: "
+        "اسم/مسار جديد: ",
+        "مسار خطير!: "
     },
 
     // VIETNAMESE (index 13)
     {
         "Di chuyển: ",
-        "Tên/đường dẫn mới: "
+        "Tên/đường dẫn mới: ",
+        "Đường dẫn nguy hiểm!: "
     },
 
     // TAGALOG (index 14)
     {
         "Ilipat: ",
-        "Bagong pangalan/landas: "
+        "Bagong pangalan/landas: ",
+        "Mapanganib na landas!: "
     },
 
     // GREEK (index 15)
     {
         "Μετακίνηση: ",
-        "Νέο όνομα/διαδρομή: "
+        "Νέο όνομα/διαδρομή: ",
+        "Επικίνδυνη διαδρομή!: "
     },
 
     // HEBREW (index 16)
     {
         "העבר: ",
-        "שם/נתיב חדש: "
+        "שם/נתיב חדש: ",
+        "נתיב מסוכן!: "
     },
 
     // PORTUGUESE (index 17)
     {
         "Mover: ",
-        "Novo nome/caminho: "
+        "Novo nome/caminho: ",
+        "Caminho perigoso!: "
     },
 
     // FARSI (index 18)
     {
         "انتقال: ",
-        "نام/مسیر جدید: "
+        "نام/مسیر جدید: ",
+        "مسیر خطرناک!: "
     },
 
     // SWEDISH (index 19)
     {
         "Flytta: ",
-        "Nytt namn/sökväg: "
+        "Nytt namn/sökväg: ",
+        "Farlig sökväg!: "
     },
 
     // DUTCH (index 20)
     {
         "Verplaatsen: ",
-        "Nieuwe naam/pad: "
+        "Nieuwe naam/pad: ",
+        "Gevaarlijk pad!: "
     },
 
     // TURKISH (index 21)
     {
         "Taşı: ",
-        "Yeni ad/yol: "
+        "Yeni ad/yol: ",
+        "Tehlikeli yol!: "
     },
 
     // HINDI (index 22)
     {
         "स्थानांतरित करें: ",
-        "नया नाम/पथ: "
+        "नया नाम/पथ: ",
+        "खतरनाक पथ!: "
     },
 
     // LATIN (index 23)
     {
         "Transferre: ",
-        "Novum nomen/iter: "
+        "Novum nomen/iter: ",
+        "Iter periculosum!: "
     }
 };
 
@@ -9987,11 +10035,13 @@ void createDefaultLangIni() {
         outFile << "\n[RenameFilesAndFolders]\n";
         outFile << "toBeRenamed=" << renameFilesAndFoldersTranslations_hardcoded[langIndex].toBeRenamed << "\n";
         outFile << "newName=" << renameFilesAndFoldersTranslations_hardcoded[langIndex].newName << "\n";
+        outFile << "errorDangerousPath=" << renameFilesAndFoldersTranslations_hardcoded[langIndex].errorDangerousPath << "\n";
 
         // --- MovingFileFolders ---
         outFile << "\n[MovingFileFolders]\n";
         outFile << "toBeMoved=" << movingFileFoldersTranslations_hardcoded[langIndex].toBeMoved << "\n";
         outFile << "newNameNewPath=" << movingFileFoldersTranslations_hardcoded[langIndex].newNameNewPath << "\n";
+        outFile << "MFerrorDangerousPath=" << movingFileFoldersTranslations_hardcoded[langIndex].MFerrorDangerousPath << "\n";
 
         // --- DeleteFileFolders ---
         outFile << "\n[DeleteFileFolders]\n";
@@ -10415,10 +10465,12 @@ std::string getTranslation(const std::string& key) {
     // RenameFilesAndFolders
     else if (key == "RenameFilesAndFolders.toBeRenamed") return renameFilesAndFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].toBeRenamed;
     else if (key == "RenameFilesAndFolders.newName") return renameFilesAndFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].newName;
+    else if (key == "RenameFilesAndFolders.errorDangerousPath") return renameFilesAndFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorDangerousPath;
 
     // MovingFileFolders
     else if (key == "MovingFileFolders.toBeMoved") return movingFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].toBeMoved;
     else if (key == "MovingFileFolders.newNameNewPath") return movingFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].newNameNewPath;
+    else if (key == "MovingFileFolders.MFerrorDangerousPath") return movingFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].MFerrorDangerousPath;
 
     // DeleteFileFolders
     else if (key == "DeleteFileFolders.errorDfDangerousPath") return deleteFileFoldersTranslations_hardcoded[static_cast<int>(programUiLanguage)].errorDfDangerousPath;

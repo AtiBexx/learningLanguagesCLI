@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/data/githubProjects/learningLanguagesCLI/cmake-build-debug/cmake_install.cmake"
+		"E:/English/cmake-build-debug/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
